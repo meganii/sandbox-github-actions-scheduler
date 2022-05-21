@@ -15,13 +15,16 @@ jobs:
       - uses: denoland/setup-deno@v1
       - name: Backup data
         run: >
-          deno run --allow-read --allow-net --allow-write --no-check index.ts
+          deno run
+          --allow-read
+          --allow-net
+          --allow-write
+          --no-check
+          index.ts
       - name: Zip
-        run: |
-          zip data data.json
+        run: zip data data.json
       - name: Set Date
-        run: >
-          echo "CURRENT_DATETIME=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+        run: echo "CURRENT_DATETIME=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
       - name: Release
         uses: ncipollo/release-action@v1
         with:
