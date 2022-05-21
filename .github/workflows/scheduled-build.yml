@@ -6,14 +6,6 @@ on:
 
 jobs:
   build:
-    name: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: curl
-        run: curl --show-error -X POST -d {} "${{ secrets.BUILD_HOOK_URL }}"
-
-jobs:
-  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
