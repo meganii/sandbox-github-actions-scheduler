@@ -33,8 +33,7 @@ for (let i =0; i < titles.length; i += skip) {
   console.log(`Finish fetching ${i} - ${i + skip} pages.`);
 }
 
-console.log(writeJson("./dataDetail.json", detailPages));
-
+console.log(writeJson("./data.json", detailPages));
 
 function writeJson(path: string, data: object): string {
     try {
