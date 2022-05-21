@@ -20,6 +20,8 @@ jobs:
         run: |
           zip data data.json
       - name: Set Date
+        env:
+          TZ: "Asia/Tokyo"
         run: >
           echo "CURRENT_DATETIME=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
       - name: Release
