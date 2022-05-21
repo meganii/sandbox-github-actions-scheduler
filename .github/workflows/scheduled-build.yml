@@ -9,10 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: denoland/setup-deno@v1
-      - run: >
-          deno run --allow-read --allow-net --allow-write --no-check index.ts
+      - name
+        run: |
+          echo "test" > test.csv
       - name: git setting
         run: |
           git config --local user.email "meganii@outlook.jp"
@@ -22,4 +21,23 @@ jobs:
           git add .
           git commit -m "Add csv" -a
           git pull
-          git push origin master
+          git push origin main
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: denoland/setup-deno@v1
+#       - run: >
+#           deno run --allow-read --allow-net --allow-write --no-check index.ts
+#       - name: git setting
+#         run: |
+#           git config --local user.email "meganii@outlook.jp"
+#           git config --local user.name "meganii"
+#       - name: Commit files
+#         run: |
+#           git add .
+#           git commit -m "Add csv" -a
+#           git pull
+#           git push origin master
