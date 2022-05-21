@@ -26,8 +26,7 @@ jobs:
       - name: Set Date
         env:
           TZ: "Asia/Tokyo"
-        run: >
-          echo "CURRENT_DATETIME=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+        run: echo "CURRENT_DATETIME=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
       - name: Release
         uses: ncipollo/release-action@v1
         with:
