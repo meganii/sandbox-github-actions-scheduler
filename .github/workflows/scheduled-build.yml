@@ -2,18 +2,17 @@ name: Scheduled build
 
 on:
   schedule:
-    - cron: 10 * * * *
+    - cron: 0 18 * * *
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Create csv
-        run: >
-          echo "test" > test.csv
+      - uses: actions/checkout@v2
+      - uses: denoland/setup-deno@v1
+      - run: >
+          deno run --allow-read --allow-net --allow-write --no-check index.ts
       - name: git setting
         run: |
           git config --global user.email "meganii@outlook.jp"
@@ -21,25 +20,6 @@ jobs:
       - name: Commit files
         run: |
           git add .
-          git commit -m "Add csv" -a
+          git commit -m "Add backup data" -a
           git pull
-          git push origin main
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - uses: denoland/setup-deno@v1
-#       - run: >
-#           deno run --allow-read --allow-net --allow-write --no-check index.ts
-#       - name: git setting
-#         run: |
-#           git config --local user.email "meganii@outlook.jp"
-#           git config --local user.name "meganii"
-#       - name: Commit files
-#         run: |
-#           git add .
-#           git commit -m "Add csv" -a
-#           git pull
-#           git push origin master
+          git push origin master
