@@ -1,0 +1,834 @@
+{
+  "id": "624432056a092c002323441e",
+  "title": "副表記へ自動的に転送するUserScript",
+  "created": 1648636423,
+  "updated": 1648703871,
+  "lines": [
+    {
+      "id": "624432056a092c002323441e",
+      "text": "副表記へ自動的に転送するUserScript",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636423,
+      "updated": 1648636423
+    },
+    {
+      "id": "624432087838e30000e2a957",
+      "text": "[fragment-link]を(勝手に)少し改造して[副表記に❌をつけ]に対応させた[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636423,
+      "updated": 1648636611
+    },
+    {
+      "id": "624432a07838e30000e2a9c9",
+      "text": "\t基本的な仕様は[fragment-link]と同じ（多分）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636576,
+      "updated": 1648636588
+    },
+    {
+      "id": "624432097838e30000e2a958",
+      "text": "\t\t❌から始まるリンクを見つけて転送する点が違う",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636424,
+      "updated": 1648636597
+    },
+    {
+      "id": "6245391d7838e300009eb03e",
+      "text": "\t\t元々あった`[# []]`に飛ぶ機能は書き換えてあるので、`[# []]`を置いても反応しません",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648703774,
+      "updated": 1648703871
+    },
+    {
+      "id": "6244328c7838e30000e2a9c8",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636556,
+      "updated": 1648636556
+    },
+    {
+      "id": "624432bd7838e30000e2a9ca",
+      "text": "これを自分のページに置けば動作する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636605,
+      "updated": 1648636676
+    },
+    {
+      "id": "624432747838e30000e2a9c1",
+      "text": "code:js",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636532,
+      "updated": 1648636535
+    },
+    {
+      "id": "624432787838e30000e2a9c3",
+      "text": "  import {runCrossLink} from \"/api/code/villagepump/副表記へ自動的に転送するUserScript/script.js\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636535,
+      "updated": 1648636656
+    },
+    {
+      "id": "6244327d7838e30000e2a9c4",
+      "text": "  ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636540,
+      "updated": 1648636540
+    },
+    {
+      "id": "6244327d7838e30000e2a9c5",
+      "text": "  runCrossLink();",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636540,
+      "updated": 1648636540
+    },
+    {
+      "id": "6244327d7838e30000e2a9c6",
+      "text": "  ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636540,
+      "updated": 1648636540
+    },
+    {
+      "id": "624432747838e30000e2a9c2",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636532,
+      "updated": 1648636532
+    },
+    {
+      "id": "6244327e7838e30000e2a9c7",
+      "text": "[* ソース]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636542,
+      "updated": 1648636544
+    },
+    {
+      "id": "6244326b7838e30000e2a959",
+      "text": "code:script.js",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636523,
+      "updated": 1648636528
+    },
+    {
+      "id": "624432707838e30000e2a95b",
+      "text": " export const runCrossLink = async() => {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636528,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef7f",
+      "text": "   ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef80",
+      "text": "   let mutationObserver;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef81",
+      "text": "   ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef82",
+      "text": "   /**",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef83",
+      "text": "    * 副表記のリンクがあるページへリダイレクトする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef84",
+      "text": "    * 複数候補がある場合は該当ページをハイライトするに留める",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef85",
+      "text": "    */",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef86",
+      "text": "   const highlightPagesOrRedirect = async() => {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef87",
+      "text": "     mutationObserver?.disconnect();",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef88",
+      "text": "     ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef89",
+      "text": "     if (!scrapbox.Page.title || scrapbox.Page.title.indexOf(\"❌\") != 0) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef8a",
+      "text": "       // ページタイトルがない or ❌から始まるページではない",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef8b",
+      "text": "       return;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef8c",
+      "text": "     }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef8d",
+      "text": "     ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef8e",
+      "text": "     // 開いているページの情報を取得",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef8f",
+      "text": "     const pageAPIResponse = await fetch(`https://scrapbox.io/api/pages/${",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef90",
+      "text": "       encodeURIComponent(scrapbox.Project.name)",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef91",
+      "text": "     }/${encodeURIComponent(scrapbox.Page.title)}`);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef92",
+      "text": "     ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef93",
+      "text": "     if (!pageAPIResponse.ok) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef94",
+      "text": "       throw new Error(`${pageAPIResponse.status} ${pageAPIResponse.statusText}`);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef95",
+      "text": "     }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef96",
+      "text": "     const page = await pageAPIResponse.json();",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef97",
+      "text": "     const linkedLinks = [];",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef98",
+      "text": "     ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef99",
+      "text": "     for (const { title } of page.relatedPages.links1hop) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef9a",
+      "text": "       ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef9b",
+      "text": "       // Links欄(1-hop)にあるページを取得",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef9c",
+      "text": "       const relatedPageAPIResponse = await fetch(`https://scrapbox.io/api/pages/${",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef9d",
+      "text": "         encodeURIComponent(scrapbox.Project.name)",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef9e",
+      "text": "       }/${encodeURIComponent(title)}`);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009bef9f",
+      "text": "       ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befa0",
+      "text": "       if (!relatedPageAPIResponse.ok) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befa1",
+      "text": "         throw new Error(`${relatedPageAPIResponse.status} ${relatedPageAPIResponse.statusText}`);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befa2",
+      "text": "       }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befa3",
+      "text": "    \t",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befa4",
+      "text": "       const relatedPage = await relatedPageAPIResponse.json();",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befa5",
+      "text": " ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befa6",
+      "text": "       // 開いているページへのリンク（つまり逆リンク）を検索",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befa7",
+      "text": "       relatedPage.lines.forEach(line => {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befa8",
+      "text": "         if (line.text.indexOf(`[${scrapbox.Page.title}]`) >= 0) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befa9",
+      "text": "           linkedLinks.push({ line, page: relatedPage})",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befaa",
+      "text": "         }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befab",
+      "text": "       });",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befac",
+      "text": "     }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befad",
+      "text": " ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befae",
+      "text": "     if (!isPageExists(scrapbox.Page.title) && linkedLinks.length === 1) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befaf",
+      "text": "         // ページ遷移",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befb0",
+      "text": "         const link = document.createElement(\"a\")",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befb1",
+      "text": "         link.href = `/${scrapbox.Project.name}/${encodeURIComponent(linkedLinks[0].page.title)}#${linkedLinks[0].line.id}`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befb2",
+      "text": "         document.body.appendChild(link)",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befb3",
+      "text": "         link.click()",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befb4",
+      "text": "     }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befb5",
+      "text": "     ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befb6",
+      "text": "     const highlightLinkedPages = () => {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befb7",
+      "text": "       const relatedPageListItemElements = [",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befb8",
+      "text": "         ...document.querySelectorAll(\".related-page-list .grid li\")",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befb9",
+      "text": "       ];",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befba",
+      "text": "       ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befbb",
+      "text": "       linkedLinks.forEach((linkedLink) => ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befbc",
+      "text": "         relatedPageListItemElements.forEach((relatedPageListItemElement) => {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befbd",
+      "text": "           if (relatedPageListItemElement.dataset.pageTitle !== linkedLink.page.title) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befbe",
+      "text": "             return;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befbf",
+      "text": "           }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befc0",
+      "text": "           ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befc1",
+      "text": "           relatedPageListItemElement.querySelector(\"a .header\").style.borderColor",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befc2",
+      "text": "             = \"var(--telomere-unread, #41b059)\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befc3",
+      "text": "         })",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befc4",
+      "text": "       );",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befc5",
+      "text": "     };",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befc6",
+      "text": "     ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befc7",
+      "text": "     highlightLinkedPages();",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befc8",
+      "text": "     ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befc9",
+      "text": "     mutationObserver = new MutationObserver(highlightLinkedPages);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befca",
+      "text": "     mutationObserver.observe(document.body, {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befcb",
+      "text": "       subtree: true,",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befcc",
+      "text": "       childList: true,",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befcd",
+      "text": "       characterData: true,",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befce",
+      "text": "     });",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befcf",
+      "text": "   };",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befd0",
+      "text": "   ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befd1",
+      "text": "   await highlightPagesOrRedirect();",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befd2",
+      "text": "   scrapbox.on('page:changed', highlightPagesOrRedirect);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befd3",
+      "text": " };",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befd4",
+      "text": " ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befd5",
+      "text": " /**",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befd6",
+      "text": "  * ページが存在するか（既に作成されているか）を確かめる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befd7",
+      "text": "  * @param pageTitle ページのタイトル",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befd8",
+      "text": "  * @returns 存在すればtrue, 存在しなければfalse",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befd9",
+      "text": "  */",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befda",
+      "text": " function isPageExists(pageTitle) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befdb",
+      "text": "   const pages = scrapbox.Project.pages",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befdc",
+      "text": "   for(let page of pages) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befdd",
+      "text": "     if(page.title == pageTitle) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befde",
+      "text": "       return page.exists",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befdf",
+      "text": "     }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befe0",
+      "text": "   }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befe1",
+      "text": "   return false",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befe2",
+      "text": " }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "624446747838e300009befe3",
+      "text": " ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641650,
+      "updated": 1648641650
+    },
+    {
+      "id": "6244326c7838e30000e2a95a",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648636525,
+      "updated": 1648636525
+    }
+  ]
+}

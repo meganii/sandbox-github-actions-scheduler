@@ -1,0 +1,365 @@
+{
+  "id": "609f3dd1801127001c9313ae",
+  "title": "EpisoPass生成保存.py",
+  "created": 1621048789,
+  "updated": 1650666289,
+  "lines": [
+    {
+      "id": "609f3dd1801127001c9313ae",
+      "text": "EpisoPass生成保存.py",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048789,
+      "updated": 1621048789
+    },
+    {
+      "id": "609f3f18246f59000066a8f7",
+      "text": "1個2秒くらいで生成される",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621049125,
+      "updated": 1621049149
+    },
+    {
+      "id": "609f3fae246f59000066a8f8",
+      "text": "[/EpisoPass/EpisoQブックマークレット]をもとにファイルを作る",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621049274,
+      "updated": 1621049285
+    },
+    {
+      "id": "609f3dc8246f59000066a8c9",
+      "text": "code:py",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048789,
+      "updated": 1621048791
+    },
+    {
+      "id": "609f3dcb246f59000066a8cb",
+      "text": " from selenium import webdriver",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048791,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e90246f59000066a8cc",
+      "text": " import time",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8cd",
+      "text": " import random",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8ce",
+      "text": " driver = webdriver.Chrome()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8cf",
+      "text": " def main():",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8d0",
+      "text": "     driver.get(\"file:///home/n/EpisoPass.html?questionsなんたらかんたら\")",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8d1",
+      "text": "     smp = \"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\"",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8d2",
+      "text": "     see = \"\".join([random.choice(smp) for _ in range(24)])",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8d3",
+      "text": "     print(see)",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8d4",
+      "text": "     driver.find_element_by_css_selector(\"#seed\").clear()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8d5",
+      "text": "     driver.find_element_by_css_selector(\"#seed\").send_keys(see)",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8d6",
+      "text": "     driver.find_element_by_css_selector(\"#answer0-なんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8d7",
+      "text": "     driver.find_element_by_css_selector(\"#answer1-なんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8d8",
+      "text": "     driver.find_element_by_css_selector(\"#answer2-なんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8d9",
+      "text": "     driver.find_element_by_css_selector(\"#answer3-なんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8da",
+      "text": "     driver.find_element_by_css_selector(\"#answer4-なんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8db",
+      "text": "     driver.find_element_by_css_selector(\"#answer5-なんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8dc",
+      "text": "     driver.find_element_by_css_selector(\"#answer6-なんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8dd",
+      "text": "     driver.find_element_by_css_selector(\"#answer7-なんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8de",
+      "text": "     driver.find_element_by_css_selector(\"#answer8-なんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8df",
+      "text": "     driver.find_element_by_css_selector(\"#qa_minus\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8e0",
+      "text": "     driver.find_element_by_css_selector(\"#dasbutton > div\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8e1",
+      "text": "     driver.find_element_by_css_selector(\"#dmidなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8e2",
+      "text": "     driver.find_element_by_css_selector(\"#dmidなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8e3",
+      "text": "     driver.find_element_by_css_selector(\"#dmidなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8e4",
+      "text": "     driver.find_element_by_css_selector(\"#dmidなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8e5",
+      "text": "     driver.find_element_by_css_selector(\"#dmidなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8e6",
+      "text": "     driver.find_element_by_css_selector(\"#dmidなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8e7",
+      "text": "     driver.find_element_by_css_selector(\"#dmidなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8e8",
+      "text": "     driver.find_element_by_css_selector(\"#dmidなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8e9",
+      "text": "     driver.find_element_by_css_selector(\"#dmidなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8ea",
+      "text": "     driver.find_element_by_css_selector(\"#idなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8eb",
+      "text": "     driver.find_element_by_css_selector(\"#idなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8ec",
+      "text": "     driver.find_element_by_css_selector(\"#idなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8ed",
+      "text": "     driver.find_element_by_css_selector(\"#idなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8ee",
+      "text": "     driver.find_element_by_css_selector(\"#idなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8ef",
+      "text": "     driver.find_element_by_css_selector(\"#idなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8f0",
+      "text": "     driver.find_element_by_css_selector(\"#idなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8f1",
+      "text": "     driver.find_element_by_css_selector(\"#idなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8f2",
+      "text": "     driver.find_element_by_css_selector(\"#idなんマス目\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8f3",
+      "text": "     driver.find_element_by_css_selector(\"#htmlbutton > div\").click()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8f4",
+      "text": " ",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3e91246f59000066a8f5",
+      "text": " for _ in range (10):",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621049008
+    },
+    {
+      "id": "609f3e91246f59000066a8f6",
+      "text": "     main()",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048989,
+      "updated": 1621048989
+    },
+    {
+      "id": "609f3dc8246f59000066a8ca",
+      "text": "",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1621048789,
+      "updated": 1621048789
+    },
+    {
+      "id": "62632b298ee92a0000b83918",
+      "text": "#EpisoPass",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1650666281,
+      "updated": 1650666289
+    },
+    {
+      "id": "62632b298ee92a0000b83919",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1650666281,
+      "updated": 1650666281
+    }
+  ]
+}

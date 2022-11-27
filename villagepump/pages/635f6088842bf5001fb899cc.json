@@ -1,0 +1,393 @@
+{
+  "id": "635f6088842bf5001fb899cc",
+  "title": "ブラケティングされているがまだページがない単語ランキング",
+  "created": 1667195019,
+  "updated": 1667199208,
+  "lines": [
+    {
+      "id": "635f6088842bf5001fb899cc",
+      "text": "ブラケティングされているがまだページがない単語ランキング",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195019,
+      "updated": 1667195019
+    },
+    {
+      "id": "635f608a6eb4060000307a21",
+      "text": "これはページを作る指標となるか？[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195019,
+      "updated": 1667195026
+    },
+    {
+      "id": "635f6707e5172d0000df1d1e",
+      "text": " [\" 本文を無理に書かなくても、hubになっているだけで周囲が説明を果たしてくれている]という考え方もある[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1667196680,
+      "updated": 1667196707
+    },
+    {
+      "id": "635f671de5172d0000df1d20",
+      "text": " 　from [/forum-jp/複数リンクされているが、本文がないリンクの色をつけられるようにしてほしい]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1667196702,
+      "updated": 1667196718
+    },
+    {
+      "id": "635f70bb6eb406000029fb84",
+      "text": " 　結果を見ると、この気持ちよくわかりますね[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667199164,
+      "updated": 1667199177
+    },
+    {
+      "id": "635f70c86eb406000029fb85",
+      "text": " 　　多く存在するかつ文字数が一定以上、など条件をさらに絞ると良いかも",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667199177,
+      "updated": 1667199208
+    },
+    {
+      "id": "635f6708e5172d0000df1d1f",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1667196680,
+      "updated": 1667196680
+    },
+    {
+      "id": "635f60916eb4060000307a23",
+      "text": "ネタもとはhttps://github.com/takker99/scrapbox-backups/tree/main",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195026,
+      "updated": 1667195166
+    },
+    {
+      "id": "635f611e6eb4060000307a2f",
+      "text": "\tちょっと古いが十分だろう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195167,
+      "updated": 1667195171
+    },
+    {
+      "id": "635f60e36eb4060000307a2e",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195107,
+      "updated": 1667195107
+    },
+    {
+      "id": "635f60926eb4060000307a24",
+      "text": "雑にスクリプトを組んでみた",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195026,
+      "updated": 1667195032
+    },
+    {
+      "id": "635f61ab6eb4060000307a56",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195308,
+      "updated": 1667195308
+    },
+    {
+      "id": "635f61ab6eb4060000307a57",
+      "text": "引数で与えられたページの中身でまだページが存在していないブラケティングされた単語があればそれを標準出力に出す",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195308,
+      "updated": 1667195308
+    },
+    {
+      "id": "635f61ab6eb4060000307a58",
+      "text": "icon記法とかがあれば剥がす（無視してもよかったかも）",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195308,
+      "updated": 1667195308
+    },
+    {
+      "id": "635f60de6eb4060000307a2d",
+      "text": "code: get.py",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195103,
+      "updated": 1667195409
+    },
+    {
+      "id": "635f61266eb4060000307a31",
+      "text": " import sys",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195175,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a32",
+      "text": " import json",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a33",
+      "text": " import re",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a34",
+      "text": " import os",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a35",
+      "text": " ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a36",
+      "text": " fname = sys.argv[1]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a37",
+      "text": " bracket = re.compile(r'\\[[^\\]]*\\]');",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a38",
+      "text": " path = \"villagepump/pages\"",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a39",
+      "text": " ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a3a",
+      "text": " #print(fname)",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a3b",
+      "text": " ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a3c",
+      "text": " with open(fname) as f:",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a3d",
+      "text": "   obj = json.load(f)",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a3e",
+      "text": "   for l in obj[\"lines\"]:",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a3f",
+      "text": "     bs = re.findall(bracket ,l[\"text\"])",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a40",
+      "text": "     if len(bs) != 0:",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a41",
+      "text": "       for b in bs:",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a42",
+      "text": "         r = b.lstrip(\"[\").rstrip(\"]\").rstrip(\".icon\")",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a43",
+      "text": "         if not os.path.exists(os.path.join(path, r + \".json\")):",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61336eb4060000307a44",
+      "text": "           print(r.encode(\"utf8\"))",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195188,
+      "updated": 1667195188
+    },
+    {
+      "id": "635f61246eb4060000307a30",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195173,
+      "updated": 1667195305
+    },
+    {
+      "id": "635f61a46eb4060000307a54",
+      "text": "存在するページ全てに上記スクリプトを適用する",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195301,
+      "updated": 1667195301
+    },
+    {
+      "id": "635f616b6eb4060000307a48",
+      "text": "code: all.sh",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195244,
+      "updated": 1667195396
+    },
+    {
+      "id": "635f616f6eb4060000307a49",
+      "text": " IFS=\"",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195248,
+      "updated": 1667195248
+    },
+    {
+      "id": "635f61706eb4060000307a4a",
+      "text": " \"",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195248,
+      "updated": 1667195248
+    },
+    {
+      "id": "635f61706eb4060000307a4b",
+      "text": " for f in `ls villagepump/pages/`; do",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195248,
+      "updated": 1667195248
+    },
+    {
+      "id": "635f61706eb4060000307a4c",
+      "text": "   python get.py \"villagepump/pages/$f\"",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195248,
+      "updated": 1667195255
+    },
+    {
+      "id": "635f61706eb4060000307a4e",
+      "text": " done",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195248,
+      "updated": 1667195248
+    },
+    {
+      "id": "635f61366eb4060000307a46",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195190,
+      "updated": 1667195190
+    },
+    {
+      "id": "635f61786eb4060000307a4f",
+      "text": "出力をソートして頻出単語順に並べ替え",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195257,
+      "updated": 1667195327
+    },
+    {
+      "id": "635f61846eb4060000307a51",
+      "text": "code:bash",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195269,
+      "updated": 1667195272
+    },
+    {
+      "id": "635f61886eb4060000307a52",
+      "text": " $ sh all.sh|sort |uniq -c |sort -nr > out.txt",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195272,
+      "updated": 1667195292
+    },
+    {
+      "id": "635f61786eb4060000307a50",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195257,
+      "updated": 1667195257
+    },
+    {
+      "id": "635f60976eb4060000307a25",
+      "text": "注意: 雑なのでノイズが入っている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195032,
+      "updated": 1667195336
+    },
+    {
+      "id": "635f60c86eb4060000307a2a",
+      "text": "ランキングの上の方はアイコン記法とか日記ページの影響を受けている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195081,
+      "updated": 1667195097
+    },
+    {
+      "id": "635f60a06eb4060000307a27",
+      "text": "[https://gyazo.com/0117e3353924a91221cc412f525ff7a4]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195041,
+      "updated": 1667195065
+    },
+    {
+      "id": "635f60da6eb4060000307a2b",
+      "text": "この辺が面白そう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195099,
+      "updated": 1667195101
+    },
+    {
+      "id": "635f60b86eb4060000307a28",
+      "text": "[https://gyazo.com/a35e72f747d37b213860fa5aa84efb1d]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195065,
+      "updated": 1667195080
+    },
+    {
+      "id": "635f60c76eb4060000307a29",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195080,
+      "updated": 1667195080
+    },
+    {
+      "id": "635f608b6eb4060000307a22",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1667195020,
+      "updated": 1667195020
+    }
+  ]
+}

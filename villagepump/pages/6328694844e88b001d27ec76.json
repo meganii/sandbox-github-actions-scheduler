@@ -1,0 +1,561 @@
+{
+  "id": "6328694844e88b001d27ec76",
+  "title": "LogseqをGitHubで同期してみる",
+  "created": 1663592778,
+  "updated": 1665259870,
+  "lines": [
+    {
+      "id": "6328694844e88b001d27ec76",
+      "text": "LogseqをGitHubで同期してみる",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663592778,
+      "updated": 1663592778
+    },
+    {
+      "id": "63286949b8bbfc00001fbaa2",
+      "text": "[はるひ.icon]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663592778,
+      "updated": 1663592779
+    },
+    {
+      "id": "63286953b8bbfc00001fbaa5",
+      "text": "\t[Logseq] Windows版とiOS版の同期をこころみる",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663592788,
+      "updated": 1663595247
+    },
+    {
+      "id": "6328694ab8bbfc00001fbaa3",
+      "text": "\t\tiCloudがうまく働かないので",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663592779,
+      "updated": 1663593193
+    },
+    {
+      "id": "63286ae7b8bbfc00001fbaad",
+      "text": "\t\t[GitHub]を使うといけるらしい",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663593193,
+      "updated": 1663593202
+    },
+    {
+      "id": "63286af7b8bbfc00001fbab3",
+      "text": " \t\tGitHubとはなんすか、状態",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663593208,
+      "updated": 1663593211
+    },
+    {
+      "id": "63286961b8bbfc00001fbaa6",
+      "text": "\t\t公式の同期機能までの間に合わせ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663592802,
+      "updated": 1663592817
+    },
+    {
+      "id": "63286a2fb8bbfc00001fbaac",
+      "text": "\t\tどのくらいうまいこと同期してくれるのかは不明",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663593008,
+      "updated": 1663593017
+    },
+    {
+      "id": "63286971b8bbfc00001fbaa7",
+      "text": " \t[https://vstollen.me/blog/how-to-sync-logseq-between-ios-and-pc-without-i-cloud-drive/ How to sync Logseq between IOS and PC without iCloud Drive - Vincent's tech blog]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663592818,
+      "updated": 1663593206
+    },
+    {
+      "id": "6328697cb8bbfc00001fbaa8",
+      "text": "  \tここ(ブログ)を参考に",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663592829,
+      "updated": 1663594857
+    },
+    {
+      "id": "632869b1b8bbfc00001fbaaa",
+      "text": "\t とりあえずLogseqのGraph(ScrapboxでいうProject)をバックアップとって、それで試そう",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663592883,
+      "updated": 1663593224
+    },
+    {
+      "id": "63286a10b8bbfc00001fbaab",
+      "text": " \t\tLogseqでエクスポートしたフォルダを読み込んでGraphにして、暗号化もオンにしておこう",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663592977,
+      "updated": 1663594317
+    },
+    {
+      "id": "63286b0ab8bbfc00001fbab4",
+      "text": " \t\tフォルダをLogseqが読み込んでくれない・・・",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663593228,
+      "updated": 1663594335
+    },
+    {
+      "id": "63286b24b8bbfc00001fbab5",
+      "text": " \t\t\tこんなとこでつまずくとは",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663593254,
+      "updated": 1663593827
+    },
+    {
+      "id": "63286d63b8bbfc00001fbab6",
+      "text": " \t\t新規ファイルを作成し、バックアップをインポートすることで解決",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663593828,
+      "updated": 1663599779
+    },
+    {
+      "id": "63286f19b8bbfc00001fbab7",
+      "text": " \t\t\tインポート時にファイルを複数選択できなかったので、opmlではなくjsonに",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663594267,
+      "updated": 1663594344
+    },
+    {
+      "id": "6328701db8bbfc00001fbab8",
+      "text": " \t\t\t少し不安定になったが待ってたら見る限りもとの同じGraphが再現された！よかったー",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663594527,
+      "updated": 1663594585
+    },
+    {
+      "id": "632875e5b8bbfc00001fbacb",
+      "text": " \t\t\tお気に入りは保持されていない",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663596007,
+      "updated": 1663596013
+    },
+    {
+      "id": "63287069b8bbfc00001fbab9",
+      "text": "\tGitHub",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663594602,
+      "updated": 1663594606
+    },
+    {
+      "id": "63287070b8bbfc00001fbaba",
+      "text": "\t\tGitHubの垢作成、デスクトップアプリをインストール",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663594610,
+      "updated": 1663594887
+    },
+    {
+      "id": "632870dcb8bbfc00001fbabd",
+      "text": "\t\t[LogseqをGitHubで同期してみる#63286971b8bbfc00001fbaa7] のブログでは",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663594718,
+      "updated": 1663594871
+    },
+    {
+      "id": "63287117b8bbfc00001fbabf",
+      "text": "\t\t\tコマンドを手打ちしてやってるが、",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663594777,
+      "updated": 1663594790
+    },
+    {
+      "id": "632870ebb8bbfc00001fbabe",
+      "text": "\t\t\t>If you aren't comfortable using the command line, there are graphical clients for Git like [GitKraken] or [GitHub Desktop].",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1663594732,
+      "updated": 1663596769
+    },
+    {
+      "id": "6328712ab8bbfc00001fbac0",
+      "text": "\t\t\tというのは、graphicalなclientsを使ってもできるよ、と言っているんだと思うので、そうする",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663594795,
+      "updated": 1663594834
+    },
+    {
+      "id": "63287091b8bbfc00001fbabb",
+      "text": "\t\t今回のためのプライベートリポジトリ作成",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663594642,
+      "updated": 1663594655
+    },
+    {
+      "id": "632870adb8bbfc00001fbabc",
+      "text": "\t\t\tあんま見られたくないこと書いてるけど、まあ大丈夫だよな",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663594671,
+      "updated": 1663594682
+    },
+    {
+      "id": "632a2b8179d3a90000abba44",
+      "text": "\t\t\tprivateなら大丈夫[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1663708034,
+      "updated": 1663708038
+    },
+    {
+      "id": "632a2b8579d3a90000abba45",
+      "text": "\t\t\t\t企業たちの自社のソースコードを普通に入れたりしている",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1663708038,
+      "updated": 1663708058
+    },
+    {
+      "id": "632a2b9f79d3a90000abba46",
+      "text": "\t\t\t\t[sta.icon]もDropbox代わりで色々ぶっこんでる",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1663708063,
+      "updated": 1663708071
+    },
+    {
+      "id": "632a2ba979d3a90000abba47",
+      "text": "\t\t\t\t\t[物置としての GitHub - Qiita https://qiita.com/sta/items/9f146817f1335a6d9306]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1663708073,
+      "updated": 1663708073
+    },
+    {
+      "id": "63287196b8bbfc00001fbac1",
+      "text": "\t\tリポジトリをローカルにクローンした",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663594904,
+      "updated": 1663594919
+    },
+    {
+      "id": "632871b9b8bbfc00001fbac3",
+      "text": "\t\t\tGitのバージョン管理だとか、GitHubのソースコード管理の意味がわかってなかったが、なるほどね、そんな感じなのね",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663594939,
+      "updated": 1663595155
+    },
+    {
+      "id": "63287222b8bbfc00001fbac5",
+      "text": "\t\tクローンしたフォルダ直下に件のgraphを移動",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663595044,
+      "updated": 1663595332
+    },
+    {
+      "id": "63287243b8bbfc00001fbac6",
+      "text": "\t\t\t同じく直下にある.git というフォルダは無視でいいのかな",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663595076,
+      "updated": 1663595123
+    },
+    {
+      "id": "6328784ae5172d00006a180a",
+      "text": "\t\t\t その中に過去のバージョンとかが保存されている[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1663596620,
+      "updated": 1663596637
+    },
+    {
+      "id": "6328785fb8bbfc00001fbad8",
+      "text": "\t\t\t なるほど[はるひ.icon]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663596641,
+      "updated": 1663596646
+    },
+    {
+      "id": "632872d0b8bbfc00001fbac7",
+      "text": "\t\t\tあと、さっきし忘れてたけど、一応Logseqの機能でgraphの暗号化もしておく",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663595217,
+      "updated": 1663595363
+    },
+    {
+      "id": "632873d4b8bbfc00001fbac9",
+      "text": "\t\tあとはオンライン上のリポジトリに送る感じか",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663595477,
+      "updated": 1663595504
+    },
+    {
+      "id": "632873f8b8bbfc00001fbaca",
+      "text": "\t\t\tまず変更点をcommitして、そのあとリモートにpushするのか",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663595513,
+      "updated": 1663595709
+    },
+    {
+      "id": "6328773eb8bbfc00001fbacc",
+      "text": "\t\t\t何回か編集→commitを繰り返していたら、エラーが出てしまった",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663596352,
+      "updated": 1663596376
+    },
+    {
+      "id": "63287d8db8bbfc000009cf32",
+      "text": "\t\t\t\tなぜ急にエラーなのか不明",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663597966,
+      "updated": 1663598016
+    },
+    {
+      "id": "63287756b8bbfc00001fbacd",
+      "text": "\t\t\t\t>On branch main",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663596376,
+      "updated": 1663596388
+    },
+    {
+      "id": "63287763b8bbfc00001fbace",
+      "text": "    > Your branch is based on 'origin/main', but the upstream is gone.",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663596388,
+      "updated": 1663596388
+    },
+    {
+      "id": "63287763b8bbfc00001fbacf",
+      "text": "    >   (use \"git branch --unset-upstream\" to fixup)",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663596388,
+      "updated": 1663596388
+    },
+    {
+      "id": "63287763b8bbfc00001fbad0",
+      "text": "    > ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663596388,
+      "updated": 1663596388
+    },
+    {
+      "id": "63287763b8bbfc00001fbad1",
+      "text": "    > Untracked files:",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663596388,
+      "updated": 1663596388
+    },
+    {
+      "id": "63287763b8bbfc00001fbad2",
+      "text": "    >   (use \"git add <file>...\" to include in what will be committed)",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663596388,
+      "updated": 1663596388
+    },
+    {
+      "id": "63287763b8bbfc00001fbad4",
+      "text": "    > ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663596388,
+      "updated": 1663596388
+    },
+    {
+      "id": "63287763b8bbfc00001fbad5",
+      "text": "    > nothing added to commit but untracked files present (use \"git add\" to track)",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663596388,
+      "updated": 1663596388
+    },
+    {
+      "id": "6328694db8bbfc00001fbaa4",
+      "text": "\t\t\t\tざっとググってもみんなコマンドラインを使って対処していて参考にしづらいなー",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663592782,
+      "updated": 1663596430
+    },
+    {
+      "id": "632878bee5172d00006a180b",
+      "text": "\t\t\t\t　結局コマンドでやるほうが簡単かも？[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1663596736,
+      "updated": 1663596743
+    },
+    {
+      "id": "632a2b0979d3a90000abba43",
+      "text": "\t\t\t\t　\t+1[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1663707914,
+      "updated": 1663707914
+    },
+    {
+      "id": "63287c8cb8bbfc000009cf2c",
+      "text": "\t\t\t\t　確かに🦀",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663597709,
+      "updated": 1663597714
+    },
+    {
+      "id": "63287c92b8bbfc000009cf2d",
+      "text": "\t\t\t\t　GitHub Desktopから連携したGit Bashを直接開く動きをやってみた[はるひ.icon]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663597715,
+      "updated": 1663597808
+    },
+    {
+      "id": "63287ffce5172d0000113b73",
+      "text": "\t\t\t\t　 別のcloneを作ってcommitのところからコマンドラインでやり直したほうがクリーンかも[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1663598591,
+      "updated": 1663598881
+    },
+    {
+      "id": "63288077e5172d0000113b75",
+      "text": "\t\t\t\t　 　[LogseqをGitHubで同期してみる#63287222b8bbfc00001fbac5]は変更後のgraphでよさそう",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1663598713,
+      "updated": 1663598895
+    },
+    {
+      "id": "63288481b8bbfc000009cf36",
+      "text": "\t\t\t\t　 わかりました[はるひ.icon]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663599746,
+      "updated": 1663599756
+    },
+    {
+      "id": "63288593b8bbfc000009cf3a",
+      "text": "\t\t\t\t　 \t書いてあること真似するくらいならできそうだなと思います",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663600020,
+      "updated": 1663600056
+    },
+    {
+      "id": "63287d4bb8bbfc000009cf2e",
+      "text": "\t\t\t\t[https://www.curict.com/item/dc/dca9878.html Git status で メッセージ \"Your branch is based on 'origin/ブランチ名', but the upstream is gone.\" が表示される。]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663597900,
+      "updated": 1663597907
+    },
+    {
+      "id": "63287d52b8bbfc000009cf2f",
+      "text": "    \t多分似た症状なので真似してみる",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663597907,
+      "updated": 1663597916
+    },
+    {
+      "id": "63287d5bb8bbfc000009cf30",
+      "text": "    \t「追跡をやめる」",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663597916,
+      "updated": 1663597932
+    },
+    {
+      "id": "63287e94b8bbfc000009cf33",
+      "text": "    \t\tbut the upstream is gone は消えてくれた",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663598229,
+      "updated": 1663598249
+    },
+    {
+      "id": "63287f3cb8bbfc000009cf34",
+      "text": "    \t\tUntracked files:・・・の対処をぐぐると、みんなそのファイルを消したいみたいなバイブス",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663598397,
+      "updated": 1663598474
+    },
+    {
+      "id": "63287f7db8bbfc000009cf35",
+      "text": "    \t\t\tそういうわけじゃないと思うんだよなー",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663598463,
+      "updated": 1663599769
+    },
+    {
+      "id": "6328e9d2b8bbfc00007fe50a",
+      "text": " やりなおし",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663625683,
+      "updated": 1663625686
+    },
+    {
+      "id": "63291150b8bbfc00003a7413",
+      "text": " \t30分くらいさわってみたけど、何かしらエラーがでてきて全然すすまねー",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663635794,
+      "updated": 1663635969
+    },
+    {
+      "id": "63291202b8bbfc00003a7417",
+      "text": " \t\tInitial commit Untracked files:",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663635972,
+      "updated": 1663635979
+    },
+    {
+      "id": "6329120bb8bbfc00003a7418",
+      "text": " \t\t\tやっぱ[LogseqをGitHubで同期してみる#63287f3cb8bbfc000009cf34]だ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663635980,
+      "updated": 1663636069
+    },
+    {
+      "id": "63291224b8bbfc00003a7419",
+      "text": " \t\t\tこれはステージング、[ワーキングディレクトリ]とかの概念を理解しないとわかんない話ぽい",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663636006,
+      "updated": 1663636058
+    },
+    {
+      "id": "63291344e5172d0000d62467",
+      "text": " \t\t\tブランチを切り替えるとかマージするとかのタイミングで出そうなエラー[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1663636292,
+      "updated": 1663636332
+    },
+    {
+      "id": "6329136de5172d0000d62468",
+      "text": " \t\t\t 今は必要なさそうな操作の気がするが…",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1663636333,
+      "updated": 1663636533
+    },
+    {
+      "id": "63291439e5172d0000d62469",
+      "text": " \t\t\t どんな状況で出たエラーか書いてもらえるともう少しわかるかもです",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1663636537,
+      "updated": 1663636593
+    },
+    {
+      "id": "63292aceb8bbfc0000e40120",
+      "text": " \t\t\t ありがとう　助かります😭[はるひ.icon]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663642320,
+      "updated": 1663642461
+    },
+    {
+      "id": "63292addb8bbfc0000e40121",
+      "text": " \t\t\t ちょっとこのときは遊びで試行錯誤してみようくらいのマインドだったんで全部わすれた",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663642335,
+      "updated": 1663642428
+    },
+    {
+      "id": "632911b8b8bbfc00003a7416",
+      "text": " \t\tinvalid path",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663635897,
+      "updated": 1663636040
+    },
+    {
+      "id": "63291247b8bbfc00003a741a",
+      "text": " \t\t\tググったら[Mijinko_SD.icon]さんのScrapboxがきれいにヒットした",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663636040,
+      "updated": 1663636040
+    },
+    {
+      "id": "6341d94cb8bbfc00007a072e",
+      "text": "",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1665259853,
+      "updated": 1665259853
+    },
+    {
+      "id": "6341d94cb8bbfc00007a072f",
+      "text": "これ早く再開しないと公式の同期機能に追いつかれてしまう[はるひ.icon]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1665259853,
+      "updated": 1665259870
+    },
+    {
+      "id": "63287770b8bbfc00001fbad6",
+      "text": "",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1663596401,
+      "updated": 1663596401
+    }
+  ]
+}

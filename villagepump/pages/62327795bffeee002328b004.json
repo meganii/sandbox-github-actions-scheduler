@@ -1,0 +1,253 @@
+{
+  "id": "62327795bffeee002328b004",
+  "title": "Google Driveと連携してScrapboxをファイルシステム化",
+  "created": 1647474581,
+  "updated": 1647483416,
+  "lines": [
+    {
+      "id": "62327795bffeee002328b004",
+      "text": "Google Driveと連携してScrapboxをファイルシステム化",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647474581,
+      "updated": 1647474585
+    },
+    {
+      "id": "62327795c1f87f0000cab6e5",
+      "text": "from [ファイルシステムをScrapbox化したい]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647474581,
+      "updated": 1647474581
+    },
+    {
+      "id": "62327795c1f87f0000cab6e6",
+      "text": " Google Driveと連携すればScrapboxのファイルシステム化が実現できる?[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647474581,
+      "updated": 1647474632
+    },
+    {
+      "id": "62327795c1f87f0000cab6e7",
+      "text": " 　Google Driveでは階層管理せず、全部同階層に置く",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647474581,
+      "updated": 1647474635
+    },
+    {
+      "id": "62327795c1f87f0000cab6e8",
+      "text": " 　Google Driveに新しいファイルを追加すると、そのファイルへのScrapboxのページが作成される様にする",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647474581,
+      "updated": 1647481804
+    },
+    {
+      "id": "62327795c1f87f0000cab6e9",
+      "text": " 　ファイルのScrapboxページから、うまい事ローカルのGDrive同期ファイルを開ける様にする",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647474581,
+      "updated": 1647474635
+    },
+    {
+      "id": "62327795c1f87f0000cab6ea",
+      "text": " 　 これはUserScriptで頑張る",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647474581,
+      "updated": 1647474635
+    },
+    {
+      "id": "623278cf1280f00000d54210",
+      "text": " 　 クラウドのURLを開くのはできるだろうけど、ローカルは難しそう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647474895,
+      "updated": 1647474909
+    },
+    {
+      "id": "623278dc1280f00000d54211",
+      "text": " 　  安全性の観点から、web browserは勝手にローカルファイルを開けないようになっている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647474909,
+      "updated": 1647474944
+    },
+    {
+      "id": "623296841280f00000fe4e31",
+      "text": " 　  だと思っているんだけど、できたりする？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647482500,
+      "updated": 1647482521
+    },
+    {
+      "id": "62327a76c1f87f00005a285c",
+      "text": "　  [File URI Scheme](e.g. `file:///Volumes/GoogleDrive/...`)に遷移させる事が出来れば可能?[blu3mo.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647475319,
+      "updated": 1647482542
+    },
+    {
+      "id": "623293d5c1f87f00006a571e",
+      "text": "　  　そこからローカルのアプリで立ち上げさせるのが難しいのかもしれない",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647481814,
+      "updated": 1647481833
+    },
+    {
+      "id": "623293eac1f87f00006a571f",
+      "text": "　  　でもこれは結構実現したいのでChrome拡張でもいいので作りたい",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647481834,
+      "updated": 1647481848
+    },
+    {
+      "id": "623299dd1280f000004da6cf",
+      "text": "　  　 拡張ならいけるっぽい[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647483358,
+      "updated": 1647483367
+    },
+    {
+      "id": "623299e61280f000004da6d0",
+      "text": "　  　  https://github.com/tksugimoto/chrome-extension_open-local-file-link",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647483367,
+      "updated": 1647483416
+    },
+    {
+      "id": "623296ce1280f00000fe4e34",
+      "text": "　   `window.open()`で開けるかなあ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647482575,
+      "updated": 1647482618
+    },
+    {
+      "id": "623296d91280f00000fe4e35",
+      "text": "　    code:js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647482586,
+      "updated": 1647482588
+    },
+    {
+      "id": "623296db1280f00000fe4e36",
+      "text": "　     window.open(\"file:///\")",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647482588,
+      "updated": 1647482596
+    },
+    {
+      "id": "623296fb1280f00000fe4e37",
+      "text": "　    何も起きない@Android やっぱだめか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647482620,
+      "updated": 1647482635
+    },
+    {
+      "id": "623299f2e5172d0000686d6a",
+      "text": "　    [\" Not allowed to load local resource: file:///]といわれた@Chrome[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647483379,
+      "updated": 1647483394
+    },
+    {
+      "id": "62327795c1f87f0000cab6eb",
+      "text": " 嬉しい点",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647474581,
+      "updated": 1647474621
+    },
+    {
+      "id": "62327795c1f87f0000cab6ec",
+      "text": " 　Scrapboxのファイルアップロード機能と異なり、ファイルを何度でも編集できる",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647474581,
+      "updated": 1647474621
+    },
+    {
+      "id": "62327a67c1f87f00005a285a",
+      "text": " 　 ので、編集中のファイルも管理できる",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647475304,
+      "updated": 1647475314
+    },
+    {
+      "id": "623297361280f00000fe4e38",
+      "text": " 　  あーだからlocal fileを直接開きたいのか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647482679,
+      "updated": 1647482739
+    },
+    {
+      "id": "6232974b1280f00000fe4e39",
+      "text": " 　   Google Driveのweb appからだと、一部のファイルしか編集できない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647482700,
+      "updated": 1647482730
+    },
+    {
+      "id": "62329370c1f87f00009015b5",
+      "text": " 　 ただファイルをアーカイブ/共有したいのではなく、[ファイルシステムをScrapbox化したい]ので、これがとても大事[blu3mo.icon*2]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647481713,
+      "updated": 1647481748
+    },
+    {
+      "id": "62327795c1f87f0000cab6ed",
+      "text": " 　Google Docs/Slides等も他ファイルと一緒に扱える",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647474581,
+      "updated": 1647474621
+    },
+    {
+      "id": "62327e87c1f87f0000ecf5c0",
+      "text": "",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647476359,
+      "updated": 1647476360
+    },
+    {
+      "id": "62327e87c1f87f0000ecf5c1",
+      "text": "　実装が大変そうな点",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647476360,
+      "updated": 1647476363
+    },
+    {
+      "id": "62327e8bc1f87f0000ecf5c2",
+      "text": "　　ファイル名変更に追従するの辛そう",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647476363,
+      "updated": 1647476373
+    },
+    {
+      "id": "623277f3c1f87f0000aec21e",
+      "text": "",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647474675,
+      "updated": 1647474675
+    },
+    {
+      "id": "623279021280f00000d54212",
+      "text": "[空間アプリ]のAWSをGoogle Driveに入れ替えたみたいな？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647474947,
+      "updated": 1647474979
+    },
+    {
+      "id": "623279221280f00000d54214",
+      "text": " あれはゴミ箱っぽい扱いだからちょっと違うか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647474979,
+      "updated": 1647474989
+    },
+    {
+      "id": "623279031280f00000d54213",
+      "text": " 空間アプリや現在のScrapboxファイルアップロード機能だと編集中のファイルを管理できないのが悲しい[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647474948,
+      "updated": 1647475212
+    },
+    {
+      "id": "62327a0dc1f87f0000efaa9f",
+      "text": "",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1647475214,
+      "updated": 1647475214
+    }
+  ]
+}

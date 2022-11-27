@@ -1,0 +1,1443 @@
+{
+  "id": "5fa6744ecf2d67002445a652",
+  "title": "(WIP) Vim mode for scrapbox",
+  "created": 1604744275,
+  "updated": 1644379503,
+  "lines": [
+    {
+      "id": "5fa6744ecf2d67002445a652",
+      "text": "(WIP) Vim mode for scrapbox",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744275,
+      "updated": 1605383671
+    },
+    {
+      "id": "5fa6746e1280f000005c039e",
+      "text": "[/emoji/scrapbox.icon]を[Vim]のように操作できる[UserScript]を作る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744319,
+      "updated": 1604744473
+    },
+    {
+      "id": "5fa674fc1280f000005c03a7",
+      "text": " まだ構想段階",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744461,
+      "updated": 1604744466
+    },
+    {
+      "id": "5fa674e11280f000005c03a6",
+      "text": " 12月までに完成すればVim Advent Calendarのネタにできそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744434,
+      "updated": 1604843486
+    },
+    {
+      "id": "5fa7f7c91280f000003ee8cc",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604843465,
+      "updated": 1604843465
+    },
+    {
+      "id": "5fa6746e1280f000005c039f",
+      "text": "実装",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744319,
+      "updated": 1604744321
+    },
+    {
+      "id": "5fa7f78d1280f000003ee8cb",
+      "text": " [Mousetrap]を使うと意外と簡単に実装できそうな気がしてきた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604843406,
+      "updated": 1604843426
+    },
+    {
+      "id": "5fa7f8051280f000003ee8cd",
+      "text": "  [- cdnjsからのimport方法：[/takker/Mousetrap#5fa7f5751280f000000b710e]]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604843526,
+      "updated": 1604848440
+    },
+    {
+      "id": "5fa80b141280f000003ee9f7",
+      "text": "  [Mousetrap]の使用方法をこっちに書いたほうがよさそうだな[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604848404,
+      "updated": 1604848431
+    },
+    {
+      "id": "5fa6746f1280f000005c03a0",
+      "text": "\tKeyboardEventを捕捉していろいろやる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744321,
+      "updated": 1604744340
+    },
+    {
+      "id": "5fa674821280f000005c03a1",
+      "text": "\tこの辺を参考にする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744340,
+      "updated": 1604744344
+    },
+    {
+      "id": "5fa674861280f000005c03a2",
+      "text": "\t [/foldrr/scrapbox-shortcut]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744344,
+      "updated": 1604744390
+    },
+    {
+      "id": "5fa674ae1280f000005c03a4",
+      "text": "\t [/customize/キーボードだけでページ遷移]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744384,
+      "updated": 1604744390
+    },
+    {
+      "id": "5fa674471280f000005c0399",
+      "text": "　文字入力や移動の方法は[/takker/external-completion]で使ったcodeを流用できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744280,
+      "updated": 1604744430
+    },
+    {
+      "id": "5fa6761f4bb2e20000f28a0c",
+      "text": "　モードどうやって表示したらいいだろう",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604744678,
+      "updated": 1604744683
+    },
+    {
+      "id": "5fa676254bb2e20000f28a0d",
+      "text": "　 [右下の通信ステータス]の隣に出すとか？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1604744684,
+      "updated": 1644379503
+    },
+    {
+      "id": "5fa676e21280f000005c03ad",
+      "text": "　 この辺は好みかなあ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744947,
+      "updated": 1604744953
+    },
+    {
+      "id": "5fa676e81280f000005c03ae",
+      "text": "　 \tとりあえず`<div>`でmode表示欄を作っておいて、配置や見た目は各自でCSS書いて調節する感じで",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744954,
+      "updated": 1604744987
+    },
+    {
+      "id": "5fa6796d1280f000001b53d7",
+      "text": "　単語単位の移動が難しいかも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745599,
+      "updated": 1604745607
+    },
+    {
+      "id": "5fa679751280f000001b53d8",
+      "text": "　\t`Prioritize Outline-edit key bindings`をoffにしてもらえばなんとかなるか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745607,
+      "updated": 1604745659
+    },
+    {
+      "id": "5fa680f71280f00000a78b7a",
+      "text": "　\t もしくは`split`などを使って単語区切りを計算する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604747528,
+      "updated": 1604747553
+    },
+    {
+      "id": "5fa679a91280f000001b53da",
+      "text": "　\t`W`とかは、行からblankを抽出し、その座標を計算する必要が出てくる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745659,
+      "updated": 1604745695
+    },
+    {
+      "id": "5fa679da1280f000001b53db",
+      "text": "　検索系も難しそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745708,
+      "updated": 1604745779
+    },
+    {
+      "id": "5fa680a71280f00000a78b79",
+      "text": "　 browser標準の検索で代替可能",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604747449,
+      "updated": 1604747459
+    },
+    {
+      "id": "5fa679e21280f000001b53dc",
+      "text": "　あと[矩形選択]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745716,
+      "updated": 1604745792
+    },
+    {
+      "id": "5fa67aa64bb2e20000f476d4",
+      "text": "　まあそこまで厳密に再現しなくてもって気はする[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604745837,
+      "updated": 1604745847
+    },
+    {
+      "id": "5fa67ab04bb2e20000f476d5",
+      "text": "　 モードと少しのオペレータ、モーションがあればそこそこ満足しそう",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604745847,
+      "updated": 1604745876
+    },
+    {
+      "id": "5fa7f8b51280f000003ee8ce",
+      "text": "　APIの設計",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604843702,
+      "updated": 1604843707
+    },
+    {
+      "id": "5fa807811280f000003ee9d3",
+      "text": "　 その1",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847490,
+      "updated": 1604847494
+    },
+    {
+      "id": "5fa7fbcc1280f000003ee8d4",
+      "text": " 　 Vimにわかが考えたオレオレAPI",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844492,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fbe01280f000003ee8d5",
+      "text": " 　  勝手に変えちゃって下さい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844513,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fd4c4bb2e200000e278c",
+      "text": " 　   重箱の隅をつつくようであれだけど、Plug内のよく見る記法が `foo-bar` スタイルなので変えました",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604844875,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fd6b1280f000003ee8e6",
+      "text": " 　   [- それは知らなかったです。]てかよくよく思い出せば確かにどのpluginもそのスタイルだったような",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844907,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa800721280f000003ee8f3",
+      "text": " 　\tcode:mock.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604845682,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fbfa1280f000003ee8d6",
+      "text": " 　\t // <Plug>(enter-normal)をNormal modeに移動するコマンドにしてみた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844539,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7f8c51280f000003ee8d0",
+      "text": " 　\t ScrapVim.bind({type: ['input','visual'], before: ['<ESC>', '<c-[>'], after: '<Plug>(enter-normal)'});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604843718,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fdc41280f000003ee8e9",
+      "text": " 　\t // ↑複数のkey mapに同じcommandを割り当てるときはlistを使う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844997,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fa861280f000003ee8d3",
+      "text": " 　\t ScrapVim.bind({type: 'input', before: 'jj', after: '<ESC>'});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844167,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fde61280f000003ee8ea",
+      "text": " 　\t標準のkey bindを予め定義しておく",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604845031,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9b5",
+      "text": " 　  Plugはユーザーに好き勝手マッピングさせるがデフォルトマップは提供しないための物なので、本体（？）側は用意しなくてもいい気がする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9b6",
+      "text": " 　   統一したほうがsystem作りやすいかなと思ったのですが、止めたほうがいいかなあ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9b7",
+      "text": " 　    あー、Vimのマッピングシステム知ってるもんで、つい合わせようと…すみません[kuuote.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9b8",
+      "text": "      本当に合わせようとすると`noremap`と`nmap`のちがいとかも実装しないといけなくなるのですが、ぶっちゃけ`nmap`の用途って`<Plug>(...)`の割当くらいしかないし、別に実装しなくてもいいよね？と思ってやめました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9b9",
+      "text": "       めっちゃわかる[kuuote.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9ba",
+      "text": "       自由度は下がるけど、[evil (Emacs)]みたいにやると楽そうな気はする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604848024
+    },
+    {
+      "id": "5fa806bd1280f000003ee9bb",
+      "text": "        キーストロークから関数へのマップだけを提供するスタイル",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9bc",
+      "text": "         下の例に合わせるなら、`ScrapVim.bind({type: 'normal', key: 'j', function: scrapVimDown})` 的なのしか受け付けないイメージ2020/11/8",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9bd",
+      "text": " 　\t あれこれだと`noremap`と`map`の挙動が混ざって直感と合わない？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9be",
+      "text": " 　\t  ↓のときは`jj`に`<Plug>(scroll-top)`が割り当てられるようにしたいけど",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9bf",
+      "text": " 　\t   `nmap`の挙動",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9c0",
+      "text": " 　\t \tcode:javascript",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9c1",
+      "text": " 　\t \t ScrapVim.bind({type: 'normal', before: '<ESC>', after: '<Plug>(scroll-top)'});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9c2",
+      "text": " 　\t \t ScrapVim.bind({type: 'normal', before: 'jj', after: '<ESC>'});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9c3",
+      "text": " 　\t \t↓のときは`<c-j>`を`j`二回押下、つまりスクロール2つ分の操作に割り当てたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9c4",
+      "text": " 　\t \t　`nnoremap`の挙動",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9c5",
+      "text": " 　\t \tcode:javascript",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9c6",
+      "text": " 　\t \t ScrapVim.bind({type: 'normal', before: '<c-j>', after: 'jj'});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9c7",
+      "text": " 　\t \tだがどちらも`after`で指定してしまっている。違う挙動をするのに同じ引数layoutを使うのは[精神衛生]上よくなさそう?",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604848008
+    },
+    {
+      "id": "5fa806bd1280f000003ee9c8",
+      "text": " 　\t\tとすると標準動作は全部内部的に定義して、userには公開しないほうがいいかなあ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9c9",
+      "text": " 　\t\t Vim自体もそんな感じになってますね",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9ca",
+      "text": " 　\t\t  Cで実装されていて内部でディスパッチしてます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9cb",
+      "text": " 　\t\t 本家もそういう実装なのか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9cc",
+      "text": " 　\t\t  キーバインドから関数へマップされる層の上に入力を再帰的(or noremapの場合は直接下層に向けて)に解決するマッピング層が重なってる感じ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9cd",
+      "text": " 　\t\t  [https://gyazo.com/8c4d2f69b65b212032e0b374f7a327b2]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806bd1280f000003ee9ce",
+      "text": "      こうかなあ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847294,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa807af4bb2e200000e27aa",
+      "text": "       そうそう、そんな感じです",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604847533,
+      "updated": 1604847539
+    },
+    {
+      "id": "5fa807cd4bb2e200000e27ab",
+      "text": "        (ddは厳密には違うけど、一旦は考えないほうがよさげ)",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604847563,
+      "updated": 1604847575
+    },
+    {
+      "id": "5fa8091a1280f000003ee9df",
+      "text": "        あ、dはoperatorか (vimわからない)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847898,
+      "updated": 1604847910
+    },
+    {
+      "id": "5fa80c651280f00000a76342",
+      "text": "        `dw``de``d$`と同類？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604848742,
+      "updated": 1604848765
+    },
+    {
+      "id": "5fa80cae4bb2e200000e27b5",
+      "text": "         yes",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604848812,
+      "updated": 1604848813
+    },
+    {
+      "id": "5fa80cba4bb2e200000e27b6",
+      "text": "         d等を押すとオペレータ待機モードとかいうのに入って、そこでもう一度同じオペレータを押すと行に対して発動します",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604848823,
+      "updated": 1604848854
+    },
+    {
+      "id": "5fa80d7b1280f00000a76349",
+      "text": "         なるほど。繰り返しで行に対して発動と。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604849020,
+      "updated": 1604849065
+    },
+    {
+      "id": "5fa80da61280f00000a7634a",
+      "text": "         　`cc``yy`も同類か",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604849063,
+      "updated": 1604849075
+    },
+    {
+      "id": "5fa80db21280f00000a7634b",
+      "text": "         　`gg`は……流石に別ですかね",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604849075,
+      "updated": 1604849094
+    },
+    {
+      "id": "5fa80dd74bb2e200000e27b8",
+      "text": "         　 これはノーマルモードのコマンドですね",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604849109,
+      "updated": 1604849117
+    },
+    {
+      "id": "5fa80e901280f00000a7634f",
+      "text": "         　 なるほど",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604849297,
+      "updated": 1604849309
+    },
+    {
+      "id": "5fa80df61280f00000a7634c",
+      "text": "          　 vim-jpのbotに聞いてみましたが、関連のなさそうなcommandばかり出てきました。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604849143,
+      "updated": 1604849325
+    },
+    {
+      "id": "5fa80ead1280f00000a76350",
+      "text": "          　 確かに無関係のcommandだ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604849325,
+      "updated": 1604849325
+    },
+    {
+      "id": "5fa80e411280f00000a7634d",
+      "text": "         　",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604849218,
+      "updated": 1604849222
+    },
+    {
+      "id": "5fa80dcd4bb2e200000e27b7",
+      "text": " 　\t\t じゃあひとまずこれでいくか",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604849099,
+      "updated": 1604849105
+    },
+    {
+      "id": "5fa806a41280f000003ee92d",
+      "text": " \t code:mock.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847269,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fc2c1280f000003ee8d7",
+      "text": " 　\t ScrapVim.bind({type: 'normal', before: 'gg', after: '<Plug>(scroll-top)'});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844588,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fc5a1280f000003ee8d8",
+      "text": " 　\t ScrapVim.bind({type: 'normal', before: 'G', after: '<Plug>(scroll-bottom)'});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844635,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fc651280f000003ee8d9",
+      "text": " 　\t ScrapVim.bind({type: 'normal', before: '/', after: '<c-f>'});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844646,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fcb01280f000003ee8db",
+      "text": " 　\t ScrapVim.bind({type: 'normal', before: 'dd', after: '<Plug>(delete-line)'});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844720,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fe2a1280f000003ee8eb",
+      "text": " 　\t ScrapVim.bind({type: 'normal', before: 'v', after: '<Plug>(enter-visual)'});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604845098,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7feaa1280f000003ee8ef",
+      "text": " 　\t ScrapVim.bind({type: 'normal', before: 'V', after: '<Plug>(enter-visual-line)'});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604845227,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fe851280f000003ee8ed",
+      "text": " 　\t // 実装できるかわからないので保留",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604845190,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fe611280f000003ee8ec",
+      "text": " 　\t //ScrapVim.bind({type: 'normal', before: '<C-v>', after: '<Plug>(enter-visual-block)'});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604845154,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa7fe8f1280f000003ee8ee",
+      "text": " 　\t ScrapVim.bind({type: 'normal', before: 'w', after: '<Plug>(forward-word-head)'});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604845199,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa8002d1280f000003ee8f2",
+      "text": " 　\t ScrapVim.bind({type: 'normal', before: 'e', after: '<Plug>(forward-word-end)'});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604845614,
+      "updated": 1604847501
+    },
+    {
+      "id": "5fa806d21280f000003ee9d0",
+      "text": "　\t設計案その2",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847314,
+      "updated": 1604847332
+    },
+    {
+      "id": "5fa8031a4bb2e200000e2797",
+      "text": " 　\tcode:mock2.js",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604846360,
+      "updated": 1604847474
+    },
+    {
+      "id": "5fa803754bb2e200000e279b",
+      "text": " 　\t //toに関数を投げるとバインドを作成",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604846451,
+      "updated": 1604847474
+    },
+    {
+      "id": "5fa803224bb2e200000e2798",
+      "text": " 　\t ScrapVim.bind({type: 'normal', from: ['<Esc>', '<C-[>'], to: ScrapVim.enterNormal});",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604846367,
+      "updated": 1604847474
+    },
+    {
+      "id": "5fa8051d1280f000003ee91e",
+      "text": " \t そうか文字列以外にも函数を引数に渡せるんだった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604846878,
+      "updated": 1604847474
+    },
+    {
+      "id": "5fa8051d1280f000003ee91f",
+      "text": " \t  `ScrapVim.map`を別に用意する方が分かりやすいかもしれません",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604846878,
+      "updated": 1604847474
+    },
+    {
+      "id": "5fa8052c1280f000003ee927",
+      "text": " \t   悩んだ挙句に怠惰さ発現した結果こうなった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604846892,
+      "updated": 1604847474
+    },
+    {
+      "id": "5fa806261280f000003ee92a",
+      "text": " \t   `ScrapVim.bind`に統一でいいと思います。函数overload.",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847142,
+      "updated": 1604847474
+    },
+    {
+      "id": "5fa804f61280f000003ee90f",
+      "text": " \t code:mock2.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604846838,
+      "updated": 1604847480
+    },
+    {
+      "id": "5fa803c94bb2e200000e279d",
+      "text": " 　\t //toに文字列を投げるとマッピングを作成",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604846534,
+      "updated": 1604847480
+    },
+    {
+      "id": "5fa8039a4bb2e200000e279c",
+      "text": " 　\t ScrapVim.bind({type: 'normal', from: 'jj', to: '<Esc>'});",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604846487,
+      "updated": 1604847480
+    },
+    {
+      "id": "5fa8048d4bb2e200000e27a1",
+      "text": " 　\t ScrapVim.bind({type: 'normal', from: '<Plug>(insert-hoge)', to: 'ihoge<Esc>'});",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604846731,
+      "updated": 1604847490
+    },
+    {
+      "id": "5fa80aa71280f000003ee9f6",
+      "text": "   noremapデフォルトで、remapしたい場合はフラグを立てる方式でよさそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604848295,
+      "updated": 1604848301
+    },
+    {
+      "id": "5fa80a9e1280f000003ee9f5",
+      "text": "　\t code:mock2.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604848287,
+      "updated": 1604848293
+    },
+    {
+      "id": "5fa804a64bb2e200000e27a2",
+      "text": " 　\t ScrapVim.bind({type: 'normal', from: '<Space>hoge', to: '<Plug>(insert-hoge)', remap: true});",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604846757,
+      "updated": 1604847480
+    },
+    {
+      "id": "5fa8036b4bb2e200000e2799",
+      "text": " 　 こんな感じでどうでしょうか",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604846441,
+      "updated": 1604847480
+    },
+    {
+      "id": "5fa805981280f000003ee928",
+      "text": " 　  `after`が`before`に割り当てられるという形式でしょうか？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847001,
+      "updated": 1604847480
+    },
+    {
+      "id": "5fa805b94bb2e200000e27a5",
+      "text": " 　   ですね",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604847031,
+      "updated": 1604847480
+    },
+    {
+      "id": "5fa805da4bb2e200000e27a6",
+      "text": " 　   この並びなら`from,to`にでもしておけばよかったですね",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604847064,
+      "updated": 1604847480
+    },
+    {
+      "id": "5fa805e81280f000003ee929",
+      "text": " 　   じゃあそうしよう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847081,
+      "updated": 1604847480
+    },
+    {
+      "id": "5fa8065a1280f000003ee92b",
+      "text": " 　  `remap`のdefaultを`false`にしても良いんじゃないでしょうか？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847194,
+      "updated": 1604847480
+    },
+    {
+      "id": "5fa8066f1280f000003ee92c",
+      "text": " 　  \tどう考えたって普段よく使うのは`noremap`の方でしょうし",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847216,
+      "updated": 1604847480
+    },
+    {
+      "id": "5fa806954bb2e200000e27a7",
+      "text": " 　  \t ですよね",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604847251,
+      "updated": 1604847480
+    },
+    {
+      "id": "5fa806994bb2e200000e27a8",
+      "text": " 　  \t これのプラグインが生まれるとはあまり考えられないなあ",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604847255,
+      "updated": 1604847480
+    },
+    {
+      "id": "5fa806e81280f000003ee9d1",
+      "text": " 　  \t これの上にplugin作るくらいなら直接UserScriptいじってほしい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847337,
+      "updated": 1604847480
+    },
+    {
+      "id": "5fa807631280f000003ee9d2",
+      "text": " 　 mappingのparser",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847459,
+      "updated": 1604847516
+    },
+    {
+      "id": "5fa8079c1280f000003ee9d4",
+      "text": " 　 code:parser-mock2.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847516,
+      "updated": 1604847524
+    },
+    {
+      "id": "5fa807a41280f000003ee9d5",
+      "text": " 　  function parse(mapping) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847525,
+      "updated": 1604847550
+    },
+    {
+      "id": "5fa807bf1280f000003ee9d7",
+      "text": " 　  \tif (/^<Plug>/.test(mapping)) return mapping;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847551,
+      "updated": 1604847672
+    },
+    {
+      "id": "5fa80a511280f000003ee9f4",
+      "text": " 　  \treturn mapping.match(/<[^>]+?>|./g);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604848210,
+      "updated": 1604848228
+    },
+    {
+      "id": "5fa807bd1280f000003ee9d6",
+      "text": " 　  }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847550,
+      "updated": 1604847550
+    },
+    {
+      "id": "5fa804df1280f000003ee90d",
+      "text": "　  あー、`<Plug>`の先は解析しなくてもいいですね",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604846815,
+      "updated": 1604847627
+    },
+    {
+      "id": "5fa808104bb2e200000e27ad",
+      "text": "　   Vimに合わせるのが一番シンプルです",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604847630,
+      "updated": 1604847637
+    },
+    {
+      "id": "5fa808184bb2e200000e27ae",
+      "text": "　   `<Plug>`にマッチすると人間が入力できない文字に置換するだけ",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604847638,
+      "updated": 1604847661
+    },
+    {
+      "id": "5fa8087d1280f000003ee9da",
+      "text": "　   確かに解析する必要なかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847742,
+      "updated": 1604847742
+    },
+    {
+      "id": "5fa8089c1280f000003ee9db",
+      "text": "  \t正規表現、即席でできなさそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847773,
+      "updated": 1604847808
+    },
+    {
+      "id": "5fa808bf1280f000003ee9dc",
+      "text": "  \t\t少し考えるか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847808,
+      "updated": 1604847813
+    },
+    {
+      "id": "5fa808c51280f000003ee9dd",
+      "text": "  \t\t目標",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847813,
+      "updated": 1604847875
+    },
+    {
+      "id": "5fa808ce1280f000003ee9de",
+      "text": "  \t\t\t`'<Space>hoge'`→`['<Space>','h','o','g','e']`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604847822,
+      "updated": 1604847865
+    },
+    {
+      "id": "5fa809a44bb2e200000e27af",
+      "text": "  \t\t\tこれどうでしょうか",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604848035,
+      "updated": 1604848054
+    },
+    {
+      "id": "5fa809a74bb2e200000e27b0",
+      "text": "  \t\t\t `console.log('<Space>hoge'.match(/<[^>]+?>|./g))`'",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604848037,
+      "updated": 1604848114
+    },
+    {
+      "id": "5fa80a1c1280f000003ee9ee",
+      "text": "   \t\t\tおおすごい！",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604848156,
+      "updated": 1604848162
+    },
+    {
+      "id": "5fa80a211280f000003ee9ef",
+      "text": "   \t\t\t[https://gyazo.com/8f4eedcccc9560b09c6553b98e5e7f60]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604848162,
+      "updated": 1604848167
+    },
+    {
+      "id": "5fa80a261280f000003ee9f0",
+      "text": "　　　　　　[String.prototype.match() https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/match]でそういうことできるんですね",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604848167,
+      "updated": 1604848343
+    },
+    {
+      "id": "5fa80a694bb2e200000e27b2",
+      "text": "　　　　　　 なんかのプログラミング言語の実装講座でこれのクソ長いやつで字句解析してた覚えがある",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604848231,
+      "updated": 1604848254
+    },
+    {
+      "id": "5fa80aa84bb2e200000e27b3",
+      "text": "        JSは普段使いじゃないからよく知らなかったけどMDN見てたらできそうだったので",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604848294,
+      "updated": 1604848405
+    },
+    {
+      "id": "5fa80a3e1280f000003ee9f1",
+      "text": "　　　　　   `String.prototype.matchAll()`にはよくお世話になったけどmatchはほとんど使ったことなかったです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604848191,
+      "updated": 1604848373
+    },
+    {
+      "id": "5fa80aff4bb2e200000e27b4",
+      "text": "　　　　　    matchAll逆に知らなかった",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604848381,
+      "updated": 1604848536
+    },
+    {
+      "id": "5fa80be71280f00000a76340",
+      "text": "　　　　　    [/takker/カーソル行から特定の文字列を抽出するテスト]とかで使っていました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604848615,
+      "updated": 1604848634
+    },
+    {
+      "id": "5fa807fb4bb2e200000e27ac",
+      "text": "　\tMode",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604847609,
+      "updated": 1604847609
+    },
+    {
+      "id": "5fa7fce91280f000003ee8de",
+      "text": "　\t\tNormal mode",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844778,
+      "updated": 1604844782
+    },
+    {
+      "id": "5fa7fcee1280f000003ee8df",
+      "text": "　\t\t\tcursorをeditorにfocusさせるが、全ての文字入力を握りつぶす",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844783,
+      "updated": 1604844814
+    },
+    {
+      "id": "5fa7fd0e1280f000003ee8e0",
+      "text": "　\t\t\tcursorの形を変えてわかりやすくしておく",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844814,
+      "updated": 1604844833
+    },
+    {
+      "id": "5fac37511280f00000086ba1",
+      "text": "　\t\t\t[VimのNormal modeを実装してみる]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605121874,
+      "updated": 1605146070
+    },
+    {
+      "id": "5fa7fd201280f000003ee8e1",
+      "text": "　\t\tInput mode",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844833,
+      "updated": 1604844837
+    },
+    {
+      "id": "5fa7fd251280f000003ee8e2",
+      "text": "　\t\t\t通常状態",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844838,
+      "updated": 1604844841
+    },
+    {
+      "id": "5fa7fd291280f000003ee8e3",
+      "text": "　\t\tVisual mode",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844841,
+      "updated": 1604844859
+    },
+    {
+      "id": "5fa7fd3f1280f000003ee8e4",
+      "text": "　\t\t\t`v`などで開始",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844863,
+      "updated": 1604844876
+    },
+    {
+      "id": "5fa7fd4b1280f000003ee8e5",
+      "text": "　\t\t\tまたは選択範囲を表すDOMが表示されたときにも切り替える",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844876,
+      "updated": 1604844975
+    },
+    {
+      "id": "5fa80d401280f00000a76348",
+      "text": "　\t\t以下実装は後回し",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604848960,
+      "updated": 1604848974
+    },
+    {
+      "id": "5fa7fdaf1280f000003ee8e7",
+      "text": "　\t\tCommand mode",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844975,
+      "updated": 1604844980
+    },
+    {
+      "id": "5fa7fdb41280f000003ee8e8",
+      "text": "　\t\t\teditorにfocusがあたっていない状態",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604844980,
+      "updated": 1604844989
+    },
+    {
+      "id": "5fa80d0a1280f00000a76345",
+      "text": "　\t\t\tNormal modeから`:`でも切り替えられる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604848906,
+      "updated": 1604848928
+    },
+    {
+      "id": "5fa80d2c1280f00000a76346",
+      "text": "　\t\tTerminal mode",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604848940,
+      "updated": 1604848944
+    },
+    {
+      "id": "5fa80d301280f00000a76347",
+      "text": "　\t\t\tなんかやれたら面白そう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604848944,
+      "updated": 1604848990
+    },
+    {
+      "id": "5fa678571280f000001b53cf",
+      "text": "　他の方法 (ボツ)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745321,
+      "updated": 1604786345
+    },
+    {
+      "id": "5fa6785b1280f000001b53d0",
+      "text": "  [puppeteer]で強引に書き込む",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745324,
+      "updated": 1604786345
+    },
+    {
+      "id": "5fa678611280f000001b53d1",
+      "text": "   from[/scrapbox-drinkup/puppeteerでscrapboxを自動化してイテレーション資料を宣言的に完成させる (2019/9/5)#5d70fad8e22e91000004dec9]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745330,
+      "updated": 1604745339
+    },
+    {
+      "id": "5fa6786a1280f000001b53d2",
+      "text": "  \tかなり処理が重いので現実的でない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745340,
+      "updated": 1604786342
+    },
+    {
+      "id": "5fa718b34daa9200007b3b4d",
+      "text": "  Scrapboxクライアントを作るとか？",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1604786355,
+      "updated": 1604786362
+    },
+    {
+      "id": "5fa718ba4daa9200007b3b4e",
+      "text": "  \tアプリだと誰かやってた人がいたはず",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1604786362,
+      "updated": 1604786373
+    },
+    {
+      "id": "5fa718c44daa9200007b3b4f",
+      "text": "  \t本当の内部を触ることになるので色々大変そう",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1604786373,
+      "updated": 1604786383
+    },
+    {
+      "id": "5fa718db4daa9200007b3b50",
+      "text": "  \tこれならブラウザじゃなくてもできるというメリットはある",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1604786395,
+      "updated": 1604786409
+    },
+    {
+      "id": "5fa674b71280f000005c03a5",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744392,
+      "updated": 1604744392
+    },
+    {
+      "id": "5fa674491280f000005c039a",
+      "text": "Reference",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744283,
+      "updated": 1604744285
+    },
+    {
+      "id": "5fa6744b1280f000005c039c",
+      "text": " [/forum-jp/Vim入力モードが欲しいです]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744285,
+      "updated": 1604744311
+    },
+    {
+      "id": "5fa674671280f000005c039d",
+      "text": " 結構要望が多い",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744312,
+      "updated": 1604744318
+    },
+    {
+      "id": "5fa676b74bb2e20000f476cc",
+      "text": " vim-jpでもVimのキーバインドが使えないのが無理という話を聞いたことがある[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604744830,
+      "updated": 1604744859
+    },
+    {
+      "id": "5fa676de4bb2e20000f476cd",
+      "text": "  操作法の違いで使われないのはもったいないよなって気持ちがある",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604744869,
+      "updated": 1604744882
+    },
+    {
+      "id": "5fa6744a1280f000005c039b",
+      "text": "  本当にもったいない[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744285,
+      "updated": 1604744924
+    },
+    {
+      "id": "5fa676c21280f000005c03ab",
+      "text": "  正直SlackでチャットするよりScrapboxで[チャット]するほうがメリットが多い",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604744916,
+      "updated": 1604745033
+    },
+    {
+      "id": "5fa6785a4bb2e20000f476ce",
+      "text": "   わかる、意外とやりやすくて驚いた[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604745249,
+      "updated": 1604745260
+    },
+    {
+      "id": "5fa6788a4bb2e20000f476cf",
+      "text": "    体感的にSlackより安定してるし（これは使用人数の差とかもありそう）",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604745296,
+      "updated": 1604745317
+    },
+    {
+      "id": "5fa6788e1280f000001b53d3",
+      "text": "    5人くらいなら問題ないです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745376,
+      "updated": 1604745394
+    },
+    {
+      "id": "5fa678a21280f000001b53d4",
+      "text": "    10人以上になるとどうだろう？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745396,
+      "updated": 1604745425
+    },
+    {
+      "id": "5fa678dd1280f000001b53d6",
+      "text": "   [騙されたと思って一回Scrapboxをコミュニケーションツールとして使ってみて欲しい]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745455,
+      "updated": 1604745468
+    },
+    {
+      "id": "5fa677381280f000005c03b0",
+      "text": "  \tこの前`#vim-jp`ででていたchannel名のprefixがどうのこうのなんていうことに時間を費やさずにする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745033,
+      "updated": 1604745069
+    },
+    {
+      "id": "5fa6775d1280f000005c03b1",
+      "text": "  \tある意味channelを横断して会話するということが容易にできる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745071,
+      "updated": 1604745089
+    },
+    {
+      "id": "5fa677701280f000005c03b2",
+      "text": "  \tmentionをそのまま流用できないのは欠点かな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745089,
+      "updated": 1604787502
+    },
+    {
+      "id": "5fa71d2f4daa9200007b3b52",
+      "text": "\t\tSlackはどうなんだろうか",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1604787503,
+      "updated": 1604787510
+    },
+    {
+      "id": "5fa71d374daa9200007b3b53",
+      "text": "\t\t\t多分Vimのキーバインド使えないよね",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1604787511,
+      "updated": 1604787524
+    },
+    {
+      "id": "5fa741894bb2e20000580459",
+      "text": "\t\t\t 使えないですね、独自の[- 使いにくい]よくわからんキーバインドを強要されます",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604796808,
+      "updated": 1604796836
+    },
+    {
+      "id": "5fa75f261280f0000041479f",
+      "text": "\t\t\t あー、あの動いたり動かなかったりする妙なキーバインドのことですね",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604804390,
+      "updated": 1604804426
+    },
+    {
+      "id": "5fa75f4a1280f000004147a0",
+      "text": "\t\t\t 　cursorのfocusがあたっている場所によってキーバインドの中身が変わる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604804426,
+      "updated": 1604804471
+    },
+    {
+      "id": "5fa75f771280f000004147a2",
+      "text": "\t\t\t 　しかもどこにfocusがあたっているのかよくわからない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604804471,
+      "updated": 1604804482
+    },
+    {
+      "id": "5fa7fb4d4bb2e2000047a51c",
+      "text": "\t\t\t 　 それな[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604844366,
+      "updated": 1604844372
+    },
+    {
+      "id": "5fa7fb554bb2e2000047a51d",
+      "text": "\t\t\t 　 Qutebrowserで生きようとした時に一番の障害になるくらいUIが妙",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604844374,
+      "updated": 1604844420
+    },
+    {
+      "id": "5fa677171280f000005c03af",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604745001,
+      "updated": 1604745001
+    },
+    {
+      "id": "5fa69daad438750000fa6305",
+      "text": "水をさしてしまうかもしれないけど....",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1604754859,
+      "updated": 1604755419
+    },
+    {
+      "id": "5fa69dbad438750000fa6307",
+      "text": " [Qutebrowser]でScrapboxを使ってますが､キーボードで完結できてますよ[dnin.icon]",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1604754874,
+      "updated": 1613112353
+    },
+    {
+      "id": "5fa69db8d438750000fa6306",
+      "text": "\t\t矩形選択や単語単位の移動などは､やっぱり厳しくてArrow Keyが必要です",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1604754873,
+      "updated": 1604755489
+    },
+    {
+      "id": "5fa6a1434bb2e20000ad13fc",
+      "text": "\t\t前無理だったようなと思って再び試してみましたが、マウスで一度フォーカスしたらそこそこいけますね[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1604755721,
+      "updated": 1604755829
+    },
+    {
+      "id": "5fa6a00bd438750000092b72",
+      "text": " 問題はScrapboxを編集するためだけにわざわざ[Qutebrowser]を立ち上げる必要が出てしまうことです",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1604755468,
+      "updated": 1604804033
+    },
+    {
+      "id": "5fa72c0c1280f000001f85de",
+      "text": " \t[(WIP) Vim mode for scrapbox#5fa718b34daa9200007b3b4d]も同じ問題を孕んでいます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604791308,
+      "updated": 1604791329
+    },
+    {
+      "id": "5fa72c211280f000001f85df",
+      "text": "  Scrapbox内部APIにおけるクライアントとして振る舞うということのつもりで書きました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604791330,
+      "updated": 1604803940
+    },
+    {
+      "id": "5fa75d644daa92000008c8a6",
+      "text": "  \tなのでvimをクライアントにすることもできるのかなと（現実的に実装できるかはともかく",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1604803940,
+      "updated": 1604803982
+    },
+    {
+      "id": "5fa75e6c1280f0000041478a",
+      "text": "  \tああ内部を触るというのはそういうことですね。[\" 本当の内部を触ることになるので色々大変そう]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604804205,
+      "updated": 1604804237
+    },
+    {
+      "id": "5fa75ea71280f0000041479c",
+      "text": "  \t\tScrpaboxのindex.jsをhookして処理を割り込ませるとか？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604804263,
+      "updated": 1604804361
+    },
+    {
+      "id": "5fa75f091280f0000041479e",
+      "text": "  \t\t確かに現実的ではない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604804362,
+      "updated": 1604804371
+    },
+    {
+      "id": "5fa760604daa9200009bea1d",
+      "text": "  \t\tScrapboxの公式クライアントが行う通信を解析して模倣するということも理論的にはできそう",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1604804704,
+      "updated": 1604804741
+    },
+    {
+      "id": "5fa75e9a1280f00000414799",
+      "text": "   うーん、vimのbackgroundでselenium/puppeteerを動かせばなんとか行けるかも知れません",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604804250,
+      "updated": 1604804250
+    },
+    {
+      "id": "5fa75e9a1280f0000041479a",
+      "text": "   \tperformanceがかなり心配ですが",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604804250,
+      "updated": 1604804250
+    },
+    {
+      "id": "5fa75ea31280f0000041479b",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604804260,
+      "updated": 1604804260
+    },
+    {
+      "id": "5fa75e0c1280f00000414788",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604804108,
+      "updated": 1604804108
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "5fc6cf1411bda2001e8c7861",
+  "title": "Qutebrowserで履歴からランダム表示",
+  "created": 1606864663,
+  "updated": 1606865153,
+  "lines": [
+    {
+      "id": "5fc6cf1411bda2001e8c7861",
+      "text": "Qutebrowserで履歴からランダム表示",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1606864663,
+      "updated": 1606864664
+    },
+    {
+      "id": "5fc6cf18d4387500001efded",
+      "text": "code:sh",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1606864664,
+      "updated": 1606865153
+    },
+    {
+      "id": "5fc6cf1ad4387500001efdef",
+      "text": " sqlite3 .local/share/qutebrowser/history.sqlite 'select url from History' | uniq > urls.txt && python3 randomopen.py",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1606864666,
+      "updated": 1606865043
+    },
+    {
+      "id": "5fc6cf19d4387500001efdee",
+      "text": "",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1606864666,
+      "updated": 1606864871
+    },
+    {
+      "id": "5fc6cf61d4387500001efdf0",
+      "text": "code:randomopen.py",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1606864737,
+      "updated": 1606864880
+    },
+    {
+      "id": "5fc6cff0d438750000a5b9ec",
+      "text": " import webbrowser",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1606864880,
+      "updated": 1606864881
+    },
+    {
+      "id": "5fc6cff0d438750000a5b9ed",
+      "text": " import random",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1606864881,
+      "updated": 1606864881
+    },
+    {
+      "id": "5fc6cff0d438750000a5b9ee",
+      "text": " ",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1606864881,
+      "updated": 1606864881
+    },
+    {
+      "id": "5fc6cff0d438750000a5b9ef",
+      "text": " with open('urls.txt', 'r') as f:",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1606864881,
+      "updated": 1606865049
+    },
+    {
+      "id": "5fc6cff0d438750000a5b9f0",
+      "text": "     urls = list(f.readlines())",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1606864881,
+      "updated": 1606864881
+    },
+    {
+      "id": "5fc6cff0d438750000a5b9f1",
+      "text": "     webbrowser.open(random.choice(urls))",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1606864881,
+      "updated": 1606864881
+    }
+  ]
+}

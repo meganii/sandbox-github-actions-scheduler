@@ -1,0 +1,1135 @@
+{
+  "id": "5f577aac13803b001e1a85e3",
+  "title": "マルチプロジェクト版ランダムジャンプUserScript",
+  "created": 1599568591,
+  "updated": 1661421074,
+  "lines": [
+    {
+      "id": "5f577aac13803b001e1a85e3",
+      "text": "マルチプロジェクト版ランダムジャンプUserScript",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568591,
+      "updated": 1599568591
+    },
+    {
+      "id": "5f577acf5b98c20000dd7635",
+      "text": "[*** 概要]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568591,
+      "updated": 1599568606
+    },
+    {
+      "id": "5f577acf5b98c20000dd7636",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568592,
+      "updated": 1599568592
+    },
+    {
+      "id": "5f577afd5b98c20000dd7637",
+      "text": "ランダム表示のマルチプロジェクト版",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568638,
+      "updated": 1599572242
+    },
+    {
+      "id": "5f577aff5b98c20000dd7639",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568639,
+      "updated": 1599568639
+    },
+    {
+      "id": "5f577aff5b98c20000dd763a",
+      "text": "　1. プロジェクトのリストのCSVファイル群の中から、ランダムにひとつを選択する",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568640,
+      "updated": 1599569537
+    },
+    {
+      "id": "5f577b1a5b98c20000dd763b",
+      "text": "　2. CSVファイルからプロジェクトをランダムにひとつ取り出す",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568666,
+      "updated": 1599569542
+    },
+    {
+      "id": "5f577b1a5b98c20000dd763c",
+      "text": "　3. プロジェクトの中から、ページをランダムにページを選ぶ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568666,
+      "updated": 1599569547
+    },
+    {
+      "id": "5f577b1a5b98c20000dd763d",
+      "text": "　4. ページを表示する",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568666,
+      "updated": 1599569553
+    },
+    {
+      "id": "5f577b1a5b98c20000dd763e",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568666,
+      "updated": 1599568666
+    },
+    {
+      "id": "5f577b1b5b98c20000dd763f",
+      "text": "[*** ファイル仕様（暫定）]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568667,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7640",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7641",
+      "text": "[** テーブル表記]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7642",
+      "text": " Scrapboxのテーブル記法",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7643",
+      "text": " 1カラム目がプロジェクト名",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7644",
+      "text": "　 プロジェクト名は、`[/$ProjectName]`という書式",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7645",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7646",
+      "text": "table:projects",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7647",
+      "text": " プロジェクト\t説明",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7648",
+      "text": " [/masui]\t増井俊之",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599571845
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7649",
+      "text": " [/shokai]\t橋本商会",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599571850
+    },
+    {
+      "id": "5f577b3e5b98c20000dd764a",
+      "text": " [/daiiz]\tdaiiz",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599571855
+    },
+    {
+      "id": "5f577b3e5b98c20000dd764b",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd764c",
+      "text": "ファイルを分割して表記も可能",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd764d",
+      "text": "table:projects",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd764e",
+      "text": "  [/rakusai]\tRakusai Public",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599571863
+    },
+    {
+      "id": "5f577b3e5b98c20000dd764f",
+      "text": " [/akiroom]\t秋山界面帳",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599571868
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7650",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7651",
+      "text": " 2カラム目以降は無視される",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7652",
+      "text": "　 2カラム目以降には何を書いてもよい",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7653",
+      "text": "　　たいていは、1カラム目のプロジェクト名の補足説明になる",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7654",
+      "text": " テーブルには、有効な プロジェクト名がふたつ以上必要",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7655",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7656",
+      "text": "[** ファイル名]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7657",
+      "text": " ファイル名は任意",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7658",
+      "text": "  projects.csv（全部小文字）を推奨",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd7659",
+      "text": "  API ではファイル名は大文字、小文字を区別するので注意が必要",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd765a",
+      "text": "  大文字、小文字の混ざったファイルは作らないことを推奨",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd765b",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd765c",
+      "text": "[** 書式のエラー処理]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd765d",
+      "text": " 基本的にエラーは無視する",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd765e",
+      "text": "　 書式外のカラムは[[無視される]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577b3e5b98c20000dd765f",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568703,
+      "updated": 1599568703
+    },
+    {
+      "id": "5f577afe5b98c20000dd7638",
+      "text": "[*** スクリプト]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568638,
+      "updated": 1599568745
+    },
+    {
+      "id": "5f577b605b98c20000dd7660",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568737,
+      "updated": 1599568737
+    },
+    {
+      "id": "5f577b695b98c20000dd7661",
+      "text": "code: script.js ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568746,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7662",
+      "text": " const choice = (arr) => arr[Math.floor(Math.random()*arr.length)]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7663",
+      "text": " const sources = [",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f58ddfd5b98c200005e4144",
+      "text": "   '/api/table/villagepump/おもしろいScrapboxみつけた/projects.csv',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599659518,
+      "updated": 1599659547
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7664",
+      "text": "   '/api/table/villagepump/マルチプロジェクト版ランダムジャンプUserScript/projects.csv',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568839
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7668",
+      "text": "   '/api/table/suto3/suto3/projects.csv'",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7669",
+      "text": "   ] ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599659711
+    },
+    {
+      "id": "5f58debc5b98c20000988744",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599659709,
+      "updated": 1599659709
+    },
+    {
+      "id": "5f58deba5b98c20000988743",
+      "text": "code: script.js ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599659707,
+      "updated": 1599659707
+    },
+    {
+      "id": "5f577b8b5b98c20000dd766b",
+      "text": " const lists = new Promise((resolve, reject) => {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd766c",
+      "text": "　  // 情報源をひとつ選ぶ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd766d",
+      "text": "   const projects_url = choice(sources)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577ef61280f0000037f40d",
+      "text": "現状では",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569656,
+      "updated": 1599569671
+    },
+    {
+      "id": "5f577f051280f0000037f40e",
+      "text": "\t情報源を選ぶ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569671,
+      "updated": 1599569677
+    },
+    {
+      "id": "5f577f0c1280f0000037f40f",
+      "text": "\t情報源から更に[public project]を選ぶ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569677,
+      "updated": 1602495316
+    },
+    {
+      "id": "5f577f2a1280f0000037f410",
+      "text": "という形式になっているけど、ランダム選択をやるのが二度手間なので",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569708,
+      "updated": 1599569730
+    },
+    {
+      "id": "5f577f401280f0000037f411",
+      "text": "　情報源から全てのプロジェクト名を取り出してリストを作る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569730,
+      "updated": 1599569763
+    },
+    {
+      "id": "5f577f611280f0000037f412",
+      "text": "　リストの中からプロジェクトをランダムに選ぶ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569763,
+      "updated": 1599569773
+    },
+    {
+      "id": "5f577f6c1280f0000037f413",
+      "text": "に変えてもいいかもしれないです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569774,
+      "updated": 1599569782
+    },
+    {
+      "id": "5f577fd01280f0000037f414",
+      "text": "　これでどうだろう？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569874,
+      "updated": 1599569878
+    },
+    {
+      "id": "5f577fd41280f0000037f415",
+      "text": "　code:fetch_project_url.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569878,
+      "updated": 1599569910
+    },
+    {
+      "id": "5f57827e1280f0000037f422",
+      "text": "　 let project_lists=[];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599570560,
+      "updated": 1599570568
+    },
+    {
+      "id": "5f577ff41280f0000037f416",
+      "text": "　 const fetch_project_url= (source) => ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569910,
+      "updated": 1599569978
+    },
+    {
+      "id": "5f57800d1280f0000037f417",
+      "text": "　 \tfetch(source)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569935,
+      "updated": 1599569984
+    },
+    {
+      "id": "5f5780401280f0000037f418",
+      "text": "　 \t.then(response => response.text())",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569986,
+      "updated": 1599570013
+    },
+    {
+      "id": "5f57805c1280f0000037f419",
+      "text": "　 \t.then(text => text.split('\\n')",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599570014,
+      "updated": 1599570212
+    },
+    {
+      "id": "5f57811d1280f0000037f41a",
+      "text": "　 \t\t.map(line => line.split(','))",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599570207,
+      "updated": 1599570266
+    },
+    {
+      "id": "5f5781c41280f0000037f41d",
+      "text": "　 \t\t// column 1にプロジェクトリンクが入っているもののみ取り出す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599570374,
+      "updated": 1599570404
+    },
+    {
+      "id": "5f5781591280f0000037f41b",
+      "text": "　 \t\t.filter(cells => /^\\[\\/[^\\s\\]\\/]*\\]$/.test(cells[0]))",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599570266,
+      "updated": 1599570413
+    },
+    {
+      "id": "5f57a2e81280f00000ecc531",
+      "text": "　 \t\t// [/project]からprojectを抜き出す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599578858,
+      "updated": 1599578880
+    },
+    {
+      "id": "5f5781f41280f0000037f41e",
+      "text": "　 \t\t.map(cells => cells[0].replace(/^\\[\\/([^\\s\\]\\/]*)\\]$/,'$1')))",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599570421,
+      "updated": 1599570532
+    },
+    {
+      "id": "5f57a30d1280f00000ecc533",
+      "text": "　 \t// 非同期にprojectをリストに追加する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599578895,
+      "updated": 1599578913
+    },
+    {
+      "id": "5f5782691280f0000037f421",
+      "text": "　 \t.then(project_names => project_lists.push(...project_names));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599570539,
+      "updated": 1599570590
+    },
+    {
+      "id": "5f57829e1280f0000037f423",
+      "text": "　 sources.forEach(source => fetch_project_url(source));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599570592,
+      "updated": 1599570635
+    },
+    {
+      "id": "5f5781c11280f0000037f41c",
+      "text": "　あとは`project_lists`から適宜取り出す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599570371,
+      "updated": 1599570693
+    },
+    {
+      "id": "5f5787b35b98c20000912e9f",
+      "text": "  ふむふむ[suto3.icon]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599571891,
+      "updated": 1599571932
+    },
+    {
+      "id": "5f579cb51280f000000a29b1",
+      "text": " [グローバル汚染]防止のために、[ES Modules]化するといいかも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599577271,
+      "updated": 1599577319
+    },
+    {
+      "id": "5f57a2c31280f00000ecc52f",
+      "text": " ページタイトルの読み込みはこれを使うのはどうだろう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599578821,
+      "updated": 1599578840
+    },
+    {
+      "id": "5f57a2c11280f00000ecc52e",
+      "text": " 　[/takker/external-completion#5f46c33a1280f000006cf28d]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599578819,
+      "updated": 1599578841
+    },
+    {
+      "id": "5f57a2d81280f00000ecc530",
+      "text": " 　手前味噌ですが[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599578842,
+      "updated": 1599578848
+    },
+    {
+      "id": "5f5787cd5b98c20000912ea0",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599571917,
+      "updated": 1599571917
+    },
+    {
+      "id": "5f577ef51280f0000037f40c",
+      "text": "code: script.js ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569655,
+      "updated": 1599569655
+    },
+    {
+      "id": "5f577b8b5b98c20000dd766e",
+      "text": "   //const projects_url = '/api/table/suto3/suto3/projects.csv' // debug",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568863
+    },
+    {
+      "id": "5f577b8b5b98c20000dd766f",
+      "text": "   console.log(projects_url)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7670",
+      "text": "   ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7671",
+      "text": "   fetch(projects_url)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7672",
+      "text": "   .then(response => response.text())",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7673",
+      "text": "   .then(text =>",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7674",
+      "text": "     text.split('\\n')",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7675",
+      "text": "     .map(line => line.replace(/^,/,\"\")) // 行頭のコンマがあった場合は削除",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7676",
+      "text": "     .join('\\n') )",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7677",
+      "text": "   .then(resolve)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7678",
+      "text": "   .catch(reject)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7679",
+      "text": " }) ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599659754
+    },
+    {
+      "id": "5f58dee85b98c20000988746",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599659752,
+      "updated": 1599659752
+    },
+    {
+      "id": "5f58dee65b98c20000988745",
+      "text": "code: script.js ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599659750,
+      "updated": 1599659750
+    },
+    {
+      "id": "5f577b8b5b98c20000dd767b",
+      "text": " scrapbox.PageMenu.addItem({",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd767c",
+      "text": "   title: 'ランダムジャンプ',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd767d",
+      "text": "   onClick: async () => {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd767e",
+      "text": "     await lists.then((text) => {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd767f",
+      "text": "       const urls = text.split(\"\\n\")",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7680",
+      "text": "       .map( line => {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7681",
+      "text": "         console.log(line)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7682",
+      "text": "         const regexp = /^\\[\\/.*\\]$/gm",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7683",
+      "text": "         const res = line.split(',')",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7684",
+      "text": "         // 書式チェック",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7685",
+      "text": "         if (regexp.test(res[0])) {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7686",
+      "text": "           const url  = res[0].replace(/\\[|\\]/g,\"\")",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7687",
+      "text": "           //console.log(url)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7688",
+      "text": "           return url",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7689",
+      "text": "         } else {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd768a",
+      "text": "           console.log('NG')",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd768b",
+      "text": "           return",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd768c",
+      "text": "         } ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd768d",
+      "text": "       })",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd768e",
+      "text": "       .filter(line => line)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd768f",
+      "text": "             ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7690",
+      "text": "       //console.log(urls)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7691",
+      "text": "     ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7692",
+      "text": "       const project = choice(urls)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7693",
+      "text": "       //console.log(project)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7694",
+      "text": "       const limit = 100",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7695",
+      "text": "       let skip = 0",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7696",
+      "text": "       const url =`/api/pages${project}?limit=${limit}&skip=${skip}`",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7697",
+      "text": "       fetch(url)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7698",
+      "text": "       .then((response) => response.json())",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd7699",
+      "text": "       .then((json) => {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd769a",
+      "text": "         //console.log(json)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd769b",
+      "text": "         const pagetitle = choice(json.pages.map(page => page.title))",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd769c",
+      "text": "         console.log(pagetitle)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd769d",
+      "text": "         window.open(`https://scrapbox.io${project}/${pagetitle}`)     ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd769e",
+      "text": "       }).catch(err => {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd769f",
+      "text": "         console.error('fetch failed', err)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd76a0",
+      "text": "       })",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd76a1",
+      "text": "     })",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd76a2",
+      "text": "   }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd76a3",
+      "text": " })",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568780
+    },
+    {
+      "id": "5f577b8b5b98c20000dd76a4",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568780,
+      "updated": 1599568783
+    },
+    {
+      "id": "5fca1fea5b98c200001bf996",
+      "text": "[js-script-button.icon]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607081962,
+      "updated": 1607082016
+    },
+    {
+      "id": "5fca20215b98c200001bf997",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607082018,
+      "updated": 1607082018
+    },
+    {
+      "id": "5f577bfd5b98c20000dd76a5",
+      "text": "[*** 既知の問題点]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568894,
+      "updated": 1599568924
+    },
+    {
+      "id": "5f577c1c5b98c20000dd76a6",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568924,
+      "updated": 1599568924
+    },
+    {
+      "id": "5f577c1c5b98c20000dd76a7",
+      "text": "　[[[飯テロ]をくらう恐れがある]]",
+      "userId": "62a91a7a083437001de60035",
+      "created": 1599568924,
+      "updated": 1661421067
+    },
+    {
+      "id": "5f577de11280f0000037f40a",
+      "text": "　 吹いたｗ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569379,
+      "updated": 1599569405
+    },
+    {
+      "id": "5f577c1c5b98c20000dd76a8",
+      "text": "　テーブル内部では、使えない記法がある",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568924,
+      "updated": 1599571832
+    },
+    {
+      "id": "5f577c1c5b98c20000dd76a9",
+      "text": " 　アイコン記法",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568924,
+      "updated": 1599568924
+    },
+    {
+      "id": "5f577c1c5b98c20000dd76aa",
+      "text": " 　外部リンク",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568924,
+      "updated": 1599568924
+    },
+    {
+      "id": "5f577c345b98c20000dd76b2",
+      "text": " 　など",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568949,
+      "updated": 1599568952
+    },
+    {
+      "id": "5f577c1c5b98c20000dd76ab",
+      "text": "　検索除外のしくみがない",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568924,
+      "updated": 1599568924
+    },
+    {
+      "id": "5f577c1c5b98c20000dd76ac",
+      "text": " 　18禁とか[nsfw]とか",
+      "userId": "62a91a7a083437001de60035",
+      "created": 1599568924,
+      "updated": 1661421074
+    },
+    {
+      "id": "5f577e131280f0000037f40b",
+      "text": " 　`/api/pages/$projectname/$page/text`を[正規表現]で走査して弾くとか？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1599569429,
+      "updated": 1602646876
+    },
+    {
+      "id": "5f577c1c5b98c20000dd76ad",
+      "text": "　データチェックとかエラーチェックとか",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568924,
+      "updated": 1599568924
+    },
+    {
+      "id": "5f577c1c5b98c20000dd76ae",
+      "text": "　ジャンプ先のプロジェクトから再ジャンプができない",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568924,
+      "updated": 1600911919
+    },
+    {
+      "id": "5f577c1d5b98c20000dd76af",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568926,
+      "updated": 1599568926
+    },
+    {
+      "id": "5f577c1e5b98c20000dd76b0",
+      "text": "#UserScript",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568927,
+      "updated": 1599568935
+    },
+    {
+      "id": "5f577c205b98c20000dd76b1",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1599568928,
+      "updated": 1599568928
+    }
+  ]
+}

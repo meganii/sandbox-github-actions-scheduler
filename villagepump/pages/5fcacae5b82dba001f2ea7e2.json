@@ -1,0 +1,421 @@
+{
+  "id": "5fcacae5b82dba001f2ea7e2",
+  "title": "複数のprojectを透過的に扱う",
+  "created": 1607125741,
+  "updated": 1623492552,
+  "lines": [
+    {
+      "id": "5fcacae5b82dba001f2ea7e2",
+      "text": "複数のprojectを透過的に扱う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607125741,
+      "updated": 1607125741
+    },
+    {
+      "id": "5fcacaec1280f00000bfbb02",
+      "text": "色んなとこで言及されている、[scrapbox project同士を繋げられない]を解決する仕組み",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607125741,
+      "updated": 1607127497
+    },
+    {
+      "id": "5fcacb1c1280f00000bfbb08",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607125788,
+      "updated": 1607125788
+    },
+    {
+      "id": "5fcad2861280f000009af106",
+      "text": "できること",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607127687,
+      "updated": 1607127691
+    },
+    {
+      "id": "5fcad28a1280f000009af108",
+      "text": "\t[/hub]に書いても[/villagepump]に書いても自分のprojectから参照できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607127691,
+      "updated": 1607127714
+    },
+    {
+      "id": "5fcad2a21280f000009af109",
+      "text": "\t\t勿論逆も可",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607127714,
+      "updated": 1607127723
+    },
+    {
+      "id": "5fcad2ab1280f000009af10a",
+      "text": "\tprivate projectに書いたことをpublic projectから参照できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607127723,
+      "updated": 1607127743
+    },
+    {
+      "id": "5fcad2c81280f000009af10b",
+      "text": "\t　書き出したことを公開か非公開かで分けたとしても、全て自分が考えたこととしてページをつなげられる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607127752,
+      "updated": 1607127811
+    },
+    {
+      "id": "5ffd43ea1280f00000eed902",
+      "text": "\t　多分これが一番魅力的な機能だと思う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1610433515,
+      "updated": 1610433542
+    },
+    {
+      "id": "5fcad2871280f000009af107",
+      "text": "できないこと",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607127687,
+      "updated": 1613062272
+    },
+    {
+      "id": "602560841280f000007924f7",
+      "text": " scrapbox.ioに存在するすべてのprojectをつなげる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1613062272,
+      "updated": 1613062286
+    },
+    {
+      "id": "602560921280f000007924f8",
+      "text": " 　できないのは当たり前",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1613062286,
+      "updated": 1613062296
+    },
+    {
+      "id": "6025609c1280f000007924fa",
+      "text": " [外部Project Link]をすべてつなげる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1613062296,
+      "updated": 1613062321
+    },
+    {
+      "id": "602560b41280f000007924fb",
+      "text": "  [Scrapbox REST API]で各ページにある[外部Project Link]のリストを取得できないので困難",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1613062321,
+      "updated": 1613062347
+    },
+    {
+      "id": "602560811280f000007924f6",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1613062269,
+      "updated": 1613062269
+    },
+    {
+      "id": "5fcacb291280f00000bfbb09",
+      "text": "方法",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607125801,
+      "updated": 1607125806
+    },
+    {
+      "id": "60c4875e1280f0000031743f",
+      "text": " リンクをつなげる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1623492448,
+      "updated": 1623492454
+    },
+    {
+      "id": "60c487451280f0000031743d",
+      "text": "  [ScrapBubble]@0.2.0以降を使う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1623492423,
+      "updated": 1623492455
+    },
+    {
+      "id": "60c487961280f00000317444",
+      "text": "  つなげ方を従来のIndexed DBを使った方法から変更して、即時に外部project同士を同じprojectであるかのように扱えるようになった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1623492504,
+      "updated": 1623492549
+    },
+    {
+      "id": "60c487661280f00000317440",
+      "text": " 入力補完をつなげる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1623492457,
+      "updated": 1623492462
+    },
+    {
+      "id": "60c4876c1280f00000317441",
+      "text": "  [external-completion]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1623492462,
+      "updated": 1623492465
+    },
+    {
+      "id": "60c4876f1280f00000317442",
+      "text": "  最新のbeta版はバグったまま放置してる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1623492465,
+      "updated": 1623492480
+    },
+    {
+      "id": "60c4877e1280f00000317443",
+      "text": "   近いうちに直すつもり[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1623492480,
+      "updated": 1623492493
+    },
+    {
+      "id": "5fcacb2e1280f00000bfbb0a",
+      "text": "\t[- 以下の3つを組み合わせる]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607125806,
+      "updated": 1623492429
+    },
+    {
+      "id": "5fcacb481280f00000bfbb0b",
+      "text": "\t　(WIP)[scrapbox-text-bubble]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607125833,
+      "updated": 1607125872
+    },
+    {
+      "id": "5fcacbc81280f00000bfbb12",
+      "text": "\t　 予め指定した[外部Project]でのみtext previewできるようにする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607125960,
+      "updated": 1607126026
+    },
+    {
+      "id": "5fcacc0b1280f00000bfbb13",
+      "text": "\t　 闇雲に全ての[外部Project]の中身を表示できるようにすると、[リンクを貼っただけで満足する]現象が起きてしまうので注意",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607126027,
+      "updated": 1610433560
+    },
+    {
+      "id": "5fcacb7f1280f00000bfbb10",
+      "text": " \t　 cf. [/daiiz/【daiizScript】プロジェクトを跨いだテキストプレビュー機能の搭載見送りについて]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607125887,
+      "updated": 1607126085
+    },
+    {
+      "id": "5ffd4659e5172d00006f92d5",
+      "text": " \t　 >自分のプロジェクトにもそのページを作って，[Scrapboxの引用記法]などを用いながら自分なりにまとめていくことが[Wikiを育てる]ためには大事な作業",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1610434135,
+      "updated": 1610437384
+    },
+    {
+      "id": "5ffd465de5172d00006f92d6",
+      "text": " \t　 \t[/icons/なるほど.icon][yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1610434140,
+      "updated": 1610434150
+    },
+    {
+      "id": "5ffd4684e5172d00006f92d7",
+      "text": " \t　 \t面白いページなら、中身をpreviewできたとしてもこういう作業をしたくなるような気がするけどなあ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1610434179,
+      "updated": 1610434239
+    },
+    {
+      "id": "60018f7e1280f000009935a4",
+      "text": " \t　 \t previewした外部projectのページを自分のprojectにコピーして、引用記法に直して、更にコメントをつけるという作業がとても手間に感じる[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1610715007,
+      "updated": 1610715087
+    },
+    {
+      "id": "60018fd01280f000009935a6",
+      "text": " \t　 \t 手間なので、実際にその作業にを実行するかは怪しい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1610715089,
+      "updated": 1610715121
+    },
+    {
+      "id": "5ffd5327e5172d0000a071f2",
+      "text": " \t　 \t引用記法だと中身をいじれない感じがしてしまう[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1610437413,
+      "updated": 1610437787
+    },
+    {
+      "id": "5ffd5343e5172d0000a071f3",
+      "text": " \t　 \t\t[著作権法上の引用]にするにはいじっちゃいけないわけだけど",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1610437441,
+      "updated": 1610437480
+    },
+    {
+      "id": "5ffd546ce5172d0000a071f7",
+      "text": " \t　 \t\t[自分のproject]のリンクにある言葉を使いたい",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1610437738,
+      "updated": 1610437775
+    },
+    {
+      "id": "5ffd5354e5172d0000a071f4",
+      "text": "\t　 \t\t勝手にその人のアイコンを自分のprojectの中に作って、その人の発言にアイコンをつけることで、仮想的にその人と共同でScrapboxに書き込んでいるような感じにすると面白い[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1610437458,
+      "updated": 1610437735
+    },
+    {
+      "id": "5ffd54dbe5172d0000a071f8",
+      "text": "\t　 \t\t\t[自作自演]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1610437849,
+      "updated": 1610437852
+    },
+    {
+      "id": "5ffd542fe5172d0000a071f6",
+      "text": " \t　 \t\t[public project]だと問題あるかもしれないけど",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1610437677,
+      "updated": 1610437706
+    },
+    {
+      "id": "5ffd46c7e5172d00006f92d8",
+      "text": " \t　 全ての外部projectのリンクをpreviewできるようにするなんてパフォーマンス的に大丈夫なものなのか…？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1610434245,
+      "updated": 1610434331
+    },
+    {
+      "id": "5ffd59481280f00000e12fe2",
+      "text": " \t　 　[/scrapboxlab//api/pages/$projectname/$pagetitle]を1回叩くだけなので大したことないです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1610438985,
+      "updated": 1610439022
+    },
+    {
+      "id": "5ffd596d1280f00000e12fe3",
+      "text": " \t　 　記法のparseも一瞬で終わるし",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1610439022,
+      "updated": 1610439036
+    },
+    {
+      "id": "60019463e5172d00005c4be8",
+      "text": " \t　 　[/icons2/へえ〜.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1610716260,
+      "updated": 1610716269
+    },
+    {
+      "id": "60019470e5172d00005c4be9",
+      "text": " \t　 [\" 闇雲に全ての外部Projectの中身を表示できるようにする]には全ての外部Projectの`$projectname`を知る必要がある気がするけど、取得できるものなんですか？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1610716273,
+      "updated": 1610716375
+    },
+    {
+      "id": "600236be1280f00000a7e25e",
+      "text": " \t　  リンク先のページをpreviewするだけなので、簡単にできます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1610757823,
+      "updated": 1610757904
+    },
+    {
+      "id": "600237111280f00000a7e260",
+      "text": " \t　   リンク自体に`$projectname`が含まれていますから",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1610757906,
+      "updated": 1610757989
+    },
+    {
+      "id": "60028ee9e5172d00004d6987",
+      "text": " \t　   あ、なるほど。。external-completionと勘違いしてました…[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1610780391,
+      "updated": 1610780435
+    },
+    {
+      "id": "60028f331280f0000009dfe9",
+      "text": " \t　   なるほ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1610780467,
+      "updated": 1610780470
+    },
+    {
+      "id": "5fcacb4f1280f00000bfbb0c",
+      "text": "\t　[scrapbox-card-bubble]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607125840,
+      "updated": 1607125850
+    },
+    {
+      "id": "5fcacb5a1280f00000bfbb0d",
+      "text": "\t　[external-completion]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607125850,
+      "updated": 1613062365
+    },
+    {
+      "id": "5fcacaf51280f00000bfbb06",
+      "text": " 一つ目が未実装なのでまだ不完全だが、現状でもかなり透過的に扱えるようになっている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607125750,
+      "updated": 1607127025
+    },
+    {
+      "id": "5fcacff01280f00000bfbb2a",
+      "text": " 　別のprojectで書いたリンクをsuggestできる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607127025,
+      "updated": 1607127042
+    },
+    {
+      "id": "5fcacffc1280f00000bfbb2b",
+      "text": " 　\t[/takker/external-completion-2]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607127037,
+      "updated": 1607127043
+    },
+    {
+      "id": "5fcad0031280f00000bfbb2c",
+      "text": " 　同じリンクを書いた別のページをsuggestできる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607127044,
+      "updated": 1607127061
+    },
+    {
+      "id": "5fcad0151280f00000bfbb2e",
+      "text": " 　　[scrapbox-card-bubble]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607127061,
+      "updated": 1607127065
+    },
+    {
+      "id": "5fcacc8c1280f00000bfbb14",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607126156,
+      "updated": 1607126156
+    },
+    {
+      "id": "5fcacaec1280f00000bfbb03",
+      "text": "[takker.icon]用Reference",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607125741,
+      "updated": 1607125748
+    },
+    {
+      "id": "5fcacaef1280f00000bfbb05",
+      "text": "　[/takker/外部projectを透過的に扱う]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607125743,
+      "updated": 1607125745
+    },
+    {
+      "id": "5fcacaef1280f00000bfbb04",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607125743,
+      "updated": 1607125743
+    }
+  ]
+}

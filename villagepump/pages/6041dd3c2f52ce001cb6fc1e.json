@@ -1,0 +1,197 @@
+{
+  "id": "6041dd3c2f52ce001cb6fc1e",
+  "title": "未読のページにランダムジャンプするUserScript：ページを開かずに未読を判定するver",
+  "created": 1614929214,
+  "updated": 1614929223,
+  "lines": [
+    {
+      "id": "6041dd3c2f52ce001cb6fc1e",
+      "text": "未読のページにランダムジャンプするUserScript：ページを開かずに未読を判定するver",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e15",
+      "text": "from [未読のページにランダムジャンプするUserScript]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e16",
+      "text": "ページを開かずに未読を判定するver",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929223
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e17",
+      "text": "code:script.js",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e18",
+      "text": " scrapbox.PageMenu.addMenu({",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e19",
+      "text": "   title: 'Jump to an unread page',",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e1a",
+      "text": "   image: 'https://img.icons8.com/ios/180/shuffle.png',",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e1b",
+      "text": "   onClick: async () => {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e1c",
+      "text": "   \tconst project = scrapbox.Project.name;",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e1d",
+      "text": "     const pages = scrapbox.Project.pages.filter(",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e1e",
+      "text": "       page => page.exists && page.title !== scrapbox.Page.title",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e1f",
+      "text": "     );",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e20",
+      "text": "     const getNextPage = async () => {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e21",
+      "text": "       const title = pages[Math.floor(Math.random() * pages.length)].title;",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e22",
+      "text": "       const nextPage = await fetch(`/api/pages/${project}/${encodeURIComponent(title)}`);",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e23",
+      "text": "       return await nextPage.json();",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e24",
+      "text": "     }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e25",
+      "text": "     let isUnread = false;",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e26",
+      "text": "     let count = 0;",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e27",
+      "text": "     while (!isUnread) {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e28",
+      "text": "       const nextPage = await getNextPage();",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e29",
+      "text": "       console.log(`${++count}: /${project}/${nextPage.title}`);",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e2a",
+      "text": "       let isUnread = nextPage.lines.some(line => nextPage.lastAccessed < line.updated);",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e2b",
+      "text": "       if (isUnread) { location.href = `/${project}/${encodeURIComponent(nextPage.title)}`; }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e2c",
+      "text": "     }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e2d",
+      "text": "   },",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    },
+    {
+      "id": "6041dd3ce5172d0000ed7e2e",
+      "text": " });",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929214,
+      "updated": 1614929214
+    }
+  ]
+}

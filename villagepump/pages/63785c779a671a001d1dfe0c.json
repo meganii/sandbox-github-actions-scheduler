@@ -1,0 +1,267 @@
+{
+  "id": "63785c779a671a001d1dfe0c",
+  "title": "ダイスロールUserScript",
+  "created": 1668832378,
+  "updated": 1668853275,
+  "lines": [
+    {
+      "id": "63785c779a671a001d1dfe0c",
+      "text": "ダイスロールUserScript",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832378,
+      "updated": 1668832378
+    },
+    {
+      "id": "63785c9a5b98c20000bef445",
+      "text": "　元ネタ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832411,
+      "updated": 1668832423
+    },
+    {
+      "id": "63785c7a5b98c20000bef443",
+      "text": "　　[/oct24/ダイスロールのPopup Menuを追加するUserScript]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832378,
+      "updated": 1668832425
+    },
+    {
+      "id": "63785c945b98c20000bef444",
+      "text": "　しかし、全然違うものになった",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832405,
+      "updated": 1668832516
+    },
+    {
+      "id": "63785e525b98c20000dbac67",
+      "text": "　[ダイスロール]の記法（1d6とか）を読み込んで、ダイスを振った結果を返す Popup Menu",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832850,
+      "updated": 1668832995
+    },
+    {
+      "id": "63785fc55b98c20000dbac69",
+      "text": "　　2d6だと6面ダイスを2回振るという意味",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668833221,
+      "updated": 1668833549
+    },
+    {
+      "id": "637860725b98c20000dbac6a",
+      "text": "　　最大で、999面のダイスを99回振ることができる",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668833395,
+      "updated": 1668833450
+    },
+    {
+      "id": "637860aa5b98c20000dbac6b",
+      "text": "　　d は ASCIIの小文字でなければならない",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668833451,
+      "updated": 1668833508
+    },
+    {
+      "id": "63785f065b98c20000dbac68",
+      "text": "　ダイスロールの実行例",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668833030,
+      "updated": 1668833197
+    },
+    {
+      "id": "63785d045b98c20000bef459",
+      "text": "　　1d6 = 4",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832517,
+      "updated": 1668833068
+    },
+    {
+      "id": "63785d225b98c20000bef45a",
+      "text": "　 1d100 = 47",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832546,
+      "updated": 1668833074
+    },
+    {
+      "id": "63785d2a5b98c20000bef45b",
+      "text": "　 2d6 = 6 , 5",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832554,
+      "updated": 1668833078
+    },
+    {
+      "id": "63785d515b98c20000bef45c",
+      "text": "  3d10 = 4 , 10 , 10",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832593,
+      "updated": 1668833084
+    },
+    {
+      "id": "63785d575b98c20000bef45d",
+      "text": "  99d999（最大値）",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832600,
+      "updated": 1668832615
+    },
+    {
+      "id": "6378ae1b5b98c2000092b416",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668853275,
+      "updated": 1668853275
+    },
+    {
+      "id": "63785caa5b98c20000bef446",
+      "text": "code:script.js",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832426,
+      "updated": 1668832506
+    },
+    {
+      "id": "63785cf95b98c20000bef447",
+      "text": " const DiceRoll = text => {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668832506
+    },
+    {
+      "id": "63785cf95b98c20000bef448",
+      "text": " 　　if (text.match(/^\\d{1,2}d\\d{1,3}$/)) {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668834417
+    },
+    {
+      "id": "63785cf95b98c20000bef449",
+      "text": "     let ret = '';",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668834458
+    },
+    {
+      "id": "63785cf95b98c20000bef44a",
+      "text": "     const [count,num] = text.split('d',2);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668834460
+    },
+    {
+      "id": "63785cf95b98c20000bef44b",
+      "text": "     for (let i = 0 ; i < count; i++) {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668834461
+    },
+    {
+      "id": "63785cf95b98c20000bef44c",
+      "text": "       const dice = Math.floor(Math.random() * num) + 1;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668834467
+    },
+    {
+      "id": "63785cf95b98c20000bef44d",
+      "text": "       i==0 ? ret = ' = ' : ret = ret + ' , ';",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668834468
+    },
+    {
+      "id": "63785cf95b98c20000bef44e",
+      "text": "       ret = ret + dice;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668834470
+    },
+    {
+      "id": "63785cf95b98c20000bef44f",
+      "text": "     }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668834431
+    },
+    {
+      "id": "63785cf95b98c20000bef450",
+      "text": "     return text + ret;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668834429
+    },
+    {
+      "id": "63785cf95b98c20000bef451",
+      "text": "   } else return text;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668834422
+    },
+    {
+      "id": "63785cf95b98c20000bef452",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668832506
+    },
+    {
+      "id": "63785cf95b98c20000bef453",
+      "text": " let DiceRoll_result = '';",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668832506
+    },
+    {
+      "id": "63785cf95b98c20000bef454",
+      "text": " scrapbox.PopupMenu.addButton({",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668832506
+    },
+    {
+      "id": "63785cf95b98c20000bef455",
+      "text": "   title: text => {return(text ? '🎲' + (DiceRoll_result = DiceRoll(text)) : '🎲')},",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668832506
+    },
+    {
+      "id": "63785cf95b98c20000bef456",
+      "text": "   onClick: text => {return(text ? DiceRoll_result : text)}",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668832506
+    },
+    {
+      "id": "63785cf95b98c20000bef457",
+      "text": " });",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668832506
+    },
+    {
+      "id": "63785cf95b98c20000bef458",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668832506,
+      "updated": 1668832506
+    },
+    {
+      "id": "6378ade05b98c2000092b413",
+      "text": "#TRPG",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668853216,
+      "updated": 1668853223
+    },
+    {
+      "id": "6378ade25b98c2000092b414",
+      "text": "#ボードゲーム",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668853218,
+      "updated": 1668853233
+    },
+    {
+      "id": "6378ade95b98c2000092b415",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1668853226,
+      "updated": 1668853226
+    }
+  ]
+}

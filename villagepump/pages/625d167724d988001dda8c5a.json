@@ -1,0 +1,1758 @@
+{
+  "id": "625d167724d988001dda8c5a",
+  "title": "編集バーを生やすUserScript",
+  "created": 1650267772,
+  "updated": 1650468411,
+  "lines": [
+    {
+      "id": "625d167724d988001dda8c5a",
+      "text": "編集バーを生やすUserScript",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1650267772,
+      "updated": 1650267772
+    },
+    {
+      "id": "625d16997838e300009b47d7",
+      "text": "Scrapboxの編集画面に[編集バー]を生やすUserScriptのこと",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1650267800,
+      "updated": 1650267847
+    },
+    {
+      "id": "625d16c87838e300009b47d9",
+      "text": "\t[記号]を入力しやすくなる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1650267847,
+      "updated": 1650268004
+    },
+    {
+      "id": "625d17687838e300009b47da",
+      "text": "\t[スマホからscrapbox編集するのつらい]問題を解決する手法の1つ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1650268007,
+      "updated": 1650268026
+    },
+    {
+      "id": "625d16a27838e300009b47d8",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1650267809,
+      "updated": 1650267809
+    },
+    {
+      "id": "625d167d7838e300009b47d3",
+      "text": "\t>[https://twitter.com/ryot_g/status/1515611640427089924 @ryot_g]: これつけたらScrapboxがめちゃくちゃ使いやすくなった",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1650267772,
+      "updated": 1650468411
+    },
+    {
+      "id": "625d16917838e300009b47d5",
+      "text": "\t>[https://pbs.twimg.com/media/FQiIwVSacAAkHAj.jpg]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1650267792,
+      "updated": 1650267804
+    },
+    {
+      "id": "625e2667bed7240000d89431",
+      "text": "",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337382,
+      "updated": 1650337382
+    },
+    {
+      "id": "625e2668bed7240000d89432",
+      "text": "　[ryota.icon]知らないうちにページができてる笑",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337382,
+      "updated": 1650338020
+    },
+    {
+      "id": "625e28e6bed7240000d894d0",
+      "text": "　ありがとうございます",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650338020,
+      "updated": 1650338021
+    },
+    {
+      "id": "625e2699bed7240000d89439",
+      "text": "　下にコード置いておきます",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337431,
+      "updated": 1650337765
+    },
+    {
+      "id": "625e29acbed7240000900684",
+      "text": "　問題点",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650338218,
+      "updated": 1650338221
+    },
+    {
+      "id": "625e27debed7240000d894cd",
+      "text": "　\t[ryota.icon]編集バーの下に文字が隠れちゃう事がある",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337756,
+      "updated": 1650338365
+    },
+    {
+      "id": "625e281bbed7240000d894ce",
+      "text": "　　　ので気になる方は右端とかに寄せてみてもいいかもしれません",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337817,
+      "updated": 1650338292
+    },
+    {
+      "id": "625e282dbed7240000d894cf",
+      "text": "　　　もしソフトウェアキーボード表示時の、強制スクロール位置調整方法を知ってたら教えて欲しいです！！",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337835,
+      "updated": 1650338229
+    },
+    {
+      "id": "625e29f3bed7240000900685",
+      "text": "　　[ryota.icon]ページ一覧では編集バーを表示しないようにしているが、検索結果ページなどで表示されてしまう",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650338289,
+      "updated": 1650338363
+    },
+    {
+      "id": "625e2a2cbed7240000900686",
+      "text": "　　\tたぶん直せるけどめんどくて直してません",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650338347,
+      "updated": 1650338356
+    },
+    {
+      "id": "625e2a42bed7240000900687",
+      "text": "　　\tだれか、、、お願いします",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650338368,
+      "updated": 1650338374
+    },
+    {
+      "id": "625e26a1bed7240000d8943a",
+      "text": "code:javascript",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337439,
+      "updated": 1650337447
+    },
+    {
+      "id": "625e26f8bed7240000d8945e",
+      "text": " $('body').append('<div class=\"input_supporter\" id=\"input_supporter\"><button class=\"ins_btn\" id=\"ins_link\">[]</button><button class=\"ins_btn\" id=\"ins_hash\">#</button><button class=\"ins_btn\" id=\"ins_asterisk\">*</button><button class=\"ins_btn\" id=\"ins_slash\">/</button><button class=\"ins_btn\" id=\"ins_greater\">></button><button class=\"ins_btn\" id=\"ins_code\">``</button><button class=\"ins_btn\" id=\"ins_period\">.</button><button class=\"ins_btn\" id=\"ins_plus\">+</button></div>');",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d8945f",
+      "text": "  ",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89460",
+      "text": " if(location.pathname === \"/project_name/\") {",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650338045
+    },
+    {
+      "id": "625e26f8bed7240000d89461",
+      "text": " \t$('#input_supporter').addClass('ins_invisible');",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89462",
+      "text": " }",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89463",
+      "text": " \t",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89464",
+      "text": "  // domの更新を検知",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89465",
+      "text": "  const target = document.getElementsByClassName(\"page-wrapper\")[0];",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89466",
+      "text": "  const observer = new MutationObserver((recs) => {",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89467",
+      "text": "  \tif (!recs[0].target.classList.contains(\"enter\")) {",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89468",
+      "text": "  \t\tif(location.pathname === \"/project_name/\") {",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650338050
+    },
+    {
+      "id": "625e26f8bed7240000d89469",
+      "text": "     \t\t\t$('#input_supporter').addClass('ins_invisible');",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d8946a",
+      "text": "     \t\t} else {",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d8946b",
+      "text": "     \t\t\t$('#input_supporter').removeClass('ins_invisible');",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d8946c",
+      "text": "  \t\t}",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d8946d",
+      "text": "  \t}",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d8946e",
+      "text": "  });",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d8946f",
+      "text": "  observer.observe(target, {attributes: true, attributeFilter: [\"class\"]});",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89470",
+      "text": "  ",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89471",
+      "text": "  const ins_input = function(value) {",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89472",
+      "text": "  \tconst cursor = document.getElementById('text-input');",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89473",
+      "text": "  \tcursor.focus();",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89474",
+      "text": "     document.execCommand('insertText', null, value);",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89475",
+      "text": "  };",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89476",
+      "text": "  ",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89477",
+      "text": "  $('#ins_link').on('touchend', () =>　ins_input(\"[]\"));",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89478",
+      "text": "  $('#ins_hash').on('touchend', () =>　ins_input(\"#\"));",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d89479",
+      "text": "  $('#ins_asterisk').on('touchend', () =>　ins_input(\"*\"));",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d8947a",
+      "text": "  $('#ins_slash').on('touchend', () =>　ins_input(\"/\"));",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d8947b",
+      "text": "  $('#ins_greater').on('touchend', () =>　ins_input(\"> \"));",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d8947c",
+      "text": "  $('#ins_code').on('touchend', () =>　ins_input(\"``\"));",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d8947d",
+      "text": "  $('#ins_period').on('touchend', () =>　ins_input(\".\"));",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e26f8bed7240000d8947e",
+      "text": "  $('#ins_plus').on('touchend', () =>　ins_input(\"+\"));",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337526,
+      "updated": 1650337526
+    },
+    {
+      "id": "625e464a1280f0000091f849",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345546,
+      "updated": 1650345548
+    },
+    {
+      "id": "625e46781280f0000091f84a",
+      "text": "https://scrapbox-bundler.vercel.app?url=https://scrapbox.io/api/code/villagepump/編集バーを生やすUserScript/style.css&minify&run&reload",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345595,
+      "updated": 1650345632
+    },
+    {
+      "id": "625e2735bed7240000d8947f",
+      "text": "code:style.css",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337587,
+      "updated": 1650337599
+    },
+    {
+      "id": "625e2741bed7240000d89481",
+      "text": " .input_supporter {",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337599,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894a0",
+      "text": "  \tposition: fixed;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894a1",
+      "text": "  \tright: 0;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894a2",
+      "text": "  \tbottom: 0;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894a3",
+      "text": "  \tleft: 0;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894a4",
+      "text": "   \tjustify-content: space-between;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894a5",
+      "text": "   \tdisplay: none;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894a6",
+      "text": "   \twidth: 100%;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894a7",
+      "text": "   \tborder-radius: 8px 8px 0 0;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894a8",
+      "text": "   \tbackground: #FFF;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894a9",
+      "text": "   \tborder: solid 1px #37352f17;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894aa",
+      "text": "   \tbox-shadow: rgb(15 15 15 / 5%) 0px 0px 0px 1px, rgb(15 15 15 / 10%) 0px 3px 6px, rgb(15 15 15 / 20%) 0px 9px 24px;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894ab",
+      "text": "   \tz-index: 300;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894ac",
+      "text": "  }",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894ad",
+      "text": " \t",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894ae",
+      "text": "  .ins_btn {",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894af",
+      "text": "    \twidth: 12.5%;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894b0",
+      "text": "  \twidth: calc(100% / 8);",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894b1",
+      "text": "   \tpadding: 12px 0;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894b2",
+      "text": "    \tbackground: none;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894b3",
+      "text": "    \tborder: none;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894b4",
+      "text": "    \tcolor: #111;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894b5",
+      "text": "  }",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894b6",
+      "text": " \t",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894b7",
+      "text": "  .ins_btn:not(:first-child) {",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894b8",
+      "text": "    \tborder-left: solid 1px #37352f17;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894b9",
+      "text": "  }",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894ba",
+      "text": "  ",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894bb",
+      "text": "  .ins_invisible {",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337623
+    },
+    {
+      "id": "625e2745bed7240000d894bc",
+      "text": "   \tdisplay: none !important;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337603
+    },
+    {
+      "id": "625e2745bed7240000d894bd",
+      "text": "  }",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337603,
+      "updated": 1650337625
+    },
+    {
+      "id": "625e275cbed7240000d894be",
+      "text": "  ",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337626,
+      "updated": 1650337626
+    },
+    {
+      "id": "625e275cbed7240000d894bf",
+      "text": "  @media (max-width: 767px) {",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337627,
+      "updated": 1650337628
+    },
+    {
+      "id": "625e2771bed7240000d894c1",
+      "text": "  \t.input_supporter {",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337647,
+      "updated": 1650337655
+    },
+    {
+      "id": "625e2772bed7240000d894c2",
+      "text": "      \tdisplay: flex;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337648,
+      "updated": 1650337661
+    },
+    {
+      "id": "625e2772bed7240000d894c3",
+      "text": "     }",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337648,
+      "updated": 1650337660
+    },
+    {
+      "id": "625e2772bed7240000d894c4",
+      "text": "      \t",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337648,
+      "updated": 1650337648
+    },
+    {
+      "id": "625e2772bed7240000d894c5",
+      "text": "      .status-bar {",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337648,
+      "updated": 1650337663
+    },
+    {
+      "id": "625e2772bed7240000d894c6",
+      "text": "      \tbottom: 46px;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337648,
+      "updated": 1650337676
+    },
+    {
+      "id": "625e2772bed7240000d894c7",
+      "text": "      }",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337648,
+      "updated": 1650337672
+    },
+    {
+      "id": "625e2772bed7240000d894c8",
+      "text": "      \t",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337648,
+      "updated": 1650337648
+    },
+    {
+      "id": "625e2772bed7240000d894c9",
+      "text": "      .page-status {",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337648,
+      "updated": 1650337678
+    },
+    {
+      "id": "625e2772bed7240000d894ca",
+      "text": "      \tborder-bottom: 1px solid var(--tool-light-color, #a9aaaf);",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337648,
+      "updated": 1650337679
+    },
+    {
+      "id": "625e2772bed7240000d894cb",
+      "text": "         border-radius: 3px 0 0 3px;",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337648,
+      "updated": 1650337683
+    },
+    {
+      "id": "625e2772bed7240000d894cc",
+      "text": "      }",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337648,
+      "updated": 1650337684
+    },
+    {
+      "id": "625e275ebed7240000d894c0",
+      "text": "  }",
+      "userId": "608a3da9440fd7001cbed724",
+      "created": 1650337628,
+      "updated": 1650337628
+    },
+    {
+      "id": "625e4a051280f0000091f86f",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346501,
+      "updated": 1650346501
+    },
+    {
+      "id": "625d167e7838e300009b47d4",
+      "text": "すごい[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1650267773,
+      "updated": 1650282571
+    },
+    {
+      "id": "625d504be5172d00006a0c98",
+      "text": "https://scrapbox.io/api/code/villagepump/編集バーを生やすUserScript/script.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650282571,
+      "updated": 1650345921
+    },
+    {
+      "id": "625e3c2f1280f0000091f7a1",
+      "text": "なるほど。単純に下に生やすだけでいいみたいですね[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650342959,
+      "updated": 1650342974
+    },
+    {
+      "id": "625e3c3f1280f0000091f7a3",
+      "text": " code readingしつつ書き直してみる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650342974,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e4a301280f0000091f870",
+      "text": "  あー、`.page-status`の位置を調節しないといけないのか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346544,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e4a451280f0000091f871",
+      "text": "   単純にDOMを挿入しただけだと重なってしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346565,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e48bf1280f0000091f867",
+      "text": "  code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346175,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e48c71280f0000091f868",
+      "text": "   import { defaultSettings, setup } from \"./mod.js\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346183,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e48d51280f0000091f869",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346197,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e48d61280f0000091f86a",
+      "text": "   setup(defaultSettings);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346198,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e48b81280f0000091f864",
+      "text": "  code:mod.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346168,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e49f11280f0000091f86c",
+      "text": "   const c=[\"[]\",\"#\",\"*\",\"/\",\">\",\"``\",\".\",\">\",\"+\"].map(t=>({title:t,onClick:()=>t})),r=t=>{const d=u();d.append(...t.map(({title:p,className:i,onClick:a})=>l(p,a,i)));const o=document.createElement(\"div\"),e=o.attachShadow({mode:\"open\"}),n=document.createElement(\"style\");n.textContent=\".input-supporter{position:fixed;right:0;bottom:0;left:0;justify-content:space-between;width:100%;border-radius:8px 8px 0 0;background:#FFF;border:solid 1px #37352f17;box-shadow:#0f0f0f0d 0 0 0 1px,#0f0f0f1a 0 3px 6px,#0f0f0f33 0 9px 24px;z-index:300}.ins-btn{width:12.5%;width:calc(100% / 8);padding:12px 0;background:none;border:none;color:#111}.ins-btn:not(:first-child){border-left:solid 1px #37352f17}@media (max-width: 767px){.input-supporter{display:flex}}\",e.appendChild(n),e.appendChild(d),document.body.append(o);const s=()=>o.style.display=scrapbox.Layout===\"page\"?\"\":\"none\";s(),scrapbox.addListener(\"layout:changed\",s)},u=()=>{const t=document.createElement(\"div\");return t.classList.add(\"input-supporter\"),t},l=(t,d,o)=>{const e=document.createElement(\"button\");return e.classList.add(\"ins-btn\"),o&&e.classList.add(o),e.textContent=t,e.addEventListener(\"click\",()=>{const n=document.getElementById(\"text-input\");if(!n)throw Error(\"#text-input is not ditected.\");n.focus(),n.value=d();const s=new InputEvent(\"input\",{bubbles:!0});n.dispatchEvent(s)}),e};export{c as defaultSettings};export{r as setup};",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346481,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e4a021280f0000091f86e",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346498,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e47b51280f0000091f860",
+      "text": "  code:sh",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345909,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e47b81280f0000091f861",
+      "text": "   deno cache -r=https://scrapbox.io https://scrapbox.io/api/code/villagepump/編集バーを生やすUserScript/mod.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345914,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3c521280f0000091f7a4",
+      "text": "  code:mod.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650342994,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3c811280f0000091f7c6",
+      "text": "   /// <reference no-default-lib=\"true\" />",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343041,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3c811280f0000091f7c7",
+      "text": "   /// <reference lib=\"esnext\" />",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343041,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3c811280f0000091f7c8",
+      "text": "   /// <reference lib=\"dom\" />",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343041,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e48061280f0000091f862",
+      "text": "   import type { Scrapbox } from \"https://raw.githubusercontent.com/scrapbox-jp/types/0.3.2/userscript.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345990,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e48241280f0000091f863",
+      "text": "   declare const scrapbox: Scrapbox;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346020,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3c851280f0000091f7c9",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343045,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e45a71280f0000091f808",
+      "text": "   export interface Button {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345383,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e45b71280f0000091f809",
+      "text": "     title: string;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345399,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e45bc1280f0000091f80b",
+      "text": "     onClick: () => string;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345404,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e45c21280f0000091f80c",
+      "text": "     className?: string;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345411,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e45b91280f0000091f80a",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345401,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e45c91280f0000091f80d",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345417,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e45c91280f0000091f80e",
+      "text": "   export const defaultSettings: Button[] = [\"[]\", \"#\", \"*\", \"/\", \">\", \"``\", \".\", \">\", \"+\"]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345417,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e47891280f0000091f858",
+      "text": "     .map(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345865,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e47a41280f0000091f85e",
+      "text": "       (text) => ({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345892,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e47971280f0000091f85b",
+      "text": "         title: text,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345879,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e47991280f0000091f85d",
+      "text": "         onClick: () => text,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345881,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e47961280f0000091f859",
+      "text": "       })",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345878,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e47a81280f0000091f85f",
+      "text": "     );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345896,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e45a71280f0000091f807",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345383,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3c871280f0000091f7ca",
+      "text": "   export const setup = (settings: Button[]) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343047,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3d291280f0000091f7d8",
+      "text": "     const supporter = makeSupporter();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343209,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3d831280f0000091f7dc",
+      "text": "     supporter.append(...settings.map(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343299,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3d9c1280f0000091f7dd",
+      "text": "       ({ title, className, onClick }) => makeButton(title, onClick, className)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346358,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3d9e1280f0000091f7de",
+      "text": "     ));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346358,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e46af1280f0000091f84b",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345648,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e46b01280f0000091f84c",
+      "text": "     const app = document.createElement(\"div\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345648,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e46ca1280f0000091f84d",
+      "text": "     const shadowRoot = app.attachShadow({ mode: \"open\" });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345677,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e46eb1280f0000091f84f",
+      "text": "     const style = document.createElement(\"style\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345707,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e46f81280f0000091f850",
+      "text": "     style.textContent = \".input-supporter{position:fixed;right:0;bottom:0;left:0;justify-content:space-between;width:100%;border-radius:8px 8px 0 0;background:#FFF;border:solid 1px #37352f17;box-shadow:#0f0f0f0d 0 0 0 1px,#0f0f0f1a 0 3px 6px,#0f0f0f33 0 9px 24px;z-index:300}.ins-btn{width:12.5%;width:calc(100% / 8);padding:12px 0;background:none;border:none;color:#111}.ins-btn:not(:first-child){border-left:solid 1px #37352f17}@media (max-width: 767px){.input-supporter{display:flex}}\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345721,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3e531280f0000091f7e8",
+      "text": "     shadowRoot.appendChild(style);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343507,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e47061280f0000091f852",
+      "text": "     shadowRoot.appendChild(supporter);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345734,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e47191280f0000091f853",
+      "text": "     document.body.append(app);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345753,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e46e11280f0000091f84e",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345697,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3df51280f0000091f7e4",
+      "text": "     const changeVisible = () =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343413,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e471f1280f0000091f854",
+      "text": "       app.style.display = scrapbox.Layout === \"page\" ? \"\" : \"none\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345774,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e47371280f0000091f857",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345783,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3c961280f0000091f7cb",
+      "text": "     changeVisible();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343062,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3dbc1280f0000091f7e0",
+      "text": "     scrapbox.addListener(\"layout:changed\", changeVisible);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343356,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3db81280f0000091f7df",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343352,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3e6d1280f0000091f7e9",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343533,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3c961280f0000091f7cc",
+      "text": "   const makeSupporter = () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343062,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3ca31280f0000091f7cd",
+      "text": "     const div = document.createElement(\"div\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343075,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3cb61280f0000091f7cf",
+      "text": "     div.classList.add(\"input-supporter\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343094,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3cce1280f0000091f7d0",
+      "text": "     return div;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343118,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3ca41280f0000091f7ce",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343076,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3e6e1280f0000091f7ea",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343534,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3cdc1280f0000091f7d2",
+      "text": "   const makeButton = (title: string, onClick: () => string, className?: string) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343132,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3cdc1280f0000091f7d3",
+      "text": "     const button = document.createElement(\"button\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343132,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e492c1280f0000091f86b",
+      "text": "     button.classList.add(\"ins-btn\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346284,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3cdc1280f0000091f7d4",
+      "text": "     if (className) button.classList.add(className);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343132,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3d6b1280f0000091f7da",
+      "text": "     button.textContent = title;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343275,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3d111280f0000091f7d7",
+      "text": "     button.addEventListener(\"click\", () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343185,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e45281280f0000091f7f9",
+      "text": "    \tconst cursor = document.getElementById('text-input') as HTMLTextAreaElement | null;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345255,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e457e1280f0000091f7fd",
+      "text": "       if (!cursor) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345342,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e457e1280f0000091f7fe",
+      "text": "         throw Error(\"#text-input is not ditected.\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345342,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e457e1280f0000091f7ff",
+      "text": "       }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345342,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e45831280f0000091f805",
+      "text": "       ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345347,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e457e1280f0000091f800",
+      "text": "       cursor.focus();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345342,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e457e1280f0000091f801",
+      "text": "       cursor.value = onClick();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345342,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e457e1280f0000091f802",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345342,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e457e1280f0000091f803",
+      "text": "       const event = new InputEvent(\"input\", { bubbles: true });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345342,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e457e1280f0000091f804",
+      "text": "       cursor.dispatchEvent(event);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345342,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3e791280f0000091f7eb",
+      "text": "     });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343545,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3cdc1280f0000091f7d5",
+      "text": "     return button;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343132,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3cdc1280f0000091f7d6",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650343132,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e459e1280f0000091f806",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650345374,
+      "updated": 1650346704
+    },
+    {
+      "id": "625e3c321280f0000091f7a2",
+      "text": " [scrapbox-userscript-std]で直接`.page-status`に生やしたらどうだろう？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650342963,
+      "updated": 1650346726
+    },
+    {
+      "id": "625e4b571280f0000091f8c0",
+      "text": "  あっだめだ。クリックイベントとか対応してなかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346839,
+      "updated": 1650346852
+    },
+    {
+      "id": "625e4b641280f0000091f8c1",
+      "text": "  機能追加しないと",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346852,
+      "updated": 1650346858
+    },
+    {
+      "id": "625e4ae71280f0000091f874",
+      "text": "  code:mod2.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346728,
+      "updated": 1650346731
+    },
+    {
+      "id": "625e4af21280f0000091f876",
+      "text": "   /// <reference no-default-lib=\"true\" />",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346738,
+      "updated": 1650346738
+    },
+    {
+      "id": "625e4af21280f0000091f877",
+      "text": "   /// <reference lib=\"esnext\" />",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346738,
+      "updated": 1650346738
+    },
+    {
+      "id": "625e4af21280f0000091f878",
+      "text": "   /// <reference lib=\"dom\" />",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346738,
+      "updated": 1650346738
+    },
+    {
+      "id": "625e4af51280f0000091f87b",
+      "text": "   import { useStatusBar, insertText } from \"https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.12.1/browser/dom/mod.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346741,
+      "updated": 1650346813
+    },
+    {
+      "id": "625e4af21280f0000091f879",
+      "text": "   import type { Scrapbox } from \"https://raw.githubusercontent.com/scrapbox-jp/types/0.3.2/userscript.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346738,
+      "updated": 1650346738
+    },
+    {
+      "id": "625e4af21280f0000091f87a",
+      "text": "   declare const scrapbox: Scrapbox;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346738,
+      "updated": 1650346738
+    },
+    {
+      "id": "625e4b2f1280f0000091f881",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f882",
+      "text": "   export interface Button {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f883",
+      "text": "     title: string;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f884",
+      "text": "     onClick: () => string;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f885",
+      "text": "     className?: string;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f886",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f887",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f888",
+      "text": "   export const defaultSettings: Button[] = [\"[]\", \"#\", \"*\", \"/\", \">\", \"``\", \".\", \">\", \"+\"]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f889",
+      "text": "     .map(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f88a",
+      "text": "       (text) => ({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f88b",
+      "text": "         title: text,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f88c",
+      "text": "         onClick: () => text,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f88d",
+      "text": "       })",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f88e",
+      "text": "     );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f88f",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f890",
+      "text": "   export const setup = (settings: Button[]) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f891",
+      "text": "     const supporter = makeSupporter();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f892",
+      "text": "     supporter.append(...settings.map(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f893",
+      "text": "       ({ title, className, onClick }) => makeButton(title, onClick, className)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f894",
+      "text": "     ));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f895",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f896",
+      "text": "     const app = document.createElement(\"div\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f897",
+      "text": "     const shadowRoot = app.attachShadow({ mode: \"open\" });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f898",
+      "text": "     const style = document.createElement(\"style\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f899",
+      "text": "     style.textContent = \".input-supporter{position:fixed;right:0;bottom:0;left:0;justify-content:space-between;width:100%;border-radius:8px 8px 0 0;background:#FFF;border:solid 1px #37352f17;box-shadow:#0f0f0f0d 0 0 0 1px,#0f0f0f1a 0 3px 6px,#0f0f0f33 0 9px 24px;z-index:300}.ins-btn{width:12.5%;width:calc(100% / 8);padding:12px 0;background:none;border:none;color:#111}.ins-btn:not(:first-child){border-left:solid 1px #37352f17}@media (max-width: 767px){.input-supporter{display:flex}}\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f89a",
+      "text": "     shadowRoot.appendChild(style);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f89b",
+      "text": "     shadowRoot.appendChild(supporter);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f89c",
+      "text": "     document.body.append(app);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f89d",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f89e",
+      "text": "     const changeVisible = () =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f89f",
+      "text": "       app.style.display = scrapbox.Layout === \"page\" ? \"\" : \"none\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8a0",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8a1",
+      "text": "     changeVisible();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8a2",
+      "text": "     scrapbox.addListener(\"layout:changed\", changeVisible);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8a3",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8a4",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8a5",
+      "text": "   const makeSupporter = () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8a6",
+      "text": "     const div = document.createElement(\"div\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8a7",
+      "text": "     div.classList.add(\"input-supporter\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8a8",
+      "text": "     return div;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8a9",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8aa",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8ab",
+      "text": "   const makeButton = (title: string, onClick: () => string, className?: string) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8ac",
+      "text": "     const button = document.createElement(\"button\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8ad",
+      "text": "     button.classList.add(\"ins-btn\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8ae",
+      "text": "     if (className) button.classList.add(className);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8af",
+      "text": "     button.textContent = title;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8b0",
+      "text": "     button.addEventListener(\"click\", () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b441280f0000091f8bf",
+      "text": "       insertText(onClick());",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346820,
+      "updated": 1650346828
+    },
+    {
+      "id": "625e4b2f1280f0000091f8bb",
+      "text": "     });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8bc",
+      "text": "     return button;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8bd",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4b2f1280f0000091f8be",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346800,
+      "updated": 1650346800
+    },
+    {
+      "id": "625e4ad31280f0000091f872",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346707,
+      "updated": 1650346721
+    },
+    {
+      "id": "625e4adc1280f0000091f873",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1650346717,
+      "updated": 1650346717
+    }
+  ]
+}

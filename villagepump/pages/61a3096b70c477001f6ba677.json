@@ -1,0 +1,400 @@
+{
+  "id": "61a3096b70c477001f6ba677",
+  "title": "DenoだけでReactアプリを作",
+  "created": 1638074732,
+  "updated": 1662967900,
+  "lines": [
+    {
+      "id": "61a3096b70c477001f6ba677",
+      "text": "DenoだけでReactアプリを作",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e60a",
+      "text": "from [2020/11/28]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a309821280f00000f2e641",
+      "text": "[kuuote.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074754,
+      "updated": 1638074758
+    },
+    {
+      "id": "61a3096b1280f00000f2e60c",
+      "text": " React.jsで遊びたかっただけなのに気付いたら[deno]のビルドをやっている、[どうしてこうなった]",
+      "userId": "62a91a7a083437001de60035",
+      "created": 1638074732,
+      "updated": 1662967900
+    },
+    {
+      "id": "61a3096b1280f00000f2e60d",
+      "text": "  一応経緯としては",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e60e",
+      "text": "   現代でReact.jsやるならやはりTypeScript+JSX=TSXか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e60f",
+      "text": "   でもnode.js触りたくない…",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e610",
+      "text": "   そうだ、denoにやってもらおう、bundle使えばいけそうかな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e611",
+      "text": "   JSXは受け付けてくれるのにTSXは拒否される",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e612",
+      "text": "    →[DenoだけでReactアプリを作#61a3096b1280f00000f2e62e]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074769
+    },
+    {
+      "id": "61a3096b1280f00000f2e613",
+      "text": "   ちょっと直せばいけるのかな、とりあえずビルドしよう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e614",
+      "text": " 今回のに限らないけど変なこだわり([宗教])のせいで遠回りをして無駄に時間を浪費していることが多い",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e615",
+      "text": "  [de facto standard]が嫌で[de facto standardから逃れる]癖があるという病気",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e616",
+      "text": "  この間僕もこれやった！[yuta0801.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e617",
+      "text": "   Reactならフレームワークを使うからやらないけど、サーバー側スクリプトでJSXだけ使いたかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e618",
+      "text": "    素直にフレームワークに乗ればいいのにと思わんでもない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e619",
+      "text": "    普通に乗っかったほうがよいと思う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e61a",
+      "text": "     だいたい隠蔽してくれるし便利な機能も付いてる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e61b",
+      "text": "     Denoで書くとしてもフレームワークを使わないと結構めんどくさい部分を書くことになる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e61c",
+      "text": "      めんどくさい部分というか、別に自分で書かなくてもよいような、勝手にやってほしい部分",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e61d",
+      "text": "   JSXでSVG書いてPNGにしたかったのだけど、変換ライブラリがDenoにはなかったのでRustでnative pluginを書くことになった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e61e",
+      "text": "    すごい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e61f",
+      "text": "    ちなみにこの一週間そのnative pluginのフォントレンダリングの問題に毎日2時間ぐらいかけて調査してる…",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e620",
+      "text": "     全然context違うけど一日2時間と時間を制限して調査できるのすごいと思った[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e621",
+      "text": " JSXはともかくとしてTypeScriptを使うとなると現状node.jsから逃れる術は無さそうな事に気付いた人の顔してる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e622",
+      "text": "  あれDenoならTypeScriptを標準で使えませんでしたっけ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e623",
+      "text": "  \tじゃなくてReact.js+Typescriptだとnode.jsを使わざるを得ないということ？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e624",
+      "text": "  \t です",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e625",
+      "text": "  \t ブラウザ向けにビルドするのはDenoだと現状無理そう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e626",
+      "text": "  \t frontend向けDenoはやくほしい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e627",
+      "text": "  \t  DenoはWebとの互換性を強く保っているのでDeno固有の処理を使っていないのならそのまま動くはず[yuta0801.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e628",
+      "text": "  \t  importしているスクリプトもまとめるdeno bundleというコマンドもある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e629",
+      "text": "  \t   TSの変換もやってくれてブラウザにも対応しているみたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e62a",
+      "text": "  \t   [/deno-ja/deno bundle]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e62b",
+      "text": "  Denoのさらなる開発が望まれる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e62c",
+      "text": "  2021-11-28 13:34:39 かなり充実してきた[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e62d",
+      "text": "   frameworkなしでも、DOMテスト以外なら全部できます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e62e",
+      "text": "    DOMの型推論は`tsconfig.json`か[triple-slash directive]で指定すれば効くようになる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e62f",
+      "text": "    最終的にweb browserで動かすJSファイルは`deno bundle`ですぐ作れる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e630",
+      "text": "    　webpackのように、細かい設定をしたり間にloaderを噛ませたい場合は[esbuild]を使えばいい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e631",
+      "text": "    　いずれもwebpackなどとは比較にならないくらい速い",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e632",
+      "text": "    cf. [/uki00a/Denoのフロントエンドフレームワークの比較]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e633",
+      "text": "   frameworkを使うとlocalhostを使ったhot reloadが簡単になる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e634",
+      "text": "    frameworkを使わなくても[deno_std/http]で雑に実行できるが",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e635",
+      "text": "   DOMテストは、[jsdom]に相当するDeno libraryさえできれば可能になる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e636",
+      "text": " 既にご存知かもしれませんが一応紹介しておきます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e637",
+      "text": "  つ[/deno-ja]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e638",
+      "text": " [esbuild]というのを知った、試してみよう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e639",
+      "text": "  JSX扱えるっぽいしbundleやminifyもしてくれるっぽい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e63a",
+      "text": "  遊ぶだけならこれでよさそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e63b",
+      "text": "  2021-11-28 13:35:43 あ、esbuildの存在はここで知ったのか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e63c",
+      "text": "   最近は毎日のようにお世話になっている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e63d",
+      "text": " 無駄な[yak shaving]が終わってようやくReactに辿りつけた…予定",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e63e",
+      "text": " Reactよき…JSXはJavaScriptのObjectになるのでプログラムの中にUIのコードが書ける、最高",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e63f",
+      "text": "  プログラムで組み立てられるのですごく便利",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    },
+    {
+      "id": "61a3096b1280f00000f2e640",
+      "text": "  大体[Vue.jsよりReact向きの人]に書いてあることと同じこと思ってる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1638074732,
+      "updated": 1638074732
+    }
+  ]
+}

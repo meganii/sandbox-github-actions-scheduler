@@ -1,0 +1,701 @@
+{
+  "id": "5f7fdac95b077d001e81660c",
+  "title": "開始時間・終了時間の文字列を選択して合計時間を出すUserScriptを作りたい",
+  "created": 1602214607,
+  "updated": 1609849002,
+  "lines": [
+    {
+      "id": "5f8045c4a9f47400009ab9a2",
+      "text": "開始時間・終了時間の文字列を選択して合計時間を出すUserScriptを作りたい",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1602241988,
+      "updated": 1602242305
+    },
+    {
+      "id": "5f7fdac95b077d001e81660c",
+      "text": "ここで[UserScript]の依頼って可能ですか？",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602214607,
+      "updated": 1602492946
+    },
+    {
+      "id": "5f7fdb021d860a0000cb06fb",
+      "text": "[air34n.icon]",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602214659,
+      "updated": 1602214662
+    },
+    {
+      "id": "5f7fdae91d860a0000cb06f9",
+      "text": "作りたいスクリプトはあるけど、よくわからない",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602214634,
+      "updated": 1602214658
+    },
+    {
+      "id": "5f7fdaef1d860a0000cb06fa",
+      "text": "　これから仕事なので、夕方にまた…。[air34n.icon] ",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602214640,
+      "updated": 1602215983
+    },
+    {
+      "id": "5f7fe032a9f4740000b72299",
+      "text": "　 がんばえ~~",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1602215986,
+      "updated": 1602215990
+    },
+    {
+      "id": "5f7ffe5086501c0000a64539",
+      "text": "　仕事のタスクメモとして、",
+      "userId": "5f6edacd44511b001f86501c",
+      "created": 1602223697,
+      "updated": 1602223701
+    },
+    {
+      "id": "5f7ffe5386501c0000a6453a",
+      "text": " 　[* 201020納期] // ＃〇〇工業 / Mail / 完成品 ＃201009受注",
+      "userId": "5f6edacd44511b001f86501c",
+      "created": 1602223701,
+      "updated": 1602223730
+    },
+    {
+      "id": "5f7ffe5386501c0000a6453b",
+      "text": " 　 10/09 13:00～16:00　[[3H]]",
+      "userId": "5f6edacd44511b001f86501c",
+      "created": 1602223701,
+      "updated": 1602223701
+    },
+    {
+      "id": "5f7ffe5486501c0000a6453c",
+      "text": " 　までを自作のUserScriptで作ってあって、下段の時間のところを([[3H]]の部分)、13:00～16:00を選択してメニューを選ぶだけで計算してほしい！[air34n.icon]",
+      "userId": "5f6edacd44511b001f86501c",
+      "created": 1602223701,
+      "updated": 1602224698
+    },
+    {
+      "id": "5f80023b1280f00000381328",
+      "text": " 　断片だけ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602224699,
+      "updated": 1602224706
+    },
+    {
+      "id": "5f8002401280f00000381329",
+      "text": " 　code:fragment1.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602224706,
+      "updated": 1602224715
+    },
+    {
+      "id": "5f80024b1280f0000038132b",
+      "text": " 　 const format = text => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602224715,
+      "updated": 1602225972
+    },
+    {
+      "id": "5f8002dc1280f00000381330",
+      "text": " 　 \t\tconst [begin, end] = text.replace(/(\\d+:\\d+)[^\\d]*(\\d+:\\d+)/,'$1,$2')",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602224860,
+      "updated": 1602308786
+    },
+    {
+      "id": "5f814ab11280f00000993026",
+      "text": "      \t\t\t\t\t.split(',')",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308786,
+      "updated": 1602308786
+    },
+    {
+      "id": "5f814ab11280f00000993027",
+      "text": "      \t\t\t\t\t.map(time => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308786,
+      "updated": 1602308786
+    },
+    {
+      "id": "5f814ab11280f00000993028",
+      "text": "      \t\t\t\t\t\tconst [hour, minute] = time.split(':');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308786,
+      "updated": 1602308786
+    },
+    {
+      "id": "5f814ab11280f00000993029",
+      "text": "      \t\t\t\t\t\treturn parseInt(hour)*60+parseInt(minute);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308786,
+      "updated": 1602308786
+    },
+    {
+      "id": "5f814ab11280f0000099302a",
+      "text": "      \t\t\t\t\t});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308786,
+      "updated": 1602308786
+    },
+    {
+      "id": "5f814ab11280f0000099302b",
+      "text": "      \t\tconst duration = end -begin;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308786,
+      "updated": 1602308786
+    },
+    {
+      "id": "5f814ab11280f0000099302c",
+      "text": "      \t\tconst minutes = duration % 60;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308786,
+      "updated": 1602308786
+    },
+    {
+      "id": "5f814ab11280f0000099302d",
+      "text": "      \t\tconst hours = Math.floor(duration / 60);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308786,
+      "updated": 1602308786
+    },
+    {
+      "id": "5f814ab11280f0000099302e",
+      "text": "      \t\treturn minutes !== 0 ? `${hours}H${minutes}M` : `${hours}H`;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308786,
+      "updated": 1602308828
+    },
+    {
+      "id": "5f80026a1280f0000038132e",
+      "text": " 　 \t};",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602224746,
+      "updated": 1602225975
+    },
+    {
+      "id": "5f7fde921d860a0000cb06fc",
+      "text": "  やっつけで作った",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602215572,
+      "updated": 1602225601
+    },
+    {
+      "id": "5f80073d1280f00000381339",
+      "text": "   [developer tool]のconsoleに貼り付ければテストできます",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1602225982,
+      "updated": 1602226018
+    },
+    {
+      "id": "5f8005c01280f00000381337",
+      "text": "  \tあとは`format`をいい感じにrefactoringして該当のUserScriptに組み込めばおｋ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602225601,
+      "updated": 1602242499
+    },
+    {
+      "id": "5f80f9911280f00000114ded",
+      "text": "  \t Popup menuなら`scrapbox.PopupMenu.addButton`を使ったり",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602288018,
+      "updated": 1602288055
+    },
+    {
+      "id": "5f80f8fc1280f00000114de3",
+      "text": "  \t実行例",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602287869,
+      "updated": 1602287874
+    },
+    {
+      "id": "5f80f9021280f00000114de4",
+      "text": "  \tcode:fragment1-test.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602287874,
+      "updated": 1602287885
+    },
+    {
+      "id": "5f8120011280f0000021e4ae",
+      "text": "  \t const format = text => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602297857,
+      "updated": 1602297865
+    },
+    {
+      "id": "5f8120081280f0000021e4af",
+      "text": "      \t\tconst [begin, end] = text.replace(/(\\d+:\\d+)[^\\d]*(\\d+:\\d+)/,'$1,$2')",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602297865,
+      "updated": 1602308629
+    },
+    {
+      "id": "5f8120081280f0000021e4b0",
+      "text": "      \t\t\t\t\t.split(',')",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602297865,
+      "updated": 1602297868
+    },
+    {
+      "id": "5f8120081280f0000021e4b1",
+      "text": "      \t\t\t\t\t.map(time => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602297865,
+      "updated": 1602308763
+    },
+    {
+      "id": "5f8120081280f0000021e4b3",
+      "text": "      \t\t\t\t\t\tconst [hour, minute] = time.split(':');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602297865,
+      "updated": 1602308647
+    },
+    {
+      "id": "5f8120081280f0000021e4b4",
+      "text": "      \t\t\t\t\t\treturn parseInt(hour)*60+parseInt(minute);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602297865,
+      "updated": 1602308650
+    },
+    {
+      "id": "5f8120081280f0000021e4b5",
+      "text": "      \t\t\t\t\t});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602297865,
+      "updated": 1602308655
+    },
+    {
+      "id": "5f8149541280f00000fec2d9",
+      "text": "      \t\tconst duration = end -begin;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308436,
+      "updated": 1602308447
+    },
+    {
+      "id": "5f81490d1280f00000fec2d7",
+      "text": "      \t\tconst minutes = duration % 60;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308365,
+      "updated": 1602308452
+    },
+    {
+      "id": "5f8149281280f00000fec2d8",
+      "text": "      \t\tconst hours = Math.floor(duration / 60);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308393,
+      "updated": 1602308459
+    },
+    {
+      "id": "5f8120081280f0000021e4b6",
+      "text": "      \t\treturn minutes !== 0 ? `${hours}H${minutes}M` : `${hours}H`;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602297865,
+      "updated": 1602308837
+    },
+    {
+      "id": "5f8120081280f0000021e4b7",
+      "text": "      \t};",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602297865,
+      "updated": 1602297874
+    },
+    {
+      "id": "5f80f90d1280f00000114de5",
+      "text": "  \t console.log(format('10:00〜12:00'));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602287885,
+      "updated": 1602297962
+    },
+    {
+      "id": "5f80f92d1280f00000114de6",
+      "text": "  \t // → 2H",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602287917,
+      "updated": 1602287925
+    },
+    {
+      "id": "5f80f9351280f00000114de7",
+      "text": "  \t console.log(format('13:00〜16:00'));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602287926,
+      "updated": 1602297972
+    },
+    {
+      "id": "5f80f9461280f00000114de8",
+      "text": "  \t // → 3H",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602287943,
+      "updated": 1602287946
+    },
+    {
+      "id": "5f80f94a1280f00000114de9",
+      "text": "  \t console.log(format('16:00〜15:00'));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602287946,
+      "updated": 1602297974
+    },
+    {
+      "id": "5f80f95f1280f00000114dea",
+      "text": "  \t // → -1H",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602287967,
+      "updated": 1602287972
+    },
+    {
+      "id": "5f80f9641280f00000114deb",
+      "text": "  \t console.log(format('12:40〜14:45'));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602287972,
+      "updated": 1602297976
+    },
+    {
+      "id": "5f80f97d1280f00000114dec",
+      "text": "  \t // → 2H5M",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602287998,
+      "updated": 1602308560
+    },
+    {
+      "id": "5f8005b11280f00000381336",
+      "text": "　　おー！ありがとうございます[air34n.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602225586,
+      "updated": 1602239735
+    },
+    {
+      "id": "5f803cf71d860a0000cb0709",
+      "text": "　　　なにがどうなのかわかりませんが、なんか違う…。",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602239737,
+      "updated": 1602257383
+    },
+    {
+      "id": "5f803ce11d860a0000cb0708",
+      "text": "\t\t\tごめんなさい、全くどうしたらいいかわかりません[air34n.icon]",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602239714,
+      "updated": 1602293597
+    },
+    {
+      "id": "5f8112a21d860a0000b179a8",
+      "text": "\t\t\tおそらく私がテストのやり方を間違えているのかな？と思います[air34n.icon]",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602294436,
+      "updated": 1602294466
+    },
+    {
+      "id": "5f8116d11280f00000e0982e",
+      "text": "\t\t\t [developer tool]に貼り付けるとこんな感じです",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1602295505,
+      "updated": 1602295522
+    },
+    {
+      "id": "5f8116e21280f00000e0982f",
+      "text": " \t\t\t [- https://gyazo.com/10fbdcedb852733a4c4522afeda287f7]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602295522,
+      "updated": 1602297788
+    },
+    {
+      "id": "5f811fbe1280f0000021e4ab",
+      "text": " \t\t\t 修正しました。[開始時間・終了時間の文字列を選択して合計時間を出すUserScriptを作りたい#5f80f9021280f00000114de4]をconsoleにコピペして下さい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602297790,
+      "updated": 1602297847
+    },
+    {
+      "id": "5f8116e41280f00000e09830",
+      "text": "　　　　どのような方法でテストしたのか書いていただけるとわかるかもです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602295525,
+      "updated": 1602295579
+    },
+    {
+      "id": "5f8117ce1d860a0000b179aa",
+      "text": "　　　　\t自分の個人プロジェクト内に`format('13:30～16:30)`と書いて、上記のスクリプトをコンソールに貼り付けました。",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602295761,
+      "updated": 1602295842
+    },
+    {
+      "id": "5f811f7a1280f0000021e4a8",
+      "text": "　　　　\t　それは動きません。変数(函数)の宣言順序と、scriptのscopeを考えてみて下さい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602297723,
+      "updated": 1602297914
+    },
+    {
+      "id": "5f8118221d860a0000b179ab",
+      "text": "　　　　\t[https://gyazo.com/f1d45ba9e83ad680a9bd8bf883af616a]",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602295844,
+      "updated": 1602295943
+    },
+    {
+      "id": "5f8118851d860a0000b179ac",
+      "text": "     こうなりました[air34n.icon]",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602295943,
+      "updated": 1602295957
+    },
+    {
+      "id": "5f8118b61d860a0000b179ad",
+      "text": "     あ、違うところがある、なるほど、そうするのか……やってみよう[air34n.icon]",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602295992,
+      "updated": 1602296028
+    },
+    {
+      "id": "5f8119d71d860a0000b179ae",
+      "text": "     だめですね、見た目同じですがシンタックスエラーが出ますね[air34n.icon]",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602296281,
+      "updated": 1602296322
+    },
+    {
+      "id": "5f81223f1d860a0000c6dd30",
+      "text": "     デベロッパーツール、難しいですねぇ。普段触りませんし…というかWebツール作りたくて参考書買いましたが意味わかんなくて…。いま出先なので帰ったらまた試します。",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602298433,
+      "updated": 1602298561
+    },
+    {
+      "id": "5f8125991280f00000ddbf62",
+      "text": "     \t[developer tool]が難しかったら、[UserScript]に直打ちでも問題ないです。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1602299289,
+      "updated": 1603431421
+    },
+    {
+      "id": "5f8125b91280f00000ddbf63",
+      "text": "     \t\t単に[developer tool]が一番簡単そうに思えたので使っただけです。javascriptを動かせる環境であればどこでもtestできます",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1602299322,
+      "updated": 1602299390
+    },
+    {
+      "id": "5f8146961d860a000042c1f1",
+      "text": "     \t\t昼から妻がPCを使うようなので、今Fire tab8にjavascriptのアプリ入れて試したらできました。が、時間表記はされますが、分表記が出なくてどうするのかなぁ？と頭を抱えてしまいました[air34n.icon]",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602307735,
+      "updated": 1602307954
+    },
+    {
+      "id": "5f8112c31d860a0000b179a9",
+      "text": "\t\t\t作ってもらったのにテストできずすいません[air34n.icon]",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602294469,
+      "updated": 1602307762
+    },
+    {
+      "id": "5f8146b25b98c200009df145",
+      "text": "\t\tこれ、`Math.floor()`（端数切捨て）を使っているけど、これでいいの？[suto3.icon]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1602307762,
+      "updated": 1602308037
+    },
+    {
+      "id": "5f8146f45b98c200009df146",
+      "text": "\t \t`console.log(format('12:40〜14:39'));`だと、`1H`が返ってくるけど",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1602307828,
+      "updated": 1602307976
+    },
+    {
+      "id": "5f81482c1d860a00006d1f06",
+      "text": "\t\t\t出来れば、1H15Mみたいな表記が欲しいですねぇ[air34n.icon]",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602308141,
+      "updated": 1602308215
+    },
+    {
+      "id": "5f81489b1280f00000fec2d4",
+      "text": "\t\t\tMまで欲しかったのですか。それは気づきませんでした[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308252,
+      "updated": 1602308323
+    },
+    {
+      "id": "5f8148c51280f00000fec2d5",
+      "text": " \t\t\t[開始時間・終了時間の文字列を選択して合計時間を出すUserScriptを作りたい#5f7ffe5486501c0000a6453c]には`3H`とだけ合ったので、てっきりMは切り捨てるものかと……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308293,
+      "updated": 1602308320
+    },
+    {
+      "id": "5f8149a61d860a00006d1f07",
+      "text": " \t\t\tすみません、説明不足で[air34n.icon]",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602308518,
+      "updated": 1602308568
+    },
+    {
+      "id": "5f8149c01280f00000fec2da",
+      "text": " \t\t\t修正しました。[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602308545,
+      "updated": 1602308549
+    },
+    {
+      "id": "5f814b8d1d860a000020c913",
+      "text": " \t\t\t長々とありがとうございました。あとはチョコチョコイジってみたいと思います。[air34n.icon]",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602309006,
+      "updated": 1602309066
+    },
+    {
+      "id": "5f815d1a1280f000009c644f",
+      "text": " \t\t\tういです。ぜひぜひいじってみてください[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602313498,
+      "updated": 1602313519
+    },
+    {
+      "id": "5f810f361d860a000089925d",
+      "text": "",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602293560,
+      "updated": 1602308555
+    },
+    {
+      "id": "5f7fdb1ca9f47400001602b5",
+      "text": "どんなスクリプト?実装方法がわからない?",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1602214684,
+      "updated": 1602214695
+    },
+    {
+      "id": "5f7fdb7d1280f0000042994f",
+      "text": "作りたい[takker.icon*3]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602214782,
+      "updated": 1602214787
+    },
+    {
+      "id": "5f7fdb831280f00000429950",
+      "text": "　どういうことしたいか文章or Drawingで書いていただければ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602214788,
+      "updated": 1602214812
+    },
+    {
+      "id": "5f7fdb9f1280f00000429951",
+      "text": "　本当に作れるかどうかはわからない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602214816,
+      "updated": 1602214823
+    },
+    {
+      "id": "5f7fdba71280f00000429952",
+      "text": "　\t[- そもそも情報系の人間じゃないし]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602214823,
+      "updated": 1602214843
+    },
+    {
+      "id": "5f7fe0211d860a0000cb06fd",
+      "text": "　\t　え？そうなの？[air34n.icon]",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602215970,
+      "updated": 1602215981
+    },
+    {
+      "id": "5f7fe0511280f00000429968",
+      "text": "　\t　[takker#5f7690c01280f00000791d21]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602216018,
+      "updated": 1602216018
+    },
+    {
+      "id": "5f7fdb0aa9f47400001602b3",
+      "text": "",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1602214667,
+      "updated": 1602214667
+    },
+    {
+      "id": "5f7fdba3a9f474000020a218",
+      "text": "実現したいことがうまく書けなくても､書いてみよう",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1602214819,
+      "updated": 1602214827
+    },
+    {
+      "id": "5f7fdbaba9f474000020a219",
+      "text": "　また新しい[UserScript]をお願いしたいと企んでいます。まだ準備が出来てないので後日になります。[air34n.icon]",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1602214827,
+      "updated": 1602492929
+    },
+    {
+      "id": "5f8419a31d860a0000887877",
+      "text": "",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602492836,
+      "updated": 1602492836
+    },
+    {
+      "id": "5f7fdb0aa9f47400001602b4",
+      "text": "初めて､ページリスト上のタイトルが書き換わる光景を観た[dnin.icon]",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1602214667,
+      "updated": 1613112350
+    },
+    {
+      "id": "5f7fdb09a9f47400001602b0",
+      "text": " みたかったなー[takker.icon]",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1602214667,
+      "updated": 1602216175
+    },
+    {
+      "id": "5f7fdb751280f0000042994d",
+      "text": " なんかこう､パタパタが",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602214774,
+      "updated": 1602217762
+    },
+    {
+      "id": "5f7fe718a9f4740000b36c76",
+      "text": "　　[反転フラップ式案内表示機]が動いているのを観た感じに近い?",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1602217752,
+      "updated": 1602217848
+    },
+    {
+      "id": "5f7fe779a9f4740000b36c78",
+      "text": "　　 `空港 時刻表示 パタパタ`で出てきた",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1602217850,
+      "updated": 1602217862
+    },
+    {
+      "id": "5f7fe733a9f4740000b36c77",
+      "text": "　[Scrapbox Drinkup]中にshokaiさんのプロジェクトとかDrinkupのプロジェクト見るとものすごい速さで更新されて面白いですよ[air34n.icon]",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1602217779,
+      "updated": 1602301872
+    },
+    {
+      "id": "5f803d151d860a0000cb070a",
+      "text": "",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1602239767,
+      "updated": 1602239767
+    },
+    {
+      "id": "5ff458961280f000005efc85",
+      "text": "[/takker/tritask-scrapbox]の技術を転用すれば、もっと楽にやれそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1609848982,
+      "updated": 1609849002
+    },
+    {
+      "id": "5ff458971280f000005efc86",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1609848983,
+      "updated": 1609848983
+    }
+  ]
+}

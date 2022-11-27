@@ -1,0 +1,582 @@
+{
+  "id": "60a687b9bf7158001c1c33d4",
+  "title": "数式をpreviewするUserScript",
+  "created": 1621526463,
+  "updated": 1639049850,
+  "lines": [
+    {
+      "id": "60a687b9bf7158001c1c33d4",
+      "text": "数式をpreviewするUserScript",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621526463,
+      "updated": 1621526463
+    },
+    {
+      "id": "6191f04e1280f00000fae763",
+      "text": "[Scrapboxの数式記法]をリアルタイムで表示するUserScript",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954190,
+      "updated": 1643249508
+    },
+    {
+      "id": "6191f0a11280f00000fae787",
+      "text": " [https://gyazo.com/15929506031f2af064957e912639db9e]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954273,
+      "updated": 1636954309
+    },
+    {
+      "id": "6191f0c61280f00000fae789",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954310,
+      "updated": 1636954310
+    },
+    {
+      "id": "6191f1041280f00000fae79a",
+      "text": "目的",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954372,
+      "updated": 1636954372
+    },
+    {
+      "id": "6191f1041280f00000fae79b",
+      "text": " [Scrapboxの数式記法]を書き込んでいる間に、どのような数式になるのかreal-timeで確認したい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954372,
+      "updated": 1643249508
+    },
+    {
+      "id": "6191f1041280f00000fae79c",
+      "text": " 数式をミスったときに、どこをミスったのか分かるようにしたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954372,
+      "updated": 1636954372
+    },
+    {
+      "id": "6191f1041280f00000fae79d",
+      "text": " 元ネタ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954372,
+      "updated": 1636954372
+    },
+    {
+      "id": "6191f1041280f00000fae79e",
+      "text": "  [/forum-jp/texのリアルタイムプレビューが欲しい]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954372,
+      "updated": 1636954372
+    },
+    {
+      "id": "6191f1061280f00000fae79f",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954375,
+      "updated": 1636954375
+    },
+    {
+      "id": "6191f0cb1280f00000fae78a",
+      "text": "new version",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954316,
+      "updated": 1636954321
+    },
+    {
+      "id": "6191f0d31280f00000fae78f",
+      "text": " [/icons/github.icon][https://github.com/takker99/scrapbox-katex-previewer takker99/scrapbox-katex-previewer]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954324,
+      "updated": 1636954324
+    },
+    {
+      "id": "6191f0d31280f00000fae790",
+      "text": " [/takker/scrapbox-katex-previewer]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954324,
+      "updated": 1636954324
+    },
+    {
+      "id": "6191f13f1280f00000fae7a1",
+      "text": " 使い方",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954432,
+      "updated": 1636954434
+    },
+    {
+      "id": "6191f1541280f00000fae7a5",
+      "text": "  1. 以下のいずれかから取得したコードを適当なページの適当なコードブロックに貼り付ける",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954453,
+      "updated": 1636954555
+    },
+    {
+      "id": "6191f14e1280f00000fae7a3",
+      "text": "   [get nightly bundled code https://scrapbox-bundler.vercel.app?url=https://raw.githubusercontent.com/takker99/scrapbox-katex-previewer/main/App.tsx&bundle&minify&run&reload]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954447,
+      "updated": 1639049840
+    },
+    {
+      "id": "6191f14e1280f00000fae7a4",
+      "text": "   [get v0.1.2 bundled code https://scrapbox-bundler.vercel.app?url=https://raw.githubusercontent.com/takker99/scrapbox-katex-previewer/0.1.2/App.tsx&bundle&minify&run]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954447,
+      "updated": 1639049850
+    },
+    {
+      "id": "6191f1bc1280f00000fae7a6",
+      "text": "   以下、プロジェクト`user`のページ`scrapbox-katex-previewer`の`script.js`に貼り付けたと仮定する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954556,
+      "updated": 1636954601
+    },
+    {
+      "id": "6191f1da1280f00000fae7a7",
+      "text": "  2. 以下を自分のページに貼り付ける",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954586,
+      "updated": 1636954616
+    },
+    {
+      "id": "6191f1f81280f00000fae7a8",
+      "text": "   code:js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954616,
+      "updated": 1636954619
+    },
+    {
+      "id": "6191f1fa1280f00000fae7a9",
+      "text": "    import {mount} from \"/api/code/user/scrapbox-katex-previewer/script.js\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954619,
+      "updated": 1636954641
+    },
+    {
+      "id": "6191f2111280f00000fae7aa",
+      "text": "    mount();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954641,
+      "updated": 1636954649
+    },
+    {
+      "id": "6191f30f1280f00000fae7ae",
+      "text": "  3. おしまい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954896,
+      "updated": 1636954899
+    },
+    {
+      "id": "6191f0d61280f00000fae791",
+      "text": " 変更点",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954327,
+      "updated": 1636954331
+    },
+    {
+      "id": "6191f11f1280f00000fae7a0",
+      "text": "  開発環境をGit+Vim+Deno+TSXに移行した",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954400,
+      "updated": 1636954695
+    },
+    {
+      "id": "6191f2321280f00000fae7ab",
+      "text": "  [scrapbox-bundler]でコードを提供するようにした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954674,
+      "updated": 1636954694
+    },
+    {
+      "id": "6191f3261280f00000fae7af",
+      "text": "   ユーザーは上記のリンク[. [数式をpreviewするUserScript#6191f14e1280f00000fae7a3] ]を踏むだけでbundle済みコードを取得できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954918,
+      "updated": 1636954954
+    },
+    {
+      "id": "6191f0da1280f00000fae792",
+      "text": "  [TeX表記にプレビュー機能が付いている]のと干渉しないようにした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954331,
+      "updated": 1636954350
+    },
+    {
+      "id": "6191f0ef1280f00000fae794",
+      "text": "  エラー表示を分かりやすくした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954352,
+      "updated": 1636954357
+    },
+    {
+      "id": "6191f0611280f00000fae764",
+      "text": "   [https://gyazo.com/862ad3981b66d907a324b9bc23162314]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954209,
+      "updated": 1636954358
+    },
+    {
+      "id": "6191f0451280f00000fae762",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954182,
+      "updated": 1636954182
+    },
+    {
+      "id": "6191f0361280f00000fae761",
+      "text": "old version",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636954166,
+      "updated": 1636954179
+    },
+    {
+      "id": "60a6ea591280f000005902cd",
+      "text": " [/programming-notes/数式をpreviewするUserScript]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621551705,
+      "updated": 1636954180
+    },
+    {
+      "id": "60a6ea5a1280f000005902ce",
+      "text": "  [https://gyazo.com/52ef50b5ef74eb17cbaf365571af1d80]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621551705,
+      "updated": 1636954180
+    },
+    {
+      "id": "60a6ea661280f000005902cf",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621551717,
+      "updated": 1621551717
+    },
+    {
+      "id": "60a688481280f000000a1a5d",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621526601,
+      "updated": 1621526601
+    },
+    {
+      "id": "60a73a8e385a9200003d0710",
+      "text": "iine!![miyamonz.icon][yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1621572239,
+      "updated": 1621572431
+    },
+    {
+      "id": "60a73a91385a9200003d0711",
+      "text": " 今までの反省も兼ねて、bundlerも用意したぞい[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621572241,
+      "updated": 1621580566
+    },
+    {
+      "id": "60a75b171280f00000cb5674",
+      "text": "  コピペで安全かつ簡単に導入できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621580567,
+      "updated": 1621580590
+    },
+    {
+      "id": "60a75b061280f00000cb5673",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621580550,
+      "updated": 1621580550
+    },
+    {
+      "id": "60a6ebb01280f000005902d1",
+      "text": "テーブルがひっついて回るのなんか面白い[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621552048,
+      "updated": 1621552456
+    },
+    {
+      "id": "60a6ebbd1280f000005902d2",
+      "text": " [https://gyazo.com/006e37d1e29456042a866d5ebdc6afb3]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621552060,
+      "updated": 1621552062
+    },
+    {
+      "id": "60a6ea571280f000005902cc",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621551702,
+      "updated": 1621551702
+    },
+    {
+      "id": "60a687e41280f000000a1a5a",
+      "text": "develop",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621526500,
+      "updated": 1621551702
+    },
+    {
+      "id": "60a687cd1280f000000a1a59",
+      "text": "パーツを適当に組み合わせて試してみたらできてしまった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621526477,
+      "updated": 1621526497
+    },
+    {
+      "id": "60a687c61280f000000a1a57",
+      "text": " [/programming-notes/popupに数式を出してみる]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621526470,
+      "updated": 1621526498
+    },
+    {
+      "id": "60a687be1280f000000a1a54",
+      "text": " [https://gyazo.com/c9df4e42704c51b9bd108ee556735e92]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1621526463,
+      "updated": 1621526499
+    },
+    {
+      "id": "610a279819827000006a9ff7",
+      "text": "",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1628055449,
+      "updated": 1628055449
+    },
+    {
+      "id": "610a279819827000006a9ff8",
+      "text": "",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1628055449,
+      "updated": 1628055449
+    },
+    {
+      "id": "610a279819827000006a9ff9",
+      "text": "",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1628055449,
+      "updated": 1628055449
+    },
+    {
+      "id": "610a279819827000006a9ffa",
+      "text": "",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1628055449,
+      "updated": 1628055449
+    },
+    {
+      "id": "610a279819827000006a9ffb",
+      "text": "denoでminifyしてやる方で試してみたら表示がおかしかった😢",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1628055449,
+      "updated": 1628055498
+    },
+    {
+      "id": "610a27ad19827000006a9ffe",
+      "text": "\t全然調べてないので[mrsekut.icon]のやり方がおかしいだけかもしれませんが一応報告しときます",
+      "userId": "5fe444046f8e560041dd60be",
+      "created": 1628055469,
+      "updated": 1628060492
+    },
+    {
+      "id": "610a27a519827000006a9ffd",
+      "text": "\t[https://gyazo.com/580c532ef0d70afccb4343c9f821ca24]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1628055462,
+      "updated": 1628055463
+    },
+    {
+      "id": "610b129e1280f000000e7d71",
+      "text": "\t ほんとだ。表示がおかしいですね[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1628115613,
+      "updated": 1628115622
+    },
+    {
+      "id": "610b12a81280f000000e7d72",
+      "text": "\t  [https://gyazo.com/7e09c35976de9a890631c8ce1ecde22e]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1628115622,
+      "updated": 1628115630
+    },
+    {
+      "id": "610b11381280f000000e7d6f",
+      "text": "  [/programming-notes/mathml版KaTeXが表示されてしまう]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1628115254,
+      "updated": 1628116395
+    },
+    {
+      "id": "610b15ae1280f000000e7d74",
+      "text": "  原因が分かったので直します[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1628116397,
+      "updated": 1628116401
+    },
+    {
+      "id": "610b1d771280f000000e7d75",
+      "text": "  2021-08-05 08:06:34 直りました！お手数おかけしました。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1628118389,
+      "updated": 1628118405
+    },
+    {
+      "id": "610a279919827000006a9ffc",
+      "text": "",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1628055450,
+      "updated": 1628055450
+    },
+    {
+      "id": "610d026b385a920000d4b41c",
+      "text": "使ってみたいんだけど、programming-notes内の依存を把握するのがだるい[miyamonz.icon]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1628242539,
+      "updated": 1628242576
+    },
+    {
+      "id": "610d027c385a920000d4b41e",
+      "text": "　preactとかのライブラリ使わずに実現できないのかなあ",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1628242556,
+      "updated": 1628242572
+    },
+    {
+      "id": "610d304e1280f00000e67b44",
+      "text": "　 生のDOMいじるのにうんざりしたので、[Preact]で組むようにしています[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1628254287,
+      "updated": 1628254397
+    },
+    {
+      "id": "610d30cd1280f00000e67b48",
+      "text": "　  [2021/05/08#609611a01280f000004617b3]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1628254413,
+      "updated": 1628254414
+    },
+    {
+      "id": "610d061be5172d0000748526",
+      "text": "　[/programming-notes/数式をpreviewするUserScript#60a6e7061280f00000fa3f93]のコマンドでbundleすれば楽です[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1628243484,
+      "updated": 1628243531
+    },
+    {
+      "id": "610d064ce5172d0000748527",
+      "text": "　　現在のコードを信頼する必要はある",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1628243532,
+      "updated": 1628243543
+    },
+    {
+      "id": "610d0657e5172d0000748528",
+      "text": "　　denoのセットアップは必要",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1628243543,
+      "updated": 1628243554
+    },
+    {
+      "id": "610d0662e5172d0000748529",
+      "text": "　　出力が大きいので直にScrapboxに貼り付けるよりjsonにしてimportするのがおすすめ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1628243554,
+      "updated": 1628243589
+    },
+    {
+      "id": "610d080ce5172d00003b185b",
+      "text": "　　 cf. [/takker/takker用UserScriptのbundle設定#60baf7461280f00000f25009]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1628243980,
+      "updated": 1628243983
+    },
+    {
+      "id": "610d3766385a920000e11bc9",
+      "text": "　ポータビリティのことではなくて、UserScriptはすべて自己責任なんですべての挙動を自分が把握すべき、と思っているので自分は読むべきだと思ってます[miyamonz.icon]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1628256102,
+      "updated": 1628256152
+    },
+    {
+      "id": "610d37a2385a920000e11bca",
+      "text": "　　バンドル方法は助かります！",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1628256162,
+      "updated": 1628256325
+    },
+    {
+      "id": "610db01c1280f000006f280a",
+      "text": "　　[\" UserScriptはすべて自己責任なんですべての挙動を自分が把握すべき][/icons/わかる.icon][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1628287005,
+      "updated": 1628287024
+    },
+    {
+      "id": "610db02f1280f000006f280d",
+      "text": "　　なので複数ページに分散したmoduleを大量に読み込むようなUserScriptを書くと、申し訳ないな、と思う気持ちになることもあります",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1628287025,
+      "updated": 1628287226
+    },
+    {
+      "id": "610db0f91280f000006f280f",
+      "text": "　　 すべての依存先scriptをcode readingしないといけない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1628287226,
+      "updated": 1628287280
+    },
+    {
+      "id": "610db0731280f000006f280e",
+      "text": "　　 とはいえ、よく使う関数は毎回コピペするよりmoduleとして一カ所にまとめたほうがメンテナンス性も(開発者本人の)使いやすさも上がるので、たくさんmoduleを読み込んでしまっています……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1628287092,
+      "updated": 1628287401
+    },
+    {
+      "id": "610d37b4385a920000e11bcb",
+      "text": "",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1628256179,
+      "updated": 1628256199
+    },
+    {
+      "id": "610d306f1280f00000e67b45",
+      "text": "　GitHubにコードを移して、も少し使いやすくする予定です[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1628254320,
+      "updated": 1628254344
+    },
+    {
+      "id": "610d30941280f00000e67b47",
+      "text": "　ちなみに依存の把握だけなら`deno info`で見れます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1628254356,
+      "updated": 1628254362
+    },
+    {
+      "id": "610d0270385a920000d4b41d",
+      "text": "",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1628242545,
+      "updated": 1628242545
+    },
+    {
+      "id": "610d37ca385a920000e11bcc",
+      "text": "preactとかの部分がどのくらい使われてるかはわかりませんが、jsonのステートからレンダリングするのは毎度リフレッシュしてもこのような用途なら問題ないと思う[miyamonz.icon]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1628256201,
+      "updated": 1628256285
+    },
+    {
+      "id": "610d381b385a920000e11bd0",
+      "text": "　まあこれは[miyamonz.icon]が作るならの話なので無視してもらってOK",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1628256282,
+      "updated": 1628256314
+    },
+    {
+      "id": "610d381f385a920000e11bd1",
+      "text": "",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1628256286,
+      "updated": 1628256286
+    }
+  ]
+}

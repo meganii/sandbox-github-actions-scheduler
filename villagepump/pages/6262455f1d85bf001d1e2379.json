@@ -1,0 +1,43 @@
+{
+  "id": "6262455f1d85bf001d1e2379",
+  "title": "書き込みがあるとしゃべるUserScript",
+  "created": 1650607458,
+  "updated": 1650699694,
+  "lines": [
+    {
+      "id": "6262455f1d85bf001d1e2379",
+      "text": "書き込みがあるとしゃべるUserScript",
+      "userId": "6231f8cd37b7b8001d895f8c",
+      "created": 1650607458,
+      "updated": 1650607458
+    },
+    {
+      "id": "62624f73895f8c000087e9d5",
+      "text": "ブラケティング・行移動ではしゃべらない",
+      "userId": "6231f8cd37b7b8001d895f8c",
+      "created": 1650610036,
+      "updated": 1650610239
+    },
+    {
+      "id": "62624560895f8c000062aeb5",
+      "text": "code:script.js",
+      "userId": "6231f8cd37b7b8001d895f8c",
+      "created": 1650607458,
+      "updated": 1650607459
+    },
+    {
+      "id": "62624563895f8c000062aeb7",
+      "text": " function say(e){let n=new SpeechSynthesisUtterance;n.text=e,n.lang=\"ja-JP\",speechSynthesis.speak(n)}function diff(e,n){let s=\"\";return n.split(\"\").forEach(function(n,t){n!=e[t]&&(s+=n)}),s}let lines=scrapbox.Page.lines.map(e=>e.text),beforeline=\"\";function checkLines(){shut(),scrapbox.Page.lines.map(e=>e.text).forEach(e=>{lines.includes(e)||e.startsWith(\"http\")||(say(e!=beforeline?diff(beforeline,e):e),beforeline=e,lines=scrapbox.Page.lines.map(e=>e.text))})}function shut(){speechSynthesis.cancel()}scrapbox.on(\"lines:changed\",checkLines),scrapbox.on(\"page:changed\",shut),scrapbox.on(\"layout:changed\",shut);",
+      "userId": "6231f8cd37b7b8001d895f8c",
+      "created": 1650607459,
+      "updated": 1650699694
+    },
+    {
+      "id": "6263adad895f8c0000a413b1",
+      "text": "",
+      "userId": "6231f8cd37b7b8001d895f8c",
+      "created": 1650699694,
+      "updated": 1650699694
+    }
+  ]
+}

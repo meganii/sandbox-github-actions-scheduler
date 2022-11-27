@@ -1,0 +1,1870 @@
+{
+  "id": "6221f905e5c736001d258ca1",
+  "title": "pin-diary-6/template",
+  "created": 1646393608,
+  "updated": 1666097557,
+  "lines": [
+    {
+      "id": "6221f905e5c736001d258ca1",
+      "text": "pin-diary-6/template",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646393608,
+      "updated": 1646393608
+    },
+    {
+      "id": "6221f9081280f00000bb4c9f",
+      "text": "[pin-diary-6]で使う[日記ページのtemplate]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646393608,
+      "updated": 1646397981
+    },
+    {
+      "id": "6221f9181280f00000bb4ca3",
+      "text": "日付の形式やリンクの形など、日記のformatに関わるものはすべてこのページに切り出してある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646393624,
+      "updated": 1646393660
+    },
+    {
+      "id": "6221f93c1280f00000bb4ca4",
+      "text": " これにより、好きなtemplateで[pin-diary-6]を使うことができるようになる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646393660,
+      "updated": 1646393687
+    },
+    {
+      "id": "6221f9561280f00000bb4ca5",
+      "text": "  [pin-diary-4#6210ae1509c5f2000058e357]の反省点",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646393687,
+      "updated": 1646393730
+    },
+    {
+      "id": "6221f9811280f00000bb4ca6",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646393730,
+      "updated": 1646393730
+    },
+    {
+      "id": "634ea1881280f00000855d5e",
+      "text": "2022-10-18 21:52:25 [今日のn年前]の計算を真面目にした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097545,
+      "updated": 1666097557
+    },
+    {
+      "id": "628b4a331280f00000d76e58",
+      "text": "2022-05-23 17:47:48 破壊的変更：s/`filter`/`isOldDiary`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653295667,
+      "updated": 1653295685
+    },
+    {
+      "id": "628b4a471280f00000d76e59",
+      "text": " cf. [pin-diary6のfilter()の仕様]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653295687,
+      "updated": 1653295691
+    },
+    {
+      "id": "628b4a331280f00000d76e57",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653295666,
+      "updated": 1653295666
+    },
+    {
+      "id": "6221f98c1280f00000bb4ca9",
+      "text": "interface",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646393740,
+      "updated": 1646393742
+    },
+    {
+      "id": "6221f98e1280f00000bb4caa",
+      "text": " `makeDiary: (date: Date) => { title: string; header: string[]; footer: string[]; }`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646393742,
+      "updated": 1646394905
+    },
+    {
+      "id": "6221fc0e1280f00000bb4cac",
+      "text": "  日記を作る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394382,
+      "updated": 1646394388
+    },
+    {
+      "id": "6221f9ad1280f00000bb4cab",
+      "text": " `isOldDiary: (title: string, today: Date) => boolean`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646393773,
+      "updated": 1653295629
+    },
+    {
+      "id": "6221f98b1280f00000bb4ca8",
+      "text": "  これで`true`が返ってきたページをPinから外す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646393740,
+      "updated": 1653295635
+    },
+    {
+      "id": "62222c0f7838e30000d54b18",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1646406671,
+      "updated": 1646406720
+    },
+    {
+      "id": "628c84c87838e30000523dde",
+      "text": "バグ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1653376201,
+      "updated": 1653376232
+    },
+    {
+      "id": "628c84cc7838e30000523de0",
+      "text": "　1行目から既に書かれている既存のページに日記のformatを挿入した場合、正しく挿入されない",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1653376205,
+      "updated": 1653377237
+    },
+    {
+      "id": "628c88d47838e30000e458df",
+      "text": "　\t例) [2022/05/24#628ba22479e1130000ef51c9]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1653377237,
+      "updated": 1653377239
+    },
+    {
+      "id": "628c84c87838e30000523ddf",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1653376201,
+      "updated": 1653376201
+    },
+    {
+      "id": "622237287838e30000ae89da",
+      "text": "https://scrapbox-bundler.vercel.app/?url=https://scrapbox.io/api/code/villagepump/pin-diary-6%252Ftemplate/mod.ts&bundle&minify&run&output=newtab&reload",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1646409512,
+      "updated": 1646409557
+    },
+    {
+      "id": "634ea1451280f00000855d54",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097478,
+      "updated": 1666097478
+    },
+    {
+      "id": "634ea1451280f00000855d56",
+      "text": "型チェック用command",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097478,
+      "updated": 1666097492
+    },
+    {
+      "id": "634ea14f1280f00000855d58",
+      "text": "code:sh",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097488,
+      "updated": 1666097489
+    },
+    {
+      "id": "634ea1561280f00000855d5a",
+      "text": " deno check --remote -r=https://scrapbox.io https://scrapbox.io/api/code/villagepump/pin-diary-6%2Ftemplate/mod.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097495,
+      "updated": 1666097511
+    },
+    {
+      "id": "634ea1691280f00000855d5c",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097514,
+      "updated": 1666097514
+    },
+    {
+      "id": "634ea1631280f00000855d5b",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097508,
+      "updated": 1666097508
+    },
+    {
+      "id": "6221f9811280f00000bb4ca7",
+      "text": "code:mod.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646393730,
+      "updated": 1646393732
+    },
+    {
+      "id": "62220eed1280f000001d20c9",
+      "text": " import {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399213,
+      "updated": 1646790660
+    },
+    {
+      "id": "622808051280f000002db40b",
+      "text": "   getDay,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790660,
+      "updated": 1646790664
+    },
+    {
+      "id": "6228080a1280f000002db40d",
+      "text": "   getWeek,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790665,
+      "updated": 1646790668
+    },
+    {
+      "id": "6228080d1280f000002db40e",
+      "text": "   addDays,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790668,
+      "updated": 1646790694
+    },
+    {
+      "id": "6228080f1280f000002db40f",
+      "text": "   subDays,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790669,
+      "updated": 1646790695
+    },
+    {
+      "id": "6228083f1280f000002db413",
+      "text": "   subYears,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790718,
+      "updated": 1646790719
+    },
+    {
+      "id": "622808831280f000002db414",
+      "text": "   getYear,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790786,
+      "updated": 1646790787
+    },
+    {
+      "id": "622808101280f000002db410",
+      "text": "   lightFormat,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790671,
+      "updated": 1646790676
+    },
+    {
+      "id": "6228082e1280f000002db411",
+      "text": "   getDayOfYear,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790701,
+      "updated": 1646790702
+    },
+    {
+      "id": "6228082f1280f000002db412",
+      "text": "   getDaysInYear,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790702,
+      "updated": 1646790711
+    },
+    {
+      "id": "634ea1781280f00000855d5d",
+      "text": "   intervalToDuration,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097529,
+      "updated": 1666097530
+    },
+    {
+      "id": "622808091280f000002db40c",
+      "text": " } from \"./deps.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790664,
+      "updated": 1646790664
+    },
+    {
+      "id": "622210691280f000001d20de",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399593,
+      "updated": 1646399593
+    },
+    {
+      "id": "622210691280f000001d20df",
+      "text": " const format = \"yyyy/MM/dd\";",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646399593,
+      "updated": 1646408044
+    },
+    {
+      "id": "6222106c1280f000001d20e0",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399596,
+      "updated": 1646399596
+    },
+    {
+      "id": "62220a261280f00000d3ead3",
+      "text": " export function makeDiary(date: Date): {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397990,
+      "updated": 1646398021
+    },
+    {
+      "id": "62220a451280f00000d3ead5",
+      "text": "   title: string;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398021,
+      "updated": 1646398023
+    },
+    {
+      "id": "62220a471280f00000d3ead6",
+      "text": "   header: string[];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398023,
+      "updated": 1646398026
+    },
+    {
+      "id": "62220a4a1280f00000d3ead7",
+      "text": "   footer: string[];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398026,
+      "updated": 1646398029
+    },
+    {
+      "id": "62220a4d1280f00000d3ead8",
+      "text": " } {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398029,
+      "updated": 1646398030
+    },
+    {
+      "id": "634ea07b1280f00000855d4d",
+      "text": "   /** 井戸端で日記が始まってからの年数 */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097276,
+      "updated": 1666097329
+    },
+    {
+      "id": "634ea0541280f00000855d4c",
+      "text": "   const intervalY = intervalToDuration({ start: new Date(2020, 9, 9), end: date }).years;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097237,
+      "updated": 1666097311
+    },
+    {
+      "id": "634ea0b21280f00000855d4e",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097331,
+      "updated": 1666097331
+    },
+    {
+      "id": "62220a501280f00000d3ead9",
+      "text": "   return {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398032,
+      "updated": 1646398216
+    },
+    {
+      "id": "62220b081280f00000d3eae8",
+      "text": "     title: toTitle(date),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398216,
+      "updated": 1646398225
+    },
+    {
+      "id": "62220d861280f000001d20bb",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398855,
+      "updated": 1646398855
+    },
+    {
+      "id": "62220d881280f000001d20bc",
+      "text": "日記の先頭にいれるやつ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398856,
+      "updated": 1646398862
+    },
+    {
+      "id": "62220d8e1280f000001d20bd",
+      "text": " 何を入れようか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398862,
+      "updated": 1646398866
+    },
+    {
+      "id": "62222d25e5172d0000423c63",
+      "text": " 今までのheader",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646406950,
+      "updated": 1646407485
+    },
+    {
+      "id": "62222d25e5172d0000423c64",
+      "text": " 　[https://gyazo.com/0d244022b03f376305b9be2e2db6ba27]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646406950,
+      "updated": 1646407487
+    },
+    {
+      "id": "62220d921280f000001d20be",
+      "text": " 消すもの",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398866,
+      "updated": 1646398882
+    },
+    {
+      "id": "62220d9f1280f000001d20c0",
+      "text": "  アイコン",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398879,
+      "updated": 1646398882
+    },
+    {
+      "id": "62220d941280f000001d20bf",
+      "text": "  wikipediaリンク",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398869,
+      "updated": 1646398883
+    },
+    {
+      "id": "62220da31280f000001d20c1",
+      "text": " 残すもの",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398883,
+      "updated": 1646398889
+    },
+    {
+      "id": "62222d3be5172d0000423c66",
+      "text": " 　昨日・明日へのリンク？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646406971,
+      "updated": 1646407618
+    },
+    {
+      "id": "62222ffbe5172d0000423c75",
+      "text": " 　　たまに使っているけどなくてもいいかも知れない[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646407675,
+      "updated": 1646407685
+    },
+    {
+      "id": "622531591280f00000cfbaf8",
+      "text": " 　　[上の大きなリンクに下の小さなリンクが吸収される問題]を避けるために、footerのだけ残します[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646604633,
+      "updated": 1646604683
+    },
+    {
+      "id": "622ad8771280f00000f3301a",
+      "text": " 　　使っている人が多そうなら復活させようかな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646975094,
+      "updated": 1646975110
+    },
+    {
+      "id": "622ad8881280f00000f3301b",
+      "text": " 　　 アイコン記法だと画像ロードが発生して負荷がかかってしまうので、ふつうのリンクを貼ることになる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646975111,
+      "updated": 1646975141
+    },
+    {
+      "id": "622ad8a61280f00000f3301c",
+      "text": " 　　 [上の大きなリンクに下の小さなリンクが吸収される問題]が発生するけど、そこは目を瞑るしかない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646975141,
+      "updated": 1646975158
+    },
+    {
+      "id": "622ad9614bb2e20000f4641e",
+      "text": " 　　 下にあるならそれでいいのでは派[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1646975328,
+      "updated": 1646975343
+    },
+    {
+      "id": "622ad9714bb2e20000f4641f",
+      "text": " 　　  [- そもそも使ってなかったりするがキニシナイ]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1646975344,
+      "updated": 1646975369
+    },
+    {
+      "id": "622adf39e5172d0000dd8b76",
+      "text": " 　　 今のところ困っていない[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646976825,
+      "updated": 1646976832
+    },
+    {
+      "id": "622adbf3774b17000006a862",
+      "text": " 　　連番の時だけ矢印キーで前後にジャンプできるといいのかなあ[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1646975988,
+      "updated": 1646976014
+    },
+    {
+      "id": "622adc17774b17000006a863",
+      "text": " 　　　[アクティブ読書]でも使えそうだ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1646976023,
+      "updated": 1646976033
+    },
+    {
+      "id": "62222d35e5172d0000423c65",
+      "text": "  曜日",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646406966,
+      "updated": 1646406966
+    },
+    {
+      "id": "62220da91280f000001d20c2",
+      "text": "  経過",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398889,
+      "updated": 1646398892
+    },
+    {
+      "id": "62220daf1280f000001d20c4",
+      "text": " 入れるもの",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398895,
+      "updated": 1646398898
+    },
+    {
+      "id": "62220db21280f000001d20c5",
+      "text": "  日月[[火]]水木金土",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398898,
+      "updated": 1646398933
+    },
+    {
+      "id": "62220dd61280f000001d20c6",
+      "text": "   みたくやると、経過がわかっていいのではないか？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398934,
+      "updated": 1646398953
+    },
+    {
+      "id": "62222cf7e5172d0000423c5e",
+      "text": "   曜日の経過は書かなくても分かるのでは[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646406903,
+      "updated": 1646406922
+    },
+    {
+      "id": "6223cac71280f000007901e3",
+      "text": "   いや、visualizeすると受け取る印象が変わります[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646512839,
+      "updated": 1646512856
+    },
+    {
+      "id": "6223cad81280f000007901e4",
+      "text": "    12:45をデジタル時計で見るのとアナログ時計で見るのとでは全然受け取る印象が違うのと同様",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646512856,
+      "updated": 1646512896
+    },
+    {
+      "id": "6223cdcd7838e300004306bd",
+      "text": "    経過がわかりやすい方が好きかな[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1646513614,
+      "updated": 1646513649
+    },
+    {
+      "id": "62220de91280f000001d20c7",
+      "text": "  週番号も入れた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398953,
+      "updated": 1646975173
+    },
+    {
+      "id": "62222cebe5172d0000423c5d",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646406891,
+      "updated": 1646406891
+    },
+    {
+      "id": "62220d7a1280f000001d20b9",
+      "text": "code:mod.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398842,
+      "updated": 1646398848
+    },
+    {
+      "id": "62220b101280f00000d3eae9",
+      "text": "     header: [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398225,
+      "updated": 1646398228
+    },
+    {
+      "id": "62220f5d1280f000001d20cd",
+      "text": "       `第${getWeek(date)}週: ${youbiLine(date)}`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399325,
+      "updated": 1646399369
+    },
+    {
+      "id": "62220f4e1280f000001d20ca",
+      "text": "       `${getYear(date)}年 ${",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399310,
+      "updated": 1646399319
+    },
+    {
+      "id": "62220f4f1280f000001d20cb",
+      "text": "         (getDayOfYear(date) * 100 / getDaysInYear(date)).toFixed(2)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399311,
+      "updated": 1646399320
+    },
+    {
+      "id": "62220f4f1280f000001d20cc",
+      "text": "       }％経過`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399311,
+      "updated": 1646399316
+    },
+    {
+      "id": "6222102a1280f000001d20da",
+      "text": "       \"\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399530,
+      "updated": 1646399535
+    },
+    {
+      "id": "6222102f1280f000001d20db",
+      "text": "       \"今日のn年前\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399535,
+      "updated": 1646399543
+    },
+    {
+      "id": "634ea04a1280f00000855d4b",
+      "text": "       ...[...Array(intervalY).keys()].map(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097228,
+      "updated": 1666097439
+    },
+    {
+      "id": "634ea11e1280f00000855d51",
+      "text": "         (i) => ` [${lightFormat(subYears(date, i + 1), format)}]`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097439,
+      "updated": 1666097451
+    },
+    {
+      "id": "634ea1221280f00000855d52",
+      "text": "       ),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097443,
+      "updated": 1666097447
+    },
+    {
+      "id": "62220b141280f00000d3eaea",
+      "text": "     ],",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398228,
+      "updated": 1646398230
+    },
+    {
+      "id": "622210071280f000001d20d6",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399495,
+      "updated": 1646399498
+    },
+    {
+      "id": "622210091280f000001d20d7",
+      "text": "日記の下に入れるやつ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399498,
+      "updated": 1646399508
+    },
+    {
+      "id": "622210131280f000001d20d8",
+      "text": " こっちにはアイコンを残しておく？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399508,
+      "updated": 1646399513
+    },
+    {
+      "id": "622210201280f000001d20d9",
+      "text": "  どうしようかな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399521,
+      "updated": 1646790323
+    },
+    {
+      "id": "622806b41280f0000009c796",
+      "text": " `yyyy/MM`のガントチャートを表示してみよう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790323,
+      "updated": 1646790338
+    },
+    {
+      "id": "622806c31280f0000009c797",
+      "text": "  例: [/ [2022/03.icon]]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790338,
+      "updated": 1646790385
+    },
+    {
+      "id": "6228405fe5172d0000f91cb2",
+      "text": "  　[PlantUMLでカレンダーをつくる]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646805084,
+      "updated": 1646805088
+    },
+    {
+      "id": "622806cb1280f0000009c798",
+      "text": "  下に表示するだけなら、関連ページに現れないのでそんなに重くならないはず",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790346,
+      "updated": 1646790377
+    },
+    {
+      "id": "622843501280f00000c4038b",
+      "text": "  今日の部分に色を付けたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646805839,
+      "updated": 1646805850
+    },
+    {
+      "id": "6228435b1280f00000c4038c",
+      "text": "   templateでPlantUMLのリンクを作ってしまえばできる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646805850,
+      "updated": 1646805875
+    },
+    {
+      "id": "622fc1c57838e300006f1faa",
+      "text": " 下の`#YYYY-DD-MM`必要ないような[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647296965,
+      "updated": 1647297057
+    },
+    {
+      "id": "622fc1ef7838e300006f1fab",
+      "text": " \t表記ゆれを誘発しているだけな気がする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647297007,
+      "updated": 1647297057
+    },
+    {
+      "id": "6230065f1280f000004aa684",
+      "text": " 　消しました[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647314526,
+      "updated": 1647314532
+    },
+    {
+      "id": "623006651280f000004aa685",
+      "text": " 　　[/takker]とつなぎたかったという完全に自己中心的な理由で入れた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647314532,
+      "updated": 1647314552
+    },
+    {
+      "id": "623006781280f000004aa686",
+      "text": " 　　しかもほとんど使わなかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647314552,
+      "updated": 1647314578
+    },
+    {
+      "id": "62222f58e5172d0000423c73",
+      "text": " 今までのfooter",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646407512,
+      "updated": 1646407512
+    },
+    {
+      "id": "62222f58e5172d0000423c74",
+      "text": "  [https://gyazo.com/081d6967ca1aa640a7c1bc0900a94e39]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646407512,
+      "updated": 1646407512
+    },
+    {
+      "id": "62220d831280f000001d20ba",
+      "text": "code:mod.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398851,
+      "updated": 1646398853
+    },
+    {
+      "id": "62220b151280f00000d3eaeb",
+      "text": "     footer: [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398230,
+      "updated": 1646398233
+    },
+    {
+      "id": "6222111a1280f000001d20e1",
+      "text": "       `[${lightFormat(subDays(date, 1), format)}]←${",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399771,
+      "updated": 1646399780
+    },
+    {
+      "id": "6222111b1280f000001d20e2",
+      "text": "         lightFormat(date, format)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399771,
+      "updated": 1646399783
+    },
+    {
+      "id": "6222111b1280f000001d20e3",
+      "text": "       }→[${lightFormat(addDays(date, 1), format)}]`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399771,
+      "updated": 1646399778
+    },
+    {
+      "id": "622807091280f0000009c799",
+      "text": "       `[/ [${lightFormat(date, \"yyyy/MM\")}.icon]]`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790408,
+      "updated": 1646804073
+    },
+    {
+      "id": "62220b191280f00000d3eaec",
+      "text": "     ],",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398233,
+      "updated": 1646398234
+    },
+    {
+      "id": "62220b1b1280f00000d3eaed",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398236,
+      "updated": 1646398236
+    },
+    {
+      "id": "62220a311280f00000d3ead4",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398001,
+      "updated": 1646398001
+    },
+    {
+      "id": "62220a581280f00000d3eadb",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398040,
+      "updated": 1646398040
+    },
+    {
+      "id": "62220f901280f000001d20ce",
+      "text": " function youbiLine(date: Date): string {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399376,
+      "updated": 1646399387
+    },
+    {
+      "id": "62220f981280f000001d20cf",
+      "text": "   const day = getDay(date);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399384,
+      "updated": 1646399398
+    },
+    {
+      "id": "62220fab1280f000001d20d1",
+      "text": "   return [...\"日月火水木金土\"].map(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399404,
+      "updated": 1646399473
+    },
+    {
+      "id": "62220ff11280f000001d20d5",
+      "text": "     (char, i) => i === day ? `[[${char}]]` : char",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399473,
+      "updated": 1646399481
+    },
+    {
+      "id": "62220fe51280f000001d20d4",
+      "text": "   ).join(\"\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399461,
+      "updated": 1646399466
+    },
+    {
+      "id": "62220f9c1280f000001d20d0",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399388,
+      "updated": 1646399388
+    },
+    {
+      "id": "6221f9091280f00000bb4ca0",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646393611,
+      "updated": 1646393611
+    },
+    {
+      "id": "62220a561280f00000d3eada",
+      "text": "code:mod.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398038,
+      "updated": 1646398043
+    },
+    {
+      "id": "62220a5b1280f00000d3eadd",
+      "text": " const dateRegExp = /^\\d{4}\\/\\d{2}\\/\\d{2}$/;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398043,
+      "updated": 1646398157
+    },
+    {
+      "id": "62220ab11280f00000d3eae6",
+      "text": " export function isOldDiary(title: string, today: Date): boolean {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398129,
+      "updated": 1653295644
+    },
+    {
+      "id": "62220a6b1280f00000d3eade",
+      "text": "   if (!dateRegExp.test(title)) return false;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398059,
+      "updated": 1653295655
+    },
+    {
+      "id": "62220ade1280f00000d3eae7",
+      "text": "   return toTitle(today) !== title;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398174,
+      "updated": 1653295657
+    },
+    {
+      "id": "62220a6c1280f00000d3eadf",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398060,
+      "updated": 1646398060
+    },
+    {
+      "id": "62220a6d1280f00000d3eae0",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398061,
+      "updated": 1646398061
+    },
+    {
+      "id": "62220a591280f00000d3eadc",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398043,
+      "updated": 1646398043
+    },
+    {
+      "id": "62220a6e1280f00000d3eae1",
+      "text": "code:mod.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398063,
+      "updated": 1646398066
+    },
+    {
+      "id": "62220a721280f00000d3eae3",
+      "text": " function toTitle(date: Date): string {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398066,
+      "updated": 1646398086
+    },
+    {
+      "id": "62220a861280f00000d3eae4",
+      "text": "   return lightFormat(date, format);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398086,
+      "updated": 1646399631
+    },
+    {
+      "id": "62220a871280f00000d3eae5",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398087,
+      "updated": 1646398087
+    },
+    {
+      "id": "62220a6f1280f00000d3eae2",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398064,
+      "updated": 1646398064
+    },
+    {
+      "id": "62220d221280f000001d20a9",
+      "text": "code:deps.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398755,
+      "updated": 1646398760
+    },
+    {
+      "id": "62220d281280f000001d20ab",
+      "text": " // 一年の経過率を計算するのに必要",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398760,
+      "updated": 1646398760
+    },
+    {
+      "id": "62220d281280f000001d20ac",
+      "text": " export { default as getDaysInYear } from \"https://deno.land/x/date_fns@v2.22.1/getDaysInYear/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398760,
+      "updated": 1646399663
+    },
+    {
+      "id": "62220d281280f000001d20ad",
+      "text": " export { default as getDayOfYear } from \"https://deno.land/x/date_fns@v2.22.1/getDayOfYear/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398760,
+      "updated": 1646399679
+    },
+    {
+      "id": "62220d281280f000001d20ae",
+      "text": " // 日付計算に使う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398760,
+      "updated": 1646398760
+    },
+    {
+      "id": "62220d281280f000001d20af",
+      "text": " export { default as addDays } from \"https://deno.land/x/date_fns@v2.22.1/addDays/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398760,
+      "updated": 1646399693
+    },
+    {
+      "id": "62220d281280f000001d20b0",
+      "text": " export { default as subDays } from \"https://deno.land/x/date_fns@v2.22.1/subDays/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398760,
+      "updated": 1646399704
+    },
+    {
+      "id": "62220e6f1280f000001d20c8",
+      "text": " export { default as getWeek } from \"https://deno.land/x/date_fns@v2.22.1/getWeek/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646399087,
+      "updated": 1646399719
+    },
+    {
+      "id": "62220d281280f000001d20b3",
+      "text": " export { default as subYears } from \"https://deno.land/x/date_fns@v2.22.1/subYears/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398760,
+      "updated": 1646399251
+    },
+    {
+      "id": "62220d281280f000001d20b4",
+      "text": " export { default as getDay } from \"https://deno.land/x/date_fns@v2.22.1/getDay/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398760,
+      "updated": 1646399265
+    },
+    {
+      "id": "62220d281280f000001d20b5",
+      "text": " export { default as getYear } from \"https://deno.land/x/date_fns@v2.22.1/getYear/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398760,
+      "updated": 1646399743
+    },
+    {
+      "id": "62220d281280f000001d20b6",
+      "text": " // 文字列変換に使う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398760,
+      "updated": 1646398760
+    },
+    {
+      "id": "62220d281280f000001d20b7",
+      "text": " export { default as lightFormat } from \"https://deno.land/x/date_fns@v2.22.1/lightFormat/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398760,
+      "updated": 1646399238
+    },
+    {
+      "id": "62220d281280f000001d20b8",
+      "text": " export { default as intervalToDuration } from \"./intervalToDuration.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398760,
+      "updated": 1666097211
+    },
+    {
+      "id": "62220d221280f000001d20aa",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398755,
+      "updated": 1646398755
+    },
+    {
+      "id": "634ea0181280f00000855cee",
+      "text": "code:intervalToDuration.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097177,
+      "updated": 1666097182
+    },
+    {
+      "id": "634ea01e1280f00000855cef",
+      "text": " // This is ported from https://deno.land/x/date_fns@v2.22.1/intervalToDuration/index.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097182,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cf0",
+      "text": " // and fix type declaration errors",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cf1",
+      "text": " import compareAsc from \"https://deno.land/x/date_fns@v2.22.1/compareAsc/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cf2",
+      "text": " import differenceInYears from \"https://deno.land/x/date_fns@v2.22.1/differenceInYears/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cf3",
+      "text": " import differenceInMonths from \"https://deno.land/x/date_fns@v2.22.1/differenceInMonths/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cf4",
+      "text": " import differenceInDays from \"https://deno.land/x/date_fns@v2.22.1/differenceInDays/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cf5",
+      "text": " import differenceInHours from \"https://deno.land/x/date_fns@v2.22.1/differenceInHours/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cf6",
+      "text": " import differenceInMinutes from \"https://deno.land/x/date_fns@v2.22.1/differenceInMinutes/index.js\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cf7",
+      "text": " import differenceInSeconds from \"https://deno.land/x/date_fns@v2.22.1/differenceInSeconds/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cf8",
+      "text": " import isValid from \"https://deno.land/x/date_fns@v2.22.1/isValid/index.js\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cf9",
+      "text": " import requiredArgs from \"https://deno.land/x/date_fns@v2.22.1/_lib/requiredArgs/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cfa",
+      "text": " import toDate from \"https://deno.land/x/date_fns@v2.22.1/toDate/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cfb",
+      "text": " import sub from \"https://deno.land/x/date_fns@v2.22.1/sub/index.js\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cfc",
+      "text": " import type {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cfd",
+      "text": "   Duration,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cfe",
+      "text": "   Interval,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855cff",
+      "text": " } from \"https://deno.land/x/date_fns@v2.22.1/types.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d00",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d01",
+      "text": " /**",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d02",
+      "text": "  * @name intervalToDuration",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d03",
+      "text": "  * @category Common Helpers",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d04",
+      "text": "  * @summary Convert interval to duration",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d05",
+      "text": "  *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d06",
+      "text": "  * @description",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d07",
+      "text": "  * Convert a interval object to a duration object.",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d08",
+      "text": "  *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d09",
+      "text": "  * @param {Interval} interval - the interval to convert to duration",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d0a",
+      "text": "  *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d0b",
+      "text": "  * @returns {Duration} The duration Object",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d0c",
+      "text": "  * @throws {TypeError} Requires 2 arguments",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d0d",
+      "text": "  * @throws {RangeError} `start` must not be Invalid Date",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d0e",
+      "text": "  * @throws {RangeError} `end` must not be Invalid Date",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d0f",
+      "text": "  *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d10",
+      "text": "  * @example",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d11",
+      "text": "  * // Get the duration between January 15, 1929 and April 4, 1968.",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d12",
+      "text": "  * intervalToDuration({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d13",
+      "text": "  *   start: new Date(1929, 0, 15, 12, 0, 0),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d14",
+      "text": "  *   end: new Date(1968, 3, 4, 19, 5, 0)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d15",
+      "text": "  * })",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d16",
+      "text": "  * // => { years: 39, months: 2, days: 20, hours: 7, minutes: 5, seconds: 0 }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d17",
+      "text": "  */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d18",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d19",
+      "text": " export default function intervalToDuration({ start, end }: Interval): Duration {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d1a",
+      "text": "   requiredArgs(1, arguments);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d1b",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d1c",
+      "text": "   const dateLeft = toDate(start);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d1d",
+      "text": "   const dateRight = toDate(end);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d1e",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d1f",
+      "text": "   if (!isValid(dateLeft)) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d20",
+      "text": "     throw new RangeError(\"Start Date is invalid\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d21",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d22",
+      "text": "   if (!isValid(dateRight)) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d23",
+      "text": "     throw new RangeError(\"End Date is invalid\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d24",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d25",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d26",
+      "text": "   const duration = {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d27",
+      "text": "     years: 0,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d28",
+      "text": "     months: 0,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d29",
+      "text": "     days: 0,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d2a",
+      "text": "     hours: 0,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d2b",
+      "text": "     minutes: 0,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d2c",
+      "text": "     seconds: 0,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d2d",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d2e",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d2f",
+      "text": "   const sign = compareAsc(dateLeft, dateRight);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d30",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d31",
+      "text": "   duration.years = Math.abs(differenceInYears(dateLeft, dateRight));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d32",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d33",
+      "text": "   const remainingMonths = sub(dateLeft, { years: sign * duration.years });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d34",
+      "text": "   duration.months = Math.abs(differenceInMonths(remainingMonths, dateRight));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d35",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d36",
+      "text": "   const remainingDays = sub(remainingMonths, {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d37",
+      "text": "     months: sign * duration.months,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d38",
+      "text": "   });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d39",
+      "text": "   duration.days = Math.abs(differenceInDays(remainingDays, dateRight));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d3a",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d3b",
+      "text": "   const remainingHours = sub(remainingDays, { days: sign * duration.days });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d3c",
+      "text": "   duration.hours = Math.abs(differenceInHours(remainingHours, dateRight));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d3d",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d3e",
+      "text": "   const remainingMinutes = sub(remainingHours, {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d3f",
+      "text": "     hours: sign * duration.hours,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d40",
+      "text": "   });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d41",
+      "text": "   duration.minutes = Math.abs(differenceInMinutes(remainingMinutes, dateRight));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d42",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d43",
+      "text": "   const remainingSeconds = sub(remainingMinutes, {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d44",
+      "text": "     minutes: sign * duration.minutes,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d45",
+      "text": "   });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d46",
+      "text": "   duration.seconds = Math.abs(differenceInSeconds(remainingSeconds, dateRight));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d47",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d48",
+      "text": "   return duration;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d49",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea01e1280f00000855d4a",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097183,
+      "updated": 1666097183
+    },
+    {
+      "id": "634ea0171280f00000855ced",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097176,
+      "updated": 1666097176
+    },
+    {
+      "id": "62220b251280f00000d3eaee",
+      "text": "code:mod_test.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398245,
+      "updated": 1646398251
+    },
+    {
+      "id": "62220b2b1280f00000d3eaf0",
+      "text": " import { filter } from \"./mod.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398251,
+      "updated": 1646398268
+    },
+    {
+      "id": "62220b3b1280f00000d3eaf1",
+      "text": " import { asserts } from \"./deps_test.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398268,
+      "updated": 1646398349
+    },
+    {
+      "id": "62220b781280f00000d3eaf6",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398328,
+      "updated": 1646398328
+    },
+    {
+      "id": "62220b781280f00000d3eaf7",
+      "text": " Deno.test(\"filter()\", () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398328,
+      "updated": 1646398336
+    },
+    {
+      "id": "62220b801280f00000d3eaf8",
+      "text": "   asserts(!filter(\"井戸端\", new Date()));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398336,
+      "updated": 1646398385
+    },
+    {
+      "id": "62220bb11280f00000d3eafa",
+      "text": "   asserts(!filter(\"2022/02/24aa\", new Date(2022, 1, 24)));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398385,
+      "updated": 1646398415
+    },
+    {
+      "id": "62220bd11280f00000d3eafb",
+      "text": "   asserts(filter(\"2022/02/24\", new Date(2022, 1, 24)));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398417,
+      "updated": 1646398423
+    },
+    {
+      "id": "62220b821280f00000d3eaf9",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398339,
+      "updated": 1646398339
+    },
+    {
+      "id": "62220b251280f00000d3eaef",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398245,
+      "updated": 1646398245
+    },
+    {
+      "id": "62220b671280f00000d3eaf2",
+      "text": "code:deps_test.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398311,
+      "updated": 1646398317
+    },
+    {
+      "id": "62220b6d1280f00000d3eaf4",
+      "text": " export { asserts } from \"https://deno.land/std@0.125.0/testing/asserts.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398317,
+      "updated": 1646398353
+    },
+    {
+      "id": "62220b6d1280f00000d3eaf5",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398318,
+      "updated": 1646398318
+    },
+    {
+      "id": "62220b691280f00000d3eaf3",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646398313,
+      "updated": 1646398313
+    }
+  ]
+}

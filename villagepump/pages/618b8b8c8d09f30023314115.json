@@ -1,0 +1,925 @@
+{
+  "id": "618b8b8c8d09f30023314115",
+  "title": "日記ページのtemplate",
+  "created": 1636535207,
+  "updated": 1660884756,
+  "lines": [
+    {
+      "id": "618b8b8c8d09f30023314115",
+      "text": "日記ページのtemplate",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535207,
+      "updated": 1636535207
+    },
+    {
+      "id": "618b8ba71280f00000cbd0de",
+      "text": "[日記ページ]のtemplate",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535207,
+      "updated": 1636535213
+    },
+    {
+      "id": "618b8ebf1280f00000cbd117",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535999,
+      "updated": 1636535999
+    },
+    {
+      "id": "618b8bce1280f00000cbd0ec",
+      "text": "若干変更してある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535247,
+      "updated": 1636535252
+    },
+    {
+      "id": "618b8bd31280f00000cbd0ed",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535252,
+      "updated": 1636541814
+    },
+    {
+      "id": "61f9d29b1280f0000031c0b9",
+      "text": "2022-02-02 09:38:54 interfaceを変更",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643762331,
+      "updated": 1643762339
+    },
+    {
+      "id": "61f9d2a21280f0000031c0bb",
+      "text": " タイトル、ヘッダー、フッターで分割して返すようにした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643762339,
+      "updated": 1643762348
+    },
+    {
+      "id": "61f9d29c1280f0000031c0ba",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643762333,
+      "updated": 1643762333
+    },
+    {
+      "id": "618b8ecc1280f00000cbd119",
+      "text": "code:diary.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536012,
+      "updated": 1636536015
+    },
+    {
+      "id": "618b8ee71280f00000cbd11c",
+      "text": " // 一年の経過率を計算するのに必要",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536039,
+      "updated": 1636536060
+    },
+    {
+      "id": "618b8ecf1280f00000cbd11a",
+      "text": " import getDaysInYear from \"https://deno.land/x/date_fns@v2.22.1/getDaysInYear/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536015,
+      "updated": 1636536392
+    },
+    {
+      "id": "618ba5711280f00000cbd145",
+      "text": " import getDayOfYear from \"https://deno.land/x/date_fns@v2.22.1/getDayOfYear/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541809,
+      "updated": 1636541817
+    },
+    {
+      "id": "618b8f9f1280f00000cbd121",
+      "text": " // 日付計算に使う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536223,
+      "updated": 1636536228
+    },
+    {
+      "id": "618b8ee41280f00000cbd11b",
+      "text": " import addDays from \"https://deno.land/x/date_fns@v2.22.1/addDays/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536037,
+      "updated": 1636536400
+    },
+    {
+      "id": "618b8f2e1280f00000cbd11d",
+      "text": " import subDays from \"https://deno.land/x/date_fns@v2.22.1/subDays/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536110,
+      "updated": 1636536401
+    },
+    {
+      "id": "618b8f4b1280f00000cbd11e",
+      "text": " import subWeeks from \"https://deno.land/x/date_fns@v2.22.1/subWeeks/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536139,
+      "updated": 1636536402
+    },
+    {
+      "id": "618b8f821280f00000cbd11f",
+      "text": " import subMonths from \"https://deno.land/x/date_fns@v2.22.1/subMonths/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536194,
+      "updated": 1636536403
+    },
+    {
+      "id": "618b8f931280f00000cbd120",
+      "text": " import subYears from \"https://deno.land/x/date_fns@v2.22.1/subYears/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536212,
+      "updated": 1636536404
+    },
+    {
+      "id": "618b8fda1280f00000cbd122",
+      "text": " import getDay from \"https://deno.land/x/date_fns@v2.22.1/getDay/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536283,
+      "updated": 1636536405
+    },
+    {
+      "id": "618ba5011280f00000cbd144",
+      "text": " import getYear from \"https://deno.land/x/date_fns@v2.22.1/getYear/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541697,
+      "updated": 1636542042
+    },
+    {
+      "id": "618c58ae1280f000007ee1aa",
+      "text": " // 文字列変換に使う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636587694,
+      "updated": 1636587707
+    },
+    {
+      "id": "618b8ff51280f00000cbd123",
+      "text": " import lightFormat from \"https://deno.land/x/date_fns@v2.22.1/lightFormat/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536309,
+      "updated": 1636536399
+    },
+    {
+      "id": "618b90ec1280f00000cbd124",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536556,
+      "updated": 1636536556
+    },
+    {
+      "id": "618b8ecb1280f00000cbd118",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536011,
+      "updated": 1636536011
+    },
+    {
+      "id": "618b90f01280f00000cbd126",
+      "text": "code:diary.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536561,
+      "updated": 1636536565
+    },
+    {
+      "id": "618b91771280f00000cbd12a",
+      "text": " const format = \"yyyy/MM/dd\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536695,
+      "updated": 1636536703
+    },
+    {
+      "id": "618b91771280f00000cbd12b",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536695,
+      "updated": 1636536695
+    },
+    {
+      "id": "61ee1bb61280f00000d1b43f",
+      "text": " /** 指定された日付の日記ページを取得する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642994615,
+      "updated": 1642994632
+    },
+    {
+      "id": "61ee1bc71280f00000d1b440",
+      "text": "  *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642994632,
+      "updated": 1642994635
+    },
+    {
+      "id": "61ee1bcd1280f00000d1b442",
+      "text": "  * @param date 取得したい日記ページの日付",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642994638,
+      "updated": 1642994663
+    },
+    {
+      "id": "61ee1be71280f00000d1b443",
+      "text": "  * @return 日記ページのタイトルとヘッダーとフッター",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642994663,
+      "updated": 1643762306
+    },
+    {
+      "id": "61ee1bc81280f00000d1b441",
+      "text": "  */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642994633,
+      "updated": 1642994637
+    },
+    {
+      "id": "618b90f51280f00000cbd128",
+      "text": " export const getTemplate = (date: Date): [string, string, string] => [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536565,
+      "updated": 1643762308
+    },
+    {
+      "id": "61f9d2771280f0000031c0b7",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643762295,
+      "updated": 1643762295
+    },
+    {
+      "id": "618b8c171280f00000cbd0ee",
+      "text": "タイトル",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535320,
+      "updated": 1636535322
+    },
+    {
+      "id": "618b8bad1280f00000cbd0e0",
+      "text": " code:diary.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535213,
+      "updated": 1636536639
+    },
+    {
+      "id": "618b8bb61280f00000cbd0e1",
+      "text": "    lightFormat(date, format),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535222,
+      "updated": 1643762452
+    },
+    {
+      "id": "61f9d2931280f0000031c0b8",
+      "text": "ヘッダー",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643762323,
+      "updated": 1643762327
+    },
+    {
+      "id": "61f9d2b21280f0000031c0bc",
+      "text": " code:diary.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643762354,
+      "updated": 1643762357
+    },
+    {
+      "id": "61f9d2b51280f0000031c0bd",
+      "text": "    [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643762357,
+      "updated": 1643762359
+    },
+    {
+      "id": "618b8c231280f00000cbd0f0",
+      "text": " 前後の日記ページへのリンク",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535332,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b8c1e1280f00000cbd0ef",
+      "text": "  code:diary.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535327,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b91491280f00000cbd129",
+      "text": "       `[${lightFormat(subDays(date, 1), format)}.icon]←${",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536650,
+      "updated": 1643762455
+    },
+    {
+      "id": "618b91901280f00000cbd12c",
+      "text": "         lightFormat(date, format)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536720,
+      "updated": 1643762455
+    },
+    {
+      "id": "618b91921280f00000cbd12d",
+      "text": "       }→[${lightFormat(addDays(date, 1), format)}.icon]`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536723,
+      "updated": 1643762455
+    },
+    {
+      "id": "618b8ce31280f00000cbd10e",
+      "text": "  [上の大きなリンクに下の小さなリンクが吸収される問題]を回避するために、アイコン記法にしてみた[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535523,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b8d1a1280f00000cbd10f",
+      "text": "   画像の読み込みが走って重くなるからいらないかも？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535579,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b8c361280f00000cbd0f2",
+      "text": " 曜日",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535350,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b8c331280f00000cbd0f1",
+      "text": "  code:diary.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535348,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b8bc71280f00000cbd0e4",
+      "text": "       `[[${getYoubi(date)}曜日]]`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535239,
+      "updated": 1643762459
+    },
+    {
+      "id": "618b8c3a1280f00000cbd0f3",
+      "text": " 年とどのくらい経過したか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535355,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b8c491280f00000cbd0f4",
+      "text": "  code:diary.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535369,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b8bc71280f00000cbd0e5",
+      "text": "       `${getYear(date)}年 ${",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535239,
+      "updated": 1643762462
+    },
+    {
+      "id": "618ba5821280f00000cbd146",
+      "text": "         (getDayOfYear(date) * 100 / getDaysInYear(date)).toFixed(2)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541827,
+      "updated": 1643762462
+    },
+    {
+      "id": "618ba5831280f00000cbd147",
+      "text": "       }％経過`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541827,
+      "updated": 1643762462
+    },
+    {
+      "id": "618b8c4d1280f00000cbd0f5",
+      "text": " wikipediaの日付ページへのリンク",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535374,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b8c551280f00000cbd0f6",
+      "text": "  code:diary.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535382,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b8bc71280f00000cbd0e6",
+      "text": "       `[🌏 https://ja.wikipedia.org/wiki/${lightFormat(date, \"M月d日\")}]`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535239,
+      "updated": 1643762465
+    },
+    {
+      "id": "618b8c5d1280f00000cbd0f8",
+      "text": " (1|2|3)週間前・(1|2|3)ヶ月前への日付ページへのリンク",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535389,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b8c661280f00000cbd0f9",
+      "text": "  [アイコン記法を片方向リンクとして使]っている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535398,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b8c591280f00000cbd0f7",
+      "text": "  code:diary.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535385,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b8bc71280f00000cbd0e7",
+      "text": "       [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535239,
+      "updated": 1643762470
+    },
+    {
+      "id": "618ba7441280f00000cbd150",
+      "text": "         `[${lightFormat(subWeeks(date, 1), format)}.icon]`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636542440,
+      "updated": 1643762470
+    },
+    {
+      "id": "618ba7f71280f00000cbd153",
+      "text": "         `[${lightFormat(subWeeks(date, 2), format)}.icon]`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636542455,
+      "updated": 1643762470
+    },
+    {
+      "id": "618ba7f81280f00000cbd154",
+      "text": "         `[${lightFormat(subWeeks(date, 3), format)}.icon]`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636542456,
+      "updated": 1643762470
+    },
+    {
+      "id": "618ba8091280f00000cbd155",
+      "text": "         `[${lightFormat(subMonths(date, 1), format)}.icon]`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636542473,
+      "updated": 1643762470
+    },
+    {
+      "id": "618ba8091280f00000cbd156",
+      "text": "         `[${lightFormat(subMonths(date, 2), format)}.icon]`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636542473,
+      "updated": 1643762470
+    },
+    {
+      "id": "618ba8091280f00000cbd157",
+      "text": "         `[${lightFormat(subMonths(date, 3), format)}.icon]`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636542473,
+      "updated": 1643762470
+    },
+    {
+      "id": "618ba74a1280f00000cbd152",
+      "text": "       ].join(\" \"),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636542440,
+      "updated": 1643762470
+    },
+    {
+      "id": "618b8c961280f00000cbd0fb",
+      "text": " 今日のn年前",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535447,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b8c9a1280f00000cbd0fc",
+      "text": "  code:diary.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535451,
+      "updated": 1643762370
+    },
+    {
+      "id": "618b8ca31280f00000cbd0fe",
+      "text": "       \"今日のn年前\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535459,
+      "updated": 1643762485
+    },
+    {
+      "id": "618b8ca31280f00000cbd0ff",
+      "text": "       ` [${lightFormat(subYears(date, 1), format)}]`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535459,
+      "updated": 1643762484
+    },
+    {
+      "id": "61f9d33a1280f0000031c0cc",
+      "text": " code:diary.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643762490,
+      "updated": 1643762499
+    },
+    {
+      "id": "61f9d3321280f0000031c0cb",
+      "text": "    ].join(\"\\n\"),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643762483,
+      "updated": 1643762499
+    },
+    {
+      "id": "61f9d2e11280f0000031c0bf",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643762401,
+      "updated": 1643762401
+    },
+    {
+      "id": "618b8c901280f00000cbd0fa",
+      "text": "書き込み欄",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535441,
+      "updated": 1636535444
+    },
+    {
+      "id": "61f9d2e51280f0000031c0c4",
+      "text": " 2022-02-02 09:39:37 ヘッダーとフッターに分けることにしたので書き込み欄はなくしました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643762405,
+      "updated": 1643762405
+    },
+    {
+      "id": "618b8cbc1280f00000cbd109",
+      "text": " 5行くらいかな？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535484,
+      "updated": 1636535491
+    },
+    {
+      "id": "618b8d0f4bb2e20000dcd3e3",
+      "text": "  勝手に増やすので縮めていいと思う[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1636535568,
+      "updated": 1636535582
+    },
+    {
+      "id": "618b8d1e4bb2e20000dcd3e4",
+      "text": "   削るのがだるい",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1636535583,
+      "updated": 1636535587
+    },
+    {
+      "id": "618b8d561280f00000cbd110",
+      "text": "  じゃあ3行で[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535639,
+      "updated": 1636535645
+    },
+    {
+      "id": "618b8fa24bb2e20000e90dc7",
+      "text": "   🙇[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1636536227,
+      "updated": 1636536262
+    },
+    {
+      "id": "618b8cb21280f00000cbd101",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535474,
+      "updated": 1643762399
+    },
+    {
+      "id": "61f9d2e81280f0000031c0c5",
+      "text": "フッター",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643762409,
+      "updated": 1643762410
+    },
+    {
+      "id": "618b8ccb1280f00000cbd10a",
+      "text": " 前後の日記ページへのリンク",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535499,
+      "updated": 1643762411
+    },
+    {
+      "id": "618b8bc71280f00000cbd0e8",
+      "text": "  code:diary.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535239,
+      "updated": 1643762411
+    },
+    {
+      "id": "618b8cd11280f00000cbd10b",
+      "text": "     `[${lightFormat(subDays(date, 1), format)}]←${",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535505,
+      "updated": 1643762446
+    },
+    {
+      "id": "618ba61c1280f00000cbd148",
+      "text": "       lightFormat(date, format)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541981,
+      "updated": 1643762446
+    },
+    {
+      "id": "618ba61c1280f00000cbd149",
+      "text": "     }→[${lightFormat(addDays(date, 1), format)}]`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541981,
+      "updated": 1643762446
+    },
+    {
+      "id": "618b8ba71280f00000cbd0df",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535208,
+      "updated": 1636535208
+    },
+    {
+      "id": "618ba6221280f00000cbd14b",
+      "text": "code:diary.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541989,
+      "updated": 1636541989
+    },
+    {
+      "id": "618ba6251280f00000cbd14c",
+      "text": " ];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541989,
+      "updated": 1643762440
+    },
+    {
+      "id": "618ba6291280f00000cbd14d",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541993,
+      "updated": 1636541993
+    },
+    {
+      "id": "618ba6221280f00000cbd14a",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541986,
+      "updated": 1636541986
+    },
+    {
+      "id": "618b92351280f00000cbd12e",
+      "text": "code:diary.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536886,
+      "updated": 1636536889
+    },
+    {
+      "id": "618b92391280f00000cbd130",
+      "text": " function getYoubi(date: Date) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536891,
+      "updated": 1636536900
+    },
+    {
+      "id": "618b92791280f00000cbd132",
+      "text": "   switch(getDay(date)) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536954,
+      "updated": 1636541565
+    },
+    {
+      "id": "618ba4a21280f00000cbd134",
+      "text": "     case 0:",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541604,
+      "updated": 1636541606
+    },
+    {
+      "id": "618ba4a51280f00000cbd135",
+      "text": "       return \"日\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541606,
+      "updated": 1636541613
+    },
+    {
+      "id": "618ba4a91280f00000cbd136",
+      "text": "     case 1:",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541610,
+      "updated": 1636541626
+    },
+    {
+      "id": "618ba4ba1280f00000cbd13c",
+      "text": "       return \"月\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541626,
+      "updated": 1636541631
+    },
+    {
+      "id": "618ba4ae1280f00000cbd137",
+      "text": "     case 2:",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541615,
+      "updated": 1636541616
+    },
+    {
+      "id": "618ba4c01280f00000cbd13e",
+      "text": "       return \"火\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541632,
+      "updated": 1636541638
+    },
+    {
+      "id": "618ba4b01280f00000cbd138",
+      "text": "     case 3:",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541616,
+      "updated": 1636541619
+    },
+    {
+      "id": "618ba4c71280f00000cbd13f",
+      "text": "       return \"水\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541640,
+      "updated": 1636541643
+    },
+    {
+      "id": "618ba4b21280f00000cbd139",
+      "text": "     case 4:",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541619,
+      "updated": 1636541620
+    },
+    {
+      "id": "618ba4cb1280f00000cbd140",
+      "text": "       return \"木\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541644,
+      "updated": 1636541649
+    },
+    {
+      "id": "618ba4b41280f00000cbd13a",
+      "text": "     case 5:",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541621,
+      "updated": 1636541622
+    },
+    {
+      "id": "618ba4d21280f00000cbd141",
+      "text": "       return \"金\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541650,
+      "updated": 1636541660
+    },
+    {
+      "id": "618ba4b61280f00000cbd13b",
+      "text": "     case 6:",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541622,
+      "updated": 1636541624
+    },
+    {
+      "id": "618ba4dd1280f00000cbd142",
+      "text": "       return \"土\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541661,
+      "updated": 1636541667
+    },
+    {
+      "id": "618ba47d1280f00000cbd133",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541565,
+      "updated": 1636541565
+    },
+    {
+      "id": "618b92441280f00000cbd131",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536900,
+      "updated": 1636536900
+    },
+    {
+      "id": "618ba4e71280f00000cbd143",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636541671,
+      "updated": 1636541671
+    },
+    {
+      "id": "618b92351280f00000cbd12f",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636536886,
+      "updated": 1636536886
+    },
+    {
+      "id": "618b8d5f1280f00000cbd111",
+      "text": "他にほしい項目があったら追加してください",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535648,
+      "updated": 1636535657
+    },
+    {
+      "id": "61ce8eb21280f0000095939f",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1640926898,
+      "updated": 1640926898
+    },
+    {
+      "id": "61ce8eb21280f000009593a0",
+      "text": "このgantt chartを乗せると面白そう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1640926898,
+      "updated": 1640926959
+    },
+    {
+      "id": "62fe00fa5f1e0d0000125f7a",
+      "text": " あっ！？ここにユーザーのアイコンを載せればいいのでは！？[yuyasurarin.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1660813563,
+      "updated": 1660813578
+    },
+    {
+      "id": "62ff16f21280f00000c82c83",
+      "text": "  gantt chartにアイコンをのせるということですか？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1660884723,
+      "updated": 1660884735
+    },
+    {
+      "id": "62ff17011280f00000c82c84",
+      "text": "  それともfooterにアイコン記法を含んだ文字列を書き込む？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1660884737,
+      "updated": 1660884756
+    },
+    {
+      "id": "61ce8eca1280f000009593a2",
+      "text": " 当日部分だけ色を変えられるようにすると、時間の経過がわかっていいのでは？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1640926923,
+      "updated": 1640926957
+    },
+    {
+      "id": "61ce8ec51280f000009593a1",
+      "text": " [https://plantuml-proxy.vercel.app/svg/https://scrapbox.io/api/code/suto3scratchpad/2021%252F12/g002.uml#.svg]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1640926918,
+      "updated": 1640926919
+    },
+    {
+      "id": "618b8d611280f00000cbd112",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636535650,
+      "updated": 1636535650
+    },
+    {
+      "id": "618ba8861280f00000cbd15a",
+      "text": "scrapboxから使うコード",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636542599,
+      "updated": 1636542603
+    },
+    {
+      "id": "61ee1b461280f00000d1b43b",
+      "text": " [https://scrapbox.io/api/code/villagepump/日記ページのtemplate/diary.ts diary.ts]を[bundle & minify https://scrapbox-bundler.vercel.app/?url=https://scrapbox.io/api/code/villagepump/日記ページのtemplate/diary.ts&bundle&minify&run&output=newtab]しただけ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642994502,
+      "updated": 1643762607
+    },
+    {
+      "id": "618ba8811280f00000cbd158",
+      "text": "code:diary.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636542593,
+      "updated": 1636542611
+    },
+    {
+      "id": "618bae8d1280f00000e99439",
+      "text": " function n(t,e){if(e.length<t)throw new TypeError(t+\" argument\"+(t>1?\"s\":\"\")+\" required, but only \"+e.length+\" present\")}function s(t){n(1,arguments);let e=Object.prototype.toString.call(t);return t instanceof Date||typeof t==\"object\"&&e===\"[object Date]\"?new Date(t.getTime()):typeof t==\"number\"||e===\"[object Number]\"?new Date(t):((typeof t==\"string\"||e===\"[object String]\")&&typeof console!=\"undefined\"&&(console.warn(\"Starting with v2.0.0-beta.1 date-fns doesn't accept strings as date arguments. Please use `parseISO` to parse strings. See: https://git.io/fjule\"),console.warn(new Error().stack)),new Date(NaN))}function A(t){n(1,arguments);let r=s(t).getFullYear();return r%400==0||r%4==0&&r%100!=0}function _(t){n(1,arguments);let e=s(t);return String(new Date(e))===\"Invalid Date\"?NaN:A(e)?366:365}function M(t){n(1,arguments);let e=s(t),r=new Date(0);return r.setFullYear(e.getFullYear(),0,1),r.setHours(0,0,0,0),r}function l(t){let e=new Date(Date.UTC(t.getFullYear(),t.getMonth(),t.getDate(),t.getHours(),t.getMinutes(),t.getSeconds(),t.getMilliseconds()));return e.setUTCFullYear(t.getFullYear()),t.getTime()-e.getTime()}function h(t){n(1,arguments);let e=s(t);return e.setHours(0,0,0,0),e}var k=864e5;function q(t,e){n(2,arguments);let r=h(t),o=h(e),f=r.getTime()-l(r),d=o.getTime()-l(o);return Math.round((f-d)/k)}function I(t){n(1,arguments);let e=s(t);return q(e,M(e))+1}function i(t){if(t===null||t===!0||t===!1)return NaN;let e=Number(t);return isNaN(e)?e:e<0?Math.ceil(e):Math.floor(e)}function g(t,e){n(2,arguments);let r=s(t),o=i(e);return isNaN(o)?new Date(NaN):(o&&r.setDate(r.getDate()+o),r)}function y(t,e){n(2,arguments);let r=i(e);return g(t,-r)}function Y(t,e){n(2,arguments);let o=i(e)*7;return g(t,o)}function p(t,e){n(2,arguments);let r=i(e);return Y(t,-r)}function D(t,e){n(2,arguments);let r=s(t),o=i(e);if(isNaN(o))return new Date(NaN);if(!o)return r;let f=r.getDate(),d=new Date(r.getTime());d.setMonth(r.getMonth()+o+1,0);let S=d.getDate();return f>=S?d:(r.setFullYear(d.getFullYear(),d.getMonth(),f),r)}function x(t,e){n(2,arguments);let r=i(e);return D(t,-r)}function w(t,e){n(2,arguments);let r=i(e);return D(t,r*12)}function T(t,e){n(2,arguments);let r=i(e);return w(t,-r)}function O(t){return n(1,arguments),s(t).getDay()}function N(t){return n(1,arguments),s(t).getFullYear()}function m(t,e){for(var r=t<0?\"-\":\"\",o=Math.abs(t).toString();o.length<e;)o=\"0\"+o;return r+o}var U={y(t,e){let r=t.getUTCFullYear(),o=r>0?r:1-r;return m(e===\"yy\"?o%100:o,e.length)},M(t,e){let r=t.getUTCMonth();return e===\"M\"?String(r+1):m(r+1,2)},d(t,e){return m(t.getUTCDate(),e.length)},a(t,e){let r=t.getUTCHours()/12>=1?\"pm\":\"am\";switch(e){case\"a\":case\"aa\":return r.toUpperCase();case\"aaa\":return r;case\"aaaaa\":return r[0];case\"aaaa\":default:return r===\"am\"?\"a.m.\":\"p.m.\"}},h(t,e){return m(t.getUTCHours()%12||12,e.length)},H(t,e){return m(t.getUTCHours(),e.length)},m(t,e){return m(t.getUTCMinutes(),e.length)},s(t,e){return m(t.getUTCSeconds(),e.length)},S(t,e){let r=e.length,o=t.getUTCMilliseconds(),f=Math.floor(o*Math.pow(10,r-3));return m(f,e.length)}},j=U;function $(t){n(1,arguments);var e=s(t);return!isNaN(e)}function C(t,e){n(2,arguments);let r=s(t).getTime(),o=i(e);return new Date(r+o)}function v(t,e){n(2,arguments);let r=i(e);return C(t,-r)}var E=/(\\w)\\1*|''|'(''|[^'])+('|$)|./g,L=/^'([^]*?)'?$/,R=/''/g,z=/[a-zA-Z]/;function a(t,e){n(2,arguments);let r=s(t);if(!$(r))throw new RangeError(\"Invalid time value\");let o=l(r),f=v(r,o),d=e.match(E);return d?d.map(c=>{if(c===\"''\")return\"'\";let b=c[0];if(b===\"'\")return H(c);let F=j[b];if(F)return F(f,c);if(b.match(z))throw new RangeError(\"Format string contains an unescaped latin alphabet character `\"+b+\"`\");return c}).join(\"\"):\"\"}function H(t){let e=t.match(L);return e?e[1].replace(R,\"'\"):t}var u=\"yyyy/MM/dd\",ve=t=>[a(t,u),[`[${a(y(t,1),u)}.icon]←${a(t,u)}→[${a(g(t,1),u)}.icon]`,`[[${W(t)}曜日]]`,`${N(t)}年 ${(I(t)*100/_(t)).toFixed(2)}％経過`,`[🌏 https://ja.wikipedia.org/wiki/${a(t,\"M月d日\")}]`,[`[${a(p(t,1),u)}.icon]`,`[${a(p(t,2),u)}.icon]`,`[${a(p(t,3),u)}.icon]`,`[${a(x(t,1),u)}.icon]`,`[${a(x(t,2),u)}.icon]`,`[${a(x(t,3),u)}.icon]`].join(\" \"),\"今日のn年前\",` [${a(T(t,1),u)}]`].join(`\\n`),`[${a(y(t,1),u)}]←${a(t,u)}→[${a(g(t,1),u)}]`];function W(t){switch(O(t)){case 0:return\"日\";case 1:return\"月\";case 2:return\"火\";case 3:return\"水\";case 4:return\"木\";case 5:return\"金\";case 6:return\"土\"}}export{ve as getTemplate};",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636544141,
+      "updated": 1643762576
+    },
+    {
+      "id": "61f9d3841280f0000031c0ce",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643762564,
+      "updated": 1643762564
+    },
+    {
+      "id": "618ba8811280f00000cbd159",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1636542593,
+      "updated": 1636591504
+    }
+  ]
+}

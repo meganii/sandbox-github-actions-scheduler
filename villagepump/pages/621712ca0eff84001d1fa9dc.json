@@ -1,0 +1,190 @@
+{
+  "id": "621712ca0eff84001d1fa9dc",
+  "title": "Firefoxでscrapboxの読み込みが非常に遅い",
+  "created": 1645679309,
+  "updated": 1645697693,
+  "lines": [
+    {
+      "id": "621712ca0eff84001d1fa9dc",
+      "text": "Firefoxでscrapboxの読み込みが非常に遅い",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679309,
+      "updated": 1645679309
+    },
+    {
+      "id": "621712e1e5172d00005b72ef",
+      "text": "from [2022/02/12]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679329,
+      "updated": 1645679331
+    },
+    {
+      "id": "621712e4e5172d00005b72f0",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679333,
+      "updated": 1645679333
+    },
+    {
+      "id": "621712cce5172d00005b72e3",
+      "text": " [Firefoxでscrapboxの読み込みが非常に遅い]のはなんでだ[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679309,
+      "updated": 1645679316
+    },
+    {
+      "id": "621712cde5172d00005b72e4",
+      "text": "  Chromeだと一瞬なのに",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679310,
+      "updated": 1645679310
+    },
+    {
+      "id": "621712cde5172d00005b72e5",
+      "text": "  Firefoxだと30秒以上かかる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679310,
+      "updated": 1645679310
+    },
+    {
+      "id": "621712cde5172d00005b72e6",
+      "text": "   そしてとうとう動かなくなってしまった",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679310,
+      "updated": 1645679310
+    },
+    {
+      "id": "621712cde5172d00005b72e7",
+      "text": "    HTMLとCSSだけ構築される",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679310,
+      "updated": 1645679310
+    },
+    {
+      "id": "621712cde5172d00005b72e8",
+      "text": "    JSもserviceworker.js以外はdownloadされるし実行もされるのだが、なぜかReactの構築がいつまで経っても始まらない",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679310,
+      "updated": 1645679310
+    },
+    {
+      "id": "621712cde5172d00005b72e9",
+      "text": "   Service Workerも存在しないとか言ってくるし……",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679310,
+      "updated": 1645679310
+    },
+    {
+      "id": "621712cde5172d00005b72ea",
+      "text": "   原因が全くわからない",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679310,
+      "updated": 1645679310
+    },
+    {
+      "id": "621712cde5172d00005b72eb",
+      "text": "    Firefoxの再起動とページのリロードでは治らない",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679310,
+      "updated": 1645679310
+    },
+    {
+      "id": "621712cde5172d00005b72ec",
+      "text": "    関係があるかわからないが、Firefoxを再起動するたびに「Firefox は起動していますが応答しません。新しいウィンドウを開くには既存の Firefox プロセスを終了させなければなりません。」というエラーがでる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679310,
+      "updated": 1645679310
+    },
+    {
+      "id": "621712cde5172d00005b72ed",
+      "text": "    　タスクマネージャーを見ると、background tasksでfirefoxがいくつか動いている事がわかる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679310,
+      "updated": 1645679310
+    },
+    {
+      "id": "621712cde5172d00005b72ee",
+      "text": "   11:21:50 10分弱経過したらやっと読み込まれた",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679310,
+      "updated": 1645679310
+    },
+    {
+      "id": "621712f0e5172d00005b72f3",
+      "text": "   井戸端で試してみた[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679344,
+      "updated": 1645679527
+    },
+    {
+      "id": "621713a5e5172d00005b72f5",
+      "text": "   　ブラウザ起動後に初めて表示するとき、10秒くらい時間がかかる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679525,
+      "updated": 1645679765
+    },
+    {
+      "id": "6217135de5172d00005b72f4",
+      "text": "   　それ以降はサクサク",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679454,
+      "updated": 1645679588
+    },
+    {
+      "id": "621713e3e5172d00005b72f6",
+      "text": "   　ブラウザを再起動するとやはり初回だけ遅い",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679588,
+      "updated": 1645679604
+    },
+    {
+      "id": "621713f3e5172d00005b72f7",
+      "text": "   　　キャッシュを削除する設定はoffになっている",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679604,
+      "updated": 1645679685
+    },
+    {
+      "id": "6217149be5172d000099a728",
+      "text": "   　[/programming-notes]だともうちょっと早い",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1645679772,
+      "updated": 1645679783
+    },
+    {
+      "id": "621712e6e5172d00005b72f1",
+      "text": "\twin10 + firefox ですが[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1645679334,
+      "updated": 1645697693
+    },
+    {
+      "id": "62175a4379d3a900004778ed",
+      "text": "\t\t[https://gyazo.com/3be710f0316c11ea50328c6a235e5738]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1645697604,
+      "updated": 1645697605
+    },
+    {
+      "id": "62175a4479d3a900004778ee",
+      "text": "\t\t5秒くらい",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1645697605,
+      "updated": 1645697629
+    },
+    {
+      "id": "62175a5c79d3a900004778ef",
+      "text": "\t\tが、[takker.icon]さんが言ってるようなエラーはでない",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1645697629,
+      "updated": 1645697686
+    },
+    {
+      "id": "62175a8c79d3a900004778f0",
+      "text": "",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1645697676,
+      "updated": 1645697676
+    }
+  ]
+}

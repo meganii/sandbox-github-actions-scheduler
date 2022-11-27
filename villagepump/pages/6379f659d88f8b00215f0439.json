@@ -1,0 +1,162 @@
+{
+  "id": "6379f659d88f8b00215f0439",
+  "title": "Tesseractの日本語精度を上げる",
+  "created": 1668937305,
+  "updated": 1668937716,
+  "lines": [
+    {
+      "id": "6379f659d88f8b00215f0439",
+      "text": "Tesseractの日本語精度を上げる",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f6e5b8db540000fab407",
+      "text": "[アクティブ読書用データの作り方]の文字データ取得を[Tesseract]で実施する場合のメモ",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937442,
+      "updated": 1668937482
+    },
+    {
+      "id": "6379f6e5b8db540000fab409",
+      "text": "",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937442,
+      "updated": 1668937442
+    },
+    {
+      "id": "6379f65cb8db540000fab3f5",
+      "text": "from [2022/05/22]",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f65cb8db540000fab3f7",
+      "text": "[meganii.icon][Tesseract]の日本語精度を上げるためには？（v5.1）",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937317
+    },
+    {
+      "id": "6379f65cb8db540000fab3f8",
+      "text": "　以下の対応で、だいぶ改善した",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f65cb8db540000fab3f9",
+      "text": "  [https://github.com/tesseract-ocr/tessdata_best GitHub - tesseract-ocr/tessdata_best: Best (most accurate) trained LSTM models.]の学習済言語データ(BEST)版を使う",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f65cb8db540000fab3fa",
+      "text": "   BEST版を利用する場合、1文字ずつ搬出されるため、`preserve_interword_spaces T`のオプションを有効にする",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f65cb8db540000fab3fb",
+      "text": "  `--psm`を適切な値に設定する",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f65cb8db540000fab3fc",
+      "text": "   [https://github.com/tesseract-ocr/tessdoc/blob/main/ImproveQuality.md#page-segmentation-method tessdoc/ImproveQuality.md at main · tesseract-ocr/tessdoc · GitHub]",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f65cb8db540000fab3fd",
+      "text": "   縦書きではなく横書きの場合、`--psm 6`が自分の感覚としても良さそう",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f65cb8db540000fab3fe",
+      "text": "    https://qiita.com/henjiganai/items/7a5e871f652b32b41a18#3-ページセグメンテーションモードpsmについて",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f65cb8db540000fab3ff",
+      "text": "    [https://binary-star.net/tesseract-option-psm tesseract のオプション PSM をいじってみた | Binary Star]",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f67cb8db540000fab406",
+      "text": "   縦書きの場合、`-l jpn_vert`と、縦書き用の日本語を指定した上で、`--psm 5`を指定するのが良さそう",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937337,
+      "updated": 1668937392
+    },
+    {
+      "id": "6379f65cb8db540000fab400",
+      "text": "  日本語の場合`edges_max_children_per_outline`を40程度に設定する",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f65cb8db540000fab401",
+      "text": "  　from: https://github.com/tesseract-ocr/tessdoc/blob/main/tess3/ControlParams.md#useful-parameters-for-japanese-and-chinese",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f65cb8db540000fab402",
+      "text": " 　[https://nsr-9.hatenablog.jp/entry/2021/08/15/200000 Tesseract（OCR)は行単位で処理した方が性能が良い？ - 社会人研究者が色々頑張るブログ]",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f65cb8db540000fab403",
+      "text": "   ブロック単位ではなく、行単位で処理すべき",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f65cb8db540000fab404",
+      "text": " このTIPSは貴重[takker.icon]",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f65cb8db540000fab405",
+      "text": "",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1668937305,
+      "updated": 1668937305
+    },
+    {
+      "id": "6379f7e55f1e0d0000010746",
+      "text": "#アクティブ読書",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1668937700,
+      "updated": 1668937716
+    },
+    {
+      "id": "6379f7e65f1e0d0000010747",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1668937700,
+      "updated": 1668937700
+    }
+  ]
+}

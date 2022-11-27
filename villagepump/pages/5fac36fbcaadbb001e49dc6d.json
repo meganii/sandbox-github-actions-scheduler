@@ -1,0 +1,3382 @@
+{
+  "id": "5fac36fbcaadbb001e49dc6d",
+  "title": "VimのNormal modeを実装してみる",
+  "created": 1605121787,
+  "updated": 1606181465,
+  "lines": [
+    {
+      "id": "5fac36fbcaadbb001e49dc6d",
+      "text": "VimのNormal modeを実装してみる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605121787,
+      "updated": 1605146068
+    },
+    {
+      "id": "5fac70261280f000009f0279",
+      "text": "どういうコードを書けば動くのか試してみる[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136423,
+      "updated": 1605136425
+    },
+    {
+      "id": "5fac704d1280f000009f027a",
+      "text": " 設計とかは全然考えていません",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136462,
+      "updated": 1605136476
+    },
+    {
+      "id": "5fac705b1280f000009f027b",
+      "text": " \t(最終的にはclassで設計し直すつもり)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136476,
+      "updated": 1605136489
+    },
+    {
+      "id": "5fac70691280f000009f027c",
+      "text": " [Mousetrap]やnativeのAPIを使ってどうcodingすればkey bindingを実現できるかを試しています",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136490,
+      "updated": 1605136537
+    },
+    {
+      "id": "5fac70981280f000009f027d",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136907,
+      "updated": 1605136907
+    },
+    {
+      "id": "5fac76c81280f00000b8c4c0",
+      "text": "[/scrapboxlab/Emacs key binding]を借りることで、いい感じに切り取りできそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605138120,
+      "updated": 1605138163
+    },
+    {
+      "id": "5fac76f21280f00000b8c4c2",
+      "text": "\t[VIm]なのに[Emacs]の力を借らざるを得ないとは……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605138163,
+      "updated": 1605138199
+    },
+    {
+      "id": "5fac77161280f00000b8c4c4",
+      "text": "\t借らなくても、もっといい感じにできるかな？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605138199,
+      "updated": 1605138226
+    },
+    {
+      "id": "5fac77411280f00000b8c4c5",
+      "text": "\t [VimのNormal modeを実装してみる#5fac6e191280f000004193e3]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605138242,
+      "updated": 1605146070
+    },
+    {
+      "id": "5fac76c81280f00000b8c4c1",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605138120,
+      "updated": 1605138120
+    },
+    {
+      "id": "5fac709a1280f000009f027e",
+      "text": "既知の問題",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136539,
+      "updated": 1605137086
+    },
+    {
+      "id": "5fac709f1280f000009f027f",
+      "text": "\t`dd`などの連続したキー入力で、最後の文字以外が入力されてしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136544,
+      "updated": 1605136599
+    },
+    {
+      "id": "5fac70d71280f000009f0280",
+      "text": "\t\t別途`MousetrapOnEdit.bind('d',e=>{...})`などで1文字目を入力しないようにしてしまうと、`d`が押されなかったことになってしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136599,
+      "updated": 1605136654
+    },
+    {
+      "id": "5fac73091280f00000d6375d",
+      "text": "\t\t`Event.StopPropagation()`を削ってもうまく行かない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605137161,
+      "updated": 1605137218
+    },
+    {
+      "id": "5fac734a1280f00000d6375e",
+      "text": "\t\t[Mousetrap]を使わずに、自前で入力されたkeyをstackするsystemを作ったほうが早いように思う[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605137227,
+      "updated": 1605137466
+    },
+    {
+      "id": "5fac736f1280f00000d6375f",
+      "text": "\t\t [/yutaro/emoji selector]のコードを参考にすれば作れそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605137264,
+      "updated": 1605137315
+    },
+    {
+      "id": "5fac36fb1280f00000ae7926",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132746,
+      "updated": 1605132746
+    },
+    {
+      "id": "5fac36fb1280f00000ae7927",
+      "text": "code:prototype1.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130209,
+      "updated": 1605132746
+    },
+    {
+      "id": "5fac3e271280f000000fa825",
+      "text": " import {installMousetrap} from '/api/code/villagepump/scrapbox-mousetrap-installer/script.js';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605132535
+    },
+    {
+      "id": "5fac3e271280f000000fa826",
+      "text": " installMousetrap();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605130200
+    },
+    {
+      "id": "5fac3eac1280f000000fa827",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605130200
+    },
+    {
+      "id": "5fac40181280f000000fab4a",
+      "text": " // 本体をinstallする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605130200
+    },
+    {
+      "id": "5fac401a1280f000000fab4c",
+      "text": " const oldScript = document.getElementById('scrapbox-click-link');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605135455
+    },
+    {
+      "id": "5fac401a1280f000000fab4d",
+      "text": " oldScript?.parentNode.removeChild(oldScript);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605134320
+    },
+    {
+      "id": "5fac401a1280f000000fab4e",
+      "text": " const script = document.createElement(\"script\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605130200
+    },
+    {
+      "id": "5fac401a1280f000000fab4f",
+      "text": " script.src = '/api/code/villagepump/Normal modeを実装してみる/script.js';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605130200
+    },
+    {
+      "id": "5fac401a1280f000000fab50",
+      "text": " script.id = 'scrapbox-click-link';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605130200
+    },
+    {
+      "id": "5fac401a1280f000000fab51",
+      "text": " script.type = 'module';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605132580
+    },
+    {
+      "id": "5fac401a1280f000000fab52",
+      "text": " document.body.appendChild(script);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605130200
+    },
+    {
+      "id": "5fac6ada1280f00000e69dde",
+      "text": " const cssId = 'scrapbox-normal-mode';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135066,
+      "updated": 1605135132
+    },
+    {
+      "id": "5fac6b0e1280f00000e69ddf",
+      "text": " let style = document.getElementById(cssId);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135118,
+      "updated": 1605135141
+    },
+    {
+      "id": "5fac6b0e1280f00000e69de0",
+      "text": " //if (style){ style.remove() }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135118,
+      "updated": 1605135137
+    },
+    {
+      "id": "5fac6b0e1280f00000e69de1",
+      "text": " style?.remove()",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135118,
+      "updated": 1605135137
+    },
+    {
+      "id": "5fac6b0e1280f00000e69de2",
+      "text": " document.head.insertAdjacentHTML('beforeend',`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135118,
+      "updated": 1605135137
+    },
+    {
+      "id": "5fac6b0e1280f00000e69de3",
+      "text": "   <style id=\"${cssId}\">",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135118,
+      "updated": 1605135137
+    },
+    {
+      "id": "5fac6b0e1280f00000e69de4",
+      "text": "     @import \"/api/code/villagepump/Normal_modeを実装してみる/cursor.css\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135118,
+      "updated": 1605135163
+    },
+    {
+      "id": "5fac6b0e1280f00000e69de5",
+      "text": "   </style>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135118,
+      "updated": 1605135137
+    },
+    {
+      "id": "5fac6b0e1280f00000e69de6",
+      "text": " `);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135118,
+      "updated": 1605135167
+    },
+    {
+      "id": "5fac40181280f000000fab4b",
+      "text": "[random-usercss-button]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1606902246
+    },
+    {
+      "id": "5fac6a741280f00000e69dda",
+      "text": "Normal modeのカーソルの形",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134964,
+      "updated": 1605135160
+    },
+    {
+      "id": "5fac6a7f1280f00000e69ddb",
+      "text": " とりあえず区別できるようにした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134975,
+      "updated": 1605134982
+    },
+    {
+      "id": "5fac6aac1280f00000e69ddc",
+      "text": " 理想は1文字分ハイライトされること",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135020,
+      "updated": 1605135059
+    },
+    {
+      "id": "5fac6a6a1280f00000e69dd9",
+      "text": " from [/foldrr/Settings#5bb1238a70c9ce0000f3a33d]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134955,
+      "updated": 1605134974
+    },
+    {
+      "id": "5fac6a5b1280f00000e69dcb",
+      "text": "code:cursor.css",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134940,
+      "updated": 1605134952
+    },
+    {
+      "id": "5fac6a611280f00000e69dcc",
+      "text": " .cursor.normal-mode {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134946,
+      "updated": 1605135007
+    },
+    {
+      "id": "5fac6a621280f00000e69dcd",
+      "text": "     width: 4px !important;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134947,
+      "updated": 1605134994
+    },
+    {
+      "id": "5fac6a621280f00000e69dce",
+      "text": "     background-color: rgb(57, 172, 134);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134947,
+      "updated": 1605134994
+    },
+    {
+      "id": "5fac6a621280f00000e69dcf",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134947,
+      "updated": 1605134994
+    },
+    {
+      "id": "5fac6a621280f00000e69dd0",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134947,
+      "updated": 1605134947
+    },
+    {
+      "id": "5fac6a621280f00000e69dd1",
+      "text": " /* 黒い線が気になるのでカーソルと同じ色にする */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134947,
+      "updated": 1605134990
+    },
+    {
+      "id": "5fac6a621280f00000e69dd2",
+      "text": " .cursor.normal-mode {f",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134947,
+      "updated": 1605135010
+    },
+    {
+      "id": "5fac6a621280f00000e69dd3",
+      "text": "     color: rgb(57, 172, 134);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134947,
+      "updated": 1605134990
+    },
+    {
+      "id": "5fac6a621280f00000e69dd4",
+      "text": "     border-color: rgb(57, 172, 134);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134947,
+      "updated": 1605134990
+    },
+    {
+      "id": "5fac6a621280f00000e69dd5",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134947,
+      "updated": 1605134990
+    },
+    {
+      "id": "5fac6a621280f00000e69dd6",
+      "text": " .cursor.normal-mode svg {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134947,
+      "updated": 1605135011
+    },
+    {
+      "id": "5fac6a621280f00000e69dd7",
+      "text": "     display: none;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134947,
+      "updated": 1605134990
+    },
+    {
+      "id": "5fac6a621280f00000e69dd8",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134947,
+      "updated": 1605134990
+    },
+    {
+      "id": "5fac6ad71280f00000e69ddd",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135063,
+      "updated": 1605135063
+    },
+    {
+      "id": "5fac402d1280f000000fab53",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130201,
+      "updated": 1605130201
+    },
+    {
+      "id": "5fac608c1280f00000eb73f8",
+      "text": " import {getLinkIncludingCursor} from '/api/code/takker/Scrapboxでcursor下のリンクを取得する/script.js';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132429,
+      "updated": 1605132430
+    },
+    {
+      "id": "5fac608e1280f00000eb73f9",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132430,
+      "updated": 1605132430
+    },
+    {
+      "id": "5fac37601280f00000ae792c",
+      "text": " const editor = document.getElementById('editor');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605130200
+    },
+    {
+      "id": "5fac3e081280f000007273b0",
+      "text": " const cursor = document.getElementById('text-input');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605130200
+    },
+    {
+      "id": "5fac37881280f00000ae792d",
+      "text": " let mode = '';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605135522
+    },
+    {
+      "id": "5fac6ca31280f000004193d3",
+      "text": " moveNormalMode();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135524,
+      "updated": 1605135533
+    },
+    {
+      "id": "5fac37d11280f00000ae7932",
+      "text": " const moustrapOnEdit = new Mousetrap(editor);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605133177
+    },
+    {
+      "id": "5fac3ebb1280f000000fa828",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605130200
+    },
+    {
+      "id": "5fac55351280f000001f8cf6",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605135547
+    },
+    {
+      "id": "5fac72541280f000000a032c",
+      "text": "yank",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136981,
+      "updated": 1605136982
+    },
+    {
+      "id": "5fac72551280f000000a032e",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136982,
+      "updated": 1605136982
+    },
+    {
+      "id": "5fac72551280f000000a032f",
+      "text": " moustrapOnEdit.bind('y y', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136982,
+      "updated": 1605136982
+    },
+    {
+      "id": "5fac72901280f000000a0340",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605137040,
+      "updated": 1605137040
+    },
+    {
+      "id": "5fac72551280f000000a0331",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136982,
+      "updated": 1605136982
+    },
+    {
+      "id": "5fac72931280f000000a0342",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605137043,
+      "updated": 1605137043
+    },
+    {
+      "id": "5fac72921280f000000a0341",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605137042,
+      "updated": 1605137042
+    },
+    {
+      "id": "5fac72551280f000000a0334",
+      "text": "     const cursorLine = editor.getElementsByClassName('cursor-line')[0];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136982,
+      "updated": 1605136982
+    },
+    {
+      "id": "5fac72551280f000000a0335",
+      "text": "     if(navigator.clipboard){",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136982,
+      "updated": 1605136982
+    },
+    {
+      "id": "5fac72551280f000000a0336",
+      "text": "         navigator.clipboard.writeText(cursorLine.innerText);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136982,
+      "updated": 1605136982
+    },
+    {
+      "id": "5fac72551280f000000a0337",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136982,
+      "updated": 1605136982
+    },
+    {
+      "id": "5fac72551280f000000a0338",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136982,
+      "updated": 1605136982
+    },
+    {
+      "id": "5fac72541280f000000a032d",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136981,
+      "updated": 1605136981
+    },
+    {
+      "id": "5fac71ed1280f00000d39278",
+      "text": "特殊なキーと文字を握りつぶす",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d39279",
+      "text": " code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d3927a",
+      "text": "  moustrapOnEdit.bind(['left','up','down','right',",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d3927b",
+      "text": "  \t\t'ctrl+left','ctrl+up','ctrl+down','ctrl+right',",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d3927c",
+      "text": "  \t\t'alt+left','alt+up','alt+down','alt+right',",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d3927d",
+      "text": "  \t\t'del','backspace','enter',], e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d3927e",
+      "text": "    \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d3927f",
+      "text": "  \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d39280",
+      "text": "   \t_log(`${e.key} will be prevented from inserted.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d39281",
+      "text": "      e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d39282",
+      "text": "      e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d39283",
+      "text": "  });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d39284",
+      "text": "  moustrapOnEdit.bind('1234567890-\\\\qwertyd@[sf;:]zcvbnm,.'.split(''), e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d39285",
+      "text": "    \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d39286",
+      "text": "  \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d39287",
+      "text": "   \t_log(`${e.key} will be prevented from inserted.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d39288",
+      "text": "      e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d39289",
+      "text": "  });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d3928a",
+      "text": " [- 検知できていない?]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d3928b",
+      "text": " [- Mousetrapの対象を#text-inputに変えてみる]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d3928c",
+      "text": "  [- 検知できなかった]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d3928d",
+      "text": "  [- Mousetrapのバグか？]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d3928e",
+      "text": " [- 仕方ないのでaddEventListenerで握りつぶす]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d3928f",
+      "text": " ファイル名を間違えていただけだった……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71ed1280f00000d39290",
+      "text": "  `scrpt.js`→`script.js`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136878,
+      "updated": 1605136878
+    },
+    {
+      "id": "5fac71f21280f00000d39291",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136883,
+      "updated": 1605136884
+    },
+    {
+      "id": "5fac55361280f000001f8cf7",
+      "text": "mode切り替え",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130200,
+      "updated": 1605135544
+    },
+    {
+      "id": "5fac552e1280f000001f8cf5",
+      "text": " code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129519,
+      "updated": 1605129554
+    },
+    {
+      "id": "5fac3f341280f000000fa82c",
+      "text": "  moustrapOnEdit.bind('i', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605123892,
+      "updated": 1605129554
+    },
+    {
+      "id": "5fac49c81280f00000a8c254",
+      "text": "  \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605126601,
+      "updated": 1605129554
+    },
+    {
+      "id": "5fac3fd71280f000000fab43",
+      "text": "  \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124055,
+      "updated": 1605129554
+    },
+    {
+      "id": "5fac3f5e1280f000000fa8a2",
+      "text": "      e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605123934,
+      "updated": 1605129554
+    },
+    {
+      "id": "5fac3f5e1280f000000fa8a3",
+      "text": "      e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605123934,
+      "updated": 1605129554
+    },
+    {
+      "id": "5fac3f8d1280f000000fab31",
+      "text": "      moveInsertMode();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605123981,
+      "updated": 1605135417
+    },
+    {
+      "id": "5fac3f451280f000000fa82d",
+      "text": "  });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605123909,
+      "updated": 1605129554
+    },
+    {
+      "id": "5fac55761280f000001f8d13",
+      "text": "  moustrapOnEdit.bind('a', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129590,
+      "updated": 1605129609
+    },
+    {
+      "id": "5fac55771280f000001f8d14",
+      "text": "  \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129591,
+      "updated": 1605129594
+    },
+    {
+      "id": "5fac55771280f000001f8d15",
+      "text": "  \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129591,
+      "updated": 1605134044
+    },
+    {
+      "id": "5fac55771280f000001f8d16",
+      "text": "      e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129591,
+      "updated": 1605129594
+    },
+    {
+      "id": "5fac55771280f000001f8d17",
+      "text": "      e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129591,
+      "updated": 1605129594
+    },
+    {
+      "id": "5fac55811280f000001f8d1a",
+      "text": "      simulateKeyPress('right');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129601,
+      "updated": 1605129604
+    },
+    {
+      "id": "5fac55771280f000001f8d18",
+      "text": "      moveInsertMode();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129591,
+      "updated": 1605135413
+    },
+    {
+      "id": "5fac55771280f000001f8d19",
+      "text": "  });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129591,
+      "updated": 1605129594
+    },
+    {
+      "id": "5fac558f1280f000001f8d1b",
+      "text": "  moustrapOnEdit.bind('I', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129615,
+      "updated": 1605129622
+    },
+    {
+      "id": "5fac55901280f000001f8d1c",
+      "text": "  \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129616,
+      "updated": 1605129619
+    },
+    {
+      "id": "5fac55901280f000001f8d1d",
+      "text": "  \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129616,
+      "updated": 1605129619
+    },
+    {
+      "id": "5fac55901280f000001f8d1e",
+      "text": "      e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129616,
+      "updated": 1605129619
+    },
+    {
+      "id": "5fac55901280f000001f8d1f",
+      "text": "      e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129616,
+      "updated": 1605129619
+    },
+    {
+      "id": "5fac55991280f000001f8d22",
+      "text": "      simulateKeyPress('home');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129625,
+      "updated": 1605129633
+    },
+    {
+      "id": "5fac55901280f000001f8d20",
+      "text": "      moveInsertMode();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129616,
+      "updated": 1605135409
+    },
+    {
+      "id": "5fac55901280f000001f8d21",
+      "text": "  });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129616,
+      "updated": 1605129619
+    },
+    {
+      "id": "5fac55a51280f000001f8d23",
+      "text": "  moustrapOnEdit.bind('A', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129637,
+      "updated": 1605129647
+    },
+    {
+      "id": "5fac55a61280f000001f8d24",
+      "text": "  \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129638,
+      "updated": 1605129644
+    },
+    {
+      "id": "5fac55a61280f000001f8d25",
+      "text": "  \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129638,
+      "updated": 1605129644
+    },
+    {
+      "id": "5fac55a61280f000001f8d26",
+      "text": "      e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129638,
+      "updated": 1605129644
+    },
+    {
+      "id": "5fac55a61280f000001f8d27",
+      "text": "      e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129638,
+      "updated": 1605129644
+    },
+    {
+      "id": "5fac55a61280f000001f8d28",
+      "text": "      simulateKeyPress('end');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129638,
+      "updated": 1605129650
+    },
+    {
+      "id": "5fac55a61280f000001f8d29",
+      "text": "      moveInsertMode();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129638,
+      "updated": 1605135402
+    },
+    {
+      "id": "5fac55a61280f000001f8d2a",
+      "text": "  });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129638,
+      "updated": 1605129644
+    },
+    {
+      "id": "5fac554e1280f000001f8cfb",
+      "text": " 新しい行を作る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129550,
+      "updated": 1605129554
+    },
+    {
+      "id": "5fac554e1280f000001f8cfc",
+      "text": "  code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129550,
+      "updated": 1605129577
+    },
+    {
+      "id": "5fac554e1280f000001f8cfd",
+      "text": "   moustrapOnEdit.bind('o', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129550,
+      "updated": 1605129577
+    },
+    {
+      "id": "5fac554e1280f000001f8cfe",
+      "text": "   \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129550,
+      "updated": 1605129577
+    },
+    {
+      "id": "5fac554e1280f000001f8cff",
+      "text": "   \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129550,
+      "updated": 1605129577
+    },
+    {
+      "id": "5fac554e1280f000001f8d00",
+      "text": "       e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129550,
+      "updated": 1605129577
+    },
+    {
+      "id": "5fac554e1280f000001f8d01",
+      "text": "       e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129550,
+      "updated": 1605129577
+    },
+    {
+      "id": "5fac554e1280f000001f8d02",
+      "text": "       simulateKeyPress('end');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129550,
+      "updated": 1605129577
+    },
+    {
+      "id": "5fac554e1280f000001f8d03",
+      "text": "       simulateKeyPress('enter');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129550,
+      "updated": 1605129577
+    },
+    {
+      "id": "5fac554e1280f000001f8d04",
+      "text": "       moveInsertMode();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129550,
+      "updated": 1605135395
+    },
+    {
+      "id": "5fac554e1280f000001f8d05",
+      "text": "   });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129550,
+      "updated": 1605129577
+    },
+    {
+      "id": "5fac554c1280f000001f8cf9",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129549,
+      "updated": 1605129549
+    },
+    {
+      "id": "5fac65671280f00000c9eea4",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133672,
+      "updated": 1605133672
+    },
+    {
+      "id": "5fac65761280f00000c9eea6",
+      "text": "`<C-[>`が押されたらnormal modeに移行",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133686,
+      "updated": 1605133691
+    },
+    {
+      "id": "5fac55471280f000001f8cf8",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129544,
+      "updated": 1605129547
+    },
+    {
+      "id": "5fac3ff21280f000000fab44",
+      "text": "\tmoustrapOnEdit.bind(['ctrl+[','j j'], e => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124082,
+      "updated": 1605133719
+    },
+    {
+      "id": "5fac3ff41280f000000fab46",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124084,
+      "updated": 1605128798
+    },
+    {
+      "id": "5fac3ff41280f000000fab47",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124084,
+      "updated": 1605128799
+    },
+    {
+      "id": "5fac5ebf1280f00000013fde",
+      "text": "  \tif (mode !== 'insert') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605131967,
+      "updated": 1605134732
+    },
+    {
+      "id": "5fac3ff41280f000000fab48",
+      "text": "     moveNormalMode();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124084,
+      "updated": 1605135389
+    },
+    {
+      "id": "5fac3ff41280f000000fab49",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124084,
+      "updated": 1605124087
+    },
+    {
+      "id": "5fac67b01280f0000072e3b1",
+      "text": "`jj`でもnormal modeに移行するようにしてみる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134257,
+      "updated": 1605134697
+    },
+    {
+      "id": "5fac696d1280f00000e69dca",
+      "text": " うまく動かない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134701,
+      "updated": 1605134706
+    },
+    {
+      "id": "5fac67ab1280f0000072e3b0",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134252,
+      "updated": 1605134256
+    },
+    {
+      "id": "5fac67a11280f0000072e3aa",
+      "text": "\tmoustrapOnEdit.bind('j j', e => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134241,
+      "updated": 1605134249
+    },
+    {
+      "id": "5fac67a21280f0000072e3ab",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134243,
+      "updated": 1605134243
+    },
+    {
+      "id": "5fac67a21280f0000072e3ac",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134243,
+      "updated": 1605134243
+    },
+    {
+      "id": "5fac67a21280f0000072e3ad",
+      "text": "  \tif (mode !== 'insert') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134243,
+      "updated": 1605134243
+    },
+    {
+      "id": "5fac67a21280f0000072e3ae",
+      "text": "     moveNormalMode();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134243,
+      "updated": 1605135383
+    },
+    {
+      "id": "5fac67a21280f0000072e3af",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134243,
+      "updated": 1605134243
+    },
+    {
+      "id": "5fac65711280f00000c9eea5",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133682,
+      "updated": 1605133684
+    },
+    {
+      "id": "5fac657f1280f00000c9eea7",
+      "text": "cursor移動とか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133695,
+      "updated": 1605133705
+    },
+    {
+      "id": "5fac4f041280f0000037b5e8",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127941,
+      "updated": 1605133683
+    },
+    {
+      "id": "5fac4e731280f0000037b5c9",
+      "text": " moustrapOnEdit.bind('hjkl^$'.split(''), e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127795,
+      "updated": 1605128527
+    },
+    {
+      "id": "5fac4e731280f0000037b5ca",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127795,
+      "updated": 1605127802
+    },
+    {
+      "id": "5fac4e731280f0000037b5cb",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127795,
+      "updated": 1605127802
+    },
+    {
+      "id": "5fac4e731280f0000037b5cc",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127795,
+      "updated": 1605128796
+    },
+    {
+      "id": "5fac4e731280f0000037b5cd",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127795,
+      "updated": 1605128797
+    },
+    {
+      "id": "5fac4ea61280f0000037b5db",
+      "text": "     let key = '';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127847,
+      "updated": 1605127966
+    },
+    {
+      "id": "5fac4e971280f0000037b5d9",
+      "text": "     switch(e.key) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127832,
+      "updated": 1605127845
+    },
+    {
+      "id": "5fac4eb11280f0000037b5dc",
+      "text": "     \tcase 'h':",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127858,
+      "updated": 1605127866
+    },
+    {
+      "id": "5fac4eb91280f0000037b5dd",
+      "text": "     \t\tkey = 'left';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127866,
+      "updated": 1605127878
+    },
+    {
+      "id": "5fac4ec61280f0000037b5de",
+      "text": "     \t\tbreak;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127878,
+      "updated": 1605127880
+    },
+    {
+      "id": "5fac4ecb1280f0000037b5df",
+      "text": " \t\tcase 'j':",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127884,
+      "updated": 1605127905
+    },
+    {
+      "id": "5fac4ecc1280f0000037b5e0",
+      "text": "        \t\tkey = 'down';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127884,
+      "updated": 1605127914
+    },
+    {
+      "id": "5fac4ecc1280f0000037b5e1",
+      "text": "        \t\tbreak;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127884,
+      "updated": 1605127892
+    },
+    {
+      "id": "5fac4ecc1280f0000037b5e2",
+      "text": " \t\tcase 'k':",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127885,
+      "updated": 1605127908
+    },
+    {
+      "id": "5fac4ecd1280f0000037b5e3",
+      "text": "        \t\tkey = 'up';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127885,
+      "updated": 1605127916
+    },
+    {
+      "id": "5fac4ecd1280f0000037b5e4",
+      "text": "        \t\tbreak;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127885,
+      "updated": 1605127896
+    },
+    {
+      "id": "5fac4ecd1280f0000037b5e5",
+      "text": " \t\tcase 'l':",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127886,
+      "updated": 1605127910
+    },
+    {
+      "id": "5fac4ece1280f0000037b5e6",
+      "text": "        \t\tkey = 'right';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127886,
+      "updated": 1605127919
+    },
+    {
+      "id": "5fac4ece1280f0000037b5e7",
+      "text": "        \t\tbreak;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127886,
+      "updated": 1605127902
+    },
+    {
+      "id": "5fac4fbd1280f0000068c522",
+      "text": " \t\tcase '^':",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128125,
+      "updated": 1605128136
+    },
+    {
+      "id": "5fac4fbe1280f0000068c523",
+      "text": "        \t\tkey = 'home';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128126,
+      "updated": 1605128142
+    },
+    {
+      "id": "5fac4fbe1280f0000068c524",
+      "text": "        \t\tbreak;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128126,
+      "updated": 1605128133
+    },
+    {
+      "id": "5fac4fbe1280f0000068c525",
+      "text": "   \t\tcase '$':",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128126,
+      "updated": 1605128189
+    },
+    {
+      "id": "5fac4fbe1280f0000068c526",
+      "text": "        \t\tkey = 'end';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128127,
+      "updated": 1605128193
+    },
+    {
+      "id": "5fac4fbe1280f0000068c527",
+      "text": "        \t\tbreak;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128127,
+      "updated": 1605128153
+    },
+    {
+      "id": "5fac4ea41280f0000037b5da",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127845,
+      "updated": 1605127845
+    },
+    {
+      "id": "5fac4e731280f0000037b5ce",
+      "text": " \tsimulateKeyPress(key);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127795,
+      "updated": 1605133994
+    },
+    {
+      "id": "5fac4e731280f0000037b5cf",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127795,
+      "updated": 1605127802
+    },
+    {
+      "id": "5fac658c1280f00000c9eea9",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133708,
+      "updated": 1605134173
+    },
+    {
+      "id": "5fac675d1280f0000072e387",
+      "text": " moustrapOnEdit.bind('ctrl+u', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134173,
+      "updated": 1605134192
+    },
+    {
+      "id": "5fac675d1280f0000072e388",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134173,
+      "updated": 1605134173
+    },
+    {
+      "id": "5fac675d1280f0000072e389",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134173,
+      "updated": 1605134173
+    },
+    {
+      "id": "5fac675d1280f0000072e38a",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134173,
+      "updated": 1605134173
+    },
+    {
+      "id": "5fac675d1280f0000072e38b",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134173,
+      "updated": 1605134173
+    },
+    {
+      "id": "5fac675d1280f0000072e3a1",
+      "text": " \tsimulateKeyPress('pageup');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134173,
+      "updated": 1605134218
+    },
+    {
+      "id": "5fac675d1280f0000072e3a2",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134173,
+      "updated": 1605134173
+    },
+    {
+      "id": "5fac675b1280f0000072e386",
+      "text": " moustrapOnEdit.bind('ctrl+f', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134172,
+      "updated": 1605134230
+    },
+    {
+      "id": "5fac67931280f0000072e3a4",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134228,
+      "updated": 1605134228
+    },
+    {
+      "id": "5fac67931280f0000072e3a5",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134228,
+      "updated": 1605134554
+    },
+    {
+      "id": "5fac67931280f0000072e3a6",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134228,
+      "updated": 1605134228
+    },
+    {
+      "id": "5fac67931280f0000072e3a7",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134228,
+      "updated": 1605134228
+    },
+    {
+      "id": "5fac67931280f0000072e3a8",
+      "text": " \tsimulateKeyPress('pagedown');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134228,
+      "updated": 1605134234
+    },
+    {
+      "id": "5fac67931280f0000072e3a9",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134228,
+      "updated": 1605134228
+    },
+    {
+      "id": "5fac67921280f0000072e3a3",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134226,
+      "updated": 1605134226
+    },
+    {
+      "id": "5fac5f541280f00000014002",
+      "text": "タイトル行へ移動",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132117,
+      "updated": 1605132127
+    },
+    {
+      "id": "5fac6ced1280f000004193d4",
+      "text": " うまく動かない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135598,
+      "updated": 1605135604
+    },
+    {
+      "id": "5fac5f541280f00000014003",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132117,
+      "updated": 1605134090
+    },
+    {
+      "id": "5fac5f651280f00000014005",
+      "text": " moustrapOnEdit.bind('g g', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132133,
+      "updated": 1605132141
+    },
+    {
+      "id": "5fac5f651280f00000014006",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132133,
+      "updated": 1605132133
+    },
+    {
+      "id": "5fac5f651280f00000014007",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132133,
+      "updated": 1605133953
+    },
+    {
+      "id": "5fac5f651280f00000014008",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132133,
+      "updated": 1605132133
+    },
+    {
+      "id": "5fac5f651280f00000014009",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132151,
+      "updated": 1605135647
+    },
+    {
+      "id": "5fac66b61280f00000bc2cff",
+      "text": "     simulateKeyPress('home');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134006,
+      "updated": 1605134535
+    },
+    {
+      "id": "5fac5f781280f0000001400c",
+      "text": "     editor.getElementsByClassName('line-title')?.[0].click();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132152,
+      "updated": 1605134839
+    },
+    {
+      "id": "5fac5f651280f0000001400a",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132133,
+      "updated": 1605132799
+    },
+    {
+      "id": "5fac5f641280f00000014004",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132132,
+      "updated": 1605132132
+    },
+    {
+      "id": "5fac4c4b1280f0000037b5a4",
+      "text": "[- キー入力のemulationは、[Mousetrap]を使わないと無理そう]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127243,
+      "updated": 1605127244
+    },
+    {
+      "id": "5fac4c4c1280f0000037b5a6",
+      "text": " [Mousetrap.trigger]も動かない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127244,
+      "updated": 1605127244
+    },
+    {
+      "id": "5fac4c4c1280f0000037b5a7",
+      "text": " [KeyboardEvent]で`keyCode`をつかって指定したらうまくいった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127244,
+      "updated": 1605127244
+    },
+    {
+      "id": "5fac4c4c1280f0000037b5a8",
+      "text": "  `key`だと動かない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127244,
+      "updated": 1605127244
+    },
+    {
+      "id": "5fac4c4d1280f0000037b5a9",
+      "text": " code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127245,
+      "updated": 1605127998
+    },
+    {
+      "id": "5fac4d3c1280f0000037b5c1",
+      "text": "  const KEY_MAP = {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127485,
+      "updated": 1605127494
+    },
+    {
+      "id": "5fac4d391280f0000037b5ab",
+      "text": "       backspace:8,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127482,
+      "updated": 1605127703
+    },
+    {
+      "id": "5fac4d3b1280f0000037b5ac",
+      "text": "       tab:  9 ,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127483,
+      "updated": 1605127706
+    },
+    {
+      "id": "5fac4d3b1280f0000037b5ad",
+      "text": "       enter: 13,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127483,
+      "updated": 1605127738
+    },
+    {
+      "id": "5fac4d941280f0000037b5c3",
+      "text": "       del: 46,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127572,
+      "updated": 1605127709
+    },
+    {
+      "id": "5fac4d3b1280f0000037b5b2",
+      "text": "       esc: 27,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127483,
+      "updated": 1605127718
+    },
+    {
+      "id": "5fac4d3b1280f0000037b5b3",
+      "text": "       space: 32,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127483,
+      "updated": 1605127726
+    },
+    {
+      "id": "5fac67411280f0000072e384",
+      "text": "       pageup: 33,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134146,
+      "updated": 1605134155
+    },
+    {
+      "id": "5fac674b1280f0000072e385",
+      "text": "       pagedown: 34,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605134155,
+      "updated": 1605134159
+    },
+    {
+      "id": "5fac4fa51280f0000068c51d",
+      "text": "       end: 35,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128101,
+      "updated": 1605128101
+    },
+    {
+      "id": "5fac4fa61280f0000068c521",
+      "text": "       home: 36,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128103,
+      "updated": 1605128103
+    },
+    {
+      "id": "5fac4d3b1280f0000037b5b8",
+      "text": "       left: 37,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127483,
+      "updated": 1605127725
+    },
+    {
+      "id": "5fac4d3b1280f0000037b5b9",
+      "text": "       up: 38,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127483,
+      "updated": 1605127724
+    },
+    {
+      "id": "5fac4d3b1280f0000037b5ba",
+      "text": "       right: 39,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127483,
+      "updated": 1605127723
+    },
+    {
+      "id": "5fac4d3b1280f0000037b5bb",
+      "text": "       down: 40,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127483,
+      "updated": 1605127723
+    },
+    {
+      "id": "5fac5b971280f00000797acf",
+      "text": "       v: 86,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605131160,
+      "updated": 1605131165
+    },
+    {
+      "id": "5fac55091280f000001f8cf4",
+      "text": "       z: 90,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129482,
+      "updated": 1605129484
+    },
+    {
+      "id": "5fac4d481280f0000037b5c2",
+      "text": "  };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127496,
+      "updated": 1605128105
+    },
+    {
+      "id": "5fac4c541280f0000037b5aa",
+      "text": "  function simulateKeyPress(key, {shiftKey = false, ctrlKey = false, altKey = false} = {}) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127252,
+      "updated": 1605128649
+    },
+    {
+      "id": "5fac4fde1280f0000068c528",
+      "text": "  \tif (!KEY_MAP[key]) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128158,
+      "updated": 1605128184
+    },
+    {
+      "id": "5fac4dd61280f0000037b5c5",
+      "text": "  \tcursor.dispatchEvent(new KeyboardEvent('keydown',",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127639,
+      "updated": 1605127759
+    },
+    {
+      "id": "5fac4e4e1280f0000037b5c6",
+      "text": "                 \t{bubbles: true, cancelable: true, keyCode: KEY_MAP[key], shiftKey: shiftKey,ctrlKey: ctrlKey, altKey: altKey}));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127759,
+      "updated": 1605128732
+    },
+    {
+      "id": "5fac4dd51280f0000037b5c4",
+      "text": "  }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127637,
+      "updated": 1605127637
+    },
+    {
+      "id": "5fac4c4b1280f0000037b5a5",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605127243,
+      "updated": 1605127243
+    },
+    {
+      "id": "5fac640b1280f000003e5c9c",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133323,
+      "updated": 1605133330
+    },
+    {
+      "id": "5fac65231280f00000c9ee97",
+      "text": "検索",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133603,
+      "updated": 1605133606
+    },
+    {
+      "id": "5fac65251280f00000c9ee99",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133606,
+      "updated": 1605133611
+    },
+    {
+      "id": "5fac652b1280f00000c9ee9a",
+      "text": " moustrapOnEdit.bind('/', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133611,
+      "updated": 1605133614
+    },
+    {
+      "id": "5fac652b1280f00000c9ee9b",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133611,
+      "updated": 1605133611
+    },
+    {
+      "id": "5fac652b1280f00000c9ee9c",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133611,
+      "updated": 1605133611
+    },
+    {
+      "id": "5fac652b1280f00000c9ee9d",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133611,
+      "updated": 1605133611
+    },
+    {
+      "id": "5fac652b1280f00000c9ee9e",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133611,
+      "updated": 1605133611
+    },
+    {
+      "id": "5fac652b1280f00000c9ee9f",
+      "text": "     simulateKeyPress('f', {ctrlKey: true});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133611,
+      "updated": 1605133639
+    },
+    {
+      "id": "5fac652b1280f00000c9eea3",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133611,
+      "updated": 1605133611
+    },
+    {
+      "id": "5fac65231280f00000c9ee98",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133603,
+      "updated": 1605133603
+    },
+    {
+      "id": "5fac64791280f00000c9ee88",
+      "text": "indent操作",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133434,
+      "updated": 1605133444
+    },
+    {
+      "id": "5fac64841280f00000c9ee8b",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133444,
+      "updated": 1605133486
+    },
+    {
+      "id": "5fac64ad1280f00000c9ee8c",
+      "text": " moustrapOnEdit.bind('< <', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133486,
+      "updated": 1605133813
+    },
+    {
+      "id": "5fac64ad1280f00000c9ee8d",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133486,
+      "updated": 1605133486
+    },
+    {
+      "id": "5fac64ad1280f00000c9ee8e",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133486,
+      "updated": 1605133486
+    },
+    {
+      "id": "5fac64ad1280f00000c9ee8f",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133486,
+      "updated": 1605133486
+    },
+    {
+      "id": "5fac64ad1280f00000c9ee90",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133486,
+      "updated": 1605133486
+    },
+    {
+      "id": "5fac64ad1280f00000c9ee91",
+      "text": "     simulateKeyPress('home');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133486,
+      "updated": 1605133789
+    },
+    {
+      "id": "5fac65de1280f00000c9eeab",
+      "text": "     simulateKeyPress('tab', {shiftKey: true});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133790,
+      "updated": 1605133807
+    },
+    {
+      "id": "5fac64ad1280f00000c9ee95",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133486,
+      "updated": 1605133486
+    },
+    {
+      "id": "5fac65fb1280f00000c9eeb4",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133819,
+      "updated": 1605133819
+    },
+    {
+      "id": "5fac65f61280f00000c9eeac",
+      "text": " moustrapOnEdit.bind('> >', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133814,
+      "updated": 1605133823
+    },
+    {
+      "id": "5fac65f71280f00000c9eead",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133815,
+      "updated": 1605133818
+    },
+    {
+      "id": "5fac65f71280f00000c9eeae",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133815,
+      "updated": 1605133818
+    },
+    {
+      "id": "5fac65f71280f00000c9eeaf",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133815,
+      "updated": 1605133818
+    },
+    {
+      "id": "5fac65f71280f00000c9eeb0",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133815,
+      "updated": 1605133818
+    },
+    {
+      "id": "5fac65f71280f00000c9eeb1",
+      "text": "     simulateKeyPress('home');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133815,
+      "updated": 1605133818
+    },
+    {
+      "id": "5fac65f71280f00000c9eeb2",
+      "text": "     simulateKeyPress('tab');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133815,
+      "updated": 1605133830
+    },
+    {
+      "id": "5fac65f71280f00000c9eeb3",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605133815,
+      "updated": 1605133818
+    },
+    {
+      "id": "5fac54ce1280f000001f8ce9",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129422,
+      "updated": 1605129422
+    },
+    {
+      "id": "5fac6f851280f000007755c6",
+      "text": "[アウトライン編集]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136261,
+      "updated": 1605136265
+    },
+    {
+      "id": "5fac6f891280f000007755c7",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136266,
+      "updated": 1605136271
+    },
+    {
+      "id": "5fac6f8f1280f000007755c8",
+      "text": " moustrapOnEdit.bind('ctrl+j', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136271,
+      "updated": 1605136289
+    },
+    {
+      "id": "5fac6f901280f000007755c9",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136272,
+      "updated": 1605136275
+    },
+    {
+      "id": "5fac6f901280f000007755ca",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136272,
+      "updated": 1605136275
+    },
+    {
+      "id": "5fac6f901280f000007755cb",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136272,
+      "updated": 1605136275
+    },
+    {
+      "id": "5fac6f901280f000007755cc",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136272,
+      "updated": 1605136275
+    },
+    {
+      "id": "5fac6f901280f000007755cd",
+      "text": "     simulateKeyPress('down', {ctrlKey: true});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136272,
+      "updated": 1605136311
+    },
+    {
+      "id": "5fac6f901280f000007755cf",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136272,
+      "updated": 1605136275
+    },
+    {
+      "id": "5fac6f371280f000007755c2",
+      "text": " moustrapOnEdit.bind('ctrl+k', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136184,
+      "updated": 1605136318
+    },
+    {
+      "id": "5fac6fbb1280f000007755d0",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136316,
+      "updated": 1605136316
+    },
+    {
+      "id": "5fac6fbb1280f000007755d1",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136316,
+      "updated": 1605136316
+    },
+    {
+      "id": "5fac6fbb1280f000007755d2",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136316,
+      "updated": 1605136316
+    },
+    {
+      "id": "5fac6fbb1280f000007755d3",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136316,
+      "updated": 1605136316
+    },
+    {
+      "id": "5fac6fbb1280f000007755d4",
+      "text": "     simulateKeyPress('up', {ctrlKey: true});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136316,
+      "updated": 1605136320
+    },
+    {
+      "id": "5fac6fbb1280f000007755d5",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136316,
+      "updated": 1605136316
+    },
+    {
+      "id": "5fac6f341280f000007755c1",
+      "text": " moustrapOnEdit.bind('alt+h', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136181,
+      "updated": 1605136329
+    },
+    {
+      "id": "5fac6fc21280f000007755d7",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136323,
+      "updated": 1605136323
+    },
+    {
+      "id": "5fac6fc21280f000007755d8",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136323,
+      "updated": 1605136323
+    },
+    {
+      "id": "5fac6fc21280f000007755d9",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136323,
+      "updated": 1605136323
+    },
+    {
+      "id": "5fac6fc21280f000007755da",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136323,
+      "updated": 1605136323
+    },
+    {
+      "id": "5fac6fc21280f000007755db",
+      "text": "     simulateKeyPress('left', {altKey: true});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136323,
+      "updated": 1605136338
+    },
+    {
+      "id": "5fac6fc21280f000007755dc",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136323,
+      "updated": 1605136323
+    },
+    {
+      "id": "5fac6fd61280f000007755dd",
+      "text": " moustrapOnEdit.bind('alt+j', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136343,
+      "updated": 1605136349
+    },
+    {
+      "id": "5fac6fd81280f000007755de",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136344,
+      "updated": 1605136344
+    },
+    {
+      "id": "5fac6fd81280f000007755df",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136344,
+      "updated": 1605136344
+    },
+    {
+      "id": "5fac6fd81280f000007755e0",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136344,
+      "updated": 1605136344
+    },
+    {
+      "id": "5fac6fd81280f000007755e1",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136344,
+      "updated": 1605136344
+    },
+    {
+      "id": "5fac6fd81280f000007755e2",
+      "text": "     simulateKeyPress('down', {altKey: true});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136344,
+      "updated": 1605136351
+    },
+    {
+      "id": "5fac6fd81280f000007755e3",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136344,
+      "updated": 1605136344
+    },
+    {
+      "id": "5fac6fc11280f000007755d6",
+      "text": " moustrapOnEdit.bind('alt+k', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136322,
+      "updated": 1605136358
+    },
+    {
+      "id": "5fac6fe21280f000007755e5",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136355,
+      "updated": 1605136355
+    },
+    {
+      "id": "5fac6fe21280f000007755e6",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136355,
+      "updated": 1605136355
+    },
+    {
+      "id": "5fac6fe21280f000007755e7",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136355,
+      "updated": 1605136355
+    },
+    {
+      "id": "5fac6fe21280f000007755e8",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136355,
+      "updated": 1605136355
+    },
+    {
+      "id": "5fac6fe21280f000007755e9",
+      "text": "     simulateKeyPress('up', {altKey: true});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136355,
+      "updated": 1605136370
+    },
+    {
+      "id": "5fac6fe21280f000007755ea",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136355,
+      "updated": 1605136355
+    },
+    {
+      "id": "5fac6fe11280f000007755e4",
+      "text": " moustrapOnEdit.bind('alt+l', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136354,
+      "updated": 1605136364
+    },
+    {
+      "id": "5fac6fe71280f000007755ec",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136360,
+      "updated": 1605136360
+    },
+    {
+      "id": "5fac6fe71280f000007755ed",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136360,
+      "updated": 1605136360
+    },
+    {
+      "id": "5fac6fe71280f000007755ee",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136360,
+      "updated": 1605136360
+    },
+    {
+      "id": "5fac6fe71280f000007755ef",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136360,
+      "updated": 1605136360
+    },
+    {
+      "id": "5fac6fe71280f000007755f0",
+      "text": "     simulateKeyPress('right', {altKey: true});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136360,
+      "updated": 1605136373
+    },
+    {
+      "id": "5fac6fe71280f000007755f1",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136360,
+      "updated": 1605136360
+    },
+    {
+      "id": "5fac6fe71280f000007755eb",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136359,
+      "updated": 1605136359
+    },
+    {
+      "id": "5fac53cf1280f000001f8cca",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129168,
+      "updated": 1605136974
+    },
+    {
+      "id": "5fac57b71280f00000fd0fa1",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130167,
+      "updated": 1605130167
+    },
+    {
+      "id": "5fac53d01280f000001f8ccb",
+      "text": "切り取り",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129168,
+      "updated": 1605130167
+    },
+    {
+      "id": "5fac6e191280f000004193e3",
+      "text": " うまく動かない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135898,
+      "updated": 1605135905
+    },
+    {
+      "id": "5fac55cf1280f000001f8d2d",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129679,
+      "updated": 1605129683
+    },
+    {
+      "id": "5fac55d21280f000001f8d2e",
+      "text": " moustrapOnEdit.bind('d d', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129683,
+      "updated": 1605129688
+    },
+    {
+      "id": "5fac55d21280f000001f8d2f",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129683,
+      "updated": 1605129683
+    },
+    {
+      "id": "5fac55d21280f000001f8d30",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129683,
+      "updated": 1605129683
+    },
+    {
+      "id": "5fac55d21280f000001f8d31",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129683,
+      "updated": 1605129683
+    },
+    {
+      "id": "5fac55d21280f000001f8d32",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129683,
+      "updated": 1605129683
+    },
+    {
+      "id": "5fac55d21280f000001f8d33",
+      "text": "     const cursorLine = editor.getElementsByClassName('cursor-line')[0];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129683,
+      "updated": 1605129683
+    },
+    {
+      "id": "5fac568f1280f000001f8d59",
+      "text": "     const text = cursorLine.innerText.trim();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129871,
+      "updated": 1605130368
+    },
+    {
+      "id": "5fac58331280f00000fd0fa4",
+      "text": "     _log(`innerText: ${text}`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130292,
+      "updated": 1605130310
+    },
+    {
+      "id": "5fac55d21280f000001f8d34",
+      "text": "     if(navigator.clipboard){",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129683,
+      "updated": 1605129836
+    },
+    {
+      "id": "5fac566b1280f000001f8d56",
+      "text": "         navigator.clipboard.writeText(text);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129836,
+      "updated": 1605129900
+    },
+    {
+      "id": "5fac566b1280f000001f8d57",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129836,
+      "updated": 1605129836
+    },
+    {
+      "id": "5fac58551280f00000e32030",
+      "text": "     simulateKeyPress('home');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130325,
+      "updated": 1605130349
+    },
+    {
+      "id": "5fac58741280f00000e32033",
+      "text": "     simulateKeyPress('home');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130357,
+      "updated": 1605130373
+    },
+    {
+      "id": "5fac56a31280f000001f8d62",
+      "text": "     deleteText(text);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129892,
+      "updated": 1605129892
+    },
+    {
+      "id": "5fac5de61280f00000530e50",
+      "text": "     simulateKeyPress('backspace');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605131751,
+      "updated": 1605131761
+    },
+    {
+      "id": "5fac5e0b1280f00000530e51",
+      "text": "     simulateKeyPress('home');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605131787,
+      "updated": 1605131790
+    },
+    {
+      "id": "5fac5e0e1280f00000530e52",
+      "text": "     simulateKeyPress('home');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605131791,
+      "updated": 1605131792
+    },
+    {
+      "id": "5fac55d21280f000001f8d37",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129683,
+      "updated": 1605129683
+    },
+    {
+      "id": "5fac57571280f0000020e78c",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130072,
+      "updated": 1605130072
+    },
+    {
+      "id": "5fac57571280f0000020e78d",
+      "text": " function deleteText(text) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130072,
+      "updated": 1605130087
+    },
+    {
+      "id": "5fac57681280f0000020e78f",
+      "text": " \tfor(const _ of text.match(/./ug)) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130089,
+      "updated": 1605130108
+    },
+    {
+      "id": "5fac576d1280f0000020e790",
+      "text": "   \t\tsimulateKeyPress('del');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130094,
+      "updated": 1605130104
+    },
+    {
+      "id": "5fac576d1280f0000020e792",
+      "text": "   \t}",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130094,
+      "updated": 1605130096
+    },
+    {
+      "id": "5fac57661280f0000020e78e",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130087,
+      "updated": 1605130087
+    },
+    {
+      "id": "5fac56f81280f000001f8d72",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129976,
+      "updated": 1605129976
+    },
+    {
+      "id": "5fac56161280f000001f8d50",
+      "text": " moustrapOnEdit.bind('x', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129751,
+      "updated": 1605129980
+    },
+    {
+      "id": "5fac56f51280f000001f8d67",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129974,
+      "updated": 1605129974
+    },
+    {
+      "id": "5fac56f51280f000001f8d68",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129974,
+      "updated": 1605129974
+    },
+    {
+      "id": "5fac56f51280f000001f8d69",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129974,
+      "updated": 1605129974
+    },
+    {
+      "id": "5fac56f51280f000001f8d6a",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129974,
+      "updated": 1605129974
+    },
+    {
+      "id": "5fac56f51280f000001f8d70",
+      "text": "     simulateKeyPress('del');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129974,
+      "updated": 1605130007
+    },
+    {
+      "id": "5fac56f51280f000001f8d71",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129974,
+      "updated": 1605129974
+    },
+    {
+      "id": "5fac55cb1280f000001f8d2b",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129676,
+      "updated": 1605129676
+    },
+    {
+      "id": "5fac52da1280f000001f8c9f",
+      "text": "貼り付け",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128923,
+      "updated": 1605129176
+    },
+    {
+      "id": "5fac52dd1280f000001f8ca1",
+      "text": " cf. [/takker/replaceText]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128925,
+      "updated": 1605128933
+    },
+    {
+      "id": "5fac5a891280f00000797acd",
+      "text": " firefoxでは[navigator.clipboard.readText()]を使えない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130890,
+      "updated": 1605130915
+    },
+    {
+      "id": "5fac5aa41280f00000797ace",
+      "text": " \t代わりに`ctrl`+`V`を実行する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605130916,
+      "updated": 1605130936
+    },
+    {
+      "id": "5fb47c601280f00000298deb",
+      "text": " \t↑これもうまく動かない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605663840,
+      "updated": 1605663846
+    },
+    {
+      "id": "5fac52e51280f000001f8ca2",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128934,
+      "updated": 1605128939
+    },
+    {
+      "id": "5fac52ea1280f000001f8ca3",
+      "text": " moustrapOnEdit.bind('p', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128939,
+      "updated": 1605128952
+    },
+    {
+      "id": "5fac52ea1280f000001f8ca4",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128939,
+      "updated": 1605128939
+    },
+    {
+      "id": "5fac52ea1280f000001f8ca5",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128939,
+      "updated": 1605128939
+    },
+    {
+      "id": "5fac52ea1280f000001f8ca6",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128939,
+      "updated": 1605128939
+    },
+    {
+      "id": "5fac52ea1280f000001f8ca7",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128939,
+      "updated": 1605128939
+    },
+    {
+      "id": "5fac53881280f000001f8cc7",
+      "text": "     simulateKeyPress('v', {ctrlKey: true});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129097,
+      "updated": 1605130953
+    },
+    {
+      "id": "5fac52ea1280f000001f8ca8",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605128939,
+      "updated": 1605128939
+    },
+    {
+      "id": "5fac6d331280f000004193d5",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135667,
+      "updated": 1605135752
+    },
+    {
+      "id": "5fac6d331280f000004193d6",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135667,
+      "updated": 1605135667
+    },
+    {
+      "id": "5fac6d331280f000004193d7",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135667,
+      "updated": 1605135667
+    },
+    {
+      "id": "5fac54d01280f000001f8cea",
+      "text": "戻る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129425,
+      "updated": 1605129427
+    },
+    {
+      "id": "5fac54d31280f000001f8cec",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129427,
+      "updated": 1605129432
+    },
+    {
+      "id": "5fac54d81280f000001f8ced",
+      "text": " moustrapOnEdit.bind('u', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129432,
+      "updated": 1605129442
+    },
+    {
+      "id": "5fac54d81280f000001f8cee",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129432,
+      "updated": 1605129432
+    },
+    {
+      "id": "5fac54d81280f000001f8cef",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129432,
+      "updated": 1605129432
+    },
+    {
+      "id": "5fac54d81280f000001f8cf0",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129432,
+      "updated": 1605129432
+    },
+    {
+      "id": "5fac54d81280f000001f8cf1",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129432,
+      "updated": 1605129432
+    },
+    {
+      "id": "5fac54da1280f000001f8cf3",
+      "text": "     simulateKeyPress('z', {ctrlKey:true});",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129435,
+      "updated": 1605129469
+    },
+    {
+      "id": "5fac54d81280f000001f8cf2",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129432,
+      "updated": 1605129432
+    },
+    {
+      "id": "5fac601c1280f00000eb73e9",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132316,
+      "updated": 1605132316
+    },
+    {
+      "id": "5fac5ce11280f00000a52ce1",
+      "text": "IMEを握りつぶす",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605131489,
+      "updated": 1605131502
+    },
+    {
+      "id": "5fac5cef1280f00000a52ce4",
+      "text": " from [https://developer.mozilla.org/ja/docs/Web/API/Element/compositionend_event Element: compositionend イベント - Web API | MDN]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605131503,
+      "updated": 1605131521
+    },
+    {
+      "id": "5fac5cfd1280f00000a52ce5",
+      "text": " code:script.js_disabled",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605131517,
+      "updated": 1605135794
+    },
+    {
+      "id": "5fac5d051280f00000a52ce6",
+      "text": "  cursor.addEventListener('compositionend', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605131526,
+      "updated": 1605135794
+    },
+    {
+      "id": "5fac5d201280f00000a52ce8",
+      "text": "  \tconsole.log('End composition: %o', e.data);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605131553,
+      "updated": 1605135794
+    },
+    {
+      "id": "5fac5d341280f00000a52ce9",
+      "text": "  \tif (!e.data) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605131572,
+      "updated": 1605135794
+    },
+    {
+      "id": "5fac5d441280f00000a52cea",
+      "text": "  \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605131588,
+      "updated": 1605135794
+    },
+    {
+      "id": "5fac5efc1280f00000013fff",
+      "text": "      deleteText(e.data);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132028,
+      "updated": 1605135794
+    },
+    {
+      "id": "5fac5d1e1280f00000a52ce7",
+      "text": "  });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605131550,
+      "updated": 1605135794
+    },
+    {
+      "id": "5fac6da91280f000004193d8",
+      "text": " うまく行かなかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135786,
+      "updated": 1605135802
+    },
+    {
+      "id": "5fac6db91280f000004193d9",
+      "text": "\tIMEの入力をすると`Esc`で握りつぶすようにする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135802,
+      "updated": 1605135833
+    },
+    {
+      "id": "5fac60281280f00000eb73ec",
+      "text": " code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132328,
+      "updated": 1605135844
+    },
+    {
+      "id": "5fac6de11280f000004193dc",
+      "text": "  cursor.addEventListener('compositionstart', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135842,
+      "updated": 1605135865
+    },
+    {
+      "id": "5fac6e491280f000004193e4",
+      "text": "  \t_log('IME can\\'t be used in the Normal mode');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135945,
+      "updated": 1605135977
+    },
+    {
+      "id": "5fac6de11280f000004193df",
+      "text": "  \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135842,
+      "updated": 1605135842
+    },
+    {
+      "id": "5fac6de11280f000004193e0",
+      "text": "      simulateKeyPress('esc');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135842,
+      "updated": 1605135941
+    },
+    {
+      "id": "5fac6de11280f000004193e1",
+      "text": "  });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135842,
+      "updated": 1605135842
+    },
+    {
+      "id": "5fac6de01280f000004193da",
+      "text": " `esc`が反応しない？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135840,
+      "updated": 1605136046
+    },
+    {
+      "id": "5fac6ead1280f000007755bf",
+      "text": " \t[VimのNormal modeを実装してみる#5fac4d3b1280f0000037b5b2]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136046,
+      "updated": 1605146070
+    },
+    {
+      "id": "5fac6ebf1280f000007755c0",
+      "text": " \t別の手段を使う必要がありそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605136064,
+      "updated": 1605136078
+    },
+    {
+      "id": "5fac6de01280f000004193db",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135840,
+      "updated": 1605135840
+    },
+    {
+      "id": "5fac60291280f00000eb73ed",
+      "text": "リンクを押す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132329,
+      "updated": 1605132358
+    },
+    {
+      "id": "5fac60451280f00000eb73ee",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132358,
+      "updated": 1605132361
+    },
+    {
+      "id": "5fac60491280f00000eb73ef",
+      "text": " moustrapOnEdit.bind('ctrl+]', e =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132362,
+      "updated": 1605132379
+    },
+    {
+      "id": "5fac60511280f00000eb73f0",
+      "text": " \t_log(`${e.key} is pressed.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132369,
+      "updated": 1605132477
+    },
+    {
+      "id": "5fac60651280f00000eb73f6",
+      "text": "     e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132390,
+      "updated": 1605132390
+    },
+    {
+      "id": "5fac60661280f00000eb73f7",
+      "text": "     e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132390,
+      "updated": 1605132390
+    },
+    {
+      "id": "5fac60511280f00000eb73f1",
+      "text": " \tif (mode !== 'normal') return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132369,
+      "updated": 1605132373
+    },
+    {
+      "id": "5fac60511280f00000eb73f4",
+      "text": "     _log(`Searching for the link under the cursor...`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132369,
+      "updated": 1605132481
+    },
+    {
+      "id": "5fac60ae1280f00000eb7403",
+      "text": "   \tconst targetLink = getLinkIncludingCursor();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132463,
+      "updated": 1605132484
+    },
+    {
+      "id": "5fac60ae1280f00000eb7404",
+      "text": "   \tif (!targetLink) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132463,
+      "updated": 1605132484
+    },
+    {
+      "id": "5fac60ae1280f00000eb7405",
+      "text": "   \t\t_log('No link found.');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132463,
+      "updated": 1605132491
+    },
+    {
+      "id": "5fac60ae1280f00000eb7406",
+      "text": "   \t\treturn;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132463,
+      "updated": 1605132484
+    },
+    {
+      "id": "5fac60ae1280f00000eb7407",
+      "text": "   \t}",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132463,
+      "updated": 1605132484
+    },
+    {
+      "id": "5fac60ae1280f00000eb7408",
+      "text": "   \t_log('Target link: %o', targetLink);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132463,
+      "updated": 1605132691
+    },
+    {
+      "id": "5fac60ae1280f00000eb7409",
+      "text": "   \ttargetLink.click();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132463,
+      "updated": 1605132484
+    },
+    {
+      "id": "5fac60511280f00000eb73f5",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132369,
+      "updated": 1605132373
+    },
+    {
+      "id": "5fac60a91280f00000eb73fa",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132458,
+      "updated": 1605132458
+    },
+    {
+      "id": "5fac60211280f00000eb73eb",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605132322,
+      "updated": 1605132322
+    },
+    {
+      "id": "5fac47431280f000000d6a1d",
+      "text": "これ動かない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605125956,
+      "updated": 1605125960
+    },
+    {
+      "id": "5fac47481280f000000d6a1e",
+      "text": "　from https://github.com/ccampbell/mousetrap/issues/134#issuecomment-19861602",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605125960,
+      "updated": 1605126119
+    },
+    {
+      "id": "5fac47e81280f000000d6a1f",
+      "text": "　`this._handleKey is undefined`になってしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605126121,
+      "updated": 1605126151
+    },
+    {
+      "id": "5fac472f1280f000000d6a1a",
+      "text": " code:script.js_disabled",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605125935,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac430d1280f000000fab6e",
+      "text": "  var originalHandleKey = moustrapOnEdit.handleKey;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124877,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac430f1280f000000fab6f",
+      "text": "  moustrapOnEdit.handleKey = (character, modifiers, e) =>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124879,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac43a71280f000000fae51",
+      "text": "  \t_log(`The current mode is ${mode} mode.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605125032,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac432c1280f000000fab74",
+      "text": "  \t",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124908,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac434d1280f000000facfe",
+      "text": "  \t// 文字入力を握りつぶす",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124941,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac434d1280f000000facff",
+      "text": "    \tif (character.match(/^.$/) && mode === 'normal') {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124941,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac434d1280f000000fad00",
+      "text": " \t\t\te.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124941,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac434d1280f000000fad01",
+      "text": "          e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124941,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac434d1280f000000fad03",
+      "text": "    \t}",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124941,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac43731280f000000fae3a",
+      "text": "    \tif (['del','backspace'].includes(character) && mode === 'normal') {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124979,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac43731280f000000fae3b",
+      "text": " \t\t\te.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124979,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac43731280f000000fae3c",
+      "text": "          e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124979,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac43731280f000000fae3e",
+      "text": "  \t}",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124979,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac430f1280f000000fab72",
+      "text": "      return originalHandleKey(character, modifiers, e);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124879,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac431d1280f000000fab73",
+      "text": "  };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124894,
+      "updated": 1605125954
+    },
+    {
+      "id": "5fac473e1280f000000d6a1b",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605125950,
+      "updated": 1605125950
+    },
+    {
+      "id": "5fac43ea1280f0000020fd16",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605125098,
+      "updated": 1605125949
+    },
+    {
+      "id": "5fac6b541280f00000e69de8",
+      "text": " function moveInsertMode() {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135189,
+      "updated": 1605135199
+    },
+    {
+      "id": "5fac6b601280f00000e69dea",
+      "text": " \tmode = 'insert';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135201,
+      "updated": 1605135220
+    },
+    {
+      "id": "5fac6b731280f00000e69dfc",
+      "text": " \teditor.getElementsByClassName('cursor')?.[0].classList.remove('normal-mode');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135220,
+      "updated": 1605135326
+    },
+    {
+      "id": "5fac6b771280f00000e69e00",
+      "text": " \t_log(`Moved to ${mode} mode.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135224,
+      "updated": 1605135224
+    },
+    {
+      "id": "5fac6b5e1280f00000e69de9",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135199,
+      "updated": 1605135199
+    },
+    {
+      "id": "5fac6b6d1280f00000e69dfb",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135213,
+      "updated": 1605135213
+    },
+    {
+      "id": "5fac6b691280f00000e69df7",
+      "text": " function moveNormalMode() {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135210,
+      "updated": 1605135336
+    },
+    {
+      "id": "5fac6b691280f00000e69df8",
+      "text": " \tmode = 'normal';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135210,
+      "updated": 1605135347
+    },
+    {
+      "id": "5fac6bee1280f00000e69e01",
+      "text": "   \teditor.getElementsByClassName('cursor')?.[0].classList.add('normal-mode');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135343,
+      "updated": 1605135351
+    },
+    {
+      "id": "5fac6bee1280f00000e69e02",
+      "text": "   \t_log(`Moved to ${mode} mode.`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135343,
+      "updated": 1605135343
+    },
+    {
+      "id": "5fac6b691280f00000e69dfa",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605135210,
+      "updated": 1605135210
+    },
+    {
+      "id": "5fac408d1280f000000fab55",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605124237,
+      "updated": 1605124237
+    },
+    {
+      "id": "5fac3a771280f00000f635ab",
+      "text": " function _log(msg, ...objects){",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605122679,
+      "updated": 1606180239
+    },
+    {
+      "id": "5fac61691280f000006fdfe0",
+      "text": " \tif (objects.length > 0) console.log(`[scrapbox-vim-bindings] ${msg}`, objects);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606180239,
+      "updated": 1606180239
+    },
+    {
+      "id": "5fac3a851280f00000f635ae",
+      "text": " \tconsole.log(`[scrapbox-vim-bindings] ${msg}`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606180239,
+      "updated": 1606180239
+    },
+    {
+      "id": "5fac3a811280f00000f635ad",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606180239,
+      "updated": 1606180239
+    },
+    {
+      "id": "5fac37571280f00000ae792b",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605121880,
+      "updated": 1605121880
+    },
+    {
+      "id": "5fac55eb1280f000001f8d39",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129707,
+      "updated": 1605129713
+    },
+    {
+      "id": "5fac55f11280f000001f8d3c",
+      "text": " function isFirefox() {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129713,
+      "updated": 1605129730
+    },
+    {
+      "id": "5fac55f11280f000001f8d3d",
+      "text": "     const userAgent = window.navigator.userAgent.toLowerCase();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129713,
+      "updated": 1605129735
+    },
+    {
+      "id": "5fac55f11280f000001f8d3e",
+      "text": "     return userAgent.indexOf('firefox') != -1;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129713,
+      "updated": 1606181458
+    },
+    {
+      "id": "5fac55f11280f000001f8d42",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129713,
+      "updated": 1606181465
+    },
+    {
+      "id": "5fac55ec1280f000001f8d3a",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605129708,
+      "updated": 1605129708
+    }
+  ]
+}

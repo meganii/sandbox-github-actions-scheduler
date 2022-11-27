@@ -1,0 +1,988 @@
+{
+  "id": "5fd0d5c188f3f200225a84f6",
+  "title": "vis-script-button",
+  "created": 1607521765,
+  "updated": 1607521789,
+  "lines": [
+    {
+      "id": "5fd0d5c188f3f200225a84f6",
+      "text": "vis-script-button",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521765,
+      "updated": 1607521765
+    },
+    {
+      "id": "5fd0d5e45b98c20000a1de91",
+      "text": "vis.jsのスクリプトを動かすアイコンボタン",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521765,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1de92",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1de93",
+      "text": "[https://almende.github.io/vis/ vis.js - A dynamic, browser based visualization library.]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1de94",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1de95",
+      "text": " やっつけ風味",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1de96",
+      "text": "  vis.js の機能のうち network の機能しか使えない",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1de97",
+      "text": "   networkの表現はリッチで、ノードをつまんでグリグリできたりする",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1de98",
+      "text": "  動かすために ad hoc なことをしている",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1de99",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1de9a",
+      "text": "↓アイコン用画像",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1de9b",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1de9c",
+      "text": "[https://gyazo.com/c2b26a8471825086ba03f50bdf2b3588]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1de9d",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1de9e",
+      "text": "code:button.js",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1de9f",
+      "text": " (() => {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dea0",
+      "text": "   let VISjs = document.getElementById('__VISjs__')",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dea1",
+      "text": "   if (!VISjs) {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dea2",
+      "text": "     // CSSの読み込み",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dea3",
+      "text": "     const VIScssURL = 'https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css';",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dea4",
+      "text": "     const VIScssId = '__VIScss__';",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dea5",
+      "text": "     let style = document.getElementById(VIScssId)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dea6",
+      "text": "     style?.remove()",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dea7",
+      "text": "     document.head.insertAdjacentHTML('beforeend',`",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dea8",
+      "text": "        <style id=\"${VIScssId}\">",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dea9",
+      "text": "          @import \"${VIScssURL}\";",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deaa",
+      "text": "        </style>",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deab",
+      "text": "     `);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deac",
+      "text": "   ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dead",
+      "text": "     VISjs = document.createElement(\"script\");",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deae",
+      "text": "     VISjs.id = '__VISjs__'",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deaf",
+      "text": "     VISjs.src = '//cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js'",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deb0",
+      "text": "     document.head.appendChild(VISjs);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deb1",
+      "text": "   }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deb2",
+      "text": "   let vscript =  document.getElementById('__VISsc__')",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deb3",
+      "text": "   if (vscript){",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deb4",
+      "text": "     console.log(\"nop\")",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deb5",
+      "text": "     // リロードしてリセット",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deb6",
+      "text": "     location.reload(false)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deb7",
+      "text": "   } else {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deb8",
+      "text": "   ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deb9",
+      "text": "     // 表示領域を作る",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deba",
+      "text": "     const editor = document.getElementById('editor');",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1debb",
+      "text": "     editor.insertAdjacentHTML('beforeend',`",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1debc",
+      "text": "       <div id=\"vis\" style=\"width:600px;height:500px;\" >",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1debd",
+      "text": "       </div>",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1debe",
+      "text": "     `);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1debf",
+      "text": "     ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dec0",
+      "text": "     vscript = document.createElement(\"script\");",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dec1",
+      "text": "     vscript.id = '__VISsc__'",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dec2",
+      "text": "     vscript.src = `https://scrapbox.io/api/code//${scrapbox.Project.name}/${encodeURIComponent(scrapbox.Page.title)}/visScript.js`",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dec3",
+      "text": "     document.body.appendChild(vscript);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dec4",
+      "text": "   }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dec5",
+      "text": "  })()",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dec6",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dec7",
+      "text": "code:button2.js",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dec8",
+      "text": " import {installCDN} from '/api/code/villagepump/install-CDN/script.js';",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dec9",
+      "text": " ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deca",
+      "text": " export async function execute() {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1decb",
+      "text": "   const VIScssURL = 'https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css';",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1decc",
+      "text": "   const VIScssId = '__VIScss__';",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1decd",
+      "text": "   let style = document.getElementById(VIScssId)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dece",
+      "text": "   style?.remove()",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1decf",
+      "text": "   document.head.insertAdjacentHTML('beforeend',`",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1ded0",
+      "text": "      <style id=\"${VIScssId}\">",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1ded1",
+      "text": "        @import \"${VIScssURL}\";",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1ded2",
+      "text": "      </style>",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1ded3",
+      "text": "   `);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1ded4",
+      "text": " ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1ded5",
+      "text": "   await installCDN({id: '__VISjs__', src: '//cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js'});",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1ded6",
+      "text": "   const vscript = new VISScript('__VISsc__');",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1ded7",
+      "text": "   if(vscript.hasScript()) {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1ded8",
+      "text": "     vscript.remove();",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1ded9",
+      "text": "     alert(\"remove\");",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deda",
+      "text": "     location.reload(false)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dedb",
+      "text": "     return;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dedc",
+      "text": "   }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dedd",
+      "text": "   vscript.draw();",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dede",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dedf",
+      "text": " class VISScript {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dee0",
+      "text": "   constructor({id}) {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dee1",
+      "text": " \tthis.id = id;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dee2",
+      "text": "   }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dee3",
+      "text": "   draw() {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dee4",
+      "text": "     // 表示領域を作る",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dee5",
+      "text": "     const editor = document.getElementById('editor');",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dee6",
+      "text": "     editor.insertAdjacentHTML('beforeend',`",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dee7",
+      "text": "       <div id=\"vis\" style=\"width:600px;height:500px;\" >",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dee8",
+      "text": "       </div>",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1dee9",
+      "text": "     `);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deea",
+      "text": "   ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deeb",
+      "text": "     let vscript = document.createElement(\"script\");",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deec",
+      "text": "     vscript.id = this.id;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deed",
+      "text": "     vscript.src = `https://scrapbox.io/api/code//${scrapbox.Project.name}/${encodeURIComponent(scrapbox.Page.title)}/visScript.js` ;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deee",
+      "text": "     document.body.appendChild(vscript);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deef",
+      "text": "   } ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1def0",
+      "text": "   hasScript() { return document.getElementById(this.id) !== null;}",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1def1",
+      "text": "        ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1def2",
+      "text": "   remove() {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1def3",
+      "text": "     const vscript = document.getElementById(this.id);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1def4",
+      "text": "     if (!vscript) return;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1def5",
+      "text": "     // 既にscriptがある場合は削除する",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1def6",
+      "text": "     vscript.parentNode.removeChild(vscript);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1def7",
+      "text": "     console.log('The script already exists. Removing it...');",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1def8",
+      "text": "   }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1def9",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1defa",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1defb",
+      "text": "code:visScript.js",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1defc",
+      "text": " // create an array with nodes",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1defd",
+      "text": " var nodes = new vis.DataSet([",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1defe",
+      "text": "   { id: 1, label: \"ノード 1\" },",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1deff",
+      "text": "   { id: 2, label: \"Node 2\" },",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df00",
+      "text": "   { id: 3, label: \"Node 3\" },",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df01",
+      "text": "   { id: 4, label: \"Node 4\" },",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df02",
+      "text": "   { id: 5, label: \"Node 5\" },",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df03",
+      "text": " ]);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df04",
+      "text": " ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df05",
+      "text": " // create an array with edges",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df06",
+      "text": " var edges = new vis.DataSet([",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df07",
+      "text": "   { from: 1, to: 3 },",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df08",
+      "text": "   { from: 1, to: 2 },",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df09",
+      "text": "   { from: 2, to: 4 },",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df0a",
+      "text": "   { from: 2, to: 5 },",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df0b",
+      "text": "   { from: 3, to: 3 },",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df0c",
+      "text": " ]);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df0d",
+      "text": " ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df0e",
+      "text": " // create a network",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df0f",
+      "text": " var container = document.getElementById(\"vis\");",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df10",
+      "text": " var data = {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df11",
+      "text": "   nodes: nodes,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df12",
+      "text": "   edges: edges,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df13",
+      "text": " };",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df14",
+      "text": " var options = {};",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df15",
+      "text": " var network = new vis.Network(container, data, options);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df16",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df17",
+      "text": "[vis-script-button.icon] ←実行ボタン",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e55b98c20000a1df18",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521766,
+      "updated": 1607521766
+    },
+    {
+      "id": "5fd0d5e85b98c20000a1df19",
+      "text": "#UserScript",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521768,
+      "updated": 1607521779
+    },
+    {
+      "id": "5fd0d5e95b98c20000a1df1a",
+      "text": "#icon-button",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521770,
+      "updated": 1607521789
+    },
+    {
+      "id": "5fd0d5f65b98c20000a1df1b",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607521782,
+      "updated": 1607521782
+    }
+  ]
+}

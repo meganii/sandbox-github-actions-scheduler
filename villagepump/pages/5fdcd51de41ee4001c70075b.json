@@ -1,0 +1,358 @@
+{
+  "id": "5fdcd51de41ee4001c70075b",
+  "title": "pin-diaryのバグ",
+  "created": 1608307999,
+  "updated": 1631579402,
+  "lines": [
+    {
+      "id": "5fdcd51de41ee4001c70075b",
+      "text": "pin-diaryのバグ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1608307999,
+      "updated": 1608307999
+    },
+    {
+      "id": "5fdcd51e1280f00000d14782",
+      "text": "[pin-diary-3]のバグ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1608308000,
+      "updated": 1631539432
+    },
+    {
+      "id": "5fdcd5261280f0000044c815",
+      "text": " バグっぽい挙動を見つけたら書いてく",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1608308007,
+      "updated": 1608308021
+    },
+    {
+      "id": "5fdcd5291280f0000044c816",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1608308010,
+      "updated": 1608308010
+    },
+    {
+      "id": "613f502379e113000063e72f",
+      "text": "バグでは無いけど、ページがロードされてからピンされるまでにラグがあるのはなんでだろう[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631539235,
+      "updated": 1646747110
+    },
+    {
+      "id": "613f502379e113000063e730",
+      "text": " 全部ロードし終わってからlayout:changedが呼ばれるからか",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631539235,
+      "updated": 1631539691
+    },
+    {
+      "id": "613fecc21280f000007457a9",
+      "text": " [setInterval()]でページリストの更新を監視しているせいです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1631579331,
+      "updated": 1631579363
+    },
+    {
+      "id": "613fece31280f000007457aa",
+      "text": "  実際にロード(ページリスト更新)されてから`setInterval()`で更新処理が走るまでにラグがある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1631579363,
+      "updated": 1631579402
+    },
+    {
+      "id": "613f506e79e11300004c75ab",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631539311,
+      "updated": 1631539311
+    },
+    {
+      "id": "613afdcb79e11300005aefbd",
+      "text": "[- 別プロジェクト（[/blu3mo]）に移動すると、/blu3moのトップページのカードのサイズが小さくなってる[blu3mo.icon]]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631256012,
+      "updated": 1646747110
+    },
+    {
+      "id": "613afe2679e11300005aefc1",
+      "text": "　これpin-diary関係なかった",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631256103,
+      "updated": 1631269213
+    },
+    {
+      "id": "613afdcb79e11300005aefbe",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631256012,
+      "updated": 1631256012
+    },
+    {
+      "id": "613ae96379e113000048f166",
+      "text": "別プロジェクトに移動してもpinされたページカードが消えない[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631250788,
+      "updated": 1646747110
+    },
+    {
+      "id": "613ae97479e113000048f168",
+      "text": "　[/shokai/他のprojectに移動したらUserScriptの後始末をする（event版）]が必要?",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631250804,
+      "updated": 1631250810
+    },
+    {
+      "id": "613aede979e11300003adfe6",
+      "text": "　実装をよく理解せずに弄ってしまったけど、とりあえず治ったっぽい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631251945,
+      "updated": 1631251959
+    },
+    {
+      "id": "613af4c879e1130000a03935",
+      "text": "　　[pin-diary-3#6132fcbc1280f000003a84bc]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631253704,
+      "updated": 1631253704
+    },
+    {
+      "id": "613af4c679e1130000a03934",
+      "text": "　いや、治ってないな",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631253703,
+      "updated": 1631253703
+    },
+    {
+      "id": "613aee6079e11300000ef7ce",
+      "text": "　`endObserve()`だけだと消えない[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1631252065,
+      "updated": 1631254001
+    },
+    {
+      "id": "613af5e41280f000004aa1b7",
+      "text": " 　`endObserve()`の責務は監視を停止することで、pinしたカードを消すことではない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1631253989,
+      "updated": 1631253999
+    },
+    {
+      "id": "613af5f21280f000004aa1b8",
+      "text": " [- カードの削除は]`removePin(getDiaryCard())`[- でできるはず。多分]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1631254003,
+      "updated": 1631254205
+    },
+    {
+      "id": "613af6bd1280f000001aa33b",
+      "text": "  違った。`removePin()`はpinを外すだけで、DOMの削除までしてくれない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1631254205,
+      "updated": 1631254224
+    },
+    {
+      "id": "613af60f1280f000004aa1b9",
+      "text": " ていうかこんな複雑なコード書いたの誰だよ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1631254031,
+      "updated": 1631254067
+    },
+    {
+      "id": "613af6311280f000004aa1ba",
+      "text": "  [- [takker.icon]だよ。ごめんなさい]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1631254066,
+      "updated": 1631254066
+    },
+    {
+      "id": "613af6351280f000004aa1bb",
+      "text": "  実際のところ、単純に[UserScript Event]や[MutationObserver]を監視するだけでは実装できない点に、複雑さの原因がある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1631254070,
+      "updated": 1631254128
+    },
+    {
+      "id": "613ae96379e113000048f167",
+      "text": " endObserveのみでも、villagepumpトップページ→他プロジェクトトップページの場合は消えるみたい[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631250788,
+      "updated": 1646747110
+    },
+    {
+      "id": "613af66179e1130000a03938",
+      "text": "   それは`.page-list .grid`をReactがまるごと更新しているからでしょう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1631254113,
+      "updated": 1631254170
+    },
+    {
+      "id": "613af6991280f000004aa1bd",
+      "text": "    DOM自体が消える",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1631254170,
+      "updated": 1631254173
+    },
+    {
+      "id": "613af6761280f000004aa1bc",
+      "text": " 　逆に、endObserveのみでも、removePinがあっても、villagepump詳細ページ→他プロジェクトに移動すると消えない[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631254135,
+      "updated": 1646747110
+    },
+    {
+      "id": "613af64c79e1130000a03936",
+      "text": "   理由は多分これ→[pin-diaryのバグ#613af6bd1280f000001aa33b][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1631254092,
+      "updated": 1631254262
+    },
+    {
+      "id": "613af64c79e1130000a03937",
+      "text": "   なるほど..?[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631254092,
+      "updated": 1646747110
+    },
+    {
+      "id": "613af88679e11300005b3f73",
+      "text": "    ならdeleteGeneratedCardsで治るかと思ったけど治らない..",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631254663,
+      "updated": 1631255062
+    },
+    {
+      "id": "613afa6b79e11300005b3f75",
+      "text": " プロジェクト遷移後もタイマーが止まってないな",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631255147,
+      "updated": 1631255169
+    },
+    {
+      "id": "613afa8179e11300005b3f76",
+      "text": "  DOMの更新が毎秒かかっている",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631255169,
+      "updated": 1631255175
+    },
+    {
+      "id": "613afc9879e11300005ac021",
+      "text": " 治った[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631255704,
+      "updated": 1646747110
+    },
+    {
+      "id": "613afd0479e11300005ac024",
+      "text": "  `project:change`でendObserveをかけても、その後に`layout:change`でhandleChange→startObserveが呼ばれているのが原因だった",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631255812,
+      "updated": 1631255812
+    },
+    {
+      "id": "613b0ea11280f00000aaf153",
+      "text": "   まじか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1631260321,
+      "updated": 1631260342
+    },
+    {
+      "id": "613afd0579e11300005ac025",
+      "text": "  [pin-diary-3#613afc2a79e11300008b06aa]の条件にプロジェクトがtargetProjectであるという条件を加えた✅",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631255813,
+      "updated": 1631255838
+    },
+    {
+      "id": "613b0eb71280f00000aaf154",
+      "text": "  修正ありがとうございます[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1631260344,
+      "updated": 1631260351
+    },
+    {
+      "id": "613afa0879e11300005b3f74",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1631255049,
+      "updated": 1631255049
+    },
+    {
+      "id": "5fdcd51e1280f00000d14783",
+      "text": "[2020/12/19]のページをトップページから一番乗りに踏んだら`#app-container`の中身が全部消えてこういうerrorがでた[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1608308000,
+      "updated": 1608308025
+    },
+    {
+      "id": "5fdcd51e1280f00000d14784",
+      "text": "[https://gyazo.com/cd189b41fc932777e59326cf751f65f0]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1608308000,
+      "updated": 1608308000
+    },
+    {
+      "id": "5fe96ee31280f000009219f9",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1609133795,
+      "updated": 1609133795
+    },
+    {
+      "id": "5fe96ee31280f000009219fa",
+      "text": "個別のページからトップページに戻ると、全然違うページがピン留めされる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1609133796,
+      "updated": 1609133849
+    },
+    {
+      "id": "5fe96f191280f000009219fc",
+      "text": "[https://gyazo.com/76dc3e629b639f6622be0b7f94516eb4]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1609133849,
+      "updated": 1609133850
+    },
+    {
+      "id": "5fe96f1a1280f000009219fd",
+      "text": " 流石にそろそろバグ修正したほうがいいな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1609133850,
+      "updated": 1609133864
+    },
+    {
+      "id": "5fe96eed1280f000009219fb",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1609133806,
+      "updated": 1609133806
+    },
+    {
+      "id": "5feda8b61280f00000722e58",
+      "text": "流石にバグ修正しないと (2回目)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1609410742,
+      "updated": 1609410767
+    },
+    {
+      "id": "5feda8d01280f00000722e5a",
+      "text": "[https://gyazo.com/92a513bd60a57155b9734dc22779a674]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1609410769,
+      "updated": 1609410790
+    },
+    {
+      "id": "5feda8e51280f00000722e5c",
+      "text": " 何でもかんでもPinを追加するようになっちゃっている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1609410790,
+      "updated": 1609410814
+    },
+    {
+      "id": "5feda8b81280f00000722e59",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1609410745,
+      "updated": 1609410745
+    }
+  ]
+}

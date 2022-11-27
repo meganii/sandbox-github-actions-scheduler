@@ -1,0 +1,309 @@
+{
+  "id": "621df174d5b0ab001dadb1bd",
+  "title": "Scrapboxページ上のC言語のソースをコンパイルする（ブラウザ版）",
+  "created": 1646129526,
+  "updated": 1646130112,
+  "lines": [
+    {
+      "id": "621df174d5b0ab001dadb1bd",
+      "text": "Scrapboxページ上のC言語のソースをコンパイルする（ブラウザ版）",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a72",
+      "text": "from [Scrapboxページ上のC言語のソースをコンパイルする]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a74",
+      "text": " terminalを起動してgcc入れるのがめんどい……[takker.icon]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a75",
+      "text": "  [/takker/scrapbox-wandbox-proxy]を使うとweb browserで完結させられる",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a76",
+      "text": "  code:js",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a77",
+      "text": "   (async () => {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a78",
+      "text": "     const {runC} = await import('/api/code/villagepump/Scrapboxページ上のC言語のソースをコンパイルする（ブラウザ版）/script.js');",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646130093
+    },
+    {
+      "id": "621df1755b98c20000262a79",
+      "text": "     console.log(await runC('https://scrapbox.io/api/code/villagepump/Scrapbox%E3%83%9A%E3%83%BC%E3%82%B8%E4%B8%8A%E3%81%AEC%E8%A8%80%E8%AA%9E%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%92%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%81%99%E3%82%8B/hello.c'));",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a7a",
+      "text": "   })();",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a7b",
+      "text": "  code:script.js",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a7c",
+      "text": "   export async function runC(url) {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a7d",
+      "text": "     const res = await fetch(url);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a7e",
+      "text": "     const code = await res.text();",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a7f",
+      "text": "     return {code, ...(await fetchWandBox('/api/compile.json', {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a80",
+      "text": "       method: 'POST',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a81",
+      "text": "       body: JSON.stringify({",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a82",
+      "text": "         code,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a83",
+      "text": "         options: 'warning,gnu++1y',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a84",
+      "text": "         compiler: 'gcc-head',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a85",
+      "text": "         'compiler-option-raw': '-O3',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a86",
+      "text": "       }),",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a87",
+      "text": "     }))};",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a88",
+      "text": "   }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1755b98c20000262a89",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129526,
+      "updated": 1646129526
+    },
+    {
+      "id": "621df1905b98c20000262a8a",
+      "text": " onlineで実行",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129553,
+      "updated": 1646129554
+    },
+    {
+      "id": "621df1915b98c20000262a8b",
+      "text": "  code:js",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129554,
+      "updated": 1646129554
+    },
+    {
+      "id": "621df1915b98c20000262a8c",
+      "text": "   (async () => {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129554,
+      "updated": 1646129554
+    },
+    {
+      "id": "621df1915b98c20000262a8d",
+      "text": "     const {runC} = await import('/api/code/villagepump/Scrapboxページ上のC言語のソースをコンパイルする（ブラウザ版）/script.js');",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129554,
+      "updated": 1646130101
+    },
+    {
+      "id": "621df1915b98c20000262a8e",
+      "text": "     console.log(await runC('/api/code/villagepump/Scrapboxページ上のC言語のソースをコンパイルする/hello.c'));",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129554,
+      "updated": 1646129554
+    },
+    {
+      "id": "621df1915b98c20000262a8f",
+      "text": "   })();",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129554,
+      "updated": 1646129554
+    },
+    {
+      "id": "621df1915b98c20000262a90",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129554,
+      "updated": 1646129554
+    },
+    {
+      "id": "621df29d5b98c20000262a91",
+      "text": " code:js",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129821,
+      "updated": 1646129837
+    },
+    {
+      "id": "621df2ad5b98c20000262a92",
+      "text": "  (async () => {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129837,
+      "updated": 1646129837
+    },
+    {
+      "id": "621df2ad5b98c20000262a93",
+      "text": "    const {runC} = await import('/api/code/villagepump/Scrapboxページ上のC言語のソースをコンパイルする（ブラウザ版）/script.js');",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129837,
+      "updated": 1646130107
+    },
+    {
+      "id": "621df2ad5b98c20000262a94",
+      "text": "    console.log(await runC('/api/code/imasaraC/Hello,_world!/hello.c'));",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129837,
+      "updated": 1646129837
+    },
+    {
+      "id": "621df2ad5b98c20000262a95",
+      "text": "  })();",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129837,
+      "updated": 1646129837
+    },
+    {
+      "id": "621df2ad5b98c20000262a96",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129837,
+      "updated": 1646129837
+    },
+    {
+      "id": "621df2ae5b98c20000262a97",
+      "text": " code:js",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129838,
+      "updated": 1646129863
+    },
+    {
+      "id": "621df2c65b98c20000262a98",
+      "text": "  (async () => {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129863,
+      "updated": 1646129863
+    },
+    {
+      "id": "621df2c65b98c20000262a99",
+      "text": "    const {runC} = await import('/api/code/villagepump/Scrapboxページ上のC言語のソースをコンパイルする（ブラウザ版）/script.js');",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129863,
+      "updated": 1646130112
+    },
+    {
+      "id": "621df2c65b98c20000262a9a",
+      "text": "    console.log(await runC('/api/code/imasaraC/簡単な計算/keisan1.c'));",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129863,
+      "updated": 1646129863
+    },
+    {
+      "id": "621df2c65b98c20000262a9b",
+      "text": "  })();",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129863,
+      "updated": 1646129863
+    },
+    {
+      "id": "621df2c65b98c20000262a9c",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1646129863,
+      "updated": 1646129863
+    }
+  ]
+}

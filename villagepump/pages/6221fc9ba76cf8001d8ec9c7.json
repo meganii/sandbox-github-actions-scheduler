@@ -1,0 +1,1912 @@
+{
+  "id": "6221fc9ba76cf8001d8ec9c7",
+  "title": "pin-diary-6",
+  "created": 1646394528,
+  "updated": 1666097608,
+  "lines": [
+    {
+      "id": "6221fc9ba76cf8001d8ec9c7",
+      "text": "pin-diary-6",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394528,
+      "updated": 1646394528
+    },
+    {
+      "id": "6221fca01280f00000bb4cb0",
+      "text": "[pin-diary]の実装その6",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394528,
+      "updated": 1646394555
+    },
+    {
+      "id": "622202eb7838e30000a32605",
+      "text": " [pin-diary-5] -> [* pin-diary-6] -> ？",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1646396139,
+      "updated": 1646396152
+    },
+    {
+      "id": "63341ced1280f000001803ae",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664359664,
+      "updated": 1664359664
+    },
+    {
+      "id": "6221fcbb1280f00000bb4cb3",
+      "text": "変更点",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394555,
+      "updated": 1646394559
+    },
+    {
+      "id": "6221fcbf1280f00000bb4cb4",
+      "text": " 機能面は特になし",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394559,
+      "updated": 1646394570
+    },
+    {
+      "id": "6221fcd91280f00000bb4cb7",
+      "text": " 若干performanceが上がったかも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394585,
+      "updated": 1646394610
+    },
+    {
+      "id": "6221fcca1280f00000bb4cb6",
+      "text": " カスタマイズ性を上げた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394570,
+      "updated": 1646394584
+    },
+    {
+      "id": "6221fcfe1280f00000bb4cb9",
+      "text": "  日記の形式に関する処理をすべて外部に切り出した",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394622,
+      "updated": 1646394637
+    },
+    {
+      "id": "6221fd0c1280f00000bb4cba",
+      "text": "   井戸端での設定はこんな感じ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394637,
+      "updated": 1666097608
+    },
+    {
+      "id": "62283b7a1280f00000d6b781",
+      "text": "   https://scrapbox-bundler.vercel.app/?url=https://scrapbox.io/api/code/villagepump/pin-diary-6/script.ts&bundle&minify&run&output=newtab&reload",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646803832,
+      "updated": 1646803833
+    },
+    {
+      "id": "634ea1b91280f00000855d61",
+      "text": "   code:sh",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097594,
+      "updated": 1666097596
+    },
+    {
+      "id": "634ea1b91280f00000855d62",
+      "text": "    deno check --remote -r=https://scrapbox.io https://scrapbox.io/api/code/villagepump/pin-diary-6/script.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666097595,
+      "updated": 1666097600
+    },
+    {
+      "id": "6221fd1e1280f00000bb4cbb",
+      "text": "   code:script.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394655,
+      "updated": 1646394701
+    },
+    {
+      "id": "6221fd231280f00000bb4cbc",
+      "text": "    import { launch } from \"./mod.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394659,
+      "updated": 1646394705
+    },
+    {
+      "id": "6221fd351280f00000bb4cbd",
+      "text": "    import {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394677,
+      "updated": 1646394711
+    },
+    {
+      "id": "6221fd571280f00000bb4cbe",
+      "text": "      makeDiary, isOldDiary,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394711,
+      "updated": 1658791531
+    },
+    {
+      "id": "6221fd581280f00000bb4cbf",
+      "text": "    } from \"../pin-diary-6%2Ftemplate/mod.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394712,
+      "updated": 1646394826
+    },
+    {
+      "id": "6221fd621280f00000bb4cc0",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394722,
+      "updated": 1646394722
+    },
+    {
+      "id": "6221fd621280f00000bb4cc1",
+      "text": "    launch(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394722,
+      "updated": 1646513861
+    },
+    {
+      "id": "6223cec91280f00000ade2cd",
+      "text": "      \"villagepump\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646513865,
+      "updated": 1646513890
+    },
+    {
+      "id": "6223cec51280f00000ade2cc",
+      "text": "      {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646513861,
+      "updated": 1646513873
+    },
+    {
+      "id": "6221fd671280f00000bb4cc2",
+      "text": "        makeDiary,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394727,
+      "updated": 1646513894
+    },
+    {
+      "id": "6221fd6c1280f00000bb4cc4",
+      "text": "        isOldDiary,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394732,
+      "updated": 1658791529
+    },
+    {
+      "id": "6221fd691280f00000bb4cc3",
+      "text": "      },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394730,
+      "updated": 1646513915
+    },
+    {
+      "id": "6223cefb1280f00000ade2d0",
+      "text": "    );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646513915,
+      "updated": 1646513915
+    },
+    {
+      "id": "6221fca11280f00000bb4cb1",
+      "text": "   `makeDiary`と`isOldDiary`を交換すれば、どんな形式のページにも対応できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394529,
+      "updated": 1658791527
+    },
+    {
+      "id": "6221fdab1280f00000bb4cc6",
+      "text": "   井戸端では[pin-diary-6/template]を使っている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394795,
+      "updated": 1646394831
+    },
+    {
+      "id": "6221fffd1280f0000014778e",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395389,
+      "updated": 1646395389
+    },
+    {
+      "id": "63341cf41280f000001803af",
+      "text": "井戸端で使用しているscriptの導入方法",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664359670,
+      "updated": 1664359687
+    },
+    {
+      "id": "63341d051280f000001803b1",
+      "text": " 1. [このリンクを押す https://scrapbox-bundler.vercel.app/?url=https://scrapbox.io/api/code/villagepump/pin-diary-6/script.ts&bundle&minify&run&reload]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664359688,
+      "updated": 1664359715
+    },
+    {
+      "id": "63341d221280f000001803b2",
+      "text": " 2. 生成されたscriptを[自分のページ]のscript.jsから読み込めるようにする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664359716,
+      "updated": 1664359742
+    },
+    {
+      "id": "63341d3f1280f000001803b3",
+      "text": "  ここは他のUserScriptの導入と同じ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664359745,
+      "updated": 1664359768
+    },
+    {
+      "id": "63341d561280f000001803b4",
+      "text": "  [/help-jp/UserScript]などを参照してください",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664359768,
+      "updated": 1664359788
+    },
+    {
+      "id": "63341cf41280f000001803b0",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664359670,
+      "updated": 1664359670
+    },
+    {
+      "id": "6310384e1280f00000d93e25",
+      "text": "2022-09-01",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662007374,
+      "updated": 1662007376
+    },
+    {
+      "id": "631038501280f00000d93e26",
+      "text": " 13:42:55 ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662007376,
+      "updated": 1662007376
+    },
+    {
+      "id": "631038551280f00000d93e27",
+      "text": "  scrapbox-userscript-stdのversionを更新",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662007381,
+      "updated": 1662007382
+    },
+    {
+      "id": "631038561280f00000d93e28",
+      "text": "   これにより、[文字装飾記法に囲まれたアイコン記法]をリンクと誤認識しないようになったはず",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662007382,
+      "updated": 1662007408
+    },
+    {
+      "id": "62df25c61280f000008a16e8",
+      "text": "2022-07-26",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1658791366,
+      "updated": 1658791392
+    },
+    {
+      "id": "62df25df1280f000008a16e9",
+      "text": " 08:22:46",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1658791392,
+      "updated": 1658791393
+    },
+    {
+      "id": "62df25e11280f000008a16ea",
+      "text": "  scrapbox-userscript-stdのversionを更新",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1658791393,
+      "updated": 1658791393
+    },
+    {
+      "id": "62df25e21280f000008a16eb",
+      "text": "   これにより、youtubeのサムネイルが反映されるようになった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1658791394,
+      "updated": 1658791407
+    },
+    {
+      "id": "62df25ee1280f000008a16ed",
+      "text": "  型エラーがあったので修正",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1658791407,
+      "updated": 1658791416
+    },
+    {
+      "id": "628b4a591280f00000d76e5b",
+      "text": "2022-05-23 17:47:48 破壊的変更：s/`filter`/`isOldDiary`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653295704,
+      "updated": 1653295705
+    },
+    {
+      "id": "628b4a5a1280f00000d76e5c",
+      "text": " cf. [pin-diary6のfilter()の仕様]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653295705,
+      "updated": 1653295705
+    },
+    {
+      "id": "628b4a581280f00000d76e5a",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653295704,
+      "updated": 1653295704
+    },
+    {
+      "id": "626b4b9a1280f00000728f18",
+      "text": "2022-04-29 11:21:16 [ゴールデンウィーク]中だけ作らないようにする設定",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198874,
+      "updated": 1651198887
+    },
+    {
+      "id": "626b4cf51280f00000728f2f",
+      "text": " 普通に各自のuserscriptからpin-diary-6を外すだけで十分そう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651199221,
+      "updated": 1651199245
+    },
+    {
+      "id": "626b4ba71280f00000728f19",
+      "text": " code:script2.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198887,
+      "updated": 1651198893
+    },
+    {
+      "id": "626b4bad1280f00000728f1a",
+      "text": "  import { launch } from \"./mod.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198893,
+      "updated": 1651198897
+    },
+    {
+      "id": "626b4bb21280f00000728f1b",
+      "text": "  import {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198897,
+      "updated": 1651198897
+    },
+    {
+      "id": "626b4bb21280f00000728f1c",
+      "text": "    makeDiary, isOldDiary,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198897,
+      "updated": 1658791542
+    },
+    {
+      "id": "626b4bb21280f00000728f1d",
+      "text": "  } from \"../pin-diary-6%2Ftemplate/mod.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198897,
+      "updated": 1651198897
+    },
+    {
+      "id": "626b4bd01280f00000728f27",
+      "text": "  import isWithinInterval from \"https://deno.land/x/date_fns@v2.22.1/isWithinInterval/index.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198928,
+      "updated": 1651199170
+    },
+    {
+      "id": "626b4bb21280f00000728f1e",
+      "text": "  ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198897,
+      "updated": 1651198897
+    },
+    {
+      "id": "626b4cc51280f00000728f2b",
+      "text": "  if (isWithinInterval(new Date(), {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651199173,
+      "updated": 1651199179
+    },
+    {
+      "id": "626b4ccc1280f00000728f2c",
+      "text": "    start: new Date(2022, 3, 29), end: new Date(2022, 5, 5)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651199179,
+      "updated": 1651199216
+    },
+    {
+      "id": "626b4ccc1280f00000728f2d",
+      "text": "  })) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651199180,
+      "updated": 1651199270
+    },
+    {
+      "id": "626b4bb21280f00000728f1f",
+      "text": "    launch(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198897,
+      "updated": 1651199184
+    },
+    {
+      "id": "626b4bb21280f00000728f20",
+      "text": "      \"villagepump\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198897,
+      "updated": 1651199184
+    },
+    {
+      "id": "626b4bb21280f00000728f21",
+      "text": "      {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198897,
+      "updated": 1651199184
+    },
+    {
+      "id": "626b4bb21280f00000728f22",
+      "text": "        makeDiary,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198897,
+      "updated": 1651199184
+    },
+    {
+      "id": "626b4bb21280f00000728f23",
+      "text": "        isOldDiary,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198897,
+      "updated": 1658791540
+    },
+    {
+      "id": "626b4bb21280f00000728f24",
+      "text": "      },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198897,
+      "updated": 1651199184
+    },
+    {
+      "id": "626b4bb21280f00000728f25",
+      "text": "    );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198897,
+      "updated": 1651199184
+    },
+    {
+      "id": "626b4cd11280f00000728f2e",
+      "text": "  }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651199185,
+      "updated": 1651199185
+    },
+    {
+      "id": "626b4b9a1280f00000728f17",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198874,
+      "updated": 1651198874
+    },
+    {
+      "id": "62df252f1280f000008a16e5",
+      "text": "code:sh",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1658791215,
+      "updated": 1658791220
+    },
+    {
+      "id": "62df25311280f000008a16e6",
+      "text": " deno check --remote -r=https://scrapbox.io https://scrapbox.io/api/code/villagepump/pin-diary-6/mod.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1658791220,
+      "updated": 1658791234
+    },
+    {
+      "id": "6221fffd1280f0000014778f",
+      "text": "code:mod.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395389,
+      "updated": 1646395392
+    },
+    {
+      "id": "622200001280f00000147790",
+      "text": " /// <reference no-default-lib=\"true\"/>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395392,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f00000147791",
+      "text": " /// <reference lib=\"esnext\"/>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f00000147792",
+      "text": " /// <reference lib=\"dom\"/>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f00000147794",
+      "text": " import {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f00000147795",
+      "text": "   pin,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f00000147796",
+      "text": "   unpin,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f00000147797",
+      "text": "   patch,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f00000147798",
+      "text": "   useStatusBar,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f00000147799",
+      "text": "   sleep,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "6222004a1280f000001477fa",
+      "text": "   makeSocket,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395466,
+      "updated": 1646395471
+    },
+    {
+      "id": "622200501280f000001477fb",
+      "text": "   disconnect,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395473,
+      "updated": 1646395475
+    },
+    {
+      "id": "622208eb1280f00000d3eab8",
+      "text": "   format,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397675,
+      "updated": 1646397677
+    },
+    {
+      "id": "622200001280f0000014779b",
+      "text": " } from \"./deps.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f0000014779c",
+      "text": " import { listPinnedPages } from \"./list.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395903
+    },
+    {
+      "id": "622200001280f0000014779d",
+      "text": " import type { Scrapbox, Socket } from \"./deps.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646790739
+    },
+    {
+      "id": "622200001280f0000014779e",
+      "text": " declare const scrapbox: Scrapbox;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f0000014779f",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200a71280f000001477ff",
+      "text": " export interface DiaryInit {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395559,
+      "updated": 1646395576
+    },
+    {
+      "id": "628b3a3e1280f00000f42ade",
+      "text": "   /** 与えられた日付の日記ページのテンプレートを作る */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653291582,
+      "updated": 1653291602
+    },
+    {
+      "id": "622200b81280f00000147800",
+      "text": "   makeDiary: (date: Date) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395576,
+      "updated": 1646395594
+    },
+    {
+      "id": "622200c91280f00000147802",
+      "text": "     title: string;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395594,
+      "updated": 1646395599
+    },
+    {
+      "id": "622200cd1280f00000147804",
+      "text": "     header: string[];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395599,
+      "updated": 1646395608
+    },
+    {
+      "id": "622200e01280f00000147806",
+      "text": "     footer: string[];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395617,
+      "updated": 1646395625
+    },
+    {
+      "id": "622200d81280f00000147805",
+      "text": "   },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395608,
+      "updated": 1646395628
+    },
+    {
+      "id": "628b39951280f00000f42adb",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653291413,
+      "updated": 1653291413
+    },
+    {
+      "id": "628b39951280f00000f42adc",
+      "text": "cf. [pin-diary6のfilter()の仕様]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653291413,
+      "updated": 1653291545
+    },
+    {
+      "id": "628b39921280f00000f42ada",
+      "text": "code:mod.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653291410,
+      "updated": 1653291412
+    },
+    {
+      "id": "628b39171280f00000f42ad4",
+      "text": "   /** 今日以外の日記ページかどうかを判断する函数",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653291287,
+      "updated": 1653295741
+    },
+    {
+      "id": "628b39241280f00000f42ad5",
+      "text": "    *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653291300,
+      "updated": 1653291301
+    },
+    {
+      "id": "628b392c1280f00000f42ad8",
+      "text": "    * @param title 判断対象のページタイトル",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653291308,
+      "updated": 1653291324
+    },
+    {
+      "id": "628b39281280f00000f42ad7",
+      "text": "    * @param today 今日の日付",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653291304,
+      "updated": 1653291330
+    },
+    {
+      "id": "628b39431280f00000f42ad9",
+      "text": "    * @param 今日以外の日記ページなら`true`, それ以外のページは `false`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653291331,
+      "updated": 1653295761
+    },
+    {
+      "id": "628b39271280f00000f42ad6",
+      "text": "    */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653291303,
+      "updated": 1653291303
+    },
+    {
+      "id": "622200ec1280f00000147807",
+      "text": "   isOldDiary: (title: string, today: Date) => boolean;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395628,
+      "updated": 1653295605
+    },
+    {
+      "id": "622200b91280f00000147801",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395577,
+      "updated": 1646395653
+    },
+    {
+      "id": "622201051280f00000147808",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395653,
+      "updated": 1646395653
+    },
+    {
+      "id": "622200001280f000001477a0",
+      "text": " // initialize",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477a1",
+      "text": " export function launch(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395659
+    },
+    {
+      "id": "6222010b1280f00000147809",
+      "text": "   project: string,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395659,
+      "updated": 1646395685
+    },
+    {
+      "id": "6222011e1280f0000014780b",
+      "text": "   init: DiaryInit & { interval?: number },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395678,
+      "updated": 1646395709
+    },
+    {
+      "id": "622201161280f0000014780a",
+      "text": " ) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395670,
+      "updated": 1646395714
+    },
+    {
+      "id": "622201451280f0000014780c",
+      "text": "   const interval = init.interval ?? 24 * 3600 * 1000;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395717,
+      "updated": 1646395735
+    },
+    {
+      "id": "622201681280f0000014780f",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395753,
+      "updated": 1646395753
+    },
+    {
+      "id": "622200001280f000001477a2",
+      "text": "   const handleChange = () =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477a3",
+      "text": "     scrapbox.Project.name === project ?",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395742
+    },
+    {
+      "id": "6222015e1280f0000014780d",
+      "text": "       startObserve(project, interval, init) :",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395742,
+      "updated": 1646395804
+    },
+    {
+      "id": "622201621280f0000014780e",
+      "text": "       endObserve();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395746,
+      "updated": 1646395746
+    },
+    {
+      "id": "622200001280f000001477a5",
+      "text": "   handleChange();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477a6",
+      "text": "   scrapbox.addListener(\"project:changed\", handleChange);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477a7",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477a8",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477a9",
+      "text": " let updateTimer: number | undefined;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477aa",
+      "text": " async function startObserve(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395782
+    },
+    {
+      "id": "622201851280f00000147810",
+      "text": "   project: string,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395782,
+      "updated": 1646395785
+    },
+    {
+      "id": "622201881280f00000147811",
+      "text": "   interval: number,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395785,
+      "updated": 1646395789
+    },
+    {
+      "id": "6222018d1280f00000147812",
+      "text": "   init: DiaryInit,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395789,
+      "updated": 1646395794
+    },
+    {
+      "id": "622201921280f00000147813",
+      "text": " ) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395794,
+      "updated": 1646395795
+    },
+    {
+      "id": "622200001280f000001477ab",
+      "text": "   endObserve();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477ac",
+      "text": "   await pinDiary(project, new Date(), init);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395815
+    },
+    {
+      "id": "622200001280f000001477ad",
+      "text": "   updateTimer = setInterval(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477ae",
+      "text": "     () => pinDiary(project, new Date(), init),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395818
+    },
+    {
+      "id": "622200001280f000001477af",
+      "text": "     interval,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477b0",
+      "text": "   );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477b1",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477b2",
+      "text": " function endObserve() {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477b3",
+      "text": "   clearInterval(updateTimer);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477b4",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477b5",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622201c01280f00000147815",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395840,
+      "updated": 1646395841
+    },
+    {
+      "id": "622201ba1280f00000147814",
+      "text": "code:mod.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395834,
+      "updated": 1646395839
+    },
+    {
+      "id": "622200001280f000001477b6",
+      "text": " export async function pinDiary(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395848
+    },
+    {
+      "id": "622201c81280f00000147816",
+      "text": "   project: string,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395848,
+      "updated": 1646395851
+    },
+    {
+      "id": "622201cb1280f00000147817",
+      "text": "   date: Date,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395851,
+      "updated": 1646395853
+    },
+    {
+      "id": "622201cd1280f00000147818",
+      "text": "   { makeDiary, isOldDiary, }: DiaryInit,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395853,
+      "updated": 1658791344
+    },
+    {
+      "id": "622201da1280f00000147819",
+      "text": " ): Promise<void> {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395867,
+      "updated": 1646395868
+    },
+    {
+      "id": "622200001280f000001477b7",
+      "text": "   const { render, dispose } = useStatusBar();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395972
+    },
+    {
+      "id": "622200001280f000001477b8",
+      "text": "   let socket: Socket | undefined;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646790890
+    },
+    {
+      "id": "622202471280f0000014781c",
+      "text": "   try {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395975,
+      "updated": 1646395975
+    },
+    {
+      "id": "622200001280f000001477b9",
+      "text": "     // 今日以外の日付ページを外す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477ba",
+      "text": "     render(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477bb",
+      "text": "       { type: \"spinner\" },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477bc",
+      "text": "       { type: \"text\", text: `unpin other diary pages...`},",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477bd",
+      "text": "     );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622202341280f0000014781a",
+      "text": "     socket = await makeSocket();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395956,
+      "updated": 1646396015
+    },
+    {
+      "id": "622200001280f000001477be",
+      "text": "     for await (const { title } of listPinnedPages(project)) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395926
+    },
+    {
+      "id": "622200001280f000001477bf",
+      "text": "       if (!isOldDiary(title, date)) continue;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1653295616
+    },
+    {
+      "id": "622200001280f000001477c0",
+      "text": "       await unpin(project, title, { socket });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646396023
+    },
+    {
+      "id": "622200001280f000001477c1",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "626b4b201280f00000728f15",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1651198751,
+      "updated": 1651198751
+    },
+    {
+      "id": "622200001280f000001477c3",
+      "text": "     // 今日の日付ページをピン留めする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477c4",
+      "text": "     const { title, header, footer } = makeDiary(date);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646396044
+    },
+    {
+      "id": "622200001280f000001477c5",
+      "text": "     render(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477c6",
+      "text": "       { type: \"spinner\" },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477c7",
+      "text": "       { type: \"text\", text: `pin \"/${project}/${title}\"...`},",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477c8",
+      "text": "     );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477c9",
+      "text": "     await pin(project, title, { socket, create: true });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646396051
+    },
+    {
+      "id": "622200001280f000001477ca",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477cb",
+      "text": "     // 今日の日付ページにtemplateを挿入する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477ce",
+      "text": "     render(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477cf",
+      "text": "       { type: \"spinner\" },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477d0",
+      "text": "       { type: \"text\", text: `format \"/${project}/${title}\"...`},",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477d1",
+      "text": "     );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477d2",
+      "text": "     await patch(project, title, (lines) => [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477d3",
+      "text": "       lines[0].text,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477d4",
+      "text": "       ...format(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646790916
+    },
+    {
+      "id": "622200001280f000001477d5",
+      "text": "         lines.slice(1).map(line => line.text),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477d6",
+      "text": "         header,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646790766
+    },
+    {
+      "id": "622200001280f000001477d7",
+      "text": "         footer,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646790767
+    },
+    {
+      "id": "622200001280f000001477d8",
+      "text": "       ),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477d9",
+      "text": "     ], { socket });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646396092
+    },
+    {
+      "id": "622200001280f000001477da",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477db",
+      "text": "     render(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477dc",
+      "text": "       { type: \"check-circle\" },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477dd",
+      "text": "       { type: \"text\", text: `Pinned \"/${project}/${title}\".`},",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477de",
+      "text": "     );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477df",
+      "text": "   } catch(e: unknown) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477e0",
+      "text": "     render(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477e1",
+      "text": "       { type: \"exclamation-triangle\" },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477e2",
+      "text": "       { type: \"text\", text: e instanceof Error ?",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477e3",
+      "text": "         `${e.name} ${e.message}` :",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477e4",
+      "text": "         `Unknown error! (see developper console)`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477e5",
+      "text": "       },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477e6",
+      "text": "     );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477e7",
+      "text": "     console.error(e);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477e8",
+      "text": "   } finally {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622202ca1280f0000014781d",
+      "text": "     if (socket) await disconnect(socket);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646396106,
+      "updated": 1646396122
+    },
+    {
+      "id": "622200001280f000001477e9",
+      "text": "     await sleep(1000);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477ea",
+      "text": "     dispose();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477eb",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477ec",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "622200001280f000001477ed",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395393,
+      "updated": 1646395393
+    },
+    {
+      "id": "6221fd741280f00000bb4cc5",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646394740,
+      "updated": 1646394740
+    },
+    {
+      "id": "6222080e1280f00000d3ea8f",
+      "text": "code:list.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397454,
+      "updated": 1646397460
+    },
+    {
+      "id": "622208141280f00000d3ea91",
+      "text": " import { listPages, BasePage } from \"./deps.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1658791304
+    },
+    {
+      "id": "622208151280f00000d3ea92",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3ea9a",
+      "text": " /** 全てのピン留めされたページを取得する */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3ea9b",
+      "text": " export async function* listPinnedPages(project: string, skip = 0): AsyncGenerator<BasePage> {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1658791306
+    },
+    {
+      "id": "622208151280f00000d3ea9c",
+      "text": "   const { count, pages } = await ensureList(project, skip);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3ea9d",
+      "text": "   for (const page of pages) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3ea9e",
+      "text": "     if (page.pin === 0) continue;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3ea9f",
+      "text": "     yield page;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eaa0",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "6222085e1280f00000d3eab6",
+      "text": "   // pinしたページこれ以上ないときは終了",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397535,
+      "updated": 1646397565
+    },
+    {
+      "id": "622208151280f00000d3eaa1",
+      "text": "   if ((pages.at(-1)?.pin ?? 0) === 0) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eaa2",
+      "text": "   yield* listPinnedPages(project, skip + 1000);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eaa3",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eaa4",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eaa5",
+      "text": " async function ensureList(project: string, skip: number) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eaa6",
+      "text": "   const result = await listPages(project, {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397508
+    },
+    {
+      "id": "622208431280f00000d3eab3",
+      "text": "     limit: 1000,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397508,
+      "updated": 1646397510
+    },
+    {
+      "id": "622208461280f00000d3eab4",
+      "text": "     skip,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397510,
+      "updated": 1646397513
+    },
+    {
+      "id": "622208491280f00000d3eab5",
+      "text": "   });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397513,
+      "updated": 1646397514
+    },
+    {
+      "id": "622208151280f00000d3eaa7",
+      "text": "   // login errorなどは全部例外として扱う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eaa8",
+      "text": "   if (!result.ok) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eaa9",
+      "text": "     const error = new Error();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eaaa",
+      "text": "     error.name = result.value.name;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eaab",
+      "text": "     error.message = result.value.message;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eaac",
+      "text": "     throw error;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eaad",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eaae",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eaaf",
+      "text": "   return result.value;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eab0",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "622208151280f00000d3eab1",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397461,
+      "updated": 1646397461
+    },
+    {
+      "id": "6222080e1280f00000d3ea90",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397454,
+      "updated": 1646397454
+    },
+    {
+      "id": "6222000e1280f000001477f6",
+      "text": "code:deps.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395406,
+      "updated": 1646395411
+    },
+    {
+      "id": "622208b81280f00000d3eab7",
+      "text": " export { patchTemplate as format } from \"../pin-diary-5/format.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397624,
+      "updated": 1646397659
+    },
+    {
+      "id": "622200131280f000001477f8",
+      "text": " export {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395411,
+      "updated": 1646397723
+    },
+    {
+      "id": "6222091b1280f00000d3eab9",
+      "text": "   pin,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397723,
+      "updated": 1646397761
+    },
+    {
+      "id": "6222091d1280f00000d3eabb",
+      "text": "   unpin,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397725,
+      "updated": 1646397761
+    },
+    {
+      "id": "6222091d1280f00000d3eabc",
+      "text": "   patch,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397725,
+      "updated": 1646397761
+    },
+    {
+      "id": "6222091d1280f00000d3eabd",
+      "text": "   useStatusBar,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397725,
+      "updated": 1646397761
+    },
+    {
+      "id": "6222091d1280f00000d3eabf",
+      "text": "   makeSocket,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397725,
+      "updated": 1646397761
+    },
+    {
+      "id": "6222094c1280f00000d3eacf",
+      "text": "   disconnect,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397772,
+      "updated": 1646397772
+    },
+    {
+      "id": "622209cc1280f00000d3ead2",
+      "text": "   listPages,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397900,
+      "updated": 1646397903
+    },
+    {
+      "id": "6222091b1280f00000d3eaba",
+      "text": " } from \"https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.14.9/mod.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397723,
+      "updated": 1662007367
+    },
+    {
+      "id": "622807c21280f000002db402",
+      "text": " export type {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790593,
+      "updated": 1646790600
+    },
+    {
+      "id": "622807c61280f000002db40a",
+      "text": "   Socket,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790597,
+      "updated": 1646790605
+    },
+    {
+      "id": "622807c21280f000002db409",
+      "text": " } from \"https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.14.9/mod.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646790593,
+      "updated": 1662007365
+    },
+    {
+      "id": "6222092e1280f00000d3eac5",
+      "text": " export {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397742,
+      "updated": 1646397745
+    },
+    {
+      "id": "622209341280f00000d3eaca",
+      "text": "   sleep,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397748,
+      "updated": 1646397748
+    },
+    {
+      "id": "622209271280f00000d3eac4",
+      "text": " } from \"https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.14.9/sleep.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397736,
+      "updated": 1662007363
+    },
+    {
+      "id": "622200641280f000001477fc",
+      "text": " export type {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395492,
+      "updated": 1646395529
+    },
+    {
+      "id": "622200891280f000001477fd",
+      "text": "   Scrapbox,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395529,
+      "updated": 1646395535
+    },
+    {
+      "id": "6222008c1280f000001477fe",
+      "text": " } from \"https://raw.githubusercontent.com/scrapbox-jp/types/0.3.5/userscript.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395532,
+      "updated": 1658791043
+    },
+    {
+      "id": "62df248e1280f000008a16e4",
+      "text": " export type {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1658791054,
+      "updated": 1658791055
+    },
+    {
+      "id": "62df25831280f000008a16e7",
+      "text": "   BasePage,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1658791299,
+      "updated": 1658791301
+    },
+    {
+      "id": "622209531280f00000d3ead0",
+      "text": " } from \"https://raw.githubusercontent.com/scrapbox-jp/types/0.3.5/rest.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646397779,
+      "updated": 1658791060
+    },
+    {
+      "id": "6222000f1280f000001477f7",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646395408,
+      "updated": 1646395408
+    },
+    {
+      "id": "6239f73d4bb2e200003f14f7",
+      "text": "Project開くと必ず動くの、気になるのでそのうちなんとかしたい[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647965985,
+      "updated": 1647966005
+    },
+    {
+      "id": "6239f73f4bb2e200003f14f8",
+      "text": " どういうふうにすればいいかな[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647965987,
+      "updated": 1648125417
+    },
+    {
+      "id": "623c65e81280f00000b54392",
+      "text": " 　ステータスを表示しない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648125417,
+      "updated": 1648125425
+    },
+    {
+      "id": "623c65f01280f00000b54393",
+      "text": " 　　多分そういうことじゃない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648125425,
+      "updated": 1648125428
+    },
+    {
+      "id": "623c65f31280f00000b54394",
+      "text": " 　projectを開く && ある時間帯のみ更新する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648125428,
+      "updated": 1648125458
+    },
+    {
+      "id": "623c65df1280f00000b54391",
+      "text": "  必ずPin&Unpinしてるのが気になるなと[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1648125408,
+      "updated": 1648126479
+    },
+    {
+      "id": "623c6a0f4bb2e20000874dab",
+      "text": "   実装未だに読んでなくて申し訳ないけどチェックする方が面倒なら大丈夫です",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1648126479,
+      "updated": 1648126529
+    },
+    {
+      "id": "623c69df4bb2e20000874daa",
+      "text": "   `pin()`と`unpin()`は、それぞれすでにpinされている、pinが外れているなら[何もしません https://github.com/takker99/scrapbox-userscript-std/blob/0.10.3/browser/websocket/pin.ts#L40][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648126431,
+      "updated": 1648127259
+    },
+    {
+      "id": "623c6cf81280f00000b54396",
+      "text": "    ただし、pageIdやprojectId, userIdを毎回fetchするので、そのoverheadがあるのは否めません",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648127225,
+      "updated": 1648127322
+    },
+    {
+      "id": "623c6d5a1280f00000b54398",
+      "text": "    ここはどう実装すべきか悩むところ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648127322,
+      "updated": 1648127336
+    },
+    {
+      "id": "623c6d681280f00000b54399",
+      "text": "    　外部から`pageId`などを指定できるようにすればいい？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648127336,
+      "updated": 1648127350
+    },
+    {
+      "id": "623c6ccb1280f00000b54395",
+      "text": "    あ、そうなのか、ならよかった[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1648127180,
+      "updated": 1648129613
+    },
+    {
+      "id": "623c763e4bb2e200004c89b8",
+      "text": "",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1648129598,
+      "updated": 1648129598
+    }
+  ]
+}

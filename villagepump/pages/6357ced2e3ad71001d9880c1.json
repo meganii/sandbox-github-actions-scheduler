@@ -1,0 +1,351 @@
+{
+  "id": "6357ced2e3ad71001d9880c1",
+  "title": "今開いているページを非表示にするUserScript",
+  "created": 1666698965,
+  "updated": 1666698984,
+  "lines": [
+    {
+      "id": "6357ced2e3ad71001d9880c1",
+      "text": "今開いているページを非表示にするUserScript",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe62f",
+      "text": "from [見たくない話題]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe630",
+      "text": "今開いているページを非表示にする[UserScript]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1666698965,
+      "updated": 1666698984
+    },
+    {
+      "id": "6357ced21280f000000fe631",
+      "text": "たぶんbundleすれば使えるんじゃないかな(未検証)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe632",
+      "text": "code:js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe633",
+      "text": " import { disable } from \"./mod.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe634",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe635",
+      "text": " scrapbox.PageMenu.addItem({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe636",
+      "text": "   title: () =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe637",
+      "text": "     `Hide \"${scrapbox.Page.title}\"`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe638",
+      "text": "   onClick: async () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe639",
+      "text": "     const project = scrapbox.Project.name;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe63a",
+      "text": "     const title = scrapbox.Page.title;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe63b",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe63c",
+      "text": "     await disable(project, title);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe63d",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe63e",
+      "text": "     alert(`Successfully disabled \"/${",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe63f",
+      "text": "       project",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe640",
+      "text": "     /}${title}\"`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe641",
+      "text": "   },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe642",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe643",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe644",
+      "text": "code:mod.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe645",
+      "text": " import {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe646",
+      "text": "   patch,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe647",
+      "text": "   getProfile,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe648",
+      "text": " } from \"https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.10.2/mod.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe649",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe64a",
+      "text": " export async function disable(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe64b",
+      "text": "   project: string,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe64c",
+      "text": "   title: string,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe64d",
+      "text": " ) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe64e",
+      "text": "   const profile = await getProfile();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe64f",
+      "text": "   if (!profile.isGuest) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe650",
+      "text": "   const userName = profile.name;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe651",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe652",
+      "text": "   await patch(project, userName, (lines) => [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe653",
+      "text": "     ...lines.map((line) => line.text),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe654",
+      "text": "     \"\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe655",
+      "text": "     \"code:style.css\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe656",
+      "text": "     ` [data-page-title=\"${",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe657",
+      "text": "       encodeTitleURI(title)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe658",
+      "text": "     }\"] {`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe659",
+      "text": "     \"   display: none;\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe65a",
+      "text": "     \" }\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe65b",
+      "text": "   ]);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe65c",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe65d",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    },
+    {
+      "id": "6357ced21280f000000fe65e",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666698965,
+      "updated": 1666698965
+    }
+  ]
+}

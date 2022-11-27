@@ -1,0 +1,624 @@
+{
+  "id": "605c4b2f28053b001ced416d",
+  "title": "簡単家計簿",
+  "created": 1616661299,
+  "updated": 1633745950,
+  "lines": [
+    {
+      "id": "605c4b2f28053b001ced416d",
+      "text": "簡単家計簿",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1616661299,
+      "updated": 1616661299
+    },
+    {
+      "id": "60dcd5e81280f000002b6f90",
+      "text": "簡単お試し方法",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625085417,
+      "updated": 1625085422
+    },
+    {
+      "id": "60dcd6001280f000002b6f94",
+      "text": " 開発コンソールか自分のページに↓を貼り付けて実行する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625085441,
+      "updated": 1625085460
+    },
+    {
+      "id": "60dcd5ed1280f000002b6f92",
+      "text": " code:js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625085422,
+      "updated": 1625085424
+    },
+    {
+      "id": "60dcd5ef1280f000002b6f93",
+      "text": "  import('/api/code/villagepump/簡単家計簿２/script.js');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625085424,
+      "updated": 1633745935
+    },
+    {
+      "id": "60dcd5e81280f000002b6f91",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625085417,
+      "updated": 1625085417
+    },
+    {
+      "id": "6160fc101280f00000624771",
+      "text": "2021-10-09 11:18:58 update→[簡単家計簿2]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1633745936,
+      "updated": 1633745950
+    },
+    {
+      "id": "60dcf15e1280f00000cc160e",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc160f",
+      "text": " const targetTitles = [\"genkin\"];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1610",
+      "text": " const id = \"userscript-kakeibo\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1611",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1612",
+      "text": " const updateKakeibo = () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1613",
+      "text": "   const total = scrapbox.Page.lines",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1614",
+      "text": "     .map(({ text }) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1615",
+      "text": "       const money = Number(text.split(/\\s/).pop());",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1616",
+      "text": "       return isNaN(money) ? 0 : money;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1617",
+      "text": "     })",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1618",
+      "text": "     .reduce((amount, money) => amount + money);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1619",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc161a",
+      "text": "   const viewer = document.getElementById(id);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc161b",
+      "text": "   if (viewer) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc161c",
+      "text": "     viewer.textContent = `${total}円`;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc161d",
+      "text": "   } else {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc161e",
+      "text": "     document.getElementById(\"editor\").insertAdjacentHTML(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc161f",
+      "text": "       \"beforeend\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1620",
+      "text": "       `<div",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1621",
+      "text": "          id=\"${id}\"",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092474
+    },
+    {
+      "id": "60dcf15e1280f00000cc1622",
+      "text": "          class=\"total\"",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092474
+    },
+    {
+      "id": "60dcf15e1280f00000cc1623",
+      "text": "          style=\"text-align:right;font-weight:bold;font-size:1.5em;border-top:lightblue solid 2px;line-height:1.8\">",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092474
+    },
+    {
+      "id": "60dcf15e1280f00000cc1624",
+      "text": "           ${total}円",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092487
+    },
+    {
+      "id": "60dcf15e1280f00000cc1625",
+      "text": "       </div>`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092477
+    },
+    {
+      "id": "60dcf15e1280f00000cc1626",
+      "text": "     );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1627",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1628",
+      "text": " };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf15e1280f00000cc1629",
+      "text": " const observer = new MutationObserver(updateKakeibo);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092447,
+      "updated": 1625092447
+    },
+    {
+      "id": "60dcf18a1280f00000cc162a",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092491,
+      "updated": 1625092491
+    },
+    {
+      "id": "60dcccc41280f000002b6f5a",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625083076,
+      "updated": 1625083076
+    },
+    {
+      "id": "60dcccc41280f000002b6f5b",
+      "text": "[文字列から数値への変換]方法は[parseInt()]以外にも[Number()]のconstructorを使う方法もあるのか。[/icons/知らんかった.icon][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625083076,
+      "updated": 1625083076
+    },
+    {
+      "id": "60dccca51280f000002b6f40",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625083046,
+      "updated": 1625083046
+    },
+    {
+      "id": "60dccca91280f000002b6f41",
+      "text": "cf. [/kembo/Scrapbox の UserScript でページ遷移をキャッチする方法]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625083050,
+      "updated": 1625083067
+    },
+    {
+      "id": "60dcf1911280f00000cc162b",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc162c",
+      "text": " const onPageChange = (records) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc162d",
+      "text": "   if (records?.[0]?.target?.classList?.contains?.(\"enter\")) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc162e",
+      "text": "     document.getElementById(id)?.remove?.();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc162f",
+      "text": "     observer.disconnect();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc1630",
+      "text": "     return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc1631",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc1632",
+      "text": "   if (!targetTitles.includes(scrapbox.Page.title)) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc1633",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc1634",
+      "text": "   updateKakeibo();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc1635",
+      "text": "   observer.observe(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc1636",
+      "text": "     document.getElementsByClassName(\"lines\")[0],",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc1637",
+      "text": "     { childList: true, subtree: true },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc1638",
+      "text": "   );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc1639",
+      "text": " };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc163a",
+      "text": " const pageChangeObserver = new MutationObserver(onPageChange);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc163b",
+      "text": " pageChangeObserver.observe(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc163c",
+      "text": "   document.getElementsByClassName(\"page-wrapper\")[0],",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc163d",
+      "text": "   { attributes: true, attributeFilter: [\"class\"] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc163e",
+      "text": " );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc163f",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc1640",
+      "text": " // initialize",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dcf1911280f00000cc1641",
+      "text": " onPageChange();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625092499,
+      "updated": 1625092499
+    },
+    {
+      "id": "60dccccc1280f000002b6f5d",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625083084,
+      "updated": 1625083084
+    },
+    {
+      "id": "60dcca061280f000002b6f00",
+      "text": "2021-07-01",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625082375,
+      "updated": 1625082377
+    },
+    {
+      "id": "60dcd40e1280f000002b6f8b",
+      "text": " 05:35:18 バグつぶし",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625084943,
+      "updated": 1625085321
+    },
+    {
+      "id": "60dcd2a31280f000002b6f76",
+      "text": " 05:23:01 実行対象でないページに遷移した時、簡単家計簿を除去していなかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625084580,
+      "updated": 1625084612
+    },
+    {
+      "id": "60dcd1cc1280f000002b6f73",
+      "text": " 05:19:26 ページ遷移処理で`return`が抜けてた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625084365,
+      "updated": 1625084383
+    },
+    {
+      "id": "60dcd0171280f000002b6f6e",
+      "text": " 05:12:08 現金計算をミスってた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625083928,
+      "updated": 1625083937
+    },
+    {
+      "id": "60dcce6e1280f000002b6f6b",
+      "text": " 05:08:40 バグつぶし",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625083503,
+      "updated": 1625083723
+    },
+    {
+      "id": "60dcce421280f000002b6f67",
+      "text": " 05:04:19 ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625083459,
+      "updated": 1625083460
+    },
+    {
+      "id": "60dcce461280f000002b6f68",
+      "text": "  実行対象のページ名を複数指定できるようにした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625083463,
+      "updated": 1625083477
+    },
+    {
+      "id": "60dcce551280f000002b6f69",
+      "text": "  実行対象のページでのみscriptを発動する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625083477,
+      "updated": 1625083489
+    },
+    {
+      "id": "60dcce611280f000002b6f6a",
+      "text": "  編集されるたびに再計算する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625083489,
+      "updated": 1625083500
+    },
+    {
+      "id": "60dcca091280f000002b6f01",
+      "text": " 04:46:15 refactoring",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625082377,
+      "updated": 1625082380
+    },
+    {
+      "id": "60dcca051280f000002b6eff",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625082374,
+      "updated": 1625082374
+    },
+    {
+      "id": "60dcd6911280f000002b6f9a",
+      "text": "行の一番最後に書き込まれた数字を合計しているだけ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625085586,
+      "updated": 1625085611
+    },
+    {
+      "id": "60dcd6761280f000002b6f99",
+      "text": " 多分table記法でも計算できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625085559,
+      "updated": 1625085612
+    },
+    {
+      "id": "60dcd6ad1280f000002b6f9b",
+      "text": " [https://gyazo.com/c3104d570a0f6eff6b9ef702629dce05]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625085614,
+      "updated": 1625085615
+    },
+    {
+      "id": "60dcd6761280f000002b6f98",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625085558,
+      "updated": 1625085558
+    },
+    {
+      "id": "605c4b81246f59000031eeba",
+      "text": "[https://i.imgur.com/okeWiv9.png]",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1616661378,
+      "updated": 1616661379
+    },
+    {
+      "id": "60dcd58f1280f000002b6f8c",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1625085328,
+      "updated": 1625085328
+    },
+    {
+      "id": "605c4ba0246f590000259f72",
+      "text": "inspired from [ScrapCalc] & [Scrapboxにいろんなものを埋め込む]",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1616661408,
+      "updated": 1616661499
+    },
+    {
+      "id": "605c4b83246f59000031eebb",
+      "text": "",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1616661379,
+      "updated": 1616661379
+    },
+    {
+      "id": "605c51868ee92a0000613079",
+      "text": "特定の形式だと自動的に計算してしまうというのは便利かも! [増井俊之.icon]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1616662919,
+      "updated": 1616742094
+    },
+    {
+      "id": "6160f16b8ee92a00001023e6",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1633743211,
+      "updated": 1633743211
+    },
+    {
+      "id": "6160f16b8ee92a00001023e7",
+      "text": "#家計簿",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1633743211,
+      "updated": 1633743214
+    },
+    {
+      "id": "6160f16b8ee92a00001023e8",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1633743212,
+      "updated": 1633743212
+    }
+  ]
+}

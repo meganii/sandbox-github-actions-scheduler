@@ -1,0 +1,337 @@
+{
+  "id": "61b20706d933f8001d596786",
+  "title": "scrapbox-bundler",
+  "created": 1639057267,
+  "updated": 1658358982,
+  "lines": [
+    {
+      "id": "61b20706d933f8001d596786",
+      "text": "scrapbox-bundler",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1639057267,
+      "updated": 1639057267
+    },
+    {
+      "id": "61b20772e5172d00003bcdd1",
+      "text": "[/takker/scrapbox-bundler]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1639057267,
+      "updated": 1639139880
+    },
+    {
+      "id": "61b34a291280f0000038675b",
+      "text": "web browserで動く[bundler]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1639139881,
+      "updated": 1639139886
+    },
+    {
+      "id": "622bc6781280f00000f4c1d1",
+      "text": " 基本的には[esbuild]をweb browserから使えるようにしただけ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647036023,
+      "updated": 1647036054
+    },
+    {
+      "id": "61b20773e5172d00003bcdd2",
+      "text": " web標準のImport解決方法でbundleできるようにしてある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1639057267,
+      "updated": 1647036084
+    },
+    {
+      "id": "622bc6be1280f00000f4c1d4",
+      "text": "  これでURL importを使える",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647036093,
+      "updated": 1647036115
+    },
+    {
+      "id": "622bc6981280f00000f4c1d2",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647036055,
+      "updated": 1647036055
+    },
+    {
+      "id": "623a6cee7838e3000070029a",
+      "text": "ベースURL",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647996143,
+      "updated": 1647996148
+    },
+    {
+      "id": "623a6cf37838e3000070029b",
+      "text": "\t`https://scrapbox-bundler.vercel.app`",
+      "userId": "60d8e939233aa1001d736f6c",
+      "created": 1647996148,
+      "updated": 1658358982
+    },
+    {
+      "id": "623a6a1d7838e3000070028a",
+      "text": "オプション（[/takker/scrapbox-bundler#618c92a71280f000009c7d72]に書かれていないもの）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647995421,
+      "updated": 1647996207
+    },
+    {
+      "id": "623a6b477838e30000700292",
+      "text": "\t[URLパラメータ]（クエリ文字列）として記述する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647995720,
+      "updated": 1647995867
+    },
+    {
+      "id": "623a6c147838e30000700293",
+      "text": "\t`url=:source`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647995925,
+      "updated": 1647995932
+    },
+    {
+      "id": "623a6c1c7838e30000700294",
+      "text": "\t\t[- 元の文章にも書いてある]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647995933,
+      "updated": 1647995955
+    },
+    {
+      "id": "623a6c357838e30000700295",
+      "text": "\t\t\t一覧で書きたかった[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647995957,
+      "updated": 1647995963
+    },
+    {
+      "id": "623a6c3b7838e30000700296",
+      "text": "\t\t`:source`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647995964,
+      "updated": 1647995974
+    },
+    {
+      "id": "623a6c467838e30000700297",
+      "text": "\t\t\t読み込みたいUserScript(or UserCSS)のURLに置き換える",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647995974,
+      "updated": 1647996024
+    },
+    {
+      "id": "623a6c787838e30000700298",
+      "text": "\t\t\tURLに以下の文字が含まれる場合は置き換える必要がある",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647996025,
+      "updated": 1648185297
+    },
+    {
+      "id": "623d4efd7838e30000ec197f",
+      "text": "\t\t\t\t`/`, `%2F` -> `%252F`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648185086,
+      "updated": 1648185325
+    },
+    {
+      "id": "623d4f307838e30000ec1981",
+      "text": "\t\t\t\t`?`, `%3F` -> `%253F`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648185137,
+      "updated": 1648185333
+    },
+    {
+      "id": "623a6a3b7838e3000070028c",
+      "text": "\t`output=newtab`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647995452,
+      "updated": 1647995466
+    },
+    {
+      "id": "623a6a567838e3000070028d",
+      "text": "\t\tソースを生成した後新しいタブ（ポップアップ）で開く",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647995478,
+      "updated": 1647995499
+    },
+    {
+      "id": "623acfcc7838e300005d591c",
+      "text": "\t`run`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648021452,
+      "updated": 1648021455
+    },
+    {
+      "id": "623acfcf7838e300005d591d",
+      "text": "\t\t必須オプション",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648021455,
+      "updated": 1648021479
+    },
+    {
+      "id": "623acfe77838e300005d591e",
+      "text": "\t\t\tそもそもこれがないと実行できない",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648021479,
+      "updated": 1648021479
+    },
+    {
+      "id": "623acfe87838e300005d591f",
+      "text": "\t\t\t（runがない場合の処理が実装されていない）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648021480,
+      "updated": 1648021494
+    },
+    {
+      "id": "623af3ad1280f000002b4407",
+      "text": "\t\t\tUI画面で色々やれる予定だったのだがモチベが死んでる[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648030638,
+      "updated": 1648030654
+    },
+    {
+      "id": "623af3bd1280f000002b4408",
+      "text": "\t\t\t URL踏んで即実行することに満足してしまった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648030654,
+      "updated": 1648030675
+    },
+    {
+      "id": "623af4d27838e300005f2f89",
+      "text": "\t\t\t 実際そっちの方が使い道が多いし（使い方を知っていれば）そこまでめんどくさくもない[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648030930,
+      "updated": 1648030968
+    },
+    {
+      "id": "623af4f97838e300005f2f8a",
+      "text": "\t\t\t \tリンクを置けば使い方を説明する必要がないのが強すぎる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648030969,
+      "updated": 1648031017
+    },
+    {
+      "id": "623af94e1280f00000de319e",
+      "text": "\t\t\t \tこのために用意した機能(ドヤ顔)[takker.icon*3]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648032079,
+      "updated": 1648032102
+    },
+    {
+      "id": "623b2a4f7838e30000d978fb",
+      "text": "\t\t\t \t　最高[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648044625,
+      "updated": 1648044629
+    },
+    {
+      "id": "623a6a1d7838e3000070028b",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647995421,
+      "updated": 1647995421
+    },
+    {
+      "id": "61b20826e5172d00003bcdd3",
+      "text": " 本当にセキュアに使おうと思ったら、これも全部コード読んで自分用のcloneのVercel appを立てるべきなんだろうなあ[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1639057446,
+      "updated": 1639057646
+    },
+    {
+      "id": "61b208a1e5172d00003bcdd5",
+      "text": " 　もちろん[takker.icon]さんを信頼してはいるが",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1639057569,
+      "updated": 1639057590
+    },
+    {
+      "id": "61b27c601280f00000b93994",
+      "text": "  セキュアにやりたいときは、terminalを用意して`deno bundle <url> | esbuild --minify`を実行すればいいだけ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1639087200,
+      "updated": 1639087266
+    },
+    {
+      "id": "61b20826e5172d00003bcdd4",
+      "text": "   scrapbox-bundlerはterminal環境とdenoとesbuildを用意せずに手軽にbundleしたかったから作っただけ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1639057447,
+      "updated": 1639087385
+    },
+    {
+      "id": "61b27d1a1280f00000b93996",
+      "text": "   `deno`と`esbuild`があれば同じことはすぐできる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1639087386,
+      "updated": 1639087458
+    },
+    {
+      "id": "61b34c82e5172d0000636d86",
+      "text": "   手軽さとセキュリティを両立するなら[scrapbox-bundler#61b20826e5172d00003bcdd3]しかない？[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1639140482,
+      "updated": 1639140539
+    },
+    {
+      "id": "61b27ca41280f00000b93995",
+      "text": "    terminal使うのが手軽じゃない場合はそう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1639087269,
+      "updated": 1639141825
+    },
+    {
+      "id": "622bec007838e300008cb3ea",
+      "text": "   [deno]環境で[minify]する方法を探していたので助かります[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647045633,
+      "updated": 1647045686
+    },
+    {
+      "id": "61b351c11280f0000087d0a0",
+      "text": "  [- ちなみにまだコードが雑なので、もし全部コードを読んだ暁にはぜひいい感じに直してPR出してほしい]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1639141825,
+      "updated": 1639141902
+    },
+    {
+      "id": "61b351b51280f0000087d09f",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1639141813,
+      "updated": 1639141813
+    },
+    {
+      "id": "623a9d971280f00000ea2c63",
+      "text": "今後の更新とかバグ修正とかdocumentationとか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648008600,
+      "updated": 1648008617
+    },
+    {
+      "id": "623a9d8d1280f00000ea2c61",
+      "text": " [とりあえず動いているもので満足]してしまったので、これ以上いじる気持ちが今の所ない[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648008591,
+      "updated": 1648008651
+    },
+    {
+      "id": "623aa6ec7838e300003c96a2",
+      "text": " \tとりあえず使えているのでこれでよさそう[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648010988,
+      "updated": 1648010997
+    },
+    {
+      "id": "623a9dbb1280f00000ea2c64",
+      "text": " 本当はまだバグがあるんだけどね……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648008636,
+      "updated": 1648008648
+    },
+    {
+      "id": "623a9d8f1280f00000ea2c62",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648008592,
+      "updated": 1648008592
+    }
+  ]
+}

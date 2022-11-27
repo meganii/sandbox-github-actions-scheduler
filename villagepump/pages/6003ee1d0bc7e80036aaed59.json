@@ -1,0 +1,288 @@
+{
+  "id": "6003ee1d0bc7e80036aaed59",
+  "title": "Scrapboxと公開鍵暗号で、Scrapbox上で秘密のメッセージをやりとりする",
+  "created": 1610870308,
+  "updated": 1610870333,
+  "lines": [
+    {
+      "id": "6003ee1d0bc7e80036aaed59",
+      "text": "Scrapboxと公開鍵暗号で、Scrapbox上で秘密のメッセージをやりとりする",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870308
+    },
+    {
+      "id": "6003ee2d79d3a900007e7aa8",
+      "text": "from [2021/01/17]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870317,
+      "updated": 1610870321
+    },
+    {
+      "id": "6003ee2479d3a900007e7a82",
+      "text": " [\" 送り主とメッセージをまとめて[増井俊之.icon]の公開鍵で暗号化してどこかに置いておく] [@増井俊之#5ff8439e8ee92a000031772e]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870330,
+      "updated": 1610870333
+    },
+    {
+      "id": "6003ee2479d3a900007e7a83",
+      "text": " ちょっと妄想",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a84",
+      "text": "\t[*** [@]ページに]「秘密のメッセージ」を書きたいってことか",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a85",
+      "text": "\t暗号化、UserScriptでできねえかな",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a86",
+      "text": "\t\tそもそも鍵使って暗号化する方法がわからん",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a87",
+      "text": "\t\t　これで行けそう",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a88",
+      "text": "\t\t\t　[https://qiita.com/poruruba/items/272bdc8f539728d5b076 Javascriptで公開鍵ペア生成・暗号化/復号をしてみた - Qiita]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a89",
+      "text": "\t\t\t　`node-rsa-js.js`をESModuleで使えるようにした後、minifyしてscrapboxに貼り付ければ使える",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a8a",
+      "text": "\t\t\t　\tおお、そういうふうに工夫するのですね（全く思いつかなかった）[sta.icon*2]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a8b",
+      "text": "\t\t\t　\t[userscriptで外部のjsを読み込]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1610870308,
+      "updated": 1617355261
+    },
+    {
+      "id": "6003ee2479d3a900007e7a8c",
+      "text": "\t\t\tこっちのほうが楽かも",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a8d",
+      "text": "\t\t\t https://cdnjs.com/libraries/crypto-js",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a8e",
+      "text": "\t\tなんかコマンド使う？",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a8f",
+      "text": "\t\t[RSA 鍵ペアを使って任意の文字列を暗号化・復号する - Qiita https://qiita.com/QUANON/items/79f06ca5ed57fa5c6c0e]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a90",
+      "text": "\t\t\topensslコマンドみたいだ",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a91",
+      "text": "\t\t\t[- ちょっと後で適当に暗号化したメッセージはっつけて一人ロールプレイしてみる]やる気さんなくなった",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a92",
+      "text": "\t\t\tたぶんこういう感じだろう",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a93",
+      "text": "\t\t\t\t送りたい人",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a94",
+      "text": "\t\t\t\t\t`curl (送り先の人の公開鍵のURL) | openssl (暗号化するオプション)`",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a95",
+      "text": "\t\t\t\t\tつくった暗号化メッセージは `code:xxxx.message` などで書く",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a96",
+      "text": "\t\t\t\t受け取った人",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a97",
+      "text": "\t\t\t\t\t`curl (/api/code/(暗号化メッセージの場所)) | openssl (暗号化するオプション) (自分の秘密鍵を指定)`",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a98",
+      "text": "\t\t\t\t\tこれで解読されたメッセージを読める",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a99",
+      "text": "\t\t\t受け取った側が返信するときは？",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a9a",
+      "text": "\t\t\t\t「送ってきた人」の公開鍵で暗号化する",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a9b",
+      "text": "\t公開鍵はページに書いておけばいい",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a9c",
+      "text": "\t\tあ、まさに[@以外の特殊ページを考えてみる]だ",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a9d",
+      "text": "\t\tいや、ページにするまでもないか",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a9e",
+      "text": "\t\t[sta]に「私の公開鍵はこれです」エリアをつくっておく",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7a9f",
+      "text": "\t\t\t[巧妙な荒らし]問題がある",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7aa0",
+      "text": "\t\t\tAさんに秘密のメッセージを送りたいBさん",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7aa1",
+      "text": "\t\t\tBさんは、Aさんのページの公開鍵をつかって暗号化",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7aa2",
+      "text": "\t\t\tしかし実は「Aさんのページの公開鍵」は、悪い人Cさんがつくった公開鍵だった！",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7aa3",
+      "text": "\t\t\t\tCさん（ヒッヒッヒ、俺の公開鍵にしといてやるぜ）",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7aa4",
+      "text": "\t\t\tこの場合、Cさんが「Bさん宛の秘密のメッセージ」を解読できてしまう",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7aa5",
+      "text": "\t\t試しにどう見えるか書いてみた",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7aa6",
+      "text": "\t\t\t[sta#60037ee479d3a90000553ee8]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870315
+    },
+    {
+      "id": "6003ee2479d3a900007e7aa7",
+      "text": "",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1610870308,
+      "updated": 1610870308
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "id": "624446fe6877280020c448fe",
+  "title": "JavaScriptでScrapboxのページ遷移をする",
+  "created": 1648641793,
+  "updated": 1648684079,
+  "lines": [
+    {
+      "id": "624446fe6877280020c448fe",
+      "text": "JavaScriptでScrapboxのページ遷移をする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641793,
+      "updated": 1648642252
+    },
+    {
+      "id": "624447027838e300009befe7",
+      "text": "from [2022/03/30]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641793,
+      "updated": 1648641804
+    },
+    {
+      "id": "6244470e7838e300009befe9",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641805,
+      "updated": 1648641805
+    },
+    {
+      "id": "624447107838e300009befea",
+      "text": "結論",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641807,
+      "updated": 1648641835
+    },
+    {
+      "id": "6244472c7838e300009befeb",
+      "text": "code:js",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641835,
+      "updated": 1648641838
+    },
+    {
+      "id": "6244472f7838e300009befec",
+      "text": " const link = document.createElement(\"a\")",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641838,
+      "updated": 1648641871
+    },
+    {
+      "id": "624447517838e300009befed",
+      "text": " link.href = \"/:projectname/:pagetitle\" // 必要なら行IDも追記する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641872,
+      "updated": 1648641916
+    },
+    {
+      "id": "6244476d7838e300009befee",
+      "text": " document.body.append(link)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648641900,
+      "updated": 1648683947
+    },
+    {
+      "id": "624447877838e300009befef",
+      "text": " link.click()",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641926,
+      "updated": 1648641929
+    },
+    {
+      "id": "6244eb9e1280f00000f965af",
+      "text": " link.remove()",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648683935,
+      "updated": 1648683942
+    },
+    {
+      "id": "624447067838e300009befe8",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641798,
+      "updated": 1648641798
+    },
+    {
+      "id": "624447ae7838e300009beff2",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641965,
+      "updated": 1648641965
+    },
+    {
+      "id": "6244478c7838e300009beff0",
+      "text": "[Mijinko_SD.icon]自身もよくわからないんだけど、どうやらdocument自身にイベントリスナー([EventListener])が設定されているらしい",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641931,
+      "updated": 1648642065
+    },
+    {
+      "id": "624447c17838e300009beff3",
+      "text": "\t[https://gyazo.com/4ce6bf9acf3897031b0410b9ba82d5bd]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641984,
+      "updated": 1648641987
+    },
+    {
+      "id": "624447c47838e300009beff4",
+      "text": "\t\tScrapboxのページ遷移はこいつがいい感じにやってるっぽい",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648641987,
+      "updated": 1648642016
+    },
+    {
+      "id": "624447e67838e300009beff5",
+      "text": "\t\tイベントリスナーを削除すると普通にページを再読込して遷移する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648642021,
+      "updated": 1648642085
+    },
+    {
+      "id": "6244478c7838e300009beff1",
+      "text": " あ、そうかー、そういやReactってそんな感じのアレだったな[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1648641931,
+      "updated": 1648642075
+    },
+    {
+      "id": "624448524bb2e20000a13de6",
+      "text": "  全然ハックする必要なかった、最高〜",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1648642080,
+      "updated": 1648642331
+    },
+    {
+      "id": "624449704bb2e20000a13de7",
+      "text": "  というかそれでハンドラの中で要素を探してたのか、完全に理解した",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1648642365,
+      "updated": 1648642382
+    },
+    {
+      "id": "624448307838e300009beff6",
+      "text": " てかいい感じにページ遷移する函数、もう既に[scrapbox-userscript-std]にあった気がする…[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648642095,
+      "updated": 1648642130
+    },
+    {
+      "id": "6244483f4bb2e20000a13de5",
+      "text": "  `openInTheSameTab()`[. https://doc.deno.land/https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.11.1/mod.ts/~/openInTheSameTab ]がそれ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648642061,
+      "updated": 1648683660
+    },
+    {
+      "id": "6244ea161280f000002235ff",
+      "text": "   [SPAを維持してページ遷移]できます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648683543,
+      "updated": 1648683554
+    },
+    {
+      "id": "6244e9181280f000002235fb",
+      "text": "  井戸端だと同じsnippetを[未読のページにランダムジャンプするUserScript：ページを開かずに未読を判定＆PageMenuのItemにログを表示するver#6041eb6a1280f00000a2ffc1]で使っています",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648683289,
+      "updated": 1648683493
+    },
+    {
+      "id": "6244e9f11280f000002235fe",
+      "text": "  URL fragmentの変更だけなら`location.hash = \"xxxx\";`でいける",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648683506,
+      "updated": 1648683588
+    },
+    {
+      "id": "6244e9631280f000002235fc",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648683364,
+      "updated": 1648683982
+    },
+    {
+      "id": "6244ebcd1280f00000f965b1",
+      "text": "ちなみに再読込して遷移したいときは[window.open()]で十分",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648683982,
+      "updated": 1648684009
+    },
+    {
+      "id": "6244ebe81280f00000f965b2",
+      "text": " 第2引数に`\"_self\"`を渡すと同じタブで遷移する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648684009,
+      "updated": 1648684035
+    },
+    {
+      "id": "6244ec021280f00000f965b3",
+      "text": " これも[scrapbox-userscript-std]にいれようかな[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648684035,
+      "updated": 1648684044
+    },
+    {
+      "id": "6244ec0b1280f00000f965b4",
+      "text": "  `window.open()`自体は簡単に呼べるけど、いちいちencode処理とpath組み立てするのが面倒",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648684044,
+      "updated": 1648684079
+    },
+    {
+      "id": "6244ebca1280f00000f965b0",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648683978,
+      "updated": 1648683978
+    }
+  ]
+}

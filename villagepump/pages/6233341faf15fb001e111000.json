@@ -1,0 +1,757 @@
+{
+  "id": "6233341faf15fb001e111000",
+  "title": "337をガウス整数の積に分解する",
+  "created": 1647522895,
+  "updated": 1647526690,
+  "lines": [
+    {
+      "id": "6233341faf15fb001e111000",
+      "text": "337をガウス整数の積に分解する",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522895,
+      "updated": 1647522895
+    },
+    {
+      "id": "62333463e5172d0000d52210",
+      "text": "from [2022/03/15]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522916,
+      "updated": 1647522917
+    },
+    {
+      "id": "62333467e5172d0000d52211",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522918,
+      "updated": 1647522918
+    },
+    {
+      "id": "62333450e5172d0000d521ca",
+      "text": "[$ 337]はもっと割れるだろうか？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522895,
+      "updated": 1647522896
+    },
+    {
+      "id": "62333450e5172d0000d521cb",
+      "text": "　>337は68番目の素数である",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521cc",
+      "text": "　 ってWikipediaに書いてあった[nishio.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521cd",
+      "text": "　 ありゃりゃ。割れませんでしたか[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521ce",
+      "text": "　 複素数に拡張したら割れるかな？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521d0",
+      "text": "　  [$ (a+bi)(c+di)\\in\\R]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521d1",
+      "text": "　  [$ \\iff ad+bc=0]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521d2",
+      "text": "　  [$ \\begin{vmatrix}a&-c\\\\b&d\\end{vmatrix}=0\\land\\begin{vmatrix}a&b\\\\d&c\\end{vmatrix}=337]の整数解が存在もしくは存在しないことを証明するという問題に帰着できる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521d3",
+      "text": "　  行列式だとわかりづらいか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521d4",
+      "text": "　   [$ \\begin{dcases}ad+bc=0\\\\ac-bd=337\\\\a,b,c,d\\in\\Z\\end{dcases}]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521d5",
+      "text": "　   これが解ければいい",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521d6",
+      "text": "　  方針",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521d7",
+      "text": "　   とりあえず変数を一つ減らせるな。そこまでやってから考えてみるか？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521d8",
+      "text": "　   ざっと暗算したら行けそうだったのでやってみる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521d9",
+      "text": "　    [$ \\begin{dcases}ad=-bc\\\\adc-bd^2=337d\\\\a,b,c,d\\in\\Z\\\\d\\neq0\\end{dcases}\\lor\\begin{dcases}b=0\\lor c=0\\\\ac=337\\\\a,b,c\\in\\Z\\\\d=0\\end{dcases}]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521da",
+      "text": " 　    右は[$ (a,b,c,d)=(337,1,0,0),(1,337,0,0)]しかないので除外する",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521db",
+      "text": "　    [$ \\begin{dcases}ad=-bc\\\\-b(c^2+d^2)=337d\\\\a,b,c,d\\in\\Z\\\\d\\neq0\\end{dcases}]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521dc",
+      "text": "　    あー、[$ a^2]をかけないと[$ d]が消えないのか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521dd",
+      "text": "　    [$ \\begin{dcases}ad=-bc\\\\-b((ac)^2+(ad)^2)=337a^2d\\\\a,b,c,d\\in\\Z\\\\d\\neq0\\land a\\neq0\\end{dcases}]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521de",
+      "text": "　     [$ a=0]の場合は[$ d=0]と同じ結末になったのではずした",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521df",
+      "text": "　    [$ \\iff \\begin{dcases}ad=-bc\\\\c(a^2+b^2)=337a\\\\a,b,c,d\\in\\Z\\setminus\\{0\\}\\end{dcases}]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521e0",
+      "text": "　     途中計算",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521e1",
+      "text": " 　     [$ -b((ac)^2+(bc)^2)=-337abc]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521e2",
+      "text": " 　     [$ \\iff c^2(a^2+b^2)=337ac]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521e3",
+      "text": " 　     [$ \\iff c(a^2+b^2)=337a]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521e4",
+      "text": " 　     [$ a\\neq0\\land d\\neq 0\\implies ad\\neq0\\implies b\\neq0\\land c\\neq0]を使った",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521e5",
+      "text": " 　   この時点で[$ a^2+b^2\\equiv0\\pmod{337}]が確定した",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521e6",
+      "text": " 　    [2次不定方程式]ってどうやって解くんだろう？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521e7",
+      "text": " 　    [https://manabitimes.jp/math/700 不定方程式の解き方６パターン | 高校数学の美しい物語]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521e8",
+      "text": " 　     [ペル方程式]の解法を使う？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521e9",
+      "text": " 　    [$ \\xcancel{\\forall x\\in\\Z;0\\le x^2\\ \\mathrm{mod}\\ 377\\le 19}]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521ea",
+      "text": " 　     [$ \\xcancel{\\because 19^2<377<20^2}]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521eb",
+      "text": " 　     [$ \\forall x\\in\\Z;0\\le x^2\\ \\mathrm{mod}\\ \\xcancel{377}337\\le 19^\\textcolor{red}{2}=\\textcolor{red}{361}]じゃん",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521ec",
+      "text": " 　     数学のきもち何もわかっていなかった……[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521ed",
+      "text": " 　      所詮数学[/Icons2/完全理解.icon]した程度だった",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521ee",
+      "text": " 　     377ではなく337なのでは[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521ef",
+      "text": " 　     あっ[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521f0",
+      "text": " 　      もうだめだあ……",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521f1",
+      "text": " 　      [/vim-jp-emojis/aruaru.icon][yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521f2",
+      "text": " 　    あ、そっか。[$ 377]は素数だから、[$ x^2\\equiv 0\\implies x\\equiv 0]なのか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521f3",
+      "text": " 　   これってもしかして解が存在しない？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521f4",
+      "text": " 　    [$ \\because 0\\le (a^2\\ \\mathrm{mod}\\ 377)+(b^2\\ \\mathrm{mod}\\ 377)\\le 19+19=38<337]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521f5",
+      "text": " 　     どうがんばっても[$ a\\equiv b\\equiv0]以外当てはめようがない",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521f6",
+      "text": " 　    なんか悔しいので、一般的に[ガウス整数]の積で表せる素数の条件を求めたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647522896,
+      "updated": 1647523510
+    },
+    {
+      "id": "62333450e5172d0000d521f7",
+      "text": " 　     問題：",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521f8",
+      "text": " 　      [$ \\forall p\\in\\Bbb{P}(\\exist a,b,c,d\\in\\Z\\setminus\\{0\\}(p=(a+bi)(c+di))\\iff Q(p))]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647522896,
+      "updated": 1647525083
+    },
+    {
+      "id": "62333450e5172d0000d521f9",
+      "text": " 　      を満たす条件[$ Q(p)]を求める",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521fa",
+      "text": " 　     [$ p]が2整数の平方和で表せること？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521fb",
+      "text": " 　     　[337をガウス整数の積に分解する#62333450e5172d0000d5220b]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647523657
+    },
+    {
+      "id": "62333450e5172d0000d521fc",
+      "text": " 　     　いや、[$ \\exist a,b,c,d\\in\\Z\\\\\\begin{dcases}ad+bc=0\\\\ac-bd=p\\end{dcases}]ということです[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333713e5172d00001b541f",
+      "text": " 　     [337をガウス整数の積に分解する#62333529e5172d0000d52217]によると、任意の[$ p]で成り立つ？[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647523602,
+      "updated": 1647523619
+    },
+    {
+      "id": "6233375d1280f000007a49ae",
+      "text": " 　      [ガウス整数#62333d9f1280f0000096a7aa]は[$ \\forall z\\in \\Z_c \\ \\exist p_0,p_1,\\cdots,p_n \\in \\Bbb{P}_c;z=\\prod_{0\\le i\\le n} p_i]なので違います[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647523676,
+      "updated": 1647525350
+    },
+    {
+      "id": "623338ae1280f000007a49b4",
+      "text": " 　       任意のGauss整数ではなく、任意の素数がGauss整数の2つ以上積で表せることを示したい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647524013,
+      "updated": 1647524432
+    },
+    {
+      "id": "623337e41280f000007a49af",
+      "text": " 　       [$ \\Z_c:=\\text{Gauss整数}=\\{z\\in\\Bbb{C}|\\exist a,b\\in\\Z;z=a+bi\\}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647523812,
+      "updated": 1647524077
+    },
+    {
+      "id": "623337f31280f000007a49b0",
+      "text": " 　       [$ \\Bbb{P}_c:=\\text{Gauss素数}\\subset \\Z_c]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647523826,
+      "updated": 1647523853
+    },
+    {
+      "id": "623339c6e5172d00001b5420",
+      "text": " 　       素数はGauss整数なのでは[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647524293,
+      "updated": 1647524309
+    },
+    {
+      "id": "62333a531280f000007a49b7",
+      "text": " 　       [ガウス整数#62333d9f1280f0000096a7aa]は1つ以上の積ということだと思います[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647524434,
+      "updated": 1647525369
+    },
+    {
+      "id": "62333b5fe5172d00009293a4",
+      "text": " 　        そうなのか[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647524703,
+      "updated": 1647524703
+    },
+    {
+      "id": "62333aa91280f000007a49b8",
+      "text": " 　        なおここまで意地でもwikipediaみてない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647524521,
+      "updated": 1647524529
+    },
+    {
+      "id": "62333ab31280f000007a49b9",
+      "text": " 　        さすがに齟齬が生じそうだから、変な意地張らないで読むか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647524531,
+      "updated": 1647524552
+    },
+    {
+      "id": "62333ba5e5172d00009293a5",
+      "text": " 　        1や[$ i \\cdot (-i)]との積と思えば2つ以上にできるが…[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647524773,
+      "updated": 1647525051
+    },
+    {
+      "id": "62333c4be5172d00009293a6",
+      "text": " 　        　単数以外の2つ以上のGauss整数の積で書けるかということ？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647524939,
+      "updated": 1647525060
+    },
+    {
+      "id": "62333cec1280f00000177477",
+      "text": " 　        　まあそんな感じ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647525099,
+      "updated": 1647525105
+    },
+    {
+      "id": "62333cf21280f00000177478",
+      "text": " 　        　論理式が正確じゃなかったので書き直しました[. [337をガウス整数の積に分解する#62333450e5172d0000d521f8] ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647525105,
+      "updated": 1647525146
+    },
+    {
+      "id": "62333da2e5172d00009293a7",
+      "text": " 　      > 有理素数の単数以外による分解は 2 または 4n + 1 型に限られ、その分解は[$ p = (m + ni)(m − ni)]の形に限られる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647525281,
+      "updated": 1647525314
+    },
+    {
+      "id": "62333dede5172d00009293aa",
+      "text": " 　       とのこと: [https://ja.wikipedia.org/wiki/ガウス整数#ガウス素数 ガウス整数 - Wikipedia]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647525356,
+      "updated": 1647525365
+    },
+    {
+      "id": "62333e111280f0000017747c",
+      "text": " 　       [- ネタバレ][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647525392,
+      "updated": 1647525399
+    },
+    {
+      "id": "62333e181280f0000017747d",
+      "text": "  　       まだ証明はばれてないから大丈夫",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647525399,
+      "updated": 1647525406
+    },
+    {
+      "id": "62333e4ce5172d00009293ac",
+      "text": "  　       あ、自分でやる感じだったのか、すみません[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647525451,
+      "updated": 1647525464
+    },
+    {
+      "id": "62333e9f1280f00000177480",
+      "text": "  　       [takker.icon]が勝手に意地張ってるだけなので大丈夫ですよー",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647525534,
+      "updated": 1647525565
+    },
+    {
+      "id": "62333ec11280f00000177481",
+      "text": "  　        [- どうせどこかで根負けして答え見るだろうし]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647525568,
+      "updated": 1647525585
+    },
+    {
+      "id": "62333450e5172d0000d521fd",
+      "text": " 　 極形式ver",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521fe",
+      "text": " 　  [$ 337 = re^{i\\theta} \\cdot se^{i\\phi} = rse^{i(\\theta + \\phi)} \\ (r,s \\geq 0)]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d521ff",
+      "text": " 　  [$ \\begin{dcases} rs = 337 \\\\ \\theta + \\phi = 2n\\pi \\ (n \\in \\Z) \\end{dcases}]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d52200",
+      "text": " 　  解は無数にある",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d52201",
+      "text": " 　  　あ、実部と虚部が整数じゃないといけないのか[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d52202",
+      "text": " 　  　そゆことです[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d52203",
+      "text": " 　  極形式から攻めるアプローチは今回使えないと思ったけど、どうなんだろうか[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d52204",
+      "text": " 　   半径から解の存在範囲を絞り込める？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d52205",
+      "text": " 　   いや、[$ rs=337]だとただの反比例だから、大して絞り込めないか。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d52206",
+      "text": " 　   整数と相性悪そうだし、無理そう？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d52207",
+      "text": " 　 [$ 337 = 16^2 + 9^2]らしい",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d52208",
+      "text": " 　 　つまり[$ (16 + 9i)(16-9i)=337]だ！",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d52209",
+      "text": " 　 　あ、あれ？[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d5220a",
+      "text": " 　 　 [2022/03/15#623286a71280f00000073c9f]ミスってた？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d5220b",
+      "text": " 　 　[$ \\theta + \\phi = 2n\\pi \\ (n \\in \\Z)]より、2つの複素数の積が実数になるのは(定数倍を除き)複素共役のペアしかありえない",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d5220c",
+      "text": " 　 　 絶対値は違ってていい",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333450e5172d0000d5220d",
+      "text": " 　 　 いや、[337をガウス整数の積に分解する#62333450e5172d0000d521d1]なので、これだけだと複素共役のペアしかあり得ないことを導けません[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647526639
+    },
+    {
+      "id": "62333450e5172d0000d5220e",
+      "text": " 　 　 [$ n\\pi \\ (n \\in \\Z)]ならよく、[$ 2n\\pi]である必要はないということか[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "62333ee61280f00000177482",
+      "text": " 　 　  ここちょっと意味がわからなかったです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647525605,
+      "updated": 1647525665
+    },
+    {
+      "id": "623340f9e5172d00001d86f1",
+      "text": " 　 　  偏角の和が[$ 2n\\pi]に限られるなら、複素共役のペアしかあり得ないと言えるけど、偏角の和が[$ n\\pi]でも実数になるので成り立たないなあということです[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647526136,
+      "updated": 1647526526
+    },
+    {
+      "id": "623342a6e5172d00001d86f2",
+      "text": " 　 　  　偏角が[$ n\\pi]であることと[337をガウス整数の積に分解する#62333450e5172d0000d521d1]は同値？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647526565,
+      "updated": 1647526644
+    },
+    {
+      "id": "6233430ae5172d00001d86f3",
+      "text": " 　 　  　素数なので正の実数に限れば[$ 2n\\pi]でいいか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647526666,
+      "updated": 1647526690
+    },
+    {
+      "id": "62333450e5172d0000d5220f",
+      "text": " 　 　16と9は互いに素なので、整数倍の解はなく、解はこれだけか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522896,
+      "updated": 1647522907
+    },
+    {
+      "id": "623334a9e5172d0000d52212",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522984,
+      "updated": 1647522984
+    },
+    {
+      "id": "623334a9e5172d0000d52213",
+      "text": "実部と虚部が共に整数である複素数のことを[ガウス整数]と言うらしい",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1647522984,
+      "updated": 1647523029
+    },
+    {
+      "id": "6233394d1280f000007a49b6",
+      "text": "  [$ \\Z_c:=\\text{Gauss整数}:=\\{z\\in\\Bbb{C}|\\exist a,b\\in\\Z;z=a+bi\\}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647524172,
+      "updated": 1647525285
+    },
+    {
+      "id": "623339351280f000007a49b5",
+      "text": "  [$ \\text{Gauss素数}:=\\{p\\in\\Z_c|\\forall z\\in\\Z_c((\\exists k\\in\\Z_c;p=kz)\\implies z=p,\\pm1,\\pm i)\\}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647524149,
+      "updated": 1647525284
+    },
+    {
+      "id": "6233364fe5172d0000d52219",
+      "text": " そうそうそれです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647523407,
+      "updated": 1647523433
+    },
+    {
+      "id": "623336691280f000007a49a9",
+      "text": "  ググりなしの縛りで解いていたので、名前を調べられなかったのです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647523433,
+      "updated": 1647523454
+    },
+    {
+      "id": "6233371e1280f000007a49ac",
+      "text": "   苦し紛れに「整数係数の複素数」と書いていた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647523614,
+      "updated": 1647523625
+    },
+    {
+      "id": "623337291280f000007a49ad",
+      "text": "   書き直しました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647523625,
+      "updated": 1647523628
+    },
+    {
+      "id": "6233367f1280f000007a49aa",
+      "text": "  調べていただきサンクスなのです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647523454,
+      "updated": 1647523461
+    },
+    {
+      "id": "623336671280f000007a49a8",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647523430,
+      "updated": 1647523430
+    }
+  ]
+}

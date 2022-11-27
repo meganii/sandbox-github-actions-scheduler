@@ -1,0 +1,708 @@
+{
+  "id": "6366b6e3ca32a0001d65aafd",
+  "title": "ソースコード｜Reactの関数コンポーネントのstateをsetしても描画が更新されない",
+  "created": 1667675876,
+  "updated": 1667677701,
+  "lines": [
+    {
+      "id": "6366b6e3ca32a0001d65aafd",
+      "text": "ソースコード｜Reactの関数コンポーネントのstateをsetしても描画が更新されない",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675876,
+      "updated": 1667677701
+    },
+    {
+      "id": "6366b70f7838e30000bfb63f",
+      "text": "[Reactの関数コンポーネントのstateをsetしても描画が更新されない]の検証に使っていたソースコード",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675919,
+      "updated": 1667675933
+    },
+    {
+      "id": "6366b7007838e30000bfb5dd",
+      "text": "\t邪魔なので別ページに移した[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675933
+    },
+    {
+      "id": "6366b7007838e30000bfb5de",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5df",
+      "text": "code:test.tsx",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5e0",
+      "text": " /// <reference no-default-lib=\"true\" />",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5e1",
+      "text": " /// <reference lib=\"esnext\" />",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5e2",
+      "text": " /// <reference lib=\"dom\" />",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5e3",
+      "text": " ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5e4",
+      "text": " import React, { useState } from \"https://esm.sh/react@18.2.0\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5e5",
+      "text": " import { createRoot } from \"https://esm.sh/react-dom@18.2.0/client\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5e6",
+      "text": " ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5e7",
+      "text": " interface dataType {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5e8",
+      "text": "   num: number;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5e9",
+      "text": " }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5ea",
+      "text": " ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5eb",
+      "text": " const divStyle: React.CSSProperties = {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5ec",
+      "text": "   width: 200,",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5ed",
+      "text": "   height: 200,",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5ee",
+      "text": "   display: \"flex\",",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5ef",
+      "text": "   justifyContent: \"center\",",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5f0",
+      "text": "   borderRadius: 10,",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5f1",
+      "text": "   backgroundColor: \"aqua\",",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5f2",
+      "text": " };",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5f3",
+      "text": " ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5f4",
+      "text": " /** 関数コンポーネント */",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5f5",
+      "text": " function ClickMeFunc(): JSX.Element {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5f6",
+      "text": "   const [data, setData] = useState<dataType[]>([{ num: 0 }]);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5f7",
+      "text": " ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5f8",
+      "text": "   function createChildren(data?: dataType[]) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5f9",
+      "text": "     if (data === undefined) return \"\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5fa",
+      "text": "     return (",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5fb",
+      "text": "       <p>",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5fc",
+      "text": "         関数コンポーネント:<br />",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5fd",
+      "text": "         {data[0].num}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5fe",
+      "text": "       </p>",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb5ff",
+      "text": "     );",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb600",
+      "text": "   }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb601",
+      "text": " ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb602",
+      "text": "   return (",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb603",
+      "text": "     <div",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb604",
+      "text": "       onClick={() => {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb605",
+      "text": "         if (data === undefined) return;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb606",
+      "text": "         const d = data;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb607",
+      "text": "         d[0].num = 1;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb608",
+      "text": "         console.log(d);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb609",
+      "text": "         setData(d);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb60a",
+      "text": "       }}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb60b",
+      "text": "       style={divStyle}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb60c",
+      "text": "     >",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb60d",
+      "text": "       {createChildren(data)}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb60e",
+      "text": "     </div>",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb60f",
+      "text": "   );",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb610",
+      "text": " }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb611",
+      "text": " ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb612",
+      "text": " /** クラスコンポーネント */",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb613",
+      "text": " class ClickMeClass extends React.Component<",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb614",
+      "text": "   {},",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb615",
+      "text": "   { data: dataType[] }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb616",
+      "text": " > {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb617",
+      "text": "   constructor(props: {}) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb618",
+      "text": "     super(props);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb619",
+      "text": "     this.state = { data: [{ num: 0 }] };",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb61a",
+      "text": "   }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb61b",
+      "text": " ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb61c",
+      "text": "   createChildren(data?: dataType[]) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb61d",
+      "text": "     if (data === undefined) return \"\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb61e",
+      "text": "     return (",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb61f",
+      "text": "       <p>",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb620",
+      "text": "         クラスコンポーネント:<br />",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb621",
+      "text": "         {data[0].num}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb622",
+      "text": "       </p>",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb623",
+      "text": "     );",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb624",
+      "text": "   }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb625",
+      "text": " ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb626",
+      "text": "   render() {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb627",
+      "text": "     return (",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb628",
+      "text": "       <div",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb629",
+      "text": "         onClick={() => {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb62a",
+      "text": "           if (this.state.data === undefined) return;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb62b",
+      "text": "           const d = this.state.data;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb62c",
+      "text": "           d[0].num = 1;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb62d",
+      "text": "           console.log(d);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb62e",
+      "text": "           this.setState({ data: d });",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb62f",
+      "text": "         }}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb630",
+      "text": "         style={divStyle}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb631",
+      "text": "       >",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb632",
+      "text": "         {this.createChildren(this.state.data)}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb633",
+      "text": "       </div>",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb634",
+      "text": "     );",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb635",
+      "text": "   }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb636",
+      "text": " }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb637",
+      "text": " ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb638",
+      "text": " const root = createRoot(document.body);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb639",
+      "text": " root.render(",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb63a",
+      "text": "   <div style={{ display: \"grid\", gap: 5 }}>",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb63b",
+      "text": "     <ClickMeFunc></ClickMeFunc>",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb63c",
+      "text": "     <ClickMeClass></ClickMeClass>",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb63d",
+      "text": "   </div>,",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    },
+    {
+      "id": "6366b7007838e30000bfb63e",
+      "text": " );",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675904,
+      "updated": 1667675904
+    }
+  ]
+}

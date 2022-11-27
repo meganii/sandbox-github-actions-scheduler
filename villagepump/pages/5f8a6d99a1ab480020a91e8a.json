@@ -1,0 +1,1527 @@
+{
+  "id": "5f8a6d99a1ab480020a91e8a",
+  "title": "pin-diary",
+  "created": 1602907546,
+  "updated": 1646396179,
+  "lines": [
+    {
+      "id": "5f8a6d99a1ab480020a91e8a",
+      "text": "pin-diary",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602907546,
+      "updated": 1602907566
+    },
+    {
+      "id": "5ff7231d1280f0000049a5b9",
+      "text": "Next version: [pin-diary-2]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1610031902,
+      "updated": 1610031913
+    },
+    {
+      "id": "620955df7838e300004b00aa",
+      "text": "Latest version: [pin-diary-6]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644778976,
+      "updated": 1646396179
+    },
+    {
+      "id": "5ff7231e1280f0000049a5ba",
+      "text": "[/icons/hr.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1610031902,
+      "updated": 1610031904
+    },
+    {
+      "id": "5f8a6d9d4daa920000ba9ff8",
+      "text": "from [今日の日付ページをトップに出すUserScriptとかどうかな]",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602907546,
+      "updated": 1602907546
+    },
+    {
+      "id": "5f8a6e814daa92000023ff31",
+      "text": "",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602907775,
+      "updated": 1602907775
+    },
+    {
+      "id": "5f8b0bdb4daa920000a3824a",
+      "text": "[https://gyazo.com/46f125003aa29d85020511ea68d2cf01]",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602948060,
+      "updated": 1602948060
+    },
+    {
+      "id": "5f8b0bda4daa920000a38249",
+      "text": "",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602948059,
+      "updated": 1602948059
+    },
+    {
+      "id": "5f8a6e824daa92000023ff32",
+      "text": "ひとまず単発で実行できるものは書けた",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602907776,
+      "updated": 1602907785
+    },
+    {
+      "id": "5f8a6e8b4daa92000023ff33",
+      "text": "\tただSPAとしてページが書き換わるときにうまく再描画しないと正しく表示されない",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602907785,
+      "updated": 1602907809
+    },
+    {
+      "id": "5f8a6ea54daa92000023ff34",
+      "text": " \tpushStateをハンドリングできるイベントがなさそう...",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602907810,
+      "updated": 1602912494
+    },
+    {
+      "id": "5f8a8521dd59fe0000f3280d",
+      "text": " \t　[/scrapboxlab/類似したタイトルのページを関連ページとして表示する]は`window.pushState`を書き換えて監視しています",
+      "userId": "5f3cf18043ed94001edd59fe",
+      "created": 1602913570,
+      "updated": 1602913675
+    },
+    {
+      "id": "5f8a853bdd59fe0000f3280e",
+      "text": " \t　ただ、それだとURLが変わるタイミングであってScrapboxのUIが書き変わるタイミングではないので、結局ページ内を監視することになりますが",
+      "userId": "5f3cf18043ed94001edd59fe",
+      "created": 1602913596,
+      "updated": 1602913696
+    },
+    {
+      "id": "5f8a80f01280f00000f8a5b4",
+      "text": " 対策",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602912495,
+      "updated": 1602912497
+    },
+    {
+      "id": "5f8a6f071280f0000015cf6c",
+      "text": "  `F5`を押す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602907910,
+      "updated": 1602912502
+    },
+    {
+      "id": "5f8a80f71280f00000f8a5b5",
+      "text": "  タイトル監視",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602912502,
+      "updated": 1602912521
+    },
+    {
+      "id": "5f8a81071280f00000f8a5b6",
+      "text": "   `MutationObserver`で監視",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602912517,
+      "updated": 1602912535
+    },
+    {
+      "id": "5f8a816e1280f00000f8a5b9",
+      "text": "    トップページにタイトル行ないから無理か",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602912620,
+      "updated": 1602912651
+    },
+    {
+      "id": "5f8a81791280f00000f8a5ba",
+      "text": "    代わりに`<title>`を監視する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602912631,
+      "updated": 1602912642
+    },
+    {
+      "id": "5f8a832e4daa920000b7f231",
+      "text": "    よさそう！",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602913067,
+      "updated": 1602913069
+    },
+    {
+      "id": "5f8ac8ec4daa9200007a2d67",
+      "text": "    試しに実装してみた うまく動いてそう",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602930924,
+      "updated": 1602930931
+    },
+    {
+      "id": "5f8c27694daa920000c75b9b",
+      "text": "    \tソート順を変えると崩れるから、そこも監視して再描画する必要がありそう",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1603020649,
+      "updated": 1603020683
+    },
+    {
+      "id": "5f8d6f641280f00000289071",
+      "text": "    \t [https://gyazo.com/e2d9370f6d33c872d7690c3101b47f67]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603104629,
+      "updated": 1603104631
+    },
+    {
+      "id": "5f8c335f1280f00000104d31",
+      "text": "    \t[- # dropdownMenuSortのinnerTextを監視する]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603023710,
+      "updated": 1606024027
+    },
+    {
+      "id": "5fb9fb6e1280f00000096a97",
+      "text": "    \t　ページ遷移時にDOMが消えてしまうので、監視がややこしくなる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606024047,
+      "updated": 1606024084
+    },
+    {
+      "id": "5fba01181280f00000194264",
+      "text": "    \t　監視の開始/終了のタイミングを測るのがややこしい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606025496,
+      "updated": 1606025522
+    },
+    {
+      "id": "5fb9fb541280f00000096a95",
+      "text": "    \t[- .page-list.clearfix .gridを監視する]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606024020,
+      "updated": 1606024997
+    },
+    {
+      "id": "5fb9fb981280f00000096a98",
+      "text": "    \t　[- どのページでもDOMが残る]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606024089,
+      "updated": 1606024999
+    },
+    {
+      "id": "5fb9ff281280f0000019425b",
+      "text": "    \t　scrapboxが大量にページカードを作るのにいちいち反応してpageがfreezeしてしまう。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606025000,
+      "updated": 1606025271
+    },
+    {
+      "id": "5fb9fa701280f00000aa5c1f",
+      "text": "    一度空の日付ページが作られてしまうと、それがずっとPinされてしまうバグがある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606023792,
+      "updated": 1606023817
+    },
+    {
+      "id": "5fb9fa891280f00000aa5c20",
+      "text": "    　[https://gyazo.com/b4404cecf4f3493197746362e88f8a6e]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606023817,
+      "updated": 1606023818
+    },
+    {
+      "id": "5fb9fa8a1280f00000aa5c21",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606023818,
+      "updated": 1606023818
+    },
+    {
+      "id": "5f8a81181280f00000f8a5b8",
+      "text": "   [/scrapboxlab/scrapbox.Layout]でトップページかどうかを判定",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602912535,
+      "updated": 1602912617
+    },
+    {
+      "id": "5f8a82ce4daa920000b7f230",
+      "text": "   \t検索結果ページでも同じ`list`になってしまうっぽい",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602912972,
+      "updated": 1602912986
+    },
+    {
+      "id": "5f8a8b3e1280f0000000d0c6",
+      "text": "   \t`<title>`の中身と併せて判定すればいけるかも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602915133,
+      "updated": 1602915174
+    },
+    {
+      "id": "5fa8d8eed43875000079d40d",
+      "text": "   \tこれはこれで便利だと思います[dnin.icon]",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1604901102,
+      "updated": 1613112351
+    },
+    {
+      "id": "5fa8d922d43875000079d40e",
+      "text": "   \t[https://i.imgur.com/eXAEMDX.png]",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1604901155,
+      "updated": 1604901155
+    },
+    {
+      "id": "5fa8d923d43875000079d40f",
+      "text": "    検索結果の先頭に日付ページが表示されるようになるのか。面白いな",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1604901155,
+      "updated": 1605079935
+    },
+    {
+      "id": "5f8c31aa1280f00000b6de23",
+      "text": " [/icons/done.icon][- 同じタブで別のprojectに移動すると、UserScriptが残ってしまう]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603023273,
+      "updated": 1603463930
+    },
+    {
+      "id": "5f8c31bf1280f00000b6de24",
+      "text": "  [- 直ってた]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603023294,
+      "updated": 1603463915
+    },
+    {
+      "id": "5f8c32ff1280f00000104d2e",
+      "text": "   [- URL欄に別のprojectのURLを入力して飛んだとき]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603023614,
+      "updated": 1603463917
+    },
+    {
+      "id": "5f92eafc1280f000004d7957",
+      "text": "  2020-10-23 23:39:03 直った",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603463932,
+      "updated": 1603463949
+    },
+    {
+      "id": "5f8c32984daa92000071ab7d",
+      "text": "  直って無さそう",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1603023512,
+      "updated": 1603023518
+    },
+    {
+      "id": "5f8c329e4daa92000071ab7e",
+      "text": "  \t`scrapbox.Project.name`で比較してるから全てのプロジェクトで動いてしまう",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1603023518,
+      "updated": 1603023577
+    },
+    {
+      "id": "5f8c33231280f00000104d2f",
+      "text": "  \t`villagepump`以外のサイトにいったら作動させないようなflagを導入すればいいかな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603023650,
+      "updated": 1603023682
+    },
+    {
+      "id": "5f8c33431280f00000104d30",
+      "text": "  \t\t`const isVillagepump = true`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603023682,
+      "updated": 1603023699
+    },
+    {
+      "id": "5f8c337c4daa920000a40d36",
+      "text": "  \t\t`if (location.pathname.slice(1, -1) !== scrapbox.Project.name) return`で直接指定するだけでいいと思う",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1603023740,
+      "updated": 1603023766
+    },
+    {
+      "id": "5f8c344d1280f00000104d37",
+      "text": "  \t\t\t[/icons/たしかに.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603023948,
+      "updated": 1603023967
+    },
+    {
+      "id": "5f8c34a71280f00000104d3a",
+      "text": "  \tflagだと対して変わらないかー",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603024038,
+      "updated": 1603024089
+    },
+    {
+      "id": "5f8c34ca1280f00000104d3b",
+      "text": "  \t意図",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603024073,
+      "updated": 1603024083
+    },
+    {
+      "id": "5f8c34db1280f00000104d3e",
+      "text": "  \t\tなるべく判定処理を減らすようにしたかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603024090,
+      "updated": 1603024100
+    },
+    {
+      "id": "5f8c354a1280f00000104d42",
+      "text": "  \t\t　villagepump以外のscrapbox projectで`handlePageChange`を実行させないのは最初からわかっている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603024202,
+      "updated": 1603024287
+    },
+    {
+      "id": "5f8c35a01280f00000104d43",
+      "text": "  \t\t　しかし現状は別projectでもタイトルが変更される度にEvent Handlerを呼び出して判定処理をするようになっている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603024287,
+      "updated": 1603024373
+    },
+    {
+      "id": "5f8c36051280f00000104d44",
+      "text": "  \t\t　いらない判定処理なので、最初から判定処理自体をしないようにしたかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603024388,
+      "updated": 1603024413
+    },
+    {
+      "id": "5f8c361e1280f00000104d45",
+      "text": "  \t\t　具体的には、villagepump以外のscrapbox projectに移動したタイミングで、`observer`の監視を止めるようにする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603024413,
+      "updated": 1603024436
+    },
+    {
+      "id": "5f8c36351280f00000104d46",
+      "text": "  \t\tしかし改めて考えてみると、そんな事する必要がないことに気づいた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603024436,
+      "updated": 1603024470
+    },
+    {
+      "id": "5f8c363e1280f00000104d47",
+      "text": "  \t\t　タイトルは頻繁に変わるわけではないので、処理速度に影響を与えることはない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603024445,
+      "updated": 1603024539
+    },
+    {
+      "id": "5f8c36cc1280f00000104d49",
+      "text": "  　　　処理速度を向上させたいなら、もっと別の部分をtuningすべき",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603024587,
+      "updated": 1603463955
+    },
+    {
+      "id": "5f9b29d04daa9200009069bc",
+      "text": " [stream]ページからトップページへの遷移だとtitleが変わらずに再描画ができてない",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1604004305,
+      "updated": 1604004338
+    },
+    {
+      "id": "5f9b29f24daa9200009069be",
+      "text": " \ttitleが更新されたときにtitleの内容ではなくてlocation.hrefを比較するのがよさそう",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1604004338,
+      "updated": 1604004369
+    },
+    {
+      "id": "5f9c22584daa920000b5b578",
+      "text": " \t\t実装してみた",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1604067929,
+      "updated": 1604067934
+    },
+    {
+      "id": "5f9c3fb34daa920000452f25",
+      "text": " \t\tなぜか期待通りに動かないと思ったらプロジェクト判定の条件式が逆だった",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1604075444,
+      "updated": 1604075463
+    },
+    {
+      "id": "5f9c3fc74daa920000452f26",
+      "text": " \t\t\tページ遷移時の再描画が全く実行されてなかった",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1604075463,
+      "updated": 1604075482
+    },
+    {
+      "id": "5f9c40c14daa9200009c5ca9",
+      "text": " \t\t\t多分これでちゃんと動くようになった",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1604075713,
+      "updated": 1604075723
+    },
+    {
+      "id": "5f9b30481280f000004e9dd9",
+      "text": " \t`<title>`以外を使ってページ遷移を監視する方法を探すかあ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604005953,
+      "updated": 1604005993
+    },
+    {
+      "id": "5f9b30761280f000004e9dda",
+      "text": " \t 雑にやるなら`#app-container`を監視すればいいけど、無駄にevent handlerが呼び出されてしまう。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604005999,
+      "updated": 1604006054
+    },
+    {
+      "id": "5f9b30ad1280f000004e9ddb",
+      "text": " \t 程よい頻度で発行されるeventないかなあ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1604006054,
+      "updated": 1604006074
+    },
+    {
+      "id": "5fcb34bb1280f00000ebc005",
+      "text": " [global汚染]しちゃうから、moduleでscopeを区切ったほうが良さそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607152827,
+      "updated": 1607152855
+    },
+    {
+      "id": "5fcb34d81280f00000ebc006",
+      "text": " 　でも後方互換性を保つのが難しいな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607152857,
+      "updated": 1607152889
+    },
+    {
+      "id": "5fcb34f81280f00000ebc007",
+      "text": " 　`import /api/code/villagepump/pin-diary/user.js`を使っている人に配慮しないといけない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607152889,
+      "updated": 1607152919
+    },
+    {
+      "id": "5f8a6d9d4daa920000ba9ff9",
+      "text": "",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602907546,
+      "updated": 1602907546
+    },
+    {
+      "id": "5f8a6d9d4daa920000ba9ffa",
+      "text": "code:user.js",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602907546,
+      "updated": 1602907561
+    },
+    {
+      "id": "5f92e84c1280f000008f2387",
+      "text": " const targetProject = 'villagepump';",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603463243,
+      "updated": 1603463243
+    },
+    {
+      "id": "5f92e84e1280f000008f2388",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603463246,
+      "updated": 1603463246
+    },
+    {
+      "id": "5f8ac7604daa92000038f458",
+      "text": " const handlePageChange = callback => {",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602930529,
+      "updated": 1602930533
+    },
+    {
+      "id": "5f8ac8af4daa920000cb1e51",
+      "text": "   callback()",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602930864,
+      "updated": 1602930865
+    },
+    {
+      "id": "5f8ac8b04daa920000cb1e52",
+      "text": "   let path = null",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602930864,
+      "updated": 1604067795
+    },
+    {
+      "id": "5fb9f1e81280f00000d4ed07",
+      "text": "   const handleObserve = (mutations) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606021609,
+      "updated": 1606024646
+    },
+    {
+      "id": "5fb9fd991280f00000899a58",
+      "text": "       // 全部実行する必要はないので、１個だけ取り出す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606025045,
+      "updated": 1606025045
+    },
+    {
+      "id": "5fb9f1fc1280f00000d4ed0a",
+      "text": "       if (scrapbox.Project.name !== targetProject)  return",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606021628,
+      "updated": 1606024113
+    },
+    {
+      "id": "5fb9f1fc1280f00000d4ed0b",
+      "text": "       ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606021628,
+      "updated": 1606021628
+    },
+    {
+      "id": "5fb9f1fc1280f00000d4ed0c",
+      "text": "       // URLが変わったときだけ実行する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606021628,
+      "updated": 1606021628
+    },
+    {
+      "id": "5fb9f1fc1280f00000d4ed0d",
+      "text": "       if (location.pathname !== path) callback()",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606021628,
+      "updated": 1606025327
+    },
+    {
+      "id": "5fba00cc1280f00000194261",
+      "text": "       ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606025420,
+      "updated": 1606025420
+    },
+    {
+      "id": "5fb9f1fc1280f00000d4ed0e",
+      "text": "       path = location.pathname",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606021628,
+      "updated": 1606021628
+    },
+    {
+      "id": "5fb9fdc71280f00000899a59",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606024648,
+      "updated": 1606024650
+    },
+    {
+      "id": "5f8ac7614daa92000038f45a",
+      "text": "   const observer1 = new MutationObserver(handleObserve);",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602930529,
+      "updated": 1606021648
+    },
+    {
+      "id": "5f8ac7614daa92000038f461",
+      "text": " ",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602930529,
+      "updated": 1602930529
+    },
+    {
+      "id": "5f8ac7614daa92000038f462",
+      "text": "   observer1.observe(document.querySelector('title'), { childList: true })",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602930529,
+      "updated": 1606021651
+    },
+    {
+      "id": "5f8ac7614daa92000038f463",
+      "text": " }",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602930529,
+      "updated": 1602930529
+    },
+    {
+      "id": "5f8ac7614daa92000038f459",
+      "text": " ",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602930529,
+      "updated": 1602930529
+    },
+    {
+      "id": "5f8a6d9d4daa920000ba9ffb",
+      "text": " const $ = (query, parent = document) => parent.querySelector(query)",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602907546,
+      "updated": 1602907546
+    },
+    {
+      "id": "5f8a6d9d4daa920000ba9ffc",
+      "text": " const $$ = query => [...document.querySelectorAll(query)]",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602907546,
+      "updated": 1602908837
+    },
+    {
+      "id": "5f8a73d21280f0000063fb57",
+      "text": " const zero = n => String(n).padStart(2, '0');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602909137,
+      "updated": 1602909138
+    },
+    {
+      "id": "5fb9e7ff1280f00000d093e1",
+      "text": " const timestamp = date => `${date.getFullYear()}/${zero(date.getMonth() + 1)}/${zero(date.getDate())}`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606019071,
+      "updated": 1606019137
+    },
+    {
+      "id": "5f8a6d9d4daa920000ba9ffd",
+      "text": " ",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602907546,
+      "updated": 1602907546
+    },
+    {
+      "id": "5f8a73584daa92000003f071",
+      "text": " const today = timestamp(new Date());",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602909013,
+      "updated": 1606019613
+    },
+    {
+      "id": "5f8a73584daa92000003f072",
+      "text": " const path = `/${targetProject}/${encodeURIComponent(today)}`",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602909013,
+      "updated": 1606019581
+    },
+    {
+      "id": "5f8a73584daa92000003f073",
+      "text": " ",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602909013,
+      "updated": 1602909024
+    },
+    {
+      "id": "5fcb34691280f00000ebc003",
+      "text": " handlePageChange(() => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607152746,
+      "updated": 1607152820
+    },
+    {
+      "id": "5f8ac80b4daa92000038f467",
+      "text": "   // トップページ以外では実行しない",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602930699,
+      "updated": 1602930706
+    },
+    {
+      "id": "5f8ac8064daa92000038f466",
+      "text": "   if (location.pathname.slice(1, -1) !== targetProject) return",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602930694,
+      "updated": 1603024023
+    },
+    {
+      "id": "5f8ac8044daa92000038f465",
+      "text": " ",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602930692,
+      "updated": 1602930692
+    },
+    {
+      "id": "5f8a7af94daa92000003f07b",
+      "text": "   const pinCards = $$('.page-list-item.grid-style-item.pin')",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602910966,
+      "updated": 1606020792
+    },
+    {
+      "id": "5fb9ee331280f0000072659f",
+      "text": "   const [actualLastPin, lastPin] = pinCards.slice(pinCards.length - 2)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020660,
+      "updated": 1606020880
+    },
+    {
+      "id": "5fb9e3721280f00000783501",
+      "text": "   console.log('lastPin: %o',lastPin)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606017906,
+      "updated": 1606017941
+    },
+    {
+      "id": "5f8a7be31280f00000afefdd",
+      "text": "↑これは何でしょうか？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602911202,
+      "updated": 1602911262
+    },
+    {
+      "id": "5f8a7bf31280f00000afefde",
+      "text": "　最後にpinしたページを削除している？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602911218,
+      "updated": 1602911254
+    },
+    {
+      "id": "5f8a7c214daa920000f81726",
+      "text": "　最後にpinしたページを配列から取り出してるだけです",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911263,
+      "updated": 1602911284
+    },
+    {
+      "id": "5f8a7c5c1280f00000afefdf",
+      "text": "　[Array.prototype.pop()]は要素削除も行ってしまいます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602911323,
+      "updated": 1602911348
+    },
+    {
+      "id": "5f8a7c844daa920000f8172e",
+      "text": "　\t`[...document.querySelectorAll(query)]`で新たに生成した配列なのでDOMとは関係ないです",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911362,
+      "updated": 1602911372
+    },
+    {
+      "id": "5f8a7c8f1280f00000afefe2",
+      "text": "　\tあ、そうでした。これコピーしたことになるんですね",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602911374,
+      "updated": 1606019873
+    },
+    {
+      "id": "5f8a7bda1280f00000afefdc",
+      "text": "code:user.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602911193,
+      "updated": 1602911198
+    },
+    {
+      "id": "5f8a79401280f0000068e6aa",
+      "text": "   // 日付ページを移動する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602910527,
+      "updated": 1602930730
+    },
+    {
+      "id": "5f8a73664daa92000003f075",
+      "text": "   const diary = $(`.page-list-item a[href=\"${path}\"]`)?.parentNode",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602909027,
+      "updated": 1602930730
+    },
+    {
+      "id": "5fb9e38c1280f00000783502",
+      "text": "   console.log('The diary page card: %o',diary)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606017932,
+      "updated": 1606017954
+    },
+    {
+      "id": "5fb9eabb1280f00000add436",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606019772,
+      "updated": 1606019905
+    },
+    {
+      "id": "5fb9eb411280f00000f7f012",
+      "text": "[- top pageに戻ったときにPinがおかしなことになる現象はこれで防げるはず]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606019906,
+      "updated": 1606020136
+    },
+    {
+      "id": "5fb9ecb81280f00000f7f043",
+      "text": " 日付ページよりも更新日時が新しいページがあるときに発生する現象",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020280,
+      "updated": 1606020280
+    },
+    {
+      "id": "5fb9ecac1280f00000f7f025",
+      "text": " code:user.old.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020269,
+      "updated": 1606020276
+    },
+    {
+      "id": "5fb9ecac1280f00000f7f027",
+      "text": "    if (lastPin === diary) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020269,
+      "updated": 1607164309
+    },
+    {
+      "id": "5fb9ecac1280f00000f7f028",
+      "text": "      console.log('The diary page card is already pinned.');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020269,
+      "updated": 1606020276
+    },
+    {
+      "id": "5fb9ecac1280f00000f7f029",
+      "text": "      return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020269,
+      "updated": 1606020276
+    },
+    {
+      "id": "5fb9ecac1280f00000f7f02a",
+      "text": "    }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020269,
+      "updated": 1606020276
+    },
+    {
+      "id": "5fb9ecb11280f00000f7f03e",
+      "text": " 防げなかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020273,
+      "updated": 1606020273
+    },
+    {
+      "id": "5fb9ecb11280f00000f7f03f",
+      "text": " \ttop pageに戻るたびに、日付ページの位置を直したほうが確実だな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020273,
+      "updated": 1606020273
+    },
+    {
+      "id": "5fcb609d1280f00000b1b5df",
+      "text": " 2020-12-05 19:27:12 pinしたページがが一つだけだと誤判定が起こってしまっていた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607164061,
+      "updated": 1607164084
+    },
+    {
+      "id": "5fcb60b41280f00000b1b5e0",
+      "text": " 　`lastPin===undefined`かつ`diary===undefined`だと最後のpinが日付ページだと誤判定してしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607164084,
+      "updated": 1607164129
+    },
+    {
+      "id": "5fcb60d81280f00000b1b5e1",
+      "text": " 　undefined判定を追加しておいた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607164120,
+      "updated": 1607164142
+    },
+    {
+      "id": "5fb9ecbd1280f00000f7f044",
+      "text": "code:user.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020285,
+      "updated": 1606020500
+    },
+    {
+      "id": "5fb9ecc71280f00000f7f045",
+      "text": "   // pinの最後が日付ページだったらつけ直す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020295,
+      "updated": 1606020321
+    },
+    {
+      "id": "5fb9ecc71280f00000f7f046",
+      "text": "   if (actualLastPin && (lastPin ?? actualLastPin) === diary) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020295,
+      "updated": 1607164181
+    },
+    {
+      "id": "5fb9ecc71280f00000f7f047",
+      "text": "     console.log('The diary page card is already pinned.');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020295,
+      "updated": 1606020297
+    },
+    {
+      "id": "5fb9ee501280f000007265a0",
+      "text": "     console.log('actualLastPin: %o',actualLastPin)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020688,
+      "updated": 1606020693
+    },
+    {
+      "id": "5fb9ed6f1280f00000f7f04e",
+      "text": "     actualLastPin?.after(lastPin);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020463,
+      "updated": 1606020478
+    },
+    {
+      "id": "5fb9ef491280f0000012131f",
+      "text": "     console.log('Finish pinning the today\\'s diary page.')",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020937,
+      "updated": 1606020938
+    },
+    {
+      "id": "5fb9ecc71280f00000f7f048",
+      "text": "     return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020295,
+      "updated": 1606020297
+    },
+    {
+      "id": "5fb9ecc71280f00000f7f049",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020295,
+      "updated": 1606020297
+    },
+    {
+      "id": "5fb9ecb61280f00000f7f042",
+      "text": "日付ページがなかったら、新しくカードを作る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606020278,
+      "updated": 1606020278
+    },
+    {
+      "id": "5f8a79a21280f0000068e6ab",
+      "text": "code:user.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602910626,
+      "updated": 1602910628
+    },
+    {
+      "id": "5f8a7bcf4daa920000f81723",
+      "text": "   if (diary) {",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911180,
+      "updated": 1602930748
+    },
+    {
+      "id": "5f8a77501280f0000068e6a2",
+      "text": "     diary.classList.add('pin');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602910031,
+      "updated": 1602930748
+    },
+    {
+      "id": "5f8a788e1280f0000068e6a5",
+      "text": "     // pinを作る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602910349,
+      "updated": 1602930748
+    },
+    {
+      "id": "5f8a78921280f0000068e6a6",
+      "text": "     const pinMark = document.createElement('div');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602910353,
+      "updated": 1602930748
+    },
+    {
+      "id": "5f8a7b121280f00000afefd6",
+      "text": "     pinMark.classList.add('pin');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602910993,
+      "updated": 1602930748
+    },
+    {
+      "id": "5f8a787d1280f0000068e6a4",
+      "text": "     $('.hover', diary).after(pinMark)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602910332,
+      "updated": 1602930748
+    },
+    {
+      "id": "5f8a7c5b4daa920000f8172c",
+      "text": "     (lastPin ?? actualLastPin)?.after(diary)",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911321,
+      "updated": 1607164376
+    },
+    {
+      "id": "5f8a7c5c4daa920000f8172d",
+      "text": "   } else {",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911322,
+      "updated": 1602930748
+    },
+    {
+      "id": "5fb9e51f1280f0000050459e",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018336,
+      "updated": 1606018363
+    },
+    {
+      "id": "5fb9e5401280f000005045a1",
+      "text": "以下のコードだと、`lastPin`のサムネイルが画像だった場合にバグる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018368,
+      "updated": 1606018398
+    },
+    {
+      "id": "5fb9e55d1280f000005045a3",
+      "text": "\t`div.description`ではなく`div.icon`になるため",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018398,
+      "updated": 1606018433
+    },
+    {
+      "id": "5fb9e5201280f0000050459f",
+      "text": " code:user.old.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018337,
+      "updated": 1606018367
+    },
+    {
+      "id": "5fb9e3a51280f00000783503",
+      "text": "      console.log('No diary page card found. Creating it....')",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606017958,
+      "updated": 1606018367
+    },
+    {
+      "id": "5f8a7cb44daa920000f81733",
+      "text": "      const pin = lastPin.cloneNode(true)",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911409,
+      "updated": 1606018367
+    },
+    {
+      "id": "5f8a7cb44daa920000f81734",
+      "text": "      pin.style.opacity = 0.7",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911409,
+      "updated": 1606018367
+    },
+    {
+      "id": "5fb9e3da1280f00000783504",
+      "text": "      console.log('The new pinned card: %o',pin)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018011,
+      "updated": 1606018367
+    },
+    {
+      "id": "5f8a7cc44daa920000f81736",
+      "text": "      $('a', pin).href = path",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911425,
+      "updated": 1606018367
+    },
+    {
+      "id": "5f8a7cc94daa920000f81737",
+      "text": "      $('.title', pin).textContent = today",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911430,
+      "updated": 1606019591
+    },
+    {
+      "id": "5f8a7ccc4daa920000f81738",
+      "text": "      $('.description', pin).innerHTML = ''",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911434,
+      "updated": 1606018367
+    },
+    {
+      "id": "5f8a7cd34daa920000f81739",
+      "text": "      (lastPin ?? actualLastPin)?.after(pin)",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911441,
+      "updated": 1607164382
+    },
+    {
+      "id": "5fb9e5831280f000005045a5",
+      "text": " 下手にcloneせず、1からDOMを作ったほうが無難かも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018435,
+      "updated": 1606018461
+    },
+    {
+      "id": "5fb9e52c1280f000005045a0",
+      "text": "code:user.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018348,
+      "updated": 1606018356
+    },
+    {
+      "id": "5fb9e59f1280f000005045a6",
+      "text": "     console.log('No diary page card found. Creating it....')",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018463,
+      "updated": 1606018470
+    },
+    {
+      "id": "5fb9e5a61280f000005045a7",
+      "text": "     lastPin?.insertAdjacentHTML('afterend', `",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018471,
+      "updated": 1606018582
+    },
+    {
+      "id": "5fb9e60f1280f000005045a8",
+      "text": "       <li class=\"page-list-item grid-style-item pin\" style=\"opacity: 0.7;\">",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018575,
+      "updated": 1606018616
+    },
+    {
+      "id": "5fb9e63a1280f000005045aa",
+      "text": "         <a href=\"${path}\" rel=\"route\">",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018619,
+      "updated": 1606019563
+    },
+    {
+      "id": "5fb9e6581280f000005045ab",
+      "text": "           <div class=\"hover\"></div>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018649,
+      "updated": 1606018879
+    },
+    {
+      "id": "5fb9e65e1280f000005045ac",
+      "text": "           <div class=\"pin\"></div>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018654,
+      "updated": 1606018883
+    },
+    {
+      "id": "5fb9e6641280f000005045ad",
+      "text": "           <div class=\"content\">",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018661,
+      "updated": 1606018669
+    },
+    {
+      "id": "5fb9e66d1280f000005045ae",
+      "text": "             <div class=\"header\">",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018669,
+      "updated": 1606018674
+    },
+    {
+      "id": "5fb9e6721280f000005045af",
+      "text": "               <div class=\"title\">${today}</div>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018674,
+      "updated": 1606019594
+    },
+    {
+      "id": "5fb9e6a01280f000005045b2",
+      "text": "             </div>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018721,
+      "updated": 1606018724
+    },
+    {
+      "id": "5fb9e6f61280f00000b46720",
+      "text": "             <div class=\"description\"></div>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018807,
+      "updated": 1606018889
+    },
+    {
+      "id": "5fb9e6a41280f000005045b3",
+      "text": "           </div>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018724,
+      "updated": 1606018728
+    },
+    {
+      "id": "5fb9e6aa1280f000005045b4",
+      "text": "         </a>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018731,
+      "updated": 1606018733
+    },
+    {
+      "id": "5fb9e6ad1280f000005045b5",
+      "text": "       </li>`)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018734,
+      "updated": 1606018744
+    },
+    {
+      "id": "5f8a7cb24daa920000f81732",
+      "text": "   }",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911407,
+      "updated": 1602930748
+    },
+    {
+      "id": "5fb9e7821280f00000d093d9",
+      "text": "   console.log('Finish pinning the today\\'s diary page.')",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606018946,
+      "updated": 1606018977
+    },
+    {
+      "id": "5f8ac83d4daa92000038f468",
+      "text": " });",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602930749,
+      "updated": 1607152810
+    },
+    {
+      "id": "5f8ac4204daa920000b3c0bc",
+      "text": "",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602929697,
+      "updated": 1602929697
+    },
+    {
+      "id": "5f8ac4214daa920000b3c0bd",
+      "text": "",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602929698,
+      "updated": 1602929698
+    },
+    {
+      "id": "5f8a7cae4daa920000f8172f",
+      "text": "lastPinが空になる場合は何かおかしい状況なので、そもそも止めたほうがいいかもしれない",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911403,
+      "updated": 1602911615
+    },
+    {
+      "id": "5f8a7d8c1280f00000f8a5b1",
+      "text": " 一つもPinがない状態とか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602911627,
+      "updated": 1602911724
+    },
+    {
+      "id": "5f8a7d9a1280f00000f8a5b2",
+      "text": "  [/villagepump]に限定すれば、ありえない状況ですけど……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602911640,
+      "updated": 1602911709
+    },
+    {
+      "id": "5f8a7dbe1280f00000f8a5b3",
+      "text": " 別のprojectにも転用することをちょっと想定しました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602911676,
+      "updated": 1602911702
+    },
+    {
+      "id": "5f8a7def4daa9200006d2e3a",
+      "text": " その場合なら最初に追加しないといけなさそう",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911725,
+      "updated": 1602913181
+    },
+    {
+      "id": "5f8a7caf4daa920000f81731",
+      "text": "",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911404,
+      "updated": 1602911404
+    },
+    {
+      "id": "5f8ac41b4daa920000b3c0bb",
+      "text": "",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602929692,
+      "updated": 1602929692
+    },
+    {
+      "id": "5f8a725e4daa920000baa00e",
+      "text": "これでどうかな？",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602908764,
+      "updated": 1602908821
+    },
+    {
+      "id": "5f8a72971280f0000063fb52",
+      "text": "\t`$$(\\`.page-list-item a[href=\"/villagepump/${encodeURIComponent(date)}\"]\\`)`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908822,
+      "updated": 1605080206
+    },
+    {
+      "id": "5f8c313f1280f00000b6de22",
+      "text": "\t `'`を`に変えようとしたらインラインコードがそこで切れてしまうことに気づいた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1603023166,
+      "updated": 1603023194
+    },
+    {
+      "id": "5f8c32464daa9200006589c1",
+      "text": "\t `\\``のようにエスケープできます",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1603023430,
+      "updated": 1603023440
+    },
+    {
+      "id": "5fab94781280f000001087cb",
+      "text": "\t  サンクスです！",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1605080185,
+      "updated": 1605080196
+    },
+    {
+      "id": "5f8a72911280f0000063fb51",
+      "text": "\tよさそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908815,
+      "updated": 1602908930
+    },
+    {
+      "id": "5f8a73091280f0000063fb53",
+      "text": "\t[- 親要素ってどうやってcss selectorで取得するんだろう?]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908936,
+      "updated": 1602909033
+    },
+    {
+      "id": "5f8a736c1280f0000063fb56",
+      "text": "\t 取得できないっぽい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602909034,
+      "updated": 1602909042
+    },
+    {
+      "id": "5f8a731a1280f0000063fb54",
+      "text": "\t\tまあ[/icons/javascript.icon]の`HTMLElement.parentNode`で取得できるから別ににいいか。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908952,
+      "updated": 1602908992
+    },
+    {
+      "id": "5f8a7c524daa920000f81727",
+      "text": "",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911311,
+      "updated": 1602911313
+    },
+    {
+      "id": "5f8a7c544daa920000f8172b",
+      "text": "",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602911313,
+      "updated": 1602911313
+    },
+    {
+      "id": "5f8a6f961280f0000015cf70",
+      "text": "うまいこと`.description`の中身作れないかな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908053,
+      "updated": 1602908065
+    },
+    {
+      "id": "5f8a6fa21280f0000015cf71",
+      "text": " code:javascript",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908065,
+      "updated": 1602908071
+    },
+    {
+      "id": "5f8a6fa91280f0000015cf72",
+      "text": "  await fetch(`/api/pages/${path}`)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908071,
+      "updated": 1602908134
+    },
+    {
+      "id": "5f8a6fb11280f0000015cf73",
+      "text": "  \t.then(res => res.json())",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908080,
+      "updated": 1602908093
+    },
+    {
+      "id": "5f8a6fbf1280f0000015cf74",
+      "text": "  \t.then(json => json.descriptions.join('\\n'))",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908094,
+      "updated": 1602908168
+    },
+    {
+      "id": "5f8a704f4daa9200000220ea",
+      "text": "\t記法をうまく描画しないといけ無さそうだなぁ",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602908237,
+      "updated": 1602908250
+    },
+    {
+      "id": "5f8a70a41280f0000063fb46",
+      "text": "\t [/customize/scrapbox-parser.min.js]を使えば記法をparseして描画できます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908322,
+      "updated": 1602908362
+    },
+    {
+      "id": "5f8a70cc1280f0000063fb47",
+      "text": "\t でもそこまでする必要あるかなあ？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908363,
+      "updated": 1602908372
+    },
+    {
+      "id": "5f8a70604daa9200000220eb",
+      "text": "\tまず入れるだけ入れてみるか",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602908253,
+      "updated": 1602909251
+    },
+    {
+      "id": "5f8a709f4daa9200000220ec",
+      "text": "\tいや当日のページが存在するなら、下に表示されているはずだから、単に移すだけでいいんじゃないか？",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602908317,
+      "updated": 1602908335
+    },
+    {
+      "id": "5f8a70dd1280f0000063fb48",
+      "text": "\t　下に表示されている場合はそれでいけます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908380,
+      "updated": 1602908395
+    },
+    {
+      "id": "5f8a70ed1280f0000063fb49",
+      "text": "\t　ただし、たくさんページを更新して当日ページが描画領域外に押し出されると、スクロールするまでDOMに入らなくなります。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908396,
+      "updated": 1602908453
+    },
+    {
+      "id": "5f8a71e91280f0000063fb4f",
+      "text": "  \t`document.querySelector('.grid').children.length`を実行したら101が返ってきました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908648,
+      "updated": 1602949699
+    },
+    {
+      "id": "5f8a71301280f0000063fb4a",
+      "text": "\t　その場合を考慮すると、やはりAPIを叩くのが確実かと思います",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908463,
+      "updated": 1602908480
+    },
+    {
+      "id": "5f8a71a64daa92000003f06e",
+      "text": " \t　100ページも更新されるのはそうそうないんじゃないか？",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602908579,
+      "updated": 1609133915
+    },
+    {
+      "id": "5f8a71c41280f0000063fb4b",
+      "text": " \t　[- それもそうですね。じゃあ大丈夫かな]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602908611,
+      "updated": 1609133923
+    },
+    {
+      "id": "5fe96f5d1280f000009219fe",
+      "text": "  \t画面が小さいと描画領域外に押し出されてしまうことがある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1609133917,
+      "updated": 1609133949
+    },
+    {
+      "id": "5f8a6d9d4daa920000baa00c",
+      "text": "",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602907546,
+      "updated": 1602907546
+    }
+  ]
+}

@@ -1,0 +1,449 @@
+{
+  "id": "629a5faf4534e1001d41d8ff",
+  "title": "generatorを返す多重forループがあるとき、ループの深さを減らしたい (Python)",
+  "created": 1654284208,
+  "updated": 1654385559,
+  "lines": [
+    {
+      "id": "629a5faf4534e1001d41d8ff",
+      "text": "generatorを返す多重forループがあるとき、ループの深さを減らしたい (Python)",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284395
+    },
+    {
+      "id": "629a5faee5172d0000ff8697",
+      "text": "from [2022/06/03]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff8698",
+      "text": "Pythonで、generatorを返す多重forループがあるとき、ループの深さを減らしたいが方法がわからない[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284215
+    },
+    {
+      "id": "629a5faee5172d0000ff8699",
+      "text": "　code:original.py",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff869a",
+      "text": "　 def f():",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff869b",
+      "text": " 　  for i in I:",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff869c",
+      "text": " 　    for j in J:",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff869d",
+      "text": " 　      yield h(i, j)",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff869e",
+      "text": "　例えば複数の関数に分割したい",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff869f",
+      "text": "  こんな感じに分割できるが、`I`が大きい時に`f()`が遅い",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86a0",
+      "text": "\t\t\tcode:py",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86a1",
+      "text": "\t\t\t from itertools import chain",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86a2",
+      "text": "\t\t\t def f():",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86a3",
+      "text": "\t\t\t   generators = []",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86a4",
+      "text": "\t\t\t\t  for i in I:",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86a5",
+      "text": "\t\t\t     generators.append(g(i))",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86a6",
+      "text": "\t\t\t   return chain(*generators)",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86a7",
+      "text": "\t\t\t ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86a8",
+      "text": "\t\t\t def g(i):",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86a9",
+      "text": "\t\t\t \tfor j in J:",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86aa",
+      "text": "\t\t\t \t  yield h(i, j)",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86ab",
+      "text": "　[forのネストを解消することは早すぎる抽象化]を思い出した",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86ac",
+      "text": "　実際は5重ループで、[flake8]というやつに`too complex`と言われてcommitできずに困っている",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86ad",
+      "text": "　　flake8を無効にすればいいのかもしれない",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86ae",
+      "text": "　[itertools.product()]を使う手もあるか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86af",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86b0",
+      "text": "[nishio.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86b1",
+      "text": " code:python",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86b2",
+      "text": "  def f():",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86b3",
+      "text": "    generators = []",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86b4",
+      "text": "    for i in I:",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86b5",
+      "text": "      generators.append(g(i))",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86b6",
+      "text": "    return chain(*generators)",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86b7",
+      "text": "　ここでeagerなリストを作る必要はないのでは",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86b8",
+      "text": "\tcode:python",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86b9",
+      "text": "\t def g(i):",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86ba",
+      "text": "      for j in range(3):",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86bb",
+      "text": "          yield f\"{i}{j}\"",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86bc",
+      "text": "  ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86bd",
+      "text": "  def f():",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86be",
+      "text": "      return chain(*(g(i) for i in \"ABC\"))",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86bf",
+      "text": "      ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86c0",
+      "text": "  print(list(f()))",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86c1",
+      "text": "  # => ['A0', 'A1', 'A2', 'B0', 'B1', 'B2', 'C0', 'C1', 'C2']",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86c2",
+      "text": "　やりたいことはこういうこと？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a601ee5172d0000ff86d0",
+      "text": "　ありがとうございます[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284321,
+      "updated": 1654284337
+    },
+    {
+      "id": "629a5faee5172d0000ff86c3",
+      "text": "　内包表記にしたぶん速くなったぽいですが、外側のループが大きい時に遅い問題がやはりあります。。[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86c4",
+      "text": "　　[https://gyazo.com/73f9c80321f7b786b1eccdcb4e6a2cb7]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86c5",
+      "text": "　　[https://colab.research.google.com/gist/yosider/706e9fb5226dce0624f1f92336d65468/generator.ipynb Google Colab]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86c6",
+      "text": "　　chain(*iterables)は引数をunpackして渡すので、iterablesが展開されてしまう",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629beb7eaff09e0000b2afa2",
+      "text": "　　　あー、そうか、確かに[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1654385535,
+      "updated": 1654385544
+    },
+    {
+      "id": "629a5faee5172d0000ff86c7",
+      "text": "　chain.from_iterable()というのを使うといけた！[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86c8",
+      "text": "　　[https://gyazo.com/7f265c0f74269d2660ce1e2ef5ba6ec6]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86c9",
+      "text": "　　chain.from_iterable(iterables)はiterablesを展開せずに渡せる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86ca",
+      "text": "　　https://docs.python.org/ja/3/library/itertools.html#itertools.chain",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5faee5172d0000ff86cb",
+      "text": "　　listのほうではダメ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629a5fd1e5172d0000ff86cd",
+      "text": "　　結論：generatorのgeneratorをつくって、[itertools.chain.from_iterable()]でつなげる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284243,
+      "updated": 1654318419
+    },
+    {
+      "id": "629a5faee5172d0000ff86cc",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654284208,
+      "updated": 1654284208
+    },
+    {
+      "id": "629bbba7e5172d0000038aab",
+      "text": "[yield from式]というそのものズバリのやつがあった…！[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654373287,
+      "updated": 1654373389
+    },
+    {
+      "id": "629bbbc6e5172d0000038aac",
+      "text": "　[https://gyazo.com/a0624ead1f0be93c4e7efad585b1e1cb]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654373319,
+      "updated": 1654373321
+    },
+    {
+      "id": "629bbbc8e5172d0000038aad",
+      "text": "　[/programming-notes/yield from式]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1654373321,
+      "updated": 1654373345
+    },
+    {
+      "id": "629a6006e5172d0000ff86ce",
+      "text": "　🎉[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1654284296,
+      "updated": 1654385559
+    },
+    {
+      "id": "629beb8baff09e0000b2afa3",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1654385547,
+      "updated": 1654385547
+    }
+  ]
+}

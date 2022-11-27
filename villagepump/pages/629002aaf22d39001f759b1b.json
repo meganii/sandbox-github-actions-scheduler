@@ -1,0 +1,652 @@
+{
+  "id": "629002aaf22d39001f759b1b",
+  "title": "JavaScriptでfunctionとarrow functionのどちらを使えばいいだろうか",
+  "created": 1653605038,
+  "updated": 1653805388,
+  "lines": [
+    {
+      "id": "629002aaf22d39001f759b1b",
+      "text": "JavaScriptでfunctionとarrow functionのどちらを使えばいいだろうか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665ba0",
+      "text": "from [2022/03/10]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665ba2",
+      "text": "`function func() {...}`と`func = () => {...}`ってどっちを使えばいいのだろうか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605076
+    },
+    {
+      "id": "629002ae1280f00000665ba3",
+      "text": " (一方しか使えない場合は除く)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665ba4",
+      "text": " その時の気分でいいのかな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665ba5",
+      "text": " thisがあれな感じになるので後者の方が良い気がする[inajob.icon][nishio.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665ba6",
+      "text": " \t違いを全て上げろといわれてさっと言えない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665ba7",
+      "text": " \t\t[https://qiita.com/suin/items/a44825d253d023e31e4d JavaScript: 通常の関数とアロー関数の違いは「書き方だけ」ではない。異なる性質が10個ほどある。 - Qiita]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665ba8",
+      "text": "  \t前者だと巻き上げされるのも気持ち悪いな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665ba9",
+      "text": "  \t\t後者は変数（または定数）に代入しているので、巻き上げができないのも自然に理解できる[Mijinko_SD.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629007c91280f00000665bbd",
+      "text": "  \t\t[ES Modules]内だとふつうに巻き上げされる[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653606345,
+      "updated": 1653606365
+    },
+    {
+      "id": "629002ae1280f00000665baa",
+      "text": " あ、`this`が関わる場合は`(一方しか使えない場合は除く)`に含めたつもりでした[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bab",
+      "text": "  これは[arrow function]一択しかない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bac",
+      "text": " [scrapbox-userscript-std]とかは基本的に[function (JS)]を使っているのですが、`function`にする理由がなければ全部arrow functionにしちゃったほうがいいのかなーと思ったり",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605090
+    },
+    {
+      "id": "629002ae1280f00000665bad",
+      "text": " トップレベルやオブジェクトのスコープでは`function`、残りは全て`arrow function`にしてる[kuuote.icon][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bae",
+      "text": "  code:javascript",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665baf",
+      "text": "   functon hoge(fn) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bb0",
+      "text": "     return {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bb1",
+      "text": "       run() {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bb2",
+      "text": "         fn();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bb3",
+      "text": "       }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bb4",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bb5",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bb6",
+      "text": "   hoge(() => console.log(42));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bb7",
+      "text": "  意味の無いコードだけどまあこんな感じで",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bb8",
+      "text": "  object scopeはarrrow functionにしてる[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "62902a83198270000033ba64",
+      "text": "  object scopeってなんですか？[mrsekut.icon]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653615235,
+      "updated": 1653615241
+    },
+    {
+      "id": "629310901280f0000052c098",
+      "text": "  多分`{ name: \"...\", value: 23}`とobjectを定義するときの、その`{}`の中のことだと思います[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805201,
+      "updated": 1653805242
+    },
+    {
+      "id": "629310b91280f0000052c099",
+      "text": "   object scopeでfunctionを使う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805242,
+      "updated": 1653805251
+    },
+    {
+      "id": "629310cb1280f0000052c09b",
+      "text": "    code:js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805260,
+      "updated": 1653805262
+    },
+    {
+      "id": "629310cd1280f0000052c09c",
+      "text": "     const reader = {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805262,
+      "updated": 1653805274
+    },
+    {
+      "id": "629310d91280f0000052c09d",
+      "text": "       id: \"aaa\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805274,
+      "updated": 1653805279
+    },
+    {
+      "id": "629310de1280f0000052c09e",
+      "text": "       read() {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805279,
+      "updated": 1653805287
+    },
+    {
+      "id": "629310e71280f0000052c09f",
+      "text": "         /* ... */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805288,
+      "updated": 1653805296
+    },
+    {
+      "id": "629310eb1280f0000052c0a1",
+      "text": "       },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805292,
+      "updated": 1653805292
+    },
+    {
+      "id": "629310e91280f0000052c0a0",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805290,
+      "updated": 1653805291
+    },
+    {
+      "id": "629310c01280f0000052c09a",
+      "text": "   object scopeでarrow functionを使う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805251,
+      "updated": 1653805259
+    },
+    {
+      "id": "629310f31280f0000052c0a2",
+      "text": "    code:js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805300,
+      "updated": 1653805388
+    },
+    {
+      "id": "629310f51280f0000052c0a3",
+      "text": "     const reader = {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805302,
+      "updated": 1653805388
+    },
+    {
+      "id": "629310f61280f0000052c0a4",
+      "text": "       id: \"aaa\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805302,
+      "updated": 1653805388
+    },
+    {
+      "id": "629310f61280f0000052c0a5",
+      "text": "       read: () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805302,
+      "updated": 1653805388
+    },
+    {
+      "id": "629310f61280f0000052c0a6",
+      "text": "         /* ... */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805302,
+      "updated": 1653805388
+    },
+    {
+      "id": "629310f61280f0000052c0a7",
+      "text": "       },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805302,
+      "updated": 1653805388
+    },
+    {
+      "id": "629310f61280f0000052c0a8",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805302,
+      "updated": 1653805388
+    },
+    {
+      "id": "629002ae1280f00000665bb9",
+      "text": "\t古い癖抜けきれてなくてfunction派だが、呼び出しがネストするなどthis問題でやばそうなときはarrowさんに頼る[sta.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bba",
+      "text": " 明示的なfunctionを使う理由がないならアロー関数を使う[nishio.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bbb",
+      "text": "  友人の記事: [https://qiita.com/shibukawa/items/19ab5c381bbb2e09d0d9 イマドキのJavaScriptの書き方2018 - Qiita]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "629002ae1280f00000665bbc",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653605038,
+      "updated": 1653605038
+    },
+    {
+      "id": "62902a8b198270000033ba65",
+      "text": "\t1つのファイルで完結するスクリプトを書く時は、泣く泣くfunctionを使っている[mrsekut.icon]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653615243,
+      "updated": 1653615288
+    },
+    {
+      "id": "62902ab7198270000033ba69",
+      "text": "\t\tmain関数を上に書きたいけど、arrowだと書けない",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653615288,
+      "updated": 1653615301
+    },
+    {
+      "id": "62902aa7198270000033ba67",
+      "text": "\t\t[/mrsekut-p/main関数を上部に書く#6124acae1982700000b0c153]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653615272,
+      "updated": 1653615272
+    },
+    {
+      "id": "62902a8f198270000033ba66",
+      "text": "　　主張の意味がよくわからない[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1653615248,
+      "updated": 1653635101
+    },
+    {
+      "id": "6290781daff09e000093c246",
+      "text": "　　 「呼び出しよりも定義が先にある必要がある」はtrueだが、それはmainの定義をleafの定義より先に置くことを妨げない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1653635101,
+      "updated": 1653635151
+    },
+    {
+      "id": "629082f91982700000325bc3",
+      "text": "　　 どういうことでしょう？[mrsekut.icon]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637881,
+      "updated": 1653637896
+    },
+    {
+      "id": "6290836e1982700000325bc7",
+      "text": "　　 \t「呼び出しよりも定義が先にある必要がある」がtrueになるのはallowの時のみ",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637998,
+      "updated": 1653638012
+    },
+    {
+      "id": "6290833f1982700000325bc6",
+      "text": "　　 \tfunctionなら書ける",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637952,
+      "updated": 1653638017
+    },
+    {
+      "id": "6290826c1982700000325ba8",
+      "text": " 　　 code:エラー.ts",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637740,
+      "updated": 1653637904
+    },
+    {
+      "id": "6290829f1982700000325bb2",
+      "text": " 　　  main();",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637791,
+      "updated": 1653637904
+    },
+    {
+      "id": "629082a11982700000325bb6",
+      "text": " 　　  const main = () => {",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637794,
+      "updated": 1653637904
+    },
+    {
+      "id": "629082a11982700000325bb7",
+      "text": " 　　  \tleaf1();",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637794,
+      "updated": 1653637904
+    },
+    {
+      "id": "629082a11982700000325bb8",
+      "text": " 　　  \tleaf2()",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637794,
+      "updated": 1653637904
+    },
+    {
+      "id": "629082a51982700000325bba",
+      "text": " 　　  }",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637798,
+      "updated": 1653637904
+    },
+    {
+      "id": "629082741982700000325ba9",
+      "text": " 　　  const leaf1 = () => {}",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637749,
+      "updated": 1653637904
+    },
+    {
+      "id": "6290827c1982700000325bab",
+      "text": " 　　  const leaf2 = () => {}",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637758,
+      "updated": 1653637904
+    },
+    {
+      "id": "629082951982700000325bb0",
+      "text": " \t\t\tcode:動く.ts",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637781,
+      "updated": 1653637904
+    },
+    {
+      "id": "629082aa1982700000325bbb",
+      "text": " \t\t\t main()",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637803,
+      "updated": 1653637904
+    },
+    {
+      "id": "629082ac1982700000325bbc",
+      "text": " \t\t\t function main() {",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637804,
+      "updated": 1653637904
+    },
+    {
+      "id": "629082b21982700000325bbe",
+      "text": " \t\t\t \tleaf1();",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637811,
+      "updated": 1653637904
+    },
+    {
+      "id": "629082b71982700000325bbf",
+      "text": " \t\t\t \tleaf2();",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637815,
+      "updated": 1653637904
+    },
+    {
+      "id": "629082b21982700000325bbd",
+      "text": " \t\t\t }",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637810,
+      "updated": 1653637904
+    },
+    {
+      "id": "629082b91982700000325bc0",
+      "text": " \t\t\t function leaf1() {}",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637818,
+      "updated": 1653637904
+    },
+    {
+      "id": "629082be1982700000325bc1",
+      "text": " \t\t\t function leaf2() {}",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637822,
+      "updated": 1653637904
+    },
+    {
+      "id": "629082961982700000325bb1",
+      "text": "　　　main()とその他の関数をファイルごと分けてしまう手もありそう[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1653637782,
+      "updated": 1653637910
+    },
+    {
+      "id": "6290831e1982700000325bc4",
+      "text": "　　　\tそれはそうです[mrsekut.icon]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637918,
+      "updated": 1653637920
+    },
+    {
+      "id": "629083201982700000325bc5",
+      "text": "　　　\t\t[JavaScriptでfunctionとarrow functionのどちらを使えばいいだろうか#62902a8b198270000033ba65]で「1つのファイルで完結する」と書いてるのはそのためです",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1653637921,
+      "updated": 1653637940
+    },
+    {
+      "id": "629082d61982700000325bc2",
+      "text": "　　　　　あ、ほんとだ[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1653637846,
+      "updated": 1653637950
+    },
+    {
+      "id": "629083377838e30000fd7a2d",
+      "text": "　　　　　見落としてた…",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1653637943,
+      "updated": 1653637947
+    },
+    {
+      "id": "62907853aff09e000093c247",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1653635155,
+      "updated": 1653635157
+    },
+    {
+      "id": "629072f679d3a900006d4197",
+      "text": " `=>`が何の情報量も持ってないから慣れるまでがしんどい[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1653633783,
+      "updated": 1653633819
+    },
+    {
+      "id": "6290730779d3a900006d4199",
+      "text": " \tfuncitonみたいに言葉だとわかりやすいが、ただの記号、というか矢印",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1653633800,
+      "updated": 1653633812
+    },
+    {
+      "id": "6290731f79d3a900006d419a",
+      "text": " \tなかなか馴染んでくれない",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1653633824,
+      "updated": 1653633832
+    },
+    {
+      "id": "6290733879d3a900006d419b",
+      "text": " \tまあそういうと`()`とか`{}`とか`;`もそうだろとなりそうだが",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1653633848,
+      "updated": 1653633863
+    },
+    {
+      "id": "6290734779d3a900006d419c",
+      "text": " \t結局慣れなのかな",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1653633863,
+      "updated": 1653633867
+    },
+    {
+      "id": "629083727838e30000fd7a2e",
+      "text": " 　これとか初見でわからない[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1653638003,
+      "updated": 1653638039
+    },
+    {
+      "id": "629083977838e30000fd7a2f",
+      "text": " 　　code:js",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1653638040,
+      "updated": 1653638046
+    },
+    {
+      "id": "6290839d7838e30000fd7a30",
+      "text": " 　　 (()=>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653638046,
+      "updated": 1653805339
+    },
+    {
+      "id": "629083a87838e30000fd7a31",
+      "text": " 　　   // 処理",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1653638057,
+      "updated": 1653638065
+    },
+    {
+      "id": "629083a97838e30000fd7a32",
+      "text": " 　　 })();",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1653638057,
+      "updated": 1653638075
+    },
+    {
+      "id": "629083c87838e30000fd7a33",
+      "text": " 　　最初の`()`と後ろの`()`で意味が違う",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1653638088,
+      "updated": 1653638111
+    },
+    {
+      "id": "6293111e1280f0000052c0a9",
+      "text": " 　　 最初：演算子の優先順位付け",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805342,
+      "updated": 1653805357
+    },
+    {
+      "id": "6293112c1280f0000052c0aa",
+      "text": " 　　 後ろ：函数実行",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653805357,
+      "updated": 1653805365
+    },
+    {
+      "id": "629072f679d3a900006d4198",
+      "text": "",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1653633783,
+      "updated": 1653633783
+    }
+  ]
+}

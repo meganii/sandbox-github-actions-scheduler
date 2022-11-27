@@ -1,0 +1,190 @@
+{
+  "id": "5f5b2886380cc0001ea3e4af",
+  "title": "hide-blacklivesmatter",
+  "created": 1599809674,
+  "updated": 1607598232,
+  "lines": [
+    {
+      "id": "5f5b2886380cc0001ea3e4af",
+      "text": "hide-blacklivesmatter",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599809674,
+      "updated": 1599810620
+    },
+    {
+      "id": "5f5b28914daa92000004d37a",
+      "text": "いい加減見飽きたので[UserScript]として作っていく",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599809678,
+      "updated": 1605858912
+    },
+    {
+      "id": "5f5b28b44daa92000004d37c",
+      "text": "\t探してもなさそうだったので",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599809714,
+      "updated": 1599809725
+    },
+    {
+      "id": "5f5b2b654daa92000004d381",
+      "text": "\t[Adblock]系の[拡張機能]のカスタムフィルタとしてできればよかったのだけど、[CSS]の書き換えができなさそう",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599810403,
+      "updated": 1607598232
+    },
+    {
+      "id": "5fb7892e1d860a00003431fd",
+      "text": "\t これは何ですか？",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1605863714,
+      "updated": 1605863729
+    },
+    {
+      "id": "5fb7a8edd438750000fe20e4",
+      "text": "\t [TamperMonkey]向けScript",
+      "userId": "5fa258bdb102120024d43875",
+      "created": 1605871853,
+      "updated": 1607598230
+    },
+    {
+      "id": "5f5b293e4daa92000004d37d",
+      "text": "",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599809853,
+      "updated": 1599809854
+    },
+    {
+      "id": "5f5b2c414daa92000004d382",
+      "text": "code:hide-blacklivesmatter.user.js",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599810623,
+      "updated": 1599811182
+    },
+    {
+      "id": "5f5b2da94daa92000004d390",
+      "text": " // ==UserScript==",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599810984,
+      "updated": 1599810984
+    },
+    {
+      "id": "5f5b2daa4daa92000004d391",
+      "text": " // @name         hide-blacklivesmatter",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599810984,
+      "updated": 1599810990
+    },
+    {
+      "id": "5f5b2daa4daa92000004d393",
+      "text": " // @version      0.1",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599810984,
+      "updated": 1599810984
+    },
+    {
+      "id": "5f5b2e024daa92000004d39a",
+      "text": " // @include      https://reactnative.dev/*",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599811073,
+      "updated": 1599811079
+    },
+    {
+      "id": "5f5b2e4a4daa92000004d3a0",
+      "text": " // @include      https://nodejs.org/*",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599811147,
+      "updated": 1599811151
+    },
+    {
+      "id": "5f5b2daa4daa92000004d398",
+      "text": " // ==/UserScript==",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599810984,
+      "updated": 1599810984
+    },
+    {
+      "id": "5f5b2daa4daa92000004d399",
+      "text": " ",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599810984,
+      "updated": 1599810984
+    },
+    {
+      "id": "5f5b2ce54daa92000004d38d",
+      "text": " const $ = query => document.querySelector(query)",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599810787,
+      "updated": 1599810794
+    },
+    {
+      "id": "5f5b2c674daa92000004d387",
+      "text": " const hide = query => $(query).style.display = 'none'",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599810661,
+      "updated": 1599810837
+    },
+    {
+      "id": "5f5b2d154daa92000004d38e",
+      "text": " const removeClass = className => $('.' + className).classList.remove(className)",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599810835,
+      "updated": 1599811266
+    },
+    {
+      "id": "5f5b2c674daa92000004d388",
+      "text": " ",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599810661,
+      "updated": 1599810661
+    },
+    {
+      "id": "5f5b2c444daa92000004d384",
+      "text": " if (location.host === 'reactnative.dev') {",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599810626,
+      "updated": 1599810648
+    },
+    {
+      "id": "5f5b2c5a4daa92000004d385",
+      "text": "   hide('.announcement')",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599810648,
+      "updated": 1599810838
+    },
+    {
+      "id": "5f5b2c5a4daa92000004d386",
+      "text": " }",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599810648,
+      "updated": 1599810648
+    },
+    {
+      "id": "5f5b2e534daa92000004d3a1",
+      "text": " ",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599811153,
+      "updated": 1599811153
+    },
+    {
+      "id": "5f5b2e534daa92000004d3a2",
+      "text": " if (location.host === 'nodejs.org') {",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599811153,
+      "updated": 1599811163
+    },
+    {
+      "id": "5f5b2e5c4daa92000004d3a3",
+      "text": "   hide('.home-blacklivesmatterblock')",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599811163,
+      "updated": 1599811167
+    },
+    {
+      "id": "5f5b2e5c4daa92000004d3a4",
+      "text": " }",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1599811163,
+      "updated": 1599811163
+    }
+  ]
+}
