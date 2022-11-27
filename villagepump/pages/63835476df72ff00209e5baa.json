@@ -1,0 +1,470 @@
+{
+  "id": "63835476df72ff00209e5baa",
+  "title": "Scrapboxに通知ボックスを実装するUserScript",
+  "created": 1669551223,
+  "updated": 1669551223,
+  "lines": [
+    {
+      "id": "63835476df72ff00209e5baa",
+      "text": "Scrapboxに通知ボックスを実装するUserScript",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7622",
+      "text": "from [2022/09/04]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7623",
+      "text": "[Scrapboxに通知ボックスを実装するUserScript]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7624",
+      "text": "\tプロジェクト内のページに通知を受け取るメニューを追加する",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7625",
+      "text": "\t\tここから通知を受け取りたいページを登録する",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7626",
+      "text": "\tcookieに（登録した）ページの最終閲覧日時を記録する",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7627",
+      "text": "  [lastAccessed]からとれる[takker.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7628",
+      "text": "  でしたらどれを登録したかのみを記録すれば良さそうですね[Mijinko_SD.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7629",
+      "text": "\tプロジェクトを開いた時点で毎回ページの最終更新日時を確認し、最終閲覧日時より新しければ[Scrapboxの右上のメニュー]ボタンの周りを光らせる",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e762a",
+      "text": "\t>Scrapboxって見たいと思ったページを探して見るのには向いているけれど、同じページを継続的に見るのには向いてないよなぁって最近思ってる[Mijinko_SD.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e762b",
+      "text": "\t\t[2022/08/30#630df15f7838e30000aa87a2]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e762c",
+      "text": "\t\tこれを解決できないかなって",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e762d",
+      "text": "\t\tただ、デバイスにリアルタイムに通知を送るようにすると普通にうざいので、あくまでScrapboxを開いた時に確認しやすくする程度に留めた方がよさそう",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e762e",
+      "text": "\t[Date modified by (icon)]との違いがわからなかった[takker.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e762f",
+      "text": "\t 特定のページの未読だけ検知したい、ということだろうか？",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7630",
+      "text": "\t \tそういうことです[Mijinko_SD.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7631",
+      "text": "\t \tそれに加えて、自分が知らない更新があることに気づけるようにしたいということです",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7632",
+      "text": "\t \t@ページとか、その他自分が頻繁にwatchしているページとか",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7633",
+      "text": "\t \tピン留めでどうにかならないかとも最初は思ったのですが、ページカードのサムネイルって更新があったかどうかはわかりにくいので",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7634",
+      "text": "\t \t [personal-pin]と↓を組み合わせればわかりやすくなりそう？[takker.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7635",
+      "text": "\t \t  未読のpinの色を変える",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7636",
+      "text": "\t\t\t\t\tわりとアリ[Mijinko_SD.icon*3]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7637",
+      "text": "\t code:今日の日記の更新取得サンプル.js",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7638",
+      "text": "\t  import { detect } from \"./detectUnread.js\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7639",
+      "text": "\t  ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e763a",
+      "text": "\t  /** @type {(date: Date) => string} */",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e763b",
+      "text": "\t  const format = (date) =>",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e763c",
+      "text": "\t    `${date.getFullYear()}/${`${date.getMonth()}`.padStart(2, \"0\")}/${`${date.getDate()}`.padStart(2, \"0\")}`;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e763d",
+      "text": "\t  ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e763e",
+      "text": "\t  // 10分ごとにpolling",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e763f",
+      "text": "\t  setInterval(",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7640",
+      "text": "\t    async () => {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7641",
+      "text": "\t      const project = \"villagepump\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7642",
+      "text": "\t      const title = format(new Date());",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7643",
+      "text": "\t      ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7644",
+      "text": "\t      const result = await detect(project, title);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7645",
+      "text": "\t      if (!result.ok) return;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7646",
+      "text": "\t      if (!result.value) return;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7647",
+      "text": "\t      ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7648",
+      "text": "\t      alert(\"今日の日記が更新されたよ\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7649",
+      "text": "\t    },",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e764a",
+      "text": "\t    10 * 60 * 1000,",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e764b",
+      "text": "\t  );",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e764c",
+      "text": "\t code:detectUnread.js",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e764d",
+      "text": "\t  /**",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e764e",
+      "text": "\t   *",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e764f",
+      "text": "\t   * @param {string} project",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7650",
+      "text": "\t   * @param {string} title",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7651",
+      "text": "\t   * @return {Promise<{ ok: false; value: unknown; } | { ok: true, value: boolean; }>}",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7652",
+      "text": "\t   */",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7653",
+      "text": "\t  export const detect = async (project, title) => {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7654",
+      "text": "\t    const res = await fetch(",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7655",
+      "text": "\t      `/api/pages/${project}/${encodeURIComponent(title)}`",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7656",
+      "text": "\t    );",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7657",
+      "text": "\t    if (!res.ok) return {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7658",
+      "text": "\t      ok: false,",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7659",
+      "text": "\t      value: await res.json(),",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e765a",
+      "text": "\t    };",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e765b",
+      "text": "\t    ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e765c",
+      "text": "\t    const { lastAccessed, updated } = await res.json();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e765d",
+      "text": "\t    return { ok: true, value: lastAccessed < updated };",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e765e",
+      "text": "\t  };",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e765f",
+      "text": "\t  ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7660",
+      "text": "\t あざす！[Mijinko_SD.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7661",
+      "text": "\t \tこれを自分好みにいじれば、わりと簡単に作れそう（[死亡フラグ]）",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    },
+    {
+      "id": "638354745f1e0d00006e7662",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1669551223,
+      "updated": 1669551223
+    }
+  ]
+}
