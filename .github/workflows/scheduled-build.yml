@@ -21,12 +21,32 @@ jobs:
           --allow-write
           --no-check
           index.ts
+
       - name: Zip
         run: zip data data.json
+
+      - name: Diff
+        id: diff
+        run: |
+          git add -N stats
+          git diff --name-only --exit-code
+        continue-on-error: true
+
+      - name: Commit files
+        run: |
+          set -x
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add stats
+          git commit -m "Update"
+          git push
+        if: steps.diff.outcome == 'failure'
+
       - name: Set Date
         env:
           TZ: "Asia/Tokyo"
         run: echo "CURRENT_DATETIME=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
       - name: Release
         uses: ncipollo/release-action@v1
         with:

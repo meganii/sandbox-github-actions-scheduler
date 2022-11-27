@@ -1,3 +1,9 @@
+interface TitlePage {
+  title: string,
+  created: number,
+  updated: number
+}
+
 const project = "villagepump";
 
 const pagesResponse = await fetch(`https://scrapbox.io/api/pages/${project}/?limit=1`);
@@ -13,7 +19,23 @@ const promises = [...Array(maxIndex)]
     pages.push(...json.pages);
   });
 await Promise.all(promises);
-const titles = pages.map((page) => page.title);
+
+const titles = pages.map((page) => {
+  return {
+    "title": page.title,
+    "created": page.created,
+    "updated": page.updated
+  } as TitlePage;
+});
+titles.sort((a: TitlePage, b: TitlePage): number => {
+  return a.created - b.created;
+});
+
+writeJson("./stats/pages.json", {
+  projectName: project,
+  count: pageNum,
+  pages: titles
+})
 
 const skip = 100;
 const detailPages: Array<Object> = [];
@@ -22,10 +44,10 @@ for (let i = 0; i < titles.length; i += skip) {
   console.log(`[scrapbox-external-backup] Start fetching ${i} - ${i + skip} pages.`);
   // 一気にAPIを叩いてページ情報を取得する
   const promises = titles.slice(i, i + skip)
-    .map(async (pageTitle: string, j: number) => {
-      console.log(`[page ${i + j}@scrapbox-external-backup] start fetching "/${project}/${pageTitle}"`);
-      const res = await fetch(`https://scrapbox.io/api/pages/${project}/${encodeURIComponent(pageTitle)}`);
-      console.log(`[page ${i + j}@scrapbox-external-backup] finish fetching "/${project}/${pageTitle}"`);
+    .map(async (pageTitle: TitlePage, j: number) => {
+      console.log(`[page ${i + j}@scrapbox-external-backup] start fetching "/${project}/${pageTitle.title}"`);
+      const res = await fetch(`https://scrapbox.io/api/pages/${project}/${encodeURIComponent(pageTitle.title)}`);
+      console.log(`[page ${i + j}@scrapbox-external-backup] finish fetching "/${project}/${pageTitle.title}"`);
       const { id, title, created, updated, lines } = await res.json();
       detailPages.push({ id, title, created, updated, lines });
     });
