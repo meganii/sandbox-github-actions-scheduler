@@ -6,6 +6,8 @@ interface TitlePage {
 }
 
 const project = "villagepump";
+const dist_stats = `./${project}/stats/pages.json`;
+const dist_data = "./data.json";
 
 const pagesResponse = await fetch(`https://scrapbox.io/api/pages/${project}/?limit=1`);
 const pageNum = (await pagesResponse.json()).count;
@@ -33,7 +35,7 @@ titles.sort((a: TitlePage, b: TitlePage): number => {
   return a.created - b.created;
 });
 
-writeJson("./stats/pages.json", {
+writeJson(dist_stats, {
   projectName: project,
   count: pageNum,
   pages: titles
@@ -57,7 +59,7 @@ for (let i = 0; i < titles.length; i += skip) {
   console.log(`Finish fetching ${i} - ${i + skip} pages.`);
 }
 
-console.log(writeJson("./data.json", detailPages));
+console.log(writeJson(dist_data, detailPages));
 
 function writeJson(path: string, data: object): string {
   try {
