@@ -1,4 +1,5 @@
 interface TitlePage {
+  id: string,
   title: string,
   created: number,
   updated: number
@@ -22,6 +23,7 @@ await Promise.all(promises);
 
 const titles = pages.map((page) => {
   return {
+    "id": page.id,
     "title": page.title,
     "created": page.created,
     "updated": page.updated
