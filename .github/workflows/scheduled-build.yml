@@ -25,10 +25,19 @@ jobs:
       - name: Zip
         run: zip data data.json
 
+      - name: Split pages
+        run: >
+          rm villagepump/pages/*.json
+          deno run
+          --allow-read
+          --allow-write
+          --no-check
+          split.ts
+
       - name: Diff
         id: diff
         run: |
-          git add -N stats
+          git add -N villagepump/stats villagepump/pages
           git diff --name-only --exit-code
         continue-on-error: true
 
