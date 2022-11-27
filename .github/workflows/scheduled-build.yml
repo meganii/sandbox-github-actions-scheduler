@@ -25,9 +25,11 @@ jobs:
       - name: Zip
         run: zip data data.json
 
+      - name: Remove json pages
+        run: rm villagepump/pages/*.json
+
       - name: Split pages
         run: >
-          rm villagepump/pages/*.json
           deno run
           --allow-read
           --allow-write
