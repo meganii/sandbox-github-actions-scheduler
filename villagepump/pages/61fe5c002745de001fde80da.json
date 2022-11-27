@@ -1,0 +1,568 @@
+{
+  "id": "61fe5c002745de001fde80da",
+  "title": "行IDからページの行を検索する",
+  "created": 1644059667,
+  "updated": 1644059748,
+  "lines": [
+    {
+      "id": "61fe5c002745de001fde80da",
+      "text": "行IDからページの行を検索する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059667,
+      "updated": 1644059676
+    },
+    {
+      "id": "61fe5c1d7838e30000ec3da1",
+      "text": "from [Settings]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059676,
+      "updated": 1644059680
+    },
+    {
+      "id": "61fe5c227838e30000ec3da3",
+      "text": "\tこれどこの行を指してるの・・・( ◞‸◟)[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059682,
+      "updated": 1644059720
+    },
+    {
+      "id": "61fe5c4b7838e30000ec3def",
+      "text": "\t\t”これ”：[特定の行でだけ使える文字装飾記法]で指定されているID",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059722,
+      "updated": 1644059748
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3da4",
+      "text": "\tどこなんだろう……？[takker.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3da5",
+      "text": "\t　はー、仕方ない。script組むか。",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3da6",
+      "text": "\t　\tその場ですぐ組めるのつよすぎ[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3da7",
+      "text": "\t　code:js",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3da8",
+      "text": "\t　 const targets = [",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3da9",
+      "text": "\t　   \"60925f6aff23a500238c845c\",",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3daa",
+      "text": "\t　   \"607e9b43246f5900006eca5e\",",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dab",
+      "text": "\t　   \"5ff2e3cf1280f0000034b08f\",",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dac",
+      "text": "\t　   \"6016932ad4387500007799a9\",",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dad",
+      "text": "\t　   \"6016925dd4387500007f6f77\",",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dae",
+      "text": "\t　   \"60ef82d8fa8faf00007108d2\",",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3daf",
+      "text": "\t　 ];",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3db0",
+      "text": "\t　 ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3db1",
+      "text": "\t　 const titleLcs =",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3db2",
+      "text": "\t　   scrapbox.Project.pages.flatMap(({exists, titleLc}) => exists ? [titleLc] : []);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3db3",
+      "text": "\t　 const count = titleLcs.length;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3db4",
+      "text": "\t　 const chunk = 50;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3db5",
+      "text": "\t　 const end = Math.floor(count / chunk) + 1;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3db6",
+      "text": "\t　 const results = [];",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3db7",
+      "text": "\t　 for (let i = 0; i < end; i++) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3db8",
+      "text": "\t　   const temp = await Promise.all(",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3db9",
+      "text": "\t　     titleLcs.slice(i * chunk, (i + 1) * chunk)",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dba",
+      "text": "\t　       .map((titleLc, j) => check(titleLc, j + i * chunk))",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dbb",
+      "text": "\t　   );",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dbc",
+      "text": "\t　   results.push(",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dbd",
+      "text": "\t　     ...temp.filter(([, founds]) => founds.length > 0)",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dbe",
+      "text": "\t　   );",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dbf",
+      "text": "\t　 }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dc0",
+      "text": "\t　 ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dc1",
+      "text": "\t　 if (results.length === 0) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dc2",
+      "text": "\t　   console.log(\"Not found\");",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dc3",
+      "text": "\t　 } else {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dc4",
+      "text": "     console.log(\"Found:\");",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dc5",
+      "text": "\t　   for (const [titleLc, founds] of results) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dc6",
+      "text": "\t　     for (const id of founds) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dc7",
+      "text": "\t　       console.log(`\\t https://scrapbox.io/${scrapbox.Project.name}/${titleLc}#${id}`);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dc8",
+      "text": "\t　     }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dc9",
+      "text": "\t　   }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dca",
+      "text": "　  }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dcb",
+      "text": "\t　   ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dcc",
+      "text": "\t　 async function check(titleLc, index) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dcd",
+      "text": "  \t  const res = await fetch(`/api/pages/${",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dce",
+      "text": "  \t    scrapbox.Project.name",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dcf",
+      "text": "  \t  }/${encodeURIComponent(titleLc)}`);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dd0",
+      "text": "  \t  const { lines } = await res.json();",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dd1",
+      "text": "  \t  const ids = lines.map(({ id }) => id);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dd2",
+      "text": "  \t  const founds = targets.filter(id => ids.includes(id));",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dd3",
+      "text": "  \t  ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dd4",
+      "text": "\t　   console.log(`[${index}/${count}] check \"${titleLc}\"...${",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dd5",
+      "text": "\t　     founds.length > 0 ? `found ${founds}!` : \"not found.\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dd6",
+      "text": "\t　   }`);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dd7",
+      "text": "\t　   ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dd8",
+      "text": "\t　   return [titleLc, founds];",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dd9",
+      "text": "\t　 }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dda",
+      "text": "\t　 ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3ddb",
+      "text": "  17:45:58 テストする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3ddc",
+      "text": "  17:54:02 実行中",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3ddd",
+      "text": "   時間かかるなあ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dde",
+      "text": "  17:55:31 半分走査した",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3ddf",
+      "text": "  17:58:10 5000おわた",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3de0",
+      "text": "  18:01:19 終了",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3de1",
+      "text": "  　結果",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3de2",
+      "text": "  　 [Settings#6016932ad4387500007799a9]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3de3",
+      "text": "  　 \t移植した",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3de4",
+      "text": "  　 \t\t[特定の行でだけ使える文字装飾記法#61fe3ee37838e300007de69e]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3de5",
+      "text": "    [/villagepump/UserScriptを他人のprojectから読み込むな#5ff2e3cf1280f0000034b08f]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3de6",
+      "text": "    [/villagepump/日本沈没#60925f6aff23a500238c845c]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3de7",
+      "text": "    [/villagepump/2021/07/15#60ef82d8fa8faf00007108d2]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3de8",
+      "text": "    [/villagepump/シャイニング#607e9b43246f5900006eca5e]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3de9",
+      "text": "    [/villagepump/次回予告#6016925dd4387500007f6f77]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dea",
+      "text": "   黒背景の記法を作れば減らせそう[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3deb",
+      "text": "   \tその記法自体に需要があるのかは微妙すぎると思うけど",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dec",
+      "text": "  とりあえず移植した",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3ded",
+      "text": "  \t[特定の行でだけ使える文字装飾記法#61fe3ec77838e300007de69b]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c2c7838e30000ec3dee",
+      "text": "  \t[/icons/+1.icon][takker.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059691,
+      "updated": 1644059691
+    },
+    {
+      "id": "61fe5c1e7838e30000ec3da2",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1644059678,
+      "updated": 1644059678
+    }
+  ]
+}

@@ -1,0 +1,918 @@
+{
+  "id": "623e7c31398a5d002347ca37",
+  "title": "正規表現を展開してリンクにしてくれるUserScript",
+  "created": 1648262194,
+  "updated": 1668292075,
+  "lines": [
+    {
+      "id": "623e7c31398a5d002347ca37",
+      "text": "正規表現を展開してリンクにしてくれるUserScript",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648262194,
+      "updated": 1648295928
+    },
+    {
+      "id": "623e7c32c1f87f00008793f2",
+      "text": "from [2022/03/26]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648262194,
+      "updated": 1648262194
+    },
+    {
+      "id": "623ec3e8c1f87f0000c6ab12",
+      "text": "",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648280553,
+      "updated": 1648280916
+    },
+    {
+      "id": "623fb744c1f87f0000e7e81d",
+      "text": "　導入方法",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342852,
+      "updated": 1648342861
+    },
+    {
+      "id": "623fb74cc1f87f0000e7e81e",
+      "text": "　　[https://scrapbox-bundler.vercel.app?url=https://scrapbox.io/api/code/villagepump/正規表現を展開してリンクにしてくれるUserScript/script.js&bundle&minify&run&reload compile script.js]でBundleした物をUserScriptにコピペ",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342861,
+      "updated": 1648342888
+    },
+    {
+      "id": "623fb73dc1f87f0000e7e819",
+      "text": " 使い方",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342845,
+      "updated": 1648342845
+    },
+    {
+      "id": "623fb73dc1f87f0000e7e81a",
+      "text": "  「`[正規表現記法]`」という形式（「`」も含む）でリンクを書き、Pop upの「正規表現を展開」をクリック",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342845,
+      "updated": 1648344896
+    },
+    {
+      "id": "623ec3e8c1f87f0000c6ab13",
+      "text": " サンプル",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648280553,
+      "updated": 1648280554
+    },
+    {
+      "id": "623ec3eac1f87f0000c6ab15",
+      "text": "  `[(正規表現|Helpfeel記法)を展開する(UserScript|拡張機能)]` [, [(正規表現を展開するUserScript)​]] [, [(正規表現を展開する拡張機能)​]] [, [(Helpfeel記法を展開するUserScript)​]] [, [(Helpfeel記法を展開する拡張機能)​]]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648280554,
+      "updated": 1648343728
+    },
+    {
+      "id": "623fb636c1f87f00000c7e4f",
+      "text": "  [https://gyazo.com/c4099de3ab9d978e0797120f44af8d8f]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342583,
+      "updated": 1648342766
+    },
+    {
+      "id": "623fbd42c1f87f00005adcb5",
+      "text": "  [https://gyazo.com/1adfe487e26dac0c17b9cc1e90721181]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648344387,
+      "updated": 1648344388
+    },
+    {
+      "id": "623fb6e8c1f87f0000e7e811",
+      "text": "　一緒に使うと良いCSS",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342760,
+      "updated": 1648342912
+    },
+    {
+      "id": "623fb780c1f87f0000e7e820",
+      "text": "　 [展開された正規表現を小さくするCSS]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342912,
+      "updated": 1648342920
+    },
+    {
+      "id": "623fb787c1f87f0000e7e821",
+      "text": "　 　これが無いと展開したものが邪魔すぎると思う[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342920,
+      "updated": 1648342928
+    },
+    {
+      "id": "623fb77cc1f87f0000e7e81f",
+      "text": "  code:style.css",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1648342908,
+      "updated": 1668292037
+    },
+    {
+      "id": "63701dc35f1e0d000052d0e7",
+      "text": "   .popup-menu .button-container .button:empty {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1668292037,
+      "updated": 1668292037
+    },
+    {
+      "id": "63701dc45f1e0d000052d0e9",
+      "text": "       display: none;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1668292037,
+      "updated": 1668292037
+    },
+    {
+      "id": "63701dc45f1e0d000052d0ea",
+      "text": "   }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1668292037,
+      "updated": 1668292037
+    },
+    {
+      "id": "63701dbc5f1e0d000052d0e6",
+      "text": "  これを置くとコードブロック以外のところで文字を選択しても謎の空白ができなくなる[yuyasurarin.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1668292030,
+      "updated": 1668292075
+    },
+    {
+      "id": "63701dce5f1e0d000052d0eb",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1668292046,
+      "updated": 1668292046
+    },
+    {
+      "id": "623f05bcc1f87f0000b07133",
+      "text": "　未来の自分の検索ワードに引っかかって欲しい時に便利そう[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648297404,
+      "updated": 1648297408
+    },
+    {
+      "id": "623f05bcc1f87f0000b07136",
+      "text": "  しばらく個人プロジェクトで使ってみて、どの程度邪魔になるかを検証してみる",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648297404,
+      "updated": 1648297463
+    },
+    {
+      "id": "623f05d7c1f87f0000b0713b",
+      "text": "",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648297432,
+      "updated": 1648343532
+    },
+    {
+      "id": "623ffe81c1f87f000035f996",
+      "text": " もし邪魔で全部消したくなった場合は、https://scrapbox.io/villagepump/search/page?q=​ (<-[ゼロ幅スペース])で一覧表示できる",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648361089,
+      "updated": 1648361131
+    },
+    {
+      "id": "623ffe81c1f87f000035f997",
+      "text": "",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648361089,
+      "updated": 1648361089
+    },
+    {
+      "id": "623f05d7c1f87f0000b0713c",
+      "text": "[/icons/-.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648297432,
+      "updated": 1648297440
+    },
+    {
+      "id": "623fe5b2c1f87f000066fcfa",
+      "text": "Helpfeel記法の検索を利用したい[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648354739,
+      "updated": 1648354748
+    },
+    {
+      "id": "623fb7a6c1f87f0000e7e823",
+      "text": "Helpfeel記法を勝手に展開してリンクにしてくれるUserScriptがあれば良い?[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342950,
+      "updated": 1648342951
+    },
+    {
+      "id": "623fb7a7c1f87f0000e7e825",
+      "text": " ? (アメリカ|米国)の大学出願に必要な(試験|テスト)は?",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342951,
+      "updated": 1648342951
+    },
+    {
+      "id": "623fb7a7c1f87f0000e7e826",
+      "text": "  と書くと、その下に",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342951,
+      "updated": 1648342951
+    },
+    {
+      "id": "623fb7a7c1f87f0000e7e827",
+      "text": "   `[( [アメリカの大学出願に必要な試験は?] [アメリカの大学出願に必要なテストは?] [米国の大学出願に必要な試験は?] [米国の大学出願に必要なテストは?] ]`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648342951,
+      "updated": 1648365790
+    },
+    {
+      "id": "623fb7a7c1f87f0000e7e828",
+      "text": "  と自動で展開される、みたいな",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342951,
+      "updated": 1648342951
+    },
+    {
+      "id": "623fb7a7c1f87f0000e7e829",
+      "text": "  展開されたリンクが邪魔くさいのはUserCSSでなんとかすれば良さそう",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342951,
+      "updated": 1648342951
+    },
+    {
+      "id": "623fb7a7c1f87f0000e7e82a",
+      "text": "   [展開された正規表現を小さくするCSS]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342951,
+      "updated": 1648342951
+    },
+    {
+      "id": "623fb7a6c1f87f0000e7e824",
+      "text": "",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648342951,
+      "updated": 1648342951
+    },
+    {
+      "id": "623e7f5e1280f00000c9ea07",
+      "text": "  実装自体はそこまで難しくない[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263006,
+      "updated": 1648263014
+    },
+    {
+      "id": "623e85cb1280f00000ae5074",
+      "text": "   [https://scrapbox-bundler.vercel.app?url=https://scrapbox.io/api/code/villagepump/正規表現を展開してリンクにしてくれるUserScript/script.js&bundle&minify&run&reload compile script.js]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648264652,
+      "updated": 1648342500
+    },
+    {
+      "id": "623e7f661280f00000c9ea08",
+      "text": "   code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263014,
+      "updated": 1648263022
+    },
+    {
+      "id": "623e7f6c1280f00000c9ea09",
+      "text": "    import Generator from \"https://esm.sh/re_expand@0.2.0\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263022,
+      "updated": 1648263033
+    },
+    {
+      "id": "623e7f791280f00000c9ea0a",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263033,
+      "updated": 1648263033
+    },
+    {
+      "id": "623e7fbb1280f00000c9ea12",
+      "text": "    const expand = (pattern) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263099,
+      "updated": 1648263109
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea13",
+      "text": "      const generator = new Generator(pattern);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263100
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea14",
+      "text": "      try {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263100
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea15",
+      "text": "        // \" \"はワイルドカード",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263100
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea16",
+      "text": "        return [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263100
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea17",
+      "text": "          ...new Set(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263100
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea18",
+      "text": "            generator.filter(\" \").flatMap((pairs) =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263100
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea19",
+      "text": "              pairs.map(([expanded]) => expanded)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263100
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea1a",
+      "text": "            ),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263100
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea1b",
+      "text": "          ),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263100
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea1c",
+      "text": "        ];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263100
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea1d",
+      "text": "      } catch (e) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263115
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea1e",
+      "text": "        // TypeErrorがでたpatternは無視する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263100
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea1f",
+      "text": "        if (e instanceof TypeError) return [];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263100
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea20",
+      "text": "        throw e;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263100
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea21",
+      "text": "      }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263100
+    },
+    {
+      "id": "623e7fbc1280f00000c9ea22",
+      "text": "    };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263100,
+      "updated": 1648263117
+    },
+    {
+      "id": "623e7fbb1280f00000c9ea11",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263099,
+      "updated": 1648263099
+    },
+    {
+      "id": "623fc190c1f87f00008babb8",
+      "text": "    const condition = /^\\s*`\\[([^\\n]+)\\]`/",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345488,
+      "updated": 1648345488
+    },
+    {
+      "id": "623fc190c1f87f00008babb9",
+      "text": "    ",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345489,
+      "updated": 1648345489
+    },
+    {
+      "id": "623fc157c1f87f00008baba2",
+      "text": "    const processLine = (line) => {",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345433,
+      "updated": 1648345449
+    },
+    {
+      "id": "623fc174c1f87f00008baba4",
+      "text": "        const match = line.match(condition)",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345460,
+      "updated": 1648345465
+    },
+    {
+      "id": "623fc174c1f87f00008baba5",
+      "text": "        if (match === null) {",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345461,
+      "updated": 1648345465
+    },
+    {
+      "id": "623fc174c1f87f00008baba6",
+      "text": "        \t  return line",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345461,
+      "updated": 1648345465
+    },
+    {
+      "id": "623fc174c1f87f00008baba7",
+      "text": "        } else {",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345461,
+      "updated": 1648345465
+    },
+    {
+      "id": "623fc174c1f87f00008baba8",
+      "text": "            return `\\`[${match[1]}]\\` ${expand(match[1].replace(/[\\[\\]]/g, \"\"))",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345461,
+      "updated": 1648345465
+    },
+    {
+      "id": "623fc174c1f87f00008baba9",
+      "text": "              .flatMap((description) => description !== \"\" ? [`[, [(${description})]]`] : [])",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648345461,
+      "updated": 1648596314
+    },
+    {
+      "id": "623fc174c1f87f00008babaa",
+      "text": "              .join(\" \")}`",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345461,
+      "updated": 1648345465
+    },
+    {
+      "id": "623fc174c1f87f00008babab",
+      "text": "        }",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345461,
+      "updated": 1648345465
+    },
+    {
+      "id": "623fc169c1f87f00008baba3",
+      "text": "    }",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345450,
+      "updated": 1648345450
+    },
+    {
+      "id": "623fc13ec1f87f00008baba0",
+      "text": "    ",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345406,
+      "updated": 1648345406
+    },
+    {
+      "id": "623eaecdc1f87f0000490538",
+      "text": "    scrapbox.PopupMenu.addButton({",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648275149,
+      "updated": 1648275152
+    },
+    {
+      "id": "623eaecdc1f87f0000490539",
+      "text": "      title: (text) => text.split(\"\\n\").some(",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648275149,
+      "updated": 1648275152
+    },
+    {
+      "id": "623eaecdc1f87f000049053a",
+      "text": "        (line) => condition.test(line.trim())",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648275149,
+      "updated": 1648275152
+    },
+    {
+      "id": "623eaecdc1f87f000049053b",
+      "text": "      ) ? \"正規表現を展開\" : \"\",",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648275149,
+      "updated": 1648342250
+    },
+    {
+      "id": "623eaecdc1f87f000049053c",
+      "text": "      onClick: (text) =>",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648275149,
+      "updated": 1648275152
+    },
+    {
+      "id": "623eaecdc1f87f000049053d",
+      "text": "          text.split(\"\\n\").map(processLine).join(\"\\n\"),",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648275149,
+      "updated": 1648345475
+    },
+    {
+      "id": "623eaecdc1f87f0000490547",
+      "text": "    });",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648275149,
+      "updated": 1648275152
+    },
+    {
+      "id": "623fca59c1f87f000081a748",
+      "text": "  [欲しい物を書いておいたら勝手にできている][blu3mo.icon*2]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648347737,
+      "updated": 1648347742
+    },
+    {
+      "id": "623e7facc1f87f0000879401",
+      "text": "  [re expand]というものが既にあるのか[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648263085,
+      "updated": 1648263085
+    },
+    {
+      "id": "623fc1c88ee92a00009a0d3c",
+      "text": "   あるんです! [増井俊之.icon]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1648345544,
+      "updated": 1648345548
+    },
+    {
+      "id": "623e7facc1f87f0000879402",
+      "text": "   （知らずに再実装するところだった）",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648263085,
+      "updated": 1648263085
+    },
+    {
+      "id": "623fc1e78ee92a00009a0d3d",
+      "text": "    実装結構メンドクサイですが、うまく作れます? [増井俊之.icon]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1648345575,
+      "updated": 1648345591
+    },
+    {
+      "id": "623e8472c1f87f0000793255",
+      "text": "   Scrapboxだとimport出来ない?",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648264308,
+      "updated": 1648264312
+    },
+    {
+      "id": "623e85b71280f00000ae5073",
+      "text": "   あ、bundleしないと使えないって言うの忘れてた[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648264632,
+      "updated": 1648264648
+    },
+    {
+      "id": "623e85f71280f00000ae5075",
+      "text": "    compileボタン設置しました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648264696,
+      "updated": 1648264729
+    },
+    {
+      "id": "623e8663c1f87f0000793256",
+      "text": "    なるほど[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648264804,
+      "updated": 1648264806
+    },
+    {
+      "id": "623e8262c1f87f0000b2e809",
+      "text": "  Helpfeel記法内だとPopUpが表示されないみたい?",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648263779,
+      "updated": 1648263793
+    },
+    {
+      "id": "623e82d1c1f87f00008a6481",
+      "text": "   ほんとだ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648263890,
+      "updated": 1648264768
+    },
+    {
+      "id": "623e887d1280f00000ae5092",
+      "text": "   Helpfeel記法の前の行まで選択すればでてくる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648265342,
+      "updated": 1648265357
+    },
+    {
+      "id": "623ea004c1f87f000049051c",
+      "text": "  [takker.icon]さんの実装を一部改変しました🙏（前のはHistoryにあります）[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648271365,
+      "updated": 1648275971
+    },
+    {
+      "id": "623eb203c1f87f00008331c9",
+      "text": "   `? Helpfeel記法を(展開|Expand)する(UserScript|拡張機能)` ",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648275971,
+      "updated": 1648343751
+    },
+    {
+      "id": "623eb203c1f87f00008331ca",
+      "text": "   こんな感じのフォーマットにしました[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648275971,
+      "updated": 1648276161
+    },
+    {
+      "id": "623eb20cc1f87f00008331d9",
+      "text": "   理由",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648275980,
+      "updated": 1648276161
+    },
+    {
+      "id": "623eb264c1f87f00008331dc",
+      "text": "    行の後ろにリンクを置きたかった",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648276069,
+      "updated": 1648343552
+    },
+    {
+      "id": "623eb2b1c1f87f00008331df",
+      "text": "    　純正Helpfeel記法だと後ろに別のものを置けない",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648276146,
+      "updated": 1648276161
+    },
+    {
+      "id": "623eb244c1f87f00008331db",
+      "text": "     [, Text]<-このCSSでリンクの存在を示しつつコンパクトに詰め込ました",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648276036,
+      "updated": 1648276161
+    },
+    {
+      "id": "623eb26cc1f87f00008331dd",
+      "text": "    [正規表現を展開してリンクにしてくれるUserScript#623e887d1280f00000ae5092]をするのが不便",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648276077,
+      "updated": 1648295929
+    },
+    {
+      "id": "623eb2fdc1f87f00008331e3",
+      "text": "    本物のHelpfeel記法が使えるなら本物のHelpfeelで検索すればいい",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648276222,
+      "updated": 1648276254
+    },
+    {
+      "id": "623eb9e11280f00000b6b224",
+      "text": "   [/vim-jp-emojis/+1smile.icon][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648277984,
+      "updated": 1648277990
+    },
+    {
+      "id": "623e888e1280f00000ae5093",
+      "text": "  `?`を正規表現と認識してしまう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1648265358,
+      "updated": 1648265375
+    },
+    {
+      "id": "623fb9efc1f87f000052e198",
+      "text": "　　[https://gyazo.com/7e04ccd8c518875e0c79d1c2b6e0fb3a]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343535,
+      "updated": 1648343535
+    },
+    {
+      "id": "623fb9efc1f87f000052e199",
+      "text": "   一つでいいのに4つ出てしまう",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343535,
+      "updated": 1648343535
+    },
+    {
+      "id": "623fb9efc1f87f000052e19a",
+      "text": "    このページに辿り着きたい時は良いが、それ以外の時に邪魔",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343535,
+      "updated": 1648343535
+    },
+    {
+      "id": "623fb9efc1f87f000052e19b",
+      "text": "  　これがUserCSSで解決できれば本当にHelpfeelになる?",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343535,
+      "updated": 1648343535
+    },
+    {
+      "id": "623fb9efc1f87f000052e19c",
+      "text": "  　小さくしてみた✅[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343535,
+      "updated": 1648343535
+    },
+    {
+      "id": "623fb9efc1f87f000052e19d",
+      "text": "  　 [https://gyazo.com/e3cd331bb074d8137683d00ba1628367]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648343535,
+      "updated": 1648348500
+    },
+    {
+      "id": "623fcd547838e300003fdad5",
+      "text": "  　 [Helpfeel記法]の検索結果が候補に出ると言うだけでも便利そう[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1648348500,
+      "updated": 1648348579
+    },
+    {
+      "id": "623fb9efc1f87f000052e1a1",
+      "text": " 　補完で色々なページにリンクが飛ぶ",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343535,
+      "updated": 1648343535
+    },
+    {
+      "id": "623fb9efc1f87f000052e1a2",
+      "text": " 　 [Helpfeel記法を展開するUserScript]にリンクを飛ばすページと、[Helpfeel記法をExpandする拡張機能]にリンクを飛ばすページがあるとまずい",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343535,
+      "updated": 1648343535
+    },
+    {
+      "id": "623fb9efc1f87f000052e1a3",
+      "text": " 　 Wikiとして成り立たなくなる",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343535,
+      "updated": 1648343535
+    },
+    {
+      "id": "623fb9efc1f87f000052e1a4",
+      "text": "   [副表記に❌をつけ]ると区別つくかも？[takker.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343535,
+      "updated": 1648343535
+    },
+    {
+      "id": "623fb9efc1f87f000052e1a5",
+      "text": "   　なるほど[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343535,
+      "updated": 1648343535
+    },
+    {
+      "id": "623fb9efc1f87f000052e1a6",
+      "text": "    [(展開されたリンク)]みたいにカッコで囲うだけでも良さそう✅[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343535,
+      "updated": 1648343535
+    },
+    {
+      "id": "623fb9efc1f87f000052e1a7",
+      "text": "  もはやHelpfeel記法に似せる必要も無い気がしてきた[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343535,
+      "updated": 1648343634
+    },
+    {
+      "id": "623fba50c1f87f000052e1aa",
+      "text": "  　質問形式以外でも、普通のリンクのバリエーションを増やしたい時に使えるので",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343632,
+      "updated": 1648343634
+    },
+    {
+      "id": "623fba50c1f87f000052e1ab",
+      "text": "  　`[(正規表現|Regex)記法]`というフォーマットを展開する形でよさそう",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343632,
+      "updated": 1648343634
+    },
+    {
+      "id": "623fba50c1f87f000052e1ac",
+      "text": "   変えてみた✅",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343632,
+      "updated": 1648343634
+    },
+    {
+      "id": "623fbdb6c1f87f0000093d45",
+      "text": "    `[(正規表現|Regex)記法]` [, [(正規表現記法)​]] [, [(Regex記法)​]]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648344503,
+      "updated": 1648344510
+    },
+    {
+      "id": "623fbdc8c1f87f0000093d46",
+      "text": "    リンクが展開されているという事が分かりやすくて良さそう",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648344520,
+      "updated": 1648344534
+    },
+    {
+      "id": "623fba4fc1f87f000052e1a9",
+      "text": "  検索結果で展開された正規表現のみフィルタして小さくしたい",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343632,
+      "updated": 1648343782
+    },
+    {
+      "id": "623fbad4c1f87f0000792ec2",
+      "text": "  　[ゼロ幅スペース]を展開時に埋め込めば、`a[href*=\"%E2%80%8B\"]`でCSSにてフィルタできる?[blu3mo.icon]",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343765,
+      "updated": 1648343774
+    },
+    {
+      "id": "623fbad4c1f87f0000792ec3",
+      "text": "  　やってみた✅",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648343765,
+      "updated": 1648343767
+    },
+    {
+      "id": "623fc01cc1f87f00008bab96",
+      "text": "  PopUpを使わない形の実装も考えてみたい",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345117,
+      "updated": 1648345130
+    },
+    {
+      "id": "623fc029c1f87f00008bab98",
+      "text": "  　書いている側から常時勝手に展開される様なイメージ",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345130,
+      "updated": 1648345145
+    },
+    {
+      "id": "623fc0e1c1f87f00008bab9c",
+      "text": "  　[/takker/scrapbox-keyboard-emulation-2]あたりを使えば出来るのかな",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345314,
+      "updated": 1648345319
+    },
+    {
+      "id": "623fc01fc1f87f00008bab97",
+      "text": " 　　　現在のカーソル位置と異なる場所に挿入は難しい?",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345120,
+      "updated": 1648345356
+    },
+    {
+      "id": "623fc0e0c1f87f00008bab9b",
+      "text": " 　　書いて改行したら展開されるとかでも良いか　　　　",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345313,
+      "updated": 1648345377
+    },
+    {
+      "id": "623fc034c1f87f00008bab9a",
+      "text": "    ",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345140,
+      "updated": 1648345509
+    },
+    {
+      "id": "623fc1a1c1f87f00008babbc",
+      "text": "",
+      "userId": "6226a730abe6b0001dc1f87f",
+      "created": 1648345506,
+      "updated": 1648345506
+    }
+  ]
+}

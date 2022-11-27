@@ -1,0 +1,2066 @@
+{
+  "id": "631c3fe0c701a7001d4dadba",
+  "title": "GIfBirdをいじる",
+  "created": 1662795745,
+  "updated": 1662799959,
+  "lines": [
+    {
+      "id": "631c3fe0c701a7001d4dadba",
+      "text": "GIfBirdをいじる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795745,
+      "updated": 1662795745
+    },
+    {
+      "id": "631c3fe11280f00000748ca7",
+      "text": "from [/takker/GifBird]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795745,
+      "updated": 1662795751
+    },
+    {
+      "id": "631c3fe11280f00000748ca8",
+      "text": ">http://inajob.github.io/gifbird/gifbird.html",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795746,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c6692f",
+      "text": ">  オッコードが綺麗だ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66930",
+      "text": "> 　　コメントまでついてる！贅沢！",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66931",
+      "text": "> 　　古のJSって感じですね・・（もはや何も覚えてない）[inajob.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795777
+    },
+    {
+      "id": "631c3ff21280f00000c66932",
+      "text": "> 　これをrewriteして描画周りの処理の書き方を学ぶのよさそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66933",
+      "text": "> 　 [教科書の数式を自分の記号体系に翻訳]して理解するパターン",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66934",
+      "text": "> 　ゲームというUIで動画を作る[動画編集アプリ]と言えなくもないね[inajob.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795782
+    },
+    {
+      "id": "631c3ff21280f00000c66935",
+      "text": " [GifBird]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795787
+    },
+    {
+      "id": "631c3ff21280f00000c66936",
+      "text": "というわけでここでcode readingしつつ書き換えてみる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66937",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c40171280f00000c66a5b",
+      "text": "2022-09-10",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795800,
+      "updated": 1662795803
+    },
+    {
+      "id": "631c48c71280f00000ca9feb",
+      "text": " 17:20:24 global変数の有効範囲と実際に使われている範囲をなるべく等しくした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798024,
+      "updated": 1662798055
+    },
+    {
+      "id": "631c48e61280f00000ca9fec",
+      "text": " 　あといらないコードを削った",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798055,
+      "updated": 1662798063
+    },
+    {
+      "id": "631c401a1280f00000c66a5c",
+      "text": " 16:43:20 [/takker/GifBird]から井戸端に持ってきた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795803,
+      "updated": 1662795807
+    },
+    {
+      "id": "631c3ff21280f00000c66938",
+      "text": "2022-05-22",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66939",
+      "text": " 19:09:03 TSに書き換え中",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c6693a",
+      "text": " 　下手にclassを消さないほうがいいかな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c6693b",
+      "text": "2022-05-20",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c6693c",
+      "text": " 08:53:30 方針",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c6693d",
+      "text": "  とりあえずすべて一つのhtmlファイルに収めて、ローカルでも動くようにしようかな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c6693e",
+      "text": "  そのあとScrapboxでも動くようにする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c6693f",
+      "text": "   Gyazoにuploadする機能までつけるとおもしろそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66940",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66941",
+      "text": "code",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66942",
+      "text": " [deno fmt]したあと[deno lsp]の警告を全部消した",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66943",
+      "text": "  不要な変数の削除",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66944",
+      "text": "  `let`と`const`に置き換え",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66945",
+      "text": "  classに変換",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66946",
+      "text": "  　これを自動で行えたのは助かった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66947",
+      "text": " JQueryと[gif.js]に依存している",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c4ee71280f00000caa03d",
+      "text": " ゲーム内のオブジェクトの定義・[$ \\varDelta t]間の座標移動・衝突判定",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799592,
+      "updated": 1662799633
+    },
+    {
+      "id": "631c3ff21280f00000c66948",
+      "text": "  code:script.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66969",
+      "text": "   interface Point {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6696a",
+      "text": "     x: number;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6696b",
+      "text": "     y: number;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6696c",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6696d",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6696e",
+      "text": "   interface Character {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6696f",
+      "text": "     position: Point;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66970",
+      "text": "     velocity: Point;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66971",
+      "text": "     acceleration: Point;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66972",
+      "text": "     width: number;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66973",
+      "text": "     height: number;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66974",
+      "text": "     type: \"me\" | \"\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66975",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66976",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c432f1280f00000ca9ec2",
+      "text": "   const makeCharacter = (position: Point, width: number, height: number ): Character => ({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796592,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c435b1280f00000ca9ec4",
+      "text": "     position,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796635,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c436a1280f00000ca9ec6",
+      "text": "     velocity: { x: 0, y: 0 },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796651,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c43761280f00000ca9ec7",
+      "text": "     acceleration: { x: 0, y: 0 },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796662,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c437e1280f00000ca9ec8",
+      "text": "     width, height, type: \"\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796670,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c43661280f00000ca9ec5",
+      "text": "   });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796647,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c432f1280f00000ca9ec3",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796592,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66977",
+      "text": "   const tick = (chr: Character): Character => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66978",
+      "text": "     const newChr = {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66979",
+      "text": "       position: {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6697a",
+      "text": "         x: chr.position.x + chr.velocity.x,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6697b",
+      "text": "         y: chr.position.y + chr.velocity.y,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6697c",
+      "text": "       },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6697d",
+      "text": "       velocity: {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6697e",
+      "text": "         x: chr.velocity.x + chr.acceleration.x,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6697f",
+      "text": "         y: chr.velocity.y + chr.acceleration.y,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66980",
+      "text": "       },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66981",
+      "text": "       acceleration: {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66982",
+      "text": "         x: chr.acceleration.x,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66983",
+      "text": "         y: chr.acceleration.y,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66984",
+      "text": "       },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66985",
+      "text": "       width: chr.width,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66986",
+      "text": "       height: chr.height,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66987",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66988",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66989",
+      "text": "     newChr.position.x = Math.max(Math.min(-3, newChr.position.x), 3);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6698a",
+      "text": "     newChr.position.y = Math.max(Math.min(-3, newChr.position.y), 3);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6698b",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6698c",
+      "text": "     return newChr;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6698d",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6698e",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6698f",
+      "text": "   const isOutOfArea = (chr: Character): boolean =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66990",
+      "text": "     chr.position.x + chr.width < 0 || chr.position.x > 240 ||",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66991",
+      "text": "     chr.position.y + chr.height < 0 || chr.position.y > 320;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66992",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66993",
+      "text": "   const isHit = (chr1: Character, chr2: Character): boolean => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66994",
+      "text": "     const lx = Math.min(chr1.position.x + chr1.width, chr2.position.x + chr2.width); // 最も左にある右側",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66995",
+      "text": "     const rx = Math.max(chr1.position.x, chr2.position.x); // 最も右にある左側",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66996",
+      "text": "     const ty = Math.min(chr1.position.y + chr1.height, chr2.position.y + chr2.height); // 最も上にある下側",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66997",
+      "text": "     const by = Math.max(chr1.position.y, chr2.position.y); // 最も下にある上側",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66998",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c66999",
+      "text": "     return rx < lx && by < ty;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c3ff21280f00000c6699a",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799660
+    },
+    {
+      "id": "631c46071280f00000ca9f90",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797320,
+      "updated": 1662799663
+    },
+    {
+      "id": "631c4f2f1280f00000caa040",
+      "text": " GIF変換関数",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799663,
+      "updated": 1662799683
+    },
+    {
+      "id": "631c4f251280f00000caa03f",
+      "text": "  code:script.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799654,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c46071280f00000ca9f91",
+      "text": "   const gif = new GIF({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797320,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c46071280f00000ca9f92",
+      "text": "     workers: 2,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797320,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c46071280f00000ca9f93",
+      "text": "     quality: 10,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797320,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c46071280f00000ca9f94",
+      "text": "     width: 120,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797320,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c46071280f00000ca9f95",
+      "text": "     height: 160,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797320,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c46071280f00000ca9f96",
+      "text": "     workerScript: \"js/gif.worker.js\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797320,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c46071280f00000ca9f97",
+      "text": "   });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797320,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c4bfe1280f00000caa02a",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798847,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c46071280f00000ca9f9a",
+      "text": "   const addFrame = (ctx: CanvasRenderingContext2D): void => ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797320,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c46071280f00000ca9f9b",
+      "text": "     gif.addFrame(ctx, { copy: true, delay: 10 });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797320,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c46071280f00000ca9f9c",
+      "text": "   const render = async (): Promise<Blob> => new Promise((resolve) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797320,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c46071280f00000ca9f9d",
+      "text": "     gif.once(\"finished\", (blob) => resolve(blob));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797320,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c46071280f00000ca9f9e",
+      "text": "     gif.render();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797320,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c46071280f00000ca9f9f",
+      "text": "   });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797320,
+      "updated": 1662799771
+    },
+    {
+      "id": "631c46531280f00000ca9faa",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797395,
+      "updated": 1662799776
+    },
+    {
+      "id": "631c4f4b1280f00000caa042",
+      "text": " オブジェクトの描画",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799692,
+      "updated": 1662799700
+    },
+    {
+      "id": "631c4f461280f00000caa041",
+      "text": "  code:script.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799687,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c4f591280f00000caa049",
+      "text": "   const loadImg = (name: string): Image => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799705,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c4f591280f00000caa04a",
+      "text": "     const img = new Image();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799705,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c4f591280f00000caa04b",
+      "text": "     img.src = name;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799705,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c4f591280f00000caa04c",
+      "text": "     return img;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799705,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c4f591280f00000caa04d",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799705,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c4f591280f00000caa04e",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799705,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c46511280f00000ca9fa7",
+      "text": "   //const daikonImg = loadImg('img/daikon.gif');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797393,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c46511280f00000ca9fa8",
+      "text": "   //const etsukoImg = loadImg('img/etsuko.gif');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797393,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c46511280f00000ca9fa9",
+      "text": "   const birdImgs = [loadImg(\"img/bird1.gif\"), loadImg(\"img/bird2.gif\")];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797393,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c46541280f00000ca9fab",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797397,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c6699c",
+      "text": "   const draw = (chr: Character, ctx: CanvasRenderingContext2D, animCount: number): void => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c6699d",
+      "text": "     switch (this.type) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c6699e",
+      "text": "       case \"my\":",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c6699f",
+      "text": "         ctx.fillStyle = \"yellow\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669a0",
+      "text": "         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669a1",
+      "text": "         ctx.drawImage(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669a2",
+      "text": "           birdImgs[animCount % 2],",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669a3",
+      "text": "           this.position.x - 2,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669a4",
+      "text": "           this.position.y - 2,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669a5",
+      "text": "           this.width + 4,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669a6",
+      "text": "           this.height + 4,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669a7",
+      "text": "         );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669a8",
+      "text": "         break;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669a9",
+      "text": "       default:",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669aa",
+      "text": "         ctx.fillStyle = \"green\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669ab",
+      "text": "         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669ac",
+      "text": "         break;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669ad",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669ae",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799768
+    },
+    {
+      "id": "631c3ff21280f00000c669af",
+      "text": " 　　",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799792
+    },
+    {
+      "id": "631c4f941280f00000caa04f",
+      "text": " code:script.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799764,
+      "updated": 1662799765
+    },
+    {
+      "id": "631c4ca51280f00000caa035",
+      "text": "  /** マウスが押されているかどうか */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799013,
+      "updated": 1662799021
+    },
+    {
+      "id": "631c48411280f00000ca9fe6",
+      "text": "  let mousef = false;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797890,
+      "updated": 1662797894
+    },
+    {
+      "id": "631c4c991280f00000caa032",
+      "text": "  document.body.addEventListener(\"pointerdown\", () => { mousef = true; });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799001,
+      "updated": 1662799001
+    },
+    {
+      "id": "631c4c991280f00000caa033",
+      "text": "  document.body.addEventListener(\"pointerup\", () => { mousef = false; });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799001,
+      "updated": 1662799001
+    },
+    {
+      "id": "631c4c9c1280f00000caa034",
+      "text": "  ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799005,
+      "updated": 1662799005
+    },
+    {
+      "id": "631c4fb21280f00000caa051",
+      "text": " ゲームループ管理",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799795,
+      "updated": 1662799800
+    },
+    {
+      "id": "631c4fac1280f00000caa050",
+      "text": "  code:script.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799789,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669b0",
+      "text": "   class MainScene {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c47d11280f00000ca9fdf",
+      "text": "     public time = 0;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797777,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c47d61280f00000ca9fe0",
+      "text": "     public overTime = 0;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797783,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c4b781280f00000caa029",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798713,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c4a7f1280f00000caa022",
+      "text": "     private animCount = 0;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798464,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c47c61280f00000ca9fdb",
+      "text": "     private bullets = [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797767,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c47c61280f00000ca9fdc",
+      "text": "       makeCharacter({ x: 0, y: 0 }, 120, 10),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797767,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c47c61280f00000ca9fdd",
+      "text": "       makeCharacter({ x: 0, y: 160 }, - 10, 120, 10),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797767,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c47c61280f00000ca9fde",
+      "text": "     ];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797767,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c47f21280f00000ca9fe2",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797811,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669b1",
+      "text": "     constructor(private ctx: CanvasRenderingContext2D) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799908
+    },
+    {
+      "id": "631c3ff21280f00000c669b4",
+      "text": "       this.my = makeCharacter(30, 50, 13 * 1.5, 13 * 1.5);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669b5",
+      "text": "       this.my.ay = 0.08;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669b6",
+      "text": "       this.my.type = \"my\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669bc",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c47f31280f00000ca9fe3",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797812,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669c0",
+      "text": "     tick() {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669c2",
+      "text": "       if (mousef) this.my.vy -= 0.16;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669c3",
+      "text": "       if (this.time % 40 == 0) this.animCount++;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669c4",
+      "text": "       if (this.time % 5 == 0 && mousef) this.animCount++;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669c5",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669c6",
+      "text": "       // 障害物を作る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669c7",
+      "text": "       if (this.time % 120 == 0) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669c8",
+      "text": "         const SIZE = 50;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669c9",
+      "text": "         const r = Math.random() * (160 - 20 - SIZE) + 20;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c4c3d1280f00000caa02b",
+      "text": "         {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798910,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669ca",
+      "text": "           const wall = makeCharacter(120, 0, 5 * 1.5, r)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669cb",
+      "text": "           wall.vx = -1;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669cc",
+      "text": "           this.bullets.push(wall);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c4c4a1280f00000caa02c",
+      "text": "         }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798923,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c4c4c1280f00000caa02d",
+      "text": "         {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798925,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669cd",
+      "text": "           const wall = makeCharacter(120, r + SIZE, 5 * 1.5, 160 - (r + SIZE))",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669ce",
+      "text": "           wall.vx = -1;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669cf",
+      "text": "           this.bullets.push(wall);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c4c5c1280f00000caa02f",
+      "text": "         }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798941,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669d0",
+      "text": "       }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669d1",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669d2",
+      "text": "       // draw",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c46871280f00000ca9fbc",
+      "text": "       let result = true;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797448,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669d3",
+      "text": "       if (this.overTime > 0) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669d4",
+      "text": "         this.overTime--;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669d5",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669d6",
+      "text": "         this.ctx.fillStyle = \"red\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669d7",
+      "text": "         this.ctx.fillRect(0, 0, 120, 160);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669d8",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669d9",
+      "text": "         if (this.overTime == 0) result = false;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669da",
+      "text": "       }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669db",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669dc",
+      "text": "       if (this.overTime == 0) tick(this.my);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669dd",
+      "text": "       draw(this.my, this.ctx, this.animCount);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669de",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669df",
+      "text": "       if (this.overTime == 0) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669e0",
+      "text": "         for (const v of this.bullets) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669e1",
+      "text": "           tick(v);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669e2",
+      "text": "           if (!.bullets.some((bullet) => isHit(bullet, this.my))) continue;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669e3",
+      "text": "           this.overTime = 20;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669e5",
+      "text": "         }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669e6",
+      "text": "       }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669e7",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c46a21280f00000ca9fbd",
+      "text": "       for (const v of this.bullets) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797475,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c46b11280f00000ca9fc0",
+      "text": "         draw(v, this.ctx, this.animCount);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797489,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c46b41280f00000ca9fc1",
+      "text": "         if (!v.del) continue;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797493,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c46bc1280f00000ca9fc2",
+      "text": "         this.bullets.splice(this.bullets.indexOf(v), 1);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797501,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c46ac1280f00000ca9fbe",
+      "text": "       }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797485,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669ee",
+      "text": "       this.ctx.fillStyle = \"white\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669ef",
+      "text": "       this.ctx.font = \"12px 'sans-serif'\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669f0",
+      "text": "       this.ctx.fillText(`score: ${(this.time / 120 | 0)}`, 10, 20);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669f1",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669f2",
+      "text": "       if (time < 100) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669f3",
+      "text": "         this.ctx.fillStyle = \"white\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669f4",
+      "text": "         this.ctx.font = \"30px 'sans-serif'\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669f5",
+      "text": "         this.ctx.fillText(\"GifBird\", 10, 100);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669f6",
+      "text": "       }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669f7",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669f8",
+      "text": "       if (this.time % 5 == 0 || this.overTime != 0) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669f9",
+      "text": "         addFrame(this.ctx);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669fa",
+      "text": "       }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669fb",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669fc",
+      "text": "       return result;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669fd",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c3ff21280f00000c669fe",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799806
+    },
+    {
+      "id": "631c4d831280f00000caa03a",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799235,
+      "updated": 1662799820
+    },
+    {
+      "id": "631c49ad1280f00000ca9fee",
+      "text": " ゲーム開始処理とか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798254,
+      "updated": 1662799818
+    },
+    {
+      "id": "631c49ae1280f00000ca9fef",
+      "text": " 　描画処理は一箇所に集め、stateで管理するようにしたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798254,
+      "updated": 1662799818
+    },
+    {
+      "id": "631c49aa1280f00000ca9fed",
+      "text": "  code:script.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798251,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c3ff21280f00000c66a0f",
+      "text": "   //$('.over .title').hide();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c3ff21280f00000c66a10",
+      "text": "   $(\"#loading\").hide();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c3ff21280f00000c66a11",
+      "text": "   $(\".over .gameover\").hide();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44bb1280f00000ca9eee",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796987,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c449c1280f00000ca9ee7",
+      "text": "   const title = document.getElementsByClassName(\"js-title\")!.[0];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796957,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44a51280f00000ca9ee8",
+      "text": "   title.addEventListener(\"pointerdown\", () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796965,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44b31280f00000ca9eec",
+      "text": "     $(\".over .gameover\").hide();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796980,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44b31280f00000ca9eed",
+      "text": "     $(\".over .title\").show();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796980,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44af1280f00000ca9ee9",
+      "text": "   });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796975,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c4c8f1280f00000caa030",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798992,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44411280f00000ca9ecc",
+      "text": "   document.body.addEventListener(\"touchmove\", (e) => { e.preventDefault(); });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796866,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44c31280f00000ca9ef0",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796996,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c50351280f00000caa053",
+      "text": "   const canvas = document.getElementById(\"canv\")!;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799925,
+      "updated": 1662799934
+    },
+    {
+      "id": "631c503e1280f00000caa054",
+      "text": "   const ctx = canvas.getContext(\"2d\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799936,
+      "updated": 1662799945
+    },
+    {
+      "id": "631c44c31280f00000ca9ef1",
+      "text": "   const retry = document.getElementsByClassName(\"js-retry\")!.[0];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796996,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44c31280f00000ca9ef2",
+      "text": "   retry.addEventListener(\"pointerdown\", () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796996,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f48",
+      "text": "     $(\".over .title\").hide();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f49",
+      "text": "     $(\".over .gameover\").hide();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f4a",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c48531280f00000ca9fe9",
+      "text": "     const scene = new MainScene(ctx);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797907,
+      "updated": 1662799948
+    },
+    {
+      "id": "631c44ca1280f00000ca9f4f",
+      "text": "     await new Promise((resolve) => setTimeout(resolve, 10));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f50",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f51",
+      "text": "     // 初期化",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f52",
+      "text": "     ctx.fillStyle = \"#444\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799951
+    },
+    {
+      "id": "631c44ca1280f00000ca9f53",
+      "text": "     ctx.fillRect(0, 0, 240, 320);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799952
+    },
+    {
+      "id": "631c44ca1280f00000ca9f54",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f55",
+      "text": "     if (scene.overTime == 0) scene.time++;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c48821280f00000ca9fea",
+      "text": "     // TODO: requestAnimationFrame()に書き換える",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797956,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f56",
+      "text": "     while (scene.tick()) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f57",
+      "text": "       await new Promise<void>((resolve) => setTimeout(resolve, 10));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f58",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f59",
+      "text": "     ctx.fillStyle = \"#444\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799957
+    },
+    {
+      "id": "631c44ca1280f00000ca9f5a",
+      "text": "     ctx.fillRect(0, 0, 240, 320);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799959
+    },
+    {
+      "id": "631c44ca1280f00000ca9f5b",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f5c",
+      "text": "     const score = (scene.time / 120 | 0);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f5d",
+      "text": "     $(\".js-over-logo\").text(`score:${score`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f5e",
+      "text": "     $(\".over .gameover\").fadeIn();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f5f",
+      "text": "     $(\".retry\").hide();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f60",
+      "text": "     $(\"#screenshot\").text(\"Generating GIF Animation..\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f61",
+      "text": "     const blob = await render();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f62",
+      "text": "     $(\".retry\").show();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f63",
+      "text": "     $(\"#screenshot\").empty();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f64",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f65",
+      "text": "     const img = document.createElement(\"img\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c4cf51280f00000caa039",
+      "text": "     img.src = URL.createObjectURL(blob);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662799094,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f67",
+      "text": "     $(\"#screenshot\").append(img);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c49c91280f00000ca9ff0",
+      "text": "     const link = document.createElement(\"a\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798282,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c49d31280f00000ca9ff1",
+      "text": "     link.textContent = \"download\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798291,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c49da1280f00000ca9ff2",
+      "text": "     link.href = img.src;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798299,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c49e21280f00000ca9ff3",
+      "text": "     link.download = \"gifbird.gif\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662798307,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44ca1280f00000ca9f6b",
+      "text": "     $(\"#screenshot\").append(link);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662797002,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c44c31280f00000ca9ef6",
+      "text": "   });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662796996,
+      "updated": 1662799821
+    },
+    {
+      "id": "631c3ff21280f00000c66a53",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662799824
+    },
+    {
+      "id": "631c3ff21280f00000c66a54",
+      "text": " CSSとHTML",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66a55",
+      "text": "  元ページを参照",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66a56",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66a57",
+      "text": "このゲーム難しい[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66a58",
+      "text": "　マウス操作のタイミングがシビア",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66a59",
+      "text": "　壁の穴に来るよう高度を制御するのが困難",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    },
+    {
+      "id": "631c3ff21280f00000c66a5a",
+      "text": "　 すぐ天井や壁にぶつかってしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1662795763,
+      "updated": 1662795763
+    }
+  ]
+}

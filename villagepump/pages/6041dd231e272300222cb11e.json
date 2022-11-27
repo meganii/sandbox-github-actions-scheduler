@@ -1,0 +1,176 @@
+{
+  "id": "6041dd231e272300222cb11e",
+  "title": "未読のページにランダムジャンプするUserScript：遷移したページとその数をconsoleに吐くver",
+  "created": 1614929188,
+  "updated": 1614929216,
+  "lines": [
+    {
+      "id": "6041dd231e272300222cb11e",
+      "text": "未読のページにランダムジャンプするUserScript：遷移したページとその数をconsoleに吐くver",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468c4",
+      "text": "from [未読のページにランダムジャンプするUserScript]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468c5",
+      "text": "遷移したページとその数をconsoleに吐くver",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929195
+    },
+    {
+      "id": "6041dd23e5172d00007468c6",
+      "text": "code:script.js",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929216
+    },
+    {
+      "id": "6041dd23e5172d00007468c7",
+      "text": " scrapbox.PageMenu.addMenu({",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468c8",
+      "text": "   title: 'Jump to an unread page',",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468c9",
+      "text": "   image: 'https://img.icons8.com/ios/180/shuffle.png',",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468ca",
+      "text": "   onClick: () => {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468cb",
+      "text": "     const lines = document.getElementsByClassName('lines')?.[0];",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468cc",
+      "text": "     let count = 0;",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468cd",
+      "text": "     const observer = new MutationObserver(() => {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468ce",
+      "text": "       console.log(`${++count}: /${scrapbox.Project.name}/${scrapbox.Page.title}`);",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468cf",
+      "text": "       const unreadTelomeres = lines.getElementsByClassName('telomere-border unread');",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468d0",
+      "text": "       if (unreadTelomeres.length > 0) {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468d1",
+      "text": "         observer.disconnect();",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468d2",
+      "text": "         return;",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468d3",
+      "text": "       }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468d4",
+      "text": "       document.getElementsByClassName('random-jump-button')?.[0].click();",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468d5",
+      "text": "     });",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468d6",
+      "text": "     observer.observe(lines, {childList: true});",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468d7",
+      "text": "     document.getElementsByClassName('random-jump-button')?.[0].click();",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468d8",
+      "text": "   },",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468d9",
+      "text": " });",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    },
+    {
+      "id": "6041dd23e5172d00007468da",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614929188,
+      "updated": 1614929188
+    }
+  ]
+}

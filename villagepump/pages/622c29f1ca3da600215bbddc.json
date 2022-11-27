@@ -1,0 +1,547 @@
+{
+  "id": "622c29f1ca3da600215bbddc",
+  "title": "Denoの等値比較函数を外部から使えないかな",
+  "created": 1647061490,
+  "updated": 1647061666,
+  "lines": [
+    {
+      "id": "622c29f1ca3da600215bbddc",
+      "text": "Denoの等値比較函数を外部から使えないかな",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061490,
+      "updated": 1647061533
+    },
+    {
+      "id": "622c29fb4bb2e200006cf440",
+      "text": "from [2022/03/12]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061490,
+      "updated": 1647061490
+    },
+    {
+      "id": "622c29fb4bb2e200006cf441",
+      "text": "`(await import(\"https://deno.land/std@0.129.0/testing/asserts.ts\")).assertEquals`で使っている等置比較函数を外部から使えないかな[takker.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061490,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf48c",
+      "text": " ぶっちゃけ今回Denoで書いてるからそれ使えばいいんですけどね…使うか[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf48d",
+      "text": "  equalみたいな名前でexportされていたはず",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf48e",
+      "text": "  https://deno.land/std@0.129.0/testing/asserts.ts#L117",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf48f",
+      "text": "  [O(NP) algorithm]部分が余計かも？[takker.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf490",
+      "text": "   オーバーヘッドが大きすぎる",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf491",
+      "text": "   自作したほうが軽量かな",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf492",
+      "text": "    code:equal.js",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf493",
+      "text": "     /** @param {unknown} l",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf494",
+      "text": "       * @param {unknown} r",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf495",
+      "text": "       * @return boolean",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf496",
+      "text": "       */",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf497",
+      "text": "     export const equal = (l, r) => {",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf498",
+      "text": "       if (Array.isArray(l)) {",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf499",
+      "text": "         if (!Array.isArray(r)) return false;",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf49a",
+      "text": "         return l.length === r.length &&",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf49b",
+      "text": "           l.every((item, i) => equal(item, r[i]));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf49c",
+      "text": "       }",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf49d",
+      "text": "       ",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf49e",
+      "text": "       if (typeof l === \"object\") {",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf49f",
+      "text": "         if (typeof r !== \"object\") return false;",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4a0",
+      "text": "         const keys = Object.keys(l);",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4a1",
+      "text": "         return keys.length === Object.keys(r).length &&",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4a2",
+      "text": "           keys.every((key) => equal(l[key], r[key]));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4a3",
+      "text": "       }",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4a4",
+      "text": "       ",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4a5",
+      "text": "       return l === r;",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4a6",
+      "text": "     };",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4a7",
+      "text": "     ",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4a8",
+      "text": "   突然の自作[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4a9",
+      "text": "    いきなり始まるのすごい",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4aa",
+      "text": "    [itst][sta.icon*2]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4ab",
+      "text": "   11:21:25 終了[takker.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4ac",
+      "text": "    最初TSで書こうとしましたが、型パズルの自信がなくなったのでJSに逃げました",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4ad",
+      "text": "     `unknown`にしちゃえばTSでも書けそう",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4ae",
+      "text": "    [/vim-jp-emojis/otz.icon][kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4af",
+      "text": "    これ使ってもいいですか？[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4b0",
+      "text": "    いいですよ～[takker.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4b1",
+      "text": "     でもうごくのかなあ",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4b2",
+      "text": "     code:equal_test.ts",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4b3",
+      "text": "      import { equal } from \"./equal.js\";",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4b4",
+      "text": "      import { assert } from \"https://deno.land/std@0.129.0/testing/asserts.ts\";",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4b5",
+      "text": "      ",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4b6",
+      "text": "      Deno.test(\"equal()\", async (t) => {",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4b7",
+      "text": "        await t.step(\"primitives\", async (t) => {",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4b8",
+      "text": "          await t.step(\"string\", () => {",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4b9",
+      "text": "            assert(equal(\"文字列\", \"文字列\"));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4ba",
+      "text": "            assert(!equal(\"文字列\", \"もじれつ\"));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4bb",
+      "text": "            assert(equal(\"123\", \"123\"));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4bc",
+      "text": "            assert(!equal(\"123\", 123));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4bd",
+      "text": "          });",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4be",
+      "text": "          ",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4bf",
+      "text": "          await t.step(\"number\", () => {",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4c0",
+      "text": "            assert(equal(123, 123));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4c1",
+      "text": "            assert(!equal(123, 12));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4c2",
+      "text": "            assert(!equal(123, {}));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4c3",
+      "text": "            assert(!equal(123, { 123: 123 }));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4c4",
+      "text": "          });",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4c5",
+      "text": "        });",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4c6",
+      "text": "        ",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4c7",
+      "text": "        await t.step(\"object\", () => {",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4c8",
+      "text": "          assert(equal({ foo: \"bar\"}, { foo: \"bar\"}));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4c9",
+      "text": "          assert(!equal({ foo: \"bar\"}, { foo: \"baz\"}));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4ca",
+      "text": "     しまった。ここでテストに失敗する[takker.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4cb",
+      "text": "      `l`になくて`r`にあるpropertyのチェックができていなかった",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4cc",
+      "text": "      2022-03-12 11:57:13 直した",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4cd",
+      "text": "     code:equal_test.ts",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4ce",
+      "text": "          assert(!equal({ foo: \"bar\"}, { foo: \"bar\", hoge: \"fuga\" }));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4cf",
+      "text": "          assert(equal({ foo: \"bar\", 23: \"test\" }, { foo: \"bar\", 23: \"test\"}));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4d0",
+      "text": "          assert(!equal({ foo: \"bar\", 23: \"test\" }, { foo: \"bar\", 23: \"text\"}));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4d1",
+      "text": "          ",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4d2",
+      "text": "          assert(equal({ foo: \"bar\", 23: { hoge: false } }, { foo: \"bar\", 23: { hoge: false }}));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4d3",
+      "text": "          assert(equal({ foo: \"bar\", 23: { hoge: false } }, { foo: \"bar\", 23: { hoge: false, fuga: 34 }}));",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4d4",
+      "text": "        });",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    },
+    {
+      "id": "622c2a534bb2e200006cf4d5",
+      "text": "      });",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647061577,
+      "updated": 1647061666
+    }
+  ]
+}

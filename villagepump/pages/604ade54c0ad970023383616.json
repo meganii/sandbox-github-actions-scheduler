@@ -1,0 +1,344 @@
+{
+  "id": "604ade54c0ad970023383616",
+  "title": "文字の出現回数をカウントする",
+  "created": 1615519328,
+  "updated": 1616281674,
+  "lines": [
+    {
+      "id": "604ade54c0ad970023383616",
+      "text": "文字の出現回数をカウントする",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615519328,
+      "updated": 1615519328
+    },
+    {
+      "id": "604ade5fb19cc300001f0a50",
+      "text": "例えば[中央・総武線]の駅名",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615519328,
+      "updated": 1615519402
+    },
+    {
+      "id": "604adf2ab19cc300001f0a53",
+      "text": "code:jb.txt",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615519531,
+      "updated": 1615519533
+    },
+    {
+      "id": "604adf2db19cc300001f0a54",
+      "text": " 三鷹吉祥寺西荻窪荻窪阿佐ヶ谷高円寺中野（東京）東中野大久保（東京）新宿代々木千駄ヶ谷信濃町四ッ谷市ヶ谷飯田橋水道橋御茶ノ水秋葉原浅草橋両国錦糸町亀戸平井（東京）新小岩小岩市川本八幡下総中山西船橋船橋東船橋津田沼幕張本郷幕張新検見川稲毛西千葉千葉",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615519534,
+      "updated": 1615519543
+    },
+    {
+      "id": "604adfc48ee92a0000a9fc7d",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615519684,
+      "updated": 1615519686
+    },
+    {
+      "id": "604adfc68ee92a0000a9fc7f",
+      "text": "[= '三鷹吉祥寺西荻窪荻窪阿佐ヶ谷高円寺中野（東京）東中野大久保（東京）新宿代々木千駄ヶ谷信濃町四ッ谷市ヶ谷飯田橋水道橋御茶ノ水秋葉原浅草橋両国錦糸町亀戸平井（東京）新小岩小岩市川本八幡下総中山西船橋船橋東船橋津田沼幕張本郷幕張新検見川稲毛西千葉千葉'.split('').sort()]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615519686,
+      "updated": 1615519686
+    },
+    {
+      "id": "604ade61b19cc300001f0a51",
+      "text": "",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615519330,
+      "updated": 1615519330
+    },
+    {
+      "id": "604ae0ceb19cc300009ce75d",
+      "text": "code:count.py",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615519950,
+      "updated": 1615519955
+    },
+    {
+      "id": "604ae0d0b19cc300009ce75f",
+      "text": " jb = open(\"jb.txt\",\"r\").read().replace(\"\\n\",\"\")",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615519953,
+      "updated": 1615520015
+    },
+    {
+      "id": "604ae10fb19cc300009ce764",
+      "text": " arr =[]",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615520015,
+      "updated": 1615520015
+    },
+    {
+      "id": "604ae10fb19cc300009ce765",
+      "text": " for c in set(jb):",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615520015,
+      "updated": 1615520015
+    },
+    {
+      "id": "604ae10fb19cc300009ce766",
+      "text": "     arr.append([jb.count(c),c])",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615520015,
+      "updated": 1615520015
+    },
+    {
+      "id": "604ae10fb19cc300009ce767",
+      "text": " ",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615520015,
+      "updated": 1615520015
+    },
+    {
+      "id": "604ae10fb19cc300009ce768",
+      "text": " print(sorted(arr,reverse=True))",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615520015,
+      "updated": 1615520015
+    },
+    {
+      "id": "604ae0ceb19cc300009ce75e",
+      "text": "",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615519952,
+      "updated": 1615519952
+    },
+    {
+      "id": "604ae0deb19cc300009ce760",
+      "text": "code:result",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615519967,
+      "updated": 1615519968
+    },
+    {
+      "id": "604ae0e0b19cc300009ce762",
+      "text": " [[6, '橋'], [5, '東'], [4, '谷'], [3, '）'], [3, '（'], [3, '西'], [3, '葉'], [3, '船'], [3, '新'], [3, '千'], [3, '京'], [3, '中'], [3, 'ヶ'], [2, '野'], [2, '荻'], [2, '窪'], [2, '町'], [2, '田'], [2, '水'], [2, '本'], [2, '張'], [2, '幕'], [2, '市'], [2, '川'], [2, '岩'], [2, '小'], [2, '寺'], [1, '鷹'], [1, '高'], [1, '駄'], [1, '飯'], [1, '阿'], [1, '錦'], [1, '郷'], [1, '道'], [1, '見'], [1, '草'], [1, '茶'], [1, '総'], [1, '糸'], [1, '稲'], [1, '秋'], [1, '祥'], [1, '濃'], [1, '浅'], [1, '津'], [1, '沼'], [1, '毛'], [1, '検'], [1, '木'], [1, '戸'], [1, '御'], [1, '平'], [1, '幡'], [1, '山'], [1, '宿'], [1, '大'], [1, '国'], [1, '四'], [1, '吉'], [1, '原'], [1, '円'], [1, '八'], [1, '信'], [1, '保'], [1, '佐'], [1, '代'], [1, '井'], [1, '亀'], [1, '久'], [1, '両'], [1, '下'], [1, '三'], [1, 'ノ'], [1, 'ッ'], [1, '々']]",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615519968,
+      "updated": 1615519988
+    },
+    {
+      "id": "604ae0f4b19cc300009ce763",
+      "text": " ",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615519988,
+      "updated": 1615519988
+    },
+    {
+      "id": "604ae0dfb19cc300009ce761",
+      "text": "",
+      "userId": "6044910bc9a74e001eb19cc3",
+      "created": 1615519968,
+      "updated": 1615537027
+    },
+    {
+      "id": "604b236b1280f000009ba9bb",
+      "text": "code:js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615537003,
+      "updated": 1615537006
+    },
+    {
+      "id": "604b236e1280f000009ba9bc",
+      "text": " (async () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615537006,
+      "updated": 1615537012
+    },
+    {
+      "id": "604b23741280f000009ba9bd",
+      "text": "   const {execute} = await import('/api/code/villagepump/文字の出現回数をカウントする/script.js');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615537012,
+      "updated": 1615537032
+    },
+    {
+      "id": "604b23881280f000009ba9be",
+      "text": "   execute('/api/code/villagepump/文字の出現回数をカウントする/jb.txt');",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615537032,
+      "updated": 1615537050
+    },
+    {
+      "id": "604b239b1280f000009ba9bf",
+      "text": " })();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615537051,
+      "updated": 1615537055
+    },
+    {
+      "id": "604b22781280f000009ba9a5",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536760,
+      "updated": 1615537002
+    },
+    {
+      "id": "604b22b91280f000009ba9ae",
+      "text": " export async function execute(path) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536825,
+      "updated": 1615536869
+    },
+    {
+      "id": "604b22cd1280f000009ba9af",
+      "text": "   console.log(count(await load(path)));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536845,
+      "updated": 1615536864
+    },
+    {
+      "id": "604b22e01280f000009ba9b0",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536865,
+      "updated": 1615536871
+    },
+    {
+      "id": "604b22e81280f000009ba9b1",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536872,
+      "updated": 1615536872
+    },
+    {
+      "id": "604b22a11280f000009ba9ab",
+      "text": " function count(string) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536801,
+      "updated": 1615536877
+    },
+    {
+      "id": "604b22fd1280f000009ba9b4",
+      "text": "   let result = {};",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536893,
+      "updated": 1615536909
+    },
+    {
+      "id": "604b22ee1280f000009ba9b2",
+      "text": "   for(const char of string.split('')) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536878,
+      "updated": 1615536902
+    },
+    {
+      "id": "604b23141280f000009ba9b5",
+      "text": "     if (!result[char]) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536916,
+      "updated": 1615536951
+    },
+    {
+      "id": "604b23371280f000009ba9b8",
+      "text": "       result[char] = 1;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536951,
+      "updated": 1615536951
+    },
+    {
+      "id": "604b23381280f000009ba9b9",
+      "text": "     } else {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536953,
+      "updated": 1615536955
+    },
+    {
+      "id": "604b232c1280f000009ba9b6",
+      "text": "       result[char]++;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536939,
+      "updated": 1615536957
+    },
+    {
+      "id": "604b233e1280f000009ba9ba",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536959,
+      "updated": 1615536959
+    },
+    {
+      "id": "604b22fb1280f000009ba9b3",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536891,
+      "updated": 1615536891
+    },
+    {
+      "id": "604b23311280f000009ba9b7",
+      "text": "   return Object.entries(result).sort((a,b) => b[1] - a[1]);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536945,
+      "updated": 1615537120
+    },
+    {
+      "id": "604b22b51280f000009ba9ad",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536821,
+      "updated": 1615536821
+    },
+    {
+      "id": "604b22a11280f000009ba9ac",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536801,
+      "updated": 1615536801
+    },
+    {
+      "id": "604b227a1280f000009ba9a7",
+      "text": " async function load(path) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536762,
+      "updated": 1615536782
+    },
+    {
+      "id": "604b22901280f000009ba9a9",
+      "text": "   const res = await fetch(path);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536784,
+      "updated": 1615536795
+    },
+    {
+      "id": "604b229b1280f000009ba9aa",
+      "text": "   return await res.text();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536795,
+      "updated": 1615536800
+    },
+    {
+      "id": "604b228e1280f000009ba9a8",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536782,
+      "updated": 1615536782
+    },
+    {
+      "id": "604b22791280f000009ba9a6",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615536762,
+      "updated": 1615536762
+    },
+    {
+      "id": "60568046246f590000f9146d",
+      "text": "[中央・総武線の文字列から架空の駅名を生成する]",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1616281671,
+      "updated": 1616281674
+    },
+    {
+      "id": "60568047246f590000f9146e",
+      "text": "",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1616281671,
+      "updated": 1616281671
+    }
+  ]
+}

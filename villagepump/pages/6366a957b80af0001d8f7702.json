@@ -1,0 +1,526 @@
+{
+  "id": "6366a957b80af0001d8f7702",
+  "title": "Reactの関数コンポーネントのstateをsetしても描画が更新されない",
+  "created": 1667672410,
+  "updated": 1667730060,
+  "lines": [
+    {
+      "id": "6366ae047838e30000bfb5af",
+      "text": "Reactの関数コンポーネントのstateをsetしても描画が更新されない",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667673604,
+      "updated": 1667676104
+    },
+    {
+      "id": "6366b0ea7838e30000bfb5be",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674346,
+      "updated": 1667674346
+    },
+    {
+      "id": "6366b0ea7838e30000bfb5bf",
+      "text": "要約",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674346,
+      "updated": 1667674875
+    },
+    {
+      "id": "6366b0ee7838e30000bfb5c0",
+      "text": "\tstateの更新方法が悪かった",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674350,
+      "updated": 1667674376
+    },
+    {
+      "id": "6366b4967838e30000bfb5d5",
+      "text": "\t\tそもそも`const d = data`がまずかった（dataは[ステートフック]のgetter）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675286,
+      "updated": 1667676988
+    },
+    {
+      "id": "6366b1dc7838e30000bfb5c3",
+      "text": " \t\t`const d = data;`で行われているのは`data`の値のコピーではなく参照のコピー（[シャローコピー]）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674588,
+      "updated": 1667675298
+    },
+    {
+      "id": "6366b2977838e30000bfb5c5",
+      "text": "\t\t\t後に`d`を変更しているが、実際にはdataの値も変更されてしまっている",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674775,
+      "updated": 1667674848
+    },
+    {
+      "id": "6366b2e07838e30000bfb5c6",
+      "text": "\t\t\t同一の値であるため、stateのset時に内部的に行っている[Object.is()]の判定がtrueになってしまい「値が変更されていない」と判断されて描画が更新されなかった",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674848,
+      "updated": 1667675047
+    },
+    {
+      "id": "6366b3a77838e30000bfb5c8",
+      "text": "\t\t\t\thttps://beta.reactjs.org/apis/react/useState#setstate-caveats",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675047,
+      "updated": 1667675051
+    },
+    {
+      "id": "6366ae0d7838e30000bfb5b0",
+      "text": "\t\t上記のようなことをしたいのであれば、`const d = [...data.slice()];`と書いたほうが良かった",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667673613,
+      "updated": 1667681261
+    },
+    {
+      "id": "6366bb057838e30000bfb649",
+      "text": "\t\t\t[Reactの関数コンポーネントのstateをsetしても描画が更新されない#6366b4127838e30000bfb5ca]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667676933,
+      "updated": 1667676938
+    },
+    {
+      "id": "6366b2fd7838e30000bfb5c7",
+      "text": "\tなぜクラスコンポーネントの方ではうまくいっていたのか",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674877,
+      "updated": 1667675368
+    },
+    {
+      "id": "6366b4e87838e30000bfb5d7",
+      "text": "\t\t[Reactの関数コンポーネントのstateをsetしても描画が更新されない#6366aa6f7838e30000bfb5a3]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675368,
+      "updated": 1667676855
+    },
+    {
+      "id": "6366be197838e300002edb41",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667677721,
+      "updated": 1667677721
+    },
+    {
+      "id": "6366aa6e7838e30000bfb5a2",
+      "text": "検証する時にやった手順",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667672687,
+      "updated": 1667674396
+    },
+    {
+      "id": "6366aa787838e30000bfb5a4",
+      "text": "\t1. stateを用意する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667672696,
+      "updated": 1667672709
+    },
+    {
+      "id": "6366aa857838e30000bfb5a5",
+      "text": "\t2. `onClick()`内で`state.num`の値を変更する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667672709,
+      "updated": 1667672774
+    },
+    {
+      "id": "6366aa9c7838e30000bfb5a6",
+      "text": "\t\tこれの適切な変更方法もちゃんとわかっていない気がする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667672733,
+      "updated": 1667672746
+    },
+    {
+      "id": "6366ab5b7838e30000bfb5aa",
+      "text": "\t\t[https://zenn.dev/yuto76/articles/react-immutable useState でミュータブルな操作をするとなぜ再レンダリングされないのか？？]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667672923,
+      "updated": 1667672950
+    },
+    {
+      "id": "6366aea97838e30000bfb5b2",
+      "text": "\t\t\t>ミュータブルな操作では元の値までも変更してしまうため、[Object.is()]の判定が true になってしまい、再レンダリングが起きない。",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667673769,
+      "updated": 1667673800
+    },
+    {
+      "id": "6366ab767838e30000bfb5ab",
+      "text": "  \tこれに答え書いてあるような気がした[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667672950,
+      "updated": 1667672969
+    },
+    {
+      "id": "6366abcc7838e30000bfb5ac",
+      "text": "  \tしかしどうやって回避すべきか",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667673037,
+      "updated": 1667674493
+    },
+    {
+      "id": "6366b1797838e30000bfb5c2",
+      "text": "  \t\t[Reactの関数コンポーネントのstateをsetしても描画が更新されない#6366b07e7838e30000bfb5b7]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674489,
+      "updated": 1667674494
+    },
+    {
+      "id": "6366ab7baff09e0000fc89ec",
+      "text": "\t\t`d[0].num = 1;`がNG[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1667672955,
+      "updated": 1667672961
+    },
+    {
+      "id": "6366ac9aaff09e0000fc89ef",
+      "text": "\t\t\t>But you shouldn’t change objects that you hold in the React state directly. Instead, when you want to update an object, you need to create a new one (or make a copy of an existing one), and then set the state to use that copy.",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1667673242,
+      "updated": 1667673243
+    },
+    {
+      "id": "6366af177838e30000bfb5b4",
+      "text": "\t\t\thttps://beta.reactjs.org/learn/updating-objects-in-state",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667673879,
+      "updated": 1667673907
+    },
+    {
+      "id": "6366b07e7838e30000bfb5b7",
+      "text": "\t\tこの例の場合はこれで良いのか[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674239,
+      "updated": 1667674312
+    },
+    {
+      "id": "6366b08d7838e30000bfb5b8",
+      "text": "\t\t\tcode:test_ClickMeFunc_return_div_onClick.tsx",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674254,
+      "updated": 1667674300
+    },
+    {
+      "id": "6366b0a87838e30000bfb5b9",
+      "text": "\t\t\t if (data === undefined) return;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674280,
+      "updated": 1667674293
+    },
+    {
+      "id": "6366b0b57838e30000bfb5ba",
+      "text": "    // const d = data;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674293,
+      "updated": 1667674293
+    },
+    {
+      "id": "6366b0b57838e30000bfb5bb",
+      "text": "    // d[0].num = 1;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674293,
+      "updated": 1667674293
+    },
+    {
+      "id": "6366b0b57838e30000bfb5bc",
+      "text": "    console.log(data);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674293,
+      "updated": 1667674461
+    },
+    {
+      "id": "6366b0b57838e30000bfb5bd",
+      "text": "    setData([{ num: 1 }, ...data.slice(1)]);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674293,
+      "updated": 1667674293
+    },
+    {
+      "id": "6366b2017838e30000bfb5c4",
+      "text": "   これなら想定通りの動作をした",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667674625,
+      "updated": 1667674633
+    },
+    {
+      "id": "6366b4127838e30000bfb5ca",
+      "text": "   これでもいいみたい",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675154,
+      "updated": 1667675160
+    },
+    {
+      "id": "6366b4157838e30000bfb5cb",
+      "text": "   \tcode:test_ClickMeFunc_return_div_onClick_2.tsx",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675157,
+      "updated": 1667675183
+    },
+    {
+      "id": "6366b41d7838e30000bfb5cc",
+      "text": "   \t if (data === undefined) return;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675165,
+      "updated": 1667675172
+    },
+    {
+      "id": "6366b4247838e30000bfb5d1",
+      "text": "     const d = [...data];",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675172,
+      "updated": 1667730023
+    },
+    {
+      "id": "6366b4247838e30000bfb5d2",
+      "text": "     d[0].num = 1;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675172,
+      "updated": 1667676235
+    },
+    {
+      "id": "6366b4247838e30000bfb5d3",
+      "text": "     console.log(d);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675172,
+      "updated": 1667675172
+    },
+    {
+      "id": "6366b4247838e30000bfb5d4",
+      "text": "     setData(d);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675172,
+      "updated": 1667675172
+    },
+    {
+      "id": "6366aaab7838e30000bfb5a7",
+      "text": "\t3. （下のソースコードにおける）クラスコンポーネントでは変更されて、関数コンポーネントでは変更されない",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667672747,
+      "updated": 1667673742
+    },
+    {
+      "id": "6366aa6f7838e30000bfb5a3",
+      "text": "　　クラスコンポーネントか関数コンポーネントかの差ではなく[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1667672687,
+      "updated": 1667673045
+    },
+    {
+      "id": "6366abd5aff09e0000360b76",
+      "text": "　　 `setData(d);`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1667673045,
+      "updated": 1667673055
+    },
+    {
+      "id": "6366abdfaff09e0000fc89ed",
+      "text": "　　 `this.setState({ data: d });`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1667673056,
+      "updated": 1667673066
+    },
+    {
+      "id": "6366abeaaff09e0000fc89ee",
+      "text": "　　 これの差",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1667673067,
+      "updated": 1667673075
+    },
+    {
+      "id": "6366ac03aff09e0000360b77",
+      "text": "　　 後者ではオブジェクトが新しく作られたのでReactは「値が更新された」と判断する",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1667673092,
+      "updated": 1667673120
+    },
+    {
+      "id": "6366ac20aff09e0000360b78",
+      "text": "　　 前者の破壊的更新ではReactは一番外側のオブジェクトのIDが変わっていないので「更新されていない」と判断する",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1667673120,
+      "updated": 1667673157
+    },
+    {
+      "id": "6366adb47838e30000bfb5ad",
+      "text": "　　 \tなるほど[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667673524,
+      "updated": 1667673527
+    },
+    {
+      "id": "6366adb67838e30000bfb5ae",
+      "text": "　　 \t正確な違いがわかっていなかったので、助かります！",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667673527,
+      "updated": 1667673542
+    },
+    {
+      "id": "6366b7757838e30000bfb642",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667676022,
+      "updated": 1667676022
+    },
+    {
+      "id": "6366a98e7838e30000bfb483",
+      "text": "検証に使ったソースコード",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667672462,
+      "updated": 1667674437
+    },
+    {
+      "id": "6366b7217838e30000bfb640",
+      "text": "\t[ソースコード｜Reactの関数コンポーネントのstateをsetしても描画が更新されない]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667675938,
+      "updated": 1667675941
+    },
+    {
+      "id": "6366a9597838e30000bfb480",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667672410,
+      "updated": 1667672410
+    },
+    {
+      "id": "6366b7797838e30000bfb643",
+      "text": "要約を書いている内にちょっと疑問が出た[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667676026,
+      "updated": 1667676064
+    },
+    {
+      "id": "6366b7a07838e30000bfb645",
+      "text": "\t`const d = [...data];`の後に`d[0].ナントカ = カントカ`した際に元の値を変更してしまうことがあるのではないのか？",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667676064,
+      "updated": 1667730060
+    },
+    {
+      "id": "6366bc487838e30000bfb64a",
+      "text": "\t\t実際変更してしまっている",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667677256,
+      "updated": 1667677262
+    },
+    {
+      "id": "6366bc697838e30000bfb64b",
+      "text": "   `console.log(d);`と`console.log(data);`の表示内容が同じ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667677289,
+      "updated": 1667677319
+    },
+    {
+      "id": "6366b8e47838e30000bfb648",
+      "text": "\t\tけれど、[- 何故か]描画が更新されている¯\\_(ツ)_/¯",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667676388,
+      "updated": 1667681352
+    },
+    {
+      "id": "6366c2397838e300003bfcfc",
+      "text": "\t\t\t[Object.is()の挙動#6366c7c87838e30000611567]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667678778,
+      "updated": 1667680226
+    },
+    {
+      "id": "6366b7797838e30000bfb644",
+      "text": "　　　検証した結果、オブジェクトの1番上の階層さえ完全一致していなければ描画が更新される模様",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667676026,
+      "updated": 1667681124
+    },
+    {
+      "id": "6366cb657838e30000abea37",
+      "text": "　　　[スプレッド構文]は一番上の階層の参照を変える（多分）ので、Object.is()を誤魔化せる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667681126,
+      "updated": 1667681222
+    },
+    {
+      "id": "6366cb1c7838e30000abea32",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667681054,
+      "updated": 1667681054
+    },
+    {
+      "id": "63678a4b7838e300003a627d",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667729995,
+      "updated": 1667729995
+    },
+    {
+      "id": "63678a4b7838e300003a627e",
+      "text": "[/icons/hr.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667729995,
+      "updated": 1667730000
+    },
+    {
+      "id": "63678a517838e300003a6281",
+      "text": " これでもいいみたい（[Reactの関数コンポーネントのstateをsetしても描画が更新されない#6366b4127838e30000bfb5ca]修正前）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667730001,
+      "updated": 1667730013
+    },
+    {
+      "id": "63678a517838e300003a6282",
+      "text": " \tcode:test_ClickMeFunc_return_div_onClick_2.tsx",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667730001,
+      "updated": 1667730003
+    },
+    {
+      "id": "63678a517838e300003a6283",
+      "text": " \t if (data === undefined) return;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667730001,
+      "updated": 1667730003
+    },
+    {
+      "id": "63678a517838e300003a6284",
+      "text": "   const d = [...data.slice()];",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667730001,
+      "updated": 1667730003
+    },
+    {
+      "id": "63678a517838e300003a6285",
+      "text": "   d[0].num = 1;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667730001,
+      "updated": 1667730003
+    },
+    {
+      "id": "63678a517838e300003a6286",
+      "text": "   console.log(d);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667730001,
+      "updated": 1667730003
+    },
+    {
+      "id": "63678a517838e300003a6287",
+      "text": "   setData(d);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667730001,
+      "updated": 1667730003
+    },
+    {
+      "id": "63678a517838e300003a6288",
+      "text": "　　これをやっても`d[0]`はシャローコピーであって、`d[0].num = 1;`は状態の破壊的更新をしているので「今は動いてるかもしれないけどReactの想定してない操作だから変なことが起こるかも」って状態だと思う[nishio.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667730001,
+      "updated": 1667730003
+    },
+    {
+      "id": "63678a4c7838e300003a627f",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1667729996,
+      "updated": 1667729996
+    }
+  ]
+}

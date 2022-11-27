@@ -1,0 +1,225 @@
+{
+  "id": "622c5b4e6c9f79001deb607e",
+  "title": "受け取ったリストからランダムにひとつ選ぶコマンド",
+  "created": 1647074128,
+  "updated": 1647109845,
+  "lines": [
+    {
+      "id": "622c5b4e6c9f79001deb607e",
+      "text": "受け取ったリストからランダムにひとつ選ぶコマンド",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647074128,
+      "updated": 1647074128
+    },
+    {
+      "id": "622c5b508ee92a00001495d0",
+      "text": " というのがあれば、いろんなことに使えるのではないか [増井俊之.icon]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647074128,
+      "updated": 1647074140
+    },
+    {
+      "id": "622c5b5c8ee92a00001495d2",
+      "text": "  [豆知識]のリストから[ランダム]にひとつ選んで表示したり",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647074140,
+      "updated": 1647109235
+    },
+    {
+      "id": "622ce38d8ee92a00004a4ef3",
+      "text": "  [fortune]コマンドとか",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647109006,
+      "updated": 1647109236
+    },
+    {
+      "id": "622ce3978ee92a00004a4ef4",
+      "text": "  [単語帳]表示とか",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647109016,
+      "updated": 1647109383
+    },
+    {
+      "id": "622c5c948ee92a00001495d3",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647074453,
+      "updated": 1647074453
+    },
+    {
+      "id": "622c5c958ee92a00001495d4",
+      "text": "code:randsel.rb",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647074453,
+      "updated": 1647074457
+    },
+    {
+      "id": "622c5b508ee92a00001495d1",
+      "text": " lines = ARGF.collect { |line|",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647074128,
+      "updated": 1647074465
+    },
+    {
+      "id": "622c5c9e8ee92a00001495db",
+      "text": "   line.chomp",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647074462,
+      "updated": 1647074466
+    },
+    {
+      "id": "622c5c9e8ee92a00001495dc",
+      "text": " }",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647074462,
+      "updated": 1647074467
+    },
+    {
+      "id": "622c5c9e8ee92a00001495dd",
+      "text": " puts lines[rand(lines.length)]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647074462,
+      "updated": 1647074469
+    },
+    {
+      "id": "622ce3b68ee92a00004a4ef5",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647109047,
+      "updated": 1647109047
+    },
+    {
+      "id": "622c5d0d8ee92a00001495e2",
+      "text": "code:sample.sh",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647074574,
+      "updated": 1647074577
+    },
+    {
+      "id": "622c5d018ee92a00001495e0",
+      "text": " wget -q -O - https://scrapbox.io/api/pages/villagepump/豆知識/text | grep '^ ' | grep -v '\\t' | grep -v '  ' | ruby randsel.rb",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647074561,
+      "updated": 1647074579
+    },
+    {
+      "id": "622c5d018ee92a00001495e1",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647074561,
+      "updated": 1647074561
+    },
+    {
+      "id": "622c5d668ee92a00001495e4",
+      "text": " 意外と便利? [増井俊之.icon]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647074663,
+      "updated": 1647074668
+    },
+    {
+      "id": "622c5d6c8ee92a00001495e6",
+      "text": " こういうのは既にあるか? [増井俊之.icon]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647074668,
+      "updated": 1647074674
+    },
+    {
+      "id": "622ce3ee8ee92a00004a4ef6",
+      "text": " [* [shuf]コマンドというのがあった]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647109102,
+      "updated": 1647109258
+    },
+    {
+      "id": "622ce6ca8ee92a0000a2b95a",
+      "text": "  情報感謝 > [kuuote.icon]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647109835,
+      "updated": 1647109845
+    },
+    {
+      "id": "622ce4198ee92a00004a4efa",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647109145,
+      "updated": 1647109148
+    },
+    {
+      "id": "622cdead8ee92a0000a2b94c",
+      "text": "豆知識をランダム表示する`mame`コマンド",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647107757,
+      "updated": 1647109283
+    },
+    {
+      "id": "622cde5c8ee92a0000a2b940",
+      "text": "code:mame.sh",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647107676,
+      "updated": 1647107682
+    },
+    {
+      "id": "622cde5d8ee92a0000a2b941",
+      "text": " % cat mame",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647107678,
+      "updated": 1647108150
+    },
+    {
+      "id": "622ce0368ee92a0000a2b953",
+      "text": " wget -q -O - https://scrapbox.io/api/pages/villagepump/豆知識/text | grep '^ ' | grep -v '\\t' | grep -v '  ' | shuf -n1 | tr -d '\\\\[\\\\] '  ",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647108150,
+      "updated": 1647108150
+    },
+    {
+      "id": "622cde868ee92a0000a2b946",
+      "text": " % ./mame",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647107719,
+      "updated": 1647108156
+    },
+    {
+      "id": "622cde868ee92a0000a2b948",
+      "text": " クレジットカードを何度も紛失すると、会員資格を取られる場合がある",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647107719,
+      "updated": 1647108162
+    },
+    {
+      "id": "622cde868ee92a0000a2b94a",
+      "text": " % ./mame",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647107719,
+      "updated": 1647108335
+    },
+    {
+      "id": "622ce0ef8ee92a00004a4eef",
+      "text": " 各種サプリは「毒ではない」が効果があることは稀",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647108335,
+      "updated": 1647108336
+    },
+    {
+      "id": "622ce0f08ee92a00004a4ef0",
+      "text": " %",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647108337,
+      "updated": 1647108338
+    },
+    {
+      "id": "622cdf288ee92a0000a2b94f",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647107881,
+      "updated": 1647107881
+    },
+    {
+      "id": "622cdf208ee92a0000a2b94e",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1647107874,
+      "updated": 1647107874
+    }
+  ]
+}

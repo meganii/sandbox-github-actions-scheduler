@@ -1,0 +1,1779 @@
+{
+  "id": "616780a43485970022605dc6",
+  "title": "三者三様のイベントハンドリングを掛け合わせて究極のハンドリングパターンを実現する",
+  "created": 1634173108,
+  "updated": 1634602208,
+  "lines": [
+    {
+      "id": "616780a43485970022605dc6",
+      "text": "三者三様のイベントハンドリングを掛け合わせて究極のハンドリングパターンを実現する",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634173108,
+      "updated": 1634323597
+    },
+    {
+      "id": "616780b36668720000101c2e",
+      "text": "from [@miyamonz]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634173108,
+      "updated": 1634173136
+    },
+    {
+      "id": "616780fd6668720000101c33",
+      "text": "",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634173181,
+      "updated": 1634173181
+    },
+    {
+      "id": "616780fe6668720000101c34",
+      "text": "概要",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634173182,
+      "updated": 1634173187
+    },
+    {
+      "id": "616781026668720000101c35",
+      "text": "　上記記事で同じマウスイベントのハンドラを3人が別々に書いた",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634173187,
+      "updated": 1634173347
+    },
+    {
+      "id": "616781266668720000101c36",
+      "text": "　　[yuki_minoh.icon][takker.icon][miyamonz.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634173223,
+      "updated": 1634173236
+    },
+    {
+      "id": "616781346668720000101c37",
+      "text": "　そこで「いいとこ取りできるのでは」と考えた[yuki_minoh.icon]がコードを書きます",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634173237,
+      "updated": 1634173332
+    },
+    {
+      "id": "616781aa6668720000101c3b",
+      "text": "　[yuki_minoh.icon]の感想",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634173354,
+      "updated": 1634173367
+    },
+    {
+      "id": "616781666668720000101c39",
+      "text": "  [yuki_minoh.icon]の書いたコードは、エラーハンドラが書きやすい代わりに見通しが少々悪い",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634173287,
+      "updated": 1634173957
+    },
+    {
+      "id": "6167818b6668720000101c3a",
+      "text": "  [miyamonz.icon]さんのコードはコールバックやthenチェーンをほとんど意識する必要がないため抜群に見通しがいいが、mouseMoveイベントでのみ関数クロージャを利用している",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634173324,
+      "updated": 1634174663
+    },
+    {
+      "id": "61698e8c385a920000ca739c",
+      "text": "   まあ関数クロージャ書くくらい別にいいんじゃね？と思ってます[miyamonz.icon]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1634307725,
+      "updated": 1634307746
+    },
+    {
+      "id": "6169cc7d6668720000441fa6",
+      "text": "    それはそう[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634323582,
+      "updated": 1634323587
+    },
+    {
+      "id": "616b6bf96668720000678467",
+      "text": "    後で、クロージャを解除したことでエラーハンドリングが簡潔になることに気づきました[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634429945,
+      "updated": 1634430358
+    },
+    {
+      "id": "616b6c146668720000678468",
+      "text": "    　MouseMoveのハンドリング中のエラーもまとめてキャッチできるようになった",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634429973,
+      "updated": 1634431899
+    },
+    {
+      "id": "616782126668720000101c3c",
+      "text": "   どうせmousemove eventですし、ここだけcallbackでも大してややこしくはならないでしょう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634173459,
+      "updated": 1634307828
+    },
+    {
+      "id": "61698ef61280f0000013087c",
+      "text": "   　まあでもどうせなら全部同期的に書きたい感がある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634307831,
+      "updated": 1634307849
+    },
+    {
+      "id": "61698ec61280f0000013087a",
+      "text": "  [takker.icon]さんのコードはfor文でmouseMoveイベントをキャッチできるという点がとてもかっこいいと感じた。一方で、for文のネストが不必要に深いようにも見えた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634307782,
+      "updated": 1634307782
+    },
+    {
+      "id": "616784326668720000101c40",
+      "text": "  　listen関数はthenチェーンでより簡潔になるのではというアイデアも込み",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634174002,
+      "updated": 1634174032
+    },
+    {
+      "id": "616ccd201280f00000850ad2",
+      "text": "  　考え直したんですけど、わざわざ`for await(const event of listenEvent()) {...}`にする利点がなさそうです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634520353,
+      "updated": 1634520521
+    },
+    {
+      "id": "616ccd491280f00000850ad3",
+      "text": "  　 普通に`while (true) {const event = await waitEvent(); ...}`で同じことを十分再現できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634520393,
+      "updated": 1634520451
+    },
+    {
+      "id": "616ccd821280f00000850ad4",
+      "text": "  　  もちろんただの非同期関数だと一度しかresolveできないので、[/miyamonz/usePromiseResolve]のような機構で何度もresolveできるようにする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634520451,
+      "updated": 1634520487
+    },
+    {
+      "id": "616ccdca1280f00000850ad7",
+      "text": "  　 `listenEvent()`のなかで↑をやっていて、二度手間に感じる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634520523,
+      "updated": 1634520555
+    },
+    {
+      "id": "616ccdec1280f00000850ad8",
+      "text": "  　 非同期ジェネレータだと、`reject`を外に出して中断させることができないという欠点がある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634520556,
+      "updated": 1634520606
+    },
+    {
+      "id": "616d436f6668720000b5705e",
+      "text": "  　 　reject外に出す必要とは。。。？[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634550642,
+      "updated": 1634550968
+    },
+    {
+      "id": "616d437d6668720000b5705f",
+      "text": "  　 　　えっと、中断機構は僕の方にも組み込んであります[. [三者三様のイベントハンドリングを掛け合わせて究極のハンドリングパターンを実現する#616b64946668720000678441] ]よね？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634550655,
+      "updated": 1634563557
+    },
+    {
+      "id": "616d43ca6668720000b57060",
+      "text": "  　 　　　abort（異常系）とclose（正常系）両方対応してます",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634550733,
+      "updated": 1634550772
+    },
+    {
+      "id": "616d757c1280f00000e0a47f",
+      "text": "   　 　 あ、ほんとだすみません[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634563453,
+      "updated": 1634564005
+    },
+    {
+      "id": "616d75f91280f00000e0a480",
+      "text": "   　 　  code readingが雑すぎました……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634563578,
+      "updated": 1634564005
+    },
+    {
+      "id": "616d76301280f00000e0a481",
+      "text": "   　 　  いくら雑に書く場所としてscrapboxを使えるとはいえど、ちゃんと読まないで共同の場で適当なことを書くのは避けるべきでした。今後気をつけます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634563633,
+      "updated": 1634564005
+    },
+    {
+      "id": "616d95556668720000cbdf7f",
+      "text": "   　 　  　いえいえ、気にしてはないので、今後もぜひのびのび意見交換できればいいなと思います[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634571606,
+      "updated": 1634571629
+    },
+    {
+      "id": "616d77a61280f00000e0a483",
+      "text": "   　  `reject`は何となく外に出してみただけです。それ以上の理由はありません(適当すぎる)[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634564007,
+      "updated": 1634564047
+    },
+    {
+      "id": "616d77cd1280f00000e0a484",
+      "text": "   　   もともとrejectを使うつもりはなかった[. [/takker/dragできるcomponentをasync-await loopで実現#616cc9b91280f000002aabf6] ]のですが、なんとなく外に出していた`reject`を使えば`for await`を抜け出せることに気づいてやってみただけです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634564047,
+      "updated": 1634564190
+    },
+    {
+      "id": "616d785d1280f00000e0a486",
+      "text": "   　   このあと`reject`を使わない方法[. [/takker/dragできるcomponentをasync-await loopで実現#616cb7931280f00000566c90] ]も思いつきました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634564190,
+      "updated": 1634564260
+    },
+    {
+      "id": "616ccda61280f00000850ad5",
+      "text": "  　　という視点で試しに作ってみたのがこちら：",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634520487,
+      "updated": 1634520510
+    },
+    {
+      "id": "616ccdbe1280f00000850ad6",
+      "text": "  　　 [/takker/dragできるcomponentをasync-await loopで実現]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634520511,
+      "updated": 1634520614
+    },
+    {
+      "id": "616d450d6668720000b57063",
+      "text": "  　　おっしゃりたいことはよく分かりますが、僕が以下で実装したハンドリングとは関連性がかなり薄くなってきてますね[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634551056,
+      "updated": 1634551107
+    },
+    {
+      "id": "616d45416668720000b57064",
+      "text": "  　　　forループかそうでないかはあまり重要でない、というのはそうです",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634551107,
+      "updated": 1634551533
+    },
+    {
+      "id": "616d45736668720000b57065",
+      "text": "  　　　　僕の場合だと、forループへの対応そのものにはほとんどコードの変更はいらないです",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634551157,
+      "updated": 1634551189
+    },
+    {
+      "id": "616d4bf86668720000b57072",
+      "text": "  　　　　　本質的には`async function*`宣言に変更して再帰呼び出しするだけです",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634552827,
+      "updated": 1634552871
+    },
+    {
+      "id": "616d45976668720000b57066",
+      "text": "  　　　　forではなく、closePromiseへの対応には6行程度必要ですが、かなり簡潔に済んだのでそれも大きな違いではないかなと感じます",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634551194,
+      "updated": 1634552486
+    },
+    {
+      "id": "616d46bc6668720000b57069",
+      "text": "  　　　　ほとんどコードの変更がないので、async generatorで便利に使えていいなと思ってます",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634551486,
+      "updated": 1634551523
+    },
+    {
+      "id": "616d45f06668720000b57067",
+      "text": "  　　　rejectを外に出す必要は、僕の場合はもはやないかな、と感じています",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634551283,
+      "updated": 1634551427
+    },
+    {
+      "id": "616d46006668720000b57068",
+      "text": "  　　　　むしろ出さないことでabortとcloseの両方に同時に対応する時とかにも困らない形になっているなと感じます",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634551299,
+      "updated": 1634551593
+    },
+    {
+      "id": "616d46f86668720000b5706a",
+      "text": "  　　コードも読みましたが、reactを使うかどうかとかでかなり流儀？が異なるかもなと感じました",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634551547,
+      "updated": 1634551735
+    },
+    {
+      "id": "616d47ba6668720000b5706b",
+      "text": "  　　　僕はライブラリ使わないでどこまでシンプルさと利便性を両立できるのかを突き詰めたかったので下記みたいな感じになってますね",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634551740,
+      "updated": 1634551802
+    },
+    {
+      "id": "616d4c686668720000b57073",
+      "text": "  　　　僕のコードと比較した時、どういう見通しの良さとか利便性とかの違いがあるのかまでは比較しきれなかったので、何かあれば教えて欲しいです！",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634552939,
+      "updated": 1634553007
+    },
+    {
+      "id": "616d79521280f00000e0a488",
+      "text": "  　　　preactを使ったのは単にreact hooksを使ったコードを書きたかっただけなので気にしないでください[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634564435,
+      "updated": 1634564489
+    },
+    {
+      "id": "616d79881280f00000e0a489",
+      "text": "  　　　 ただ下手にライブラリを使ってしまったことで、今回の処理と関係ない部分が増えて比較しにくくなったのは確かですね……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634564489,
+      "updated": 1634564584
+    },
+    {
+      "id": "616d79ee1280f00000e0a48b",
+      "text": "  　　　 完全に自分だけがわかればいいのスタンスで書いてしまったのもよくなかったです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634564592,
+      "updated": 1634564633
+    },
+    {
+      "id": "616d95ae6668720000cbdf80",
+      "text": "  　　　 　まぁまぁそういうこともありますよね[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634571695,
+      "updated": 1634571707
+    },
+    {
+      "id": "616d95ba6668720000cbdf81",
+      "text": "  　　　 　　趣味コーディングなのはお互い様なので、気にしないでいいですよ",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634571707,
+      "updated": 1634571747
+    },
+    {
+      "id": "616d95e36668720000cbdf82",
+      "text": "  　　　 　　僕のコードへの意見も含まれてるのかなと思って、ちょっと困惑しただけです",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634571747,
+      "updated": 1634571771
+    },
+    {
+      "id": "616d7a181280f00000e0a48c",
+      "text": "  　　　後ほどnative DOMにのみ依存したコードを作っておきます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634564633,
+      "updated": 1634564675
+    },
+    {
+      "id": "616d7a421280f00000e0a48d",
+      "text": "  　　　 といっても[/takker/getPromiseSettledAnytimes]の`resolve`をaddEventListenerに登録して、ループでぐるぐる回すだけなのでほとんど同じですが",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634564675,
+      "updated": 1634564793
+    },
+    {
+      "id": "616d96056668720000cbdf83",
+      "text": "  　　　 なんとなく似てる気はしてた[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634571781,
+      "updated": 1634571788
+    },
+    {
+      "id": "616782ed6668720000101c3d",
+      "text": " 　そこで、",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634173678,
+      "updated": 1634173687
+    },
+    {
+      "id": "616782f76668720000101c3e",
+      "text": " 　　[miyamonz.icon]さんのコードを全体に使いつつ、[takker.icon]さんのfor-await-ofパターンをmouseMoveイベントに適用してinner functionの呼び出しをなくし、コールバックを（メインループから）完全になくしてしまおう",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634173687,
+      "updated": 1634318858
+    },
+    {
+      "id": "616786d16668720000c80aaa",
+      "text": " 　　[yuki_minoh.icon]のエラーハンドリングのしやすさもなるべく同時に実現できるように書いてみよう",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634174674,
+      "updated": 1634174766
+    },
+    {
+      "id": "616b1d606668720000aaaadd",
+      "text": "",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409825,
+      "updated": 1634409826
+    },
+    {
+      "id": "616b1fa86668720000aaaaeb",
+      "text": "実装内容",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410409,
+      "updated": 1634410412
+    },
+    {
+      "id": "616b1fab6668720000aaaaed",
+      "text": "　今回はマウスイベントを扱います。",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410412,
+      "updated": 1634410503
+    },
+    {
+      "id": "616b20066668720000aaaaee",
+      "text": "　マウスを押してからドラッグし、マウスを離すまでの処理を実装します。",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410503,
+      "updated": 1634410508
+    },
+    {
+      "id": "616b1fa86668720000aaaaec",
+      "text": "",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410409,
+      "updated": 1634410409
+    },
+    {
+      "id": "616b1d626668720000aaaade",
+      "text": "コードと解説",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409827,
+      "updated": 1634409833
+    },
+    {
+      "id": "616780c86668720000101c2f",
+      "text": "　今回の実装はPromiseベースです[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634173129,
+      "updated": 1634409879
+    },
+    {
+      "id": "616b249f6668720000aaab10",
+      "text": "　なんかお料理のレシピみたいになってしまいましたw",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411680,
+      "updated": 1634411692
+    },
+    {
+      "id": "616b24986668720000aaab0f",
+      "text": "　 下準備",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411673,
+      "updated": 1634411695
+    },
+    {
+      "id": "616b1d936668720000aaaadf",
+      "text": "　　　まずイベントリスナをPromiseでラップします",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409876,
+      "updated": 1634411697
+    },
+    {
+      "id": "616b24b16668720000aaab11",
+      "text": "　　全体の調理",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411698,
+      "updated": 1634411827
+    },
+    {
+      "id": "616b24c76668720000aaab12",
+      "text": "　　　下準備のおかげでとても良い焼き上がり（見通しの良い処理）になります",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411719,
+      "updated": 1634411763
+    },
+    {
+      "id": "616b24d96668720000aaab13",
+      "text": "　　実食",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411738,
+      "updated": 1634411781
+    },
+    {
+      "id": "616b24e16668720000aaab14",
+      "text": "　　　実際に出来栄え（使い勝手）を確認してみます",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411746,
+      "updated": 1634411812
+    },
+    {
+      "id": "616b22846668720000aaab06",
+      "text": "",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411141,
+      "updated": 1634411141
+    },
+    {
+      "id": "616b25966668720000aaab16",
+      "text": "下準備",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411926,
+      "updated": 1634411928
+    },
+    {
+      "id": "6167846b6668720000101c41",
+      "text": "code:handlePattern.js",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634174059,
+      "updated": 1634409790
+    },
+    {
+      "id": "616784836668720000101c43",
+      "text": " // single event",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634174083,
+      "updated": 1634409560
+    },
+    {
+      "id": "616b1c576668720000aaaa63",
+      "text": " function mouseUpPromise() {",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409560,
+      "updated": 1634409560
+    },
+    {
+      "id": "616b1c576668720000aaaa64",
+      "text": "   return new Promise((resolve) => ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634409560,
+      "updated": 1634565118
+    },
+    {
+      "id": "616b1c576668720000aaaa65",
+      "text": "     window.addEventListener(\"mouseup\", resolve)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634409560,
+      "updated": 1634565125
+    },
+    {
+      "id": "616b1c576668720000aaaa66",
+      "text": "   );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634409560,
+      "updated": 1634565120
+    },
+    {
+      "id": "616b1c576668720000aaaa67",
+      "text": " }",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409560,
+      "updated": 1634409560
+    },
+    {
+      "id": "616b1c576668720000aaaa68",
+      "text": " ",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409560,
+      "updated": 1634409560
+    },
+    {
+      "id": "616b1c576668720000aaaa69",
+      "text": " // single event with canceller",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409560,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b64946668720000678439",
+      "text": " function mouseDownPromise(abortPromise) {",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b6494666872000067843a",
+      "text": "   return new Promise((resolve, reject) => {",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b6494666872000067843b",
+      "text": "     window.addEventListener(\"mousedown\", resolve);",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b6494666872000067843c",
+      "text": "     abortPromise.then(reject, reject);",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616d7b091280f00000e0a48f",
+      "text": "ここって`abortPromise.then(reject).catch(reject);`でも同じでしょうか？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634564874,
+      "updated": 1634564910
+    },
+    {
+      "id": "616d96236668720000cbdf85",
+      "text": "　ほぼ同じですね[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634571811,
+      "updated": 1634571817
+    },
+    {
+      "id": "616d96296668720000cbdf86",
+      "text": "　　今回は当てはまらないのですが、then中のエラーをcatchするかどうかという微妙な挙動が変わります",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634571818,
+      "updated": 1634571861
+    },
+    {
+      "id": "616d7be31280f00000e0a491",
+      "text": " `abortPromise.finally(reject)`でもいけるかな？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634565092,
+      "updated": 1634565105
+    },
+    {
+      "id": "616b6494666872000067843d",
+      "text": "code:handlePattern.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634428053,
+      "updated": 1634564872
+    },
+    {
+      "id": "616d7b041280f00000e0a48e",
+      "text": "   });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634564870,
+      "updated": 1634564870
+    },
+    {
+      "id": "616b6494666872000067843e",
+      "text": " }",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b6494666872000067843f",
+      "text": " ",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b64946668720000678440",
+      "text": " // sequential event",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b64946668720000678441",
+      "text": " async function* mouseMoveChain(closePromise) {",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b64946668720000678442",
+      "text": "   const promise = new Promise((resolve, reject) => {",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b64946668720000678443",
+      "text": "     window.addEventListener(\"mousemove\", resolve);",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b64946668720000678444",
+      "text": "     closePromise.then(reject, reject);",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b64946668720000678445",
+      "text": "   });",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b64946668720000678446",
+      "text": "   try {",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b64946668720000678447",
+      "text": "     yield [await promise, null];",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b64946668720000678448",
+      "text": "   } catch (event) {",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b64946668720000678449",
+      "text": "     yield [null, event];",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b6494666872000067844a",
+      "text": "     return;",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b6494666872000067844b",
+      "text": "   }",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b6494666872000067844c",
+      "text": "   // recursive",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b6494666872000067844d",
+      "text": "   yield* mouseMoveChain(closePromise);",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b6494666872000067844e",
+      "text": " }",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "616b6494666872000067844f",
+      "text": " ",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428053,
+      "updated": 1634428053
+    },
+    {
+      "id": "6168d19d6668720000f692dd",
+      "text": "",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634259358,
+      "updated": 1634411131
+    },
+    {
+      "id": "6168d1186668720000f692d8",
+      "text": "ここで、MouseUp, MouseDown, MouseMoveの三種類のイベントのリスナーをPromiseでラップしました。[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634259224,
+      "updated": 1634409965
+    },
+    {
+      "id": "616b234e6668720000aaab0a",
+      "text": "　このラップを書くことで、後述の処理がとてもスッキリしたものになります",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411343,
+      "updated": 1634411364
+    },
+    {
+      "id": "616b1ea16668720000aaaae3",
+      "text": "　それぞれ、上から順に、",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410146,
+      "updated": 1634410195
+    },
+    {
+      "id": "616b1ed36668720000aaaae4",
+      "text": "　　最もシンプルなパターン(MouseUp)",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410195,
+      "updated": 1634410223
+    },
+    {
+      "id": "616b1ed76668720000aaaae5",
+      "text": "　　キャンセル機能を実装したパターン(MouseDown)",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410200,
+      "updated": 1634410221
+    },
+    {
+      "id": "616b62576668720000678435",
+      "text": "　　　シンプルなパターンに引数を追加したものです",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634427480,
+      "updated": 1634427491
+    },
+    {
+      "id": "616b22326668720000aaaaf8",
+      "text": "　　　キャンセルしたい時にresolve or rejectするPromiseを引数に受け取ります",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411059,
+      "updated": 1634411066
+    },
+    {
+      "id": "616d48136668720000b5706c",
+      "text": "　　　　今回は大域脱出したいので単にawaitし、reject処理を呼び出し元に任せています",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634551830,
+      "updated": 1634551958
+    },
+    {
+      "id": "616d484b6668720000b5706d",
+      "text": "　　　　イベントハンドリングを正常終了する場合はMouseMoveのパターンで使っているような形になります",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634551886,
+      "updated": 1634551912
+    },
+    {
+      "id": "616d48666668720000b5706e",
+      "text": "　　　　これらの両立も可能です",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634551912,
+      "updated": 1634551967
+    },
+    {
+      "id": "616b1edb6668720000aaaae6",
+      "text": "　　for文で処理したい時のパターン(MouseMove)",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410204,
+      "updated": 1634417547
+    },
+    {
+      "id": "616b62666668720000678436",
+      "text": "　　　キャンセル機能を実装したパターンをasync generatorにしました",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634427494,
+      "updated": 1634427533
+    },
+    {
+      "id": "616b20306668720000aaaaef",
+      "text": "　　　 AsyncGeneratorを再帰呼び出ししています",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410545,
+      "updated": 1634427562
+    },
+    {
+      "id": "616d7b721280f00000e0a490",
+      "text": " 　　　loopではなく再帰で実装する手があったか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634564979,
+      "updated": 1634565007
+    },
+    {
+      "id": "616b20706668720000aaaaf0",
+      "text": "　　　まず普通にpromiseをラップし、キャンセルされない間はその結果を返します",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410609,
+      "updated": 1634410640
+    },
+    {
+      "id": "616b1f846668720000aaaaea",
+      "text": "　　　キャンセル機能を実装するときはコツがあります",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410373,
+      "updated": 1634410541
+    },
+    {
+      "id": "616b1f7e6668720000aaaae9",
+      "text": "　 　 キャンセルで全てのループを抜けたい時は、単に`yield await promise`で良いです",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410367,
+      "updated": 1634416833
+    },
+    {
+      "id": "616d48ce6668720000b5706f",
+      "text": "　 　 　rejectされた時の処理を呼び出し元に任せる、という意味になります",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634552017,
+      "updated": 1634552031
+    },
+    {
+      "id": "616b20ef6668720000aaaaf1",
+      "text": "　 　 このイベントリスナを正常終了したい場合は、`[normalEvent, closeEvent]`の長さ2の配列を返却するようにします",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410735,
+      "updated": 1634552078
+    },
+    {
+      "id": "616b214a6668720000aaaaf2",
+      "text": "　 　  通常は`[normalEvent, null]`を返します",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410827,
+      "updated": 1634430653
+    },
+    {
+      "id": "616b21796668720000aaaaf4",
+      "text": "　 　  キャンセルされた時は`[null, closeEvent]`を返します",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410873,
+      "updated": 1634430657
+    },
+    {
+      "id": "616b21896668720000aaaaf5",
+      "text": "　 　  こうすることで、for文で処理するときに最後のイベントも受け取ることができます",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410890,
+      "updated": 1634410987
+    },
+    {
+      "id": "616b21ea6668720000aaaaf7",
+      "text": "　 　  イベントの判別も楽になります",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634410987,
+      "updated": 1634411001
+    },
+    {
+      "id": "616b392e6668720000678432",
+      "text": "　 　ここが今回の実装の本質的な部分です",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634416943,
+      "updated": 1634416957
+    },
+    {
+      "id": "616b227c6668720000aaab05",
+      "text": "",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411133,
+      "updated": 1634411134
+    },
+    {
+      "id": "616b22b26668720000aaab07",
+      "text": "全体の処理を書きます[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411187,
+      "updated": 1634411483
+    },
+    {
+      "id": "6168d1156668720000f692d7",
+      "text": "code:handlePattern.js",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634259221,
+      "updated": 1634409801
+    },
+    {
+      "id": "6169db8d66687200000cfad4",
+      "text": " async function handleMouseEvent(abortPromise) {",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634327438,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaa9f",
+      "text": "   const mouseDown = await mouseDownPromise(abortPromise);",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b23f26668720000aaab0c",
+      "text": "   ",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411507,
+      "updated": 1634411507
+    },
+    {
+      "id": "616b1c7b6668720000aaaaa0",
+      "text": "   console.group(\"mouseEvent\");",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaaa1",
+      "text": "   console.log({ mouseDown, time: mouseDown.timeStamp });",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaaa2",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634409596,
+      "updated": 1634567590
+    },
+    {
+      "id": "616d85a51280f00000a6693d",
+      "text": "   let mouseMove, mouseUp;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634567590,
+      "updated": 1634567613
+    },
+    {
+      "id": "616d967f6668720000cbdf88",
+      "text": "このlet要るんでしたっけ？[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634571903,
+      "updated": 1634571935
+    },
+    {
+      "id": "616d96906668720000cbdf89",
+      "text": "　僕のテストだといらなかったですが、TSとかでは怒られるかな？",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634571921,
+      "updated": 1634571934
+    },
+    {
+      "id": "616e0c681280f000001694dc",
+      "text": "　`use strict;`ありやTSなら確実に怒られます[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634602088,
+      "updated": 1634602110
+    },
+    {
+      "id": "616e0c7d1280f000001694dd",
+      "text": "　 そうでなかったとしても未定義の変数をいきなり使うのは個人的にはばかられますね……バグの温床になりそうですし",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634602110,
+      "updated": 1634602164
+    },
+    {
+      "id": "616d96756668720000cbdf87",
+      "text": "code:handlePattern.js",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634571894,
+      "updated": 1634571902
+    },
+    {
+      "id": "616b1c7b6668720000aaaaa3",
+      "text": "   for await (",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634409596,
+      "updated": 1634567616
+    },
+    {
+      "id": "616d85bf1280f00000a6693f",
+      "text": "     [mouseMove, mouseUp] of mouseMoveChain(mouseUpPromise())",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634567616,
+      "updated": 1634567622
+    },
+    {
+      "id": "616d85c41280f00000a66940",
+      "text": "   ) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634567622,
+      "updated": 1634567623
+    },
+    {
+      "id": "616b1c7b6668720000aaaaa4",
+      "text": "     if (mouseUp) break;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634409596,
+      "updated": 1634567632
+    },
+    {
+      "id": "616b1c7b6668720000aaaaa8",
+      "text": " ",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaaa9",
+      "text": "     console.log({ mouseMove, time: mouseMove?.timeStamp });",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaaaa",
+      "text": "   }",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaaab",
+      "text": " ",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaaac",
+      "text": "   console.log({ mouseUp, time: mouseUp?.timeStamp });",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaaad",
+      "text": "   console.groupEnd(\"mouseEvent\");",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaaae",
+      "text": " ",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaaaf",
+      "text": "   return handleMouseEvent(abortPromise);",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaab0",
+      "text": " }",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1cc86668720000aaaabd",
+      "text": "",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409673,
+      "updated": 1634411208
+    },
+    {
+      "id": "616b22c86668720000aaab08",
+      "text": "以上の下準備があったおかげで、イベントの全体を同期的に書くことができました[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411209,
+      "updated": 1634411540
+    },
+    {
+      "id": "616b23b56668720000aaab0b",
+      "text": "　まずマウスの押下を処理し、次に連続したドラッグイベントの処理をやって、最後にマウスから手を離した時の処理、というのがわかりますね！",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411446,
+      "updated": 1634411983
+    },
+    {
+      "id": "616b39b86668720000678433",
+      "text": "　このハンドル関数では、コールバックやthenチェーンなどの非同期ならではの処理を気にする必要はありません",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634417080,
+      "updated": 1634417156
+    },
+    {
+      "id": "616b1c7b6668720000aaaab1",
+      "text": "",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409634
+    },
+    {
+      "id": "616b248c6668720000aaab0e",
+      "text": "実際に使ってみます[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411661,
+      "updated": 1634411910
+    },
+    {
+      "id": "616b1ca26668720000aaaabc",
+      "text": "code:usage.js",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409635,
+      "updated": 1634409640
+    },
+    {
+      "id": "616b1c7b6668720000aaaab2",
+      "text": " // usage",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaab3",
+      "text": " const controller = new AbortController();",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaab4",
+      "text": " const aborter = new Promise((r) =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634409596,
+      "updated": 1634567659
+    },
+    {
+      "id": "616b1c7b6668720000aaaab5",
+      "text": "   controller.signal.addEventListener(\"abort\", r)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634409596,
+      "updated": 1634567657
+    },
+    {
+      "id": "616b1c7b6668720000aaaab6",
+      "text": " );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634409596,
+      "updated": 1634567652
+    },
+    {
+      "id": "616b1c7b6668720000aaaab7",
+      "text": " function onAbort(e) {",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaab8",
+      "text": "   console.log(\"aborted\", e);",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaab9",
+      "text": " }",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaaba",
+      "text": " ",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b1c7b6668720000aaaabb",
+      "text": " handleMouseEvent(aborter).catch(onAbort);",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409596,
+      "updated": 1634409596
+    },
+    {
+      "id": "616b64286668720000678437",
+      "text": "[https://gyazo.com/2f80900de4fd667c2ac78cc3cba62311]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634427944,
+      "updated": 1634427963
+    },
+    {
+      "id": "616b226f6668720000aaaaf9",
+      "text": "うん！美味しい！[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411120,
+      "updated": 1634412021
+    },
+    {
+      "id": "616b25df6668720000aaab17",
+      "text": "　今回は[AbortController]をキャンセル管理に利用しました",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411999,
+      "updated": 1634412052
+    },
+    {
+      "id": "616b26176668720000aaab18",
+      "text": "　　Promiseにラップしてハンドラーに渡しています",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634412055,
+      "updated": 1634412080
+    },
+    {
+      "id": "616b266c6668720000aaab1a",
+      "text": "　　各自でご利用の際は、rejectを外部にExposeしたPromiseを渡すなど、お好きな味付けに調整してください",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634412141,
+      "updated": 1634412205
+    },
+    {
+      "id": "616b26306668720000aaab19",
+      "text": "　エラーハンドラーも問題なく作動します",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634412080,
+      "updated": 1634412217
+    },
+    {
+      "id": "616d49726668720000b57070",
+      "text": "　　上記の例だと`controller.abort()`でキャンセルできます",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634552181,
+      "updated": 1634552195
+    },
+    {
+      "id": "616b27236668720000aaab1b",
+      "text": "",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634412324,
+      "updated": 1634412324
+    },
+    {
+      "id": "616b27256668720000aaab1c",
+      "text": "まとめ",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634412325,
+      "updated": 1634412328
+    },
+    {
+      "id": "616b28bf6668720000aaab22",
+      "text": "　`Recursive Async Generatorで、イベントの同期的ハンドリングもラクラク`みたいな感じのコードだった",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634412736,
+      "updated": 1634412753
+    },
+    {
+      "id": "616b27296668720000aaab1d",
+      "text": "　全体として、簡単な下ごしらえで見通しよく処理を書くことができたと言えるのではないでしょうか[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634412329,
+      "updated": 1634412363
+    },
+    {
+      "id": "616b274a6668720000aaab1e",
+      "text": "　　キャンセル処理やエラーハンドリングも効率よく実装できたと思います",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634412363,
+      "updated": 1634412397
+    },
+    {
+      "id": "616b27806668720000aaab1f",
+      "text": "　　僕は大満足の出来栄えです",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634412416,
+      "updated": 1634412430
+    },
+    {
+      "id": "616b278e6668720000aaab20",
+      "text": "　　[miyamonz.icon][takker.icon]のお二人ともありがとうございました！",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634412430,
+      "updated": 1634412458
+    },
+    {
+      "id": "616b75a56668720000d0a5ff",
+      "text": "　issue",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634432422,
+      "updated": 1634432424
+    },
+    {
+      "id": "616b75a86668720000d0a600",
+      "text": "　 abort起因のエラーとそれ以外のエラーが区別できない",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634432425,
+      "updated": 1634432474
+    },
+    {
+      "id": "616b64b66668720000678450",
+      "text": "　改めてこのコードの系譜を整理しておきます",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428086,
+      "updated": 1634428140
+    },
+    {
+      "id": "616b64c76668720000678451",
+      "text": "　　[yuki_minoh.icon]（旧）から",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428103,
+      "updated": 1634428364
+    },
+    {
+      "id": "616b64ed6668720000678453",
+      "text": "　　　thenチェーンや再帰呼び出しを駆使した処理のギミックを引き継いでいます",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428141,
+      "updated": 1634428288
+    },
+    {
+      "id": "616b65436668720000678456",
+      "text": "　　　　処理の中止や正常終了などの処理分岐を利用しました",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428227,
+      "updated": 1634428327
+    },
+    {
+      "id": "616b65a66668720000678457",
+      "text": "　　　クロージャを一気に減らし、可読性を向上させています",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428327,
+      "updated": 1634428345
+    },
+    {
+      "id": "616b65bb6668720000678458",
+      "text": "　　[miyamonz.icon]さんから",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428347,
+      "updated": 1634428371
+    },
+    {
+      "id": "616b65cf6668720000678459",
+      "text": "　　　同期処理で一連のマウスイベントをまとめてしまおう、という全体設計を引き継いでいます",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428368,
+      "updated": 1634428419
+    },
+    {
+      "id": "616b6605666872000067845a",
+      "text": "　　　MouseMoveイベントのハンドリングで唯一利用していた関数クロージャを無くしたことで、MouseMoveイベントのハンドリング中に発生したエラーもまとめてキャッチできるようになっています",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428421,
+      "updated": 1634428712
+    },
+    {
+      "id": "616b6632666872000067845c",
+      "text": "　　[takker.icon]さんから",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428467,
+      "updated": 1634428497
+    },
+    {
+      "id": "616b6651666872000067845d",
+      "text": "　　　for-await-ofで連続したイベントを同期処理に落とせるのは目から鱗でした",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428497,
+      "updated": 1634428521
+    },
+    {
+      "id": "616b6669666872000067845e",
+      "text": "　　　　listen関数の発想は今回のRecursive Async Generatorにつながっています",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428521,
+      "updated": 1634428564
+    },
+    {
+      "id": "616b6694666872000067845f",
+      "text": "　　　実装されていなかった終了処理の実装を行いました",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634428564,
+      "updated": 1634428749
+    },
+    {
+      "id": "616b6b3c6668720000678463",
+      "text": "",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634429757,
+      "updated": 1634429758
+    },
+    {
+      "id": "616b6b3e6668720000678464",
+      "text": "余談",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634429761,
+      "updated": 1634429762
+    },
+    {
+      "id": "616b6b496668720000678465",
+      "text": "　今回は3種類のpromise wrappingを行いましたが、この三つはTargetEvent, CloseEvent, AbortEventの三つのPromiseを引数に受け取るAsyncGeneratorに容易に抽象化することが可能だと思います",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634429770,
+      "updated": 1634430202
+    },
+    {
+      "id": "616b6bde6668720000678466",
+      "text": "　　返り値は`[TargetEvent, CloseEvent]`",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634429919,
+      "updated": 1634430142
+    },
+    {
+      "id": "616b6cc06668720000678469",
+      "text": "　　　abortEventはエラーを投げる",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634430144,
+      "updated": 1634430216
+    },
+    {
+      "id": "616b6cca666872000067846a",
+      "text": "　　大規模化して多数のイベントの多くの組み合わせを利用する必要がある場合にご利用ください",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634430155,
+      "updated": 1634430756
+    },
+    {
+      "id": "616b6d1b666872000067846b",
+      "text": "　あと[/takker/Async Generatorを外部から中断する]、今初めて読んだ",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634430236,
+      "updated": 1634430263
+    },
+    {
+      "id": "616b6d3b666872000067846c",
+      "text": "　　なるほどかなり研究が進んでいたのか",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634430268,
+      "updated": 1634430278
+    },
+    {
+      "id": "616b6f29666872000067846d",
+      "text": "　　[/takker/Async Generatorを外部から中断する#61667bf71280f00000bfb849]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634430761,
+      "updated": 1634430762
+    },
+    {
+      "id": "616b6f31666872000067846e",
+      "text": "　　 これは今回のを使えばそこそこ簡単にできそう",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634430770,
+      "updated": 1634430782
+    },
+    {
+      "id": "616b6f3e666872000067846f",
+      "text": "　　 イベントをArrayに保管しておいて随時利用するようにすればいい",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634430782,
+      "updated": 1634430867
+    },
+    {
+      "id": "616b6f746668720000678470",
+      "text": "　　 　処理の流れは基本的に今回のパターンをそのまま使えるはず",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634430837,
+      "updated": 1634430851
+    },
+    {
+      "id": "616b257b6668720000aaab15",
+      "text": "",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411899,
+      "updated": 1634411899
+    },
+    {
+      "id": "616b22716668720000aaaafb",
+      "text": "[/icons/hr.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411122,
+      "updated": 1634411897
+    },
+    {
+      "id": "616b22716668720000aaaafc",
+      "text": "ここもしかするとonAbortコールされても以下のループ`loop()`から脱出しないね？[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411122,
+      "updated": 1634411123
+    },
+    {
+      "id": "616b22726668720000aaaafd",
+      "text": " [AbortController]知らなかった[miyamonz.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411123,
+      "updated": 1634411123
+    },
+    {
+      "id": "616b22726668720000aaaafe",
+      "text": " 　fetchとかをキャンセルできるっぽい",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411123,
+      "updated": 1634411123
+    },
+    {
+      "id": "616b22726668720000aaaaff",
+      "text": " 　この例はmousedownを検知するPromiseをしてるっぽい",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411123,
+      "updated": 1634411123
+    },
+    {
+      "id": "616b22726668720000aaab00",
+      "text": " 　 でも実はPromiseを外側からresolveする要領でrejectもできるんですよね。",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411123,
+      "updated": 1634411123
+    },
+    {
+      "id": "616b22726668720000aaab01",
+      "text": " 　 なのでAbortControllerはいらないかも？",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411123,
+      "updated": 1634411123
+    },
+    {
+      "id": "616b22726668720000aaab02",
+      "text": " 　 確かに[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411123,
+      "updated": 1634411123
+    },
+    {
+      "id": "616b22726668720000aaab03",
+      "text": " 　 ちょっと考えたら以下の利点から採用したみがある",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411123,
+      "updated": 1634411123
+    },
+    {
+      "id": "616b22726668720000aaab04",
+      "text": " 　 　API提供側の視点：事前にリスナや処理構造を決められる",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634411123,
+      "updated": 1634411123
+    },
+    {
+      "id": "6167846f6668720000101c42",
+      "text": "",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634174064,
+      "updated": 1634174064
+    },
+    {
+      "id": "616b1d126668720000aaaac9",
+      "text": "[/icons/hr.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409747,
+      "updated": 1634409751
+    },
+    {
+      "id": "616b1d136668720000aaaaca",
+      "text": "[yuki_minoh.icon]",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409748,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaacb",
+      "text": " あまりにも[JavaScript] Specificな話題なので別プロジェクトに移すかもしれない",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaacc",
+      "text": "  2021/10/17 03:41 これで完成とします",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409761
+    },
+    {
+      "id": "616b1d196668720000aaaacd",
+      "text": "  　解説を付しました",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaace",
+      "text": "  2021/10/16 04:51 動くようにはなった",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaacf",
+      "text": "  　最後の返り値がおかしい",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaad0",
+      "text": "  　issue",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaad1",
+      "text": "  　 for await ofループを抜けた後のMouseUp eventをどう渡すか",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaad2",
+      "text": "  　memo",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaad3",
+      "text": "  　　デザインパターンとして綺麗にまとめたい",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaad4",
+      "text": "  　 頼みの綱はやっぱAsyncIteratorかな",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaad5",
+      "text": "  　 あ、そうだ、分割代入で綺麗にいきそう",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaad6",
+      "text": " 　2021/10/15 09:54 経過を載せました",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaad7",
+      "text": " 　 やりたかったことは全部表現しました",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaad8",
+      "text": " 　 issue",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaad9",
+      "text": " 　  reject catch問題",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaada",
+      "text": " 　  そもそもthen/catchチェーンがasync/awaitと上手く噛み合ってないっぽい",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaadb",
+      "text": " 　 memo",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    },
+    {
+      "id": "616b1d196668720000aaaadc",
+      "text": " 　  あとでAsyncIterator拡張を試す",
+      "userId": "5ee7f26f1c0c850025666872",
+      "created": 1634409754,
+      "updated": 1634409754
+    }
+  ]
+}

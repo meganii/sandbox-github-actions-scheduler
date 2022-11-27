@@ -1,0 +1,2374 @@
+{
+  "id": "6225fc6b9d0b70001d6c025a",
+  "title": "箇条書きを折り畳むUserScript (takker)",
+  "created": 1646656622,
+  "updated": 1660197706,
+  "lines": [
+    {
+      "id": "6225fc6b9d0b70001d6c025a",
+      "text": "箇条書きを折り畳むUserScript (takker)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646656622
+    },
+    {
+      "id": "6225fc6d1280f0000088f717",
+      "text": "from [Scrapbox内の箇条書きを折り畳むUserScriptが欲しい]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646656645
+    },
+    {
+      "id": "6225fc861280f00000b77615",
+      "text": "[箇条書きを折り畳むUserScript]の実装 by [takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656646,
+      "updated": 1646656684
+    },
+    {
+      "id": "6225fcac1280f00000b77616",
+      "text": " 他にも作る人がいそうなので、suffixを付けて区別しておいた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656684,
+      "updated": 1646656719
+    },
+    {
+      "id": "622600dc7838e300005061ac",
+      "text": " めっちゃしっかりした出来でびっくりした[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1646657756,
+      "updated": 1646657772
+    },
+    {
+      "id": "622600ee7838e300005061ad",
+      "text": " \tありがとうございます！[Mijinko_SD.icon*5]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1646657773,
+      "updated": 1646657789
+    },
+    {
+      "id": "622601f37838e300000da663",
+      "text": " \tコードブロックの中まで対応しているとは思わなかった[Mijinko_SD.icon]",
+      "userId": "5cb94bdb92ec5d001768b095",
+      "created": 1646658034,
+      "updated": 1660197706
+    },
+    {
+      "id": "622602451280f00000b776c0",
+      "text": " \tよかった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646658117,
+      "updated": 1646658134
+    },
+    {
+      "id": "622606d01280f000008675f2",
+      "text": " [https://gyazo.com/8feb27edf7acb8f4c274795baa7dfdf1]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646659280,
+      "updated": 1646659299
+    },
+    {
+      "id": "622606e81280f000008675f4",
+      "text": "  [Gyazo GIF]のFPSがひどく小さかったので、ffmpegでGIFを作り直した",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646659303,
+      "updated": 1646659329
+    },
+    {
+      "id": "622608d4e5172d0000888d57",
+      "text": "  [/icons/すごい.icon][yosider.icon][issac.icon][tetsuya-k.icon][kuuote.icon][増井俊之.icon][sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1646659797,
+      "updated": 1646740677
+    },
+    {
+      "id": "62260ab95e90c00000dbe0d0",
+      "text": "   息をするようにコードを書いていてすごい",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1646660278,
+      "updated": 1646660299
+    },
+    {
+      "id": "6225fc6d1280f0000088f719",
+      "text": " [https://gyazo.com/860d7971f048d8f724377abd81f28729.mp4]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646658141
+    },
+    {
+      "id": "6226024b1280f00000b776c1",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646658122,
+      "updated": 1646658122
+    },
+    {
+      "id": "622602401280f00000b776bf",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646658112,
+      "updated": 1646658112
+    },
+    {
+      "id": "6225fcd61280f00000b77618",
+      "text": "使い方",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656726,
+      "updated": 1646656727
+    },
+    {
+      "id": "6225fcef1280f00000b77619",
+      "text": " code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656750,
+      "updated": 1646656871
+    },
+    {
+      "id": "6225fcf11280f00000b7761a",
+      "text": "  import { setup } from \"./mod.js\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656752,
+      "updated": 1646656783
+    },
+    {
+      "id": "6225fcfb1280f00000b7761b",
+      "text": "  ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656763,
+      "updated": 1646656763
+    },
+    {
+      "id": "6225fd191280f00000b7761d",
+      "text": "  // 起動",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656793,
+      "updated": 1646656795
+    },
+    {
+      "id": "6225fcfd1280f00000b7761c",
+      "text": "  const { cleanup } = setup();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656764,
+      "updated": 1646656792
+    },
+    {
+      "id": "6225fd1d1280f00000b7761e",
+      "text": "  ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656796,
+      "updated": 1646656796
+    },
+    {
+      "id": "6225fd1d1280f00000b7761f",
+      "text": "  // 終了したいときはcleanupを呼ぶ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656796,
+      "updated": 1646656811
+    },
+    {
+      "id": "6225fd1f1280f00000b77620",
+      "text": "  // cleanup();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656798,
+      "updated": 1646656803
+    },
+    {
+      "id": "6225fcd61280f00000b77617",
+      "text": " 戻り値で後始末関数を呼ぶやり方、今回は相性悪いな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656725,
+      "updated": 1646656837
+    },
+    {
+      "id": "6225fd451280f00000b77622",
+      "text": "  `disable()`/`enable()`みたいな関数を呼び出して何度も切り替えられるようにしたほうが便利",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656837,
+      "updated": 1646656861
+    },
+    {
+      "id": "6225fd2e1280f00000b77621",
+      "text": " たたむと下線が引かれます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656813,
+      "updated": 1646657998
+    },
+    {
+      "id": "622601cf1280f00000b776be",
+      "text": "  色は`--folding-line-color`で設定してください",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657998,
+      "updated": 1646658012
+    },
+    {
+      "id": "622601c21280f00000b776bd",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657986,
+      "updated": 1646657986
+    },
+    {
+      "id": "6226013b1280f00000b776b5",
+      "text": "バグ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657851,
+      "updated": 1646657880
+    },
+    {
+      "id": "622601621280f00000b776b8",
+      "text": " たまに判定がおかしくなる？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657889,
+      "updated": 1646657897
+    },
+    {
+      "id": "622601591280f00000b776b7",
+      "text": " キー入力が遅くなる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657880,
+      "updated": 1646657909
+    },
+    {
+      "id": "622601761280f00000b776ba",
+      "text": "  [setTImeout()]と[requestAnimationFrame()]でいくらかは逃してあるのだが……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657909,
+      "updated": 1646657946
+    },
+    {
+      "id": "622601a51280f00000b776bb",
+      "text": "  別のUserScriptのせいかも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657956,
+      "updated": 1646657963
+    },
+    {
+      "id": "622601ab1280f00000b776bc",
+      "text": "   [更新行をスクロールバーに表示するUserScript]とか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657963,
+      "updated": 1646657979
+    },
+    {
+      "id": "6226013c1280f00000b776b6",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657851,
+      "updated": 1646657851
+    },
+    {
+      "id": "622618201280f00000f1fbb8",
+      "text": "実装したいこと",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646663712,
+      "updated": 1646663721
+    },
+    {
+      "id": "622618291280f00000f1fbba",
+      "text": " すべて折り畳む",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646663721,
+      "updated": 1646663732
+    },
+    {
+      "id": "622618341280f00000f1fbbb",
+      "text": " すべて展開する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646663732,
+      "updated": 1646663739
+    },
+    {
+      "id": "6226183b1280f00000f1fbbc",
+      "text": " page menuで有効化/無効化切り替え",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646663739,
+      "updated": 1646663769
+    },
+    {
+      "id": "6226fbf8e5172d000031887f",
+      "text": " 青い矢印を表示せず、箇条書きのbulletをクリックしてtoggleすることはできる？[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646722041,
+      "updated": 1646722191
+    },
+    {
+      "id": "6226fc6ae5172d0000318880",
+      "text": "  [アウトライナー]はそういうものが多いと思う",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646722155,
+      "updated": 1646722171
+    },
+    {
+      "id": "6226fcb0e5172d0000318881",
+      "text": "  トップレベルのインデントとかコードブロックだとbulletが表示されてないから困るか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1646722224,
+      "updated": 1646722251
+    },
+    {
+      "id": "622744b01280f00000618453",
+      "text": "  bulletはない場合もあるので使わなかった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646740656,
+      "updated": 1646740667
+    },
+    {
+      "id": "622744bb1280f00000618454",
+      "text": "   [Hide dots]を押した場合",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646740667,
+      "updated": 1646740678
+    },
+    {
+      "id": "622744c71280f00000618455",
+      "text": "   数式行",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646740678,
+      "updated": 1646740682
+    },
+    {
+      "id": "622744cc1280f00000618456",
+      "text": "   その他UserCSSで消した",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646740684,
+      "updated": 1646740690
+    },
+    {
+      "id": "622618201280f00000f1fbb9",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646663712,
+      "updated": 1646663712
+    },
+    {
+      "id": "6225fee21280f00000b77626",
+      "text": "実装",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657249,
+      "updated": 1646657253
+    },
+    {
+      "id": "62260a7b1280f000007d4a0e",
+      "text": " 大変だった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646660219,
+      "updated": 1646660223
+    },
+    {
+      "id": "62260a7f1280f000007d4a0f",
+      "text": "  大体やり方わかるしすぐ実装できるだろ、とたかをくくったらこのざまだよ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646660223,
+      "updated": 1646660250
+    },
+    {
+      "id": "62260a9c1280f000007d4a10",
+      "text": "  CSSの調節と折りたたみ部分の計算に特に時間がかかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646660252,
+      "updated": 1646660309
+    },
+    {
+      "id": "62260af85e90c00000dbe0d1",
+      "text": "  [お疲れさまです.icon][issac.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1646660340,
+      "updated": 1646660348
+    },
+    {
+      "id": "622618141280f00000f1fbb7",
+      "text": "  ありがとうございます[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646663700,
+      "updated": 1646663706
+    },
+    {
+      "id": "6225fee71280f00000b77627",
+      "text": " 本体",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657254,
+      "updated": 1646657259
+    },
+    {
+      "id": "6225fc6d1280f0000088f71e",
+      "text": "  code:mod.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f71f",
+      "text": "   // @ts-check",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f720",
+      "text": "   /// <reference no-default-lib=\"true\" />",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f721",
+      "text": "   /// <reference lib=\"esnext\" />",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f722",
+      "text": "   /// <reference lib=\"dom\" />",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f723",
+      "text": "   /// <reference lib=\"./deps.d.ts\" />",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f724",
+      "text": "   import { findFoldings } from \"./folding.js\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f725",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f726",
+      "text": "   /** この関数を呼び出すと開始される */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f727",
+      "text": "   export function setup() {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f728",
+      "text": "     render();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f729",
+      "text": "     scrapbox.addListener(\"layout:changed\", render);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f72a",
+      "text": "     /** @type {number | undefined} */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f72b",
+      "text": "     let timer;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f72c",
+      "text": "     const callback = () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f72d",
+      "text": "       clearTimeout(timer);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f72e",
+      "text": "       timer = setTimeout(render, 500);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f72f",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f730",
+      "text": "     scrapbox.addListener(\"lines:changed\", callback);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f731",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f732",
+      "text": "     return {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f733",
+      "text": "       cleanup: () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f734",
+      "text": "         clearButtons();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f735",
+      "text": "         removeCSS(\"folding-lines\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f736",
+      "text": "         scrapbox.removeListener(\"layout:changed\", render);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f737",
+      "text": "         scrapbox.removeListener(\"lines:changed\", callback);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f738",
+      "text": "       },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fed51280f00000b77625",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657236,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f739",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f73a",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f73b",
+      "text": "   function render() {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f73c",
+      "text": "     if (scrapbox.Layout !== \"page\") return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f73d",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f73e",
+      "text": "     /** @type {string[]} */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f73f",
+      "text": "     let hiddenIds = [];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f740",
+      "text": "     /** @type {number | undefined} */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f741",
+      "text": "     let animationId;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f742",
+      "text": "     /** @type {(updater: (ids: string[]) => string[]) => void} */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f743",
+      "text": "     const setIds = (updater) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f744",
+      "text": "       hiddenIds = updater(hiddenIds);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f745",
+      "text": "       ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f746",
+      "text": "       // 再描画するときだけCSSを更新する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f747",
+      "text": "       cancelAnimationFrame(animationId);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f748",
+      "text": "       animationId = requestAnimationFrame(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f749",
+      "text": "         () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f74a",
+      "text": "           writeCSS(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f74b",
+      "text": "             \"folding-lines\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f74c",
+      "text": "             `div:is(${hiddenIds.map((id) => `#${id}`).join(\", \")}) { display: none; }`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f74d",
+      "text": "           )",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f74e",
+      "text": "         },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f74f",
+      "text": "       );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f750",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f751",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f752",
+      "text": "     for (const { id, indent, children } of findFoldings(scrapbox.Page.lines)) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f753",
+      "text": "       const line = document.getElementById(`L${id}`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f754",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f755",
+      "text": "       renderButton(line, indent, children.map((lineId) => `L${lineId}`), setIds);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f756",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f757",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f758",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f759",
+      "text": "   /**",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f75a",
+      "text": "    * @param {string} id",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f75b",
+      "text": "    * @param {string} css",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f75c",
+      "text": "    */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f75d",
+      "text": "   function writeCSS(id, css) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f75e",
+      "text": "     /** @type {HTMLStyleElement | null} */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f75f",
+      "text": "     let style = document.querySelector(`head style[data-style-name=\"${id}\"]`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f760",
+      "text": "     if (!style) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f761",
+      "text": "       style = document.createElement(\"style\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f762",
+      "text": "       style.dataset.styleName = id;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f763",
+      "text": "       document.head.append(style);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f764",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f765",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f766",
+      "text": "     style.textContent = css;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f767",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f768",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f769",
+      "text": "   function removeCSS(id) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f76a",
+      "text": "     document.querySelector(`head style[data-style-name=\"${id}\"]`)?.remove?.();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f76b",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f76c",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f76d",
+      "text": "   /**",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f76e",
+      "text": "    * @param {HTMLDivElement} line",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f76f",
+      "text": "    * @param {number} indent",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f770",
+      "text": "    * @param {string[]} childIds",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f771",
+      "text": "    * @param {(updater: (ids: string[]) => string[]) => void} setIds",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f773",
+      "text": "    */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f774",
+      "text": "   function renderButton(line, indent, childIds, setIds) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f775",
+      "text": "     const oldButton = line.getElementsByClassName(\"button folding\")[0];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f776",
+      "text": "     let open = oldButton?.classList?.contains?.(\"open\") ?? true;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f777",
+      "text": "     oldButton?.remove?.();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f778",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f779",
+      "text": "     if (childIds.length === 0) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657264
+    },
+    {
+      "id": "6225fc6d1280f0000088f77b",
+      "text": "  大きさの調節はかなり感覚的に決めている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657298
+    },
+    {
+      "id": "6225fc6d1280f0000088f77c",
+      "text": "  　コードが汚くなってしまった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657303
+    },
+    {
+      "id": "6225fc6d1280f0000088f77d",
+      "text": "  code:mod.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f77e",
+      "text": "     const i = document.createElement(\"i\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f77f",
+      "text": "     i.className = `fas fa-caret-${open ? \"down\" : \"right\"}`;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f780",
+      "text": "     i.style.minWidth = \"0.5em\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f781",
+      "text": "     const button = document.createElement(\"a\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f782",
+      "text": "     button.type = \"button\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f783",
+      "text": "     button.classList.add(\"button\", \"folding\", \"open\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f784",
+      "text": "     button.style.position = \"absolute\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f785",
+      "text": "     const head = line.getElementsByClassName(\"indent\")[0]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f786",
+      "text": "       ?? line.getElementsByClassName(\"char-index\")[0];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f787",
+      "text": "     const offset = line.getBoundingClientRect().left;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f788",
+      "text": "     const left = indent === 0 ? offset : head.getBoundingClientRect().left;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f789",
+      "text": "     button.style.left = `calc(${Math.round(left - offset)}px - ${",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f78a",
+      "text": "       line.getElementsByClassName(\"code-body\").length > 0 ? 2.0 : 1.0",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f78b",
+      "text": "     }em)`;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f78c",
+      "text": "     button.style.fontSize = \"20px\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f78d",
+      "text": "     button.style.zIndex = \"1000\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f78e",
+      "text": "     button.append(i);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f78f",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f790",
+      "text": "     button.addEventListener(\"click\", (e) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f791",
+      "text": "       e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f792",
+      "text": "       e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f793",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f794",
+      "text": "       if (open) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f795",
+      "text": "         setIds(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f796",
+      "text": "           (hiddenIds) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f797",
+      "text": "             hiddenIds.push(...childIds);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f798",
+      "text": "             return hiddenIds;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f799",
+      "text": "           },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f79a",
+      "text": "         );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f79b",
+      "text": "         i.className = `fas fa-caret-right`;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f79c",
+      "text": "         line.style.textDecoration = \"solid underline var(--folding-line-color, orange) 2px\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f79d",
+      "text": "         open = false;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f79e",
+      "text": "       } else {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f79f",
+      "text": "         setIds(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7a0",
+      "text": "           (hiddenIds) =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7a1",
+      "text": "             hiddenIds.filter(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7a2",
+      "text": "               (id) => !childIds.includes(id),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7a3",
+      "text": "             ),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7a4",
+      "text": "         );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7a5",
+      "text": "         i.className = `fas fa-caret-down`;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7a6",
+      "text": "         line.style.textDecoration = \"\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7a7",
+      "text": "         open = true;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7a8",
+      "text": "       }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7a9",
+      "text": "     });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7aa",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7ab",
+      "text": "     line.insertAdjacentElement(\"afterbegin\", button);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7ac",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7ad",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7ae",
+      "text": "   function clearButtons() {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7af",
+      "text": "     for (const button of Array.from(document.querySelectorAll(\"div.line > .button.folding\"))) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "622745351280f00000618459",
+      "text": "       const line = button.closest(\"div.line\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646740789,
+      "updated": 1646740802
+    },
+    {
+      "id": "622745431280f0000061845a",
+      "text": "       if (line) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646740802,
+      "updated": 1646740827
+    },
+    {
+      "id": "6227455c1280f0000061845c",
+      "text": "         line.style.textDecoration = \"\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646740827,
+      "updated": 1646740834
+    },
+    {
+      "id": "622745641280f0000061845d",
+      "text": "       }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646740836,
+      "updated": 1646740836
+    },
+    {
+      "id": "6225fc6d1280f0000088f7b0",
+      "text": "       button.remove();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7b1",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fc6d1280f0000088f7b2",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657316
+    },
+    {
+      "id": "6225fe5a1280f00000b77624",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657113,
+      "updated": 1646657319
+    },
+    {
+      "id": "6225fc6d1280f0000088f7b3",
+      "text": " 型定義ファイル",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657338
+    },
+    {
+      "id": "6225ff3e1280f00000b77628",
+      "text": "  実装とは関係ない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657342,
+      "updated": 1646657346
+    },
+    {
+      "id": "6225ff431280f00000b77629",
+      "text": "  linter errorを消すために入れたのだが、動いていなさそう……？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657346,
+      "updated": 1646657368
+    },
+    {
+      "id": "6225ff591280f00000b7762a",
+      "text": "   `// @ts-check`が認識されていないっぽい？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657369,
+      "updated": 1646657382
+    },
+    {
+      "id": "6225fc6d1280f0000088f7b4",
+      "text": "  code:deps.d.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657340
+    },
+    {
+      "id": "6225fc6d1280f0000088f7b5",
+      "text": "   import type { Scrapbox } from \"https://raw.githubusercontent.com/scrapbox-jp/types0.0.8/mod.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657340
+    },
+    {
+      "id": "6225fc6d1280f0000088f7b6",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657340
+    },
+    {
+      "id": "6225fc6d1280f0000088f7b7",
+      "text": "   declare const scrapbox: Scrapbox;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657340
+    },
+    {
+      "id": "6225fc6d1280f0000088f7b8",
+      "text": " 折りたたみ箇所を計算するやつ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657398
+    },
+    {
+      "id": "62260af41280f000007d4a12",
+      "text": "  scrapbox.Page.linesを一回ループするだけで計算できるようなalgorithmにしてある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646660340,
+      "updated": 1646660366
+    },
+    {
+      "id": "62260b0e1280f000007d4a13",
+      "text": "   こうしないとscrapboxが固まりまくって大変なことになった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646660366,
+      "updated": 1646660382
+    },
+    {
+      "id": "6225fc6d1280f0000088f7b9",
+      "text": "  code:folding.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7ba",
+      "text": "   /** 行を走査して、折り畳める部分を返す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7bb",
+      "text": "    *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7bc",
+      "text": "    * @param {{ text: string; id: string }[]} lines 行のリスト",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646712070
+    },
+    {
+      "id": "6225fc6d1280f0000088f7bd",
+      "text": "    * @return {Generator<{ id: string; indent: number; children: string[] }, unknown, void>}",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7be",
+      "text": "    */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7bf",
+      "text": "   export function* findFoldings(lines) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7c0",
+      "text": "     /** 1番目が行番号、2番目がindentの数",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7c1",
+      "text": "      *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7c2",
+      "text": "      * @type {[number, number]}",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7c3",
+      "text": "      */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7c4",
+      "text": "     const parentPos = [];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7c5",
+      "text": "     let index = -1;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7c6",
+      "text": "     for (const line of lines) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7c7",
+      "text": "       index++;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7c8",
+      "text": "       const indent = getIndentCount(line.text);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7c9",
+      "text": "       for (const [parentIndex, parentIndent] of [...parentPos]) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7ca",
+      "text": "         if (parentIndent < indent) break;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7cb",
+      "text": "         yield {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7cc",
+      "text": "           id: lines[parentIndex].id,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7cd",
+      "text": "           indent: parentIndent,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7ce",
+      "text": "           children: lines.slice(parentIndex + 1, index).map(({ id }) => id),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7cf",
+      "text": "         };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7d0",
+      "text": "         parentPos.shift();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7d1",
+      "text": "       }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7d2",
+      "text": "       parentPos.unshift([index, indent]);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7d3",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7d4",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7d5",
+      "text": "     /** @type {string[]}  */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7d6",
+      "text": "     const children = [];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7d7",
+      "text": "     // 余りは必ず階層構造になっているはず",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7d8",
+      "text": "     for (const [index, indent] of parentPos) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7d9",
+      "text": "       const id = lines[index].id;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7da",
+      "text": "       yield { id, indent, children: [...children] };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7db",
+      "text": "       children.unshift(id);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7dc",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7dd",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7de",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7df",
+      "text": "   /** 行のindentを返す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7e0",
+      "text": "    *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7e1",
+      "text": "    * @param {string} text",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7e2",
+      "text": "    * @return {number}",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7e3",
+      "text": "    */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7e4",
+      "text": "   const getIndentCount = (text) => text.match(/^(\\s*)/)?.[1]?.length ?? 0;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646660333
+    },
+    {
+      "id": "6225fc6d1280f0000088f7e5",
+      "text": "  テストコード",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657779
+    },
+    {
+      "id": "6225fc6d1280f0000088f7e6",
+      "text": "   $ deno test https://scrapbox.io/api/code/villagepump/箇条書きを折り畳むUserScript_(takker)/folding_test.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657782
+    },
+    {
+      "id": "622600ff1280f00000b7762b",
+      "text": "   code:folding_test.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657791,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7766e",
+      "text": "    import { findFoldings } from \"./folding.js\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7766f",
+      "text": "    import { assertEquals } from \"./deps_test.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77670",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77671",
+      "text": "    Deno.test(\"findFoldings()\", async (t) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77672",
+      "text": "      await t.step(\"general\", () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77673",
+      "text": "        const lines = [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77674",
+      "text": "          \" aa\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77675",
+      "text": "          \"a\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77676",
+      "text": "          \"a\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77677",
+      "text": "          \"\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77678",
+      "text": "          \"ccc\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77679",
+      "text": "          \" d\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7767a",
+      "text": "          \" d\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7767b",
+      "text": "          \"  d\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7767c",
+      "text": "          \"    d\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7767d",
+      "text": "          \"  d\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7767e",
+      "text": "          \"  d\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7767f",
+      "text": "          \" d\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77680",
+      "text": "          \"  d\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77681",
+      "text": "          \"d\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77682",
+      "text": "          \"  d\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77683",
+      "text": "          \"\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77684",
+      "text": "          \"  d\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77685",
+      "text": "          \"\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77686",
+      "text": "          \"a\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77687",
+      "text": "          \" b\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77688",
+      "text": "          \"  c\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77689",
+      "text": "        ].map((text, i) => ({ text, id: `${i}` }));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7768a",
+      "text": "        assertEquals([...findFoldings(lines)], [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7768b",
+      "text": "          { id: \"0\", indent: 1, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7768c",
+      "text": "          { id: \"1\", indent: 0, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7768d",
+      "text": "          { id: \"2\", indent: 0, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7768e",
+      "text": "          { id: \"3\", indent: 0, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7768f",
+      "text": "          { id: \"5\", indent: 1, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77690",
+      "text": "          { id: \"8\", indent: 4, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77691",
+      "text": "          { id: \"7\", indent: 2, children: [\"8\"] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77692",
+      "text": "          { id: \"9\", indent: 2, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77693",
+      "text": "          { id: \"10\", indent: 2, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77694",
+      "text": "          { id: \"6\", indent: 1, children: [\"7\", \"8\", \"9\", \"10\"] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77695",
+      "text": "          { id: \"12\", indent: 2, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77696",
+      "text": "          { id: \"11\", indent: 1, children: [\"12\"] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77697",
+      "text": "          { id: \"4\", indent: 0, children: [\"5\", \"6\", \"7\", \"8\", \"9\", \"10\", \"11\", \"12\"] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77698",
+      "text": "          { id: \"14\", indent: 2, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b77699",
+      "text": "          { id: \"13\", indent: 0, children: [\"14\"] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7769a",
+      "text": "          { id: \"16\", indent: 2, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7769b",
+      "text": "          { id: \"15\", indent: 0, children: [\"16\"] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7769c",
+      "text": "          { id: \"17\", indent: 0, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7769d",
+      "text": "          { id: \"20\", indent: 2, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7769e",
+      "text": "          { id: \"19\", indent: 1, children: [\"20\"] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b7769f",
+      "text": "          { id: \"18\", indent: 0, children: [\"19\", \"20\" ] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776a0",
+      "text": "        ]);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776a1",
+      "text": "      });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776a2",
+      "text": "      ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776a3",
+      "text": "      await t.step(\"no indent\", () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776a4",
+      "text": "        const lines = [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776a5",
+      "text": "          \"a\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776a6",
+      "text": "          \"a\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776a7",
+      "text": "          \"a\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776a8",
+      "text": "        ].map((text, i) => ({ text, id: `${i}` }));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776a9",
+      "text": "        assertEquals([...findFoldings(lines)], [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776aa",
+      "text": "          { id: \"0\", indent: 0, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776ab",
+      "text": "          { id: \"1\", indent: 0, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776ac",
+      "text": "          { id: \"2\", indent: 0, children: [] },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776ad",
+      "text": "        ]);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776ae",
+      "text": "      })",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "622601051280f00000b776af",
+      "text": "    });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657797,
+      "updated": 1646657797
+    },
+    {
+      "id": "6225fc6d1280f0000088f82b",
+      "text": "   code:deps_test.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657802
+    },
+    {
+      "id": "6225fc6d1280f0000088f82c",
+      "text": "    export { assertEquals } from \"https://deno.land/std@0.125.0/testing/asserts.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657802
+    },
+    {
+      "id": "6225fc6d1280f0000088f82d",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646656622,
+      "updated": 1646657806
+    },
+    {
+      "id": "6226010e1280f00000b776b0",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1646657806,
+      "updated": 1646657806
+    },
+    {
+      "id": "622a893f8ee92a000088e843",
+      "text": "#折り畳み",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1646954816,
+      "updated": 1646954819
+    },
+    {
+      "id": "622a89408ee92a000088e844",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1646954816,
+      "updated": 1646954816
+    }
+  ]
+}

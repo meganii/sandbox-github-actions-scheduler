@@ -1,0 +1,253 @@
+{
+  "id": "6298d36fb5d15c0023e5d415",
+  "title": "Scrapboxのエディタなどのフォントを変更するためのUserScript",
+  "created": 1654182769,
+  "updated": 1654249826,
+  "lines": [
+    {
+      "id": "6298d36fb5d15c0023e5d415",
+      "text": "Scrapboxのエディタなどのフォントを変更するためのUserScript",
+      "userId": "615d68a2d7a667001de8db32",
+      "created": 1654182769,
+      "updated": 1654182769
+    },
+    {
+      "id": "6298d42be8db32000027789f",
+      "text": "自分のprojectで何かを考えているとき、[ゴシック体]だと気分が乗らない時があって、[明朝体]にするためのメニューを作りたくなったので、[UserScript]を書いた。[mgn901.icon]",
+      "userId": "615d68a2d7a667001de8db32",
+      "created": 1654182961,
+      "updated": 1654183493
+    },
+    {
+      "id": "6298d4c6e8db3200002778a1",
+      "text": "\t普段レポートの本文はWord上で明朝体に指定して書いているので、長い文章を考えるときは明朝体にしたほうがノりやすいのではないだろうか？",
+      "userId": "615d68a2d7a667001de8db32",
+      "created": 1654183115,
+      "updated": 1654183185
+    },
+    {
+      "id": "62992b1379d3a90000ca89ad",
+      "text": "\t\t少しわかります[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1654205205,
+      "updated": 1654205209
+    },
+    {
+      "id": "62992b1879d3a90000ca89ae",
+      "text": "\t\t自分も[ポメラ]で小説書くときは明朝体にしている",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1654205210,
+      "updated": 1654205226
+    },
+    {
+      "id": "6298d42be8db3200002778a0",
+      "text": "",
+      "userId": "615d68a2d7a667001de8db32",
+      "created": 1654182961,
+      "updated": 1654182961
+    },
+    {
+      "id": "6298d36ce8db320000277867",
+      "text": "code:script.js",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654182769,
+      "updated": 1654249826
+    },
+    {
+      "id": "6298d373e8db320000277880",
+      "text": " // valueにfont-familyに設定したい値を入れる。",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249826,
+      "updated": 1654249826
+    },
+    {
+      "id": "6298d38ee8db320000277899",
+      "text": " const changeFont = (value) => {",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249826,
+      "updated": 1654249826
+    },
+    {
+      "id": "6298d373e8db320000277881",
+      "text": " \tlet styleEl = document.getElementById('changeFont-style');",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249826,
+      "updated": 1654249826
+    },
+    {
+      "id": "6298d373e8db320000277882",
+      "text": " \tif (styleEl === null) {",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249826,
+      "updated": 1654249826
+    },
+    {
+      "id": "6298d373e8db320000277883",
+      "text": " \t\tstyleEl = document.createElement('style');",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249826,
+      "updated": 1654249826
+    },
+    {
+      "id": "6298d373e8db320000277884",
+      "text": " \t\tconst dc = document.getElementById('dedicated-container');",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249826,
+      "updated": 1654249826
+    },
+    {
+      "id": "6298d373e8db320000277885",
+      "text": " \t\tstyleEl.id = 'changeFont-style';",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249826,
+      "updated": 1654249826
+    },
+    {
+      "id": "6298d373e8db320000277886",
+      "text": " \t\tdc.appendChild(styleEl);",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249826,
+      "updated": 1654249826
+    },
+    {
+      "id": "6298d373e8db320000277887",
+      "text": " \t}",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249826,
+      "updated": 1654249826
+    },
+    {
+      "id": "6298d373e8db320000277888",
+      "text": " \tstyleEl.textContent = `.editor, .grid li, .list li.page-list-item, .stream {font-family: ${value}}`;",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249826,
+      "updated": 1654249826
+    },
+    {
+      "id": "6298d373e8db320000277889",
+      "text": " }",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249823,
+      "updated": 1654249823
+    },
+    {
+      "id": "6298d373e8db32000027788a",
+      "text": " scrapbox.PageMenu.addMenu({",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249823,
+      "updated": 1654249823
+    },
+    {
+      "id": "6298d373e8db32000027788b",
+      "text": " \ttitle: 'Change Font',",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249823,
+      "updated": 1654249823
+    },
+    {
+      "id": "6298d373e8db32000027788c",
+      "text": " \timage: 'https://gyazo.com/1c15dd8c2ed4d887803e81db677fcd2f/raw',",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249823,
+      "updated": 1654249823
+    },
+    {
+      "id": "6298d373e8db32000027788d",
+      "text": " \tonClick: () => {},",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249823,
+      "updated": 1654249823
+    },
+    {
+      "id": "6298d373e8db32000027788e",
+      "text": " });",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249823,
+      "updated": 1654249823
+    },
+    {
+      "id": "6298d373e8db32000027788f",
+      "text": " scrapbox.PageMenu('Change Font').addItem({",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249823,
+      "updated": 1654249823
+    },
+    {
+      "id": "6298d373e8db320000277890",
+      "text": " \ttitle: 'Sans serif',",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249823,
+      "updated": 1654249823
+    },
+    {
+      "id": "6298d373e8db320000277891",
+      "text": " \tonClick: () => {changeFont('\"Inter\", \"Roboto\", \"源ノ角ゴシック JP\", \"Noto Sans JP\", -apple-system, BlinkMacSystemFont, sans-serif')},",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249823,
+      "updated": 1654249823
+    },
+    {
+      "id": "6298d373e8db320000277892",
+      "text": " });",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249823,
+      "updated": 1654249823
+    },
+    {
+      "id": "6298d373e8db320000277893",
+      "text": " scrapbox.PageMenu('Change Font').addItem({",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1654249823,
+      "updated": 1654249823
+    },
+    {
+      "id": "6298d373e8db320000277894",
+      "text": " \ttitle: 'Serif',",
+      "userId": "615d68a2d7a667001de8db32",
+      "created": 1654182776,
+      "updated": 1654182776
+    },
+    {
+      "id": "6298d373e8db320000277895",
+      "text": " \tonClick: () => {changeFont('\"源ノ明朝 JP\", \"Noto Serif JP\", serif')},",
+      "userId": "615d68a2d7a667001de8db32",
+      "created": 1654182776,
+      "updated": 1654183448
+    },
+    {
+      "id": "6298d373e8db320000277896",
+      "text": " });",
+      "userId": "615d68a2d7a667001de8db32",
+      "created": 1654182776,
+      "updated": 1654182776
+    },
+    {
+      "id": "6298d36ee8db32000027787e",
+      "text": "",
+      "userId": "615d68a2d7a667001de8db32",
+      "created": 1654182772,
+      "updated": 1654182772
+    },
+    {
+      "id": "6298d3b2e8db32000027789a",
+      "text": "changeFont関数のvalueのsanitizeをしていない辺りが行儀悪いが「自分だけで使う分には……」ということで放置してしまっている。[mgn901.icon]",
+      "userId": "615d68a2d7a667001de8db32",
+      "created": 1654182839,
+      "updated": 1654182898
+    },
+    {
+      "id": "6298d5a2e8db3200002778a2",
+      "text": "\t[SQLインジェクション]みたいな感じのことができちゃう。",
+      "userId": "615d68a2d7a667001de8db32",
+      "created": 1654183335,
+      "updated": 1654183352
+    },
+    {
+      "id": "6298d387e8db320000277898",
+      "text": "",
+      "userId": "615d68a2d7a667001de8db32",
+      "created": 1654182797,
+      "updated": 1654182797
+    }
+  ]
+}

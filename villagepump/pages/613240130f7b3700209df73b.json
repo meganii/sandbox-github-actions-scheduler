@@ -1,0 +1,358 @@
+{
+  "id": "613240130f7b3700209df73b",
+  "title": "ユーザスクリプトどうやって開発してる？",
+  "created": 1630683158,
+  "updated": 1630853588,
+  "lines": [
+    {
+      "id": "613240130f7b3700209df73b",
+      "text": "ユーザスクリプトどうやって開発してる？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1630683158,
+      "updated": 1630683158
+    },
+    {
+      "id": "61324015aff09e0000a9c18e",
+      "text": "[nishio.icon]知りたい",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1630683158,
+      "updated": 1630683164
+    },
+    {
+      "id": "61324049aff09e0000a9c192",
+      "text": "　Scrapboxに限らずTampermonkeyとかその他のJSでユーザが拡張できるサービスならなんでも。",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1630683210,
+      "updated": 1630714794
+    },
+    {
+      "id": "613240a7aff09e0000a9c194",
+      "text": "　　というのは[Kozaneba]のユーザスクリプトの仕組みを考えてるからなわけです",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1630683303,
+      "updated": 1630689307
+    },
+    {
+      "id": "6134d9adaff09e000054bcb8",
+      "text": "　　まとめ: つけようかなと思ってた「リロードなしでeval」をやっぱりみんな欲しいのだとわかったのでその方針で作ります",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1630853550,
+      "updated": 1630853588
+    },
+    {
+      "id": "6132401caff09e0000a9c191",
+      "text": "　「VSCodeで書いてScrapboxに貼りつけてリロードしてOKおして動作をみる」を繰り返すの辛い",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1630683165,
+      "updated": 1630683272
+    },
+    {
+      "id": "613299b579d3a900000ade9e",
+      "text": "　\tわかる[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1630706103,
+      "updated": 1630706106
+    },
+    {
+      "id": "61324089aff09e0000a9c193",
+      "text": "　URLで指定できるタイプの場合、昔はよく`python -mSimpleHTTPServer` (Python 2.x)とかやってローカルでHTTPサーバを立ち上げてた",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1630683273,
+      "updated": 1630683407
+    },
+    {
+      "id": "6132410faff09e0000a9c195",
+      "text": "　　各種サービスがHTTPSに移行してHTTPサーバからの読み込みを蹴るようになって使えなくなった",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1630683407,
+      "updated": 1630683436
+    },
+    {
+      "id": "6132412daff09e0000a9c196",
+      "text": "　その後、Dropboxに置いてShareすることでHTTPSでサーブさせるとかしてた",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1630683437,
+      "updated": 1630683524
+    },
+    {
+      "id": "6132417caff09e0000a9c197",
+      "text": "　やったことないけど今だとwebpack devserverをHTTPSで立てるとか？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1630683517,
+      "updated": 1630683569
+    },
+    {
+      "id": "613241b0aff09e0000a9c198",
+      "text": "　　なんか色々複雑で何をどうしたら昔みたいにサクッとサーブできるのかわからない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1630683569,
+      "updated": 1630683602
+    },
+    {
+      "id": "61333da6aff09e00004893cf",
+      "text": "　　そもそもScrapboxはlocalhostからimportできないか？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1630748071,
+      "updated": 1630748104
+    },
+    {
+      "id": "61333e46aff09e0000211e23",
+      "text": "　　>Refused to load the script 'https://localhost/foo.js' because it violates the following Content Security Policy directive: \"script-src 'self' cdnjs.cloudflare.com maps.googleapis.com 'unsafe-eval' helpfeel-tweaks.helpfeel.com js.stripe.com",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1630748231,
+      "updated": 1630748232
+    },
+    {
+      "id": "61333e97aff09e00004893d0",
+      "text": "　　　なるほどhostsをいじってローカルで動かしてるプロキシを指せば()",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1630748312,
+      "updated": 1630748351
+    },
+    {
+      "id": "61324017aff09e0000a9c18f",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1630683160,
+      "updated": 1630683160
+    },
+    {
+      "id": "61324612385a9200000f4c64",
+      "text": "[ScrapJupyter]というものを使ってその場で実行してます[miyamonz.icon]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1630684690,
+      "updated": 1630684706
+    },
+    {
+      "id": "61333d7baff09e00004893ce",
+      "text": "　なるほど、コードブロックをevalするボタンをつけるわけですね[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1630748028,
+      "updated": 1630748065
+    },
+    {
+      "id": "61324623385a9200000f4c66",
+      "text": "　chrome拡張したりdenoからbuildしたりは全然わからないのでそこらへんは[takker.icon]に聞いてみたい",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1630684707,
+      "updated": 1630684735
+    },
+    {
+      "id": "61325877e5172d0000650c6c",
+      "text": "　入力補完とかができないつらみはある[yosider.icon][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630689399,
+      "updated": 1630735129
+    },
+    {
+      "id": "613299ae79d3a900000ade9d",
+      "text": "",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1630706095,
+      "updated": 1630706095
+    },
+    {
+      "id": "613299bc79d3a900000ade9f",
+      "text": "Scrapbox関係ない部分のロジック（純粋なJSの書き方やアルゴリズム）は手元 or [repl.it]で書いて、Scrapboxに関係がある部分だけ原始的なやり方（手元で書いてコピペしてリロードする、直接Scrapbox上でコード書く等）[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1630706109,
+      "updated": 1630706290
+    },
+    {
+      "id": "61329a0d79d3a900000adea1",
+      "text": " 後者の機会をなるべく減らすようにしている",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1630706190,
+      "updated": 1630706219
+    },
+    {
+      "id": "61329a2979d3a900000adea2",
+      "text": " が、それでも辛い",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1630706219,
+      "updated": 1630706221
+    },
+    {
+      "id": "61329a2f79d3a900000adea3",
+      "text": " それにこういう区別なしに思いついたのガリガリ書きたい場合はやっぱり辛い",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1630706225,
+      "updated": 1630706238
+    },
+    {
+      "id": "6132b29ad0ca1c0000be8d60",
+      "text": "",
+      "userId": "612309a719e67d001dd0ca1c",
+      "created": 1630712474,
+      "updated": 1630712474
+    },
+    {
+      "id": "6132b29ad0ca1c0000be8d61",
+      "text": "開発コンソールで動きそうかチェックして、エディタに貼って整形",
+      "userId": "612309a719e67d001dd0ca1c",
+      "created": 1630712474,
+      "updated": 1630712492
+    },
+    {
+      "id": "6132b2c8d0ca1c0000be8d66",
+      "text": "　開発コンソールには履歴・補完がある",
+      "userId": "612309a719e67d001dd0ca1c",
+      "created": 1630712521,
+      "updated": 1630712521
+    },
+    {
+      "id": "6132b2c9d0ca1c0000be8d67",
+      "text": "　　ないよりまし",
+      "userId": "612309a719e67d001dd0ca1c",
+      "created": 1630712522,
+      "updated": 1630712526
+    },
+    {
+      "id": "6132b2acd0ca1c0000be8d62",
+      "text": "　素のJSの場合",
+      "userId": "612309a719e67d001dd0ca1c",
+      "created": 1630712492,
+      "updated": 1630712503
+    },
+    {
+      "id": "613299c879d3a900000adea0",
+      "text": "",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1630706122,
+      "updated": 1630706122
+    },
+    {
+      "id": "613309691280f000003b6c1b",
+      "text": "[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630734697,
+      "updated": 1630734698
+    },
+    {
+      "id": "6133096a1280f000003b6c1c",
+      "text": " Scrapboxのコードブロック記法に直接書いたあと、開発コンソールで[dynamic import]経由でscriptを読み込んで試していた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630734698,
+      "updated": 1630734783
+    },
+    {
+      "id": "613309be1280f000003b6c1f",
+      "text": "  コードを直したら手動で再読込した後、これまた手動で開発コンソールから読み込み直した",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630734783,
+      "updated": 1630734831
+    },
+    {
+      "id": "61330a9d1280f000003b6c31",
+      "text": "  [pin-diary-3]とかそんな感じで作った",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630735005,
+      "updated": 1630735005
+    },
+    {
+      "id": "613309ef1280f000003b6c20",
+      "text": "　　当然だが非常に時間を食う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630734832,
+      "updated": 1630734847
+    },
+    {
+      "id": "613309ff1280f000003b6c22",
+      "text": "　　 まずreloadするのに時間を食う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630734847,
+      "updated": 1630734866
+    },
+    {
+      "id": "61330a121280f000003b6c23",
+      "text": "　　 コードの修正も大変",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630734866,
+      "updated": 1630734872
+    },
+    {
+      "id": "61330a3f1280f000003b6c26",
+      "text": "　　 　ほんの些細なスペルミスや括弧の対応ミスも、いちいちブラウザを再読込しないと分からない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630734912,
+      "updated": 1630734943
+    },
+    {
+      "id": "61330a2b1280f000003b6c25",
+      "text": " 　　  formatterもlinterも入力補完もないので",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630734892,
+      "updated": 1630734948
+    },
+    {
+      "id": "61330a641280f000003b6c27",
+      "text": " 　　 デバッグは[developer tool]からできるものの、修正したあとの再読み込みは手動でしなければならない",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1630734948,
+      "updated": 1630734999
+    },
+    {
+      "id": "61330a961280f000003b6c28",
+      "text": " 　普通に考えたら狂喜の沙汰だが、[takker.icon]はそれにすっかり慣れてしまった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630734999,
+      "updated": 1630735021
+    },
+    {
+      "id": "6133315ce5172d0000bcc8fb",
+      "text": " 　　狂喜…やばい世界ですね[yosider.icon][erniogi.icon]",
+      "userId": "5e5b870dd7f3000017a33682",
+      "created": 1630744925,
+      "updated": 1630754957
+    },
+    {
+      "id": "61330aac1280f000003b6c32",
+      "text": " 最近はGit管理に移行させている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630735021,
+      "updated": 1630735038
+    },
+    {
+      "id": "61330abd1280f000003b6c33",
+      "text": "  codingはDeno & Vimでやっている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630735038,
+      "updated": 1630735073
+    },
+    {
+      "id": "61330ae01280f000003b6c34",
+      "text": "   linter、formatter、入力補完を使えるのでだいぶ楽になった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630735073,
+      "updated": 1630735094
+    },
+    {
+      "id": "61330af61280f000003b6c35",
+      "text": "  試すたびに手動で再読込しなければらないないのは依然変わらない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630735094,
+      "updated": 1630735119
+    },
+    {
+      "id": "61330b1d1280f000003b6c36",
+      "text": " ちょっとしたコードは[ScrapJupyter]で試すようになった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630735134,
+      "updated": 1630735144
+    },
+    {
+      "id": "61330b2a1280f000003b6c37",
+      "text": "  ある程度小規模なコードなら再読み込みが不要なので少し楽になった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630735146,
+      "updated": 1630735166
+    },
+    {
+      "id": "6133096d1280f000003b6c1d",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1630734701,
+      "updated": 1630734701
+    }
+  ]
+}

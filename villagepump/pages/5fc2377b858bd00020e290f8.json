@@ -1,0 +1,1779 @@
+{
+  "id": "5fc2377b858bd00020e290f8",
+  "title": "(WIP)拡張吹き出し記法のUserCSS",
+  "created": 1606563736,
+  "updated": 1607694204,
+  "lines": [
+    {
+      "id": "5fc2377b858bd00020e290f8",
+      "text": "(WIP)拡張吹き出し記法のUserCSS",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563736,
+      "updated": 1606563736
+    },
+    {
+      "id": "5fc237975b98c20000147b9f",
+      "text": "[吹き出し記法]の拡張機能",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563736,
+      "updated": 1606565944
+    },
+    {
+      "id": "5fc237985b98c20000147ba0",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147ba1",
+      "text": "動機",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147ba2",
+      "text": " よくあるキャラクター同士が会話するようなコンテンツを想定",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147ba3",
+      "text": " Aさんの吹き出しとBさんの吹き出しを色分けで識別したい",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147ba4",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147ba5",
+      "text": "実装",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147ba6",
+      "text": " 文字を大きくする記法の`*` の数ごとに吹き出しの背景色を割り当てる（10色）",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147ba7",
+      "text": " フォントサイズを固定して、大きくする機能を抑制する",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147ba8",
+      "text": "　 すべて同じフォントサイズにする",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606564318
+    },
+    {
+      "id": "5fc237985b98c20000147ba9",
+      "text": " `[**{ セリフ]`や`[****} セリフ]`というような書式",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147baa",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bab",
+      "text": "できていないこと（やりたいこと）",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bac",
+      "text": "　強調の文字の大きさの分だけ、隙間が空いてしまう",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc239c11280f00000305c65",
+      "text": "　 なんで隙間ができるんだろう？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606564289,
+      "updated": 1606564310
+    },
+    {
+      "id": "5fc23aee1280f00000305c66",
+      "text": "　 原因わかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606564590,
+      "updated": 1606564594
+    },
+    {
+      "id": "5fc23af11280f00000305c67",
+      "text": "　 　`.line span.strong.level-*`の`line-height`を消せば直りそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606564594,
+      "updated": 1606566005
+    },
+    {
+      "id": "5fc23c2a1280f00000557e90",
+      "text": "　 　これ簡単に直せないのか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606564907,
+      "updated": 1606564913
+    },
+    {
+      "id": "5fc23c311280f00000557e91",
+      "text": "　 　 `span.deco-\\{`を子にもつ`.line span.strong.level-*`というのをselectorだけでは指定できない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606564913,
+      "updated": 1606566016
+    },
+    {
+      "id": "5fc23c601280f00000557e92",
+      "text": "　 回避策",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606564960,
+      "updated": 1606564966
+    },
+    {
+      "id": "5fc23c651280f00000557e93",
+      "text": "　 　強調以外を使って色分けする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606564966,
+      "updated": 1606564979
+    },
+    {
+      "id": "5fc23c721280f00000557e94",
+      "text": "　 　　`!\"#%&'()*+,-./|<>_~`に割り当てるとか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606564979,
+      "updated": 1606565057
+    },
+    {
+      "id": "5fc23e141280f00000557e9b",
+      "text": "　 　 `span.deco-\\{.deco-\\|`のように指定できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606565396,
+      "updated": 1606565426
+    },
+    {
+      "id": "5fc23f1a1280f0000069c81d",
+      "text": " 　 　 試しにLv.10に相当する吹き出しに↑を適用してみました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606565658,
+      "updated": 1606565678
+    },
+    {
+      "id": "5fc237985b98c20000147bad",
+      "text": "　特に、大きな強調文字は、隙間が大きく、レイアウトが崩れてしまう",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bae",
+      "text": "　　吹き出しに見えない",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147baf",
+      "text": " （と、ここで力尽きてしまいました。直せる人がいたら直して [suto3.icon]）",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606564595
+    },
+    {
+      "id": "5fc237985b98c20000147bb0",
+      "text": " 2020/12/11 19:11:43 修正してみました。どうかな？ [suto3.icon]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1607681534
+    },
+    {
+      "id": "5fd377191280f00000197997",
+      "text": "  隙間の大きさをできるだけ小さくしたんですね[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607694104,
+      "updated": 1607694152
+    },
+    {
+      "id": "5fd377491280f00000197998",
+      "text": "  これなら隙間が目立たなそうです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1607694152,
+      "updated": 1607694204
+    },
+    {
+      "id": "5fd345da5b98c200005ceda2",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681498,
+      "updated": 1607681498
+    },
+    {
+      "id": "5fc237985b98c20000147bb1",
+      "text": "code:style.css",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bb2",
+      "text": "  :root {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bb3",
+      "text": "    --main-color: DarkGray;      /* 主調色 */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bb4",
+      "text": "    --assort-color: White;       /* 従属色 */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bb5",
+      "text": "    --base-color: WhiteSmoke;    /* 背景色 */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bb6",
+      "text": "    --accent-color: BlueViolet;  /* 強調色 */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bb7",
+      "text": "    --text-color: Black;         /* 文字色 */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bb8",
+      "text": "    ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bb9",
+      "text": "    --l1-color: hsl(0,100%,90%);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bba",
+      "text": "    --l2-color: hsl(30,100%,90%);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bbb",
+      "text": "    --l3-color: hsl(60,100%,90%);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bbc",
+      "text": "    --l4-color: hsl(90,100%,90%);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bbd",
+      "text": "    --l5-color: hsl(150,100%,90%);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bbe",
+      "text": "    --l6-color: hsl(180,100%,90%);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bbf",
+      "text": "    --l7-color: hsl(210,100%,90%);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bc0",
+      "text": "    --l8-color: hsl(270,100%,90%);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bc1",
+      "text": "    --l9-color: hsl(300,100%,90%);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bc2",
+      "text": "    --l10-color: hsl(330,100%,90%);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bc3",
+      "text": "  }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bc4",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bc5",
+      "text": "code:style.css",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bc6",
+      "text": " .deco-\\{, .deco-\\} {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bc7",
+      "text": "   text-decoration: none; /* init */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bc8",
+      "text": "   font-size: 18px;  /* 固定長 */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bc9",
+      "text": "   font-weight: lighter;  /* */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bca",
+      "text": "   height: 26px; /* 固定長 */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bcb",
+      "text": "   line-height: 24px; /* 固定長 */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606564765
+    },
+    {
+      "id": "5fc237985b98c20000147bcc",
+      "text": " ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bcd",
+      "text": "   color: var(--assort-color) ;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bce",
+      "text": "   background-color: var(--main-color);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bcf",
+      "text": "   padding: 0.1em 0.2em 0.1em 0.3em; /* */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1607671700
+    },
+    {
+      "id": "5fc237985b98c20000147bd0",
+      "text": "   /* border-style: solid; /* for test*/   ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bd1",
+      "text": "   /* border-width: 2px; /* for test*/   ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bd2",
+      "text": "   /* border-color: #111; /* for test*/",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bd3",
+      "text": "   border-radius: 0.4em; /* */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bd4",
+      "text": "   margin: auto 0.3em; /* */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bd5",
+      "text": "   display: inline-block; /* */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bd6",
+      "text": "   max-width: calc(100% - 100px);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bd7",
+      "text": "   vertical-align: top; /* */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bd8",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bd9",
+      "text": " .deco-\\{:before {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bda",
+      "text": "   position: absolute;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bdb",
+      "text": "   margin: 0;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bdc",
+      "text": "   padding: 0;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bdd",
+      "text": "   transform: translateX(-100%) translateY(calc(1em - 80%));",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bde",
+      "text": "   width: 0;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bdf",
+      "text": "   content: \"\";",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147be0",
+      "text": "   border-width: 0 0 0.6em 0.6em;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147be1",
+      "text": "   border-style: solid;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147be2",
+      "text": "   border-color: var(--main-color)  transparent;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147be3",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147be4",
+      "text": " .deco-\\}:after {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147be5",
+      "text": "   position: absolute;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147be6",
+      "text": "   margin: 0;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147be7",
+      "text": "   padding: 0;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147be8",
+      "text": "   transform: translateY(calc(1em - 80%));",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147be9",
+      "text": "   width: 0;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bea",
+      "text": "   content: \"\";",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147beb",
+      "text": "   border-width: 0 0.6em 0.6em 0;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bec",
+      "text": "   border-style: solid;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bed",
+      "text": "   border-color: var(--main-color) transparent;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fc237985b98c20000147bee",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563737
+    },
+    {
+      "id": "5fd345a85b98c20000b515bd",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681448,
+      "updated": 1607681448
+    },
+    {
+      "id": "5fd345a95b98c20000b515be",
+      "text": "code:style.css",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fd345a95b98c20000b515bf",
+      "text": " .line strong.level.level-1 ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fd345a95b98c20000b515c0",
+      "text": " .line strong.level.level-2 ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fd345a95b98c20000b515c1",
+      "text": " .line strong.level.level-3 ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fd345a95b98c20000b515c2",
+      "text": " .line strong.level.level-4 ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fd345a95b98c20000b515c3",
+      "text": " .line strong.level.level-5 ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fd345a95b98c20000b515c4",
+      "text": " .line strong.level.level-6 ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fd345a95b98c20000b515c5",
+      "text": " .line strong.level.level-7 ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fd345a95b98c20000b515c6",
+      "text": " .line strong.level.level-8 ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fd345a95b98c20000b515c7",
+      "text": " .line strong.level.level-9 ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fd345a95b98c20000b515c8",
+      "text": " .line strong.level.level-10 {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fd345a95b98c20000b515c9",
+      "text": "   line-height: 24px; /* 固定長 */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fd345a95b98c20000b515ca",
+      "text": "   height: 22px; /* 固定長 */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fd345a95b98c20000b515cb",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fd345a95b98c20000b515cc",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1607681449,
+      "updated": 1607681449
+    },
+    {
+      "id": "5fc237985b98c20000147bef",
+      "text": "code:style.css",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563737,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bf0",
+      "text": " .level-1 > .deco-\\{ , .level-1 > .deco-\\} ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bf1",
+      "text": " .level-2 > .deco-\\{ , .level-2 > .deco-\\} ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bf2",
+      "text": " .level-3 > .deco-\\{ , .level-3 > .deco-\\} ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bf3",
+      "text": " .level-4 > .deco-\\{ , .level-4 > .deco-\\} ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bf4",
+      "text": " .level-5 > .deco-\\{ , .level-5 > .deco-\\} ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bf5",
+      "text": " .level-6 > .deco-\\{ , .level-6 > .deco-\\} ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bf6",
+      "text": " .level-7 > .deco-\\{ , .level-7 > .deco-\\} ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bf7",
+      "text": " .level-8 > .deco-\\{ , .level-8 > .deco-\\} ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bf8",
+      "text": " .level-9 > .deco-\\{ , .level-9 > .deco-\\} ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bf9",
+      "text": " .level-10 > .deco-\\{ , .level-10 > .deco-\\} ,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606565531
+    },
+    {
+      "id": "5fc23e9c1280f00000557e9c",
+      "text": " .deco-\\{.deco-\\|, .deco-\\}.deco-\\|",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606565532,
+      "updated": 1606565611
+    },
+    {
+      "id": "5fc237cc5b98c20000147bfa",
+      "text": " {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bfb",
+      "text": "   text-decoration: none; /* init */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bfc",
+      "text": "   text-shadow: none; /* init */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bfd",
+      "text": "   font-size: 18px;  /* 固定長 */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bfe",
+      "text": "   font-weight: 500 ;  /* 固定長 */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147bff",
+      "text": "   line-height: 20px; /* 固定長 */  ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c00",
+      "text": "   height: 22px; /* 固定長 */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c01",
+      "text": "   color: var(--text-color);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606564203
+    },
+    {
+      "id": "5fc237cc5b98c20000147c02",
+      "text": "   /* border-style: solid; /* for test*/   ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c03",
+      "text": "   /* border-width: 2px; /* for test*/   ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c04",
+      "text": "   /* border-color: var(--text-color); /* for test*/",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c05",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c06",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c07",
+      "text": "code:style.css  ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c08",
+      "text": " .level-1 > .deco-\\{ , .level-1 > .deco-\\} {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c09",
+      "text": "   background-color: var(--l1-color);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c0a",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c0b",
+      "text": " .level-1 > .deco-\\{:before , .level-1 > .deco-\\}:after {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c0c",
+      "text": "   border-color: var(--l1-color) transparent;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c0d",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c0e",
+      "text": "  ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c0f",
+      "text": " .level-2 > .deco-\\{ , .level-2 > .deco-\\}  {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c10",
+      "text": "   background-color: var(--l2-color);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c11",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c12",
+      "text": " .level-2 > .deco-\\{:before , .level-2 > .deco-\\}:after {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c13",
+      "text": "   border-color: var(--l2-color) transparent;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c14",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c15",
+      "text": " ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c16",
+      "text": " .level-3 > .deco-\\{ , .level-3 > .deco-\\}  {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c17",
+      "text": "   background-color: var(--l3-color);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c18",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c19",
+      "text": " .level-3 > .deco-\\{:before , .level-3 > .deco-\\}:after {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c1a",
+      "text": "   border-color: var(--l3-color) transparent;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c1b",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c1c",
+      "text": " ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c1d",
+      "text": " .level-4 > .deco-\\{ , .level-4 > .deco-\\}  {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c1e",
+      "text": "   background-color: var(--l4-color);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c1f",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c20",
+      "text": " .level-4 > .deco-\\{:before , .level-4 > .deco-\\}:after {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c21",
+      "text": "   border-color: var(--l4-color) transparent;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c22",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c23",
+      "text": " ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c24",
+      "text": " .level-5 > .deco-\\{ , .level-5 > .deco-\\}  {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c25",
+      "text": "   background-color: var(--l5-color);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c26",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c27",
+      "text": " .level-5 > .deco-\\{:before , .level-5 > .deco-\\}:after {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c28",
+      "text": "   border-color: var(--l5-color) transparent;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c29",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c2a",
+      "text": " ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c2b",
+      "text": " .level-6 > .deco-\\{ , .level-6 > .deco-\\}  {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c2c",
+      "text": "   background-color: var(--l6-color);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c2d",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c2e",
+      "text": " .level-6 > .deco-\\{:before , .level-6 > .deco-\\}:after {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c2f",
+      "text": "   border-color: var(--l6-color) transparent;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c30",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c31",
+      "text": " ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c32",
+      "text": " .level-7 > .deco-\\{ , .level-7 > .deco-\\}  {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c33",
+      "text": "   background-color: var(--l7-color);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c34",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c35",
+      "text": " .level-7 > .deco-\\{:before , .level-7 > .deco-\\}:after {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c36",
+      "text": "   border-color: var(--l7-color) transparent;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c37",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c38",
+      "text": " ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c39",
+      "text": " .level-8 > .deco-\\{ , .level-8 > .deco-\\}  {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c3a",
+      "text": "   background-color: var(--l8-color);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c3b",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c3c",
+      "text": " .level-8 > .deco-\\{:before , .level-8 > .deco-\\}:after {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c3d",
+      "text": "   border-color: var(--l8-color) transparent;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c3e",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c3f",
+      "text": " ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c40",
+      "text": " .level-9 > .deco-\\{ , .level-9 > .deco-\\}  {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c41",
+      "text": "   background-color: var(--l9-color);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c42",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c43",
+      "text": " .level-9 > .deco-\\{:before , .level-9 > .deco-\\}:after {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c44",
+      "text": "   border-color: var(--l9-color) transparent;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c45",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c46",
+      "text": " ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c47",
+      "text": " .level-10 > .deco-\\{ , .level-10 > .deco-\\},",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606565579
+    },
+    {
+      "id": "5fc23ecb1280f00000557ea0",
+      "text": " .deco-\\{.deco-\\|, .deco-\\}.deco-\\| {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606565579,
+      "updated": 1606565583
+    },
+    {
+      "id": "5fc237cc5b98c20000147c48",
+      "text": "   background-color: var(--l10-color);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c49",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c4a",
+      "text": " .level-10 > .deco-\\{:before , .level-10 > .deco-\\}:after,",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606565588
+    },
+    {
+      "id": "5fc23ed41280f00000557ea1",
+      "text": " .deco-\\{.deco-\\|:before, .deco-\\}.deco-\\|:after {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606565588,
+      "updated": 1606565599
+    },
+    {
+      "id": "5fc237cc5b98c20000147c4b",
+      "text": "   border-color: var(--l10-color) transparent;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c4c",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c4d",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563789
+    },
+    {
+      "id": "5fc237cc5b98c20000147c4e",
+      "text": "表示テスト[{ test]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563789,
+      "updated": 1606563837
+    },
+    {
+      "id": "5fc23cf01280f00000557e95",
+      "text": " 何気に吹き出しの矢印もカスタムされてる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606565104,
+      "updated": 1606565124
+    },
+    {
+      "id": "5fc23d041280f00000557e96",
+      "text": " いいデザインだ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606565124,
+      "updated": 1606565137
+    },
+    {
+      "id": "5fc23d974bb2e20000bc5ec0",
+      "text": "  パステルカラー！",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1606565242,
+      "updated": 1606565250
+    },
+    {
+      "id": "5fc23da14bb2e20000bc5ec1",
+      "text": "  めっちゃ好きな色",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1606565251,
+      "updated": 1606565255
+    },
+    {
+      "id": "5fc237fd5b98c20000147c50",
+      "text": "Lv1[*{ test]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563837,
+      "updated": 1606563837
+    },
+    {
+      "id": "5fc237fd5b98c20000147c51",
+      "text": "Lv2[**{ test]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563837,
+      "updated": 1606563837
+    },
+    {
+      "id": "5fc237fd5b98c20000147c52",
+      "text": "Lv3[***{ test]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563837,
+      "updated": 1606563837
+    },
+    {
+      "id": "5fc237fd5b98c20000147c53",
+      "text": "Lv4 [****{ test] ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563837,
+      "updated": 1606563837
+    },
+    {
+      "id": "5fc237fd5b98c20000147c54",
+      "text": "Lv5 [*****{ test] ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563837,
+      "updated": 1606563837
+    },
+    {
+      "id": "5fc237fd5b98c20000147c55",
+      "text": "Lv6 [******{ test] ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563837,
+      "updated": 1606563837
+    },
+    {
+      "id": "5fc237fd5b98c20000147c56",
+      "text": "Lv7 [*******{ test] ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563837,
+      "updated": 1606563837
+    },
+    {
+      "id": "5fc237fd5b98c20000147c57",
+      "text": "Lv8[********{ test]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563837,
+      "updated": 1606563837
+    },
+    {
+      "id": "5fc237fd5b98c20000147c58",
+      "text": "（このへんの隙間が気になる）",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563837,
+      "updated": 1606563837
+    },
+    {
+      "id": "5fc237fd5b98c20000147c59",
+      "text": "Lv9[*********{ test]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563837,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c5a",
+      "text": "Lv10[{********** test]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606565626
+    },
+    {
+      "id": "5fc23efb1280f0000069c81c",
+      "text": "Lv10 alt [{| test]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606565627,
+      "updated": 1606565647
+    },
+    {
+      "id": "5fc240481280f00000289c7a",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606565961,
+      "updated": 1606565961
+    },
+    {
+      "id": "5fc238245b98c20000147c5c",
+      "text": "アイコンに合わせる",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c5d",
+      "text": "[[suto3.icon]][*{ test] [**} test][[suto3.icon]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c5e",
+      "text": "[[suto3.icon]][**{ test] [***} test][[suto3.icon]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c5f",
+      "text": "[[suto3.icon]][***{ test] [****} test][[suto3.icon]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c60",
+      "text": "[[suto3.icon]][****{ test] [*****} test][[suto3.icon]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c61",
+      "text": "[[suto3.icon]][*****{ test] [******} test][[suto3.icon]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c62",
+      "text": "[[suto3.icon]][******{ test] [*******} test][[suto3.icon]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c63",
+      "text": "[[suto3.icon]][*******{ test] [********} test][[suto3.icon]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c64",
+      "text": "[[suto3.icon]][********{ test] [*********} test][[suto3.icon]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c65",
+      "text": "[[suto3.icon]][*********{ test] [**********} test][[suto3.icon]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c66",
+      "text": "[[suto3.icon]][**********{ test] [*} test][[suto3.icon]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c67",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c68",
+      "text": "動作例",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c69",
+      "text": "[[/icons/Beaver.icon]] [*{ こんにちはー]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1607681589
+    },
+    {
+      "id": "5fc238245b98c20000147c6a",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c6b",
+      "text": "[****} おや、どうしたんすか][[suto3.icon]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c6c",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c6d",
+      "text": "[[/icons/Beaver.icon]] [*{ 寒くなってきたねー😭]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1607681600
+    },
+    {
+      "id": "5fc238245b98c20000147c6e",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c6f",
+      "text": "[****} そうですねー][[suto3.icon]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c70",
+      "text": "[              ][****} 寒いですねー][[suto3.icon]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c71",
+      "text": "　間に[説明]を入れてみたり",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c72",
+      "text": "[*}  test です]もう一度[[/icons/Beaver.icon]] [*{  これは[test] です]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1607681610
+    },
+    {
+      "id": "5fc238245b98c20000147c73",
+      "text": "[      ][*}  test です][                         ][*{  これもtestです]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc238245b98c20000147c74",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606563876,
+      "updated": 1606563876
+    },
+    {
+      "id": "5fc2399e5b98c20000e6021e",
+      "text": "#UserCSS",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606564254,
+      "updated": 1606564260
+    },
+    {
+      "id": "5fc2399f5b98c20000e6021f",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1606564256,
+      "updated": 1606564256
+    }
+  ]
+}

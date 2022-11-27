@@ -1,0 +1,197 @@
+{
+  "id": "5f9672ca28720b001eb06d1f",
+  "title": "Page Listに戻るボタンを時計として使うUserScript",
+  "created": 1603695314,
+  "updated": 1648969809,
+  "lines": [
+    {
+      "id": "5f9672ca28720b001eb06d1f",
+      "text": "Page Listに戻るボタンを時計として使うUserScript",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603695314,
+      "updated": 1604901857
+    },
+    {
+      "id": "5f9672dba9f474000011bba1",
+      "text": "code:script.js",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603695324,
+      "updated": 1603695327
+    },
+    {
+      "id": "5f9672dfa9f474000011bba3",
+      "text": " function clock() {",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603695327,
+      "updated": 1603695330
+    },
+    {
+      "id": "5f9672e2a9f474000011bba4",
+      "text": "   var twoDigit = num => num.toString().padStart(2, '0');",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603695330,
+      "updated": 1603695580
+    },
+    {
+      "id": "5f9672e2a9f474000011bbad",
+      "text": "   var weeks = [\"Su\", \"Mo\", \"Tu\", \"We\", \"Th\", \"Fr\", \"Sa\"];",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603695330,
+      "updated": 1603696654
+    },
+    {
+      "id": "5f9672e2a9f474000011bbae",
+      "text": "   var now = new Date();",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603695330,
+      "updated": 1603695330
+    },
+    {
+      "id": "5f9672e2a9f474000011bbaf",
+      "text": "   var day = twoDigit(now.getDate());",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603695330,
+      "updated": 1603695330
+    },
+    {
+      "id": "5f9672e2a9f474000011bbb0",
+      "text": "   var week = weeks[now.getDay()];",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603695330,
+      "updated": 1603695330
+    },
+    {
+      "id": "5f9672e2a9f474000011bbb1",
+      "text": "   var hour = twoDigit(now.getHours());",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603695330,
+      "updated": 1603695330
+    },
+    {
+      "id": "5f9672e2a9f474000011bbb2",
+      "text": "   var minute = twoDigit(now.getMinutes());",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603695330,
+      "updated": 1603695330
+    },
+    {
+      "id": "5f9672e2a9f474000011bbb3",
+      "text": "   $(\"#app-container a.btn.project-home > span\")",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603695330,
+      "updated": 1603695662
+    },
+    {
+      "id": "5f96742edd59fe00000b449e",
+      "text": "   \t.text(`${day} ${week} ${hour}:${minute}`);",
+      "userId": "5f3cf18043ed94001edd59fe",
+      "created": 1603695662,
+      "updated": 1603696641
+    },
+    {
+      "id": "5f9672e2a9f474000011bbb6",
+      "text": " }",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603695330,
+      "updated": 1603695330
+    },
+    {
+      "id": "5f9678a2dd59fe00000b44a6",
+      "text": " setTimeout(() => setInterval(clock, 1000), 1000 - (new Date()).getTime() % 1000);",
+      "userId": "5f3cf18043ed94001edd59fe",
+      "created": 1603696802,
+      "updated": 1603696811
+    },
+    {
+      "id": "5f9672e2a9f474000011bbb8",
+      "text": " ",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603695330,
+      "updated": 1603695330
+    },
+    {
+      "id": "5f9672dca9f474000011bba2",
+      "text": "[https://i.imgur.com/K6xxd9X.png]",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603695325,
+      "updated": 1603700800
+    },
+    {
+      "id": "5f96883fa9f474000009d360",
+      "text": "",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603700800,
+      "updated": 1603700800
+    },
+    {
+      "id": "5f969b104daa9200005ff156",
+      "text": "#UserScript",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1603705617,
+      "updated": 1603705620
+    },
+    {
+      "id": "5f96883fa9f474000009d35f",
+      "text": "",
+      "userId": "5f7bafa76f34a0001ea9f474",
+      "created": 1603700800,
+      "updated": 1603700800
+    },
+    {
+      "id": "5f969b164daa9200005ff158",
+      "text": "形式がそこまで重要ではなくて人が読むだけなら[toLocaleString]を使うと幸せになれる",
+      "userId": "6231f8cd37b7b8001d895f8c",
+      "created": 1603705622,
+      "updated": 1648969809
+    },
+    {
+      "id": "5f969b344daa9200005ff15a",
+      "text": "　日時のフォーマットライブラリのように形式を自由に指定できないけど、各言語で適切な形式に変換できる",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1603705652,
+      "updated": 1603705706
+    },
+    {
+      "id": "5f9918b0dd59fe00002a4af6",
+      "text": "　[和暦]表示とかもできる",
+      "userId": "5f3cf18043ed94001edd59fe",
+      "created": 1603868848,
+      "updated": 1605361583
+    },
+    {
+      "id": "5f9918b5dd59fe00002a4af7",
+      "text": "　\t`.toLocaleString('ja-JP-u-ca-japanese', { era: 'long' }) => \"令和2/10/28 16:08:13\"`",
+      "userId": "5f3cf18043ed94001edd59fe",
+      "created": 1603868853,
+      "updated": 1603868899
+    },
+    {
+      "id": "5f969b194daa9200005ff159",
+      "text": "",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1603705626,
+      "updated": 1603705626
+    },
+    {
+      "id": "621ad42b1280f00000f9a335",
+      "text": "関連",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645925418,
+      "updated": 1645925420
+    },
+    {
+      "id": "621ad42d1280f00000f9a337",
+      "text": " [右下の通信ステータスに時刻を表示するUserScript]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645925420,
+      "updated": 1645925425
+    },
+    {
+      "id": "621ad42d1280f00000f9a336",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645925420,
+      "updated": 1645925420
+    }
+  ]
+}

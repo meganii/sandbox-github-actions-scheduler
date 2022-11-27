@@ -1,0 +1,435 @@
+{
+  "id": "603e44aeb63e65001c876fc5",
+  "title": "APIでmetadataつきjsonをexport",
+  "created": 1614693551,
+  "updated": 1614700418,
+  "lines": [
+    {
+      "id": "603e44aeb63e65001c876fc5",
+      "text": "APIでmetadataつきjsonをexport",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693551
+    },
+    {
+      "id": "603e44c1e5172d00008c2173",
+      "text": "したい…けど方法がわからない",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693564,
+      "updated": 1614693567
+    },
+    {
+      "id": "603e44b4e5172d000094a296",
+      "text": "from [2021/02/28]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693551
+    },
+    {
+      "id": "603e44b4e5172d000094a298",
+      "text": "\t[/nishio/ScrapboxのJSONをマージしたい]のようにやってもmetadataが付いてこない。。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a299",
+      "text": " `https://scrapbox.io/api/page-data/export/`ではなく[api/pages/:project/:title]を全ページで実行してjsonを自前で作れば作れる[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a29a",
+      "text": "  cf. [/takker/scrapboxの全てのpageを取得する]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a29b",
+      "text": "  1000件レベルで毎日やる予定なので、あんまり負担かかる方法だとちょっと[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a29c",
+      "text": "  2000件程度なら大丈夫だと思う(根拠なし)[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a29d",
+      "text": "  　まじすか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a29e",
+      "text": "   同時の100件ずつくらいならいけた",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a29f",
+      "text": "    ただ、ややserverに負荷がかかっている感じがした",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2a0",
+      "text": "    　少しだけガクついた",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2a1",
+      "text": "    同時に1000件はやめるべき",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2a2",
+      "text": "     serverからの応答が一段落ちた",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2a3",
+      "text": "   もしserverの負荷を気にするなら、1件づつでもいいと思う",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2a4",
+      "text": "    export目的なら多少fetchに時間がかかっても問題ないだろうし",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2a5",
+      "text": "\t\t\t\tそれなら負担はかからないんですかね？[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2a6",
+      "text": "    fetchとfetchの間で1秒くらい待てば十分じゃないかな",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2a7",
+      "text": "    \tなるほど、間隔をあければいいのか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2a8",
+      "text": "    \t[/icons/感謝.icon][yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2a9",
+      "text": " `https://scrapbox.io/api/page-data/export/`なら`body`に`{\"metadata\":true}`を渡してPOSTすればできるみたいです",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2aa",
+      "text": "\t\t[/nishio/ScrapboxのJSONをマージしたい]にもそう書いてあったのでやってみたんですが、responseのjsonにmetadata付いてこなくないですか？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2ab",
+      "text": "\t\tほんとだ[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2ac",
+      "text": "\t\tどうやらheadersに削ってはいけないparameterがあるようです",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2ad",
+      "text": "\t\t自分の環境ではここまで削ってもmetadataを取得できました",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2ae",
+      "text": "\t\t code:js",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2af",
+      "text": "\t\t  await fetch(\"https://scrapbox.io/api/page-data/export/your-project.json\", {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2b0",
+      "text": "        headers: {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2b1",
+      "text": "            \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2b2",
+      "text": "            \"Accept\": \"application/json, text/plain, */*\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2b3",
+      "text": "            \"Accept-Language\": \"ja,en-US;q=0.7,en;q=0.3\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2b4",
+      "text": "            \"Content-Type\": \"application/json;charset=utf-8\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2b5",
+      "text": "            \"X-CSRF-TOKEN\": window._csrf,",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2b6",
+      "text": "        },",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2b7",
+      "text": "        body: \"{\\\"metadata\\\":true}\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2b8",
+      "text": "        method: \"POST\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2b9",
+      "text": "    });",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2ba",
+      "text": "   [429 Too Many Requests]が出てしまったので、今回の調査はここまでにします",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2bb",
+      "text": "   　後日また試してみます",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2bc",
+      "text": "   　まじすみません…[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e44b4e5172d000094a2bd",
+      "text": "   そうか、普通に取るときのリクエストを見ればいいのか。。[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693551,
+      "updated": 1614693574
+    },
+    {
+      "id": "603e47efe5172d00008c2175",
+      "text": " いけた[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694378,
+      "updated": 1614694382
+    },
+    {
+      "id": "603e482ce5172d00008c2177",
+      "text": " \t`\"Content-Type\"`より上のやつは消して大丈夫でした",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694440,
+      "updated": 1614694671
+    },
+    {
+      "id": "603e4915e5172d00008c2198",
+      "text": " \t\t`\"charset=utf-8\"`もなくてもいい",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694672,
+      "updated": 1614694681
+    },
+    {
+      "id": "603e47f4e5172d00008c2176",
+      "text": " \tContent-Typeをjsonに指定して、bodyをstringifyしておく必要があったということか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694382,
+      "updated": 1614694713
+    },
+    {
+      "id": "603e485ee5172d00008c2178",
+      "text": " \tcode:js",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694489,
+      "updated": 1614694493
+    },
+    {
+      "id": "603e4862e5172d00008c2179",
+      "text": " \t await fetch(",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694493,
+      "updated": 1614694558
+    },
+    {
+      "id": "603e48a3e5172d00008c218e",
+      "text": "       '/api/page-data/export/project.json',",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694558,
+      "updated": 1614694781
+    },
+    {
+      "id": "603e48a3e5172d00008c218f",
+      "text": "       {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694558,
+      "updated": 1614694558
+    },
+    {
+      "id": "603e48a3e5172d00008c2190",
+      "text": "           method: 'POST',",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694558,
+      "updated": 1614694558
+    },
+    {
+      "id": "603e48a3e5172d00008c2191",
+      "text": "           headers: {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694558,
+      "updated": 1614694558
+    },
+    {
+      "id": "603e48a3e5172d00008c2192",
+      "text": "               'X-CSRF-TOKEN': window._csrf,",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694558,
+      "updated": 1614694558
+    },
+    {
+      "id": "603e48a3e5172d00008c2193",
+      "text": "               'Content-Type': 'application/json',",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694558,
+      "updated": 1614694754
+    },
+    {
+      "id": "603e48a3e5172d00008c2194",
+      "text": "           },",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694558,
+      "updated": 1614694558
+    },
+    {
+      "id": "603e48a3e5172d00008c2195",
+      "text": "           body: JSON.stringify({ metadata: true }),",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694558,
+      "updated": 1614694558
+    },
+    {
+      "id": "603e48a3e5172d00008c2196",
+      "text": "       }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694558,
+      "updated": 1614694558
+    },
+    {
+      "id": "603e48a3e5172d00008c2197",
+      "text": "   );",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694558,
+      "updated": 1614694558
+    },
+    {
+      "id": "603e44cce5172d00008c2174",
+      "text": "\t\t[/icons/感謝.icon]です[yosider.icon*2]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614693575,
+      "updated": 1614694734
+    },
+    {
+      "id": "603e494ee5172d00008c2199",
+      "text": "  こちらこそ[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614694729,
+      "updated": 1614700364
+    },
+    {
+      "id": "603e5f401280f0000093ce95",
+      "text": "   調査を途中で終えても別の人がやってくれるの素晴らしい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614700352,
+      "updated": 1614700418
+    },
+    {
+      "id": "603e5f581280f0000093ce96",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614700376,
+      "updated": 1614700376
+    }
+  ]
+}

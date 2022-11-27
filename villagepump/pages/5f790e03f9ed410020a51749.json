@@ -1,0 +1,365 @@
+{
+  "id": "5f790e03f9ed410020a51749",
+  "title": "network-based SNSを作る",
+  "created": 1601768967,
+  "updated": 1643377370,
+  "lines": [
+    {
+      "id": "5f790e03f9ed410020a51749",
+      "text": "network-based SNSを作る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768967,
+      "updated": 1601768967
+    },
+    {
+      "id": "5f790e021280f00000172310",
+      "text": "from [Guildedってそんなにいいの？]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768967,
+      "updated": 1601768967
+    },
+    {
+      "id": "5f790e021280f00000172311",
+      "text": "[network-based SNS]を作る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768967,
+      "updated": 1601768989
+    },
+    {
+      "id": "5f790e1c1280f0000035f44f",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768990,
+      "updated": 1601768990
+    },
+    {
+      "id": "5f790e021280f00000172312",
+      "text": "動機",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768967,
+      "updated": 1601768967
+    },
+    {
+      "id": "5f790e021280f00000172313",
+      "text": "\t改良された[Slack-like SNS]はよく作られるが、どれもこれも[階層構造]を当然としている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768967,
+      "updated": 1601768967
+    },
+    {
+      "id": "5f790e021280f00000172314",
+      "text": "\t[ネットワーク構造]をベースとしたSNS serviceを作ってみたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768967,
+      "updated": 1601769542
+    },
+    {
+      "id": "5f7d4a1f4daa920000b783a2",
+      "text": " \t実は僕も前々から作りたかった[yuta0801.icon]",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602046495,
+      "updated": 1602046510
+    },
+    {
+      "id": "5f7d4a2b4daa920000b783a3",
+      "text": " \t\t[/yuta0801/チャンネルなどの概念がない全く新しいチャットシステムを作りたい]",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1602046507,
+      "updated": 1602046510
+    },
+    {
+      "id": "5f7d10851280f000004a7282",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602031750,
+      "updated": 1602031750
+    },
+    {
+      "id": "5f7d10851280f000004a7283",
+      "text": "そもそも[chatをする目的とは]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1602031750,
+      "updated": 1604890397
+    },
+    {
+      "id": "5f790e021280f00000172315",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768967,
+      "updated": 1601768967
+    },
+    {
+      "id": "5f790e021280f00000172316",
+      "text": "機能とかを考える",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768967,
+      "updated": 1601769424
+    },
+    {
+      "id": "5f790e2a1280f0000035f451",
+      "text": " [Slack-like SNS]からスレッドとチャンネルを抜いて[Scrapbox]のリンク機構を入れたイメージ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601769004,
+      "updated": 1604887286
+    },
+    {
+      "id": "5f790e681280f0000035f452",
+      "text": "　ただ、単に[2 hop link]と[逆リンク]を導入すれば済む話ではない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601769066,
+      "updated": 1639962709
+    },
+    {
+      "id": "5f790ee41280f0000035f455",
+      "text": "　\tそもそもいちいちリンクを手動で付けながらチャットできるか？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601769190,
+      "updated": 1601769212
+    },
+    {
+      "id": "5f790f191280f0000035f457",
+      "text": "　\t　リンクはるのが面倒になって結局誰もはらなくなりそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601769242,
+      "updated": 1601769276
+    },
+    {
+      "id": "5f7bb6434daa92000055dc9d",
+      "text": "　\t　でもそれに近いことを僕たちはTwitterでやってないか？[yuta0801.icon]",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1601943107,
+      "updated": 1601943121
+    },
+    {
+      "id": "5f7bb6504daa92000055dc9e",
+      "text": "　\t　\t引用ツイート/引用リプライは実質的にツイートへのリンクだよね",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1601943121,
+      "updated": 1601943220
+    },
+    {
+      "id": "5f7bb9da1280f00000d9bef7",
+      "text": "　\t　む、twitter民はよくやっているんですね[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601944028,
+      "updated": 1601944042
+    },
+    {
+      "id": "5f7bb9e81280f00000d9bef8",
+      "text": "　\t　\tならリンクを貼ること自体は大した手間ではないのか？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601944042,
+      "updated": 1601944066
+    },
+    {
+      "id": "5f7bba111280f00000d9befb",
+      "text": "　\t　\tそうであれば、あとはUIの問題に帰着しそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601944083,
+      "updated": 1601944092
+    },
+    {
+      "id": "5f7bba001280f00000d9befa",
+      "text": "\t　\tLINEだとあんまり見かけない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601944066,
+      "updated": 1601944079
+    },
+    {
+      "id": "5f7bbb0a4daa920000467239",
+      "text": "\t　\tSNSの機能にも大きく依存するかもしれない",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1601944330,
+      "updated": 1601944343
+    },
+    {
+      "id": "5f7bbb174daa92000046723a",
+      "text": "\t　\t\tTwitterは引用ツイートという操作があったり",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1601944343,
+      "updated": 1601944498
+    },
+    {
+      "id": "5f7bbbb14daa92000046723b",
+      "text": "\t　\t\tDiscordは各メッセージのURLをコピーすることができる(Twitterもだけど)",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1601944498,
+      "updated": 1601944511
+    },
+    {
+      "id": "5f790efa1280f0000035f456",
+      "text": "　\tリンクをやるとしたら、自動リンクが妥当？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601769212,
+      "updated": 1601769282
+    },
+    {
+      "id": "5f790f411280f0000035f458",
+      "text": "　\tもしくは、事後でリンクを貼ることが出来るようにする？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601769282,
+      "updated": 1601769311
+    },
+    {
+      "id": "5f790f5d1280f0000035f45a",
+      "text": "　\t表記ゆれはどうする？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601769311,
+      "updated": 1601769317
+    },
+    {
+      "id": "5f790ebe1280f0000035f453",
+      "text": "　リンク以外の方法で[ネットワーク構造]を表現できるか？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601769152,
+      "updated": 1601769469
+    },
+    {
+      "id": "5f790ffb1280f0000035f45e",
+      "text": "　\t関連度を自動的に計算して、結びつける",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601769469,
+      "updated": 1601769482
+    },
+    {
+      "id": "5f7d0adcdd59fe0000ab6440",
+      "text": "　\t\t自動化すると人間の役に立つネットワークが形成されず、[ゴミ屋敷化]してしまう",
+      "userId": "5f3cf18043ed94001edd59fe",
+      "created": 1602030302,
+      "updated": 1602030318
+    },
+    {
+      "id": "61f3eb97716ca700006f73e2",
+      "text": "　\t\t　ほんとか？誰か試しにやってくれ、自動化興味ある",
+      "userId": "5fe69c751a7bce001c716ca7",
+      "created": 1643375511,
+      "updated": 1643375532
+    },
+    {
+      "id": "61f3f1cbaff09e0000399cfb",
+      "text": "　\t\t　　[nishio.icon]ここでいう「関連度」を機械が計算できるような計算式やアルゴリズムとして定式化するのがまず最初のハードル",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1643377100,
+      "updated": 1643377183
+    },
+    {
+      "id": "61f3f21faff09e0000399cfc",
+      "text": "　\t\t　　　例えば一般的な文書類似検索とかでは単語の共起判断を使ったりするけど、それってScrapbox的に表現すると要するに「単語のすべての出現をリンクにして、リンクの多い文章がにてる文章！」という方法なので「それでいいわけないよな…」となる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1643377184,
+      "updated": 1643377321
+    },
+    {
+      "id": "61f3f2aaaff09e0000399cfe",
+      "text": "　\t\t　　　ほどほど小さいリンクになる単語だけを選択する、というやり方は可能性はある。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1643377323,
+      "updated": 1643377370
+    },
+    {
+      "id": "5f79104b1280f0000035f460",
+      "text": "　\tネットワークを作るというのは、何かと何かを結びつけること。その結びつけ方はリンク以外にはなさそう？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601769549,
+      "updated": 1601769627
+    },
+    {
+      "id": "5f7bb7044daa92000055dc9f",
+      "text": "　そもそも人、メッセージを主体としたネットワーク構造のchat toolは作れるのか",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1601943300,
+      "updated": 1601943426
+    },
+    {
+      "id": "5f7bb72c4daa92000055dca0",
+      "text": "　\t相当UIを工夫しないと結局時系列に強く縛られて縛られてしまう気がする",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1601943341,
+      "updated": 1601943403
+    },
+    {
+      "id": "5f7bb7764daa92000055dca1",
+      "text": "　\tそれこそGuildedのような感じになるような",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1601943414,
+      "updated": 1601943423
+    },
+    {
+      "id": "5f790ebf1280f0000035f454",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601769152,
+      "updated": 1601769152
+    },
+    {
+      "id": "5f790e021280f0000017231e",
+      "text": "related service",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768967,
+      "updated": 1601768967
+    },
+    {
+      "id": "5f790e021280f0000017231f",
+      "text": " scrapbox",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768967,
+      "updated": 1601768967
+    },
+    {
+      "id": "5f790e021280f00000172320",
+      "text": " \t既にscrapboxで情報共有をしているグループであれば、新たに[network-based SNS]を導入する必要はなさそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768967,
+      "updated": 1601768967
+    },
+    {
+      "id": "5f790e021280f00000172321",
+      "text": " \t一方[* non] scrapbox usersが[* chat toolとして]scrapboxを導入するのは難がある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768967,
+      "updated": 1601768967
+    },
+    {
+      "id": "5f790e021280f00000172322",
+      "text": " \t\t通知機能が不十分",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768967,
+      "updated": 1601768967
+    },
+    {
+      "id": "5f790e021280f00000172323",
+      "text": " \t\t人ではなく情報が主体",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601768967,
+      "updated": 1601768967
+    },
+    {
+      "id": "5f790f761280f0000035f45b",
+      "text": " \t\tchat toolやSNSの代替として使うにはまだノウハウが足りない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601769335,
+      "updated": 1601769364
+    },
+    {
+      "id": "5f790f921280f0000035f45d",
+      "text": " \t\t",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601769364,
+      "updated": 1601769375
+    },
+    {
+      "id": "5f790f7e1280f0000035f45c",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1601769344,
+      "updated": 1601769344
+    },
+    {
+      "id": "607b069efd049e0000233c2b",
+      "text": "#Webサービス案",
+      "userId": "5d20a16b6e57f80017fd049e",
+      "created": 1618675359,
+      "updated": 1618675359
+    }
+  ]
+}

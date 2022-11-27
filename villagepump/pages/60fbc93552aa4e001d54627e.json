@@ -1,0 +1,1149 @@
+{
+  "id": "60fbc93552aa4e001d54627e",
+  "title": "Denoに無理矢理React.jsの型検査をやらせようとしていたけどようやく優勝できそうな気がしてきた",
+  "created": 1627113782,
+  "updated": 1647150924,
+  "lines": [
+    {
+      "id": "60fbc93552aa4e001d54627e",
+      "text": "Denoに無理矢理React.jsの型検査をやらせようとしていたけどようやく優勝できそうな気がしてきた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "622d819e4bb2e20000dd82f7",
+      "text": "2022-03-13",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149469,
+      "updated": 1647149472
+    },
+    {
+      "id": "622d81a24bb2e20000dd82f9",
+      "text": " 改めて見るとめっちゃ意味わからんことやっているな[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149473,
+      "updated": 1647149489
+    },
+    {
+      "id": "622d81b24bb2e20000dd82fa",
+      "text": " 全然こんなことする必要無いです[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149489,
+      "updated": 1647149496
+    },
+    {
+      "id": "622d82104bb2e20000dd82fb",
+      "text": " [esm.sh]を使いましょう",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149583,
+      "updated": 1647149589
+    },
+    {
+      "id": "622d821c4bb2e20000dd82fc",
+      "text": "",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149594,
+      "updated": 1647149595
+    },
+    {
+      "id": "622d83224bb2e20000dd830d",
+      "text": "code:index.html",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149857,
+      "updated": 1647149861
+    },
+    {
+      "id": "622d83274bb2e20000dd830e",
+      "text": " <html>",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149861,
+      "updated": 1647149861
+    },
+    {
+      "id": "622d83274bb2e20000dd830f",
+      "text": " <head>",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149861,
+      "updated": 1647149861
+    },
+    {
+      "id": "622d83274bb2e20000dd8310",
+      "text": "   <meta http-equiv=\"Content-type\" content=\"text/html;charset=utf-8\">",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149861,
+      "updated": 1647149861
+    },
+    {
+      "id": "622d83274bb2e20000dd8311",
+      "text": " \t<meta name=\"MobileOptimized\" content=\"width\">",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149861,
+      "updated": 1647149861
+    },
+    {
+      "id": "622d83274bb2e20000dd8312",
+      "text": " \t<meta name=\"HandheldFriendly\" content=\"true\">",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149861,
+      "updated": 1647149861
+    },
+    {
+      "id": "622d83274bb2e20000dd8313",
+      "text": " \t<meta name=\"viewport\" content=\"width=device-width\">",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149861,
+      "updated": 1647149861
+    },
+    {
+      "id": "622d83274bb2e20000dd8314",
+      "text": "   <script async=\"\" type=\"module\" src=\"main.js\"></script>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647149861,
+      "updated": 1647150558
+    },
+    {
+      "id": "622d83274bb2e20000dd8315",
+      "text": " </head>",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149861,
+      "updated": 1647149861
+    },
+    {
+      "id": "622d83274bb2e20000dd8316",
+      "text": " <body>",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149861,
+      "updated": 1647149861
+    },
+    {
+      "id": "622d83274bb2e20000dd8317",
+      "text": "   <span id=\"react-root\"></span>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647149861,
+      "updated": 1647150710
+    },
+    {
+      "id": "622d83274bb2e20000dd8319",
+      "text": " </body>",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149861,
+      "updated": 1647149861
+    },
+    {
+      "id": "622d83274bb2e20000dd831a",
+      "text": " </html>",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149861,
+      "updated": 1647149861
+    },
+    {
+      "id": "622d821d4bb2e20000dd82fd",
+      "text": "code:main.tsx",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149595,
+      "updated": 1647149602
+    },
+    {
+      "id": "622d82234bb2e20000dd82fe",
+      "text": " /// <reference no-default-lib=\"true\" />",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149602,
+      "updated": 1647149616
+    },
+    {
+      "id": "622d82324bb2e20000dd82ff",
+      "text": " /// <reference lib=\"esnext\" />",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149616,
+      "updated": 1647149616
+    },
+    {
+      "id": "622d82324bb2e20000dd8300",
+      "text": " /// <reference lib=\"dom\" />",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149616,
+      "updated": 1647149616
+    },
+    {
+      "id": "622d82324bb2e20000dd8301",
+      "text": " ",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149616,
+      "updated": 1647149616
+    },
+    {
+      "id": "622d82324bb2e20000dd8302",
+      "text": " import React from \"https://esm.sh/react@17.0.2\";",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149616,
+      "updated": 1647150031
+    },
+    {
+      "id": "622d82604bb2e20000dd8303",
+      "text": " import ReactDOM from \"https://esm.sh/react-dom@17.0.2\";",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149663,
+      "updated": 1647150033
+    },
+    {
+      "id": "622d82804bb2e20000dd8304",
+      "text": " ",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149695,
+      "updated": 1647149695
+    },
+    {
+      "id": "622d82924bb2e20000dd8306",
+      "text": " const element = document.getElementById(\"react-root\")!;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647149712,
+      "updated": 1647150060
+    },
+    {
+      "id": "622d82a64bb2e20000dd8309",
+      "text": " ReactDOM.render(element, <span>DenoでReactできますよ</span>);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647149733,
+      "updated": 1647150059
+    },
+    {
+      "id": "622d82d34bb2e20000dd830b",
+      "text": "code:bundle.sh",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149778,
+      "updated": 1647149780
+    },
+    {
+      "id": "622d82d74bb2e20000dd830c",
+      "text": " deno bundle -r=https://scrpabox.io https://scrapbox.io/api/code/villagepump/Denoに無理矢理React.jsの型検査をやらせようとしていたけどようやく優勝できそうな気がしてきた/main.tsx main.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647149781,
+      "updated": 1647150081
+    },
+    {
+      "id": "622d819e4bb2e20000dd82f8",
+      "text": "修正感謝[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149469,
+      "updated": 1647150084
+    },
+    {
+      "id": "622d84074bb2e20000dd831f",
+      "text": " そっかasyncするといいのか",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647150085,
+      "updated": 1647150147
+    },
+    {
+      "id": "622d84464bb2e20000dd8320",
+      "text": " この用途だとdeferの方がよさげ？",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647150148,
+      "updated": 1647150156
+    },
+    {
+      "id": "622d845a1280f00000fdd35c",
+      "text": "  deferはいらないとかなんとかMDNさんが言ってた気がする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647150169,
+      "updated": 1647150187
+    },
+    {
+      "id": "622d849f1280f00000fdd35d",
+      "text": "  あったあった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647150238,
+      "updated": 1647150240
+    },
+    {
+      "id": "622d84a31280f00000fdd35e",
+      "text": "   [https://developer.mozilla.org/ja/docs/Web/HTML/Element/script#attr-defer <script>: スクリプト要素 - HTML: HyperText Markup Language | MDN]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647150242,
+      "updated": 1647150249
+    },
+    {
+      "id": "622d84b74bb2e20000dd8321",
+      "text": "   なるほど、そもそも`module`付けた時点でDOMツリー構築後まで遅延評価されるのか[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647150261,
+      "updated": 1647150924
+    },
+    {
+      "id": "622d84c54bb2e20000dd8322",
+      "text": "   なにもわからない、雰囲気でHTMLをやっている[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647150276,
+      "updated": 1647150366
+    },
+    {
+      "id": "622d84d94bb2e20000dd8323",
+      "text": "    [独学の悪い所]ですよねーこれ、悪い点がこうして晒さないと分からない",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647150296,
+      "updated": 1647150371
+    },
+    {
+      "id": "622d84ef1280f00000fdd35f",
+      "text": "   まあ自分もscrapboxの`<script>`にあった属性をコピペしただけです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647150318,
+      "updated": 1647150366
+    },
+    {
+      "id": "622d85011280f00000fdd360",
+      "text": "    そのあとMDNで調べた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647150336,
+      "updated": 1647150345
+    },
+    {
+      "id": "622d85421280f00000fdd361",
+      "text": "  あっそうだ、これも含めた修正を[#1 https://github.com/kuuote/denote/pull/1]に投げてあるのでお時間のあるときにご確認ください～[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647150402,
+      "updated": 1647150503
+    },
+    {
+      "id": "622d85c34bb2e20000dd8326",
+      "text": "   [/vim-jp-emojis/merged.icon][/vim-jp-emojis/kan.icon][/vim-jp-emojis/sha.icon][kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647150530,
+      "updated": 1647150552
+    },
+    {
+      "id": "622d85664bb2e20000dd8325",
+      "text": "   [/icons/速度.icon][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647150436,
+      "updated": 1647150592
+    },
+    {
+      "id": "622d84014bb2e20000dd831e",
+      "text": "修正はしたけどスマホなのでテストはできないです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647150080,
+      "updated": 1647150166
+    },
+    {
+      "id": "622d843c1280f00000fdd35b",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647150139,
+      "updated": 1647150139
+    },
+    {
+      "id": "622d83551280f0000017dc2d",
+      "text": "[/icons/hr.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647149908,
+      "updated": 1647149920
+    },
+    {
+      "id": "622d83fc4bb2e20000dd831c",
+      "text": "",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647150075,
+      "updated": 1647150075
+    },
+    {
+      "id": "622d83fd4bb2e20000dd831d",
+      "text": "",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647150075,
+      "updated": 1647150075
+    },
+    {
+      "id": "60fbc9361280f000008d3b72",
+      "text": "from [2020/12/17]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9661280f000008d3bce",
+      "text": "[kuuote.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113830,
+      "updated": 1627113833
+    },
+    {
+      "id": "60fbc9361280f000008d3b73",
+      "text": "[Deno]に無理矢理[React.js]の型検査をやらせようとしていたけどようやく優勝できそうな気がしてきた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b74",
+      "text": " JS/TSのimportを全然理解していなかったのが敗因だった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b75",
+      "text": " https://github.com/Soremwar/deno_types という便利なものがあるのでcloneした上で",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b76",
+      "text": " code:ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b77",
+      "text": "  import type JSX from \"./deno_types/react/v16.13.1/react.d.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b78",
+      "text": "  import * as React from \"./deno_types/react/v16.13.1/react.d.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b79",
+      "text": "  import * as ReactDOM from \"deno_types/react-dom/v16.13.1/react-dom.d.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b7a",
+      "text": " みたいにしたら型だけimportできた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b7b",
+      "text": "  型定義しかないからbundleがこける…つらい…",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b7c",
+      "text": "  本筋からはそれますが、cloneしなくても",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b7d",
+      "text": "   `from \"https://raw.githubusercontent.com/Soremwar/deno_types/master/react/v16.13.1/react.d.ts\"`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b7e",
+      "text": "  でよさそうですね[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b7f",
+      "text": "   ローカルにcloneしてるのは趣味ですね（たしかに必要ない）",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b80",
+      "text": " いや、これ完全に間違ってるな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b81",
+      "text": " bundleしたくなくて`<script>`経由でReact使いたいだけなのにどうしてここまで苦労しないといけないんだ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b82",
+      "text": "  一日溶かしたけど無理な気がしてきた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b83",
+      "text": "   `allowUmdGlobalAccess`というフラグを立てればいけそうな気がするんだけどご丁寧に潰されている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b84",
+      "text": " あ、行けた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b85",
+      "text": "  https://github.com/Microsoft/TypeScript-Handbook/blob/master/pages/Triple-Slash%20Directives.md",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b86",
+      "text": "  これに書いてある[Triple-slash directives]のpathに型定義ファイルを指定したら行けた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113873
+    },
+    {
+      "id": "60fbc9361280f000008d3b87",
+      "text": "   型定義だからtypesじゃないとだめだと思っていたのが罠だった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b88",
+      "text": "    Node.js用のオプションだからDenoで使うと死ぬ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b89",
+      "text": "   丸一日かけて辿り付いた答えがたった1行というのはよくある話",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b8a",
+      "text": "   上に書いたリポジトリに書いてある`@deno_types`が全然効かなかったのはcloneしたせいなんだろうか、検証が必要",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b8b",
+      "text": "  ちゃんと型検査される",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b8c",
+      "text": "  すごく[バッドノウハウ]感ある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b8d",
+      "text": "   知見まとめたいけど誰の役にも立たなさそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b8e",
+      "text": "    ぜひ[/deno-ja]に書いていただきたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b8f",
+      "text": "    そういえば参加してたの忘れてた、整理と追加検証が済んだらそこに書きますか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b90",
+      "text": "     とりあえずサーバーサイド用の正しいやり方は書いた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b91",
+      "text": "     いい感じに加筆されてる！",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b92",
+      "text": "    [/icons/いい話だ.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b93",
+      "text": "   そろそろ[環境構築おじさん]になりつつある気がするのでもう一度やりたいことを考えたほうがいい気がしてきた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b94",
+      "text": "    [React.js]いじりは楽しいからいいっちゃいいんだけど可処分時間のほぼ全てが注ぎ込まれて他のほぼ全てが止まっているので",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b95",
+      "text": "     [React.js]を実践的に学んでいるとみれば、あとあと役に立つことではあると思う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b96",
+      "text": "    そもそもの目的を書き出してみるといいかも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b97",
+      "text": "     要件はPCとスマホの間で楽にメモを共有したい、ただそれだけのはずだった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b98",
+      "text": "      自分のアホさ加減でも使えるような同期ツールがあれば済むだけの話",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b99",
+      "text": "      これだけだったら既存tool (それこそscrapboxとか)で済むことのはず",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b9a",
+      "text": "       他にもほしい要件があったのでは？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b9b",
+      "text": "       　Vimで使ってるメモと共有したいというのはあった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b9c",
+      "text": "       　なるほど",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b9d",
+      "text": "      [2020/11/22#5fba75634bb2e200004b7fce]を見る限り、試しにscrapboxっぽいものを作ってみたかった感じでもあるような",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b9e",
+      "text": "      　2 hop linkが効くメモツールが自前で欲しいというのはありますね",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3b9f",
+      "text": "      　　探したけど無かった、完全にここがオリジナルらしい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3ba0",
+      "text": "      　　ある意味タグがそれに該当しますが、[文中リンク]のように使えるのserviceはないですね",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3ba1",
+      "text": "      　　 [Roam Research]ならいけるか？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbca231280f000008d3bcf",
+      "text": "      　　 2021-07-24 17:07:00 [Obsidian]でも使える",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627114019,
+      "updated": 1627114030
+    },
+    {
+      "id": "60fbc9361280f000008d3ba2",
+      "text": "      　それに哲学を知るのには真似するのが一番",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3ba3",
+      "text": "      　　なんでも[真似ぶ]のが一番",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3ba4",
+      "text": "     どうせならWikiがいいよね、どうせならWebで動いてると開発楽だよね、どうせWikiにするならWYSIWYGっぽくなってたほうがいいよねみたいな感じでどんどん[脱線]していった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3ba5",
+      "text": "     気が付いたらScrapboxのcloneに近い物を段階的に作ろうとしていた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3ba6",
+      "text": "  これやるとimportが一切使えなくなることが判明した、だめじゃん ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3ba7",
+      "text": "   UMDのReactとES Modulesは共存できないということらしいです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3ba8",
+      "text": "    結局ダーティハックで回避した",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3ba9",
+      "text": "    UMDのReactを無理矢理exportするハリボテを作ってDenoに読ませた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3baa",
+      "text": "     そろそろ何やってるんだろうって気がしてきた(n回目)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bab",
+      "text": "   てかReactってESModulesではなかったのか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bac",
+      "text": "    個人的事情でUMDの物を無理矢理使ってるだけです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bad",
+      "text": "    ESMのがあるのか自体把握してないですすみません",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bae",
+      "text": "     `import * as React from 'react'`のような文法を使って書いたのを、ESModulesを使って書いてると認識していたのですが、そのESModulesとは違うのでしょうか？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3baf",
+      "text": "      [/takker/CodePenを使ってReact.jsを学ぶ練習log#5fb6c9b51280f000001cb37c]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bb0",
+      "text": "      もっともNode.js上で構築されているのでそのままでは使えないのでしょうが",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bb1",
+      "text": "       これですね",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bb2",
+      "text": "       [- Node.jsがCommonJSで書かれた物もES Modulesのセマンティクスで解決してくれるのでその方法で上手くいくのであって、内側までES Modulesで書かれてるわけではない]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bb3",
+      "text": "        完全に嘘を付いてた[kuuote.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bb4",
+      "text": "         Webpackがいい感じに差異を吸収してくれるかららしいです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bb5",
+      "text": "          [ここ https://zenn.dev/oukayuka/books/cb48853473000fb7fcde/viewer/841be2e83e89b9896cb6]に書いてありました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bb6",
+      "text": "          すっごくわかりやすい![takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bb7",
+      "text": "           タダでいいのか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bb8",
+      "text": "           試し読み版だからいいのか……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bb9",
+      "text": "         Webpack君が過去の遺産をなんとかしてくれるのか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bba",
+      "text": "         　感謝しなきゃ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bbb",
+      "text": "        紛らわしくてスマソ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bbc",
+      "text": "        　いえ。むしろ説明してくださって助かりました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bbd",
+      "text": "        なるほど。他方式で書かれたコードをES Modules記法で使えるようにwrapしてあるだけということですか。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bbe",
+      "text": "         wrap、というよりはNode.jsのモジュール解決が[- 闇]便利なのでexport側がCommonJSでimport側がES Modulesということが可能",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bbf",
+      "text": "         Node.jsの闇を垣間見た",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bc0",
+      "text": "     (そもそもUMDもCommonJSもよくわからん)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bc1",
+      "text": "      雑に言うとUMDが`<script>`経由でグローバルに読み込ませるアレでCommonJSがnodeが使ってるモジュールの解決法です(requireと(modules.)exportsを使うやつ)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bc2",
+      "text": "      table:_",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bc3",
+      "text": "       UMD\t<script>経由",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bc4",
+      "text": "       CommonJS\trequire()のアレ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bc5",
+      "text": "       ESModule\texport/import",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bc6",
+      "text": "      CDN経由も`<script>`に読み込ませられるから、実質UMDと同じ？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bc7",
+      "text": "      　それとも相違点がある？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bc8",
+      "text": "      　同じですね",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bc9",
+      "text": "      　UMDで配ってる所もあればES Modulesで配ってる所もあるって感じかな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bca",
+      "text": "      　 違ったら訂正オナシャス",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bcb",
+      "text": "    npmから落としてきた物はUMDとCommonJSしかないな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bcc",
+      "text": "    CDN経由だとESModulesで使えるけどこれがどうやって生成されてるのかがよくわからないので安心して使えない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "60fbc9361280f000008d3bcd",
+      "text": "  [/deno-ja/Denoからnpmパッケージを使用する]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1627113782,
+      "updated": 1627113782
+    },
+    {
+      "id": "622d7eb71280f00000b74429",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647148726,
+      "updated": 1647148726
+    },
+    {
+      "id": "622d7eb71280f00000b7442a",
+      "text": "[Zatsu wiki]の外部module参照がややこしかったのはこういう経緯があったのか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647148726,
+      "updated": 1647148785
+    },
+    {
+      "id": "622d7ef31280f00000b7442c",
+      "text": " これらを一気に解決したesm.shは偉大",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647148786,
+      "updated": 1647148800
+    },
+    {
+      "id": "622d7ebc1280f00000b7442b",
+      "text": " 実を言うと、当時から[esm.sh]はあった(気がする)[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647148731,
+      "updated": 1647149043
+    },
+    {
+      "id": "622d7f884bb2e20000dd82ed",
+      "text": "  なぜこんな回りくどいことをしていたかというと聞いたこともないサービスを信頼していいのか分からなかったから",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647148935,
+      "updated": 1647148980
+    },
+    {
+      "id": "622d80844bb2e20000dd82f3",
+      "text": "   Denoのキャッシュ機構についての理解も足りなかったので将来ビルドできなかったらどうしようとか思っていた",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149186,
+      "updated": 1647149210
+    },
+    {
+      "id": "622d80721280f00000b7442d",
+      "text": "   信頼とかぜんぜん考えたことなかった()[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647149169,
+      "updated": 1647149197
+    },
+    {
+      "id": "622d80901280f00000b7442e",
+      "text": "    もうちょっと警戒心を持つようにしないとだめか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647149199,
+      "updated": 1647149220
+    },
+    {
+      "id": "622d80b94bb2e20000dd82f4",
+      "text": "    警戒、というか突然死んだら困るなーくらいの感覚[kuuote.icon]",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149239,
+      "updated": 1647149254
+    },
+    {
+      "id": "622d7fab4bb2e20000dd82ee",
+      "text": "    リンク切れて使えなくなること意外とある[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647148970,
+      "updated": 1647149290
+    },
+    {
+      "id": "622d80ed1280f00000b74430",
+      "text": "     [いつまでも あると思うな web page]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647149292,
+      "updated": 1647149307
+    },
+    {
+      "id": "622d80cf1280f00000b7442f",
+      "text": "  紆余曲折あって信頼していいと判断したので使うようになった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1647149262,
+      "updated": 1647149262
+    },
+    {
+      "id": "622d7fcd4bb2e20000dd82ef",
+      "text": "   そもそもOSSである",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149004,
+      "updated": 1647149039
+    },
+    {
+      "id": "622d7ffc4bb2e20000dd82f0",
+      "text": "    いざとなったら自分で動かせる",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149051,
+      "updated": 1647149055
+    },
+    {
+      "id": "622d810a4bb2e20000dd82f5",
+      "text": "    実際に動かして確かめてみた",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149321,
+      "updated": 1647149332
+    },
+    {
+      "id": "622d811f4bb2e20000dd82f6",
+      "text": "     Goなので気軽に試せる",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149342,
+      "updated": 1647149349
+    },
+    {
+      "id": "622d800a4bb2e20000dd82f1",
+      "text": "   作ったのは[Aleph.js]の人で、恐らく最初からDenoのために作られている",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149064,
+      "updated": 1647149108
+    },
+    {
+      "id": "622d804b4bb2e20000dd82f2",
+      "text": "   中の人は現在Deno Companyで働いており、Denoとの距離がかなり近いため安泰かなと思った",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647149130,
+      "updated": 1647149160
+    },
+    {
+      "id": "622d7f7e4bb2e20000dd82ec",
+      "text": "",
+      "userId": "5e8944948a182900174bb2e2",
+      "created": 1647148924,
+      "updated": 1647148924
+    }
+  ]
+}

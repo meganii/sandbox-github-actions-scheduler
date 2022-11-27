@@ -1,0 +1,302 @@
+{
+  "id": "61f46979cbbb45001d29a634",
+  "title": "Scrapboxにペリマインドを実装する",
+  "created": 1643407739,
+  "updated": 1643454061,
+  "lines": [
+    {
+      "id": "61f46979cbbb45001d29a634",
+      "text": "Scrapboxにペリマインドを実装する",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771948",
+      "text": "from [@sta]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407744
+    },
+    {
+      "id": "61f4697a79d3a90000771949",
+      "text": "[/sta/Scrapboxにペリマインドを実装する]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a9000077194a",
+      "text": " code:remind.js",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a9000077194b",
+      "text": "  const res = await fetch(\"/api/users/me\");",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a9000077194c",
+      "text": "  const username = (await res.json()).name;",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a9000077194d",
+      "text": "  const remindIcon = \"peremind\";",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a9000077194e",
+      "text": "  const regExp = new RegExp(`^\\\\s*\\\\[${remindIcon}\\\\]\\\\s*\\\\[${username}.icon\\\\]\\\\s*(.*)$`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643407739,
+      "updated": 1643441156
+    },
+    {
+      "id": "61f4697a79d3a9000077194f",
+      "text": "  ",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771950",
+      "text": "  const callback = () => {",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771951",
+      "text": "    if (scrapbox.Layout !== \"page\") return;",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771952",
+      "text": "    ",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771953",
+      "text": "    const line = scrapbox.Page.lines.find(",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771954",
+      "text": "      (line) => regExp.test(line.text)",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771955",
+      "text": "    );",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771956",
+      "text": "    if (!line) return;",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771957",
+      "text": "    ",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771958",
+      "text": "    alert(line.text.match(regExp)[1]);",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771959",
+      "text": "  };",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a9000077195a",
+      "text": "  ",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a9000077195b",
+      "text": "  callback();",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a9000077195c",
+      "text": "  scrapbox.addListener(\"page:changed\", callback);",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a9000077195d",
+      "text": "   ",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a9000077195e",
+      "text": " すぐ書けそうだったので書いてしまいました[takker.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a9000077195f",
+      "text": "  もし[sta.icon]さん自身で実装したかった場合はすみません……つい先に実装してしまいました",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771960",
+      "text": "\t\tおおおお、ありがとうございます[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771961",
+      "text": "\t\t\tすぐ書けるのすごすぎる",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771962",
+      "text": "\t\t\t微修正して動きました",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771963",
+      "text": "\t\t\t\t[/sta/Scrapboxにペリマインドを実装する#61f4662679d3a90000907780]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4697a79d3a90000771964",
+      "text": "\t\t\t\t個人的好みで `\"peremind.icon\";` にした",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f51e1f1280f000000b5971",
+      "text": "\t\t\t\t あ、ふつうに`.icon`つけるの忘れてた……[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643453984,
+      "updated": 1643454020
+    },
+    {
+      "id": "61f51e441280f000000b5972",
+      "text": "\t\t\t\t  やっぱテストを書かないコードはボロが出やすいな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643454021,
+      "updated": 1643454061
+    },
+    {
+      "id": "61f4697a79d3a90000771965",
+      "text": "\t\t\t\t正規表現は `${username}.icon`、が正しい（変数展開位置が少しずれてた",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643407739,
+      "updated": 1643407739
+    },
+    {
+      "id": "61f4ebf61280f00000f1c004",
+      "text": "\t\t\t\t ほんとだ。気づかなかった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643441143,
+      "updated": 1643441165
+    },
+    {
+      "id": "61f4ec0f1280f00000f1c005",
+      "text": "\t\t\t\t サンクスです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1643441168,
+      "updated": 1643441182
+    },
+    {
+      "id": "61f4697a79d3a90000771966",
+      "text": " [ペリマインド]って何すか？[air34n.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1643407739,
+      "updated": 1643430805
+    },
+    {
+      "id": "61f4bb2986501c0000461c29",
+      "text": "　　ページを開いたら[リマインド]してくれる仕組みのことらしい[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1643428651,
+      "updated": 1643430814
+    },
+    {
+      "id": "61f4c56386501c00004de499",
+      "text": "　　 ほへ～、なんか良さげですねぇ[air34n.icon]使ってみなわからんけど.....",
+      "userId": "5f6edacd44511b001f86501c",
+      "created": 1643431269,
+      "updated": 1643431311
+    },
+    {
+      "id": "61f4c5f679d3a90000b139f9",
+      "text": "\t\t合ってます",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643431416,
+      "updated": 1643431417
+    },
+    {
+      "id": "61f4c5f979d3a90000b139fa",
+      "text": "\t\t\tページリマインドでペリマインド、と安直なネーミングですが",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643431421,
+      "updated": 1643431433
+    },
+    {
+      "id": "61f4c377aff09e00004da85c",
+      "text": "\t\t\t昨日思いついたばかりなので実用性はまだ不明です[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643430775,
+      "updated": 1643431417
+    },
+    {
+      "id": "61f4c5b879d3a90000b139f7",
+      "text": "",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1643431353,
+      "updated": 1643431402
+    }
+  ]
+}

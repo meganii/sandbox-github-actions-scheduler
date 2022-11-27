@@ -1,0 +1,183 @@
+{
+  "id": "629d2826e125b0001dbd47d4",
+  "title": "ScrapBubbleをbookmarkから使う",
+  "created": 1654466603,
+  "updated": 1654477196,
+  "lines": [
+    {
+      "id": "629d2826e125b0001dbd47d4",
+      "text": "ScrapBubbleをbookmarkから使う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654466603,
+      "updated": 1654466624
+    },
+    {
+      "id": "629d284b1280f0000057dd77",
+      "text": "[TamperMonkey]を使えないスマホなどの環境でも[ScrapBubble]を使えるようにする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654466637,
+      "updated": 1654466685
+    },
+    {
+      "id": "629d4ff31280f0000091a01f",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476787,
+      "updated": 1654476787
+    },
+    {
+      "id": "629d4ff31280f0000091a020",
+      "text": "利点",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476787,
+      "updated": 1654476788
+    },
+    {
+      "id": "629d4ff41280f0000091a021",
+      "text": " UserScript・browser拡張機能なしで使える",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476788,
+      "updated": 1654476801
+    },
+    {
+      "id": "629d50011280f0000091a022",
+      "text": " 参加していないprojectでも使える",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476801,
+      "updated": 1654476812
+    },
+    {
+      "id": "629d500c1280f0000091a023",
+      "text": "  スマホで[/nishio]とか読む時に便利[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476812,
+      "updated": 1654476820
+    },
+    {
+      "id": "629d50151280f0000091a024",
+      "text": "限界",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476820,
+      "updated": 1654476827
+    },
+    {
+      "id": "629d501b1280f0000091a026",
+      "text": "　使うたびにbookmarkletを起動しなければならない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476827,
+      "updated": 1654476838
+    },
+    {
+      "id": "629d50271280f0000091a027",
+      "text": "　　必要なときにしか起動されないので、負荷が軽いとも捉えられる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476838,
+      "updated": 1654476869
+    },
+    {
+      "id": "629d284c1280f0000057dd78",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654466637,
+      "updated": 1654466637
+    },
+    {
+      "id": "629d28a11280f0000057dd7a",
+      "text": "作り方",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654466722,
+      "updated": 1654477105
+    },
+    {
+      "id": "629d50631280f0000091a029",
+      "text": " ↓を[bookmarklet]に登録する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476899,
+      "updated": 1654477011
+    },
+    {
+      "id": "629d4f1c1280f0000091a00f",
+      "text": "  code:js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476571,
+      "updated": 1654477011
+    },
+    {
+      "id": "629d505e1280f0000091a028",
+      "text": "   javascript:(async()=>{const code=\"/api/code/takker-dist/ScrapBubble-min/app.js\";const{mount}=await import(code);mount();})();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476894,
+      "updated": 1654477011
+    },
+    {
+      "id": "629d4f191280f0000091a00c",
+      "text": "  やっていることは、単にminifyしたコードをbookmarkletにしているだけ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476569,
+      "updated": 1654477011
+    },
+    {
+      "id": "629d4f1a1280f0000091a00d",
+      "text": "  ScrapBubbleの本体は、コードブロック記法からdynamic importして使っている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476570,
+      "updated": 1654477011
+    },
+    {
+      "id": "629d50ac1280f0000091a02a",
+      "text": "   本体もまるごとbookmarkletに入れようとすると、URL長の上限に引っかかってしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476972,
+      "updated": 1654477011
+    },
+    {
+      "id": "629d50c31280f0000091a02b",
+      "text": "　他者のscrapboxからコードをimportするのはセキュリティ上問題があるので、`\"/api/code/takker-dist/ScrapBubble-min/app.js\"`は自分しか使えないprojectからのURLに置き換えることを推奨する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476995,
+      "updated": 1654477067
+    },
+    {
+      "id": "629d510b1280f0000091a02d",
+      "text": "　 本体のbundle方法は[ScrapBubble]を参照",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654477067,
+      "updated": 1654477087
+    },
+    {
+      "id": "629d511f1280f0000091a02e",
+      "text": "　少しコードを追加して、projectに応じてoptionsを切り替えたりもできる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654477087,
+      "updated": 1654477136
+    },
+    {
+      "id": "629d51521280f0000091a02f",
+      "text": "　 [takker.icon]のカスタム例：[/takker-dist/ScrapBubble-bookmarklet]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654477138,
+      "updated": 1654477143
+    },
+    {
+      "id": "629d28451280f0000057dd76",
+      "text": " スマホでの登録方法は↓を参照",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654466631,
+      "updated": 1654477195
+    },
+    {
+      "id": "629d51601280f0000091a030",
+      "text": "  [スマホでbookmarkletを使う]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654477152,
+      "updated": 1654477196
+    },
+    {
+      "id": "629d4f401280f0000091a011",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1654476608,
+      "updated": 1654476608
+    }
+  ]
+}

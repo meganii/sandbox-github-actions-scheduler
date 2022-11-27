@@ -1,0 +1,960 @@
+{
+  "id": "603a247b40407e001cc32ca5",
+  "title": "Scrapbox活用事例集をrefactoring",
+  "created": 1614423167,
+  "updated": 1657445190,
+  "lines": [
+    {
+      "id": "603a247b40407e001cc32ca5",
+      "text": "Scrapbox活用事例集をrefactoring",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423167,
+      "updated": 1614423167
+    },
+    {
+      "id": "603a247a1280f0000090d5de",
+      "text": "するproject",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423168,
+      "updated": 1614423168
+    },
+    {
+      "id": "603a24881280f00000922088",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423177,
+      "updated": 1614423177
+    },
+    {
+      "id": "603a247a1280f0000090d5df",
+      "text": "[Scrapbox活用事例集]のPageのRefactoringをしようと思うのですが、どういう感じに編集すれば使いやすくなるか、アイデアがほしいです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423168,
+      "updated": 1614423168
+    },
+    {
+      "id": "603a248e1280f0000092208a",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423183,
+      "updated": 1614423183
+    },
+    {
+      "id": "603a247a1280f0000090d5e0",
+      "text": "動機",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423168,
+      "updated": 1614423179
+    },
+    {
+      "id": "603a247a1280f0000090d5e1",
+      "text": "　[Scrapbox活用事例集が使いにくい]のをなんとかしたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423168,
+      "updated": 1614423179
+    },
+    {
+      "id": "603a247a1280f0000090d5e2",
+      "text": "　　どう使いにくいのかを明確化したい感もある[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423168,
+      "updated": 1614423179
+    },
+    {
+      "id": "603a24ba1280f0000092208f",
+      "text": "　　使いにくいポイント",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423227,
+      "updated": 1614423236
+    },
+    {
+      "id": "603a248f1280f0000092208b",
+      "text": "   >たしかに、リンクをたどっていくというより、トップページを眺めて気になったものを見る→トップページに戻る→…、みたいな使い方をしがち[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423184,
+      "updated": 1614423233
+    },
+    {
+      "id": "603a2719e5172d0000622a71",
+      "text": "   > 一覧的な使い方のScrapboxとして、それはそれでいいような気もする[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614423832,
+      "updated": 1614423833
+    },
+    {
+      "id": "603a24911280f0000092208c",
+      "text": "    from [Scrapbox活用事例集が使いにくい#603a23dc1280f000009abd96]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423186,
+      "updated": 1614423233
+    },
+    {
+      "id": "603a272ae5172d0000622a72",
+      "text": " \t使いやすいとは",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614423849,
+      "updated": 1614581731
+    },
+    {
+      "id": "603a2741e5172d0000622a73",
+      "text": "  \t関連するプロジェクトが少ない操作で芋づる式に見つかるような状態？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614423871,
+      "updated": 1614424181
+    },
+    {
+      "id": "603a27cf1280f000009220a4",
+      "text": "  \t 近そうな話題を扱うprojectを見つけたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424017,
+      "updated": 1614424181
+    },
+    {
+      "id": "603a27ec1280f000009220a5",
+      "text": "  \t 少ない操作かどうかはあまり重要ではないかも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424045,
+      "updated": 1614424181
+    },
+    {
+      "id": "603a27f91280f000009220a6",
+      "text": "  \t 　あえて明確にするなら、話題の近さと操作数に相関関係ができるようにすることだけど、そこまで意識する必要もないと思う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424059,
+      "updated": 1614424181
+    },
+    {
+      "id": "603a28301280f000009220a8",
+      "text": "  \t 　 意識しすぎて悩んで書けなくなるのは本末転倒",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424113,
+      "updated": 1614424181
+    },
+    {
+      "id": "603a2862e5172d000010bde9",
+      "text": "  \t 　[/icons/たしかに.icon][yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614424161,
+      "updated": 1614424181
+    },
+    {
+      "id": "603a29ece5172d000010bdee",
+      "text": " \t\t書くモチベーションを高める",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614424555,
+      "updated": 1614582030
+    },
+    {
+      "id": "603c9112e5172d00006d90dc",
+      "text": "    [/sta/Scrapbox活用事例集が使いにくい？#603a2a7a79d3a90000f2ff80]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614582033,
+      "updated": 1614582033
+    },
+    {
+      "id": "603c9112e5172d00006d90dd",
+      "text": "    \tなるほど、使いやすくする=使う人のメリットをもっと大きくするということか[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614582033,
+      "updated": 1614582033
+    },
+    {
+      "id": "603c9112e5172d00006d90de",
+      "text": "    \t自発的に使ってくれるようになる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614582033,
+      "updated": 1614582033
+    },
+    {
+      "id": "603c916fe5172d00006d90e9",
+      "text": "   \t 一理あるな",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614582126,
+      "updated": 1614582202
+    },
+    {
+      "id": "603c9124e5172d00006d90e3",
+      "text": "  \t\t[ジマンパワー]がよく発揮できたほうがいい？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614582051,
+      "updated": 1614582098
+    },
+    {
+      "id": "603a2a0b1280f000009220b7",
+      "text": "     発揮できたほうがいいとして、具体的にどういうページの書き方なら[ジマンパワー]が増えるだろうか？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424588,
+      "updated": 1614582103
+    },
+    {
+      "id": "603a2a6de5172d000010bdf2",
+      "text": "     　[Scrapbox活用事例集をrefactoring#603a2a27e5172d000010bdf1]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614424684,
+      "updated": 1614582103
+    },
+    {
+      "id": "603a279ae5172d0000622a76",
+      "text": "     あのprojectで[ジマンパワー]はあまり増えなさそうな",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614423961,
+      "updated": 1614582103
+    },
+    {
+      "id": "603a2a12e5172d000010bdef",
+      "text": "     \tまあそうか。。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614424593,
+      "updated": 1614582103
+    },
+    {
+      "id": "603c9175e5172d00006d90ea",
+      "text": "    >scrapbox仲間を繋ぐきっかけがほしい [/sta/Scrapbox活用事例集が使いにくい？#603a2b3779d3a90000f2ff91]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614582132,
+      "updated": 1614582208
+    },
+    {
+      "id": "603c91cbe5172d00006d90eb",
+      "text": "    \tこれほしい[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614582218,
+      "updated": 1614582255
+    },
+    {
+      "id": "603a29e31280f000009220b4",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424548,
+      "updated": 1614424548
+    },
+    {
+      "id": "603a279be5172d0000622a77",
+      "text": "懸念",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614423962,
+      "updated": 1614423963
+    },
+    {
+      "id": "603a24ae1280f0000092208e",
+      "text": " あんまり大規模に修正すると他の人のモチベーションが下がってしまう？[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423215,
+      "updated": 1614423972
+    },
+    {
+      "id": "603a25031280f00000922092",
+      "text": " 　他の人とは、今まで[Scrapbox活用事例集]を編集してきた人ですか？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423300,
+      "updated": 1645667053
+    },
+    {
+      "id": "603a2537e5172d0000622a6b",
+      "text": " 　\tYES[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614423350,
+      "updated": 1614423967
+    },
+    {
+      "id": "60711f6e8ee92a0000b1a022",
+      "text": " 　\t大規模修正してもらって大丈夫ですよ [増井俊之.icon]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1618026351,
+      "updated": 1618026363
+    },
+    {
+      "id": "603a25791280f00000922097",
+      "text": " 　あまり気にしなくてもいいと思っている[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423418,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a25541280f00000922094",
+      "text": " 　\t活発に編集している人がいない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423381,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a25661280f00000922095",
+      "text": " 　\t ほぼ放置されたprojectになっている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423399,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a25771280f00000922096",
+      "text": " 　\tハッシュタグしかないページが多い",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423416,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a25961280f00000922098",
+      "text": " 　\t　もともとある説明をまるごと書き換えることにはならない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423447,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a24db1280f00000922090",
+      "text": "  完全に整えてしまうと[参加するハードル]が上がることを心配してもいます[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423260,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a2636e5172d0000622a6e",
+      "text": "  　[/shokai/完全に整えない]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614423605,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a25a6e5172d0000622a6d",
+      "text": "   あーなるほど[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614423461,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a25d31280f0000092209a",
+      "text": "   formatを整えるのではなく、説明を増やす感じ？かな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423508,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a25ef1280f0000092209b",
+      "text": "   　きれいに整えるつもりはあまりないです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423537,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a26191280f0000092209c",
+      "text": "   　(「整える」の定義が曖昧かも)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423578,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a2644e5172d0000622a6f",
+      "text": "   　それならよさそう[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614423618,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a2676e5172d0000622a70",
+      "text": "   　まあ逆にformatがあるほうが書きやすい説もある…？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614423669,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a25cc1280f00000922099",
+      "text": "     うーん、どうだろう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423501,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a268f1280f000009220a0",
+      "text": "     formatは用意しなくても、各々が勝手に探してくれると思う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423696,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a26a11280f000009220a1",
+      "text": "      すでにあるページを数ページ覗けば、どんな情報をどういう形式の箇条書きで書いているかが分かる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423715,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a26cf1280f000009220a3",
+      "text": "     逆にformatを明確に設定すると、そこからはみ出さないような内容に情報が切り詰められてしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423761,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a276ce5172d0000622a74",
+      "text": "     \t[/icons/たしかに.icon][yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614423915,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a26871280f0000092209f",
+      "text": "   雑に書いたページをたくさん作る感じにすればいい？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423688,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a26431280f0000092209d",
+      "text": "  タイトルを変えたりするのはしないつもり[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423620,
+      "updated": 1614423967
+    },
+    {
+      "id": "603a24e51280f00000922091",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423270,
+      "updated": 1614423270
+    },
+    {
+      "id": "603a247a1280f0000090d5e3",
+      "text": "現状で思いついたアイデア",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423168,
+      "updated": 1614423181
+    },
+    {
+      "id": "603a247a1280f0000090d5e4",
+      "text": " project nameをhash tagで末尾に書き込む",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423168,
+      "updated": 1614423181
+    },
+    {
+      "id": "603a247a1280f0000090d5e5",
+      "text": "\t 今はproject nameがタイトルになってないんだっけ？[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423168,
+      "updated": 1614423181
+    },
+    {
+      "id": "603a247a1280f0000090d5e6",
+      "text": "\t display nameがタイトルになっています[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423168,
+      "updated": 1614423181
+    },
+    {
+      "id": "603a247a1280f0000090d5e7",
+      "text": "\t  どちらがタイトルでも構わないと思う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423168,
+      "updated": 1614423181
+    },
+    {
+      "id": "603a247a1280f0000090d5e8",
+      "text": "\t  タイトルにしない方はhash tagにして、検索に引っかかるようにしておきたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423168,
+      "updated": 1614423181
+    },
+    {
+      "id": "603a247a1280f0000090d5e9",
+      "text": "\t   [/icons/なるほど.icon][yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423168,
+      "updated": 1614423181
+    },
+    {
+      "id": "603a2837e5172d000010bde8",
+      "text": "  プロジェクトの目的やコンセプトがタイトルになっているページもある",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614424118,
+      "updated": 1614424136
+    },
+    {
+      "id": "603a28821280f000009220a9",
+      "text": "   e.g.",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424195,
+      "updated": 1614424198
+    },
+    {
+      "id": "603a28851280f000009220aa",
+      "text": "    [/InterestingProjects/プログラミングやPC全般に関するメモ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424198,
+      "updated": 1614424199
+    },
+    {
+      "id": "603a28861280f000009220ab",
+      "text": "    [/InterestingProjects/汎用人工知能のための勉強ノート]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424199,
+      "updated": 1614424206
+    },
+    {
+      "id": "603a289ee5172d000010bdea",
+      "text": "    [yosider.icon]←元凶",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614424221,
+      "updated": 1614424228
+    },
+    {
+      "id": "603a28941280f000009220ac",
+      "text": "   project nameかdisplay nameをタイトルにしたほうがいい、というわけではないが、コンセプトをタイトルにしても旨味があまりなさそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424213,
+      "updated": 1614424261
+    },
+    {
+      "id": "603a28c41280f000009220ad",
+      "text": "    閲覧者がtop pageを眺めて興味のあるprojectを見つけるのだとしたら、コンセプトをタイトルにするのは効果がある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424261,
+      "updated": 1614424321
+    },
+    {
+      "id": "603a28ff1280f000009220ae",
+      "text": "    　サムネでわかりづらくても、タイトルからprojectの中身がわかる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424321,
+      "updated": 1614424336
+    },
+    {
+      "id": "603a2930e5172d000010bdec",
+      "text": "    　サムネがなければdescriptionからも分かるけど、そこまで読む人は少なそう",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614424367,
+      "updated": 1614424407
+    },
+    {
+      "id": "603a290f1280f000009220af",
+      "text": "    閲覧者が主に検索バーからprojectを検索しに行く事が多いなら、コンセプトをタイトルにしても効果が……ないとも言えないのか？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424336,
+      "updated": 1614424433
+    },
+    {
+      "id": "603a29701280f000009220b0",
+      "text": "     コンセプトがタイトル",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424433,
+      "updated": 1614424492
+    },
+    {
+      "id": "603a29ab1280f000009220b3",
+      "text": "     　興味のあるprojectのpageへdirectに飛べる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424492,
+      "updated": 1614424492
+    },
+    {
+      "id": "603a298c1280f000009220b1",
+      "text": "     project/display nameがタイトルで、コンセプトをリンクにしている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424460,
+      "updated": 1614424488
+    },
+    {
+      "id": "603a29a61280f000009220b2",
+      "text": "　　　　　　一旦コンセプトの空ページに飛んだあと、関連ページから興味のあるprojectへ飛べる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424488,
+      "updated": 1614424527
+    },
+    {
+      "id": "603a2557e5172d0000622a6c",
+      "text": "\t\t\t重複する可能性がある",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614423382,
+      "updated": 1614424279
+    },
+    {
+      "id": "603a2a27e5172d000010bdf1",
+      "text": "\t\t\t[ジマンパワー]の意味では、プロジェクト名という「ブランド」的なものがタイトルに来たほうがうれしいような気もする[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614424614,
+      "updated": 1614424650
+    },
+    {
+      "id": "603a2aace5172d000010bdf3",
+      "text": "\t\t\t\tそのプロジェクト独自の[語彙]とかがタイトルに入っているものもあって、それはそれで興味を惹かれる",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1614424747,
+      "updated": 1657445190
+    },
+    {
+      "id": "603a2b311280f000009220b8",
+      "text": "\t\t\t\t[/icons/たしかに.icon][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424882,
+      "updated": 1614424891
+    },
+    {
+      "id": "603a2b3a1280f000009220b9",
+      "text": "\t\t\t\tとすると、display nameをタイトルにする方針にしたほうが面白そうだな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424891,
+      "updated": 1614424930
+    },
+    {
+      "id": "603a28d0e5172d000010bdeb",
+      "text": "\tサムネイルがないページはつけておく",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614424270,
+      "updated": 1614424270
+    },
+    {
+      "id": "603a2bfee5172d0000bc1258",
+      "text": "\t\tfaviconになっている画像",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614425085,
+      "updated": 1614425094
+    },
+    {
+      "id": "603a2b641280f000009220ba",
+      "text": "\t トップページ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424934,
+      "updated": 1614425363
+    },
+    {
+      "id": "603a2d15e5172d00004032b1",
+      "text": "\t \tUserCSS使ってるprojectではよさそう",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614425364,
+      "updated": 1614425396
+    },
+    {
+      "id": "603a2eb81280f000009220cb",
+      "text": "\t \te.g. [/choiyakiBox]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614425785,
+      "updated": 1614425787
+    },
+    {
+      "id": "603a2ce91280f000009220c6",
+      "text": "\t 関連ページリスト",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614425322,
+      "updated": 1614425334
+    },
+    {
+      "id": "603a2bdce5172d0000bc1257",
+      "text": "\t 本文のscreenshotでもよさそう",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614425051,
+      "updated": 1614425051
+    },
+    {
+      "id": "603a2bbfe5172d0000bc1256",
+      "text": "\t 　どのページの本文ですかね？[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614425022,
+      "updated": 1614425037
+    },
+    {
+      "id": "603a2cd21280f000009220c4",
+      "text": "\t 　任意のページです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614425299,
+      "updated": 1614425303
+    },
+    {
+      "id": "603a2cd61280f000009220c5",
+      "text": "\t 　 雰囲気がわかりそうなやつ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614425303,
+      "updated": 1614425317
+    },
+    {
+      "id": "603a2b931280f000009220bc",
+      "text": "\t そのprojectの雰囲気がわかりそうな方を選べばいい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614424980,
+      "updated": 1614425000
+    },
+    {
+      "id": "603a26611280f0000092209e",
+      "text": "\tそのprojectの特徴がわかるような文章を適当に書いて、[文中リンク]にする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423650,
+      "updated": 1614423680
+    },
+    {
+      "id": "603a31a8e5172d00004032b2",
+      "text": "\t[参加可能なPublic Project]にはなんかリンクかタグをつけておく？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614426535,
+      "updated": 1614426572
+    },
+    {
+      "id": "603a31efe5172d00004032b3",
+      "text": "\t\tとりあえず`#参加可能`をつけてます",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614426606,
+      "updated": 1614426632
+    },
+    {
+      "id": "603a32391280f00000a872f1",
+      "text": "\t\tよさそう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614426682,
+      "updated": 1614426709
+    },
+    {
+      "id": "603a247a1280f0000090d5ea",
+      "text": " 試しに書き込んだページ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423168,
+      "updated": 1614423168
+    },
+    {
+      "id": "603a247a1280f0000090d5eb",
+      "text": "  [/InterestingProjects/基素基]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423168,
+      "updated": 1614423168
+    },
+    {
+      "id": "603a34d7e5172d00004032b4",
+      "text": " 書く場所をまちがえていそうな放置ページは削除していいんだろうか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614427349,
+      "updated": 1614427370
+    },
+    {
+      "id": "603a34f8e5172d00004032b5",
+      "text": " 　[/InterestingProjects/表明保証]とか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614427383,
+      "updated": 1614427386
+    },
+    {
+      "id": "603a39971280f0000091c5f7",
+      "text": " 　消しちゃっていいと思います",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614428568,
+      "updated": 1614428573
+    },
+    {
+      "id": "603a399c1280f0000091c5f8",
+      "text": " 　幸い、昨日あたりに[Streamのrestore]機能が実装されたので、あとから復元できますし",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614428573,
+      "updated": 1614428603
+    },
+    {
+      "id": "603a4245e5172d0000c859aa",
+      "text": " 　done[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614430788,
+      "updated": 1614430790
+    },
+    {
+      "id": "603a425f1280f0000028354b",
+      "text": " 　Thx[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614430816,
+      "updated": 1614430819
+    },
+    {
+      "id": "603a42621280f0000028354c",
+      "text": " 　 Streamから復元できることも確認しました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614430819,
+      "updated": 1614430830
+    },
+    {
+      "id": "603a42e0e5172d0000c859ab",
+      "text": " 　 revertされる可能性はあるけど、目をつむる[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614430943,
+      "updated": 1614430999
+    },
+    {
+      "id": "603a249ee5172d0000622a6a",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614423197,
+      "updated": 1614423197
+    },
+    {
+      "id": "603a35a2e5172d00004032bb",
+      "text": "\t[private project]でも書いてる人いるんだなあ[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614427553,
+      "updated": 1614427572
+    },
+    {
+      "id": "603a35b6e5172d00004032bd",
+      "text": "\t\tprivate projectはどう使われているのか見えにくいので参考になる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614427573,
+      "updated": 1614427626
+    },
+    {
+      "id": "603a3d081280f000005a7f7a",
+      "text": "\t\t[/InterestingProjects/活用事例紹介#5a22927e8ee92a00000ac020]とあったので載せました[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614429449,
+      "updated": 1614429457
+    },
+    {
+      "id": "603a41d5e5172d0000c859a9",
+      "text": "\t\t　ほんとだ[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614430676,
+      "updated": 1614430680
+    },
+    {
+      "id": "603a35a3e5172d00004032bc",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614427554,
+      "updated": 1614427555
+    },
+    {
+      "id": "603a3e5d1280f000005a7f7d",
+      "text": "新しいprojectも追加したいな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614429790,
+      "updated": 1614429799
+    },
+    {
+      "id": "603a3e661280f000005a7f7f",
+      "text": " [/scrapboxlab/たんけんみんなのプロジェクト]にあるpublic projectの中で、リンク切れしていないものを載せる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614429799,
+      "updated": 1614429833
+    },
+    {
+      "id": "603a3e5d1280f000005a7f7e",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614429790,
+      "updated": 1614429790
+    },
+    {
+      "id": "6071798379d3a90000b8de0d",
+      "text": "紹介ページを機械的につくってしまうというアイデアをこねている（こねていた）[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1618049411,
+      "updated": 1618049619
+    },
+    {
+      "id": "6071798c79d3a90000b8de0e",
+      "text": " [/sta/Scrapbox活用事例集の別アイデア]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1618049421,
+      "updated": 1618049421
+    },
+    {
+      "id": "6071798279d3a90000b8de0c",
+      "text": "\t\t＜サムネにアイコン出て恥ずかしいので削除ｗ＞",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1618049411,
+      "updated": 1618049880
+    },
+    {
+      "id": "607183a11280f00000d04ea2",
+      "text": "\t\t 草",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1618052002,
+      "updated": 1618052005
+    },
+    {
+      "id": "607179a679d3a90000b8de10",
+      "text": "\t\t（たとえば）project情報とmain page",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1618049446,
+      "updated": 1618049635
+    },
+    {
+      "id": "607179b579d3a90000b8de11",
+      "text": "\t\tmain pageは何するか迷うが、とりあえずmost linkedの上位nとか？",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1618049461,
+      "updated": 1618049641
+    },
+    {
+      "id": "60717a0b79d3a90000b8de14",
+      "text": "\t\t\tmain pageを全部リンクにすれば、キーワードレベルでどんどん他のページと繋がっていく（かもしれない）",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1618049548,
+      "updated": 1618049572
+    },
+    {
+      "id": "607179a379d3a90000b8de0f",
+      "text": "  面白そう[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1618049443,
+      "updated": 1618051787
+    },
+    {
+      "id": "60717ab079d3a90000b8de18",
+      "text": "",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1618049713,
+      "updated": 1618049713
+    },
+    {
+      "id": "611bf8bf385a920000a3ac7f",
+      "text": "　projectでreadmeとか自己紹介があるなら[引用]して[ブラケティング]すると良さそ[miyamonz.icon]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1629223102,
+      "updated": 1629223128
+    },
+    {
+      "id": "611bf8be385a920000a3ac7e",
+      "text": "",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1629223101,
+      "updated": 1629223101
+    },
+    {
+      "id": "611bf8e5385a920000a3ac81",
+      "text": "　ココが面白かったです、とか勝手にページリンク貼って感想書くとか[miyamonz.icon]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1629223140,
+      "updated": 1629223153
+    },
+    {
+      "id": "611bf8e4385a920000a3ac80",
+      "text": "",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1629223139,
+      "updated": 1629223139
+    },
+    {
+      "id": "603c7e5f1280f000000bd310",
+      "text": "See also",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614577248,
+      "updated": 1614577254
+    },
+    {
+      "id": "603c7e661280f000000bd311",
+      "text": " [/sta/Scrapbox活用事例集が使いにくい？]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614577254,
+      "updated": 1614577255
+    },
+    {
+      "id": "603c7e5f1280f000000bd30f",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614577247,
+      "updated": 1614577247
+    },
+    {
+      "id": "603a24841280f00000922087",
+      "text": "from [Scrapbox活用事例集]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1614423173,
+      "updated": 1645667053
+    },
+    {
+      "id": "603a249ce5172d0000622a69",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1614423195,
+      "updated": 1614423195
+    }
+  ]
+}

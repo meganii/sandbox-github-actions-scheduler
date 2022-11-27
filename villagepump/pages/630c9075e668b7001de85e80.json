@@ -1,0 +1,519 @@
+{
+  "id": "630c9075e668b7001de85e80",
+  "title": "UserScriptにおけるimport文",
+  "created": 1661767800,
+  "updated": 1667163025,
+  "lines": [
+    {
+      "id": "630c9075e668b7001de85e80",
+      "text": "UserScriptにおけるimport文",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661767800,
+      "updated": 1661767871
+    },
+    {
+      "id": "630c907d7838e300007809ac",
+      "text": "[JavaScriptのimport文]の内、[UserScript]周りで使う知識を書く[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661767805,
+      "updated": 1667163025
+    },
+    {
+      "id": "630c909c7838e300007809ae",
+      "text": "\t専門的なことを知りたい人向けではなく、あくまでUserScriptを使いたい人向け",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661767836,
+      "updated": 1661768368
+    },
+    {
+      "id": "630c92b27838e300007809b9",
+      "text": "\t専門的なこと（プログラマー向け）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768370,
+      "updated": 1661770410
+    },
+    {
+      "id": "630c92c27838e300007809ba",
+      "text": "\t\t[https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/import import - JavaScript | MDN]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768387,
+      "updated": 1661768387
+    },
+    {
+      "id": "630c91fb7838e300007809b8",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768188,
+      "updated": 1661768650
+    },
+    {
+      "id": "630c93a07838e300007809be",
+      "text": "UserScriptを読み込むには、",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768608,
+      "updated": 1661769660
+    },
+    {
+      "id": "630c97cb7838e300007809e7",
+      "text": "\t1. [User settings]のExtensionsタブから、User Scriptの項目のEnabledと書かれたチェックボックスにチェックを入れる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769675,
+      "updated": 1661769736
+    },
+    {
+      "id": "630c98077838e300007809e8",
+      "text": "\t\t>これ(UserScript)はごく一部のこだわりの強い、[上級者向けの危険な機能]です",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769736,
+      "updated": 1661769775
+    },
+    {
+      "id": "630c982e7838e300007809e9",
+      "text": "  \t[/help-jp/UserScript]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769775,
+      "updated": 1661769775
+    },
+    {
+      "id": "630c9a8c7838e300007809f2",
+      "text": "  \t危険性（一例）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661770380,
+      "updated": 1661770380
+    },
+    {
+      "id": "630c9a8c7838e300007809f3",
+      "text": "  \t\t[/Mijinko/危険なUserScript]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661770380,
+      "updated": 1661770380
+    },
+    {
+      "id": "630c98327838e300007809ea",
+      "text": "  さらっと手順だけ書いたけれど、[[その危険性を理解した上でチェックを入れるように！]][Mijinko_SD.icon][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1661769778,
+      "updated": 1661840404
+    },
+    {
+      "id": "630c98b57838e300007809eb",
+      "text": " \t他人が書いたUserScriptを読み込むときは、そのソースコードを自分しか編集できないプロジェクトのページに複製してから読み込んだほうが良い",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769910,
+      "updated": 1661770279
+    },
+    {
+      "id": "630c991b7838e300007809ec",
+      "text": " \t\t他人のUserScriptを直接読み込むと、悪意のあるコードに書き換えられても気づけないので",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661770011,
+      "updated": 1661770076
+    },
+    {
+      "id": "630c97bb7838e300007809e5",
+      "text": "\t2. 自分のページに`code:script.js`と書く",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769660,
+      "updated": 1661769678
+    },
+    {
+      "id": "630c97c17838e300007809e6",
+      "text": "\t3. その下にimport文を書く",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769665,
+      "updated": 1661769878
+    },
+    {
+      "id": "630c97b37838e300007809e3",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769652,
+      "updated": 1661769652
+    },
+    {
+      "id": "630c97b37838e300007809e4",
+      "text": "import文の例",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769652,
+      "updated": 1661769866
+    },
+    {
+      "id": "630c90c07838e300007809af",
+      "text": " code:script.js",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661767873,
+      "updated": 1661768277
+    },
+    {
+      "id": "630c91377838e300007809b1",
+      "text": "  import \"https://scrapbox.io/api/code/villagepump/UserScriptにおけるimport文/export.js\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661767992,
+      "updated": 1661769620
+    },
+    {
+      "id": "630c90c17838e300007809b0",
+      "text": " 上記の文は下のソースコードを読み込んで実行している",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661767873,
+      "updated": 1661768656
+    },
+    {
+      "id": "630c914a7838e300007809b2",
+      "text": " \tcode:export.js",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768010,
+      "updated": 1661768287
+    },
+    {
+      "id": "630c91507838e300007809b4",
+      "text": " \t console.log(\"読み込んだよ\");",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768016,
+      "updated": 1661768809
+    },
+    {
+      "id": "630c92ee7838e300007809bb",
+      "text": " \timportの後に書くURLは、ScrapboxのページのURLではなく、コードブロックのタイトルをクリックしたときに出るページ（生コード）のURL",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768431,
+      "updated": 1661769094
+    },
+    {
+      "id": "630c93497838e300007809bc",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768522,
+      "updated": 1661768585
+    },
+    {
+      "id": "630c93887838e300007809bd",
+      "text": "URL以外にも色々書かないと読み込めないUserScriptもある",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768585,
+      "updated": 1661768604
+    },
+    {
+      "id": "630c93e37838e300007809bf",
+      "text": "\tcode:script.js",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768676,
+      "updated": 1661768682
+    },
+    {
+      "id": "630c93e77838e300007809c0",
+      "text": "\t import {nantoka} from \"https://scrapbox.io/api/code/villagepump/UserScriptにおけるimport文/export2.js\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768679,
+      "updated": 1661839998
+    },
+    {
+      "id": "630c946f7838e300007809cc",
+      "text": "\t ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768815,
+      "updated": 1661768815
+    },
+    {
+      "id": "630c94637838e300007809cb",
+      "text": "\t nantoka();",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768803,
+      "updated": 1661768806
+    },
+    {
+      "id": "630c94787838e300007809cd",
+      "text": "\tややこしいが、上記の文は下記のnantoka関数を読み込んで(1行目)、その後に実行している(3行目)",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768825,
+      "updated": 1661768922
+    },
+    {
+      "id": "630c943f7838e300007809c5",
+      "text": "\t\tcode:export2.js",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768768,
+      "updated": 1661768777
+    },
+    {
+      "id": "630c94497838e300007809c6",
+      "text": "\t\t export function nantoka() {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768777,
+      "updated": 1661768863
+    },
+    {
+      "id": "630c94617838e300007809c9",
+      "text": "\t\t   console.log(\"nantoka関数を読み込んで実行したよ\");",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768802,
+      "updated": 1661769233
+    },
+    {
+      "id": "630c94617838e300007809ca",
+      "text": "\t\t }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768802,
+      "updated": 1661768802
+    },
+    {
+      "id": "630c9ad07838e300007809f4",
+      "text": "\t[takker.icon]製のUserScriptとかはこういう書き方をしなければならない[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661770449,
+      "updated": 1661770449
+    },
+    {
+      "id": "630c9ad07838e300007809f5",
+      "text": "\t\t読み込み方がわからなければ、本人に質問した方が早いかも",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661770449,
+      "updated": 1661770457
+    },
+    {
+      "id": "630dac391280f0000068994c",
+      "text": "\t\t理由：",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1661840441,
+      "updated": 1661840502
+    },
+    {
+      "id": "630dac761280f0000068994e",
+      "text": "\t\t 実行をユーザー側で制御できるようにするため[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1661840502,
+      "updated": 1661840502
+    },
+    {
+      "id": "630dac541280f0000068994d",
+      "text": " \t\t 実行のタイミングの制御の他、パラメタを調整して実行するなど、色々できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1661840469,
+      "updated": 1661840504
+    },
+    {
+      "id": "630dac781280f0000068994f",
+      "text": " \t\t何度も実行させられるようにするため[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1661840505,
+      "updated": 1661840516
+    },
+    {
+      "id": "630dac841280f00000689950",
+      "text": " \t\t　`import \"https://...\"`形式だと、UserScriptを最初に読み込んだ時しかコードが実行されない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1661840516,
+      "updated": 1661840552
+    },
+    {
+      "id": "630dacc61280f00000689958",
+      "text": " \t\t　例えば↓は一度しか`読み込んだよ`と表示されない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1661840582,
+      "updated": 1661840614
+    },
+    {
+      "id": "630daca81280f00000689952",
+      "text": "  \t\t　code:wannaRepeat.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1661840552,
+      "updated": 1661840608
+    },
+    {
+      "id": "630dacac1280f00000689953",
+      "text": "  \t\t　 import \"https://scrapbox.io/api/code/villagepump/UserScriptにおけるimport文/export.js\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1661840556,
+      "updated": 1661840608
+    },
+    {
+      "id": "630dacbf1280f00000689954",
+      "text": "  \t\t　 import \"https://scrapbox.io/api/code/villagepump/UserScriptにおけるimport文/export.js\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1661840575,
+      "updated": 1661840608
+    },
+    {
+      "id": "630dacc01280f00000689955",
+      "text": "  \t\t　 import \"https://scrapbox.io/api/code/villagepump/UserScriptにおけるimport文/export.js\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1661840577,
+      "updated": 1661840608
+    },
+    {
+      "id": "630dacc31280f00000689956",
+      "text": "  \t\t　 import \"https://scrapbox.io/api/code/villagepump/UserScriptにおけるimport文/export.js\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1661840580,
+      "updated": 1661840608
+    },
+    {
+      "id": "630dacc41280f00000689957",
+      "text": " \t\t　  ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1661840581,
+      "updated": 1661840615
+    },
+    {
+      "id": "630dad381280f00000689959",
+      "text": " \tと理由を書いたらすでにページ下部で説明されてた()[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1661840697,
+      "updated": 1661840717
+    },
+    {
+      "id": "630cebfee5172d0000f94159",
+      "text": "\tfromって書かなくてもいいんでしたっけ[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1661791231,
+      "updated": 1661791231
+    },
+    {
+      "id": "630daa6e7838e30000237a0e",
+      "text": "\t　忘れてました…[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661839984,
+      "updated": 1661839989
+    },
+    {
+      "id": "630c95507838e300007809d0",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769040,
+      "updated": 1661769041
+    },
+    {
+      "id": "630c94f87838e300007809ce",
+      "text": "この手法の利点の１つに、実行する際の設定を変えられるというのがある",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768953,
+      "updated": 1661769042
+    },
+    {
+      "id": "630c95397838e300007809cf",
+      "text": "\t以下のソースコードは、設定された人物に「ぴよぴよ」と鳴かせるコードである",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769017,
+      "updated": 1661769299
+    },
+    {
+      "id": "630c914a7838e300007809b3",
+      "text": " \tcode:export3.js",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768010,
+      "updated": 1661769245
+    },
+    {
+      "id": "630c95937838e300007809d3",
+      "text": " \t export function hiyoko(who) {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769108,
+      "updated": 1661769273
+    },
+    {
+      "id": "630c95f77838e300007809d4",
+      "text": " \t   console.log(`${who}「ぴよぴよ」`);",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769208,
+      "updated": 1661769245
+    },
+    {
+      "id": "630c95f87838e300007809d5",
+      "text": " \t }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769208,
+      "updated": 1661769245
+    },
+    {
+      "id": "630c96547838e300007809d6",
+      "text": " `hiyoko()`を使い、にわとりにぴよぴよと鳴かせるように設定する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769301,
+      "updated": 1667162927
+    },
+    {
+      "id": "630c96837838e300007809d7",
+      "text": " \tcode:script.js",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769347,
+      "updated": 1661769351
+    },
+    {
+      "id": "630c96877838e300007809d8",
+      "text": " \t import {hiyoko} from \"https://scrapbox.io/api/code/villagepump/UserScriptにおけるimport文/export3.js\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769351,
+      "updated": 1661840011
+    },
+    {
+      "id": "630c968f7838e300007809d9",
+      "text": " \t ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769360,
+      "updated": 1661769360
+    },
+    {
+      "id": "630c968f7838e300007809da",
+      "text": " \t hiyoko(\"にわとり\");",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769360,
+      "updated": 1661769388
+    },
+    {
+      "id": "630c96df7838e300007809dc",
+      "text": " \t[https://gyazo.com/46c78594da453cde632639e56960cb3f]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769439,
+      "updated": 1661769482
+    },
+    {
+      "id": "630c96ae7838e300007809db",
+      "text": "\t \t※この文は[開発者コンソール]に出力されるようになっている",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769391,
+      "updated": 1661769454
+    },
+    {
+      "id": "630c93f87838e300007809c2",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768697,
+      "updated": 1661768697
+    },
+    {
+      "id": "630c974a7838e300007809e1",
+      "text": "import文の後に書くURLは省略できる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769547,
+      "updated": 1661769565
+    },
+    {
+      "id": "630c975c7838e300007809e2",
+      "text": "\tここら辺のルールは[@import#621445117838e300001f5d27]と同じ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769565,
+      "updated": 1661769597
+    },
+    {
+      "id": "630c955f7838e300007809d1",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661769055,
+      "updated": 1661769055
+    },
+    {
+      "id": "630c943cb8bbfc000077a685",
+      "text": "助かる！[はるひ.icon]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1661768765,
+      "updated": 1661768771
+    },
+    {
+      "id": "630c93f87838e300007809c4",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1661768697,
+      "updated": 1661768697
+    }
+  ]
+}

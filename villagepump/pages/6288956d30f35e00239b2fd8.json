@@ -1,0 +1,666 @@
+{
+  "id": "6288956d30f35e00239b2fd8",
+  "title": "GitHub Actionsで井戸端プロジェクトのバックアップを取得しReleaseに登録する",
+  "created": 1653118334,
+  "updated": 1653202140,
+  "lines": [
+    {
+      "id": "6288956d30f35e00239b2fd8",
+      "text": "GitHub Actionsで井戸端プロジェクトのバックアップを取得しReleaseに登録する",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118334,
+      "updated": 1653118528
+    },
+    {
+      "id": "62889613b8db540000b8ee51",
+      "text": "普段あまり、[GitHub Actions]を使わないので、勉強しながら試してみた[meganii.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1653118482,
+      "updated": 1653118574
+    },
+    {
+      "id": "628895aeb8db540000b8ee50",
+      "text": "　https://github.com/meganii/sandbox-github-actions-scheduler",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118381,
+      "updated": 1653118547
+    },
+    {
+      "id": "62889654b8db540000b8ee52",
+      "text": "　　🎉[nishio.icon][inajob.icon][基素.icon][takker.icon][fumito.icon][sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1653118547,
+      "updated": 1653199263
+    },
+    {
+      "id": "628969611280f000005e3278",
+      "text": "　[takker99/scrapbox-backups]で使わせていただいても良いですか？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653172577,
+      "updated": 1653172593
+    },
+    {
+      "id": "62896acfb8db540000c4507b",
+      "text": "　 お願いします![meganii.icon]",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653172944,
+      "updated": 1653172948
+    },
+    {
+      "id": "6289b3211280f000003db4c8",
+      "text": "　 [/icons/わーい.icon][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653191456,
+      "updated": 1653191465
+    },
+    {
+      "id": "6288e039aff09e0000991e97",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1653137466,
+      "updated": 1653137466
+    },
+    {
+      "id": "6288965ab8db540000b8ee54",
+      "text": "　`schedule`で時間実行",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118554,
+      "updated": 1653118570
+    },
+    {
+      "id": "6288966bb8db540000b8ee55",
+      "text": "　`workflow_dispatch`で手動トリガー実行",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118570,
+      "updated": 1653118584
+    },
+    {
+      "id": "62889659b8db540000b8ee53",
+      "text": "",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118552,
+      "updated": 1653118552
+    },
+    {
+      "id": "62889683b8db540000b8ee56",
+      "text": "　Tagとして日付を入れておけばよさそう",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118594,
+      "updated": 1653118613
+    },
+    {
+      "id": "628895a9b8db540000b8ee4e",
+      "text": "  [https://gyazo.com/25161593929578543251bcac5067a2d1]",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118376,
+      "updated": 1653118604
+    },
+    {
+      "id": "628896bab8db540000b8ee5a",
+      "text": " 　[https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases#storage-and-bandwidth-quotas About releases - GitHub Docs]によると、1つのRelaseは2GBまでだが、Release全体の容量制限はなさそう",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118649,
+      "updated": 1653118700
+    },
+    {
+      "id": "628895aab8db540000b8ee4f",
+      "text": " [github release]を使う方法は考えの外だった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653118377,
+      "updated": 1653172633
+    },
+    {
+      "id": "628969991280f000005e327a",
+      "text": "  差分を見たかったので、repoに直接pushしていた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653172633,
+      "updated": 1653172652
+    },
+    {
+      "id": "628969ab1280f000005e327b",
+      "text": "  repoに入れるのと同時にreleaseでjsonを生成するのも便利そう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653172652,
+      "updated": 1653172670
+    },
+    {
+      "id": "628969821280f000005e3279",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653172611,
+      "updated": 1653172611
+    },
+    {
+      "id": "6288957fb8db540000b8ee2e",
+      "text": "code:.github/workflows/scheduled-build.yml",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118334,
+      "updated": 1653118448
+    },
+    {
+      "id": "62889583b8db540000b8ee30",
+      "text": " name: Scheduled build",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee31",
+      "text": " ",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee32",
+      "text": " on:",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee33",
+      "text": "   schedule:",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee34",
+      "text": "     - cron: 0 18 * * *",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee35",
+      "text": "   workflow_dispatch:",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee36",
+      "text": " ",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee37",
+      "text": " jobs:",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee38",
+      "text": "   build:",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee39",
+      "text": "     runs-on: ubuntu-latest",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee3a",
+      "text": "     permissions:",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee3b",
+      "text": "       contents: write",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee3c",
+      "text": "     steps:",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee3d",
+      "text": "       - uses: actions/checkout@v2",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee3e",
+      "text": "       - uses: denoland/setup-deno@v1",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee3f",
+      "text": "       - name: Backup data",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee40",
+      "text": "         run: >",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee41",
+      "text": "           deno run",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653174383
+    },
+    {
+      "id": "6289706fb8db540000c4508b",
+      "text": "           --allow-read",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174383,
+      "updated": 1653174386
+    },
+    {
+      "id": "62897071b8db540000c4508c",
+      "text": "           --allow-net",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174386,
+      "updated": 1653174388
+    },
+    {
+      "id": "62897073b8db540000c4508d",
+      "text": "           --allow-write",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174388,
+      "updated": 1653174390
+    },
+    {
+      "id": "62897076b8db540000c4508e",
+      "text": "           --no-check",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174390,
+      "updated": 1653174393
+    },
+    {
+      "id": "62897078b8db540000c4508f",
+      "text": "           index.ts",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174393,
+      "updated": 1653174393
+    },
+    {
+      "id": "62896a131280f000005e3281",
+      "text": "`|`と`>`の違いはなんでしょうか？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653172755,
+      "updated": 1653172760
+    },
+    {
+      "id": "62896a031280f000005e327e",
+      "text": " [yaml]の仕様を見ればわかるかな？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653172740,
+      "updated": 1653172776
+    },
+    {
+      "id": "62896a89b8db540000c45078",
+      "text": " すみません、参考元で利用していたので、安易に使っていました[meganii.icon]",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653172874,
+      "updated": 1653202140
+    },
+    {
+      "id": "62896a9eb8db540000c45079",
+      "text": "  `|`は複数行を処理するのに利用するという理解でしたが、`>`はとりあえず真似した感じです",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653172895,
+      "updated": 1653172924
+    },
+    {
+      "id": "62896abbb8db540000c4507a",
+      "text": "  [- 要調査] 調べました[meganii.icon]",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653172924,
+      "updated": 1653174157
+    },
+    {
+      "id": "6289b30a1280f000003db4c7",
+      "text": "  　ありがとうございます！[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653191433,
+      "updated": 1653191436
+    },
+    {
+      "id": "62896ed1b8db540000c4507f",
+      "text": " [https://stackoverflow.com/questions/3790454/how-do-i-break-a-string-in-yaml-over-multiple-lines syntax - How do I break a string in YAML over multiple lines? - Stack Overflow]",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653173970,
+      "updated": 1653173974
+    },
+    {
+      "id": "62896ed6b8db540000c45080",
+      "text": "  `>`: 改行コードが無視されて、1つのコマンドとして実行",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653173974,
+      "updated": 1653174043
+    },
+    {
+      "id": "62896f37b8db540000c45082",
+      "text": "   >Key: >",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174072,
+      "updated": 1653174074
+    },
+    {
+      "id": "62896f39b8db540000c45083",
+      "text": "   >   this is my very very very",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174074,
+      "updated": 1653174074
+    },
+    {
+      "id": "62896f39b8db540000c45084",
+      "text": "   >   long string",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174074,
+      "updated": 1653174074
+    },
+    {
+      "id": "62896f3ab8db540000c45085",
+      "text": "   `this is my very very very long string\\n`",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174075,
+      "updated": 1653174085
+    },
+    {
+      "id": "62896f1bb8db540000c45081",
+      "text": "  `|`: それぞれ改行コードが入るので、並べれば複数コマンド実行",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174044,
+      "updated": 1653174194
+    },
+    {
+      "id": "62896f49b8db540000c45086",
+      "text": "   >Key: |",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174089,
+      "updated": 1653174099
+    },
+    {
+      "id": "62896f53b8db540000c45087",
+      "text": "   >   this is my very very very ",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174099,
+      "updated": 1653174099
+    },
+    {
+      "id": "62896f53b8db540000c45088",
+      "text": "   >   long string",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174099,
+      "updated": 1653174099
+    },
+    {
+      "id": "62896f54b8db540000c45089",
+      "text": "   `this is my very very very\\nlong string\\n`",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174100,
+      "updated": 1653174111
+    },
+    {
+      "id": "62896a191280f000005e3282",
+      "text": "  なるほど～。`|`が`\\`\\``(JS)や`@\"\"`(C#)などの生文字列リテラル相当の記号になるんですね[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653172762,
+      "updated": 1653191430
+    },
+    {
+      "id": "62896fb3b8db540000c4508a",
+      "text": "",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174196,
+      "updated": 1653174196
+    },
+    {
+      "id": "62896a011280f000005e327d",
+      "text": "code:.github/workflows/scheduled-build.yml",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653172737,
+      "updated": 1653172739
+    },
+    {
+      "id": "62889583b8db540000b8ee43",
+      "text": "       - name: Zip",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653174451
+    },
+    {
+      "id": "628970adb8db540000c45090",
+      "text": "         run: zip data data.json",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653174446,
+      "updated": 1653174446
+    },
+    {
+      "id": "62889583b8db540000b8ee45",
+      "text": "       - name: Set Date",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62896b95b8db540000c4507d",
+      "text": "         env:",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653173141,
+      "updated": 1653191444
+    },
+    {
+      "id": "62896b97b8db540000c4507e",
+      "text": "           TZ: \"Asia/Tokyo\"",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653173143,
+      "updated": 1653173152
+    },
+    {
+      "id": "62889583b8db540000b8ee46",
+      "text": "         run: echo \"CURRENT_DATETIME=$(date +'%Y-%m-%d')\" >> $GITHUB_ENV",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653174407
+    },
+    {
+      "id": "62889583b8db540000b8ee48",
+      "text": "       - name: Release",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee49",
+      "text": "         uses: ncipollo/release-action@v1",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee4a",
+      "text": "         with:",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee4b",
+      "text": "           artifacts: \"data.zip\"",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee4c",
+      "text": "           token: ${{ secrets.GITHUB_TOKEN }}",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889583b8db540000b8ee4d",
+      "text": "           tag: ${{ env.CURRENT_DATETIME }}",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118338,
+      "updated": 1653118338
+    },
+    {
+      "id": "62889580b8db540000b8ee2f",
+      "text": "なるほど～こうやって[workflow.yml]を書くのか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653118335,
+      "updated": 1653172719
+    },
+    {
+      "id": "62889714b8db540000b8ee5b",
+      "text": "",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118739,
+      "updated": 1653118739
+    },
+    {
+      "id": "62889743b8db540000b8ee60",
+      "text": "利用制限に引っかかるかどうか",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118786,
+      "updated": 1653118798
+    },
+    {
+      "id": "62889743b8db540000b8ee61",
+      "text": " [https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features#actions GitHub Terms for Additional Products and Features - GitHub Docs]",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118786,
+      "updated": 1653118799
+    },
+    {
+      "id": "62889746b8db540000b8ee63",
+      "text": " 　>cryptomining;",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118789,
+      "updated": 1653119144
+    },
+    {
+      "id": "628898e3b8db540000b8ee69",
+      "text": "  　マイニングではない",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653119202,
+      "updated": 1653119207
+    },
+    {
+      "id": "628898a7b8db540000b8ee64",
+      "text": "  >disrupting, gaining, or attempting to gain unauthorized access to, any service, device, data, account, or network (other than those authorized by the GitHub Bug Bounty program);",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653119142,
+      "updated": 1653119152
+    },
+    {
+      "id": "628898eab8db540000b8ee6a",
+      "text": "   非該当",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653119209,
+      "updated": 1653119252
+    },
+    {
+      "id": "628898adb8db540000b8ee65",
+      "text": "  >the provision of a stand-alone or integrated application or service offering the Actions product or service, or any elements of the Actions product or service, for commercial purposes;",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653119148,
+      "updated": 1653119157
+    },
+    {
+      "id": "6288992ab8db540000b8ee6b",
+      "text": "   商用利用でもないので非該当",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653119273,
+      "updated": 1653119288
+    },
+    {
+      "id": "628898b6b8db540000b8ee66",
+      "text": "  >any activity that places a burden on our servers, where that burden is disproportionate to the benefits provided to users (for example, don't use Actions as a content delivery network or as part of a serverless application, but a low benefit Action could be ok if it’s also low burden); or",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653119157,
+      "updated": 1653119162
+    },
+    {
+      "id": "6288993fb8db540000b8ee6c",
+      "text": "   負担も少ないはず",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653119294,
+      "updated": 1653119394
+    },
+    {
+      "id": "628898bbb8db540000b8ee67",
+      "text": "  >if using GitHub-hosted runners, any other activity unrelated to the production, testing, deployment, or publication of the software project associated with the repository where GitHub Actions are used.",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653119162,
+      "updated": 1653119166
+    },
+    {
+      "id": "628898bfb8db540000b8ee68",
+      "text": "　　　無関係ではない・・はず。",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653119166,
+      "updated": 1653119342
+    },
+    {
+      "id": "62896a391280f000005e3283",
+      "text": "　　　repoにもページデータをpushすれば無関係じゃなくなる[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1653172793,
+      "updated": 1653172808
+    },
+    {
+      "id": "62889743b8db540000b8ee62",
+      "text": "",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118786,
+      "updated": 1653118786
+    },
+    {
+      "id": "62889714b8db540000b8ee5c",
+      "text": "参考",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118739,
+      "updated": 1653118741
+    },
+    {
+      "id": "62889715b8db540000b8ee5e",
+      "text": "　[https://github.com/ncipollo/release-action GitHub - ncipollo/release-action: An action which manages a github release]",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118741,
+      "updated": 1653118744
+    },
+    {
+      "id": "62889719b8db540000b8ee5f",
+      "text": "　[/takker/scrapbox-external-backup]",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118744,
+      "updated": 1653118909
+    },
+    {
+      "id": "62889715b8db540000b8ee5d",
+      "text": "",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1653118741,
+      "updated": 1653118741
+    }
+  ]
+}

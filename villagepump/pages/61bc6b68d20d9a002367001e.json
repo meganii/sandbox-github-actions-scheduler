@@ -1,0 +1,218 @@
+{
+  "id": "61bc6b68d20d9a002367001e",
+  "title": "plantuml-proxy",
+  "created": 1639738219,
+  "updated": 1652866558,
+  "lines": [
+    {
+      "id": "61bc6b68d20d9a002367001e",
+      "text": "plantuml-proxy",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1639738219,
+      "updated": 1639738219
+    },
+    {
+      "id": "61bc6b6a5b98c20000b8c43f",
+      "text": " [PlantUMLで遊ぶ]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1639738219,
+      "updated": 1639738228
+    },
+    {
+      "id": "61bc6b6b5b98c20000b8c440",
+      "text": " [/takker/PlantUMLファイルから画像URLを生成するserverless function]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1639738219,
+      "updated": 1639738219
+    },
+    {
+      "id": "61bc6b6b5b98c20000b8c441",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1639738219,
+      "updated": 1639738219
+    },
+    {
+      "id": "621b30531280f00000788bb4",
+      "text": "issues",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645949012,
+      "updated": 1645949015
+    },
+    {
+      "id": "621b30a91280f00000788bbf",
+      "text": " from [@takker]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645949097,
+      "updated": 1645949103
+    },
+    {
+      "id": "621b306a1280f00000788bb7",
+      "text": "  指定するURLの :title に'/'（[パーセントエンコーディング]されて %2F になる）が含まれていると表示ができないようです [suto3.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645949034,
+      "updated": 1645949107
+    },
+    {
+      "id": "621b306a1280f00000788bb8",
+      "text": "  なるほど[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645949034,
+      "updated": 1645949041
+    },
+    {
+      "id": "621b306a1280f00000788bb9",
+      "text": "   ちょっとこれを識別するのは難しそうです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645949034,
+      "updated": 1645949109
+    },
+    {
+      "id": "621b306a1280f00000788bba",
+      "text": "    `https://plantuml-proxy.vercel.app/:img/:url`の`:url`には任意のURLを想定しているので、どれが`/`でどれが`%2F`なのかを判別することができない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645949034,
+      "updated": 1645949109
+    },
+    {
+      "id": "621b306a1280f00000788bbb",
+      "text": "    scrapboxように別のAPIを生やせば解決できなくもないけど……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645949034,
+      "updated": 1645949109
+    },
+    {
+      "id": "621b306a1280f00000788bbc",
+      "text": "     e.g. `https://plantuml-proxy.vercel.app/:img/scrapbox?project=:project&title=:title&filename=:filename`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645949034,
+      "updated": 1645949109
+    },
+    {
+      "id": "621b306a1280f00000788bbd",
+      "text": "   とりあえず`:title`に`/`が含まれる場合は、`%252F`を使うことで対処していただきたいです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645949034,
+      "updated": 1645949112
+    },
+    {
+      "id": "621b306a1280f00000788bbe",
+      "text": "    cf. [/takker/scrapbox-bundler#61bd082f1280f00000c5716c]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645949034,
+      "updated": 1645949112
+    },
+    {
+      "id": "621b30531280f00000788bb5",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645949012,
+      "updated": 1645949012
+    },
+    {
+      "id": "624e8c0d0553320000ca258c",
+      "text": "",
+      "userId": "5d131fa66fe2890017055332",
+      "created": 1649314829,
+      "updated": 1649314829
+    },
+    {
+      "id": "624e8c0d0553320000ca258d",
+      "text": "タイトルに半角スペース（%20）のときも上手く描画できなさそうだった",
+      "userId": "5d131fa66fe2890017055332",
+      "created": 1649314829,
+      "updated": 1649314843
+    },
+    {
+      "id": "624ea9331280f000005b7676",
+      "text": " なんとかできないかな～[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1649322291,
+      "updated": 1649322298
+    },
+    {
+      "id": "624ea93a1280f000005b7677",
+      "text": "  [- 自分が切実に困っていないとあんまり修正する気にならないごめんなさい]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1649322298,
+      "updated": 1649322341
+    },
+    {
+      "id": "624ea9631280f000005b7678",
+      "text": "  PR出してくれたらとてもうれしいです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1649322340,
+      "updated": 1649322350
+    },
+    {
+      "id": "624e8c1b0553320000ca258f",
+      "text": "　　　自作で、scrapboxのテーブル形式から項目を抜き出してSVG作るってツールを作ってるんですが",
+      "userId": "5d131fa66fe2890017055332",
+      "created": 1649314843,
+      "updated": 1649322465
+    },
+    {
+      "id": "624ea9d80553320000fa8bf0",
+      "text": "　　　そいつも対応してなかったので、こちらも考えるところからのようです（そして、今使えればいいやの精神で治すつもりもない）",
+      "userId": "5d131fa66fe2890017055332",
+      "created": 1649322456,
+      "updated": 1649322491
+    },
+    {
+      "id": "624e8c0d0553320000ca258e",
+      "text": "",
+      "userId": "5d131fa66fe2890017055332",
+      "created": 1649314829,
+      "updated": 1649314829
+    },
+    {
+      "id": "61bc6b6b5b98c20000b8c442",
+      "text": "[PlantUML]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1639738219,
+      "updated": 1639738219
+    },
+    {
+      "id": "61bc6b6b5b98c20000b8c443",
+      "text": "[SVG]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1639738219,
+      "updated": 1639738219
+    },
+    {
+      "id": "6235a7477838e300000ace59",
+      "text": "#plantuml-proxy.vercel.app",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647683400,
+      "updated": 1647683401
+    },
+    {
+      "id": "6235a7477838e300000ace5a",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1647683400,
+      "updated": 1647683400
+    },
+    {
+      "id": "6284bde80553320000b0c6f8",
+      "text": "ここに組み込みたい人がいたのを思い出した",
+      "userId": "5d131fa66fe2890017055332",
+      "created": 1652866535,
+      "updated": 1652866557
+    },
+    {
+      "id": "6284bde80553320000b0c6f9",
+      "text": "\t[/scrapboxlab/擬似的にPlantUMLを埋め込む]",
+      "userId": "5d131fa66fe2890017055332",
+      "created": 1652866535,
+      "updated": 1652866558
+    },
+    {
+      "id": "6284bde80553320000b0c6fa",
+      "text": "",
+      "userId": "5d131fa66fe2890017055332",
+      "created": 1652866536,
+      "updated": 1652866536
+    }
+  ]
+}

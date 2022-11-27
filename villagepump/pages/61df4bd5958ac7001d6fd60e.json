@@ -1,0 +1,694 @@
+{
+  "id": "61df4bd5958ac7001d6fd60e",
+  "title": "2022/01/13",
+  "created": 1642023895,
+  "updated": 1667130799,
+  "lines": [
+    {
+      "id": "61df4bd5958ac7001d6fd60e",
+      "text": "2022/01/13",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642023895,
+      "updated": 1642023895
+    },
+    {
+      "id": "61df4bd71280f0000044fcb8",
+      "text": "今日のn年前",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642023895,
+      "updated": 1642023895
+    },
+    {
+      "id": "61df4bd71280f0000044fcb9",
+      "text": " [2021/01/13]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642023895,
+      "updated": 1642023895
+    },
+    {
+      "id": "61df4bd71280f0000044fcba",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642023895,
+      "updated": 1642023895
+    },
+    {
+      "id": "61df4bd71280f0000044fcbb",
+      "text": "[erniogi.icon]",
+      "userId": "5e5b870dd7f3000017a33682",
+      "created": 1642023895,
+      "updated": 1642024064
+    },
+    {
+      "id": "61ea3a2179e1130000e69e21",
+      "text": " [Vibram FiveFingers#61ea3a3179e1130000e69e64]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1642740257,
+      "updated": 1642753362
+    },
+    {
+      "id": "61e0269842774800009c647c",
+      "text": "",
+      "userId": "5abc77416573130014427748",
+      "created": 1642079896,
+      "updated": 1642079896
+    },
+    {
+      "id": "61df75f31280f0000018e69f",
+      "text": "[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642034674,
+      "updated": 1642034674
+    },
+    {
+      "id": "61df75f41280f0000018e6a0",
+      "text": " 突然[New Page (Scrapbox)]が効かなくなって焦った",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642034674,
+      "updated": 1642034690
+    },
+    {
+      "id": "61df747a1280f0000018e69c",
+      "text": "  ページが書き込まれない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642034297,
+      "updated": 1642034696
+    },
+    {
+      "id": "61df760a1280f0000018e6a1",
+      "text": " デバッグして追跡したら、[QuotaExceededError]が原因だった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642034697,
+      "updated": 1642034766
+    },
+    {
+      "id": "61df768e1280f00000137ee8",
+      "text": "  [New Page (Scrapbox)]は[window.open()]ではなく、[Local Storage]を使って実装されている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642034829,
+      "updated": 1642034887
+    },
+    {
+      "id": "61df76c81280f00000137eeb",
+      "text": "   local storageに切り出したページデータを入れる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642034887,
+      "updated": 1642034910
+    },
+    {
+      "id": "61df76df1280f00000137eec",
+      "text": "   新しく開いたタブから、ページデータを読み込んでページに書き込む",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642034910,
+      "updated": 1642034932
+    },
+    {
+      "id": "61df76f51280f00000137eee",
+      "text": "  このLocal Storageは[Indexed DB]などとストレージ制限を共有しているのだが、[Indexed DB]の方に大量のデータを詰め込んでいたせいでLocal Storageにデータを追記できなくなってしまい、結果New Pageするとデータが消えてしまった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642034932,
+      "updated": 1642035030
+    },
+    {
+      "id": "61df77571280f00000137eef",
+      "text": "  Indexed DBの圧迫原因は自作のUserScript([external-completion])",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642035030,
+      "updated": 1642035054
+    },
+    {
+      "id": "61df77701280f00000137ef1",
+      "text": "   watch listにある全てのプロジェクトのリンクデータをぶちこむという富豪的運用をしていた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642035055,
+      "updated": 1642035099
+    },
+    {
+      "id": "61df779c1280f00000137ef2",
+      "text": "   とうとうそれが上限に達してしまったらしい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642035099,
+      "updated": 1642035111
+    },
+    {
+      "id": "61df77e91280f00000137ef7",
+      "text": "    1062 projectsに増やしたのが引き金だったようだ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642035176,
+      "updated": 1642035209
+    },
+    {
+      "id": "61df77bf1280f00000137ef3",
+      "text": "  というかそもそも[external-completion]壊れているんだよなあ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642035135,
+      "updated": 1642035145
+    },
+    {
+      "id": "61df77ca1280f00000137ef5",
+      "text": "  　全然使っていないし",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642035145,
+      "updated": 1642035156
+    },
+    {
+      "id": "61df77d21280f00000137ef6",
+      "text": "  　UserScriptから外そうかな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642035153,
+      "updated": 1642035153
+    },
+    {
+      "id": "61dfeba21280f00000c5881c",
+      "text": " [Firefox]@Windows10が一時間くらい前から突然ネットワークアクセスできなくなって困っている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642064803,
+      "updated": 1642065189
+    },
+    {
+      "id": "61dfebd41280f00000c5881f",
+      "text": " 　当初はPCの無線LAN装置が故障したか、Firewallが何らかの悪さをしていると予想した",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642064853,
+      "updated": 1642064892
+    },
+    {
+      "id": "61dfebfb1280f00000c58820",
+      "text": " 　　無線LANの設定をみたりFirewallの許可設定やブロックログを見たりしたが、全く手がかりがつかめなかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642064892,
+      "updated": 1642064932
+    },
+    {
+      "id": "61dfec241280f00000c58821",
+      "text": " 　その後LINEがデータ同期できていることに気づいたのをきっかけに、様々なアプリのネットワーク通信を確かめてみた所、原因はPCではなくFirefoxだけだとわかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642064932,
+      "updated": 1642064991
+    },
+    {
+      "id": "61dfebc41280f00000c5881e",
+      "text": " 　この文章はGoogle Chrome@Windowsで書いている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642064837,
+      "updated": 1642065003
+    },
+    {
+      "id": "61dfeba21280f00000c5881d",
+      "text": "  さて、Firefoxが壊れたのはわかったが、何故壊れたのか、復旧方法は何かがまだ検討ついていない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642064803,
+      "updated": 1642065071
+    },
+    {
+      "id": "61dfecaf1280f00000c58822",
+      "text": "  　再起動しても効果がなかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642065072,
+      "updated": 1642065079
+    },
+    {
+      "id": "61df7f757838e3000093eec2",
+      "text": "　　[https://forest.watch.impress.co.jp/docs/news/1380334.html Windows版「Firefox」で突如Webサイトが開けなくなる問題が発生中 - 窓の杜][https://b.hatena.ne.jp/entry/image/https://forest.watch.impress.co.jp/docs/news/1380334.html#.png]",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642037109,
+      "updated": 1642069164
+    },
+    {
+      "id": "61dffc96c41cc70000115fe6",
+      "text": "   ！！？！？！？？！？！？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642069144,
+      "updated": 1642077830
+    },
+    {
+      "id": "61e01e871280f00000787b55",
+      "text": "    おいおい[/icons/まじかよ.icon]……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642077831,
+      "updated": 1642077923
+    },
+    {
+      "id": "61e01e811280f00000787b54",
+      "text": "    まさか自分の設定ミスではなくFirefoxのプログラムそのものに問題があったとは。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642077825,
+      "updated": 1642077924
+    },
+    {
+      "id": "61e01ecd1280f00000787b57",
+      "text": "     [青天の霹靂]だ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642077901,
+      "updated": 1642077924
+    },
+    {
+      "id": "61e01edd1280f00000787b58",
+      "text": "    記事によると`network.http.http3.enabeld`を`false`にすればいいようだ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642077917,
+      "updated": 1642077937
+    },
+    {
+      "id": "61e01ef31280f00000787b59",
+      "text": "     明日設定しよう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642077938,
+      "updated": 1642077943
+    },
+    {
+      "id": "61e73cbd1280f0000000dd73",
+      "text": "     翌日立ち上げたらすでに直っていました[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642544317,
+      "updated": 1642544328
+    },
+    {
+      "id": "61e020501280f00000787b60",
+      "text": "    [HTTP3]があるのか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642078287,
+      "updated": 1642078297
+    },
+    {
+      "id": "61e0205a1280f00000787b61",
+      "text": "     [HTTP2]が最新だと思っていた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642078297,
+      "updated": 1642078307
+    },
+    {
+      "id": "61e01e9c1280f00000787b56",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642077851,
+      "updated": 1642077851
+    },
+    {
+      "id": "61df7f767838e3000093eec3",
+      "text": "[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1642037110,
+      "updated": 1642037114
+    },
+    {
+      "id": "61df7fa17838e3000093eec6",
+      "text": "\t下の横スクロールバーは結局なかったことになったのね",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1642037154,
+      "updated": 1642037168
+    },
+    {
+      "id": "61df7fc37838e3000093eec8",
+      "text": "\t\t[2022/01/11#61dd1871078a6b00004c8dcd]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1642037188,
+      "updated": 1642037194
+    },
+    {
+      "id": "61df7f907838e3000093eec5",
+      "text": "\t\t>横スクロールバーが出ているのは[おま環]?",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1642037137,
+      "updated": 1642037170
+    },
+    {
+      "id": "61df7fb57838e3000093eec7",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1642037174,
+      "updated": 1642037175
+    },
+    {
+      "id": "61dfbb75c3f2c70000341cee",
+      "text": "[maichan.icon]",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1642052467,
+      "updated": 1642052468
+    },
+    {
+      "id": "61dfbb76c3f2c70000341cef",
+      "text": "　最近[Googleマップ]を眺めて癒されていることが多いです",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1642052468,
+      "updated": 1642052650
+    },
+    {
+      "id": "61dfbbc2c3f2c70000341cf0",
+      "text": "　　行ったところと行きたいところにピンを付けて眺めるだけなんですが",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1642052544,
+      "updated": 1642052563
+    },
+    {
+      "id": "61dfbbdbc3f2c70000341cf1",
+      "text": "　　旅行の計画をしているような楽しさがあるのかも",
+      "userId": "615026d6d6a2280023c3f2c7",
+      "created": 1642052569,
+      "updated": 1642052586
+    },
+    {
+      "id": "61dfd1be198270000069e4bf",
+      "text": "",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1642058175,
+      "updated": 1642058175
+    },
+    {
+      "id": "61dfd1be198270000069e4c0",
+      "text": "",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1642058175,
+      "updated": 1642058175
+    },
+    {
+      "id": "61dfd1be198270000069e4c1",
+      "text": "[mrsekut.icon]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1642058175,
+      "updated": 1642058177
+    },
+    {
+      "id": "61dfd1c1198270000069e4c3",
+      "text": "\t「さすがにそろそろ2021年を振り返っておくか」とずっと思ったまま延期してしまっている",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1642058177,
+      "updated": 1642058193
+    },
+    {
+      "id": "61dfd1d1198270000069e4c4",
+      "text": "",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1642058193,
+      "updated": 1642058193
+    },
+    {
+      "id": "61e00325aff09e0000145072",
+      "text": "[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1642070821,
+      "updated": 1642070823
+    },
+    {
+      "id": "61e00327aff09e0000145073",
+      "text": " 昨日ScrapboxReaderに付けたリンクの機能は色々バグってた",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642070823,
+      "updated": 1642070989
+    },
+    {
+      "id": "61e00350aff09e0000145075",
+      "text": " 複数のプロジェクトのコンテンツを束ねて表示することができるようになった",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1642070865,
+      "updated": 1642070865
+    },
+    {
+      "id": "61e01f751280f00000787b5d",
+      "text": "  [\" 束ねて表示]どのような表示方法なのか気になります[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642078069,
+      "updated": 1642078100
+    },
+    {
+      "id": "61e01f971280f00000787b5f",
+      "text": "   [ScrapBubble]で複数プロジェクト同一タイトルのページを表示する参考にしたいです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642078102,
+      "updated": 1642078170
+    },
+    {
+      "id": "61e03bc8aff09e000082128b",
+      "text": "   [nishio.icon]単に上下に並べるだけです、今のところCSSを頑張る系のことは優先度が低いので。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1642085321,
+      "updated": 1642085370
+    },
+    {
+      "id": "61e73cd21280f0000000dd74",
+      "text": "   [/icons/なるほど.icon][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642544339,
+      "updated": 1642544344
+    },
+    {
+      "id": "61e00345aff09e0000145074",
+      "text": " プロジェクトAでXからYにリンクはあるがページY自体はなく、プロジェクトBにはページYがあるようなケースで、特に問題なく(プロジェクトの境目を意識することなく)遷移できる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1642070853,
+      "updated": 1642070979
+    },
+    {
+      "id": "61e003c5aff09e0000145076",
+      "text": " 　でも今は遷移した後リロードしないといけないバグがある",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1642070981,
+      "updated": 1642070996
+    },
+    {
+      "id": "61e003d5aff09e0000145077",
+      "text": " 　Vercelの[キャッシュ]周りの理解が足りてなさげ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1642070998,
+      "updated": 1667129477
+    },
+    {
+      "id": "61dfd1d1198270000069e4c5",
+      "text": "\t[/nishio/ScrapboxAutoTrans開発日記2022-01-13]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1642058193,
+      "updated": 1642071386
+    },
+    {
+      "id": "61e0055aaff09e0000815b7c",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1642071387,
+      "updated": 1642071387
+    },
+    {
+      "id": "61df77c01280f00000137ef4",
+      "text": "[zudooooooooon.icon]",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642035135,
+      "updated": 1642071118
+    },
+    {
+      "id": "61e03b0ec41cc700001ed231",
+      "text": " リアル図書館に行くとたまに見られる、「タイトルが対立する本が隣り合わせ」が体験できた",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642085135,
+      "updated": 1642085163
+    },
+    {
+      "id": "61e03b2bc41cc700001ed232",
+      "text": "  [https://gyazo.com/a73ebbd38e5453eaccf30ee8fc194797]",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642085163,
+      "updated": 1642085212
+    },
+    {
+      "id": "61e03b5cc41cc70000d86a51",
+      "text": "",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642085212,
+      "updated": 1642085212
+    },
+    {
+      "id": "61e0044cc41cc70000dd666b",
+      "text": "　図書館の蔵書データ(16万冊くらい、リンクは72万)を全部Scrapboxに放り込んだら面白かった",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642071118,
+      "updated": 1642081606
+    },
+    {
+      "id": "61e00464c41cc70000dd666d",
+      "text": "　\tある人物のページを作ると、その下に著書が出てきて即予約できる。良い",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642071142,
+      "updated": 1642071166
+    },
+    {
+      "id": "61e01f2b1280f00000787b5a",
+      "text": "　\t よさそう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642077995,
+      "updated": 1642078004
+    },
+    {
+      "id": "61e01f341280f00000787b5b",
+      "text": "　\t  だけど出版数の多い人物だと関連ページリストが膨大になりそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642078004,
+      "updated": 1642078037
+    },
+    {
+      "id": "61e01f561280f00000787b5c",
+      "text": "　\t16万放り込んでも検索に支障はなさそうですか？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642078037,
+      "updated": 1642078059
+    },
+    {
+      "id": "61e0252ec41cc70000fa8e9e",
+      "text": "　\t 補完が出ているとき、一文字一文字の入力が遅すぎる",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642079534,
+      "updated": 1642079570
+    },
+    {
+      "id": "61e025d8c41cc70000fa8ea0",
+      "text": "　\t  英数字はさほどでもなくて、日本語のときが重い",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642079705,
+      "updated": 1642079723
+    },
+    {
+      "id": "61e029ab1280f00000787b78",
+      "text": " \t  なんでだろう？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642080682,
+      "updated": 1642080697
+    },
+    {
+      "id": "61e029b21280f00000787b79",
+      "text": "　\t   検索はwebworkerに投げているから、いくら検索が重くなってもUIが固まることはないはず",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642080689,
+      "updated": 1642080720
+    },
+    {
+      "id": "61e02bdcc41cc700005c31d2",
+      "text": "　\t   IMEの変換が確定されるまでが引っかかる[zudooooooooon.icon]",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642081244,
+      "updated": 1642081267
+    },
+    {
+      "id": "61e02cbfc41cc700005c31d3",
+      "text": "　\t   訂正。日英問わず重い",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642081472,
+      "updated": 1642081484
+    },
+    {
+      "id": "61e02152c41cc700007123c7",
+      "text": "　\t ページリスト(タイトルの補完)の完全取得に数十秒待たされるのがチト辛いです[zudooooooooon.icon]",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642078547,
+      "updated": 1642078769
+    },
+    {
+      "id": "61e022f71280f00000787b6e",
+      "text": " 　\t  あーそれは時間かかりますね[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642078967,
+      "updated": 1642079015
+    },
+    {
+      "id": "61e023611280f00000787b71",
+      "text": " 　\t   50000ページくらいでも体感けっこう待たされますから",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642079072,
+      "updated": 1642079072
+    },
+    {
+      "id": "61e023071280f00000787b6f",
+      "text": " 　\t   [cache]されてあっても、cacheからリンクデータを構築するのに時間がかかります",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1642078983,
+      "updated": 1667130799
+    },
+    {
+      "id": "61e021f6c41cc700007123cb",
+      "text": "　\t  ロードされれば補完は速い",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642078711,
+      "updated": 1642078718
+    },
+    {
+      "id": "61e02193c41cc700007123c9",
+      "text": "　\t  それを待たずに全文検索することもある",
+      "userId": "61d72bbfba87a90022c41cc7",
+      "created": 1642078612,
+      "updated": 1642078744
+    },
+    {
+      "id": "61e0044dc41cc70000dd666c",
+      "text": "　　[hata6502.icon]すごい、[増井俊之.icon]さんが考えている[空間アプリ]にも関係するかもしれません。",
+      "userId": "5ff4fb2169e764001cd1a02f",
+      "created": 1642071119,
+      "updated": 1642082131
+    },
+    {
+      "id": "61e02d0ad1a02f0000786c01",
+      "text": "　　　ウェブサイトをまるごとScrapbox[空間]に入れるとどうなるか。",
+      "userId": "5ff4fb2169e764001cd1a02f",
+      "created": 1642081544,
+      "updated": 1642081926
+    },
+    {
+      "id": "61e02eccd1a02f0000786c02",
+      "text": "　　　いかに[リンク]を保ちながらScrapboxに入れるか。",
+      "userId": "5ff4fb2169e764001cd1a02f",
+      "created": 1642081995,
+      "updated": 1642082048
+    },
+    {
+      "id": "61e02f01d1a02f0000786c03",
+      "text": "　　　[hata6502.icon]も実験してみようかな。",
+      "userId": "5ff4fb2169e764001cd1a02f",
+      "created": 1642082048,
+      "updated": 1642082088
+    },
+    {
+      "id": "61e033671280f000000dfcc7",
+      "text": "　　ちなみに、巨大なデータをScrapbox空間に入れる似たような試みとして、[/NDLSH-SB]というprojectがあります[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642083174,
+      "updated": 1642083382
+    },
+    {
+      "id": "61e034441280f000000dfcc8",
+      "text": "　　 [国立国会図書館件名標目表]のデータをscrapboxのページに変換したもの",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642083396,
+      "updated": 1642083438
+    },
+    {
+      "id": "61e0348d1280f000000dfcc9",
+      "text": "　　 知りたい分野につながっているキーワードをたどれて便利",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642083468,
+      "updated": 1642083495
+    },
+    {
+      "id": "61e034a91280f000000dfcca",
+      "text": "　　  NDL searchへのリンクもついている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642083497,
+      "updated": 1642083515
+    },
+    {
+      "id": "61e02cb5d1a02f0000786bff",
+      "text": "",
+      "userId": "5ff4fb2169e764001cd1a02f",
+      "created": 1642081461,
+      "updated": 1642081461
+    },
+    {
+      "id": "61e02cb6d1a02f0000786c00",
+      "text": "",
+      "userId": "5ff4fb2169e764001cd1a02f",
+      "created": 1642081461,
+      "updated": 1642081461
+    },
+    {
+      "id": "61df4bd71280f0000044fcbd",
+      "text": "[2022/01/12]←2022/01/13→[2022/01/14]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1642023895,
+      "updated": 1642023895
+    }
+  ]
+}

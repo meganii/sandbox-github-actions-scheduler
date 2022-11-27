@@ -1,0 +1,869 @@
+{
+  "id": "6382da16c0233b001e901636",
+  "title": "ルビを取る処理の習得記録 Part 2 「公式ドキュメントで迷子」～「正規表現ルート確定」",
+  "created": 1669519895,
+  "updated": 1669520074,
+  "lines": [
+    {
+      "id": "6382da16c0233b001e901636",
+      "text": "ルビを取る処理の習得記録 Part 2 「公式ドキュメントで迷子」～「正規表現ルート確定」",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669520074
+    },
+    {
+      "id": "6382da175e90c00000c5c96e",
+      "text": "from [青空文庫のルビを取るテキスト処理を習得してみよう]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c96f",
+      "text": "",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519901
+    },
+    {
+      "id": "6382da285e90c00000c5c9e7",
+      "text": "←前回 [ルビを取る処理の習得記録 Part 1「テキストファイルを開く」～「公式ドキュメントを見に行く」]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519912,
+      "updated": 1669519919
+    },
+    {
+      "id": "6382da1c5e90c00000c5c9e4",
+      "text": "",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519900,
+      "updated": 1669519900
+    },
+    {
+      "id": "6382da175e90c00000c5c970",
+      "text": "[* ドキュメントの惑星群]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519928
+    },
+    {
+      "id": "6382da175e90c00000c5c971",
+      "text": " `文字列`で検索すると引っかかったのは以下",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c972",
+      "text": "  `Range`",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c973",
+      "text": "   >[範囲オブジェクト]のクラス。範囲オブジェクトは文字どおり何らかの意味での範囲を表します。数の範囲はもちろん、日付の範囲や、「\"a\" から \"z\" まで」といった文字列の範囲を表すこともできます。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c974",
+      "text": "  `String`",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c975",
+      "text": "   >[文字列]のクラスです。[ヌル文字]を含む任意のバイト列を扱うことができます。文字列の長さにはメモリ容量以外の制限はありません。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c976",
+      "text": "   君のことは知ってますよ(ほぼ初対面)",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c977",
+      "text": "    なんか数字ではなくって文字の扱いになるんでしょう？",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c978",
+      "text": "   今回`\"\"`があるのでここ関わってきそう",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c979",
+      "text": "    ホントに探索してるみたいだ",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c97a",
+      "text": "   >文字列同士の比較・結合",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c97b",
+      "text": "    > 文字列同士の比較・結合などでは両者のエンコーディングを意識する必要があります。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c97c",
+      "text": "    >例えば `String#==` や `String#eql?` は両者のエンコーディングが等しくバイト列表現が等しい場合にのみ true を返します。このときエンコーディングが UTF-8 であっても正規化せずに比較します。文字列の結合も同様です。異なるエンコーディング同士の文字列を結合する時は明示的にエンコーディングを変換する必要があります。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c97d",
+      "text": "     ﾋｴｯ[文字コードは闇]じゃん[takker.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c97e",
+      "text": "    code:ruby",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c97f",
+      "text": "     s = \"いろは\"",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c980",
+      "text": "     a = s.encode(\"EUC-JP\")",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c981",
+      "text": "     b = s.encode(\"UTF-8\")",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c982",
+      "text": "     p a == b                            #=> false",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c983",
+      "text": "     ",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c984",
+      "text": "     s = \"合\".encode(\"EUC-JP\")",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c985",
+      "text": "     p s + \"\\u{4f53}\".encode(\"EUC-JP\")   #=> \"合体\"",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c986",
+      "text": "     p s + \"\\u{4f53}\"                    #=> Encoding::CompatibilityError",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c987",
+      "text": "    今回は別のエンコーディングは使わないはずだから気にしなくて良いはず",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c988",
+      "text": "     文字列を結合するときどちらも[SHIFT JIS]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c989",
+      "text": "     はずを二回使う",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c98a",
+      "text": "   `self[nth] = val`",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c98b",
+      "text": "    >nth 番目の文字を文字列 val で置き換えます。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c98c",
+      "text": "    置き換えは近いけど違う",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c98d",
+      "text": "     あらかじめ変えたい文字の場所が決まってるときには使える",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c98e",
+      "text": "     これだとどうなる？",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c98f",
+      "text": "      code:Ruby",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c990",
+      "text": "       buf = \"ゴジラ\"",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c991",
+      "text": "       buf[0] = \"ク\"",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c992",
+      "text": "      ウワッだめだっ",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c993",
+      "text": "      [https://gyazo.com/fd23185e9f9643a51dacf229f747f9f0][https://gyazo.com/2466540fdeca8c4d01aed72155c65102]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c994",
+      "text": "       右だとうまく行った",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c995",
+      "text": "        全角・半角の差でもなさそう",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c996",
+      "text": "        [https://gyazo.com/d24e3bfc5d393503831350cbc76175ee]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c997",
+      "text": "        奥が深いな～([脱線志向])",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c998",
+      "text": "        この奥の深さは価値がないからスルーしていいと思う……[takker.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c999",
+      "text": "         [先人たちの遺産]という点では価値はあるかもしれないが",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c99a",
+      "text": "        沼だな…[nishio.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c99b",
+      "text": "         Outer Wildをプレイして宇宙空間に投げ出されてるみたいな状況だw",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c99c",
+      "text": "         根本的問題ではw",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c99d",
+      "text": "         \t[https://gyazo.com/d4afcd8c9e9150a9f9e90c90ef97a03a]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c99e",
+      "text": "     nthってそもそもなんだ……？",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c99f",
+      "text": "      [https://dictionary.goo.ne.jp/word/en/nth/ nthの意味 - goo辞書 英和和英]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9a0",
+      "text": "      n番目ってことか",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9a1",
+      "text": "  `Symbol`",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9a2",
+      "text": "   >シンボルを表すクラス。シンボルは任意の文字列と一対一に対応するオブジェクトです。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9a3",
+      "text": "    [アッハイ][issac.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9a4",
+      "text": " [インスタンスメソッド(Ruby)]探索記録",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9a5",
+      "text": "  `print`",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9a6",
+      "text": "   なにかには使うだろう",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9a7",
+      "text": "    プロンプトに表示するとか",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9a8",
+      "text": "    今回だとファイルそのものの書き換えだからちょっとどうかな",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9a9",
+      "text": "  `gsub`",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9aa",
+      "text": "   [https://try.ruby-lang.org/ TryRuby: Learn programming with Ruby]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9ab",
+      "text": "   [https://gyazo.com/9da76600f7335bce4da8d1802f284ae8]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9ac",
+      "text": "    `poem.gsub(\"toast\", \"honeydew\")`",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9ad",
+      "text": "     poemに対して、gsubのインスタンスメソッドを使うよ",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9ae",
+      "text": "      処理は`toast`を`honeydew`にするよ",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9af",
+      "text": "   使えるのかこれ？",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9b0",
+      "text": "    今回は「`《` `》`で囲まれた文字列」の範囲を指定して、それを`\"\"`に置換したい",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9b1",
+      "text": "    「範囲の指定」が必要だなー",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9b2",
+      "text": "　　　　　いいね[nishio.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9b3",
+      "text": "　　　[たのしいRuby(第6版)]だと置換からリンクして「正規表現を使うメソッド」の紹介があった",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9b4",
+      "text": " 　　　`sub`メソッドと`gsub`メソッドがそれに当たるらしい",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9b5",
+      "text": " 　　　$ (/\\s+/)",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9b6",
+      "text": "  　　　みたいな謎の文言が見える",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9b7",
+      "text": "  　　　これあれだな、userscriptでよく見る表現(?)だ",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9b8",
+      "text": "  　　　[/shokai/文字カウント#59c4f74097c291000080d7bb]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9b9",
+      "text": "   　　　これって、正規表現を使ってた[…ってコト！？]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9ba",
+      "text": "   　　　ここ[The Witness]でアレを認識したときの気分",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9bb",
+      "text": "  範囲の指定だと`Range`が関わってきそう",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9bc",
+      "text": "   [https://docs.ruby-lang.org/ja/3.1/class/Range.html class Range (Ruby 3.1 リファレンスマニュアル)]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9bd",
+      "text": "   >範囲オブジェクトのクラス。範囲オブジェクトは文字どおり何らかの意味での範囲を表します。数の範囲はもちろん、日付の範囲や、「\"a\" から \"z\" まで」といった文字列の範囲を表すこともできます。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9be",
+      "text": "   作り方",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9bf",
+      "text": "    >範囲オブジェクトは、Range.new を用いるほか、範囲演算子（`..' または `...'）を用いた 演算子式/範囲式 で生成できます。いずれの方法でも始端と終端を与えます。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9c0",
+      "text": "   仮に、「全範囲に対して`《` `》`はあるか？」を判定したいばあい",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9c1",
+      "text": "    [https://gyazo.com/bfbdeff8777ef45fcb95efa50a78df76]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9c2",
+      "text": "    `p (歌《うた》の話《はなし》について).cover?(《)`",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9c3",
+      "text": "     ↑これはエラー。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9c4",
+      "text": "     code:error",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9c5",
+      "text": " \t    (file): eval:1:in `<main>': undefined local variable or method `歌《うた》の話《はなし》について' for main:Object (NameError)(Exception)",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9c6",
+      "text": "     定義できないローカル変数またはメソッド`歌《うた》の話《はなし》について'のためにメインオブジェクト(名前エラー)(例外)",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9c7",
+      "text": "      「[アリマス、アリマセン、アレハナンデスカ？]」みたいな訳になってしまう",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9c8",
+      "text": "      「歌《うた》の話《はなし》について」というメソッドはないですよ、と言っているのだろうか",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9c9",
+      "text": "     [エラーメッセージを読めるようになる]のは重要[inajob.icon][takker.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9ca",
+      "text": "      世の中には[人間に読ませる気のないエラーを大量に吐く言語]もあるんですよ……誰とは言いませんが特にC++とか[takker.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9cb",
+      "text": "      \t言ってるやんけ（）[Mijinko_SD.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9cc",
+      "text": "      なるほど[issac.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9cd",
+      "text": "       [https://qiita.com/scivola/items/3017068a354892b239f4 Ruby のエラーメッセージを読み解く（初心者向け）その 1 - Qiita]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9ce",
+      "text": "       ",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9cf",
+      "text": "    `p (1..5).cover?(3)`ならOK",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9d0",
+      "text": "     [https://gyazo.com/84e821c995883711d6d6b69be2cdc2e2]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9d1",
+      "text": "     1から5の範囲に3はありますか？→あります(True)。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9d2",
+      "text": "    [https://try.ruby-lang.org/playground/#code=p+(1..5).cover%3F(3)&engine=cruby-3.2.0dev TryRuby playground]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9d3",
+      "text": "    用事で出かけるので次回ここから",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9d4",
+      "text": "     課題を見ろ",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9d5",
+      "text": "     もっと初心者向けのドキュメントを探し、文字列を変更している例を探索すると[いいぞ。]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da5b6eb406000026469c",
+      "text": "   結局このRangeオブジェクトは関係なかった感[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1669519968,
+      "updated": 1669519994
+    },
+    {
+      "id": "6382da175e90c00000c5c9d6",
+      "text": " [たのしいRuby]を読む",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9d7",
+      "text": "  p.59~正規表現の項がある",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9d8",
+      "text": "   ホント文字列処理の話題に出てくるのねこの人(人でない)",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9d9",
+      "text": "   >正規表現を使うと、",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9da",
+      "text": "   > ・文字列とパターンの一致(マッチング)を調べる",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9db",
+      "text": "   > ・パターンを使った文字列の切り出し",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9dc",
+      "text": "   > などを手軽に行えます。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9dd",
+      "text": "   文字列・パターン・マッチングね",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9de",
+      "text": "   >正規表現と文字列のマッチングを行うには、",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9df",
+      "text": "   > `/パターン/ =~ マッチングしたい文字列`",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9e0",
+      "text": "   >と書きます",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9e1",
+      "text": "    もしかして正規表現惑星ルートに着陸し始めてる？？？",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da175e90c00000c5c9e2",
+      "text": "",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519895,
+      "updated": 1669519895
+    },
+    {
+      "id": "6382da405e90c00000c5c9e8",
+      "text": "次回→",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519936,
+      "updated": 1669519938
+    },
+    {
+      "id": "6382da425e90c00000c5c9e9",
+      "text": "",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1669519938,
+      "updated": 1669519938
+    }
+  ]
+}

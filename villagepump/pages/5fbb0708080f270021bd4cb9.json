@@ -1,0 +1,316 @@
+{
+  "id": "5fbb0708080f270021bd4cb9",
+  "title": "Scrapboxの任意の行に飛ぶ方法",
+  "created": 1606092559,
+  "updated": 1606147225,
+  "lines": [
+    {
+      "id": "5fbb0708080f270021bd4cb9",
+      "text": "Scrapboxの任意の行に飛ぶ方法",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092559,
+      "updated": 1606145117
+    },
+    {
+      "id": "5fbbd3521280f0000076aae6",
+      "text": "2020-11-24 00:20:54 できました！！！！",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606144851,
+      "updated": 1606144858
+    },
+    {
+      "id": "5fbbd35a1280f0000076aae7",
+      "text": "　`dispatchEvent`の対象を`span.c-${number}`にする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606144858,
+      "updated": 1606145196
+    },
+    {
+      "id": "5fbbd3891280f0000076aae8",
+      "text": "　`mousedown` eventを発行",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606144905,
+      "updated": 1606144923
+    },
+    {
+      "id": "5fbbd39a1280f0000076aae9",
+      "text": "　　引数は` button: 0, bubbles: true, cancelable: true, view: window`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606144923,
+      "updated": 1606145076
+    },
+    {
+      "id": "5fbbd4351280f0000076aaee",
+      "text": "　　マウスポインタの座標は指定しなくていい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606145077,
+      "updated": 1606145091
+    },
+    {
+      "id": "5fbbdbd81280f00000d11fd6",
+      "text": "　直後に同じ引数で`mouseup` eventを発行",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606147032,
+      "updated": 1606147051
+    },
+    {
+      "id": "5fbbdbeb1280f00000d11fd7",
+      "text": "　\tこれを発行しないと、mouse pointerの位置を誤認識して選択範囲が出てきてしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606147051,
+      "updated": 1606147082
+    },
+    {
+      "id": "5fbbdc821280f00000d11fd8",
+      "text": "　\tまた任意の文字に飛ぶためにも必要",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606147202,
+      "updated": 1606147225
+    },
+    {
+      "id": "5fbbd4611280f0000076aaef",
+      "text": "　そのうちUserScriptから簡単に使えるAPIを作っておきたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606145121,
+      "updated": 1606145137
+    },
+    {
+      "id": "5fbbd34c1280f0000076aae5",
+      "text": "[/icons/hr.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606144845,
+      "updated": 1606144848
+    },
+    {
+      "id": "5fbb07351280f000000b26e3",
+      "text": "タイトルにある方法を探しています。もしアイデアがあれば教えていただけるとありがたいです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092598,
+      "updated": 1606092623
+    },
+    {
+      "id": "5fbb09161280f000000b26fd",
+      "text": " [/q-a]の方がよければそっちに移動します",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606093078,
+      "updated": 1606093101
+    },
+    {
+      "id": "5fbb074e1280f000000b26e4",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092623,
+      "updated": 1606092623
+    },
+    {
+      "id": "5fbb074e1280f000000b26e5",
+      "text": "背景",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092623,
+      "updated": 1606092624
+    },
+    {
+      "id": "5fbb07801280f000000b26ed",
+      "text": " [/takker/ScrapVim]で「先頭行にジャンプ」「n行目にジャンプ」などのcommandを実装したい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092673,
+      "updated": 1606092719
+    },
+    {
+      "id": "5fbb07ae1280f000000b26ee",
+      "text": " `ArrowUp`などを連続して発行すれば、一応実現できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092719,
+      "updated": 1606092777
+    },
+    {
+      "id": "5fbb07ce1280f000000b26ef",
+      "text": "  `KeyboardEvent`をscriptから発行する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092750,
+      "updated": 1606092802
+    },
+    {
+      "id": "5fbb08011280f000000b26f0",
+      "text": " しかし大量にキーを連打するのは流石に効率が悪い",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092802,
+      "updated": 1606092831
+    },
+    {
+      "id": "5fbb081f1280f000000b26f1",
+      "text": " 一発で任意の行に飛べる方法を見つけたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092831,
+      "updated": 1606092852
+    },
+    {
+      "id": "5fbb07501280f000000b26e6",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092624,
+      "updated": 1606092624
+    },
+    {
+      "id": "5fbb07661280f000000b26e9",
+      "text": "理想",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092646,
+      "updated": 1606092648
+    },
+    {
+      "id": "5fbb07681280f000000b26eb",
+      "text": "\t指定した行idを持つ行に一発でcursorを移動させる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092648,
+      "updated": 1606092665
+    },
+    {
+      "id": "5fbb07661280f000000b26ea",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092646,
+      "updated": 1606092646
+    },
+    {
+      "id": "5fbb07501280f000000b26e7",
+      "text": "可能な方法",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092624,
+      "updated": 1606092639
+    },
+    {
+      "id": "5fbb075e1280f000000b26e8",
+      "text": "\tscriptで矢印キーを連打する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092639,
+      "updated": 1606092874
+    },
+    {
+      "id": "5fbb084f1280f000000b26f3",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092880,
+      "updated": 1606092880
+    },
+    {
+      "id": "5fbb084f1280f000000b26f4",
+      "text": "だめだったやつ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092880,
+      "updated": 1606092884
+    },
+    {
+      "id": "5fbb08541280f000000b26f5",
+      "text": "\t`任意の行要素.focus()`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092884,
+      "updated": 1606092907
+    },
+    {
+      "id": "5fbb086b1280f000000b26f6",
+      "text": "\t `<div>`に`focus()`はない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092908,
+      "updated": 1606092923
+    },
+    {
+      "id": "5fbb087b1280f000000b26f7",
+      "text": "\t任意の行要素に対して`MouseEvent`を発行",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092924,
+      "updated": 1606092962
+    },
+    {
+      "id": "5fbb08a51280f000000b26fa",
+      "text": "\t\t`clientX`と`ClientY`を設定しただけでは動かなかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092965,
+      "updated": 1606093012
+    },
+    {
+      "id": "5fbb08d31280f000000b26fc",
+      "text": "\t\t他のoptionも設定すれば動くかもしれない？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606093012,
+      "updated": 1606093028
+    },
+    {
+      "id": "5fbb07301280f000000b26e2",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092593,
+      "updated": 1606092593
+    },
+    {
+      "id": "5fbb08961280f000000b26f8",
+      "text": "#質問",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092951,
+      "updated": 1606092953
+    },
+    {
+      "id": "5fbb08971280f000000b26f9",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606092951,
+      "updated": 1606092951
+    },
+    {
+      "id": "5fbb6fe44daa920000d4bcf8",
+      "text": "どうやらdocumentについてるmousedownイベントで処理してるみたい[yuta0801.icon]",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1606119397,
+      "updated": 1606119415
+    },
+    {
+      "id": "5fbb6fe54daa920000d4bcf9",
+      "text": "\tただエミュレートするのは難しそう",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1606119397,
+      "updated": 1606119592
+    },
+    {
+      "id": "5fbb70aa4daa920000d4bcfb",
+      "text": "\t中でReactとかが噛まされてるし、独自の条件分岐もあるだろうから、条件を整えるのが大変",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1606119594,
+      "updated": 1606119628
+    },
+    {
+      "id": "5fbb70974daa920000d4bcfa",
+      "text": " `document`だったんですか！？[takker.icon]",
+      "userId": "5bc5772df30ff700134daa92",
+      "created": 1606119575,
+      "updated": 1606131055
+    },
+    {
+      "id": "5fbb9d6f1280f000000b7704",
+      "text": " \tてっきり`.lines`の親要素かと思っていた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606131055,
+      "updated": 1606131164
+    },
+    {
+      "id": "5fbb9d641280f000000b7703",
+      "text": " `mousedown`イベントを発行すればエミュレートできるか後で試してみます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606131044,
+      "updated": 1606131218
+    },
+    {
+      "id": "5fbb9e131280f000000b7707",
+      "text": " できました！！！アドバイスありがとうございます[takker.icon*5]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606131219,
+      "updated": 1606145110
+    },
+    {
+      "id": "5fbb9df11280f000000b7705",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1606131186,
+      "updated": 1606131186
+    }
+  ]
+}

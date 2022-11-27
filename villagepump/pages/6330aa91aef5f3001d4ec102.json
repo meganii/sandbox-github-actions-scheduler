@@ -1,0 +1,1667 @@
+{
+  "id": "6330aa91aef5f3001d4ec102",
+  "title": "ScrapboxでAnkiの問題を作る手法検討",
+  "created": 1664133783,
+  "updated": 1667046678,
+  "lines": [
+    {
+      "id": "6330aa91aef5f3001d4ec102",
+      "text": "ScrapboxでAnkiの問題を作る手法検討",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664133783,
+      "updated": 1664133794
+    },
+    {
+      "id": "6330aab51280f00000eaa78e",
+      "text": "とりあえず作業場を作成。中身は後ほど書きます[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664133814,
+      "updated": 1664133829
+    },
+    {
+      "id": "6330aaa11280f00000eaa78c",
+      "text": "他の人のアイデアもほしいので、個人プロジェクトではなく井戸端でやってみる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664133794,
+      "updated": 1664133857
+    },
+    {
+      "id": "6330aae21280f00000eaa790",
+      "text": "　期待[mtane0412.icon][はるひ.icon][mrsekut.icon][yuyasurarin.icon][miyamonz.icon]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1664133859,
+      "updated": 1666335536
+    },
+    {
+      "id": "6330aaae1280f00000eaa78d",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664133807,
+      "updated": 1664133807
+    },
+    {
+      "id": "633225e7aff09e0000a16e0b",
+      "text": "Ankiの元になった[SuperMemo]の作者は「文章を読みながら抜書きして行って最終的にクイズに変える」というやり方をしている[nishio.icon]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1664230887,
+      "updated": 1664292422
+    },
+    {
+      "id": "6332262daff09e0000a16e0e",
+      "text": "　[/nishio/incremental reading]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1664230957,
+      "updated": 1664230960
+    },
+    {
+      "id": "6333166ab8bbfc0000070dc2",
+      "text": "　[Readwise]のMastely機能もそれだ[はるひ.icon]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1664292458,
+      "updated": 1664292493
+    },
+    {
+      "id": "634deba11280f000005ca04f",
+      "text": "　[アクティブ読書]で[文章から箇条書きに直]すと[抜書き]っぽくなる[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666050977,
+      "updated": 1666051043
+    },
+    {
+      "id": "634debe41280f000005ca050",
+      "text": "　　これをAnkiに放り込めばいい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051044,
+      "updated": 1666051053
+    },
+    {
+      "id": "634debef1280f000005ca051",
+      "text": "　　まあそう単純にはいかないけど",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051055,
+      "updated": 1666051060
+    },
+    {
+      "id": "633225ecaff09e0000a16e0c",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1664230892,
+      "updated": 1664230892
+    },
+    {
+      "id": "634deb611280f000005ca04a",
+      "text": "学習側のplatform",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666050913,
+      "updated": 1666050929
+    },
+    {
+      "id": "634deb711280f000005ca04d",
+      "text": " Scrapboxで問題データを作り、Ankiにimportする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666050929,
+      "updated": 1666050957
+    },
+    {
+      "id": "634dec9b1280f000005ca059",
+      "text": "  このページではこの方法を検討する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051227,
+      "updated": 1666051234
+    },
+    {
+      "id": "634deb8d1280f000005ca04e",
+      "text": " [Scrapbox上でAnkiを実装]する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666050957,
+      "updated": 1666051218
+    },
+    {
+      "id": "634dec641280f000005ca056",
+      "text": "  これはパス",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051172,
+      "updated": 1666051175
+    },
+    {
+      "id": "634dec681280f000005ca057",
+      "text": "  理論上は可能",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051176,
+      "updated": 1666051187
+    },
+    {
+      "id": "634dec731280f000005ca058",
+      "text": "   [SM2 algorithm]とUIを実装すればいい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051187,
+      "updated": 1666051215
+    },
+    {
+      "id": "634deca61280f000005ca05a",
+      "text": "  [ScrapboxでAnkiの問題を作る手法検討#633225e7aff09e0000a16e0b]をスムーズにやりたいときは、究極これに取り組むのが一番拡張性高そう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051238,
+      "updated": 1666051263
+    },
+    {
+      "id": "634decbf1280f000005ca05b",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051263,
+      "updated": 1666051263
+    },
+    {
+      "id": "634ded3d1280f000005ca069",
+      "text": "[Anki]に直接インポートできる形式は以下の通り",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051389,
+      "updated": 1666051910
+    },
+    {
+      "id": "634decd21280f000005ca062",
+      "text": " [Anki用CSVファイル]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051282,
+      "updated": 1666051292
+    },
+    {
+      "id": "634ded321280f000005ca068",
+      "text": "  区切り文字は何でもいい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051378,
+      "updated": 1666051406
+    },
+    {
+      "id": "634ded701280f000005ca06c",
+      "text": "  利点",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051440,
+      "updated": 1666051442
+    },
+    {
+      "id": "634ded791280f000005ca06d",
+      "text": "   UserScriptなしでAnkiデータを作れる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051448,
+      "updated": 1666051457
+    },
+    {
+      "id": "634ded651280f000005ca06a",
+      "text": "    CSVで読み込めるので、[table記法]との相性がいい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051429,
+      "updated": 1666051465
+    },
+    {
+      "id": "634ded8d1280f000005ca06e",
+      "text": "  限界",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051469,
+      "updated": 1666051471
+    },
+    {
+      "id": "634ded8f1280f000005ca06f",
+      "text": "  　凝ったことはしにくい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051471,
+      "updated": 1666051478
+    },
+    {
+      "id": "634ded961280f000005ca070",
+      "text": "  　(UserScriptなしだと)HTMLで凝った問題を作りにくい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051479,
+      "updated": 1666051518
+    },
+    {
+      "id": "634dedbe1280f000005ca071",
+      "text": "  　 HTMLを書いたコードブロックと、圧縮してtableに入れ込んだものを同時に管理している[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051518,
+      "updated": 1666051586
+    },
+    {
+      "id": "634dee031280f000005ca073",
+      "text": "  　  例",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051587,
+      "updated": 1666051626
+    },
+    {
+      "id": "634dee061280f000005ca074",
+      "text": "   　  table:anki",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051603
+    },
+    {
+      "id": "634dee071280f000005ca075",
+      "text": "       PC-2022F-小テスト2\t<table><caption>セメント化学で使われる記法</caption><thead><tr><th>化合物名</th><th>化学式</th><th>略記法</th></tr></thead><tbody><tr><td>{{c1::Calcium Oxide}}</td><td>{{c1::\\(\\rm CaO\\)}}</td><td>{{c2::\\(\\rm C\\)}}</td></tr><tr><td>{{c1::Silicon Dioxide}}</td><td>{{c1::\\(\\rm SiO_2\\)}}</td><td>{{c2::\\(\\rm S\\)}}</td></tr><tr><td>{{c1::Aluminium(III) Oxide}}</td><td>{{c1::\\(\\rm {Al}_2O_3\\)}}</td><td>{{c2::\\(\\rm A\\)}}</td></tr><tr><td>{{c1::Iron(III) Oxide}}</td><td>{{c1::\\(\\rm {Fe}_2O_3\\)}}</td><td>{{c2::\\(\\rm F\\)}}</td></tr><tr><td>{{c1::Water}}</td><td>{{c1::\\(\\rm H_2O\\)}}</td><td>{{c2::\\(\\rm H\\)}}</td></tr></tbody></table>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051603
+    },
+    {
+      "id": "634dee071280f000005ca076",
+      "text": "       PC-2022F-小テスト2\t<table><caption>クリンカ鉱物の記法</caption><thead><tr><th>鉱物名</th><th>化学式</th><th>略記法</th></tr></thead><tbody><tr><td>{{c1::Alite}}</td><td>{{c1::\\(\\rm 3CaO\\cdot SiO_2\\)}}</td><td>{{c2::\\(\\rm C_3S\\)}}</td></tr><tr><td>{{c1::Belite}}</td><td>{{c1::\\(\\rm 2CaO\\cdot SiO_2\\)}}</td><td>{{c2::\\(\\rm C_2S\\)}}</td></tr><tr><td>{{c1::Aluminate}}</td><td>{{c1::\\(\\rm 3CaO\\cdot{Al}_2O_3\\)}}</td><td>{{c2::\\(\\rm C_3A\\)}}</td></tr><tr><td>{{c1::Ferrite}}</td><td>{{c1::\\(\\rm 4CaO\\cdot{Al}_2O_3\\cdot{Fe}_2O_3\\)}}</td><td>{{c2::\\(\\rm C_4AF\\)}}</td></tr></tbody></table>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051603
+    },
+    {
+      "id": "634dee071280f000005ca077",
+      "text": "      code:1.html",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051613
+    },
+    {
+      "id": "634dee071280f000005ca078",
+      "text": "       <table>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca079",
+      "text": "         <caption>セメント化学で使われる記法</caption>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca07a",
+      "text": "         <thead>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca07b",
+      "text": "           <tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca07c",
+      "text": "             <th>化合物名</th>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca07d",
+      "text": "             <th>化学式</th>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca07e",
+      "text": "             <th>略記法</th>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca07f",
+      "text": "           </tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca080",
+      "text": "         </thead>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca081",
+      "text": "         <tbody>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca082",
+      "text": "           <tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca083",
+      "text": "             <td>{{c1::Calcium Oxide}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca084",
+      "text": "             <td>{{c1::\\(\\rm CaO\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca085",
+      "text": "             <td>{{c2::\\(\\rm C\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca086",
+      "text": "           </tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca087",
+      "text": "           <tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca088",
+      "text": "             <td>{{c1::Silicon Dioxide}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca089",
+      "text": "             <td>{{c1::\\(\\rm SiO_2\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca08a",
+      "text": "             <td>{{c2::\\(\\rm S\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca08b",
+      "text": "           </tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca08c",
+      "text": "           <tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca08d",
+      "text": "             <td>{{c1::Aluminium(III) Oxide}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca08e",
+      "text": "             <td>{{c1::\\(\\rm {Al}_2O_3\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca08f",
+      "text": "             <td>{{c2::\\(\\rm A\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca090",
+      "text": "           </tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca091",
+      "text": "           <tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca092",
+      "text": "             <td>{{c1::Iron(III) Oxide}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca093",
+      "text": "             <td>{{c1::\\(\\rm {Fe}_2O_3\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca094",
+      "text": "             <td>{{c2::\\(\\rm F\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca095",
+      "text": "           </tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca096",
+      "text": "           <tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca097",
+      "text": "             <td>{{c1::Water}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca098",
+      "text": "             <td>{{c1::\\(\\rm H_2O\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca099",
+      "text": "             <td>{{c2::\\(\\rm H\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca09a",
+      "text": "           </tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca09b",
+      "text": "         </tbody>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca09c",
+      "text": "       </table>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051604
+    },
+    {
+      "id": "634dee071280f000005ca09d",
+      "text": "      code:2.html",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051617
+    },
+    {
+      "id": "634dee071280f000005ca09e",
+      "text": "       <table>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca09f",
+      "text": "         <caption>クリンカ鉱物の記法</caption>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0a0",
+      "text": "         <thead>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0a1",
+      "text": "           <tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0a2",
+      "text": "             <th>鉱物名</th>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0a3",
+      "text": "             <th>化学式</th>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0a4",
+      "text": "             <th>略記法</th>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0a5",
+      "text": "           </tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0a6",
+      "text": "         </thead>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0a7",
+      "text": "         <tbody>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0a8",
+      "text": "           <tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0a9",
+      "text": "             <td>{{c1::Alite}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0aa",
+      "text": "             <td>{{c1::\\(\\rm 3CaO\\cdot SiO_2\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0ab",
+      "text": "             <td>{{c2::\\(\\rm C_3S\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0ac",
+      "text": "           </tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0ad",
+      "text": "           <tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0ae",
+      "text": "             <td>{{c1::Belite}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0af",
+      "text": "             <td>{{c1::\\(\\rm 2CaO\\cdot SiO_2\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0b0",
+      "text": "             <td>{{c2::\\(\\rm C_2S\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0b1",
+      "text": "           </tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0b2",
+      "text": "           <tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0b3",
+      "text": "             <td>{{c1::Aluminate}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0b4",
+      "text": "             <td>{{c1::\\(\\rm 3CaO\\cdot{Al}_2O_3\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0b5",
+      "text": "             <td>{{c2::\\(\\rm C_3A\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0b6",
+      "text": "           </tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0b7",
+      "text": "           <tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0b8",
+      "text": "             <td>{{c1::Ferrite}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0b9",
+      "text": "             <td>{{c1::\\(\\rm 4CaO\\cdot{Al}_2O_3\\cdot{Fe}_2O_3\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0ba",
+      "text": "             <td>{{c2::\\(\\rm C_4AF\\)}}</td>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0bb",
+      "text": "           </tr>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0bc",
+      "text": "         </tbody>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee071280f000005ca0bd",
+      "text": "       </table>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051590,
+      "updated": 1666051610
+    },
+    {
+      "id": "634dee0f1280f000005ca0be",
+      "text": "     非常に管理がめんどくさい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051599,
+      "updated": 1666051642
+    },
+    {
+      "id": "634dee3a1280f000005ca0bf",
+      "text": "     　HTMLを圧縮するのがめんどくさい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051642,
+      "updated": 1666051647
+    },
+    {
+      "id": "634dee401280f000005ca0c0",
+      "text": "     　 script使えば楽にはなるが……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051647,
+      "updated": 1666051658
+    },
+    {
+      "id": "634dee4a1280f000005ca0c1",
+      "text": "     　手動で同期させるのがめんどくさい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051658,
+      "updated": 1666051665
+    },
+    {
+      "id": "634def801280f000005ca0d8",
+      "text": "   タグ付けが面倒",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051968,
+      "updated": 1666051974
+    },
+    {
+      "id": "634def891280f000005ca0da",
+      "text": "   問題の同一性を担保しにくい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051977,
+      "updated": 1666052025
+    },
+    {
+      "id": "634defb81280f000005ca0db",
+      "text": "   　何らかのIDを問題ごとに割り振るのが現実的だが、そのIDを作るのが面倒",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052025,
+      "updated": 1666052050
+    },
+    {
+      "id": "634dee581280f000005ca0c2",
+      "text": "   インポート方法がややこしい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051672,
+      "updated": 1666051707
+    },
+    {
+      "id": "634dee7b1280f000005ca0c3",
+      "text": "   　deck, card type, 列と対応させるfield、上書き設定などをすべてインポートするユーザが設定しなければならない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051707,
+      "updated": 1666051750
+    },
+    {
+      "id": "634deea61280f000005ca0c4",
+      "text": "   　問題作成者側で設定できない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051750,
+      "updated": 1666051766
+    },
+    {
+      "id": "634decdd1280f000005ca063",
+      "text": " [apkg]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051292,
+      "updated": 1666051298
+    },
+    {
+      "id": "634dece31280f000005ca064",
+      "text": "  学習記録を含めて記録できるAnkiのデータ形式",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051298,
+      "updated": 1666051330
+    },
+    {
+      "id": "634ded141280f000005ca067",
+      "text": "  学習記録を削ったものが[共有デッキ]として公開されている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051348,
+      "updated": 1666051367
+    },
+    {
+      "id": "634ded021280f000005ca065",
+      "text": "  実態は圧縮された[sqlite] DB",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051330,
+      "updated": 1666051345
+    },
+    {
+      "id": "634ded111280f000005ca066",
+      "text": "  利点",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051345,
+      "updated": 1666051769
+    },
+    {
+      "id": "634def061280f000005ca0cc",
+      "text": "   deckやcard typeの設定まで含めてexportできる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051846,
+      "updated": 1666051862
+    },
+    {
+      "id": "634deeb91280f000005ca0c5",
+      "text": "  限界",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051769,
+      "updated": 1666051770
+    },
+    {
+      "id": "634deeba1280f000005ca0c6",
+      "text": "  　[- apkg形式にデータを変換するprogramが存在しない]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051770,
+      "updated": 1667044805
+    },
+    {
+      "id": "635d15c51280f0000041fe6a",
+      "text": "    [- 技術的には可能なので作りたい][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1667044805,
+      "updated": 1667044805
+    },
+    {
+      "id": "635d15c51280f0000041fe6b",
+      "text": "     [- [sql.js]][- を使えばscrapboxのUserScript上でsqlite DBを操作できる]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1667044805,
+      "updated": 1667044805
+    },
+    {
+      "id": "635d15c51280f0000041fe6c",
+      "text": "      [- すでに動作確認済み]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1667044805,
+      "updated": 1667044805
+    },
+    {
+      "id": "635d15c81280f0000041fe6d",
+      "text": "   [あ り ま し た]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1667044808,
+      "updated": 1667045584
+    },
+    {
+      "id": "635d15d41280f0000041fe6e",
+      "text": "    https://github.com/repeat-space/anki-apkg-export",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1667044821,
+      "updated": 1667044905
+    },
+    {
+      "id": "635d15f71280f0000041fe71",
+      "text": "     `javascript port anki`で検索して見つけた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1667044855,
+      "updated": 1667044869
+    },
+    {
+      "id": "635d15d51280f0000041fe6f",
+      "text": "    [takker.icon]の調査不足だった……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1667044821,
+      "updated": 1667044829
+    },
+    {
+      "id": "635d15dd1280f0000041fe70",
+      "text": "    ま、まあ、実装前に発見できたからいいか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1667044829,
+      "updated": 1667044852
+    },
+    {
+      "id": "635d1cc01280f0000011e36b",
+      "text": "    実装は、[takker.icon]が考えたのとほぼ同じ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1667046592,
+      "updated": 1667046631
+    },
+    {
+      "id": "635d1ce81280f0000011e36c",
+      "text": "     dbを調査する手間が省けた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1667046632,
+      "updated": 1667046678
+    },
+    {
+      "id": "635d1c121280f0000011e368",
+      "text": "    server向けに設定されていて使いづらそうなので、refactoringする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1667046418,
+      "updated": 1667046489
+    },
+    {
+      "id": "635d1c591280f0000011e369",
+      "text": "     https://github.com/takker99/deno-anki",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1667046489,
+      "updated": 1667046492
+    },
+    {
+      "id": "635d1c5d1280f0000011e36a",
+      "text": "     明日書き換える",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1667046493,
+      "updated": 1667046504
+    },
+    {
+      "id": "634def2e1280f000005ca0d0",
+      "text": "データ作成方針",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051886,
+      "updated": 1666051894
+    },
+    {
+      "id": "634def361280f000005ca0d1",
+      "text": " [Anki用CSVファイル]を使う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051894,
+      "updated": 1666051916
+    },
+    {
+      "id": "634def551280f000005ca0d4",
+      "text": "  UserScript無し(現行)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051925,
+      "updated": 1666051932
+    },
+    {
+      "id": "634defd71280f000005ca0dc",
+      "text": "   上述した限界があるのでやめたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052054,
+      "updated": 1666052065
+    },
+    {
+      "id": "634defe11280f000005ca0dd",
+      "text": "  UserScript併用",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052065,
+      "updated": 1666052070
+    },
+    {
+      "id": "634defe61280f000005ca0de",
+      "text": "  　",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052070,
+      "updated": 1666052070
+    },
+    {
+      "id": "634def4f1280f000005ca0d2",
+      "text": " [apkg]を使う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666051919,
+      "updated": 1666051921
+    },
+    {
+      "id": "634defe91280f000005ca0df",
+      "text": "  Scrapbox projectをまるごとexportして、そのまま一つのapkgファイルに変換する、なんて使い方ができる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052073,
+      "updated": 1666052112
+    },
+    {
+      "id": "634df0101280f000005ca0e0",
+      "text": "  変換処理をbookmarkletにしておけば、ボタンひとつでいつでも最新の問題データを取得できて便利",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052112,
+      "updated": 1666052154
+    },
+    {
+      "id": "634df0401280f000005ca0e1",
+      "text": "  RSS pluginの仕組みを組み合わせれば、自動更新も可能かもしれない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052160,
+      "updated": 1666052183
+    },
+    {
+      "id": "634df0661280f000005ca0e4",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052198,
+      "updated": 1666052205
+    },
+    {
+      "id": "6351dec21280f000001d08ee",
+      "text": "ほしいもの",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666309827,
+      "updated": 1666309830
+    },
+    {
+      "id": "6351dec41280f000001d08f0",
+      "text": " 簡単に問題をCRUDする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666309830,
+      "updated": 1666309842
+    },
+    {
+      "id": "6351ded11280f000001d08f1",
+      "text": "  [2021/11/23#619c4b9119827000004256b1]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666309842,
+      "updated": 1666309843
+    },
+    {
+      "id": "6351ded31280f000001d08f2",
+      "text": "  Dはいらんかも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666309844,
+      "updated": 1666309847
+    },
+    {
+      "id": "6351dede1280f000001d08f3",
+      "text": "  CとUが楽にできればいい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666309855,
+      "updated": 1666309868
+    },
+    {
+      "id": "6351df061280f000001d08f6",
+      "text": "   目安は[Helpfeel記法]を書くくらいの労力ですませたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666309895,
+      "updated": 1666309931
+    },
+    {
+      "id": "6351deeb1280f000001d08f4",
+      "text": " HTMLは書きたくない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666309868,
+      "updated": 1666309883
+    },
+    {
+      "id": "6351dec21280f000001d08ef",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666309827,
+      "updated": 1666309827
+    },
+    {
+      "id": "634df06e1280f000005ca0e7",
+      "text": "やること",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052205,
+      "updated": 1666052210
+    },
+    {
+      "id": "634df0721280f000005ca0e8",
+      "text": "　どの方法を使うにしても決める必要のあること",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052210,
+      "updated": 1666052222
+    },
+    {
+      "id": "634df07e1280f000005ca0e9",
+      "text": "　 scrapbox上でのAnkiデータの表現方法",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052222,
+      "updated": 1666052237
+    },
+    {
+      "id": "634df08d1280f000005ca0ea",
+      "text": "　  どの塊を一つの問題とみなす？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052237,
+      "updated": 1666052256
+    },
+    {
+      "id": "634df0a01280f000005ca0eb",
+      "text": "　  card typeは単一にする？カスタムできるようにする?",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052256,
+      "updated": 1666765821
+    },
+    {
+      "id": "634df0b41280f000005ca0ec",
+      "text": "　  　取り組む問題を絞り込むため、最初はcloze問題に固定することにする[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052276,
+      "updated": 1666052303
+    },
+    {
+      "id": "634df0cf1280f000005ca0ed",
+      "text": "　 問題の同一性を担保する方法",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052303,
+      "updated": 1666052316
+    },
+    {
+      "id": "634df0dc1280f000005ca0ee",
+      "text": "　 　scriptで適当なIDを振るのが現実的",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052316,
+      "updated": 1666052331
+    },
+    {
+      "id": "634df0eb1280f000005ca0ef",
+      "text": "　 　 IDの",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052331,
+      "updated": 1666052346
+    },
+    {
+      "id": "634df0fa1280f000005ca0f0",
+      "text": "　 　 　桁数",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052346,
+      "updated": 1666052348
+    },
+    {
+      "id": "634df11a1280f000005ca0f5",
+      "text": "　 　 　 見やすくしたいので、短いIDにしたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052378,
+      "updated": 1666052403
+    },
+    {
+      "id": "634df10f1280f000005ca0f3",
+      "text": "　 　 　 `/[0-9a-zA-Z]/`を使えば、14桁くらいでも衝突しないか？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052367,
+      "updated": 1666053049
+    },
+    {
+      "id": "634df1791280f000005ca0f6",
+      "text": "　 　 　 [/shokai/短いIDの生成]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052472,
+      "updated": 1666052473
+    },
+    {
+      "id": "634df3191280f000005ca0f8",
+      "text": "　 　 　 [Nano ID]で作れるっぽい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052889,
+      "updated": 1666052897
+    },
+    {
+      "id": "634df17a1280f000005ca0f7",
+      "text": " 　 　 　 https://github.com/ai/nanoid/",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052474,
+      "updated": 1666052897
+    },
+    {
+      "id": "634df4941280f000005ca0fd",
+      "text": " 　 　 　 https://esm.sh/nanoid@4.0.0/non-secure",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053268,
+      "updated": 1666053285
+    },
+    {
+      "id": "634df4a61280f000005ca0fe",
+      "text": " 　 　 　  `Math.random()`でIDを作っているだけ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053285,
+      "updated": 1666053301
+    },
+    {
+      "id": "634df3271280f000005ca0f9",
+      "text": " 　 　 　 [IDの衝突確率]は[ここ https://zelark.github.io/nano-id-cc/]で計算できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052903,
+      "updated": 1666052917
+    },
+    {
+      "id": "634df35d1280f000005ca0fb",
+      "text": " 　 　 　 `/[0-9a-zA-Z]{14}/`で1回/秒 生成すると、生成開始から16000年目以降に1%の確率で1回衝突が起きる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052957,
+      "updated": 1666053067
+    },
+    {
+      "id": "634df3c91280f000005ca0fc",
+      "text": " 　 　 　 これだけ確率が低ければ、衝突しないと考えていいだろう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053065,
+      "updated": 1666053091
+    },
+    {
+      "id": "634df0fc1280f000005ca0f1",
+      "text": "　 　 　生成に利用する情報",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052348,
+      "updated": 1666052356
+    },
+    {
+      "id": "634df1041280f000005ca0f2",
+      "text": "　 　 　　完全ランダムでもあまり衝突しなさそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052356,
+      "updated": 1666052365
+    },
+    {
+      "id": "634df4be1280f000005ca0ff",
+      "text": "　 　 　　 ↑より衝突確率は無視できるほど小さいので、このままで行く",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053310,
+      "updated": 1666053327
+    },
+    {
+      "id": "634df4d01280f000005ca100",
+      "text": "　 　 　　行IDは使わない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053328,
+      "updated": 1666053337
+    },
+    {
+      "id": "634df4d91280f000005ca102",
+      "text": "　 　 　　　編集で容易に書き換わってしまうから",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053337,
+      "updated": 1666053350
+    },
+    {
+      "id": "6358d4c61280f0000055b866",
+      "text": "   どの時点で振る？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666766025,
+      "updated": 1666766038
+    },
+    {
+      "id": "6358d4d51280f0000055b867",
+      "text": "    apkgへexportするとき",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666766038,
+      "updated": 1666766157
+    },
+    {
+      "id": "6358d54b1280f0000055b86a",
+      "text": "     idのない問題に新しいidを降り、websocket経由で書き込む",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666766157,
+      "updated": 1666766158
+    },
+    {
+      "id": "6358d5031280f0000055b868",
+      "text": "      ユーザー側からみると楽だが、書き込み位置の調整などをまじめに組もうとするとかなり面倒",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666766085,
+      "updated": 1666766158
+    },
+    {
+      "id": "6358d52f1280f0000055b869",
+      "text": "     idのない問題を無視し、IDを振るようユーザーに警告を出す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666766129,
+      "updated": 1666766179
+    },
+    {
+      "id": "6358d5611280f0000055b86b",
+      "text": "      ユーザーは別途IDを作るUserScriptを使って、手作業で振っていく",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666766179,
+      "updated": 1666766199
+    },
+    {
+      "id": "634df0691280f000005ca0e5",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666052200,
+      "updated": 1666052200
+    },
+    {
+      "id": "634df5911280f000005ca106",
+      "text": "問題データに必要な情報",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053521,
+      "updated": 1666053525
+    },
+    {
+      "id": "634df5961280f000005ca108",
+      "text": " [穴埋め問題]の場合",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053526,
+      "updated": 1666054192
+    },
+    {
+      "id": "634df5ac1280f000005ca10c",
+      "text": " 　穴埋め箇所が指定された文章",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053548,
+      "updated": 1666053571
+    },
+    {
+      "id": "634df5c41280f000005ca10e",
+      "text": " 　　[裏表カード]とは違って、これだけで問題が成立する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053571,
+      "updated": 1666053595
+    },
+    {
+      "id": "634df5a41280f000005ca10a",
+      "text": "  　例：`{{c1::Aluminate}}は,水和熱が{{c2::大::大/中/小}}、短期強度への貢献は{{c2::大::大/中/小}}、長期強度への貢献は{{c2::小::大/中/小}}である`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053540,
+      "updated": 1666053737
+    },
+    {
+      "id": "6358d42a1280f0000055b864",
+      "text": "   穴埋め問題の作成支援scriptはもう作ってある[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765868,
+      "updated": 1666765885
+    },
+    {
+      "id": "6358d43c1280f0000055b865",
+      "text": "    [/takker/Ankiの穴埋めを作るPopupMenu]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765885,
+      "updated": 1666766005
+    },
+    {
+      "id": "634df5e01280f000005ca10f",
+      "text": "  タグ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053600,
+      "updated": 1666053601
+    },
+    {
+      "id": "634df5b41280f000005ca10d",
+      "text": "   カスタム学習しやすくするために作る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053556,
+      "updated": 1666053613
+    },
+    {
+      "id": "634df5ee1280f000005ca110",
+      "text": "   どういうルールでタグ付けするかが難しい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053614,
+      "updated": 1666053627
+    },
+    {
+      "id": "634df5fc1280f000005ca111",
+      "text": "  ID",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053628,
+      "updated": 1666053631
+    },
+    {
+      "id": "634df6001280f000005ca112",
+      "text": "  　問題データ更新用",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053632,
+      "updated": 1666053652
+    },
+    {
+      "id": "634df6151280f000005ca113",
+      "text": "  　同じIDの問題を上書きさせる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053653,
+      "updated": 1666053664
+    },
+    {
+      "id": "634df6221280f000005ca114",
+      "text": "  この3つで十分そうだな[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053667,
+      "updated": 1666053673
+    },
+    {
+      "id": "634df5921280f000005ca107",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053522,
+      "updated": 1666053522
+    },
+    {
+      "id": "634e1d951280f00000e44013",
+      "text": "問題数とページ数の関係",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666063765,
+      "updated": 1666063783
+    },
+    {
+      "id": "634e1db91280f00000e44017",
+      "text": " 1ページ1問題",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666063802,
+      "updated": 1666063805
+    },
+    {
+      "id": "6358d24c1280f0000055b852",
+      "text": "  利点",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765389,
+      "updated": 1666765391
+    },
+    {
+      "id": "6358d2501280f0000055b854",
+      "text": "   問題の範囲が明確",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765394,
+      "updated": 1666765401
+    },
+    {
+      "id": "6358d2581280f0000055b855",
+      "text": "    1ページ全てを一つの問題として変換すればいい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765401,
+      "updated": 1666765418
+    },
+    {
+      "id": "6358d24e1280f0000055b853",
+      "text": "  限界",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765391,
+      "updated": 1666765393
+    },
+    {
+      "id": "634e1dbd1280f00000e44018",
+      "text": "   ページが細かくなって使いづらくなりそう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666063805,
+      "updated": 1666765421
+    },
+    {
+      "id": "634e1ddd1280f00000e4401a",
+      "text": "    [1ページ当たりの情報量]は問題あたりの情報量よりずっと多い",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666063837,
+      "updated": 1666765421
+    },
+    {
+      "id": "634e1da71280f00000e44014",
+      "text": " 1ページn問題",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666063783,
+      "updated": 1666063800
+    },
+    {
+      "id": "634e1dc71280f00000e44019",
+      "text": "  これが妥当そう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666063815,
+      "updated": 1666063817
+    },
+    {
+      "id": "6358d26f1280f0000055b856",
+      "text": "  問題の境界を何で分けるか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765425,
+      "updated": 1666765449
+    },
+    {
+      "id": "6358d2921280f0000055b858",
+      "text": "   先行研究では、どれも特定の文字列で分割している",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765459,
+      "updated": 1666765588
+    },
+    {
+      "id": "6358d2871280f0000055b857",
+      "text": "    `[/icons/hr.icon]`[. [/daiiz/Scrapboxでレポートを書きたい] ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765449,
+      "updated": 1666765471
+    },
+    {
+      "id": "6358d2a01280f0000055b859",
+      "text": "    [/hata6502/draft 記法]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765474,
+      "updated": 1666765590
+    },
+    {
+      "id": "6358d3151280f0000055b85a",
+      "text": "   まあこの方法で分ければいいだろう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765591,
+      "updated": 1666765601
+    },
+    {
+      "id": "635c6ffe1280f0000026becd",
+      "text": "  [インライン問題方式を実験してみる]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1667002366,
+      "updated": 1667002393
+    },
+    {
+      "id": "634e1db01280f00000e44015",
+      "text": " nページ1問題",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666063792,
+      "updated": 1666063796
+    },
+    {
+      "id": "634e1db51280f00000e44016",
+      "text": "  これは問題を大きく作りすぎ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666063797,
+      "updated": 1666063874
+    },
+    {
+      "id": "634e1e011280f00000e4401b",
+      "text": "   [知識を構造化する20のルール]で分割する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666063874,
+      "updated": 1666063883
+    },
+    {
+      "id": "634e1e0b1280f00000e4401d",
+      "text": "  別のページのデータを参照して問題を作る場合がある？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666063883,
+      "updated": 1666063895
+    },
+    {
+      "id": "634e1d951280f00000e44012",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666063765,
+      "updated": 1666063765
+    },
+    {
+      "id": "6358d4031280f0000055b863",
+      "text": "そのうちやる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765828,
+      "updated": 1666765831
+    },
+    {
+      "id": "6358d3251280f0000055b85d",
+      "text": " 適用する[card type (Anki)]の設定方法",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765607,
+      "updated": 1666765832
+    },
+    {
+      "id": "6358d3721280f0000055b85f",
+      "text": "  cad typeを記述するページを作る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765684,
+      "updated": 1666765832
+    },
+    {
+      "id": "6358d3911280f0000055b860",
+      "text": "   表、裏、CSSをそれぞれ指定した名前のコードブロックに書き込んでおく",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765715,
+      "updated": 1666765832
+    },
+    {
+      "id": "6358d3aa1280f0000055b861",
+      "text": "  問題を記述した箇所に、特定の書式でそのページへのリンクを貼ると、そのcard typeを適用するよう設定する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765740,
+      "updated": 1666765832
+    },
+    {
+      "id": "6358d3de1280f0000055b862",
+      "text": "   アイコン記法で書けばいいだろう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765791,
+      "updated": 1666765853
+    },
+    {
+      "id": "6358d3251280f0000055b85e",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666765607,
+      "updated": 1666765607
+    },
+    {
+      "id": "634e1d731280f00000e44010",
+      "text": "これ以上は、目に見えるものを作りながら考えたほうがいいな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666063732,
+      "updated": 1666063751
+    },
+    {
+      "id": "634e1d871280f00000e44011",
+      "text": "　とりあえずなんかscript組むか。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666063751,
+      "updated": 1666063757
+    },
+    {
+      "id": "634df6881280f000005ca115",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053768,
+      "updated": 1666053768
+    },
+    {
+      "id": "634df6881280f000005ca116",
+      "text": "問題の作り方",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053768,
+      "updated": 1666053772
+    },
+    {
+      "id": "634df68c1280f000005ca118",
+      "text": " [知識を構造化する20のルール]を参照",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053772,
+      "updated": 1666053803
+    },
+    {
+      "id": "634df68a1280f000005ca117",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1666053770,
+      "updated": 1666053770
+    }
+  ]
+}

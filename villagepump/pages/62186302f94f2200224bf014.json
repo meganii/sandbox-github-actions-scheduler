@@ -1,0 +1,449 @@
+{
+  "id": "62186302f94f2200224bf014",
+  "title": "順番に見返すUserScript",
+  "created": 1645765378,
+  "updated": 1645765392,
+  "lines": [
+    {
+      "id": "62186302f94f2200224bf014",
+      "text": "順番に見返すUserScript",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765378
+    },
+    {
+      "id": "62186302aff09e0000954f45",
+      "text": "from [As We May Think]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765378
+    },
+    {
+      "id": "62186302aff09e0000954f46",
+      "text": "順番に見返すUserScript",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765378
+    },
+    {
+      "id": "62186302aff09e0000954f47",
+      "text": "　各ページの関連ページからランダムに(今までに見たページと被らないように)選んで順番に見れると良いのかな[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765392
+    },
+    {
+      "id": "62186302aff09e0000954f48",
+      "text": " ふむ[takker.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f49",
+      "text": "  code:script.js",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f4a",
+      "text": "   /** @type {URL[]} */",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f4b",
+      "text": "   const urls = [];",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f4c",
+      "text": "   /** @type {string} */",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f4d",
+      "text": "   let startURL = \"\";",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f4e",
+      "text": "   scrapbox.PageMenu.addItem({",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f4f",
+      "text": "     title: \"Random jump in relations\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f50",
+      "text": "     onClick: () => {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f51",
+      "text": "       if (startURL === \"\") {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f52",
+      "text": "         /** @type {HTMLAnchorElement[]} */",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f53",
+      "text": "         const cards = shuffle(Array.from(",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f54",
+      "text": "           document.querySelectorAll(",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f55",
+      "text": "             \"li.relation-label:not(.empty-links) ~ li.page-list-item a\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f56",
+      "text": "           )",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f57",
+      "text": "         ));",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f58",
+      "text": "         urls.push(",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f59",
+      "text": "           ...cards.map((a) => new URL(a.href))",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f5a",
+      "text": "         );",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f5b",
+      "text": "         if (urls.length === 0) {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f5c",
+      "text": "           alert(\"no items\");",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f5d",
+      "text": "           return;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f5e",
+      "text": "         }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f5f",
+      "text": "         startURL = location.href;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f60",
+      "text": "       }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f61",
+      "text": "       if (urls.length === 0) {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f62",
+      "text": "         alert(\"Back to the start page\");",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f63",
+      "text": "         move(startURL);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f64",
+      "text": "         startURL = \"\";",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f65",
+      "text": "         return;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f66",
+      "text": "       }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f67",
+      "text": "       move(urls.shift());",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f68",
+      "text": "     },",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f69",
+      "text": "   });",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f6a",
+      "text": "   ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f6b",
+      "text": "   /** @param {string | URL} url */",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f6c",
+      "text": "   function move(url) {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f6d",
+      "text": "     const a = document.createElement(\"a\");",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f6e",
+      "text": "     a.href = url;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f6f",
+      "text": "     document.body.append(a);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f70",
+      "text": "     a.click();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f71",
+      "text": "     a.remove();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f72",
+      "text": "   }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f73",
+      "text": "   ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f74",
+      "text": "   /** ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f75",
+      "text": "    * @template T",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f76",
+      "text": "    * @param {T[]} array",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f77",
+      "text": "    * @returns {T[]}",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f78",
+      "text": "    */",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f79",
+      "text": "   function shuffle(array) {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f7a",
+      "text": "     let result = [...array];",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f7b",
+      "text": "     for (let i = result.length; 1 < i; i--) {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f7c",
+      "text": "       const k = Math.floor(Math.random() * i);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f7d",
+      "text": "       [result[k], result[i - 1]] = [result[i - 1], result[k]];",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f7e",
+      "text": "     }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f7f",
+      "text": "     return result;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f80",
+      "text": "   }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f81",
+      "text": "   ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765387
+    },
+    {
+      "id": "62186302aff09e0000954f82",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1645765378,
+      "updated": 1645765378
+    }
+  ]
+}

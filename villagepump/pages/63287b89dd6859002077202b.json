@@ -1,0 +1,813 @@
+{
+  "id": "63287b89dd6859002077202b",
+  "title": "scrapboxをmarkdown editorにする",
+  "created": 1663597452,
+  "updated": 1664106696,
+  "lines": [
+    {
+      "id": "63287b89dd6859002077202b",
+      "text": "scrapboxをmarkdown editorにする",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663597452,
+      "updated": 1663597452
+    },
+    {
+      "id": "63287b8c5f1e0d000093326c",
+      "text": "[scrapboxをhtml editorにする#613b1dbd79d3a9000095d6a6]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663597452,
+      "updated": 1663597458
+    },
+    {
+      "id": "63287b925f1e0d000093326d",
+      "text": ">応用してMarkdown Editorとかもいけそう",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663597458,
+      "updated": 1663597475
+    },
+    {
+      "id": "63287ba45f1e0d000093326f",
+      "text": "というわけで作ってみた...",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663597476,
+      "updated": 1663597527
+    },
+    {
+      "id": "63287bd65f1e0d0000933270",
+      "text": " というのは嘘で後輩がmarkdownをscrapboxに置きたい、UserScriptあるんだからMarkdownもパースして表示できるよねと言われたので一緒に開発した",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663597527,
+      "updated": 1663597534
+    },
+    {
+      "id": "632ffc651280f00000ce3525",
+      "text": " そういえばリンク載せてませんでしたね[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664089191,
+      "updated": 1664089197
+    },
+    {
+      "id": "632ffc6c1280f00000ce3526",
+      "text": " 　コードは[/takker/ScrapHTMLEditor]です",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664089197,
+      "updated": 1664089203
+    },
+    {
+      "id": "632ffc731280f00000ce3527",
+      "text": " 　見つけられたかも？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664089204,
+      "updated": 1664089208
+    },
+    {
+      "id": "63287c425f1e0d0000933273",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663597635,
+      "updated": 1663597635
+    },
+    {
+      "id": "63287c435f1e0d0000933274",
+      "text": "コード",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663597635,
+      "updated": 1663597637
+    },
+    {
+      "id": "6328fe475f1e0d0000933275",
+      "text": " 1. https://cdn.jsdelivr.net/npm/marked/marked.min.js",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663630919,
+      "updated": 1663630924
+    },
+    {
+      "id": "6328fe4e5f1e0d0000933276",
+      "text": "  これをどこか読み込めるところに置いてimportする",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663630926,
+      "updated": 1663630935
+    },
+    {
+      "id": "633040781280f00000e29807",
+      "text": "  [install-CDN]のようなコードを使えば、script中でimportさせられます[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664106617,
+      "updated": 1664106696
+    },
+    {
+      "id": "6328fe5a5f1e0d0000933277",
+      "text": " 2. ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663630938,
+      "updated": 1663630951
+    },
+    {
+      "id": "6328fe675f1e0d0000933279",
+      "text": " \tcode:script.js",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663630951,
+      "updated": 1663630952
+    },
+    {
+      "id": "6328fec15f1e0d000093327b",
+      "text": "   new Function(await (await fetch(`ここに下のmod.jsのリンクを張る`, {method: \"GET\"})).text())();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1663631041,
+      "updated": 1664106483
+    },
+    {
+      "id": "6328fec15f1e0d000093327d",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1663631041,
+      "updated": 1664106463
+    },
+    {
+      "id": "633040651280f00000e29806",
+      "text": "  2.と3.を分離した理由がわからなかった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1664106598,
+      "updated": 1664106614
+    },
+    {
+      "id": "6328fef05f1e0d000093327e",
+      "text": " 3. ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631088,
+      "updated": 1663631089
+    },
+    {
+      "id": "6328fef25f1e0d000093327f",
+      "text": "  code:mod.js",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631090,
+      "updated": 1663631094
+    },
+    {
+      "id": "6328fef85f1e0d0000933280",
+      "text": "    function changemode() {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631096,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332b0",
+      "text": "         const editor = document.querySelector(\"#app-container > div > div:nth-child(5) > div.col-page > div.page-wrapper > div.drag-and-drop-enter\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1663631185,
+      "updated": 1664106498
+    },
+    {
+      "id": "6328ff515f1e0d00009332b1",
+      "text": "         if (editor.style.display == \"none\") {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332b2",
+      "text": "             editor.style.display = \"inherit\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332b3",
+      "text": "         }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332b4",
+      "text": "         else {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332b5",
+      "text": "             editor.style.display = \"none\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332b6",
+      "text": "         }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332b7",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332b8",
+      "text": "     function hidemode() {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332b9",
+      "text": "         const editor = document.querySelector(\"#app-container > div > div:nth-child(5) > div.col-page > div.page-wrapper > div.drag-and-drop-enter\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1663631185,
+      "updated": 1664106502
+    },
+    {
+      "id": "6328ff515f1e0d00009332ba",
+      "text": "         editor.style.display = \"none\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332bb",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332bc",
+      "text": "        ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332bd",
+      "text": "     scrapbox.PageMenu.addMenu({",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332be",
+      "text": "         title: 'open md window',",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332bf",
+      "text": "         image: 'https://scrapbox.io/files/6327da4ef4f7ba001d8a17e0.png',",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332c0",
+      "text": "         onClick: () => {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332c1",
+      "text": "             const url = `/api/code/mdinsb/md-test/html`;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332c2",
+      "text": "             const w = window.open(\"\", \"window1\", \"width=500,height=500\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332c3",
+      "text": "             let k = \"\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332c4",
+      "text": "             scrapbox.Page.lines.forEach(e => k += e.text + \"\\n\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332c5",
+      "text": "             w.document.write(marked.parse(rmmd(k)));",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332c6",
+      "text": "             fetch(url).then(res => res.text()).then(html => w.document.write(html));",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332c7",
+      "text": "         }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332c8",
+      "text": "     })",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332c9",
+      "text": "     function rmmd(md) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332ca",
+      "text": "         return `# ${md.replace(/code\\:/g, \"```\")}`;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1663631185,
+      "updated": 1664106550
+    },
+    {
+      "id": "6328ff515f1e0d00009332cb",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332cc",
+      "text": "        ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332cd",
+      "text": "     function update() {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332ce",
+      "text": "             document.querySelectorAll('.page a.page-link').forEach((e) => e.href=\"\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332cf",
+      "text": "         if (document.getElementById(\"mdarea\") == null) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332d0",
+      "text": "             let mdarea = document.createElement(\"div\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332d1",
+      "text": "             mdarea.id = \"mdarea\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332d2",
+      "text": "             let visiblebutton = document.createElement(\"button\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332d3",
+      "text": "             visiblebutton.id = \"editorbutton\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332d4",
+      "text": "             visiblebutton.innerHTML = \"editor\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332d5",
+      "text": "             visiblebutton.onclick = function () { changemode() };",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332d6",
+      "text": "             document.querySelector(\"#app-container > div > div:nth-child(5) > div.col-page\").prepend(visiblebutton);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332d7",
+      "text": "             document.querySelector(\"#app-container > div > div:nth-child(5) > div.col-page\").prepend(mdarea);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332d8",
+      "text": "         }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332d9",
+      "text": "         let k = \"\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332da",
+      "text": "         scrapbox.Page.lines.forEach(e => k += e.text + \"\\n\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332db",
+      "text": "         let mdhtml = marked.parse(rmmd(k));",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332dc",
+      "text": "         document.getElementById(\"mdarea\").innerHTML = mdhtml;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332dd",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332de",
+      "text": "        ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332df",
+      "text": "     async function loadstyle() {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332e0",
+      "text": "         let stylect = await (await fetch(`ここに下のCSSのコードのリンクを張り付ける`, { method: \"GET\" })).text();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631255
+    },
+    {
+      "id": "6328ff515f1e0d00009332e1",
+      "text": "         let style = document.createElement(\"style\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332e2",
+      "text": "         style.innerHTML = stylect;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332e3",
+      "text": "         document.getElementsByTagName(\"style\")[0].appendChild(style);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332e4",
+      "text": "     } loadstyle();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332e5",
+      "text": "        ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332e6",
+      "text": "     function changedpage() {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332e7",
+      "text": "         hidemode(); update();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332e8",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332e9",
+      "text": "     scrapbox.on('lines:changed', update);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff515f1e0d00009332ea",
+      "text": "     changedpage();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631185,
+      "updated": 1663631185
+    },
+    {
+      "id": "6328ff0c5f1e0d0000933281",
+      "text": " 4. ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631116,
+      "updated": 1663631118
+    },
+    {
+      "id": "6328ff0f5f1e0d0000933282",
+      "text": "  code:md.css",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631119,
+      "updated": 1663631126
+    },
+    {
+      "id": "6328ff135f1e0d0000933283",
+      "text": "   div#mdarea {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631122,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933284",
+      "text": "         padding: 10px;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933285",
+      "text": "         background-color: rgba(250,250,250,0.7);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933286",
+      "text": "         width:100%;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933287",
+      "text": "         padding: 40px;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933288",
+      "text": "         border-radius: 10px;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933289",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d000093328a",
+      "text": "     div#mdarea pre {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d000093328b",
+      "text": "         background-color: rgba(0,0,0,0.2);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d000093328c",
+      "text": "         border: 1px solid rgba(0,0,0,0.8);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d000093328d",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d000093328e",
+      "text": "     button#editorbutton {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933290",
+      "text": "         margin-top: 10px;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933291",
+      "text": "         border: 1px solid rgba(200,200,200,0.8);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933292",
+      "text": "         padding: 5px 15px 5px 15px;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933293",
+      "text": "         border-radius: 5px;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933294",
+      "text": "         background-color: rgba(245,245,245,0.8);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933295",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933296",
+      "text": "     button#editorbutton:hover {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933297",
+      "text": "         background-color: rgba(230,230,230,0.8);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933298",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d0000933299",
+      "text": "     button#editorbutton:active {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d000093329a",
+      "text": "         border: 1px solid rgba(150,150,150,0.8);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d000093329b",
+      "text": "         background-color: rgba(200,200,200,0.8);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d000093329c",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d000093329d",
+      "text": "     ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d000093329e",
+      "text": "     #app-container > div > div:nth-child(5) > div.col-page > div.page-wrapper > div.drag-and-drop-enter {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d000093329f",
+      "text": "         margin-top: 20px;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d00009332a0",
+      "text": "     } ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d00009332a1",
+      "text": "     span.indent-mark {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d00009332a2",
+      "text": "         display:none;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631128
+    },
+    {
+      "id": "6328ff185f1e0d00009332a3",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663631128,
+      "updated": 1663631938
+    },
+    {
+      "id": "63287ba25f1e0d000093326e",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1663597475,
+      "updated": 1663597475
+    }
+  ]
+}

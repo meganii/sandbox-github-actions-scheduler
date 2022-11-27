@@ -1,0 +1,204 @@
+{
+  "id": "6055a7263e3c77001d046957",
+  "title": "井戸端日記からランダムに1日を開く",
+  "created": 1616226093,
+  "updated": 1649585079,
+  "lines": [
+    {
+      "id": "6055a7263e3c77001d046957",
+      "text": "井戸端日記からランダムに1日を開く",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1616226093,
+      "updated": 1616226095
+    },
+    {
+      "id": "606072dc246f590000371f31",
+      "text": "",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1616933596,
+      "updated": 1616933596
+    },
+    {
+      "id": "6055a72f246f590000da19df",
+      "text": "https://idy.herokuapp.com/drand",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1616226095,
+      "updated": 1618641003
+    },
+    {
+      "id": "6055a73e246f590000da19e1",
+      "text": "[ランダム]に[日記ページ]を開きます",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1616226111,
+      "updated": 1616226132
+    },
+    {
+      "id": "60c0bce0246f590000775deb",
+      "text": "ちなみに今日で[https://idy.herokuapp.com/dcs/2020/10/9#.svg https://idy.herokuapp.com/drand]分の日記がある",
+      "userId": "6231f8cd37b7b8001d895f8c",
+      "created": 1623244000,
+      "updated": 1649585079
+    },
+    {
+      "id": "60c0bce2246f590000775dec",
+      "text": "",
+      "userId": "6055950b87138f0022246f59",
+      "created": 1623244003,
+      "updated": 1623244003
+    },
+    {
+      "id": "6216e9b61280f0000041a89c",
+      "text": "UserScript版",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645668790,
+      "updated": 1645668800
+    },
+    {
+      "id": "6216e9c11280f0000041a89f",
+      "text": " code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645668800,
+      "updated": 1645668804
+    },
+    {
+      "id": "6216e9c41280f0000041a8a0",
+      "text": "  scrapbox.PageMenu.addItem({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645668804,
+      "updated": 1645668814
+    },
+    {
+      "id": "6216e9cf1280f0000041a8a1",
+      "text": "    title: \"Random diary\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645668814,
+      "updated": 1645668827
+    },
+    {
+      "id": "6216e9dc1280f0000041a8a2",
+      "text": "    onClick: () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645668827,
+      "updated": 1645668835
+    },
+    {
+      "id": "6216e9e41280f0000041a8a3",
+      "text": "      const diaries = scrapbox.Project.pages.filter(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645668835,
+      "updated": 1645668872
+    },
+    {
+      "id": "6216ea071280f0000041a8a4",
+      "text": "        ({ title, exists }) =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645668872,
+      "updated": 1645668896
+    },
+    {
+      "id": "6216ea201280f0000041a8a5",
+      "text": "          exists && /\\d{4}\\/\\d{2}\\/\\d{2}/.test(title)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645668896,
+      "updated": 1645668906
+    },
+    {
+      "id": "6216ea2b1280f0000041a8a6",
+      "text": "      );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645668906,
+      "updated": 1645668911
+    },
+    {
+      "id": "6216ea3b1280f0000041a8a7",
+      "text": "      const title = diaries[",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645668923,
+      "updated": 1645668955
+    },
+    {
+      "id": "6216ea5a1280f0000041a8a8",
+      "text": "        Math.floor(Math.random() * diaries.length)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645668955,
+      "updated": 1645669170
+    },
+    {
+      "id": "6216e9b91280f0000041a89d",
+      "text": "      ].title;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645668793,
+      "updated": 1645669083
+    },
+    {
+      "id": "6216eadc1280f0000041a8ac",
+      "text": "      const project = scrapbox.Project.name;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645669084,
+      "updated": 1645669092
+    },
+    {
+      "id": "6216eae41280f0000041a8ad",
+      "text": "      ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645669092,
+      "updated": 1645669092
+    },
+    {
+      "id": "6216eae51280f0000041a8ae",
+      "text": "      const a = document.createElement(\"a\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645669093,
+      "updated": 1645669105
+    },
+    {
+      "id": "6216eaf21280f0000041a8af",
+      "text": "      a.href = `/${project}/${encodeURIComponent(title)}`;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645669105,
+      "updated": 1645669129
+    },
+    {
+      "id": "6216eb0a1280f0000041a8b0",
+      "text": "      document.body.append(a);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645669129,
+      "updated": 1645669138
+    },
+    {
+      "id": "6216eb121280f0000041a8b1",
+      "text": "      a.click();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645669138,
+      "updated": 1645669140
+    },
+    {
+      "id": "6216eb151280f0000041a8b2",
+      "text": "      a.remove();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645669140,
+      "updated": 1645669143
+    },
+    {
+      "id": "6216eb181280f0000041a8b3",
+      "text": "    },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645669143,
+      "updated": 1645669145
+    },
+    {
+      "id": "6216eb191280f0000041a8b4",
+      "text": "  });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645669145,
+      "updated": 1645669205
+    },
+    {
+      "id": "6216ead61280f0000041a8ab",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1645669078,
+      "updated": 1645669078
+    }
+  ]
+}

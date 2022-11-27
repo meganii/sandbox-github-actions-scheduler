@@ -1,0 +1,757 @@
+{
+  "id": "60483c41337978001c342cc2",
+  "title": "Page MenuからScrapCalcを動かす",
+  "created": 1615346755,
+  "updated": 1627798763,
+  "lines": [
+    {
+      "id": "60483c41337978001c342cc2",
+      "text": "Page MenuからScrapCalcを動かす",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c5a8ee92a000025ff5d",
+      "text": "#Scrapboxをスプレッドシートのように使う",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346778,
+      "updated": 1615346780
+    },
+    {
+      "id": "60483c5b8ee92a000025ff5e",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346779,
+      "updated": 1615346779
+    },
+    {
+      "id": "60483c438ee92a000025ff1e",
+      "text": "[https://i.gyazo.com/644f0be1ccfee5ff59fceb248e68efcc.gif]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff1f",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff20",
+      "text": " 以下のUserCSSとUserScriptで[ScrapCalc]を[Page Menu]から呼ぶことができます [増井俊之.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1615346755,
+      "updated": 1646400188
+    },
+    {
+      "id": "60483cbd8ee92a0000dd8ca4",
+      "text": "  (ブックマークレット不要になりました)",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346878,
+      "updated": 1615346886
+    },
+    {
+      "id": "60483c438ee92a000025ff21",
+      "text": " [*/ 激しく苦しい方法で] `a = 10` [*/ みたいなグローバル変数にアクセスできるようにしている]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff22",
+      "text": "  UserScriptは`strict`なので `a=10`みたいなのを`eval`しても変数未定義エラーになってしまうらしいので",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff23",
+      "text": "  変数名に日本語使うとわかりやすい",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "604874ce1280f000008a4a3d",
+      "text": "  計算結果をDOMに反映する処理までまとめて`Function()`に放り込んでいるんですね[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615361229,
+      "updated": 1615361308
+    },
+    {
+      "id": "6048751e1280f000008a4a3e",
+      "text": "   [その発想はなかった]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615361308,
+      "updated": 1615361325
+    },
+    {
+      "id": "604875321280f000008a4a3f",
+      "text": "   勉強になります",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615361329,
+      "updated": 1615361336
+    },
+    {
+      "id": "60483c438ee92a000025ff24",
+      "text": " 実装が苦しいのはともかく、こういうのは便利だと思います [増井俊之.icon]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615348405
+    },
+    {
+      "id": "60483c438ee92a000025ff25",
+      "text": "　因みに配列に対応とか難しいですか？[air34n.icon]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615416253
+    },
+    {
+      "id": "60494ca98ee92a00002e0353",
+      "text": "　 配列欲しいですが、 `]` が修飾記法の区切りだと思われてしまいますね... [増井俊之.icon]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615416490,
+      "updated": 1615416545
+    },
+    {
+      "id": "6049db38385a920000e2f3b3",
+      "text": "　 　数式記法`[$ [hoge] ]`の場合、一番最後の`]`がスペースついて` ]`だとそっちを記法の綴じカッコとして解釈されます[miyamonz.icon]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1615452984,
+      "updated": 1615453067
+    },
+    {
+      "id": "6049db45385a920000e2f3b4",
+      "text": "　 　 [$ [hoge] ]こんなん",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1615452997,
+      "updated": 1615453076
+    },
+    {
+      "id": "6049db94385a920000e2f3bb",
+      "text": "　 　 なので他の記法でもこういうふうにしてもらうよう要望するのも良いかも？",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1615453076,
+      "updated": 1615453119
+    },
+    {
+      "id": "6049dbcc385a920000e2f3bd",
+      "text": "　 　 　他の影響がありそうで難しいかな",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1615453132,
+      "updated": 1615453140
+    },
+    {
+      "id": "6049e16b8ee92a0000198150",
+      "text": "　 　 あーなるほど [増井俊之.icon]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615454572,
+      "updated": 1615454575
+    },
+    {
+      "id": "60495e008ee92a0000de89df",
+      "text": "　 `[= a［10］]` みたいに全角文字で`[`を書くととりあえず動くようにしました",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615420929,
+      "updated": 1615454577
+    },
+    {
+      "id": "6049e2341d860a0000219893",
+      "text": "　 　ありがとうございますぅ[air34n.icon]",
+      "userId": "58e5636749e40700111d860a",
+      "created": 1615454774,
+      "updated": 1615454792
+    },
+    {
+      "id": "60483c438ee92a000025ff26",
+      "text": "[[サンプル]]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff27",
+      "text": " [% a = 10] [% b = 20]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1627798708
+    },
+    {
+      "id": "60483c438ee92a000025ff28",
+      "text": "  a × b = [% a * b ]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1627798710
+    },
+    {
+      "id": "60486a9c8ee92a0000de1f9e",
+      "text": " 東京オリンピックまで [% Math.floor((new Date(2021,7,23) - Date.now()) / (24 * 60 * 60 * 1000))] 日",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615358621,
+      "updated": 1627798719
+    },
+    {
+      "id": "60496aae8ee92a0000dcc93c",
+      "text": "  あれ、計算違ってる? [増井俊之.icon]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615424175,
+      "updated": 1615424184
+    },
+    {
+      "id": "60496fa38ee92a0000f38508",
+      "text": "  東京オリンピックまで [% Math.floor((new Date(2021,6,23) - Date.now()) / (24 * 60 * 60 * 1000))] 日 が正しいようだ",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615425444,
+      "updated": 1627798731
+    },
+    {
+      "id": "604b7ab4e5172d00004fb219",
+      "text": "  　（もうすぐ[$ \\inf]になりそうな…）[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1615559341,
+      "updated": 1615559385
+    },
+    {
+      "id": "60496fbf8ee92a00005ce8a7",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615425472,
+      "updated": 1615425472
+    },
+    {
+      "id": "60483c438ee92a000025ff2a",
+      "text": "[[応用例]]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff2b",
+      "text": " [スプレッドシート]みたいに使う",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff2c",
+      "text": " 電卓みたいにちょっとした計算に使う ",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615386648
+    },
+    {
+      "id": "6048d8178ee92a00000febb7",
+      "text": "  [$ \\sqrt{2}] = [% Math.sqrt(2)]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615386648,
+      "updated": 1627798744
+    },
+    {
+      "id": "6048d81c8ee92a00000febb8",
+      "text": "  今日の日付 = [% Date()]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615386652,
+      "updated": 1627798746
+    },
+    {
+      "id": "604842ed8ee92a0000facd77",
+      "text": "  PI = [% Math.atan(1) * 4]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615348462,
+      "updated": 1627798749
+    },
+    {
+      "id": "604875441280f000008a4a40",
+      "text": "  この用途の場合だと、DOMではなくscrapbox上の文字自体を書き換えた方が便利そう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615361347,
+      "updated": 1615361409
+    },
+    {
+      "id": "60485cae8ee92a0000bb43c1",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615355054,
+      "updated": 1615355054
+    },
+    {
+      "id": "604842ed8ee92a0000facd78",
+      "text": "[[Issues]]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615348462,
+      "updated": 1615348465
+    },
+    {
+      "id": "604842f18ee92a0000facd79",
+      "text": " リロードしてからでないと再計算できない",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615348465,
+      "updated": 1615354671
+    },
+    {
+      "id": "60485ccd8ee92a0000bb43c2",
+      "text": "  innerHTMLを書き換えるのをやめればいいのか?",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615355086,
+      "updated": 1615355913
+    },
+    {
+      "id": "604874171280f000008a4a3b",
+      "text": "  対策",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615361046,
+      "updated": 1615361049
+    },
+    {
+      "id": "604873f41280f000008a4a3a",
+      "text": "   書き換えたDOMを何らかの形で保持しておく",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615361010,
+      "updated": 1615361051
+    },
+    {
+      "id": "6048741e1280f000008a4a3c",
+      "text": "    DOMにdata属性を持たせるのが簡単かも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615361053,
+      "updated": 1615361077
+    },
+    {
+      "id": "604974168ee92a0000e2ce61",
+      "text": "   DOM書き換えるのをやめればいい?",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615426583,
+      "updated": 1615426596
+    },
+    {
+      "id": "6049aa388ee92a00004a489e",
+      "text": " リロードでなくてもいいのか",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615440440,
+      "updated": 1615440446
+    },
+    {
+      "id": "6049aa488ee92a00004a48a0",
+      "text": "  ページ移動したら再計算できる",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615440456,
+      "updated": 1615440465
+    },
+    {
+      "id": "60483c438ee92a000025ff2d",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff2e",
+      "text": "[[使い方]]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff2f",
+      "text": " 以下のUserCSSとUserScriptを自分のページに貼ると使えます",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff30",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff31",
+      "text": "`[% 数式 = 0]` ⇒ [% 数式 = 0]",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1627798763
+    },
+    {
+      "id": "60483c438ee92a000025ff32",
+      "text": "code:style.css",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff33",
+      "text": "  .deco-\\= {",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff34",
+      "text": "    color: #111;",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff35",
+      "text": "    background-color: #ffddff;",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff36",
+      "text": "    padding: 0.1em 0.2em 0.1em 0.2em;",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff37",
+      "text": "  }",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff38",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60488bb78ee92a00000ddc39",
+      "text": "[https://stackoverflow.com/questions/6020178/can-i-disable-ecmascript-strict-mode-for-specific-functions javascript - Can I disable ECMAscript strict mode for specific functions? - Stack Overflow] の方法 を利用",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615367095,
+      "updated": 1615369739
+    },
+    {
+      "id": "60483c438ee92a000025ff39",
+      "text": "code:script.js",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff3a",
+      "text": " function strict(){",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff3b",
+      "text": "    const commands = [];",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615370465
+    },
+    {
+      "id": "60483c438ee92a000025ff3c",
+      "text": "    let count = 0;",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff3d",
+      "text": "    for(let expr of document.querySelectorAll('.deco-\\\\=')){",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff3e",
+      "text": "       const text = expr.innerText;",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615370588
+    },
+    {
+      "id": "60483c438ee92a000025ff3f",
+      "text": "       if(text.match(/=/)){",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60496a578ee92a00003cdf5e",
+      "text": "           // 全角 ［ を半角 [ にする",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615424087,
+      "updated": 1615424110
+    },
+    {
+      "id": "60483c438ee92a000025ff40",
+      "text": "           commands.push(decodeURI(text.replace(/［/g,'[').replace(/］/g,']')) + ';');",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615424070
+    },
+    {
+      "id": "60483c438ee92a000025ff41",
+      "text": "       }",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff42",
+      "text": "       else {",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff43",
+      "text": "           let processed = false;",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff44",
+      "text": "           for(let e of expr.children){",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff45",
+      "text": "               let id = `scrapcalc_element_id_${count}`;",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff46",
+      "text": "               e.id = id;",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff47",
+      "text": "               if(processed){",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff48",
+      "text": "                   commands.push(`document.getElementById(\"${id}\").innerHTML = \"\";`);",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff49",
+      "text": "               }",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff4a",
+      "text": "               else {",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff4b",
+      "text": "                  processed = true;",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff4c",
+      "text": "                  commands.push(`document.getElementById(\"${id}\").innerHTML = \"<span style='font-style:italic;font-weight:bold;'>\"+(${decodeURI(text.replace(/［/g,'[').replace(/］/g,']'))})+\"</span>\";`);",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615424080
+    },
+    {
+      "id": "60483c438ee92a000025ff4d",
+      "text": "               }",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff4e",
+      "text": "               count += 1;",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff4f",
+      "text": "           }",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff50",
+      "text": "       }",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff51",
+      "text": "    }",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff52",
+      "text": "    return commands.join(\"\\n\");",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff53",
+      "text": " }",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff54",
+      "text": " scrapbox.PageMenu.addMenu({",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff55",
+      "text": "    title: 'ScrapCalc',",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff56",
+      "text": "    image: 'https://gyazo.com/5441ee8eb0bf51650a91751e48669c21/thumb/48',",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    },
+    {
+      "id": "60483c438ee92a000025ff57",
+      "text": "    onClick: () => {",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615370277
+    },
+    {
+      "id": "60483c438ee92a000025ff58",
+      "text": "       const sneaky = Function(`(() => {${strict()}})();`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615370277,
+      "updated": 1615370277
+    },
+    {
+      "id": "60483c438ee92a000025ff59",
+      "text": "       sneaky();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615370277,
+      "updated": 1615370277
+    },
+    {
+      "id": "60483c438ee92a000025ff5a",
+      "text": "    },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1615370277,
+      "updated": 1615370280
+    },
+    {
+      "id": "60483c438ee92a000025ff5b",
+      "text": " });",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615370085
+    },
+    {
+      "id": "60499b1a8ee92a000013005b",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615436571,
+      "updated": 1615436573
+    },
+    {
+      "id": "60499b2c8ee92a000013005d",
+      "text": "以下のようにするとショートカットキー(Ctrl-C)で呼び出せる",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615436589,
+      "updated": 1615436633
+    },
+    {
+      "id": "60499b1b8ee92a000013005c",
+      "text": "code:script.js",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615436573,
+      "updated": 1615436577
+    },
+    {
+      "id": "60499b068ee92a0000130055",
+      "text": " document.addEventListener('keypress', e => {",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615436551,
+      "updated": 1615436555
+    },
+    {
+      "id": "60499b068ee92a0000130056",
+      "text": "    if (e.key == 'c' && e.ctrlKey){",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615436551,
+      "updated": 1615436557
+    },
+    {
+      "id": "60499b068ee92a0000130057",
+      "text": "  \t  const sneaky = Function(`(() => {${strict()}})();`);",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615436551,
+      "updated": 1615436558
+    },
+    {
+      "id": "60499b068ee92a0000130058",
+      "text": "       sneaky();",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615436551,
+      "updated": 1615436559
+    },
+    {
+      "id": "60499b068ee92a0000130059",
+      "text": "    }",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615436551,
+      "updated": 1615436561
+    },
+    {
+      "id": "60499b068ee92a000013005a",
+      "text": " })",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615436551,
+      "updated": 1615436562
+    },
+    {
+      "id": "60483c438ee92a000025ff5c",
+      "text": "",
+      "userId": "566fa156776c9b11008ee92a",
+      "created": 1615346755,
+      "updated": 1615346755
+    }
+  ]
+}

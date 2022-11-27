@@ -1,0 +1,547 @@
+{
+  "id": "620b90266297cc002123c2aa",
+  "title": "（解決）takker99/HelpLineをFirefoxで使うと段階的キーワード検索が使えない？",
+  "created": 1644924967,
+  "updated": 1644936834,
+  "lines": [
+    {
+      "id": "620b90266297cc002123c2aa",
+      "text": "（解決）takker99/HelpLineをFirefoxで使うと段階的キーワード検索が使えない？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644936834
+    },
+    {
+      "id": "620b9026774b1700004e2bb8",
+      "text": "from [2022/01/29]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924967
+    },
+    {
+      "id": "620b9026774b1700004e2bb9",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924976
+    },
+    {
+      "id": "620b9026774b1700004e2bba",
+      "text": "Firefoxで使えてハッピーなのですが、[/masui/段階的キーワード検索]ができなかったです[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bbb",
+      "text": "　書き換えで[https://github.com/masui/HelpLine/blob/9d0187c16fa3754fa940406b94e3ee81c4016c05/omnibox/background.js#L61-L70 この辺りのコード]が落ちてる？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bbc",
+      "text": "　突貫工事と書いているのでそこはまだなのかもしれない",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bbd",
+      "text": "　Pull Requestを出すのがいいのかな",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bbe",
+      "text": "　 もし修正していただけるなら助かりますが、無理していただかなくても大丈夫です[takker.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bbf",
+      "text": "　どこでミスったんだろうか……[takker.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bc0",
+      "text": "　　[これ https://github.com/masui/HelpLine/blob/9d0187c16fa3754fa940406b94e3ee81c4016c05/omnibox/background.js#L61-L70]から[これ https://github.com/takker99/HelpLine/blob/97f140ca7a1a6767f24bc43205357fd7d4162456/omnibox/background.ts#L86-L91]になっている",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bc1",
+      "text": "　　単に書き換えただけなのだが……うーん",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bc2",
+      "text": "　　 ぱっと見、問題ないように見えますね[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bc3",
+      "text": " 　code:diff",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bc4",
+      "text": " 　 //",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bc5",
+      "text": "   // ユーザがメニューを選択したとき呼ばれるもの",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bc6",
+      "text": "   //",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bc7",
+      "text": "   -chrome.omnibox.onInputEntered.addListener(function(text) {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bc8",
+      "text": "   +browser.omnibox.onInputEntered.addListener(async (text) => {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bc9",
+      "text": "     if(text.match(/^http/)){",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bca",
+      "text": "   -\twindow.open(text) // location.href = は動かない",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bcb",
+      "text": "   +    browser.tabs.update({ url: text });",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bcc",
+      "text": "     } else {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bcd",
+      "text": "   -\tfetch('https://goquick.org') // GoQuick.orgユーザはGoQuick.orgを利用",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bce",
+      "text": "   +    const response = await fetch(\"https://goquick.org\"); // GoQuick.orgユーザはGoQuick.orgを利用",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bcf",
+      "text": "   -\t    .then(response => response.text())",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bd0",
+      "text": "   +    const data = await response.text();",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bd1",
+      "text": "   -\t    .then(data => {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bd2",
+      "text": "   -\t\tif(data.match(\"GoQuick Login\")){",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bd3",
+      "text": "   -\t\t    window.open(`https://google.com/search?q=${text}`)",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bd4",
+      "text": "   -\t\t}",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bd5",
+      "text": "   -\t\telse {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bd6",
+      "text": "   -\t\t    window.open('http://goquick.org/' + text)",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bd7",
+      "text": "   -\t\t}",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bd8",
+      "text": "   -\t    })",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bd9",
+      "text": "   +    browser.tabs.update({",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bda",
+      "text": "   +      url: data.match(\"GoQuick Login\")",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bdb",
+      "text": "   +        ? `https://google.com/search?q=${text}`",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bdc",
+      "text": "   +        : `http://goquick.org/${text}`,",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bdd",
+      "text": "   +    });",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bde",
+      "text": "     }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2bdf",
+      "text": "   });",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924977
+    },
+    {
+      "id": "620b9026774b1700004e2be0",
+      "text": " どのページのHelpfeelで失敗しましたか？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924967
+    },
+    {
+      "id": "620b9026774b1700004e2be1",
+      "text": " 　状況はこんな感じです[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924967
+    },
+    {
+      "id": "620b9026774b1700004e2be2",
+      "text": "　 　mac Firefoxで使いました",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924967
+    },
+    {
+      "id": "620b9026774b1700004e2be3",
+      "text": "　 　masui版Helpline（Chrome）だと、omniboxにgoquickで登録しているキーワードを入力すると、goquickで指定したページにジャンプする",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924967
+    },
+    {
+      "id": "620b9026774b1700004e2be4",
+      "text": " 　　 [https://gyazo.com/2e42334bde7f2bf343b69b0727b7b12f]この状態でジャンプするとscrapbox/motoso-gtdを開ける",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924967
+    },
+    {
+      "id": "620b9026774b1700004e2be5",
+      "text": "　 　　goquickにログインしていなければGoogleで`gtd`が検索される",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924967
+    },
+    {
+      "id": "620b9026774b1700004e2be6",
+      "text": "   この機能が動かなかったです",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924967
+    },
+    {
+      "id": "620b9026774b1700004e2be7",
+      "text": "   　常にGoogle検索になってしまう",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924967,
+      "updated": 1644924967
+    },
+    {
+      "id": "620b9035774b1700004e2bea",
+      "text": "　原因を探ってみた[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924982,
+      "updated": 1644925026
+    },
+    {
+      "id": "620b9039774b1700004e2bec",
+      "text": "　　goquickへのリクエストはちゃんとしていた",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924986,
+      "updated": 1644925037
+    },
+    {
+      "id": "620b903e774b1700004e2bed",
+      "text": "　　https://goquick.org/ の応答がログインページだったのでGoogle検索になっていた",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924991,
+      "updated": 1644925044
+    },
+    {
+      "id": "620b9274774b17000074451f",
+      "text": "　　 [https://gyazo.com/412798104ff3cc836614d7429339b97a]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644925556,
+      "updated": 1644925557
+    },
+    {
+      "id": "620b9075774b1700004e2bee",
+      "text": "　　ログインはしているのに、なぜだろう？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644925045,
+      "updated": 1644925057
+    },
+    {
+      "id": "620b9087774b1700004e2bef",
+      "text": "　　（コードがhttpとhttpsで揺れているのも気になる）",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644925064,
+      "updated": 1644926207
+    },
+    {
+      "id": "620b9343774b170000744521",
+      "text": "　　Chromeではちゃんと動くのかな？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644925764,
+      "updated": 1644925769
+    },
+    {
+      "id": "620b93be774b170000744522",
+      "text": "　　 動いてる！",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644925886,
+      "updated": 1644925890
+    },
+    {
+      "id": "620b944f774b170000744524",
+      "text": "　　 GET https://goquick.org/ で200が帰っている（リクエストはこれだけ）",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644926032,
+      "updated": 1644926187
+    },
+    {
+      "id": "620ba0df1280f00000852529",
+      "text": "　　 GoQuickつかっていなかったので、さすがにログイン周りのテストまではできませんでした……[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1644929245,
+      "updated": 1644929301
+    },
+    {
+      "id": "620baa65774b17000000e9f4",
+      "text": "　　 　使ってなかったらやらないですね[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644931685,
+      "updated": 1644931719
+    },
+    {
+      "id": "620b9485774b170000744528",
+      "text": "　　上のログを見ると302 Foundでgoquick.org/_login にアクセスしにいってる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644926086,
+      "updated": 1644926161
+    },
+    {
+      "id": "620b9490774b170000744529",
+      "text": "　　 /_login はつねにログインページが出るのだから、ログイン画面にならない",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644926096,
+      "updated": 1644926166
+    },
+    {
+      "id": "620b949c774b17000074452a",
+      "text": "　 なぜFirefoxでは/へのアクセスが200ではなく302になってるのだろう？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644926108,
+      "updated": 1644926176
+    },
+    {
+      "id": "620b9036774b1700004e2beb",
+      "text": " 　ログインしない状態で https://goquick.org/ にアクセスすると302になるので、cookieが送られてないとかかも",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644924983,
+      "updated": 1644927038
+    },
+    {
+      "id": "620b98b6774b17000074452c",
+      "text": " 　 ビンゴ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644927159,
+      "updated": 1644927162
+    },
+    {
+      "id": "620b9828774b17000074452b",
+      "text": "  こうしたらなおった[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644927017,
+      "updated": 1644931479
+    },
+    {
+      "id": "620ba980774b17000000e9eb",
+      "text": "  　fetch APIでcookieを送るように変更",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644931457,
+      "updated": 1644931470
+    },
+    {
+      "id": "620ba9be774b17000000e9ed",
+      "text": "  　　https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch#認証情報つきのリクエストの送信",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644931518,
+      "updated": 1644931518
+    },
+    {
+      "id": "620ba98e774b17000000e9ec",
+      "text": "  　manifest.jsonにgoquickのhost権限を追加",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644931470,
+      "updated": 1644931739
+    },
+    {
+      "id": "620ba9d7774b17000000e9ee",
+      "text": "  　　これがないと https://developer.mozilla.org/ja/docs/Web/HTTP/CORS/Errors/CORSNotSupportingCredentials が出る",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644931544,
+      "updated": 1644931555
+    },
+    {
+      "id": "620baa2c774b17000000e9f0",
+      "text": "    >     そのオリジンに対して、クロス-オリジン制約なしに XMLHttpRequest アクセス、 fetch アクセスができる権限 (コンテンツスクリプトからのリクエストによるものも含みます)",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644931629,
+      "updated": 1644931632
+    },
+    {
+      "id": "620baa23774b17000000e9ef",
+      "text": "   　　https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644931620,
+      "updated": 1644931630
+    },
+    {
+      "id": "620ba97c774b17000000e9ea",
+      "text": "　Pull Request作ります[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644931452,
+      "updated": 1644931679
+    },
+    {
+      "id": "620baa39774b17000000e9f3",
+      "text": "　できた",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644931642,
+      "updated": 1644935303
+    },
+    {
+      "id": "620bb886774b17000000e9f6",
+      "text": "　　https://github.com/takker99/HelpLine/pull/1",
+      "userId": "59fb21121207900012774b17",
+      "created": 1644935303,
+      "updated": 1644935303
+    },
+    {
+      "id": "620bb883774b17000000e9f5",
+      "text": "  [/vim-jp-emojis/wa-wa-1.icon][/icons/感謝.icon][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1644935300,
+      "updated": 1644935481
+    },
+    {
+      "id": "620bb9121280f0000098544e",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1644935440,
+      "updated": 1644935440
+    }
+  ]
+}

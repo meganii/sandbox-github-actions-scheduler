@@ -1,0 +1,288 @@
+{
+  "id": "616ac1cf89de0d001d4f7d2e",
+  "title": "天気図を取得するserverless function",
+  "created": 1634386385,
+  "updated": 1635508901,
+  "lines": [
+    {
+      "id": "616ac1cf89de0d001d4f7d2e",
+      "text": "天気図を取得するserverless function",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386385,
+      "updated": 1635508901
+    },
+    {
+      "id": "616ac27e1280f00000807cd6",
+      "text": "作った[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386558,
+      "updated": 1634386560
+    },
+    {
+      "id": "616ac1d01280f00000807cca",
+      "text": " [/icons/github.icon][https://github.com/takker99/takker-weather.vercel.app takker99/takker-weather.vercel.app]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386385,
+      "updated": 1634386561
+    },
+    {
+      "id": "616ac3fc1280f00000807cfd",
+      "text": " [気象庁]の過去の天気図[. https://www.data.jma.go.jp/fcd/yoho/wxchart/quickmonthly.html ]へ直接リダイレクトする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386940,
+      "updated": 1634386978
+    },
+    {
+      "id": "616ac1db1280f00000807ccc",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386395,
+      "updated": 1634386395
+    },
+    {
+      "id": "616ac1dc1280f00000807ccd",
+      "text": "URL",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386397,
+      "updated": 1634386398
+    },
+    {
+      "id": "616ac2ea1280f00000807ce4",
+      "text": " `https://takker-weather.vercel.app/jma/weather-map/archives/:area/:datetime.:ext`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386666,
+      "updated": 1634386739
+    },
+    {
+      "id": "616ac2fa1280f00000807ce5",
+      "text": "  `:area`: [天気図]のエリア",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386683,
+      "updated": 1634386904
+    },
+    {
+      "id": "616ac3051280f00000807ce7",
+      "text": "  　日本近郊(`SPAS`)かアジア太平洋域(`ASAS`)のいずれか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386693,
+      "updated": 1634425940
+    },
+    {
+      "id": "616ac31d1280f00000807ce8",
+      "text": "  　省略可能。defaultは日本近郊",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386717,
+      "updated": 1634386729
+    },
+    {
+      "id": "616ac3281280f00000807cea",
+      "text": "  `:datetime`: 取得する天気図の日時",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386729,
+      "updated": 1634386750
+    },
+    {
+      "id": "616ac33e1280f00000807ceb",
+      "text": "  　今の所指定できるのは以下の通り",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386750,
+      "updated": 1634386759
+    },
+    {
+      "id": "616ac3471280f00000807cec",
+      "text": "  　 `today`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386759,
+      "updated": 1634386762
+    },
+    {
+      "id": "616ac34b1280f00000807ced",
+      "text": "  　  今日の最新の天気図",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386763,
+      "updated": 1634386769
+    },
+    {
+      "id": "616ac3511280f00000807cee",
+      "text": "  　 `yesterday`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386770,
+      "updated": 1634386774
+    },
+    {
+      "id": "616ac3571280f00000807cef",
+      "text": "  　  現在時刻と同時刻付近の1日前の天気図",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386775,
+      "updated": 1634386855
+    },
+    {
+      "id": "616ac3611280f00000807cf0",
+      "text": "  　 `{\\d+}daysago`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386786,
+      "updated": 1634386801
+    },
+    {
+      "id": "616ac36b1280f00000807cf1",
+      "text": "  　  現在時刻と同時刻付近の`{\\d+}`日前の天気図",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386795,
+      "updated": 1634386861
+    },
+    {
+      "id": "616ac37a1280f00000807cf2",
+      "text": "  　  `{\\d+}`に数値を入れる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386810,
+      "updated": 1634386870
+    },
+    {
+      "id": "616ac3b61280f00000807cf3",
+      "text": "  　   例：`9daysago`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386870,
+      "updated": 1634386877
+    },
+    {
+      "id": "616ac3be1280f00000807cf4",
+      "text": "  　  `0daysago`で`today`と一致する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386878,
+      "updated": 1634386892
+    },
+    {
+      "id": "616ac3e81280f00000807cfa",
+      "text": "  `:ext`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386921,
+      "updated": 1634386925
+    },
+    {
+      "id": "616ac3ed1280f00000807cfb",
+      "text": "   ファイルタイプ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386926,
+      "updated": 1634386930
+    },
+    {
+      "id": "616ac3f11280f00000807cfc",
+      "text": "   `svg`もしくは`svgz`：svg形式",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386930,
+      "updated": 1634386988
+    },
+    {
+      "id": "616ac42b1280f00000807cff",
+      "text": "   `png`：png形式",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386988,
+      "updated": 1634386993
+    },
+    {
+      "id": "616ac2731280f00000807cd5",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386547,
+      "updated": 1634386905
+    },
+    {
+      "id": "616ac3d91280f00000807cf5",
+      "text": "例",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386906,
+      "updated": 1634386907
+    },
+    {
+      "id": "616ac3e01280f00000807cf9",
+      "text": " `https://takker-weather.vercel.app/jma/weather-map/archives/today.svg`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386912,
+      "updated": 1634387001
+    },
+    {
+      "id": "616ac3de1280f00000807cf8",
+      "text": "  [https://takker-weather.vercel.app/jma/weather-map/archives/today.svg]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386912,
+      "updated": 1634387007
+    },
+    {
+      "id": "616ac4431280f00000807d00",
+      "text": " `https://takker-weather.vercel.app/jma/weather-map/archives/ASAS/today.png`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634387012,
+      "updated": 1634387030
+    },
+    {
+      "id": "616ac1dd1280f00000807cce",
+      "text": "  [https://takker-weather.vercel.app/jma/weather-map/archives/ASAS/today.png]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634386398,
+      "updated": 1634387038
+    },
+    {
+      "id": "616ac49e1280f00000807d07",
+      "text": " `https://takker-weather.vercel.app/jma/weather-map/archives/2daysago.png`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634387102,
+      "updated": 1634387102
+    },
+    {
+      "id": "616ac45e1280f00000807d02",
+      "text": " `https://takker-weather.vercel.app/jma/weather-map/archives/yesterday.png`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634387038,
+      "updated": 1634387058
+    },
+    {
+      "id": "616ac45d1280f00000807d01",
+      "text": "  [| [https://takker-weather.vercel.app/jma/weather-map/archives/2daysago.png][https://takker-weather.vercel.app/jma/weather-map/archives/yesterday.png]]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634387037,
+      "updated": 1634387110
+    },
+    {
+      "id": "616ac4791280f00000807d04",
+      "text": " `https://takker-weather.vercel.app/jma/weather-map/archives/100daysago.png`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634387066,
+      "updated": 1634387139
+    },
+    {
+      "id": "616ac4781280f00000807d03",
+      "text": "  [https://takker-weather.vercel.app/jma/weather-map/archives/100daysago.png]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634387065,
+      "updated": 1634387145
+    },
+    {
+      "id": "617be1ad1280f000003ebdf1",
+      "text": " [予報天気図]を返す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1635508654,
+      "updated": 1635508661
+    },
+    {
+      "id": "616ac4c91280f00000807d09",
+      "text": "  `https://takker-weather.vercel.app/jma/weather-map/forecast/24.png`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634387145,
+      "updated": 1635508666
+    },
+    {
+      "id": "617be1bf1280f000003ebdf2",
+      "text": "  [https://takker-weather.vercel.app/jma/weather-map/forecast/24.png]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1635508671,
+      "updated": 1635508672
+    },
+    {
+      "id": "616ac4c81280f00000807d08",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1634387144,
+      "updated": 1634387144
+    }
+  ]
+}
