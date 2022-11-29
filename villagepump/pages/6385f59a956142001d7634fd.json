@@ -1,0 +1,372 @@
+{
+  "id": "6385f59a956142001d7634fd",
+  "title": "井戸端のページ数推移をRで計算する",
+  "created": 1669723548,
+  "updated": 1669727100,
+  "lines": [
+    {
+      "id": "6385f59a956142001d7634fd",
+      "text": "井戸端のページ数推移をRで計算する",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b565",
+      "text": "[meganii.icon]",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b566",
+      "text": "　こんな感じで取得できるはず",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b567",
+      "text": "　 もっとこうすればというのがあれば、おしえてください！R初学者です",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b568",
+      "text": "　ページが減ることもあるので、[井戸端のページ数推移]の`achieved`に相当する日付とズレが発生している？",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b569",
+      "text": "code:r",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b56a",
+      "text": " library(tidyverse)",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b56b",
+      "text": " library(jsonlite)",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b56c",
+      "text": " library(lubridate)",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b56d",
+      "text": " as_datetime(1500000000, tz = \"Asia/Tokyo\")",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b56e",
+      "text": " ",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b56f",
+      "text": " # Get Stats",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b570",
+      "text": " df <-",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b571",
+      "text": "   fromJSON(",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b572",
+      "text": "     \"https://raw.githubusercontent.com/meganii/sandbox-github-actions-scheduler/main/villagepump/stats/pages.json\"",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b573",
+      "text": "   ) %>%",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b574",
+      "text": "   as_tibble %>%",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b575",
+      "text": "   tibble::rownames_to_column() %>%",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b576",
+      "text": "   unnest_wider(pages)",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b577",
+      "text": " ",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b578",
+      "text": " # Convert unix time to date",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723696
+    },
+    {
+      "id": "6385f5a2b8db540000f0b579",
+      "text": " df$created <- as.Date(as_datetime(df$created))",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b57a",
+      "text": " df$updated <- as.Date(as_datetime(df$updated))",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b57b",
+      "text": " ",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b57c",
+      "text": " # Calc diff",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b57d",
+      "text": " page_unit <- 1000",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669727077
+    },
+    {
+      "id": "63860368b8db5400006df587",
+      "text": " df2 <- df %>%",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727074,
+      "updated": 1669727077
+    },
+    {
+      "id": "63860368b8db5400006df588",
+      "text": "   filter(as.integer(rowname) %% page_unit == 0) %>%",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727074,
+      "updated": 1669727077
+    },
+    {
+      "id": "63860368b8db5400006df589",
+      "text": "   mutate(",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727074,
+      "updated": 1669727077
+    },
+    {
+      "id": "63860368b8db5400006df58a",
+      "text": "     prev_val = dplyr::if_else(is.na(lag(created)), as.Date('2020-01-19'), lag(created)),",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727074,
+      "updated": 1669727077
+    },
+    {
+      "id": "63860368b8db5400006df58b",
+      "text": "     days = as.numeric(ymd(created) - ymd(prev_val)),",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727074,
+      "updated": 1669727077
+    },
+    {
+      "id": "63860368b8db5400006df58c",
+      "text": "     Δpages_days = round(page_unit / days, 1)",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727074,
+      "updated": 1669727077
+    },
+    {
+      "id": "63860368b8db5400006df58d",
+      "text": "   ) %>%  ",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727074,
+      "updated": 1669727077
+    },
+    {
+      "id": "63860368b8db5400006df58e",
+      "text": "   select(1, 5, 6, 9:10)",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727074,
+      "updated": 1669727077
+    },
+    {
+      "id": "63860368b8db5400006df58f",
+      "text": " df2",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727074,
+      "updated": 1669727077
+    },
+    {
+      "id": "6385f5a2b8db540000f0b586",
+      "text": "",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b587",
+      "text": "table:stats",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    },
+    {
+      "id": "6385f5a2b8db540000f0b588",
+      "text": " rowname\ttitle\tcreated\tdays\tΔpages_days",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669727100
+    },
+    {
+      "id": "6386037fb8db5400006df590",
+      "text": " 1000\t丸善丸の内本店\t2020-11-30\t316\t3.2",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727097,
+      "updated": 1669727100
+    },
+    {
+      "id": "6386037fb8db5400006df591",
+      "text": " 2000\tおすすめYouTubeチャンネル\t2021-01-28\t59\t16.9",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727097,
+      "updated": 1669727100
+    },
+    {
+      "id": "6386037fb8db5400006df592",
+      "text": " 3000\t充電式電池を長持ちさせる方法\t2021-04-09\t71\t14.1",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727097,
+      "updated": 1669727100
+    },
+    {
+      "id": "6386037fb8db5400006df593",
+      "text": " 4000\t検索結果のソート順\t2021-05-07\t28\t35.7",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727097,
+      "updated": 1669727100
+    },
+    {
+      "id": "6386037fb8db5400006df594",
+      "text": " 5000\tスマホ人間\t2021-08-18\t103\t9.7",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727097,
+      "updated": 1669727100
+    },
+    {
+      "id": "6386037fb8db5400006df595",
+      "text": " 6000\tT[] extends never[]\t2022-01-08\t143\t7",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727097,
+      "updated": 1669727100
+    },
+    {
+      "id": "6386037fb8db5400006df596",
+      "text": " 7000\t豆しば\t2022-03-12\t63\t15.9",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727097,
+      "updated": 1669727100
+    },
+    {
+      "id": "6386037fb8db5400006df597",
+      "text": " 8000\t津波\t2022-04-29\t48\t20.8",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727097,
+      "updated": 1669727100
+    },
+    {
+      "id": "6386037fb8db5400006df598",
+      "text": " 9000\t日本赤軍\t2022-06-02\t34\t29.4",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727097,
+      "updated": 1669727100
+    },
+    {
+      "id": "6386037fb8db5400006df599",
+      "text": " 10000\tアナログっぽい ≠ アナログ\t2022-08-02\t61\t16.4",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727097,
+      "updated": 1669727100
+    },
+    {
+      "id": "6386037fb8db5400006df59a",
+      "text": " 11000\t今開いているページを非表示にするUserScript\t2022-10-25\t84\t11.9",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727097,
+      "updated": 1669727100
+    },
+    {
+      "id": "6386037fb8db5400006df59b",
+      "text": " 12000\tウィリアム・モリス\t2022-11-25\t31\t32.3",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727097,
+      "updated": 1669727100
+    },
+    {
+      "id": "6386037fb8db5400006df59c",
+      "text": "",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669727097,
+      "updated": 1669727097
+    },
+    {
+      "id": "6385f5a2b8db540000f0b595",
+      "text": "",
+      "userId": "5a1660501dab010014b8db54",
+      "created": 1669723548,
+      "updated": 1669723548
+    }
+  ]
+}
