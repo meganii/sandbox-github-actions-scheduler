@@ -2,7 +2,7 @@
   "id": "624446fe6877280020c448fe",
   "title": "JavaScriptでScrapboxのページ遷移をする",
   "created": 1648641793,
-  "updated": 1648684079,
+  "updated": 1670928484,
   "lines": [
     {
       "id": "624446fe6877280020c448fe",
@@ -12,11 +12,25 @@
       "updated": 1648642252
     },
     {
-      "id": "624447027838e300009befe7",
-      "text": "from [2022/03/30]",
+      "id": "63983e6c7838e30000dc00f1",
+      "text": "#UserScript上からScrapboxのページ移動をする方法",
       "userId": "60fb0a79f3364000237838e3",
-      "created": 1648641793,
-      "updated": 1648641804
+      "created": 1670921836,
+      "updated": 1670921848
+    },
+    {
+      "id": "639840057838e30000a0a5ae",
+      "text": "Scrapboxのページ遷移で実現されている、[DOMの書き換え]による高速な[ページ遷移]を、UserScript上から実行する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1670922246,
+      "updated": 1670922366
+    },
+    {
+      "id": "639840a07838e30000a0a5b0",
+      "text": "\t普通にページ移動をしようとすると、ページ全体が再読込されてしまう",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1670922401,
+      "updated": 1670922429
     },
     {
       "id": "6244470e7838e300009befe9",
@@ -34,52 +48,143 @@
     },
     {
       "id": "6244472c7838e300009befeb",
-      "text": "code:js",
+      "text": " code:js",
       "userId": "60fb0a79f3364000237838e3",
       "created": 1648641835,
-      "updated": 1648641838
+      "updated": 1670922508
     },
     {
       "id": "6244472f7838e300009befec",
-      "text": " const link = document.createElement(\"a\")",
+      "text": "   const link = document.createElement(\"a\")",
       "userId": "60fb0a79f3364000237838e3",
       "created": 1648641838,
-      "updated": 1648641871
+      "updated": 1670922508
     },
     {
       "id": "624447517838e300009befed",
-      "text": " link.href = \"/:projectname/:pagetitle\" // 必要なら行IDも追記する",
+      "text": "   link.href = \"/:projectname/:pagetitle\" // 必要なら行IDも追記する",
       "userId": "60fb0a79f3364000237838e3",
       "created": 1648641872,
-      "updated": 1648641916
+      "updated": 1670922508
     },
     {
       "id": "6244476d7838e300009befee",
-      "text": " document.body.append(link)",
-      "userId": "5ef2bdebb60650001e1280f0",
+      "text": "   document.body.append(link)",
+      "userId": "60fb0a79f3364000237838e3",
       "created": 1648641900,
-      "updated": 1648683947
+      "updated": 1670922508
     },
     {
       "id": "624447877838e300009befef",
-      "text": " link.click()",
+      "text": "   link.click()",
       "userId": "60fb0a79f3364000237838e3",
       "created": 1648641926,
-      "updated": 1648641929
+      "updated": 1670922508
     },
     {
       "id": "6244eb9e1280f00000f965af",
-      "text": " link.remove()",
-      "userId": "5ef2bdebb60650001e1280f0",
+      "text": "   link.remove()",
+      "userId": "60fb0a79f3364000237838e3",
       "created": 1648683935,
-      "updated": 1648683942
+      "updated": 1670922508
     },
     {
-      "id": "624447067838e300009befe8",
+      "id": "6398410f7838e30000a0a5be",
+      "text": "\t一時的にbodyの中に入れてからクリックを実行しないと、ページ全体が再読込されてしまう（[full document load]）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1670922512,
+      "updated": 1670922512
+    },
+    {
+      "id": "6398410f7838e30000a0a5bf",
+      "text": "\t\tbodyに設定されているページ遷移用のEventListenerが発火しないため",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1670922512,
+      "updated": 1670922512
+    },
+    {
+      "id": "63983f337838e30000a0a5ab",
       "text": "",
       "userId": "60fb0a79f3364000237838e3",
-      "created": 1648641798,
-      "updated": 1648641798
+      "created": 1670922035,
+      "updated": 1670922513
+    },
+    {
+      "id": "639841127838e30000a0a5c0",
+      "text": "結論（[scrapbox-userscript-std]を使用する場合）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1670922515,
+      "updated": 1670922526
+    },
+    {
+      "id": "639845007838e30000a0a5da",
+      "text": "\t[ここをクリックしてJavaScriptに変換する https://scrapbox-bundler.vercel.app/?url=https://scrapbox.io/api/code/villagepump/JavaScriptでScrapboxのページ遷移をする/with_userscript-std.ts&bundle&minify&run&output=newtab]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1670923520,
+      "updated": 1670923581
+    },
+    {
+      "id": "639844d37838e30000a0a5d1",
+      "text": "\tcode:with_userscript-std.ts",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1670923476,
+      "updated": 1670923578
+    },
+    {
+      "id": "639844dd7838e30000a0a5d2",
+      "text": "\t /// <reference no-default-lib=\"true\" />",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1670923486,
+      "updated": 1670923489
+    },
+    {
+      "id": "639844e07838e30000a0a5d3",
+      "text": "  /// <reference lib=\"esnext\" />",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1670923489,
+      "updated": 1670923489
+    },
+    {
+      "id": "639844e07838e30000a0a5d4",
+      "text": "  ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1670923489,
+      "updated": 1670923489
+    },
+    {
+      "id": "639844e07838e30000a0a5d5",
+      "text": "  import { open } from \"https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/main/browser/dom/open.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1670923489,
+      "updated": 1670928482
+    },
+    {
+      "id": "639844e07838e30000a0a5d6",
+      "text": "  import { Scrapbox } from \"https://raw.githubusercontent.com/scrapbox-jp/types/0.3.6/scrapbox.ts\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1670923489,
+      "updated": 1670923489
+    },
+    {
+      "id": "639844e07838e30000a0a5d7",
+      "text": "  declare const scrapbox: Scrapbox;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1670923489,
+      "updated": 1670923489
+    },
+    {
+      "id": "639844e07838e30000a0a5d8",
+      "text": "  ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1670923489,
+      "updated": 1670923489
+    },
+    {
+      "id": "639844e07838e30000a0a5d9",
+      "text": "  open(scrapbox.Project.name, \":pagetitle\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1670923489,
+      "updated": 1670928484
     },
     {
       "id": "624447ae7838e300009beff2",
@@ -87,6 +192,13 @@
       "userId": "60fb0a79f3364000237838e3",
       "created": 1648641965,
       "updated": 1648641965
+    },
+    {
+      "id": "639841057838e30000a0a5bd",
+      "text": "from [2022/03/30]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1670922501,
+      "updated": 1670922501
     },
     {
       "id": "6244478c7838e300009beff0",
@@ -146,10 +258,10 @@
     },
     {
       "id": "6244483f4bb2e20000a13de5",
-      "text": "  `openInTheSameTab()`[. https://doc.deno.land/https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.11.1/mod.ts/~/openInTheSameTab ]がそれ[takker.icon]",
+      "text": "  `openInTheSameTab()`[. https://doc.deno.land/https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.14.10/mod.ts/~/openInTheSameTab ]がそれ[takker.icon]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1648642061,
-      "updated": 1648683660
+      "updated": 1670928465
     },
     {
       "id": "6244ea161280f000002235ff",
@@ -167,10 +279,10 @@
     },
     {
       "id": "6244e9f11280f000002235fe",
-      "text": "  URL fragmentの変更だけなら`location.hash = \"xxxx\";`でいける",
-      "userId": "5ef2bdebb60650001e1280f0",
+      "text": "  [URL fragment]の変更だけなら`location.hash = \"xxxx\";`でいける",
+      "userId": "60fb0a79f3364000237838e3",
       "created": 1648683506,
-      "updated": 1648683588
+      "updated": 1670923349
     },
     {
       "id": "6244e9631280f000002235fc",
@@ -206,6 +318,13 @@
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1648684044,
       "updated": 1648684079
+    },
+    {
+      "id": "639858331280f00000c7c076",
+      "text": " `open()`[. https://doc.deno.land/https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.14.10/mod.ts/~/open ]として実装しました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1670928436,
+      "updated": 1670928460
     },
     {
       "id": "6244ebca1280f00000f965b0",
