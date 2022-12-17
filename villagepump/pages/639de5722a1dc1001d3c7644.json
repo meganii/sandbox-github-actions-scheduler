@@ -1,0 +1,134 @@
+{
+  "id": "639de5722a1dc1001d3c7644",
+  "title": "GPT-3/ChatGPTでScrapboxの中身を元に回答を生成",
+  "created": 1671292276,
+  "updated": 1671296721,
+  "lines": [
+    {
+      "id": "639de5722a1dc1001d3c7644",
+      "text": "GPT-3/ChatGPTでScrapboxの中身を元に回答を生成",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1671292276,
+      "updated": 1671294765
+    },
+    {
+      "id": "639de57379e11300005f0642",
+      "text": "大規模言語モデルでScrapboxの中身を元に回答を生成したい[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1671292276,
+      "updated": 1671292293
+    },
+    {
+      "id": "639de58a79e11300005f0649",
+      "text": "　>[https://twitter.com/nishio/status/1599655143578173440 @nishio]: 例えば著書がたくさんある人やScrapboxで1万ページ超えてるような人を読み込ませて仮想人格としてチャットに召喚しインタラクティブに議論をすることができ(たらいいな)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1671292299,
+      "updated": 1671292300
+    },
+    {
+      "id": "639de58c79e11300005f064a",
+      "text": " 　これをしたい[blu3mo.icon*2][はるひ.icon*2][nishio.icon*2]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1671292300,
+      "updated": 1671294960
+    },
+    {
+      "id": "639de57379e11300005f0643",
+      "text": " 質問したらドキュメントを元に回答を生成するようなやつ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1671292276,
+      "updated": 1671292278
+    },
+    {
+      "id": "639de57379e11300005f0645",
+      "text": "　これをやれば良さそう[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1671292276,
+      "updated": 1671292308
+    },
+    {
+      "id": "639de59879e11300005f064e",
+      "text": "   [- GPT-3のAnswer APIがあるのね]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1671292312,
+      "updated": 1671295444
+    },
+    {
+      "id": "639df1d579e1130000d161de",
+      "text": "    https://towardsdatascience.com/application-of-gpt-3-in-q-a-769239a01f6d",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1671295445,
+      "updated": 1671295445
+    },
+    {
+      "id": "639df1d079e1130000d161dd",
+      "text": "    https://beta.openai.com/docs/guides/answers",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1671295441,
+      "updated": 1671295442
+    },
+    {
+      "id": "639de63879e11300005f064f",
+      "text": "   つい最近Deprecatedになってた",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1671292472,
+      "updated": 1671293919
+    },
+    {
+      "id": "639debdf79e11300005f0650",
+      "text": "    https://help.openai.com/en/articles/6233728-answers-transition-guide#h_89196129b2",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1671293921,
+      "updated": 1671293921
+    },
+    {
+      "id": "639debe079e11300005f0651",
+      "text": "   先にvector-based embedding search（たぶん[Operand]みたいな[Semantic Search]?）で関連度高いドキュメントを見つけた上で、それらを放り込んで質問の回答を生成する方法を推奨している",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1671293921,
+      "updated": 1671296721
+    },
+    {
+      "id": "639dec1079e11300005f0652",
+      "text": "    せっかくScrapboxはリンク情報があるので、それも使って与える情報を増やせると良さそう",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1671293969,
+      "updated": 1671295455
+    },
+    {
+      "id": "639defa679e11300005f0663",
+      "text": "　[Semantic Search]は必須のコンポーネントではないと思っている[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1671294886,
+      "updated": 1671296486
+    },
+    {
+      "id": "639df5e6aff09e0000aafbf4",
+      "text": "　 たとえば「X」ってキーワードを入れた時に「Xについて、下記の文章を参考に簡潔な説明をしてください。(ここにScrapboxをXで検索した結果が入る)」というプロンプトを生成するのでもそれなりに成立すると思う",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1671296486,
+      "updated": 1671296577
+    },
+    {
+      "id": "639df641aff09e0000aafbf5",
+      "text": "　 で、この場合の問題は「(ここにScrapboxをXで検索した結果が入る)」の部分が大きくなりすぎると、それに応じてコストも上がること。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1671296578,
+      "updated": 1671296615
+    },
+    {
+      "id": "639df666aff09e0000aafbf6",
+      "text": "　 　なので「キーワードXを含むすべて」ではなく、距離の近い方から選ぶ類似度ベースの手法の方が都合がいいのだと思う",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1671296615,
+      "updated": 1671296696
+    },
+    {
+      "id": "639df5c5aff09e0000aafbf3",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1671296453,
+      "updated": 1671296453
+    }
+  ]
+}
