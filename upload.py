@@ -7,11 +7,11 @@ scopes = ["https://www.googleapis.com/auth/drive"]
 crds, prj = google.auth.default(scopes)
 service = build("drive", "v3", credentials=crds)
 
-parents_id = '1p1sw8iPuKMGpSY4B-kiJ0wpkCgRgQ8rI'
-file_name = 'test.json'
-file_metadata = {'name': file_name, 'parents': [parents_id]}
-media = MediaFileUpload(file_name, mimetype='application/json', resumable=True)
-file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
-
-result = service.files().list().execute()
-print(result)
+file_id = '1PiukFFc-Jgwst5lGzhmy-Fvg1yLyghi9'
+file_name = 'data.json'
+file = service.files().get(fileId=file_id).execute()
+media_body = MediaFileUpload(file_name, mimetype=file['mimeType'], resumable=True)
+updated_file = service.files().update(
+        fileId=file_id,
+        media_body=media_body).execute()
+print(updated_file)
