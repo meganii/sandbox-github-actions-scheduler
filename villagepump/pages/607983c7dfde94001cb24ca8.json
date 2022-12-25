@@ -2,7 +2,7 @@
   "id": "607983c7dfde94001cb24ca8",
   "title": "リンク先へスクロールする機能",
   "created": 1618576327,
-  "updated": 1642037579,
+  "updated": 1671917387,
   "lines": [
     {
       "id": "607983c7dfde94001cb24ca8",
@@ -14,9 +14,9 @@
     {
       "id": "607983c7e5172d00007d3053",
       "text": "from [2021/04/14]",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576327
+      "updated": 1671917337
     },
     {
       "id": "607983c7e5172d00007d3055",
@@ -75,123 +75,158 @@
       "updated": 1619512543
     },
     {
+      "id": "63a76f0d1280f00000a7d585",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1671917325,
+      "updated": 1671917325
+    },
+    {
+      "id": "63a76f0d1280f00000a7d586",
+      "text": "実装",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1671917325,
+      "updated": 1671917327
+    },
+    {
+      "id": "63a76f261280f00000a7d588",
+      "text": " 2022-12-25 `localStorage`に格納された`pageTransitionContext`でハイライトする行情報を渡している",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1671917350,
+      "updated": 1671917381
+    },
+    {
+      "id": "63a76f451280f00000a7d589",
+      "text": "  [/takker/リンク先へスクロールする機能の実装]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1671917381,
+      "updated": 1671917387
+    },
+    {
+      "id": "63a76f1c1280f00000a7d587",
+      "text": " from [2021/04/14]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1671917340,
+      "updated": 1671917342
+    },
+    {
       "id": "607983c7e5172d00007d305c",
-      "text": " ただ、一体どういう仕組みでハイライトする行の情報を渡しているのかが全くわからなかった",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "  ただ、一体どういう仕組みでハイライトする行の情報を渡しているのかが全くわからなかった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576354
+      "updated": 1671917346
     },
     {
       "id": "607983c7e5172d00007d305d",
-      "text": "  URL parameterには何も渡されていない",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "   URL parameterには何も渡されていない",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576354
+      "updated": 1671917346
     },
     {
       "id": "607983c7e5172d00007d305e",
-      "text": "  通信を見てみても、それらしきAPIも見つからない",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "   通信を見てみても、それらしきAPIも見つからない",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576354
+      "updated": 1671917346
     },
     {
       "id": "607983c7e5172d00007d305f",
-      "text": "  [index.js]を眺めてみていたら、それらしい行があった[yosider.icon]",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "   [index.js]を眺めてみていたら、それらしい行があった[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576354
+      "updated": 1671917346
     },
     {
       "id": "607983c7e5172d00007d3060",
-      "text": "  \t`[\"linkFrom\", \"searchQueery\"].includes(w.source) || i.updateURL()`",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "   \t`[\"linkFrom\", \"searchQueery\"].includes(w.source) || i.updateURL()`",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576354
+      "updated": 1671917346
     },
     {
       "id": "607983c7e5172d00007d3061",
-      "text": "  \t\t手元では86389行目、関数`LinePermalink()`内",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "   \t\t手元では86389行目、関数`LinePermalink()`内",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576354
+      "updated": 1671917346
     },
     {
       "id": "607983c7e5172d00007d3062",
-      "text": "  \t\t2-hop linkか検索結果から飛んできた場合は`updateURL()`をしない？",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "   \t\t2-hop linkか検索結果から飛んできた場合は`updateURL()`をしない？",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576354
+      "updated": 1671917346
     },
     {
       "id": "607983c7e5172d00007d3063",
-      "text": "   \t\tReact内でページ遷移した場合だけ有効なのかな？[takker.icon]",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "    \t\tReact内でページ遷移した場合だけ有効なのかな？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576354
+      "updated": 1671917346
     },
     {
       "id": "607983c7e5172d00007d3064",
-      "text": "  \t\ttypo?っぽい、なのに動いているのはなぜ…",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "   \t\ttypo?っぽい、なのに動いているのはなぜ…",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576354
+      "updated": 1671917346
     },
     {
       "id": "607983c7e5172d00007d3065",
-      "text": "  \t\t `searchQueery`→`searchQuery`か",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "   \t\t `searchQueery`→`searchQuery`か",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576354
+      "updated": 1671917346
     },
     {
       "id": "607983c7e5172d00007d3066",
-      "text": "     [/forum-jp]に報告したほうが良いかな？",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "      [/forum-jp]に報告したほうが良いかな？",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576354
+      "updated": 1671917346
     },
     {
       "id": "607983c7e5172d00007d3067",
-      "text": "     報告した",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "      報告した",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576354
+      "updated": 1671917346
     },
     {
       "id": "607983c7e5172d00007d3068",
-      "text": "      [/forum-jp/assets/index.jsのtypo]",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "       [/forum-jp/assets/index.jsのtypo]",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576354
+      "updated": 1671917346
     },
     {
       "id": "6087c2eb1280f00000175886",
-      "text": "    直していただいた",
+      "text": "     直していただいた",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1619509995,
-      "updated": 1619510003
+      "updated": 1671917346
     },
     {
       "id": "6087c2f21280f00000175887",
-      "text": "    　どうやらそこそこ大きめのバグだったらしい",
+      "text": "     　どうやらそこそこ大きめのバグだったらしい",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1619510003,
-      "updated": 1619510042
+      "updated": 1671917346
     },
     {
       "id": "6087c31a1280f00000175888",
-      "text": "    　[/forum-jp/assets/index.jsのtypo#6081161f97c29100000c6589]",
+      "text": "     　[/forum-jp/assets/index.jsのtypo#6081161f97c29100000c6589]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1619510042,
-      "updated": 1619510043
+      "updated": 1671917346
     },
     {
       "id": "607983c7e5172d00007d3069",
-      "text": "  　調査ありがとうございます[takker.icon]",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "   　調査ありがとうございます[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1618576327,
-      "updated": 1618576354
+      "updated": 1671917346
     },
     {
       "id": "607983e3e5172d00007d306a",
