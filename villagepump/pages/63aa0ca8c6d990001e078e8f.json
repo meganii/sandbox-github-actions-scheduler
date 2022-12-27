@@ -1,0 +1,386 @@
+{
+  "id": "63aa0ca8c6d990001e078e8f",
+  "title": "双方向同期版scrapbox-duplicator",
+  "created": 1672088745,
+  "updated": 1672100271,
+  "lines": [
+    {
+      "id": "63aa0ca8c6d990001e078e8f",
+      "text": "双方向同期版scrapbox-duplicator",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088748
+    },
+    {
+      "id": "63aa0ca979e113000085fc83",
+      "text": "from [scrapbox-duplicator]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088745
+    },
+    {
+      "id": "63aa0ca979e113000085fc84",
+      "text": "[双方向同期版scrapbox-duplicator]を考えた[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088763
+    },
+    {
+      "id": "63aa0ca979e113000085fc85",
+      "text": " exported jsonを特定のgithubリポジトリに同期する仕組み",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088843
+    },
+    {
+      "id": "63aa0ca979e113000085fc86",
+      "text": " 　各scrapboxプロジェクトにおいて、commit + pushとpull相当の操作を定期的に実行する",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088804
+    },
+    {
+      "id": "63aa0ca979e113000085fc87",
+      "text": " 　pullする時に、フィルタをかけられるようにする",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088745
+    },
+    {
+      "id": "63aa0cbd79e1130000c66cc1",
+      "text": " 　[Obsidian]の3rd party同期システムがこういうやり方だったのが、アイデアの元[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088766,
+      "updated": 1672088786
+    },
+    {
+      "id": "63aa0ca979e113000085fc88",
+      "text": " 具体的な使い方のイメージ（[/blu3mo] + [/blu3mo-public]）",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672092395
+    },
+    {
+      "id": "63aa0ca979e113000085fc89",
+      "text": "  [/blu3mo] (private) :",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672089091
+    },
+    {
+      "id": "63aa0e0379e1130000fceb53",
+      "text": "   push/pullを普通にやる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672089091,
+      "updated": 1672089091
+    },
+    {
+      "id": "63aa0e2879e1130000fceb57",
+      "text": "   ここでは、プライベートなページを見られても良い人のみ招待する",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672089129,
+      "updated": 1672089144
+    },
+    {
+      "id": "63aa0ca979e113000085fc8b",
+      "text": "  [/blu3mo-public] (public):",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672089101
+    },
+    {
+      "id": "63aa0e0579e1130000fceb54",
+      "text": "   pushは普通にやる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672089093,
+      "updated": 1672089096
+    },
+    {
+      "id": "63aa0e0779e1130000fceb55",
+      "text": "   pullするときは、private.iconを書いたものをフィルタする",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672089096,
+      "updated": 1672089104
+    },
+    {
+      "id": "63aa0e3979e1130000fceb59",
+      "text": "   ここは、[部屋の鍵を閉めないセキュリティ運用]をする",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672089145,
+      "updated": 1672089152
+    },
+    {
+      "id": "63aa0e4579e1130000fceb5c",
+      "text": "    これが一番やりたい事[blu3mo.icon*3]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672089157,
+      "updated": 1672089161
+    },
+    {
+      "id": "63aa0e4a79e1130000fceb5d",
+      "text": "    [Scrapbox as SNS]のあり方の一つとしてとても面白いと思っている",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672089162,
+      "updated": 1672089201
+    },
+    {
+      "id": "63aa399179e1130000619c5b",
+      "text": "     privateな情報は隠しつつ、自分のprojectを井戸端的な場所にできたらおもろい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672100242,
+      "updated": 1672100271
+    },
+    {
+      "id": "63aa0e7379e1130000fceb63",
+      "text": " 　　　万が一荒らされたら、public側からのcommitを全部revertするだけで良い",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672089204,
+      "updated": 1672089204
+    },
+    {
+      "id": "63aa0ca979e113000085fc8d",
+      "text": " 嬉しいところ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088745
+    },
+    {
+      "id": "63aa0ca979e113000085fc8e",
+      "text": "  全プロジェクトで編集ができる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088745
+    },
+    {
+      "id": "63aa0ca979e113000085fc8f",
+      "text": "  \t現状のscrapbox-duplicatorはコピー元プロジェクトしか編集できず、コピー先は上書きされる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672089115
+    },
+    {
+      "id": "63aa0e7f79e1130000fceb64",
+      "text": "  \t新しい仕組みなら、どっちを編集しても良い",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672089216,
+      "updated": 1672093321
+    },
+    {
+      "id": "63aa0ca979e113000085fc91",
+      "text": "  [部屋の鍵を閉めないセキュリティ運用]ができる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672089215
+    },
+    {
+      "id": "63aa129d79e1130000615150",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672090269,
+      "updated": 1672090361
+    },
+    {
+      "id": "63aa12f979e1130000615151",
+      "text": "　実装",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672090361,
+      "updated": 1672090364
+    },
+    {
+      "id": "63aa12fe79e1130000615162",
+      "text": " 　課題（たぶん解決）",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672090367,
+      "updated": 1672092432
+    },
+    {
+      "id": "63aa1b1579e1130000615193",
+      "text": " 　　Conflictをどう処理する?",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672092438,
+      "updated": 1672092438
+    },
+    {
+      "id": "63aa1b1579e1130000615194",
+      "text": " 　　 別にコードとかじゃない自然言語なので雑に強制マージしちゃって良い気がする",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672092438,
+      "updated": 1672092438
+    },
+    {
+      "id": "63aa1b1579e1130000615195",
+      "text": " 　 json上のページの順番が変化するので、差分を上手く扱えない?",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672092438,
+      "updated": 1672092438
+    },
+    {
+      "id": "63aa1b1579e1130000615196",
+      "text": "　　　　これは、gitで扱う前にjsonを各ページで別々のファイルにバラすのが良さそう",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672092438,
+      "updated": 1672092438
+    },
+    {
+      "id": "63aa1f9a79e113000089b928",
+      "text": " 　　ページタイトル変更 / ページ削除をどう扱う?",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672093595,
+      "updated": 1672093595
+    },
+    {
+      "id": "63aa1f9a79e113000089b929",
+      "text": " 　　 各ページにuniqueなIDをつける",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672093595,
+      "updated": 1672093595
+    },
+    {
+      "id": "63aa1f9a79e113000089b92a",
+      "text": " 　　 そのIDと、各プロジェクトにおけるpage ID（タイトルを変えても変わらない）を紐づけるテーブルを用意する",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672093595,
+      "updated": 1672093595
+    },
+    {
+      "id": "63aa1f9a79e113000089b92b",
+      "text": " 　　 タイトルが変わっていたら、それもcommitとして反映させる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672093595,
+      "updated": 1672093595
+    },
+    {
+      "id": "63aa1f9a79e113000089b92c",
+      "text": "　　  って感じで行けるかな",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672093595,
+      "updated": 1672093595
+    },
+    {
+      "id": "63aa1b0979e113000061517a",
+      "text": " 　課題（未解決）",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672092425,
+      "updated": 1672092429
+    },
+    {
+      "id": "63aa12fe79e1130000615163",
+      "text": " 　　[行リンク]が破綻する",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672090367,
+      "updated": 1672090367
+    },
+    {
+      "id": "63aa12fe79e1130000615164",
+      "text": " 　　 scrapboxプロジェクトをexportしてimportすると行リンクは切れるので",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672090367,
+      "updated": 1672090367
+    },
+    {
+      "id": "63aa12fe79e1130000615165",
+      "text": " 　　　これ、どうしようもないのかな..?[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672090367,
+      "updated": 1672090367
+    },
+    {
+      "id": "63aa12fe79e1130000615166",
+      "text": "  　　　ページをimportしないと行idは確定しないが、importした後では行リンク参照を変えられない",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672090367,
+      "updated": 1672090367
+    },
+    {
+      "id": "63aa179479d3a90000d725e0",
+      "text": "",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1672091541,
+      "updated": 1672091541
+    },
+    {
+      "id": "63aa1e8f79e113000089b921",
+      "text": "　結構違うものになるので、新しいrepoを作ろうかな[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672093327,
+      "updated": 1672093351
+    },
+    {
+      "id": "63aa1ea579e113000089b923",
+      "text": "　　",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672093349,
+      "updated": 1672093353
+    },
+    {
+      "id": "63aa1e8f79e113000089b922",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672093327,
+      "updated": 1672093327
+    },
+    {
+      "id": "63aa0ca979e113000085fc93",
+      "text": " いいね！[yuyasurarin.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088745
+    },
+    {
+      "id": "63aa0ca979e113000085fc94",
+      "text": "  [GitHub Actions]でcommit+push,pullはできるのかな？",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088745
+    },
+    {
+      "id": "63aa0ca979e113000085fc95",
+      "text": "  commit+pushは[井戸端には管理者がいない]より[\" 答えは単に全ページのAPIを順番に叩いているだけ [/takker/scrapbox-external-backup ]] でやるとして",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088745
+    },
+    {
+      "id": "63aa0ca979e113000085fc96",
+      "text": "   scrapboxのexport APIで良い気がする[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088745
+    },
+    {
+      "id": "63aa0ca979e113000085fc97",
+      "text": "    管理者がいるからそれでいいのか、そういやそうだ[yuyasurarin.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088745
+    },
+    {
+      "id": "63aa0ca979e113000085fc98",
+      "text": "  pullはimport?",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088745
+    },
+    {
+      "id": "63aa0ca979e113000085fc99",
+      "text": "   +1[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088745
+    },
+    {
+      "id": "63aa0ca979e113000085fc9a",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088745
+    },
+    {
+      "id": "63aa0ca979e113000085fc9b",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1672088745,
+      "updated": 1672088745
+    }
+  ]
+}
