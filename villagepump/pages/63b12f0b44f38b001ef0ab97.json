@@ -1,0 +1,757 @@
+{
+  "id": "63b12f0b44f38b001ef0ab97",
+  "title": "画像のupload先がscrapboxのときのみ、自前でGyazoへuploadするUserScript",
+  "created": 1672556300,
+  "updated": 1672556387,
+  "lines": [
+    {
+      "id": "63b12f0b44f38b001ef0ab97",
+      "text": "画像のupload先がscrapboxのときのみ、自前でGyazoへuploadするUserScript",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5b0",
+      "text": "from [2023/01/01]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f1f774b170000bdc61a",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556319,
+      "updated": 1672556319
+    },
+    {
+      "id": "63b12f0d774b170000bdc615",
+      "text": "文脈のりしろ[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556302,
+      "updated": 1672556353
+    },
+    {
+      "id": "63b12f17774b170000bdc619",
+      "text": "　ScrapboxのプロジェクトをGyazoアップロードに設定していたらGyazoがないと云々でアップできないと言われる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556312,
+      "updated": 1672556342
+    },
+    {
+      "id": "63b12f35774b170000bdc61b",
+      "text": "　Scrapboxにアップするように設定した場合に自分の画像はGyazoにあがらなくて不便になるかも？と思う",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556342,
+      "updated": 1672556379
+    },
+    {
+      "id": "63b12f5b774b170000bdc61c",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556379,
+      "updated": 1672556380
+    },
+    {
+      "id": "63b12f5b774b170000bdc61d",
+      "text": "つまり[画像のupload先]がscrapboxのときのみ、自前でGyazoへuploadする機能を作ればいいわけか[takker.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556380,
+      "updated": 1672556380
+    },
+    {
+      "id": "63b12f0c774b170000bdc5b2",
+      "text": " [できた https://scrapbox-bundler.vercel.app?url=https://scrapbox.io/api/code/villagepump/2023%2F01%2F01/paste-gyazo.ts&bundle&minify&run&reload]。多分動く",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5b3",
+      "text": " [画像のupload先がscrapbox.ioのときにGyazoへ画像をuploadするUserScript]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5b4",
+      "text": " [ClipboardEvent.clipboardData]の[DataTransfer.items]から貼り付けられたファイルを取得できる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5b5",
+      "text": " あ、D&D対応忘れてた",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5b6",
+      "text": " 　多分`document.querySelector(\".drag-and-drop-enter\")!.addEventListener(\"drop\", (e) => { const = items = e.dataTransfer.items;/* ... */})`を追加すれば行けるはず",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5b7",
+      "text": " code:paste-gyazo.ts",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5b8",
+      "text": "  /// <reference no-default-lib=\"true\"/>",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5b9",
+      "text": "  /// <reference lib=\"esnext\"/>",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5ba",
+      "text": "  /// <reference lib=\"dom\"/>",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5bb",
+      "text": "  /// <reference lib=\"dom.iterable\"/>",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5bc",
+      "text": "  ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5bd",
+      "text": "  import { upload } from \"https://raw.githubusercontent.com/takker99/deno-gyazo/0.2.0/mod.ts\";",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5be",
+      "text": "  import {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5bf",
+      "text": "    getGyazoToken,",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5c0",
+      "text": "    getProject,",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5c1",
+      "text": "  } from \"https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.17.0/rest/mod.ts\";",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5c2",
+      "text": "  import {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5c3",
+      "text": "    insertText,",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5c4",
+      "text": "    textInput,",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5c5",
+      "text": "    useStatusBar,",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5c6",
+      "text": "  } from \"https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.17.0/browser/dom/mod.ts\";",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5c7",
+      "text": "  import { Scrapbox } from \"https://raw.githubusercontent.com/scrapbox-jp/types/0.3.2/userscript.ts\";",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5c8",
+      "text": "  declare const scrapbox: Scrapbox;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5c9",
+      "text": "  ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5ca",
+      "text": "  const projectResult = await getProject(scrapbox.Project.name);",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5cb",
+      "text": "  if (!projectResult.ok) {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5cc",
+      "text": "    alert(`Failed to get the information of \"${scrapbox.Project.name}\"`);",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5cd",
+      "text": "    throw Error(projectResult.value.name);",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5ce",
+      "text": "  }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5cf",
+      "text": "  const project = projectResult.value;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5d0",
+      "text": "  if (project.isMember && project.uploadImaegTo === \"gcs\") {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5d1",
+      "text": "    const result = await getGyazoToken();",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5d2",
+      "text": "    if (!result.ok) {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5d3",
+      "text": "      alert(",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5d4",
+      "text": "        \"You haven't logged in Gyazo yet, so you can only upload images to scrapbox.io.\",",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5d5",
+      "text": "      );",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5d6",
+      "text": "    } else {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5d7",
+      "text": "      const accessToken = result.value;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5d8",
+      "text": "      if (!accessToken) {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5d9",
+      "text": "        alert(",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5da",
+      "text": "          \"You haven't connect Gyazo to scrapbox.io yet, so you can only upload images to scrapbox.io.\",",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5db",
+      "text": "        );",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5dc",
+      "text": "      } else {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5dd",
+      "text": "        textInput()!.addEventListener(\"paste\", async (e: ClipboardEvent) => {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5de",
+      "text": "          const files = [...e.clipboardData?.items ?? []].flatMap((item) => {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5df",
+      "text": "            if (!item.type.includes(\"image\")) return [];",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5e0",
+      "text": "            const file = item.getAsFile();",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5e1",
+      "text": "            if (!file) return [];",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5e2",
+      "text": "            return [file];",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5e3",
+      "text": "          });",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5e4",
+      "text": "          if (files.length === 0) return;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5e5",
+      "text": "          e.preventDefault();",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5e6",
+      "text": "          e.stopPropagation();",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5e7",
+      "text": "  ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5e8",
+      "text": "          const { render, dispose } = useStatusBar();",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5e9",
+      "text": "          let counter = 1;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5ea",
+      "text": "          let failed = 0;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5eb",
+      "text": "          try {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5ec",
+      "text": "            let inserted = Promise.resolve();",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5ed",
+      "text": "            for (const file of files) {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5ee",
+      "text": "              render({ type: \"spinner\" }, {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5ef",
+      "text": "                type: \"text\",",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5f0",
+      "text": "                text:",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5f1",
+      "text": "                  `uploading ${counter}/${files.length} files, ${failed} failed`,",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5f2",
+      "text": "              });",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5f3",
+      "text": "  ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5f4",
+      "text": "              const uploadResult = await upload(file, { accessToken });",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5f5",
+      "text": "              if (!uploadResult.ok) {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5f6",
+      "text": "                console.error(uploadResult.value);",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5f7",
+      "text": "                failed++;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5f8",
+      "text": "                continue;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5f9",
+      "text": "              }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5fa",
+      "text": "              counter++;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5fb",
+      "text": "  ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5fc",
+      "text": "              const url = uploadResult.value.permalink_url;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5fd",
+      "text": "              inserted.then(() => {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5fe",
+      "text": "                inserted = insertText(`[${url}]\\n`);",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc5ff",
+      "text": "              });",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc600",
+      "text": "            }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc601",
+      "text": "          } catch (e: unknown) {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc602",
+      "text": "            if (!(e instanceof Error)) throw e;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc603",
+      "text": "            console.error(e);",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc604",
+      "text": "            render({ type: \"exclamation-triangle\" }, {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc605",
+      "text": "              type: \"text\",",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc606",
+      "text": "              text: `UnexpextedError: ${e.name}, ${e.message}`,",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc607",
+      "text": "            });",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc608",
+      "text": "          } finally {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc609",
+      "text": "            render({ type: \"check-circle\" }, {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc60a",
+      "text": "              \"type\": \"text\",",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc60b",
+      "text": "              text: `Uploaded ${counter} images, ${failed} failed.`,",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc60c",
+      "text": "            });",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc60d",
+      "text": "            setTimeout(() => dispose(), 3000);",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc60e",
+      "text": "          }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc60f",
+      "text": "        });",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc610",
+      "text": "      }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc611",
+      "text": "    }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc612",
+      "text": "  }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc613",
+      "text": "  ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    },
+    {
+      "id": "63b12f0c774b170000bdc614",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1672556300,
+      "updated": 1672556300
+    }
+  ]
+}
