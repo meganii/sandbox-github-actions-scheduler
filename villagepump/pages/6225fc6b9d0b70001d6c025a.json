@@ -2,7 +2,7 @@
   "id": "6225fc6b9d0b70001d6c025a",
   "title": "箇条書きを折り畳むUserScript (takker)",
   "created": 1646656622,
-  "updated": 1660197706,
+  "updated": 1673054911,
   "lines": [
     {
       "id": "6225fc6b9d0b70001d6c025a",
@@ -447,17 +447,38 @@
     },
     {
       "id": "6225fc6d1280f0000088f726",
-      "text": "   /** この関数を呼び出すと開始される */",
+      "text": "   /** エントリポイント",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657264
+      "updated": 1673054161
+    },
+    {
+      "id": "63b8c7d01280f00000dc45b7",
+      "text": "    *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054161,
+      "updated": 1673054163
+    },
+    {
+      "id": "63b8c7d31280f00000dc45b9",
+      "text": "    * @return {{ cleanup: () => void }} 後始末函数など",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054165,
+      "updated": 1673054209
+    },
+    {
+      "id": "63b8c7d21280f00000dc45b8",
+      "text": "    */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054163,
+      "updated": 1673054163
     },
     {
       "id": "6225fc6d1280f0000088f727",
-      "text": "   export function setup() {",
+      "text": "   export const setup = () => {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657264
+      "updated": 1673054149
     },
     {
       "id": "6225fc6d1280f0000088f728",
@@ -587,10 +608,10 @@
     },
     {
       "id": "6225fc6d1280f0000088f739",
-      "text": "   }",
+      "text": "   };",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657264
+      "updated": 1673054219
     },
     {
       "id": "6225fc6d1280f0000088f73a",
@@ -622,10 +643,24 @@
     },
     {
       "id": "6225fc6d1280f0000088f73e",
-      "text": "     /** @type {string[]} */",
+      "text": "     /** 非表示にする行のID list",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657264
+      "updated": 1673054108
+    },
+    {
+      "id": "63b8c7831280f00000dc45b5",
+      "text": "      * @type {string[]}",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054084,
+      "updated": 1673054098
+    },
+    {
+      "id": "63b8c7911280f00000dc45b6",
+      "text": "      */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054098,
+      "updated": 1673054098
     },
     {
       "id": "6225fc6d1280f0000088f73f",
@@ -951,38 +986,52 @@
     },
     {
       "id": "6225fc6d1280f0000088f76d",
-      "text": "   /**",
+      "text": "   /** 折り畳みボタンを描画する",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657264
+      "updated": 1673054332
+    },
+    {
+      "id": "63b8c87c1280f00000dc45bb",
+      "text": "    *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054333,
+      "updated": 1673054334
     },
     {
       "id": "6225fc6d1280f0000088f76e",
-      "text": "    * @param {HTMLDivElement} line",
+      "text": "    * @param {HTMLDivElement} line 描画先の行のDOM",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657264
+      "updated": 1673054344
     },
     {
       "id": "6225fc6d1280f0000088f76f",
-      "text": "    * @param {number} indent",
+      "text": "    * @param {number} indent 描画先の行のインデントの深さ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657264
+      "updated": 1673054360
     },
     {
       "id": "6225fc6d1280f0000088f770",
-      "text": "    * @param {string[]} childIds",
+      "text": "    * @param {string[]} childIds 子箇条書きのID list",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657264
+      "updated": 1673054575
     },
     {
       "id": "6225fc6d1280f0000088f771",
-      "text": "    * @param {(updater: (ids: string[]) => string[]) => void} setIds",
+      "text": "    * @param {(updater: (ids: string[]) => string[]) => void} setIds 非表示にする行のIDを更新する函数",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657264
+      "updated": 1673054401
+    },
+    {
+      "id": "63b8c83d1280f00000dc45ba",
+      "text": "    * @return {void}",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054270,
+      "updated": 1673054277
     },
     {
       "id": "6225fc6d1280f0000088f773",
@@ -999,466 +1048,522 @@
       "updated": 1646657264
     },
     {
+      "id": "63b8c8c91280f00000dc45bc",
+      "text": "  前回のボタンを消して、新しく作り直す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054410,
+      "updated": 1673054505
+    },
+    {
+      "id": "63b8c9501280f00000dc45c0",
+      "text": "   子箇条書きがなければ消したままにする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054545,
+      "updated": 1673054566
+    },
+    {
+      "id": "63b8c9281280f00000dc45be",
+      "text": "   流用してもいいんじゃない？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054505,
+      "updated": 1673054514
+    },
+    {
+      "id": "63b8c8f81280f00000dc45bd",
+      "text": "   code:mod.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054457,
+      "updated": 1673054579
+    },
+    {
       "id": "6225fc6d1280f0000088f775",
-      "text": "     const oldButton = line.getElementsByClassName(\"button folding\")[0];",
+      "text": "      const oldButton = line.getElementsByClassName(\"button folding\")[0];",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657264
+      "updated": 1673054579
     },
     {
       "id": "6225fc6d1280f0000088f776",
-      "text": "     let open = oldButton?.classList?.contains?.(\"open\") ?? true;",
+      "text": "      let open = oldButton?.classList?.contains?.(\"open\") ?? true;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657264
+      "updated": 1673054579
     },
     {
       "id": "6225fc6d1280f0000088f777",
-      "text": "     oldButton?.remove?.();",
+      "text": "      oldButton?.remove?.();",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657264
+      "updated": 1673054579
     },
     {
       "id": "6225fc6d1280f0000088f778",
-      "text": "     ",
+      "text": "      ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657264
+      "updated": 1673054579
     },
     {
       "id": "6225fc6d1280f0000088f779",
-      "text": "     if (childIds.length === 0) return;",
+      "text": "      if (childIds.length === 0) return;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657264
+      "updated": 1673054579
     },
     {
       "id": "6225fc6d1280f0000088f77b",
-      "text": "  大きさの調節はかなり感覚的に決めている",
+      "text": "  ボタンを作る",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657298
+      "updated": 1673054599
+    },
+    {
+      "id": "63b8c9821280f00000dc45c1",
+      "text": "   大きさの調節はかなり感覚的に決めている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054595,
+      "updated": 1673054600
     },
     {
       "id": "6225fc6d1280f0000088f77c",
       "text": "  　コードが汚くなってしまった",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657303
+      "updated": 1673054604
     },
     {
       "id": "6225fc6d1280f0000088f77d",
-      "text": "  code:mod.js",
+      "text": "   code:mod.js",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f77e",
-      "text": "     const i = document.createElement(\"i\");",
+      "text": "      const i = document.createElement(\"i\");",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f77f",
-      "text": "     i.className = `fas fa-caret-${open ? \"down\" : \"right\"}`;",
+      "text": "      i.className = `fas fa-caret-${open ? \"down\" : \"right\"}`;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f780",
-      "text": "     i.style.minWidth = \"0.5em\";",
+      "text": "      i.style.minWidth = \"0.5em\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
+    },
+    {
+      "id": "63b8cabe1280f00000dc45c5",
+      "text": "      ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054911,
+      "updated": 1673054911
     },
     {
       "id": "6225fc6d1280f0000088f781",
-      "text": "     const button = document.createElement(\"a\");",
+      "text": "      const button = document.createElement(\"a\");",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f782",
-      "text": "     button.type = \"button\";",
+      "text": "      button.type = \"button\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f783",
-      "text": "     button.classList.add(\"button\", \"folding\", \"open\");",
+      "text": "      button.classList.add(\"button\", \"folding\", \"open\");",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f784",
-      "text": "     button.style.position = \"absolute\";",
+      "text": "      button.style.position = \"absolute\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f785",
-      "text": "     const head = line.getElementsByClassName(\"indent\")[0]",
+      "text": "      const head = line.getElementsByClassName(\"indent\")[0]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f786",
-      "text": "       ?? line.getElementsByClassName(\"char-index\")[0];",
+      "text": "        ?? line.getElementsByClassName(\"char-index\")[0];",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f787",
-      "text": "     const offset = line.getBoundingClientRect().left;",
+      "text": "      const offset = line.getBoundingClientRect().left;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f788",
-      "text": "     const left = indent === 0 ? offset : head.getBoundingClientRect().left;",
+      "text": "      const left = indent === 0 ? offset : head.getBoundingClientRect().left;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f789",
-      "text": "     button.style.left = `calc(${Math.round(left - offset)}px - ${",
+      "text": "      button.style.left = `calc(${Math.round(left - offset)}px - ${",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f78a",
-      "text": "       line.getElementsByClassName(\"code-body\").length > 0 ? 2.0 : 1.0",
+      "text": "        line.getElementsByClassName(\"code-body\").length > 0 ? 2.0 : 1.0",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f78b",
-      "text": "     }em)`;",
+      "text": "      }em)`;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f78c",
-      "text": "     button.style.fontSize = \"20px\";",
+      "text": "      button.style.fontSize = \"20px\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f78d",
-      "text": "     button.style.zIndex = \"1000\";",
+      "text": "      button.style.zIndex = \"1000\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f78e",
-      "text": "     button.append(i);",
+      "text": "      button.append(i);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f78f",
-      "text": "   ",
+      "text": "    ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f790",
-      "text": "     button.addEventListener(\"click\", (e) => {",
+      "text": "      button.addEventListener(\"click\", (e) => {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f791",
-      "text": "       e.preventDefault();",
+      "text": "        e.preventDefault();",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f792",
-      "text": "       e.stopPropagation();",
+      "text": "        e.stopPropagation();",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f793",
-      "text": "   ",
+      "text": "    ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f794",
-      "text": "       if (open) {",
+      "text": "        if (open) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f795",
-      "text": "         setIds(",
+      "text": "          setIds(",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f796",
-      "text": "           (hiddenIds) => {",
+      "text": "            (hiddenIds) => {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f797",
-      "text": "             hiddenIds.push(...childIds);",
+      "text": "              hiddenIds.push(...childIds);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f798",
-      "text": "             return hiddenIds;",
+      "text": "              return hiddenIds;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f799",
-      "text": "           },",
+      "text": "            },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f79a",
-      "text": "         );",
+      "text": "          );",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f79b",
-      "text": "         i.className = `fas fa-caret-right`;",
+      "text": "          i.className = `fas fa-caret-right`;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f79c",
-      "text": "         line.style.textDecoration = \"solid underline var(--folding-line-color, orange) 2px\";",
+      "text": "          line.style.textDecoration = \"solid underline var(--folding-line-color, orange) 2px\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f79d",
-      "text": "         open = false;",
+      "text": "          open = false;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f79e",
-      "text": "       } else {",
+      "text": "        } else {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f79f",
-      "text": "         setIds(",
+      "text": "          setIds(",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7a0",
-      "text": "           (hiddenIds) =>",
+      "text": "            (hiddenIds) =>",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7a1",
-      "text": "             hiddenIds.filter(",
+      "text": "              hiddenIds.filter(",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7a2",
-      "text": "               (id) => !childIds.includes(id),",
+      "text": "                (id) => !childIds.includes(id),",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7a3",
-      "text": "             ),",
+      "text": "              ),",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7a4",
-      "text": "         );",
+      "text": "          );",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7a5",
-      "text": "         i.className = `fas fa-caret-down`;",
+      "text": "          i.className = `fas fa-caret-down`;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7a6",
-      "text": "         line.style.textDecoration = \"\";",
+      "text": "          line.style.textDecoration = \"\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7a7",
-      "text": "         open = true;",
+      "text": "          open = true;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7a8",
-      "text": "       }",
+      "text": "        }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7a9",
-      "text": "     });",
+      "text": "      });",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7aa",
-      "text": "     ",
+      "text": "      ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7ab",
-      "text": "     line.insertAdjacentElement(\"afterbegin\", button);",
+      "text": "      line.insertAdjacentElement(\"afterbegin\", button);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7ac",
-      "text": "   }",
+      "text": "    }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
+    },
+    {
+      "id": "63b8c9c21280f00000dc45c3",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054659,
+      "updated": 1673054659
+    },
+    {
+      "id": "63b8c9be1280f00000dc45c2",
+      "text": "  ボタンを全消しする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054655,
+      "updated": 1673054666
     },
     {
       "id": "6225fc6d1280f0000088f7ad",
-      "text": "   ",
+      "text": "   code:mod.js",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054653
     },
     {
       "id": "6225fc6d1280f0000088f7ae",
-      "text": "   function clearButtons() {",
+      "text": "    function clearButtons() {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7af",
-      "text": "     for (const button of Array.from(document.querySelectorAll(\"div.line > .button.folding\"))) {",
+      "text": "      for (const button of Array.from(document.querySelectorAll(\"div.line > .button.folding\"))) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "622745351280f00000618459",
-      "text": "       const line = button.closest(\"div.line\");",
+      "text": "        const line = button.closest(\"div.line\");",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646740789,
-      "updated": 1646740802
+      "updated": 1673054643
     },
     {
       "id": "622745431280f0000061845a",
-      "text": "       if (line) {",
+      "text": "        if (line) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646740802,
-      "updated": 1646740827
+      "updated": 1673054643
     },
     {
       "id": "6227455c1280f0000061845c",
-      "text": "         line.style.textDecoration = \"\";",
+      "text": "          line.style.textDecoration = \"\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646740827,
-      "updated": 1646740834
+      "updated": 1673054643
     },
     {
       "id": "622745641280f0000061845d",
-      "text": "       }",
+      "text": "        }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646740836,
-      "updated": 1646740836
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7b0",
-      "text": "       button.remove();",
+      "text": "        button.remove();",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7b1",
-      "text": "     }",
+      "text": "      }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fc6d1280f0000088f7b2",
-      "text": "   }",
+      "text": "    }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657316
+      "updated": 1673054643
     },
     {
       "id": "6225fe5a1280f00000b77624",
-      "text": "   ",
+      "text": "    ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657113,
-      "updated": 1646657319
+      "updated": 1673054670
     },
     {
       "id": "6225fc6d1280f0000088f7b3",
@@ -1517,830 +1622,837 @@
       "updated": 1646657340
     },
     {
+      "id": "63b8ca1f1280f00000dc45c4",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673054752,
+      "updated": 1673054753
+    },
+    {
       "id": "6225fc6d1280f0000088f7b8",
-      "text": " 折りたたみ箇所を計算するやつ",
+      "text": "[折り畳み]箇所を計算するやつ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657398
+      "updated": 1673054819
     },
     {
       "id": "62260af41280f000007d4a12",
-      "text": "  scrapbox.Page.linesを一回ループするだけで計算できるようなalgorithmにしてある",
+      "text": " scrapbox.Page.linesを一回ループするだけで計算できるようなalgorithmにしてある",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646660340,
-      "updated": 1646660366
+      "updated": 1673054756
     },
     {
       "id": "62260b0e1280f000007d4a13",
-      "text": "   こうしないとscrapboxが固まりまくって大変なことになった",
+      "text": "  こうしないとscrapboxが固まりまくって大変なことになった",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646660366,
-      "updated": 1646660382
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7b9",
-      "text": "  code:folding.js",
+      "text": " code:folding.js",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7ba",
-      "text": "   /** 行を走査して、折り畳める部分を返す",
+      "text": "  /** 行を走査して、折り畳める部分を返す",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7bb",
-      "text": "    *",
+      "text": "   *",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7bc",
-      "text": "    * @param {{ text: string; id: string }[]} lines 行のリスト",
+      "text": "   * @param {{ text: string; id: string }[]} lines 行のリスト",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646712070
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7bd",
-      "text": "    * @return {Generator<{ id: string; indent: number; children: string[] }, unknown, void>}",
+      "text": "   * @return {Generator<{ id: string; indent: number; children: string[] }, unknown, void>}",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7be",
-      "text": "    */",
+      "text": "   */",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7bf",
-      "text": "   export function* findFoldings(lines) {",
+      "text": "  export function* findFoldings(lines) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7c0",
-      "text": "     /** 1番目が行番号、2番目がindentの数",
+      "text": "    /** 1番目が行番号、2番目がindentの数",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7c1",
-      "text": "      *",
+      "text": "     *",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7c2",
-      "text": "      * @type {[number, number]}",
+      "text": "     * @type {[number, number]}",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7c3",
-      "text": "      */",
+      "text": "     */",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7c4",
-      "text": "     const parentPos = [];",
+      "text": "    const parentPos = [];",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7c5",
-      "text": "     let index = -1;",
+      "text": "    let index = -1;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7c6",
-      "text": "     for (const line of lines) {",
+      "text": "    for (const line of lines) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7c7",
-      "text": "       index++;",
+      "text": "      index++;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7c8",
-      "text": "       const indent = getIndentCount(line.text);",
+      "text": "      const indent = getIndentCount(line.text);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7c9",
-      "text": "       for (const [parentIndex, parentIndent] of [...parentPos]) {",
+      "text": "      for (const [parentIndex, parentIndent] of [...parentPos]) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7ca",
-      "text": "         if (parentIndent < indent) break;",
+      "text": "        if (parentIndent < indent) break;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7cb",
-      "text": "         yield {",
+      "text": "        yield {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7cc",
-      "text": "           id: lines[parentIndex].id,",
+      "text": "          id: lines[parentIndex].id,",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7cd",
-      "text": "           indent: parentIndent,",
+      "text": "          indent: parentIndent,",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7ce",
-      "text": "           children: lines.slice(parentIndex + 1, index).map(({ id }) => id),",
+      "text": "          children: lines.slice(parentIndex + 1, index).map(({ id }) => id),",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7cf",
-      "text": "         };",
+      "text": "        };",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7d0",
-      "text": "         parentPos.shift();",
+      "text": "        parentPos.shift();",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7d1",
-      "text": "       }",
+      "text": "      }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7d2",
-      "text": "       parentPos.unshift([index, indent]);",
+      "text": "      parentPos.unshift([index, indent]);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7d3",
-      "text": "     }",
+      "text": "    }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7d4",
-      "text": "     ",
+      "text": "    ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7d5",
-      "text": "     /** @type {string[]}  */",
+      "text": "    /** @type {string[]}  */",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7d6",
-      "text": "     const children = [];",
+      "text": "    const children = [];",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7d7",
-      "text": "     // 余りは必ず階層構造になっているはず",
+      "text": "    // 余りは必ず階層構造になっているはず",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7d8",
-      "text": "     for (const [index, indent] of parentPos) {",
+      "text": "    for (const [index, indent] of parentPos) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7d9",
-      "text": "       const id = lines[index].id;",
+      "text": "      const id = lines[index].id;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7da",
-      "text": "       yield { id, indent, children: [...children] };",
+      "text": "      yield { id, indent, children: [...children] };",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7db",
-      "text": "       children.unshift(id);",
+      "text": "      children.unshift(id);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7dc",
-      "text": "     }",
+      "text": "    }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7dd",
-      "text": "   }",
+      "text": "  }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7de",
-      "text": "   ",
+      "text": "  ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7df",
-      "text": "   /** 行のindentを返す",
+      "text": "  /** 行のindentを返す",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7e0",
-      "text": "    *",
+      "text": "   *",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7e1",
-      "text": "    * @param {string} text",
+      "text": "   * @param {string} text",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7e2",
-      "text": "    * @return {number}",
+      "text": "   * @return {number}",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7e3",
-      "text": "    */",
+      "text": "   */",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7e4",
-      "text": "   const getIndentCount = (text) => text.match(/^(\\s*)/)?.[1]?.length ?? 0;",
+      "text": "  const getIndentCount = (text) => text.match(/^(\\s*)/)?.[1]?.length ?? 0;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646660333
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7e5",
-      "text": "  テストコード",
+      "text": " テストコード",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657779
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f7e6",
-      "text": "   $ deno test https://scrapbox.io/api/code/villagepump/箇条書きを折り畳むUserScript_(takker)/folding_test.ts",
+      "text": "  $ deno test https://scrapbox.io/api/code/villagepump/箇条書きを折り畳むUserScript_(takker)/folding_test.ts",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657782
+      "updated": 1673054756
     },
     {
       "id": "622600ff1280f00000b7762b",
-      "text": "   code:folding_test.ts",
+      "text": "  code:folding_test.ts",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657791,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7766e",
-      "text": "    import { findFoldings } from \"./folding.js\";",
+      "text": "   import { findFoldings } from \"./folding.js\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7766f",
-      "text": "    import { assertEquals } from \"./deps_test.ts\";",
+      "text": "   import { assertEquals } from \"./deps_test.ts\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77670",
-      "text": "    ",
+      "text": "   ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77671",
-      "text": "    Deno.test(\"findFoldings()\", async (t) => {",
+      "text": "   Deno.test(\"findFoldings()\", async (t) => {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77672",
-      "text": "      await t.step(\"general\", () => {",
+      "text": "     await t.step(\"general\", () => {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77673",
-      "text": "        const lines = [",
+      "text": "       const lines = [",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77674",
-      "text": "          \" aa\",",
+      "text": "         \" aa\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77675",
-      "text": "          \"a\",",
+      "text": "         \"a\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77676",
-      "text": "          \"a\",",
+      "text": "         \"a\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77677",
-      "text": "          \"\",",
+      "text": "         \"\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77678",
-      "text": "          \"ccc\",",
+      "text": "         \"ccc\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77679",
-      "text": "          \" d\",",
+      "text": "         \" d\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7767a",
-      "text": "          \" d\",",
+      "text": "         \" d\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7767b",
-      "text": "          \"  d\",",
+      "text": "         \"  d\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7767c",
-      "text": "          \"    d\",",
+      "text": "         \"    d\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7767d",
-      "text": "          \"  d\",",
+      "text": "         \"  d\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7767e",
-      "text": "          \"  d\",",
+      "text": "         \"  d\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7767f",
-      "text": "          \" d\",",
+      "text": "         \" d\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77680",
-      "text": "          \"  d\",",
+      "text": "         \"  d\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77681",
-      "text": "          \"d\",",
+      "text": "         \"d\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77682",
-      "text": "          \"  d\",",
+      "text": "         \"  d\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77683",
-      "text": "          \"\",",
+      "text": "         \"\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77684",
-      "text": "          \"  d\",",
+      "text": "         \"  d\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77685",
-      "text": "          \"\",",
+      "text": "         \"\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77686",
-      "text": "          \"a\",",
+      "text": "         \"a\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77687",
-      "text": "          \" b\",",
+      "text": "         \" b\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77688",
-      "text": "          \"  c\",",
+      "text": "         \"  c\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77689",
-      "text": "        ].map((text, i) => ({ text, id: `${i}` }));",
+      "text": "       ].map((text, i) => ({ text, id: `${i}` }));",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7768a",
-      "text": "        assertEquals([...findFoldings(lines)], [",
+      "text": "       assertEquals([...findFoldings(lines)], [",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7768b",
-      "text": "          { id: \"0\", indent: 1, children: [] },",
+      "text": "         { id: \"0\", indent: 1, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7768c",
-      "text": "          { id: \"1\", indent: 0, children: [] },",
+      "text": "         { id: \"1\", indent: 0, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7768d",
-      "text": "          { id: \"2\", indent: 0, children: [] },",
+      "text": "         { id: \"2\", indent: 0, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7768e",
-      "text": "          { id: \"3\", indent: 0, children: [] },",
+      "text": "         { id: \"3\", indent: 0, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7768f",
-      "text": "          { id: \"5\", indent: 1, children: [] },",
+      "text": "         { id: \"5\", indent: 1, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77690",
-      "text": "          { id: \"8\", indent: 4, children: [] },",
+      "text": "         { id: \"8\", indent: 4, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77691",
-      "text": "          { id: \"7\", indent: 2, children: [\"8\"] },",
+      "text": "         { id: \"7\", indent: 2, children: [\"8\"] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77692",
-      "text": "          { id: \"9\", indent: 2, children: [] },",
+      "text": "         { id: \"9\", indent: 2, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77693",
-      "text": "          { id: \"10\", indent: 2, children: [] },",
+      "text": "         { id: \"10\", indent: 2, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77694",
-      "text": "          { id: \"6\", indent: 1, children: [\"7\", \"8\", \"9\", \"10\"] },",
+      "text": "         { id: \"6\", indent: 1, children: [\"7\", \"8\", \"9\", \"10\"] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77695",
-      "text": "          { id: \"12\", indent: 2, children: [] },",
+      "text": "         { id: \"12\", indent: 2, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77696",
-      "text": "          { id: \"11\", indent: 1, children: [\"12\"] },",
+      "text": "         { id: \"11\", indent: 1, children: [\"12\"] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77697",
-      "text": "          { id: \"4\", indent: 0, children: [\"5\", \"6\", \"7\", \"8\", \"9\", \"10\", \"11\", \"12\"] },",
+      "text": "         { id: \"4\", indent: 0, children: [\"5\", \"6\", \"7\", \"8\", \"9\", \"10\", \"11\", \"12\"] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77698",
-      "text": "          { id: \"14\", indent: 2, children: [] },",
+      "text": "         { id: \"14\", indent: 2, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b77699",
-      "text": "          { id: \"13\", indent: 0, children: [\"14\"] },",
+      "text": "         { id: \"13\", indent: 0, children: [\"14\"] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7769a",
-      "text": "          { id: \"16\", indent: 2, children: [] },",
+      "text": "         { id: \"16\", indent: 2, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7769b",
-      "text": "          { id: \"15\", indent: 0, children: [\"16\"] },",
+      "text": "         { id: \"15\", indent: 0, children: [\"16\"] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7769c",
-      "text": "          { id: \"17\", indent: 0, children: [] },",
+      "text": "         { id: \"17\", indent: 0, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7769d",
-      "text": "          { id: \"20\", indent: 2, children: [] },",
+      "text": "         { id: \"20\", indent: 2, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7769e",
-      "text": "          { id: \"19\", indent: 1, children: [\"20\"] },",
+      "text": "         { id: \"19\", indent: 1, children: [\"20\"] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b7769f",
-      "text": "          { id: \"18\", indent: 0, children: [\"19\", \"20\" ] },",
+      "text": "         { id: \"18\", indent: 0, children: [\"19\", \"20\" ] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776a0",
-      "text": "        ]);",
+      "text": "       ]);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776a1",
-      "text": "      });",
+      "text": "     });",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776a2",
-      "text": "      ",
+      "text": "     ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776a3",
-      "text": "      await t.step(\"no indent\", () => {",
+      "text": "     await t.step(\"no indent\", () => {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776a4",
-      "text": "        const lines = [",
+      "text": "       const lines = [",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776a5",
-      "text": "          \"a\",",
+      "text": "         \"a\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776a6",
-      "text": "          \"a\",",
+      "text": "         \"a\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776a7",
-      "text": "          \"a\",",
+      "text": "         \"a\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776a8",
-      "text": "        ].map((text, i) => ({ text, id: `${i}` }));",
+      "text": "       ].map((text, i) => ({ text, id: `${i}` }));",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776a9",
-      "text": "        assertEquals([...findFoldings(lines)], [",
+      "text": "       assertEquals([...findFoldings(lines)], [",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776aa",
-      "text": "          { id: \"0\", indent: 0, children: [] },",
+      "text": "         { id: \"0\", indent: 0, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776ab",
-      "text": "          { id: \"1\", indent: 0, children: [] },",
+      "text": "         { id: \"1\", indent: 0, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776ac",
-      "text": "          { id: \"2\", indent: 0, children: [] },",
+      "text": "         { id: \"2\", indent: 0, children: [] },",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776ad",
-      "text": "        ]);",
+      "text": "       ]);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776ae",
-      "text": "      })",
+      "text": "     })",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "622601051280f00000b776af",
-      "text": "    });",
+      "text": "   });",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646657797,
-      "updated": 1646657797
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f82b",
-      "text": "   code:deps_test.ts",
+      "text": "  code:deps_test.ts",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657802
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f82c",
-      "text": "    export { assertEquals } from \"https://deno.land/std@0.125.0/testing/asserts.ts\";",
+      "text": "   export { assertEquals } from \"https://deno.land/std@0.125.0/testing/asserts.ts\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646656622,
-      "updated": 1646657802
+      "updated": 1673054756
     },
     {
       "id": "6225fc6d1280f0000088f82d",
@@ -2358,10 +2470,10 @@
     },
     {
       "id": "622a893f8ee92a000088e843",
-      "text": "#折り畳み",
-      "userId": "566fa156776c9b11008ee92a",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646954816,
-      "updated": 1646954819
+      "updated": 1673054798
     },
     {
       "id": "622a89408ee92a000088e844",
