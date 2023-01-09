@@ -2,7 +2,7 @@
   "id": "6227bc837a9bdc001d6612d9",
   "title": "更新行をスクロールバーに表示",
   "created": 1646771335,
-  "updated": 1673189005,
+  "updated": 1673226193,
   "lines": [
     {
       "id": "6227bc837a9bdc001d6612d9",
@@ -241,6 +241,153 @@
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1648599852,
       "updated": 1648599885
+    },
+    {
+      "id": "63bb66101280f00000ce3428",
+      "text": "    2023-01-09簡単なコードで作れた[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673225744,
+      "updated": 1673225801
+    },
+    {
+      "id": "63bb66191280f00000ce3429",
+      "text": "     これ書いた後[/NotaAllStarsMeetup/Nota ALL STARS  Meetup vol.3 ディスカッション・質疑応答#6241a44e97c2910000d8b319]に行ったら、全っっっく同じコードが置いてあったOTL",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673225753,
+      "updated": 1673225816
+    },
+    {
+      "id": "63bb66581280f00000ce342a",
+      "text": "      一応、真ん中にスクロール位置を合せるか否で違いはあるけど……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673225816,
+      "updated": 1673225843
+    },
+    {
+      "id": "63bb66731280f00000ce342b",
+      "text": "     今使った15分間は何だったの……？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673225843,
+      "updated": 1673225925
+    },
+    {
+      "id": "63bb66a31280f00000ce342c",
+      "text": "      問題演習を2週したと思うことにしよう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673225891,
+      "updated": 1673225915
+    },
+    {
+      "id": "63bb674c1280f00000ce342d",
+      "text": "     10:01:02 `scrapbox.Layout !== \"page\"`なページに遷移すると`.scroll-bar-overlay`が消えてしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673226060,
+      "updated": 1673226089
+    },
+    {
+      "id": "63bb676d1280f00000ce342e",
+      "text": "      対策として、`layout:changed`でlistenerを入れ直す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673226093,
+      "updated": 1673226128
+    },
+    {
+      "id": "63bb63b21280f000005e09a6",
+      "text": "    code:js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673225138,
+      "updated": 1673225139
+    },
+    {
+      "id": "63bb67951280f00000ce342f",
+      "text": "     const render = () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673226135,
+      "updated": 1673226163
+    },
+    {
+      "id": "63bb67b31280f00000ce3433",
+      "text": "       document.getElementsByClassName(\"scroll-bar-overlay\")[0]?.addEventListener?.(\"click\", (e) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673226163,
+      "updated": 1673226173
+    },
+    {
+      "id": "63bb63ee1280f000005e09a9",
+      "text": "         if (!(e.target instanceof HTMLDivElement)) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673225198,
+      "updated": 1673226182
+    },
+    {
+      "id": "63bb64091280f000005e09aa",
+      "text": "         if (!e.target.classList.contains(\"unread-bar\")) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673225225,
+      "updated": 1673226182
+    },
+    {
+      "id": "63bb64231280f000005e09ab",
+      "text": "         const ratio = parseFloat(e.target.style.top) * 0.01;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673225251,
+      "updated": 1673226182
+    },
+    {
+      "id": "63bb64581280f000005e09ac",
+      "text": "         globalThis.scroll({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673225304,
+      "updated": 1673226182
+    },
+    {
+      "id": "63bb659a1280f000005e09ad",
+      "text": "           top: document.body.scrollHeight * ratio - globalThis.innerHeight /2",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673225626,
+      "updated": 1673226182
+    },
+    {
+      "id": "63bb659e1280f000005e09ae",
+      "text": "         });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673225630,
+      "updated": 1673226182
+    },
+    {
+      "id": "63bb63d91280f000005e09a8",
+      "text": "       }, { capture: true });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673225177,
+      "updated": 1673226182
+    },
+    {
+      "id": "63bb67c11280f00000ce3434",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673226177,
+      "updated": 1673226179
+    },
+    {
+      "id": "63bb67c71280f00000ce3435",
+      "text": "     render();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673226183,
+      "updated": 1673226185
+    },
+    {
+      "id": "63bb67a21280f00000ce3431",
+      "text": "     scrapbox.on(\"layout:changed\", render);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673226146,
+      "updated": 1673226193
+    },
+    {
+      "id": "63bb66021280f00000ce3427",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1673225730,
+      "updated": 1673225730
     },
     {
       "id": "6227f14a1280f000004c73fe",
