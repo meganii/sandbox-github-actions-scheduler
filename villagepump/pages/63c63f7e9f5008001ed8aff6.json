@@ -1,0 +1,239 @@
+{
+  "id": "63c63f7e9f5008001ed8aff6",
+  "title": "GPTIndexにScrapboxの内容を突っ込んで遊ぶ",
+  "created": 1673936768,
+  "updated": 1673945939,
+  "lines": [
+    {
+      "id": "63c63f7e9f5008001ed8aff6",
+      "text": "GPTIndexにScrapboxの内容を突っ込んで遊ぶ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f6e",
+      "text": "[GPTIndex]に[Scrapbox]の内容を突っ込んで遊ぶ[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936772
+    },
+    {
+      "id": "63c63f7f79e1130000381f6f",
+      "text": ">[https://twitter.com/robbalian/status/1613217443111108608 @robbalian]: Hey GPT: When did I peak?",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f70",
+      "text": ">I build a model that queries thousands of pages of my emails and personal notes. You can use it too at https://t.co/tSHSzWoM6q",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f71",
+      "text": ">Here's what I learned... 🧵",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f72",
+      "text": "　このcolabを使えそう[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673937042
+    },
+    {
+      "id": "63c63f7f79e1130000381f73",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f74",
+      "text": " code: py",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f75",
+      "text": "  import json",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f76",
+      "text": "  ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f77",
+      "text": "  # open the json file",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f78",
+      "text": "  with open('scrapbox_export.json') as json_file:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f79",
+      "text": "      data = json.load(json_file)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f7a",
+      "text": "  ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f7b",
+      "text": "  # iterate through the pages",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f7c",
+      "text": "  for page in data['pages']:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f7d",
+      "text": "      title = page['title']",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f7e",
+      "text": "      lines = page['lines']",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f7f",
+      "text": "      # join the lines using newline character",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f80",
+      "text": "      content = \"\\n\".join(lines)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f81",
+      "text": "      title = title.replace(\"/\", \"-\")",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f82",
+      "text": "      # print the title and content of each page",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f83",
+      "text": "      f = open(\"data/\" + title + \".txt\", \"w+\")",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f84",
+      "text": "      f.write(content)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f85",
+      "text": " とりあえずこれでjsonをtxtファイルに置き換えられる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f86",
+      "text": " 　なんか[/blu3mo]だとエラー出るけど未解決",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f87",
+      "text": " その上で、Semantic SearchとかQ&Aができる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63f7f79e1130000381f88",
+      "text": " 　はずだが、Semantic Searchで有用なファイルを引っ張ってくる段階がうまくいっていないみたい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    },
+    {
+      "id": "63c63fa879e1130000381f8d",
+      "text": " 　 人間の目からみて、あまり関係ないファイルばかり引っ張られてくる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936809,
+      "updated": 1673936818
+    },
+    {
+      "id": "63c63f7f79e1130000381f89",
+      "text": "　　ソースが日本語なのが問題..? ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936822
+    },
+    {
+      "id": "63c63f7f79e1130000381f8a",
+      "text": " 　　EmbeddingとIndexingの仕組みを読まないと分からんな[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936826
+    },
+    {
+      "id": "63c662c3b8bbfc00009377f7",
+      "text": "",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1673945795,
+      "updated": 1673945795
+    },
+    {
+      "id": "63c63f7f79e1130000381f8b",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1673936768,
+      "updated": 1673936768
+    }
+  ]
+}
