@@ -2,7 +2,7 @@
   "id": "639083650f28f8001d9056db",
   "title": "雑に読む「達人に学ぶDB設計徹底指南書」",
   "created": 1670415207,
-  "updated": 1671631177,
+  "updated": 1674214655,
   "lines": [
     {
       "id": "639083650f28f8001d9056db",
@@ -1371,10 +1371,10 @@
     },
     {
       "id": "63a310f45e90c0000081d4ab",
-      "text": " 　 テーブルに課す制約",
+      "text": " 　 テーブルに課す代表的制約",
       "userId": "60508ed36a7abc00235e90c0",
       "created": 1671631092,
-      "updated": 1671631117
+      "updated": 1674212343
     },
     {
       "id": "63a3110f5e90c0000081d4ac",
@@ -1385,24 +1385,241 @@
     },
     {
       "id": "63a3113d5e90c0000081d4ae",
-      "text": "   　 空欄のこと",
+      "text": "   　 データベースにデータを登録するとき、空欄(`null`)を許さないこと",
       "userId": "60508ed36a7abc00235e90c0",
       "created": 1671631165,
-      "updated": 1671631177
+      "updated": 1674211434
     },
     {
       "id": "63a3114a5e90c0000081d4af",
-      "text": "   　 ",
+      "text": "   　 もしnullを許すとどうなるんだろう？[issac.icon]",
       "userId": "60508ed36a7abc00235e90c0",
       "created": 1671631177,
-      "updated": 1671631177
+      "updated": 1674211492
     },
     {
-      "id": "639734d55e90c000007975d3",
+      "id": "63ca70d15e90c0000027a12b",
+      "text": "      [https://qiita.com/daichi_yamazaki/items/ea3516080948e95bbf26 NOT NULL 制約をつけるべきカラムとは - Qiita]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674211538,
+      "updated": 1674211574
+    },
+    {
+      "id": "63ca70f65e90c0000027a12c",
+      "text": "      [https://mickindex.sakura.ne.jp/database/db_getout_null.html NULL撲滅委員会]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674211574,
+      "updated": 1674211755
+    },
+    {
+      "id": "63ca71ab5e90c0000027a12d",
+      "text": "       おっ著者だ",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674211755,
+      "updated": 1674211761
+    },
+    {
+      "id": "63ca71f25e90c0000027a12e",
+      "text": "       >1. SQL の作成にあたり、人間の直観に反する[3値論理]を考慮せねばならない。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674211826,
+      "updated": 1674211835
+    },
+    {
+      "id": "63ca71f65e90c0000027a12f",
+      "text": "       > 2. IS NULL、IS NOT NULL を指定する場合、[インデックス]が参照されないためパフォーマンスが悪い。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674211830,
+      "updated": 1674211839
+    },
+    {
+      "id": "63ca71f65e90c0000027a130",
+      "text": "       > 3. 四則演算または SQL 関数の引数に NULL が含まれると「NULL の伝播」が起こる",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674211830,
+      "updated": 1674211830
+    },
+    {
+      "id": "63ca71f65e90c0000027a131",
+      "text": "       > 4. SQL の結果を受け取るホスト言語において、NULL の組み込み方が標準化されていない。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674211830,
+      "updated": 1674211830
+    },
+    {
+      "id": "63ca71f65e90c0000027a132",
+      "text": "       > 5. 通常の列の値と違って、NULL は行のどこかに余分なビットを持つことで実装されている。そのため記憶領域を圧迫したり、検索パフォーマンスを悪化させる。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674211830,
+      "updated": 1674211830
+    },
+    {
+      "id": "63ca73d65e90c000000f6b8c",
+      "text": "       まだわからん。先！",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674212311,
+      "updated": 1674212324
+    },
+    {
+      "id": "63ca73e55e90c000000f6b8e",
+      "text": "    [一意制約]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674212325,
+      "updated": 1674212353
+    },
+    {
+      "id": "63ca74015e90c000000f6b8f",
+      "text": "     ある列のデータに対して[一意性]を求めること",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674212353,
+      "updated": 1674212854
+    },
+    {
+      "id": "63ca74745e90c000000f6b90",
+      "text": "      主キーのような振る舞いを他の列に適用する、ようなものかな[issac.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674212468,
+      "updated": 1674212573
+    },
+    {
+      "id": "63ca75a75e90c000000f6b91",
+      "text": "    [CHECK制約]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674212776,
+      "updated": 1674212796
+    },
+    {
+      "id": "63ca75e65e90c000000f6b92",
+      "text": "     指定した条件を満たしたデータだけしか記録できないようにすること",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674212838,
+      "updated": 1674212871
+    },
+    {
+      "id": "63ca76065e90c000000f6b93",
+      "text": "      変数の範囲を設定する感じか",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674212871,
+      "updated": 1674212938
+    },
+    {
+      "id": "63ca78ca5e90c0000038bc9c",
+      "text": " 3-3 [正規化]とは何か？",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674213578,
+      "updated": 1674213609
+    },
+    {
+      "id": "63ca78f05e90c0000038bc9e",
+      "text": "  [正規化(RDB)]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674213617,
+      "updated": 1674213937
+    },
+    {
+      "id": "63ca798d5e90c0000038bc9f",
+      "text": "   データの冗長性を排除して、利用しやすい形に変形すること",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674213774,
+      "updated": 1674213819
+    },
+    {
+      "id": "63ca79bb5e90c0000038bca0",
+      "text": "    正規化で作られるデータを[正規形]という",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674213820,
+      "updated": 1674213906
+    },
+    {
+      "id": "63ca7a375e90c0000038bca1",
+      "text": "   [https://ja.wikipedia.org/wiki/関係の正規化 関係の正規化 - Wikipedia]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674213943,
+      "updated": 1674213946
+    },
+    {
+      "id": "63ca7a395e90c0000038bca2",
+      "text": "    >正規形には様々なものが存在するが、いずれにせよ、正規化を行うことにより、データの[冗長性]と[不整合]が起きる機会を減らすことができる。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674213946,
+      "updated": 1674213979
+    },
+    {
+      "id": "63ca7a5c5e90c0000038bca3",
+      "text": "     よく「冗長性を持たせて」って言われるけど、ここではむしろ「冗長性」は減らす対象なのか～[issac.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674213981,
+      "updated": 1674214444
+    },
+    {
+      "id": "63ca7c225e90c0000038bcb0",
+      "text": "      冗長性、知ってるつもり単語だった",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674214434,
+      "updated": 1674214469
+    },
+    {
+      "id": "63ca7c1f5e90c0000038bcaf",
+      "text": "   正規化には何段階かのレベルがある",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674214431,
+      "updated": 1674214502
+    },
+    {
+      "id": "63ca7c655e90c0000038bcb1",
+      "text": "    [第1正規形]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674214502,
+      "updated": 1674214514
+    },
+    {
+      "id": "63ca7c6d5e90c0000038bcb2",
+      "text": "    [第2正規形]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674214510,
+      "updated": 1674214520
+    },
+    {
+      "id": "63ca7c795e90c0000038bcb3",
+      "text": "    [第3正規形]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674214521,
+      "updated": 1674214524
+    },
+    {
+      "id": "63ca7c7d5e90c0000038bcb4",
+      "text": "    [第4正規形]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674214525,
+      "updated": 1674214528
+    },
+    {
+      "id": "63ca7c805e90c0000038bcb5",
+      "text": "    [第5正規形]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674214529,
+      "updated": 1674214535
+    },
+    {
+      "id": "63ca7cc75e90c0000038bcb6",
+      "text": "    未来に参照",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674214600,
+      "updated": 1674214617
+    },
+    {
+      "id": "63ca7ccc5e90c0000038bcb7",
+      "text": "     [/mrsekut-p/tableの正規化]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1674214604,
+      "updated": 1674214605
+    },
+    {
+      "id": "63ca78db5e90c0000038bc9d",
       "text": "   >いまここ[issac.icon]",
       "userId": "60508ed36a7abc00235e90c0",
-      "created": 1670853844,
-      "updated": 1671630925
+      "created": 1674213595,
+      "updated": 1674214655
     },
     {
       "id": "63909d365e90c000003fadc5",
