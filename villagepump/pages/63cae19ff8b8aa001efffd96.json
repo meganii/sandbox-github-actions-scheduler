@@ -1,0 +1,1275 @@
+{
+  "id": "63cae19ff8b8aa001efffd96",
+  "title": "Bluemo Computational Linear Algebra ノート",
+  "created": 1674240417,
+  "updated": 1674274344,
+  "lines": [
+    {
+      "id": "63cae19ff8b8aa001efffd96",
+      "text": "Bluemo Computational Linear Algebra ノート",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240417,
+      "updated": 1674241821
+    },
+    {
+      "id": "63cae1a579e11300009693b2",
+      "text": " [線形代数]をcomputer前提でやるみたいな入門授業",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240870
+    },
+    {
+      "id": "63cae1a579e11300009693b3",
+      "text": " 　おもろい、実用的[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a879e11300009693c6",
+      "text": " 　[Bluemo微分積分ノート]みたいな感じで[井戸端で授業ノートを取る]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240424,
+      "updated": 1674243306
+    },
+    {
+      "id": "63cae1b779e11300009693c7",
+      "text": "　　[井戸端で他人の情報処理を期待して書く(仮)]をやっているので、ワイワイしたい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240440,
+      "updated": 1674240610
+    },
+    {
+      "id": "63cae26179e11300009693d1",
+      "text": "　　　コメントとかツッコミとか寄り道とかもらえると嬉しいです[blu3mo.icon*3]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240610,
+      "updated": 1674244250
+    },
+    {
+      "id": "63cae8f979e113000059d7cf",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674242297,
+      "updated": 1674242297
+    },
+    {
+      "id": "63cae23679e11300009693d0",
+      "text": "-- 以下ノート --",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240566,
+      "updated": 1674240902
+    },
+    {
+      "id": "63cae37d79e11300009693de",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240894,
+      "updated": 1674240894
+    },
+    {
+      "id": "63cae1a579e11300009693b4",
+      "text": ">Introduction, vectors, [NumPy]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693b5",
+      "text": " 現実の色々なものはlinearではないが、linear functionで[近似]する事ができる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693b6",
+      "text": " 　linear functionで近似すれば、linear algebraの色々な道具を使えるので嬉しい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1ea79e11300009693c8",
+      "text": " overview",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240492,
+      "updated": 1674240492
+    },
+    {
+      "id": "63cae1f179e11300009693cc",
+      "text": "  Linear Transformations",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240497,
+      "updated": 1674240501
+    },
+    {
+      "id": "63cae1f579e11300009693cd",
+      "text": "   [線形変換]ってやつかな、線形の関数は線形変換をやっているみたいな",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240501,
+      "updated": 1674240531
+    },
+    {
+      "id": "63cb3b4a1280f000001ec594",
+      "text": "   ほぼ同義でいい[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263371,
+      "updated": 1674263374
+    },
+    {
+      "id": "63cb3b4e1280f000001ec595",
+      "text": "    写像(=函数)のうち、入力と出力の集合が同じものを変換と呼ぶこともあるが、著者の定義に依る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263374,
+      "updated": 1674263430
+    },
+    {
+      "id": "63cae1ec79e11300009693c9",
+      "text": "  eigenvalues/eigenvectors",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240492,
+      "updated": 1674240492
+    },
+    {
+      "id": "63cae1ec79e11300009693ca",
+      "text": "   なんだこれ、初耳[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240493,
+      "updated": 1674240987
+    },
+    {
+      "id": "63cae2a579e11300009693d7",
+      "text": "   　ドイツ語?",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240677,
+      "updated": 1674240679
+    },
+    {
+      "id": "63cae4bc774b17000049cdaa",
+      "text": "   　　[https://cir.nii.ac.jp/crid/1573105977037687552 ドイツ語と英語が合成された学術用語\"Eigenvalue\"に関する数理的考察 | CiNii Research]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1674241212,
+      "updated": 1674241215
+    },
+    {
+      "id": "63cae4bf774b17000049cdab",
+      "text": "      >\"eigen\"という冠頭の言葉は, もともとドイツ語で「固有の」または「特有の」という意味を表す言葉である.",
+      "userId": "59fb21121207900012774b17",
+      "created": 1674241215,
+      "updated": 1674241227
+    },
+    {
+      "id": "63cae3ed79e11300009693e2",
+      "text": "   　日本語だと[固有値]、[固有ベクトル]らしい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674241006,
+      "updated": 1674263439
+    },
+    {
+      "id": "63cae3f579e11300009693e5",
+      "text": "   　　こっちはなんか聞いたことある[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674241013,
+      "updated": 1674241017
+    },
+    {
+      "id": "63cb3b901280f000001ec596",
+      "text": "   　　[行列の不変量]の一つ。非常に大事[takker.icon]",
+      "userId": "62a91a7a083437001de60035",
+      "created": 1674263440,
+      "updated": 1674264943
+    },
+    {
+      "id": "63cae27879e11300009693d2",
+      "text": "   関数同士の関係のループ、みたいな感じ?",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240633,
+      "updated": 1674241024
+    },
+    {
+      "id": "63cae28c79e11300009693d3",
+      "text": "   　[マルコフ連鎖]関連らしい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240653,
+      "updated": 1674241032
+    },
+    {
+      "id": "63cb3be21280f000001ec599",
+      "text": "   　多分連立漸化式や連立微分方程式がらみで関連していると言っているのだと思う[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263522,
+      "updated": 1674263571
+    },
+    {
+      "id": "63cb3bfc1280f000001ec59a",
+      "text": "   　　マルコフ連鎖をあまり知らないのでなんとも言えないけど",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263548,
+      "updated": 1674263557
+    },
+    {
+      "id": "63cb3c161280f000001ec59c",
+      "text": "   　[\" 関数同士の関係のループ]=漸化式？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263575,
+      "updated": 1674263592
+    },
+    {
+      "id": "63cb3c281280f000001ec59d",
+      "text": "   　 [$ f(n+1)=g(n,f(n))]みたいなやつ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263592,
+      "updated": 1674263618
+    },
+    {
+      "id": "63cae1f079e11300009693cb",
+      "text": "  Singular Value Decomposition",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240496,
+      "updated": 1674240535
+    },
+    {
+      "id": "63cae21779e11300009693ce",
+      "text": "   [PCA]とか、機械学習でなんか触った覚え[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240536,
+      "updated": 1674240983
+    },
+    {
+      "id": "63cae22679e11300009693cf",
+      "text": "    [pol.is]とかで使ってたはず",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240551,
+      "updated": 1674240558
+    },
+    {
+      "id": "63cb3f42e600350000e580a5",
+      "text": "   日本語では[特異値分解]",
+      "userId": "62a91a7a083437001de60035",
+      "created": 1674264386,
+      "updated": 1674264388
+    },
+    {
+      "id": "63cae29f79e11300009693d5",
+      "text": " 復習",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240672,
+      "updated": 1674240675
+    },
+    {
+      "id": "63cae2a279e11300009693d6",
+      "text": " 　Field",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240675,
+      "updated": 1674240713
+    },
+    {
+      "id": "63cae2c979e11300009693d9",
+      "text": " 　 四則演算が定義された集合",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240713,
+      "updated": 1674240730
+    },
+    {
+      "id": "63cae2b779e11300009693d8",
+      "text": " 　 　[$ \\mathbb{Q, R, C}]など",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240695,
+      "updated": 1674240847
+    },
+    {
+      "id": "63cae33c79e11300009693da",
+      "text": " 　 　 [$ \\mathbb{Z}]は割り算が定義できないからアウトなのか",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240828,
+      "updated": 1674241464
+    },
+    {
+      "id": "63cae5ba79e1130000d6f38d",
+      "text": " 　 日本語だと[体]かな[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674241466,
+      "updated": 1674241476
+    },
+    {
+      "id": "63cae35479e11300009693db",
+      "text": " 　Scalar: Fieldの要素",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240853,
+      "updated": 1674240941
+    },
+    {
+      "id": "63cae35679e11300009693dc",
+      "text": " 　Vector: list of scalars",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240855,
+      "updated": 1674240962
+    },
+    {
+      "id": "63cae3c379e11300009693e1",
+      "text": " 　Dimention: Vectorの要素の数",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240963,
+      "updated": 1674241045
+    },
+    {
+      "id": "63cae47d79e11300009693e7",
+      "text": " 　　次元、なんかもっと複雑な定義があった覚え[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674241150,
+      "updated": 1674241277
+    },
+    {
+      "id": "63cae48779e11300009693e8",
+      "text": " 　　　[/blu3mo-public/東大1S2線形代数#63caac9b1286260000701848]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674241160,
+      "updated": 1674241160
+    },
+    {
+      "id": "63caf13279e1130000e85c41",
+      "text": " 　　　ベクトルの\"dimension\"の定義と、集合の\"dimension\"の定義は別のもの、という事らしい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244403,
+      "updated": 1674269861
+    },
+    {
+      "id": "63caf14679e1130000e85c42",
+      "text": " 　　　 なるほど[blu3mo.icon*2]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244423,
+      "updated": 1674244424
+    },
+    {
+      "id": "63cb3c751280f000001ec5a0",
+      "text": " 　　　集合の次元？そんなのあったっけ？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263670,
+      "updated": 1674263679
+    },
+    {
+      "id": "63cb660679e11300004dc97c",
+      "text": " 　　　 dimension of setと言っていた[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674274311,
+      "updated": 1674274339
+    },
+    {
+      "id": "63cb662279e11300004dc97d",
+      "text": " 　　　  空間のことかもしれない？",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674274339,
+      "updated": 1674274344
+    },
+    {
+      "id": "63cb539ee5172d000096af11",
+      "text": " 　　dimention→dimension?",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674269598,
+      "updated": 1674269605
+    },
+    {
+      "id": "63cb549c79e1130000187fa3",
+      "text": " 　　 本当だ、感謝[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674269852,
+      "updated": 1674269856
+    },
+    {
+      "id": "63cae5cd79e1130000d6f38e",
+      "text": " 　Transpose",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674241486,
+      "updated": 1674241488
+    },
+    {
+      "id": "63cae5cf79e1130000d6f38f",
+      "text": " 　 vectorの場合: row vectorとcolumn vectorを交換するような操作",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674241488,
+      "updated": 1674241508
+    },
+    {
+      "id": "63cae5e479e1130000d6f390",
+      "text": " 　  日本語だと[転置]だっけ[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674241509,
+      "updated": 1674241522
+    },
+    {
+      "id": "63cae63579e1130000d6f391",
+      "text": " 　 [TeX]で書くなら[$ V^T]で良い?[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674241590,
+      "updated": 1674241674
+    },
+    {
+      "id": "63cae67679e1130000d6f392",
+      "text": " 　  [$ V^{\\intercal}]というのもあるらしい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674241655,
+      "updated": 1674241672
+    },
+    {
+      "id": "63cb3c891280f000001ec5a1",
+      "text": " 　  [\\intercal]しらなかった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263689,
+      "updated": 1674263702
+    },
+    {
+      "id": "63cb3c961280f000001ec5a2",
+      "text": " 　   いつも[$ V^\\top]を使っていた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263702,
+      "updated": 1674263708
+    },
+    {
+      "id": "63cb3c9c1280f000001ec5a3",
+      "text": " 　   今度から[$ \\intercal]を使うか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263708,
+      "updated": 1674263714
+    },
+    {
+      "id": "63caf6c179e1130000e7a9c0",
+      "text": "　  `[[1,2,3]].T == [[1],[2],[3]]`",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674245825,
+      "updated": 1674245825
+    },
+    {
+      "id": "63caf6c179e1130000e7a9c1",
+      "text": " 　 1D arrayに.Tをかけても何も起こらないらしい[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674245825,
+      "updated": 1674245825
+    },
+    {
+      "id": "63caf6c179e1130000e7a9c2",
+      "text": " 　  transposeしても同じ型、という制約があるのかな",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674245825,
+      "updated": 1674245825
+    },
+    {
+      "id": "63cae76c79e113000059d7c6",
+      "text": " 　[numpy]では、1D [ndarray] = Vector",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674241901,
+      "updated": 1674241947
+    },
+    {
+      "id": "63cae78979e113000059d7c7",
+      "text": " 　 ndarray、n-dimentional arrayという意味だったのか[blu3mo.icon][yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674241930,
+      "updated": 1674269751
+    },
+    {
+      "id": "63cae89079e113000059d7ca",
+      "text": " visualization",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674242195,
+      "updated": 1674242195
+    },
+    {
+      "id": "63cae89379e113000059d7cb",
+      "text": "  ベクトルの可視化は2D/3Dが限界",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674242195,
+      "updated": 1674242221
+    },
+    {
+      "id": "63cae89c79e113000059d7cc",
+      "text": "   一見そうな気がするが、本当に?[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674242205,
+      "updated": 1674242217
+    },
+    {
+      "id": "63cae8aa79e113000059d7cd",
+      "text": "  　4D~5Dは色とか駆使すれば出来そう",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674242218,
+      "updated": 1674242235
+    },
+    {
+      "id": "63cb3d141280f000001ec5a5",
+      "text": "  　[複素関数]のplotで色を使う[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263829,
+      "updated": 1674263839
+    },
+    {
+      "id": "63cb3d031280f000001ec5a4",
+      "text": "   　https://ja.wikipedia.org/wiki/定義域の着色",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263811,
+      "updated": 1674263838
+    },
+    {
+      "id": "63caec1079e113000072ac31",
+      "text": " ベクトルでできる演算",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243089,
+      "updated": 1674243092
+    },
+    {
+      "id": "63caec1879e113000072ac32",
+      "text": "  足し算",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243096,
+      "updated": 1674243200
+    },
+    {
+      "id": "63caec1b79e113000072ac33",
+      "text": "   これは[線型結合]?",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243099,
+      "updated": 1674243710
+    },
+    {
+      "id": "63caee7e79e1130000e7a970",
+      "text": "    違った[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243710,
+      "updated": 1674243716
+    },
+    {
+      "id": "63caedb279e1130000e7a968",
+      "text": "   Commutativity [$ v+w=w+v]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674243507,
+      "updated": 1674263848
+    },
+    {
+      "id": "63cb3d341280f000001ec5a6",
+      "text": "    [交換法則]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263861,
+      "updated": 1674263864
+    },
+    {
+      "id": "63caedb879e1130000e7a969",
+      "text": "   Associativity [$ (u+v)+w=u+(v+w)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674243512,
+      "updated": 1674263850
+    },
+    {
+      "id": "63cb3d391280f000001ec5a7",
+      "text": "    [結合法則]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263865,
+      "updated": 1674263868
+    },
+    {
+      "id": "63caedd079e1130000e7a96a",
+      "text": "   Identity [$ v+0=v]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674243537,
+      "updated": 1674263857
+    },
+    {
+      "id": "63cb3d3d1280f000001ec5a8",
+      "text": "    [単位元の存在]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263869,
+      "updated": 1674263883
+    },
+    {
+      "id": "63caede079e1130000e7a96c",
+      "text": "   Inverse [$ v+(-v)=0]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674243553,
+      "updated": 1674263860
+    },
+    {
+      "id": "63cb3d4e1280f000001ec5a9",
+      "text": "    [逆元の存在]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263886,
+      "updated": 1674263890
+    },
+    {
+      "id": "63caec3f79e113000072ac35",
+      "text": "  掛け算",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243135,
+      "updated": 1674243152
+    },
+    {
+      "id": "63caec5179e113000072ac36",
+      "text": "  　scalarをかけると、[- 方向]大きさのみ変わる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243153,
+      "updated": 1674269874
+    },
+    {
+      "id": "63caed8e79e1130000e7a964",
+      "text": "    Associativity [$ a(bv)=(ab)v]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674243471,
+      "updated": 1674263896
+    },
+    {
+      "id": "63caed8e79e1130000e7a965",
+      "text": "    Identity [$ 1\\cdot v=v]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674243471,
+      "updated": 1674263902
+    },
+    {
+      "id": "63caed8e79e1130000e7a966",
+      "text": "    Distributivity [$ a(v+w)=av+aw]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674243471,
+      "updated": 1674269906
+    },
+    {
+      "id": "63cb3d621280f000001ec5aa",
+      "text": "     分配法則",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263907,
+      "updated": 1674263911
+    },
+    {
+      "id": "63cb5492e5172d000096af12",
+      "text": "    方向？大きさ？[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674269841,
+      "updated": 1674269847
+    },
+    {
+      "id": "63cb54b379e1130000187fa4",
+      "text": "    　大きさだ、感謝[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674269876,
+      "updated": 1674269879
+    },
+    {
+      "id": "63caec5779e113000072ac37",
+      "text": "  　vectorをかけるのは二タイプある、dot/cross",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674243159,
+      "updated": 1674263941
+    },
+    {
+      "id": "63cb3d681280f000001ec5ab",
+      "text": "  　 本当はもっとある[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263912,
+      "updated": 1674263917
+    },
+    {
+      "id": "63cb3d6d1280f000001ec5ac",
+      "text": "   　 一般的な線型代数の範囲で使うのはdotとcrossのみ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263917,
+      "updated": 1674263938
+    },
+    {
+      "id": "63cb3d871280f000001ec5ad",
+      "text": "    　テンソルの話に踏み込むと、テンソル積や二重縮合が出てくる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263944,
+      "updated": 1674264017
+    },
+    {
+      "id": "63cb3da41280f000001ec5ae",
+      "text": "    　ただ[Einsteinの総和規約]を使えば、全部足し算とスカラー積で済んでしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674263973,
+      "updated": 1674264017
+    },
+    {
+      "id": "63caedeb79e1130000e7a96d",
+      "text": "  「Identity」という特性が、v+0=vと1v=vの両方を指しているのはちょっと気になった[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243564,
+      "updated": 1674243882
+    },
+    {
+      "id": "63caedff79e1130000e7a96e",
+      "text": "  　「そのままになる何かの演算」をidentityと呼んでいるのだと思う",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243584,
+      "updated": 1674243633
+    },
+    {
+      "id": "63caee2c79e1130000e7a96f",
+      "text": " 　　ここだけプロセスではなく結果でグルーピングしている?[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243628,
+      "updated": 1674243722
+    },
+    {
+      "id": "63cb3dd71280f000001ec5af",
+      "text": " 　　本当は対象とする演算子を指定しなきゃだめ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264024,
+      "updated": 1674264056
+    },
+    {
+      "id": "63cb3de01280f000001ec5b0",
+      "text": " 　　 [$ \\exist 0\\in V\\forall v\\in V;v+0=v]なら「体[$ V]上で定義された二項演算子[$ +]に関する単位元の存在」、[$ \\exist 1\\in V\\forall v\\in V;1\\cdot v=v]なら「体[$ V]上で定義された二項演算子[$ \\cdot]に関する単位元の存在」となる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264033,
+      "updated": 1674264158
+    },
+    {
+      "id": "63caec7079e113000072ac39",
+      "text": "  このあたりは既知、多分聞くの4回目くらい[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243184,
+      "updated": 1674243292
+    },
+    {
+      "id": "63caed5279e1130000e7a959",
+      "text": "  linear combination",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243410,
+      "updated": 1674243728
+    },
+    {
+      "id": "63caed8179e1130000e7a95d",
+      "text": "   av+bu みたいなやつ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243458,
+      "updated": 1674243769
+    },
+    {
+      "id": "63caeeb979e1130000e7a971",
+      "text": "   こっちが[線型結合]か[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243769,
+      "updated": 1674243830
+    },
+    {
+      "id": "63caef4d79e1130000e7a975",
+      "text": " Span of vectors",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243918,
+      "updated": 1674243923
+    },
+    {
+      "id": "63caef5479e1130000e7a976",
+      "text": "  あるベクトルの集合[$ \\vec v_1... \\vec v_n]を任意のスカラーで線型結合して得られるベクトルの集合がspan([$ \\vec v_1... \\vec v_n])",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674243925,
+      "updated": 1674244679
+    },
+    {
+      "id": "63caf24679e1130000e7a97c",
+      "text": "  [https://gyazo.com/87012093dcdcc0d20267b905533d6868]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244679,
+      "updated": 1674244679
+    },
+    {
+      "id": "63caefc179e1130000e7a977",
+      "text": "  　あ〜、なんか見覚えある[blu3mo.icon*2]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244033,
+      "updated": 1674244049
+    },
+    {
+      "id": "63caf08479e1130000e7a978",
+      "text": "  　が、過去の日本語のノートが見つからない",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244228,
+      "updated": 1674244239
+    },
+    {
+      "id": "63cb3e681280f000001ec5b1",
+      "text": "  　「[$ \\{\\pmb{v}_i\\}_{i\\in\\Lambda}]で[張られる空間]」とよく呼ばれる[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264169,
+      "updated": 1674264217
+    },
+    {
+      "id": "63cb3e701280f000001ec5b2",
+      "text": "   　[部分空間]の一部",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264176,
+      "updated": 1674264222
+    },
+    {
+      "id": "63caf1dc79e1130000e7a979",
+      "text": "  span( (1,1) ) = span( (2,2) ) = span( (-1,-1) )",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244572,
+      "updated": 1674244609
+    },
+    {
+      "id": "63caf20079e1130000e7a97a",
+      "text": "   無限に表現方法はある",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244609,
+      "updated": 1674244616
+    },
+    {
+      "id": "63caf26379e1130000e7a97d",
+      "text": "  span( (1,1), (2,2) ) = span( (1,1) )",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244708,
+      "updated": 1674244720
+    },
+    {
+      "id": "63caf2d079e1130000e7a97f",
+      "text": " Vector Products",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244817,
+      "updated": 1674244819
+    },
+    {
+      "id": "63caf2d379e1130000e7a980",
+      "text": "  dot productは知ってる[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244819,
+      "updated": 1674244828
+    },
+    {
+      "id": "63cb5646e5172d000096af18",
+      "text": "   numpyだと[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674270277,
+      "updated": 1674270289
+    },
+    {
+      "id": "63cb562fe5172d000096af16",
+      "text": "    code:py",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674270255,
+      "updated": 1674270283
+    },
+    {
+      "id": "63cb5633e5172d000096af17",
+      "text": "     np.dot(v, w)",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674270258,
+      "updated": 1674270283
+    },
+    {
+      "id": "63caf2dc79e1130000e7a982",
+      "text": "  なんか知らんやつ:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244828,
+      "updated": 1674244831
+    },
+    {
+      "id": "63caf2de79e1130000e7a983",
+      "text": "   [hadamard product]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674244831,
+      "updated": 1674270377
+    },
+    {
+      "id": "63caf2eb79e1130000e7a984",
+      "text": "    dot productの結合前、みたいな[https://gyazo.com/7031bd0b75479ff10d1cc4bbedcc7aee]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244843,
+      "updated": 1674244881
+    },
+    {
+      "id": "63caf31079e1130000e7a998",
+      "text": "    dot productの計算ミスでよくこれ見がち[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244881,
+      "updated": 1674244909
+    },
+    {
+      "id": "63cb3ea51280f000001ec5b3",
+      "text": "    日本語では[アダマール積]",
+      "userId": "62a91a7a083437001de60035",
+      "created": 1674264229,
+      "updated": 1674264571
+    },
+    {
+      "id": "63cb3ffbe600350000e580a6",
+      "text": "     別名も多い",
+      "userId": "62a91a7a083437001de60035",
+      "created": 1674264571,
+      "updated": 1674264571
+    },
+    {
+      "id": "63cb5559e5172d000096af13",
+      "text": "      [要素積]とかよく聞く[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674270041,
+      "updated": 1674270053
+    },
+    {
+      "id": "63cb3ffbe600350000e580a7",
+      "text": "     cf. [https://ja.wikipedia.org/wiki/アダマール積 アダマール積 - Wikipedia]",
+      "userId": "62a91a7a083437001de60035",
+      "created": 1674264571,
+      "updated": 1674264571
+    },
+    {
+      "id": "63cb5654e5172d000096af19",
+      "text": "    numpyだと[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674270292,
+      "updated": 1674270300
+    },
+    {
+      "id": "63cb5607e5172d000096af14",
+      "text": "\t    code:py",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674270215,
+      "updated": 1674270301
+    },
+    {
+      "id": "63cb5617e5172d000096af15",
+      "text": " \t    v * w",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674270230,
+      "updated": 1674270302
+    },
+    {
+      "id": "63caf32d79e1130000e7a999",
+      "text": "   [outer product]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674244910,
+      "updated": 1674270372
+    },
+    {
+      "id": "63caf53379e1130000e7a9aa",
+      "text": "    [https://gyazo.com/5e2c5e42a9067a30bc2d09f99f39e203]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674245427,
+      "updated": 1674245427
+    },
+    {
+      "id": "63cb3eb31280f000001ec5c1",
+      "text": "     これが[テンソル積][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264243,
+      "updated": 1674264501
+    },
+    {
+      "id": "63cb3ec31280f000001ec5c2",
+      "text": "      [$ \\pmb{v}\\otimes\\pmb{w}=(\\sum_i v_i\\pmb{e}_i)\\otimes(\\sum_j w_j\\pmb{e}_j)=\\sum_{i,j}v_i w_j\\pmb{e}_i\\otimes\\pmb{e}_j]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264259,
+      "updated": 1674264384
+    },
+    {
+      "id": "63cb3f401280f000001ec5c3",
+      "text": "        [$ =v_1w_1\\pmb{e}_1\\otimes\\pmb{e}_1+v_1w_2\\pmb{e}_1\\otimes\\pmb{e}_2+\\cdots+v_1w_n\\pmb{e}_1\\otimes\\pmb{e}_n]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264385,
+      "updated": 1674264390
+    },
+    {
+      "id": "63cb3f4d1280f000001ec5c4",
+      "text": "         [$ +v_2w_1\\pmb{e}_2\\otimes\\pmb{e}_1+v_2w_2\\pmb{e}_2\\otimes\\pmb{e}_2+\\cdots+v_2w_n\\pmb{e}_2\\otimes\\pmb{e}_n]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264398,
+      "updated": 1674264469
+    },
+    {
+      "id": "63cb3f631280f000001ec5c6",
+      "text": "         [$ +\\cdots]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264419,
+      "updated": 1674264471
+    },
+    {
+      "id": "63cb3f601280f000001ec5c5",
+      "text": "         [$ +v_mw_1\\pmb{e}_m\\otimes\\pmb{e}_1+v_mw_2\\pmb{e}_m\\otimes\\pmb{e}_2+\\cdots+v_mw_n\\pmb{e}_m\\otimes\\pmb{e}_n]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264417,
+      "updated": 1674264472
+    },
+    {
+      "id": "63cb3f991280f000001ec5c7",
+      "text": "      基底を省いて行列形式で表示すると[$ \\begin{bmatrix}v1w_1&v_1w_2&\\cdots&v_1w_n\\\\v2w_1&v_2w_2&\\cdots&v_2w_n\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\v_mw_1&v_mw_2&\\cdots&v_mw_n\\\\\\end{bmatrix}]になる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264474,
+      "updated": 1674264626
+    },
+    {
+      "id": "63caf33379e1130000e7a99a",
+      "text": "    何かと思ったが、よく見たら名前[外積]だからcross productのことか?",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244915,
+      "updated": 1674245020
+    },
+    {
+      "id": "63caf34f79e1130000e7a99b",
+      "text": "    いや、違うみたい?[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674244943,
+      "updated": 1674245033
+    },
+    {
+      "id": "63caf3ee79e1130000e7a99c",
+      "text": "     >外積は、クロス積の意味で使われることもあるため、どちらの意味で使われているか注意が必要である。[直積 https://ja.wikipedia.org/wiki/%E7%9B%B4%E7%A9%8D_(%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB)]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674245103,
+      "updated": 1674245125
+    },
+    {
+      "id": "63cb3e5e79e11300006e6047",
+      "text": "    色々な「外積」[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674264158,
+      "updated": 1674264163
+    },
+    {
+      "id": "63caf5c479e1130000e7a9b4",
+      "text": "     cross product = [外積] = [クロス積]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674245573,
+      "updated": 1674251884
+    },
+    {
+      "id": "63caf5c479e1130000e7a9b5",
+      "text": "      高校でやるやつ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674245573,
+      "updated": 1674245573
+    },
+    {
+      "id": "63caf47879e1130000e7a9a3",
+      "text": "     outer product = 外積 = [直積]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674245241,
+      "updated": 1674251891
+    },
+    {
+      "id": "63caf5c579e1130000e7a9b6",
+      "text": "      この授業で扱ってるやつ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674245575,
+      "updated": 1674245582
+    },
+    {
+      "id": "63cb40cb1280f000001ec5d2",
+      "text": "      テンソル積と呼ぶと区別しやすい[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264779,
+      "updated": 1674264785
+    },
+    {
+      "id": "63caf5bb79e1130000e7a9b1",
+      "text": "     exterior product = 外積 もある..?[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674245567,
+      "updated": 1674245567
+    },
+    {
+      "id": "63caf5bb79e1130000e7a9b2",
+      "text": "      https://ja.wikipedia.org/wiki/外積代数",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674245567,
+      "updated": 1674245567
+    },
+    {
+      "id": "63caf5e879e1130000e7a9b7",
+      "text": "      これはcross product = クロス積 と同じかもしれない[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674245609,
+      "updated": 1674245627
+    },
+    {
+      "id": "63cb409f1280f000001ec5cb",
+      "text": "       違うものと捉えたほうがいいです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264736,
+      "updated": 1674264764
+    },
+    {
+      "id": "63cb40bd1280f000001ec5d1",
+      "text": "        [Wedge積]と呼ぶと明確に区別できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264765,
+      "updated": 1674264769
+    },
+    {
+      "id": "63cb40b91280f000001ec5ce",
+      "text": "      　まだ学んでないので詳しいことは言えないですが、[外微分形式]など、微分幾何学を取り扱うときに現れます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1674264762,
+      "updated": 1674264762
+    },
+    {
+      "id": "63caf40879e1130000e7a99d",
+      "text": "     まじか、ややこしい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674245128,
+      "updated": 1674245162
+    },
+    {
+      "id": "63caf54479e1130000e7a9ab",
+      "text": "      逆にこんな被りがあるのに解決しようとならないのかな[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674245445,
+      "updated": 1674245467
+    },
+    {
+      "id": "63cb4140e600350000e580a8",
+      "text": "    　まぁ[方言]みたいなものなので...[hatori.icon]",
+      "userId": "62a91a7a083437001de60035",
+      "created": 1674264896,
+      "updated": 1674264899
+    },
+    {
+      "id": "63cb4144e600350000e580a9",
+      "text": "     　日本語の数学用語だと[岩波数学辞典]の記述に従う、という方法がある",
+      "userId": "62a91a7a083437001de60035",
+      "created": 1674264899,
+      "updated": 1674264899
+    },
+    {
+      "id": "63cb566ae5172d000096af1a",
+      "text": "    numpyだと[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674270314,
+      "updated": 1674270319
+    },
+    {
+      "id": "63cb5674e5172d000096af1b",
+      "text": "    　code:py",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674270324,
+      "updated": 1674270326
+    },
+    {
+      "id": "63cb5677e5172d000096af1c",
+      "text": "    　 np.outer(v, w)",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674270326,
+      "updated": 1674270334
+    },
+    {
+      "id": "63cb567fe5172d000096af1d",
+      "text": "     [https://numpy.org/doc/stable/reference/generated/numpy.outer.html numpy.outer — NumPy v1.24 Manual]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674270335,
+      "updated": 1674270343
+    },
+    {
+      "id": "63cb5687e5172d000096af1e",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1674270343,
+      "updated": 1674270344
+    },
+    {
+      "id": "63cae1a579e11300009693b7",
+      "text": "> Matrices, matrix operations",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae29b79e11300009693d4",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240668,
+      "updated": 1674241952
+    },
+    {
+      "id": "63cae1a579e11300009693b8",
+      "text": "> Linear equations, Gaussian elimination",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693b9",
+      "text": "> Vector spaces, solving Ax=b",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693ba",
+      "text": "> Independence, basis, and dimension",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693bb",
+      "text": "> Linear transformations",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693bc",
+      "text": "> Exam 1",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693bd",
+      "text": "> Orthogonal projections, Gram-Schmidt",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693be",
+      "text": "> Least squares, linear regression",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693bf",
+      "text": "> Determinants, eigenvalues/eigenvectors",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693c0",
+      "text": "> Diagonalization, dynamical systems",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693c1",
+      "text": "> Symmetric matrices, quadratic forms",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693c2",
+      "text": "> SVD, PCA",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693c3",
+      "text": "> TBD",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693c4",
+      "text": "> Exam 2",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    },
+    {
+      "id": "63cae1a579e11300009693c5",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1674240422,
+      "updated": 1674240422
+    }
+  ]
+}
