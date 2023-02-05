@@ -1,3 +1,6 @@
+import { readableStreamFromIterable } from "https://deno.land/std@0.166.0/streams/mod.ts";
+import { JsonStringifyStream } from "https://deno.land/std@0.166.0/encoding/json/stream.ts";
+
 interface TitlePage {
   id: string,
   title: string,
@@ -59,7 +62,13 @@ for (let i = 0; i < titles.length; i += skip) {
   console.log(`Finish fetching ${i} - ${i + skip} pages.`);
 }
 
-console.log(writeJson(dist_data, detailPages));
+// JSON Lines形式でpagesを出力 - 出力処理後JSON形式に変換が必要
+const file = await Deno.open(dist_data, { create: true, write: true });
+readableStreamFromIterable(detailPages)
+  .pipeThrough(new JsonStringifyStream({ suffix: ",\n" })) // convert to JSON Text Sequences
+  .pipeThrough(new TextEncoderStream()) // convert a string to a Uint8Array
+  .pipeTo(file.writable)
+  .then(() => console.log("write success"));
 
 function writeJson(path: string, data: object): string {
   try {
