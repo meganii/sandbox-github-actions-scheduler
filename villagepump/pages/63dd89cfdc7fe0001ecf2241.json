@@ -1,0 +1,792 @@
+{
+  "id": "63dd89cfdc7fe0001ecf2241",
+  "title": "Nostr",
+  "created": 1675463120,
+  "updated": 1675527097,
+  "lines": [
+    {
+      "id": "63dd89cfdc7fe0001ecf2241",
+      "text": "Nostr",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463120,
+      "updated": 1675463120
+    },
+    {
+      "id": "63dd8a2079e1130000fadfe8",
+      "text": "[Twitter]-alternativeの一つ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463200,
+      "updated": 1675463205
+    },
+    {
+      "id": "63dd8aa1b8bbfc0000d3b62a",
+      "text": "\t[ジャック・ドーシー]が支援してるやつか[はるひ.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463329,
+      "updated": 1675463341
+    },
+    {
+      "id": "63dd89d079e1130000fadfde",
+      "text": " 仕組みを理解したい[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463120,
+      "updated": 1675463123
+    },
+    {
+      "id": "63dd89d379e1130000fadfe0",
+      "text": " [https://github.com/nostr-protocol/nostr GitHub - nostr-protocol/nostr: a truly censorship-resistant alternative to Twitter that has a chance of working]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463123,
+      "updated": 1675463160
+    },
+    {
+      "id": "63dd89f779e1130000fadfe2",
+      "text": " Nostr自体はプロトコル、[ActivityPub]と同じレイヤーかな",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463159,
+      "updated": 1675463170
+    },
+    {
+      "id": "63dd89d379e1130000fadfe1",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463123,
+      "updated": 1675463123
+    },
+    {
+      "id": "63dd8d4b79e1130000fae014",
+      "text": "前提知識として、[公開鍵]/[秘密鍵]を用いた[署名]の仕組みを知っている必要がありそう[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675464012,
+      "updated": 1675464038
+    },
+    {
+      "id": "63dd8d4b79e1130000fae015",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675464012,
+      "updated": 1675464012
+    },
+    {
+      "id": "63dd89d079e1130000fadfdf",
+      "text": "短いまとめ：",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463120,
+      "updated": 1675463184
+    },
+    {
+      "id": "63dd8a1079e1130000fadfe5",
+      "text": ">Everybody runs a client. It can be a native client, a web client, etc. To publish something, you write a post, sign it with your key and send it to multiple relays (servers hosted by someone else, or yourself). To get updates from other people, you ask multiple relays if they know anything about these other people. Anyone can run a relay. A relay is very simple and dumb. It does nothing besides accepting posts from some people and forwarding to others. Relays don't have to be trusted. Signatures are verified on the client side.",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463184,
+      "updated": 1675463185
+    },
+    {
+      "id": "63dd8a1079e1130000fadfe6",
+      "text": " 自分がツイートする時には、内容を[秘密鍵]で[署名]して、有志がホストしているRelayサーバーに送る",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463185,
+      "updated": 1675463299
+    },
+    {
+      "id": "63dd8a4679e1130000fadfea",
+      "text": " 他人のツイートを取得する時には、Relayサーバーにリクエストをする",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463238,
+      "updated": 1675463301
+    },
+    {
+      "id": "63dd8a6b79e1130000fadfec",
+      "text": " Relayサーバー同士がお互いにツイートを送りあっている",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463275,
+      "updated": 1675463350
+    },
+    {
+      "id": "63dd8ab579e1130000fadfee",
+      "text": " なるほど[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463350,
+      "updated": 1675463413
+    },
+    {
+      "id": "63dd8af579e1130000fadff0",
+      "text": "  単純に、より多くのRelayサーバーにアクセスすればするほど、全体としてはより完全なデータが得られる?[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463413,
+      "updated": 1675463442
+    },
+    {
+      "id": "63dd8af079e1130000fadfef",
+      "text": " データはどこに保存されるんだろ[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1675463408,
+      "updated": 1675484411
+    },
+    {
+      "id": "63dddd74774b1700001b66c6",
+      "text": "  消えるのかな",
+      "userId": "59fb21121207900012774b17",
+      "created": 1675484533,
+      "updated": 1675484544
+    },
+    {
+      "id": "63dddd77774b1700001b66c7",
+      "text": "   https://twitter.com/hisaketM/status/1621686964436238336",
+      "userId": "59fb21121207900012774b17",
+      "created": 1675484535,
+      "updated": 1675484542
+    },
+    {
+      "id": "63dd8a2879e1130000fadfe9",
+      "text": "既存のサービスの問題",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463208,
+      "updated": 1675463466
+    },
+    {
+      "id": "63dd8b2a79e1130000fadff4",
+      "text": " The problem with Twitter",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463467,
+      "updated": 1675463824
+    },
+    {
+      "id": "63dd8b2b79e1130000fadff5",
+      "text": "  >Twitter has ads;",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463467,
+      "updated": 1675463471
+    },
+    {
+      "id": "63dd8b2f79e1130000fadff6",
+      "text": "  > Twitter uses bizarre techniques to keep you addicted;",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463471,
+      "updated": 1675463471
+    },
+    {
+      "id": "63dd8b2f79e1130000fadff7",
+      "text": "  > Twitter doesn't show an actual historical feed from people you follow;",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463471,
+      "updated": 1675463471
+    },
+    {
+      "id": "63dd8b2f79e1130000fadff8",
+      "text": "  > Twitter bans people;",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463471,
+      "updated": 1675463471
+    },
+    {
+      "id": "63dd8b4179e1130000fadffd",
+      "text": "   より良い治安維持の方法をNostrは提示しているのかな..?[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463490,
+      "updated": 1675463836
+    },
+    {
+      "id": "63dd8b2f79e1130000fadff9",
+      "text": "  > Twitter shadowbans people.",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463471,
+      "updated": 1675463471
+    },
+    {
+      "id": "63dd8b2f79e1130000fadffa",
+      "text": "  > Twitter has a lot of spam.",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463471,
+      "updated": 1675463471
+    },
+    {
+      "id": "63dddca2774b17000040a420",
+      "text": "   これはこの方式でも防げないんじゃない？[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1675484323,
+      "updated": 1675484340
+    },
+    {
+      "id": "63dde261774b1700001b66d1",
+      "text": "    最初に目に入ったのはスパム",
+      "userId": "59fb21121207900012774b17",
+      "created": 1675485794,
+      "updated": 1675485803
+    },
+    {
+      "id": "63dde24f774b1700001b66cf",
+      "text": "    [https://gyazo.com/26a09c3fe71ce59e3637387bf51e695d][https://gyazo.com/c9754e0dcd16df876364ad2da0d38f09]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1675485776,
+      "updated": 1675487495
+    },
+    {
+      "id": "63dde906774b1700003d30ea",
+      "text": "     お金を請求できる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1675487495,
+      "updated": 1675487508
+    },
+    {
+      "id": "63dd8b2479e1130000fadff1",
+      "text": " The problem with Mastodon and similar programs",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463461,
+      "updated": 1675463822
+    },
+    {
+      "id": "63dd8b6979e1130000fae000",
+      "text": "  >User identities are attached to domain names controlled by third-parties;",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463529,
+      "updated": 1675463548
+    },
+    {
+      "id": "63dd8b7c79e1130000fae001",
+      "text": "  > Server owners can ban you, just like Twitter; Server owners can also block other servers;",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463548,
+      "updated": 1675463548
+    },
+    {
+      "id": "63dd8baf79e1130000fae004",
+      "text": "  >Migration between servers is an afterthought and can only be accomplished if servers cooperate. It doesn't work in an adversarial environment (all followers are lost);",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463600,
+      "updated": 1675463600
+    },
+    {
+      "id": "63dd8baf79e1130000fae005",
+      "text": "   decentralizedな環境を求めるなら、サーバー間でアカウント移行できないのは大きな問題[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463600,
+      "updated": 1675463633
+    },
+    {
+      "id": "63dd8b9c79e1130000fae002",
+      "text": "  >It doesn't make sense to have a ton of servers if updates from every server will have to be painfully pushed (and saved!) to a ton of other servers. This point is exacerbated by the fact that servers tend to exist in huge numbers, therefore more data has to be passed to more places more often;",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463581,
+      "updated": 1675463581
+    },
+    {
+      "id": "63dd8b9c79e1130000fae003",
+      "text": "   [ActivityPub]の仕組みとして、各サーバーが他のサーバーに更新を送り続けないといけない事を批判している?[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463581,
+      "updated": 1675463719
+    },
+    {
+      "id": "63dd8bdf79e1130000fae007",
+      "text": "   ActivityPub/Mastodonでは、一万フォロワーいた場合は一万人全員の所属サーバーに更新を送りつけないといけない",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463647,
+      "updated": 1675463767
+    },
+    {
+      "id": "63dd8c4e79e1130000fae00b",
+      "text": " The problem with [SSB] (Secure Scuttlebutt)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463761,
+      "updated": 1675463785
+    },
+    {
+      "id": "63dd8c6779e1130000fae00e",
+      "text": "  悪くないが、複雑すぎると言っている[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463783,
+      "updated": 1675463808
+    },
+    {
+      "id": "63dd8c8079e1130000fae00f",
+      "text": "  そもそもSSBがなんなのか知らないので一旦飛ばす[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463808,
+      "updated": 1675463819
+    },
+    {
+      "id": "63dd8c6579e1130000fae00c",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463782,
+      "updated": 1675463782
+    },
+    {
+      "id": "63dd8cb679e1130000fae010",
+      "text": "スパム問題",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463862,
+      "updated": 1675464373
+    },
+    {
+      "id": "63dd8eb579e11300004191e8",
+      "text": "　Relay運営者にとってSpamが困るのであれば、[CAPTCHA]なり電話番号認証なりをRelay運営者がすれば良い",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675464373,
+      "updated": 1675464402
+    },
+    {
+      "id": "63dd8ed279e11300004191e9",
+      "text": "　あるいは悪意を持ったRelayサーバーが他のサーバーにスパムを送りつけてくるなら、そのサーバーをブロックすれば良い",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675464403,
+      "updated": 1675464428
+    },
+    {
+      "id": "63dd8f0879e11300004191eb",
+      "text": "　　Relayサーバー同士のグラフが完全に途切れない限り、ただ「スパムが届く確率が低くなる」だけで「完全にブロック」はできないということかな[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675464456,
+      "updated": 1675464492
+    },
+    {
+      "id": "63dd8cb779e1130000fae011",
+      "text": "　　　いや、ツイートの出所のRelayサーバーを見てブロックすれば完全にブロックできるのか[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675463864,
+      "updated": 1675464527
+    },
+    {
+      "id": "63dd8f3079e11300004191ec",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675464496,
+      "updated": 1675464496
+    },
+    {
+      "id": "63dd9b3279e1130000e954e6",
+      "text": "始め方",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675467571,
+      "updated": 1675467575
+    },
+    {
+      "id": "63de661f79e1130000c77a47",
+      "text": " Webクライアントが色々ある",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675519519,
+      "updated": 1675519519
+    },
+    {
+      "id": "63dd9b3779e1130000e954e8",
+      "text": "  https://astral.ninja/",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675467575,
+      "updated": 1675519520
+    },
+    {
+      "id": "63de662079e1130000c77a48",
+      "text": "  https://branle.netlify.app/",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675519520,
+      "updated": 1675519528
+    },
+    {
+      "id": "63de7e9879e1130000dc921b",
+      "text": "  https://snort.social/",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675525785,
+      "updated": 1675525785
+    },
+    {
+      "id": "63dd9b3879e1130000e954e9",
+      "text": " [https://gyazo.com/3ae66ceaefac7e52afaae3dd6abd3bdd]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675467576,
+      "updated": 1675467685
+    },
+    {
+      "id": "63dd9ba579e1130000e954ea",
+      "text": "　　クライアント側で、使うrelayを選べる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675467685,
+      "updated": 1675467707
+    },
+    {
+      "id": "63dd9bbb79e1130000e954eb",
+      "text": "　　　白い枠の中が今使っているrelay",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675467707,
+      "updated": 1675467718
+    },
+    {
+      "id": "63dd9c3779e1130000e954ec",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675467832,
+      "updated": 1675467832
+    },
+    {
+      "id": "63dd9c3779e1130000e954ed",
+      "text": "[blu3mo.icon]のアカウントの公開鍵`npub1mct0z5444uz5xm5rqzwmw7p8vgd63azx2zjvvf0059sl0ulmdmcqx04vr3`",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675467832,
+      "updated": 1675468163
+    },
+    {
+      "id": "63dd9c4579e1130000e954ef",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675467846,
+      "updated": 1675468150
+    },
+    {
+      "id": "63dd9d7579e1130000e954f1",
+      "text": "感想",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675468149,
+      "updated": 1675468169
+    },
+    {
+      "id": "63dd9d8879e1130000e954f2",
+      "text": "　別クライアントでログインしても更新が反映されているのは感動[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675468169,
+      "updated": 1675468184
+    },
+    {
+      "id": "63dd9d8e79e1130000e954f3",
+      "text": "　読み込みが遅い、、、[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675468174,
+      "updated": 1675468174
+    },
+    {
+      "id": "63dddf64774b1700001b66cb",
+      "text": "　 global feed 40秒待っても表示されない[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1675485029,
+      "updated": 1675485053
+    },
+    {
+      "id": "63dd9d7579e1130000e954f0",
+      "text": "   誰もフォローしてないからかな",
+      "userId": "59fb21121207900012774b17",
+      "created": 1675468149,
+      "updated": 1675485117
+    },
+    {
+      "id": "63dddffb774b1700001b66cc",
+      "text": "   そうではなさそう",
+      "userId": "59fb21121207900012774b17",
+      "created": 1675485179,
+      "updated": 1675485181
+    },
+    {
+      "id": "63dde239774b1700001b66cd",
+      "text": "    iOSアプリは動く",
+      "userId": "59fb21121207900012774b17",
+      "created": 1675485754,
+      "updated": 1675485764
+    },
+    {
+      "id": "63de642b79e1130000c77a41",
+      "text": "  これはクライアントの実装によって変わるのかな..?[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675519020,
+      "updated": 1675519040
+    },
+    {
+      "id": "63de643b79e1130000c77a43",
+      "text": "  単純にRelayを増やしたら読み込みが早くなった[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675519035,
+      "updated": 1675525143
+    },
+    {
+      "id": "63de7c1679e11300000f2689",
+      "text": "  　読み込みが早くなったというより、読み込まれるようになった",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675525143,
+      "updated": 1675525166
+    },
+    {
+      "id": "63de7c1e79e11300000f268b",
+      "text": "  　仕組み的にそれはそう",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675525150,
+      "updated": 1675525157
+    },
+    {
+      "id": "63de7c0479e11300000f2688",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675525125,
+      "updated": 1675525125
+    },
+    {
+      "id": "63ddbdc7aff09e0000268e51",
+      "text": "使う前の感想",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1675476423,
+      "updated": 1675476432
+    },
+    {
+      "id": "63ddbdd0aff09e0000268e53",
+      "text": "　非集権型で本人証明ができるSNSを作ろうとしてる？[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1675476433,
+      "updated": 1675476482
+    },
+    {
+      "id": "63ddbdd0aff09e0000268e52",
+      "text": "　　匿名のイーロンマスクが愚痴りまくるスレを見てみたいな()",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1675476432,
+      "updated": 1675476600
+    },
+    {
+      "id": "63ddbe56aff09e0000268e55",
+      "text": " スノーデンが言及してる[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1675476567,
+      "updated": 1675484588
+    },
+    {
+      "id": "63ddddac774b1700001b66c9",
+      "text": "  https://twitter.com/Snowden/status/1617623779626352640",
+      "userId": "59fb21121207900012774b17",
+      "created": 1675484588,
+      "updated": 1675484596
+    },
+    {
+      "id": "63dddda3774b1700001b66c8",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1675484579,
+      "updated": 1675484579
+    },
+    {
+      "id": "63de642a79e1130000c77a40",
+      "text": "他人の見つけ方",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675519018,
+      "updated": 1675519047
+    },
+    {
+      "id": "63de644679e1130000c77a45",
+      "text": " https://nostr.directory/",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675519047,
+      "updated": 1675519047
+    },
+    {
+      "id": "63de644879e1130000c77a46",
+      "text": "  ここでTwitter IDとNostrのpub keyを紐づけることができる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675519048,
+      "updated": 1675519057
+    },
+    {
+      "id": "63de644479e1130000c77a44",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675519045,
+      "updated": 1675519045
+    },
+    {
+      "id": "63de7fcb79e11300000178a0",
+      "text": "分からないこと",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526091,
+      "updated": 1675526095
+    },
+    {
+      "id": "63de7fcd79e11300000178a2",
+      "text": " [NIP-05]とは?",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526095,
+      "updated": 1675526211
+    },
+    {
+      "id": "63de7fd979e11300000178a3",
+      "text": " 　プロフィールで設定できる何か[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526106,
+      "updated": 1675526204
+    },
+    {
+      "id": "63de7ff579e11300000178a6",
+      "text": " 　[https://gist.github.com/metasikander/609a538e6a03b2f67e5c8de625baed3e A small minimal guide on setting up NIP-05 identifier on branle/nostr · GitHub]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526133,
+      "updated": 1675526133
+    },
+    {
+      "id": "63de7ff379e11300000178a5",
+      "text": "  自分の保有するドメインと公開鍵を紐づけられるのか[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526132,
+      "updated": 1675526207
+    },
+    {
+      "id": "63de801979e11300000178a8",
+      "text": "  　これをすれば、公開鍵の代わりに自分の持つドメインをIDとして投げつけられるようになる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526170,
+      "updated": 1675526191
+    },
+    {
+      "id": "63de803079e11300000178a9",
+      "text": "  　[ENS]に目的は近そう",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526193,
+      "updated": 1675526198
+    },
+    {
+      "id": "63de80ee79e11300000178b4",
+      "text": "  [https://github.com/nostr-protocol/nips/blob/master/05.md nips/05.md at master · nostr-protocol/nips · GitHub]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526383,
+      "updated": 1675526384
+    },
+    {
+      "id": "63de80f079e11300000178b5",
+      "text": "   プロトコルはここにある",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526384,
+      "updated": 1675526391
+    },
+    {
+      "id": "63de80fb79e11300000178b6",
+      "text": "   \"Mapping Nostr keys to [DNS]-based internet identifiers\"",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526395,
+      "updated": 1675526399
+    },
+    {
+      "id": "63de803079e11300000178aa",
+      "text": " クライアントによって機能が違うが、どうなっている？",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526193,
+      "updated": 1675526226
+    },
+    {
+      "id": "63de80ca79e11300000178b2",
+      "text": "  [機能比較 https://github.com/vishalxl/Nostr-Clients-Features-List/blob/main/Readme.md]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526348,
+      "updated": 1675526607
+    },
+    {
+      "id": "63de80cb79e11300000178b3",
+      "text": "   どこまでの機能がプロトコルで規定されているんだろう",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526348,
+      "updated": 1675526354
+    },
+    {
+      "id": "63de813379e11300000178ba",
+      "text": "   [https://github.com/nostr-protocol/nips GitHub - nostr-protocol/nips: Nostr Implementation Possibilities]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526451,
+      "updated": 1675526453
+    },
+    {
+      "id": "63de813479e11300000178bb",
+      "text": "   ここを見れば良いのか[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526453,
+      "updated": 1675526456
+    },
+    {
+      "id": "63de805179e11300000178ac",
+      "text": " 　「いいね」ができるクライアントとできないクライアントとか",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526226,
+      "updated": 1675526235
+    },
+    {
+      "id": "63de811c79e11300000178b8",
+      "text": " 　 [https://github.com/nostr-protocol/nips/blob/master/25.md nips/25.md at master · nostr-protocol/nips · GitHub]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526429,
+      "updated": 1675526430
+    },
+    {
+      "id": "63de811e79e11300000178b9",
+      "text": "   NIP-25でリアクションが規定されているのか[blu3mo.icon*2]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526430,
+      "updated": 1675526447
+    },
+    {
+      "id": "63de805b79e11300000178ad",
+      "text": " 　なんかチェスができるクライアントとか(?)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526235,
+      "updated": 1675526291
+    },
+    {
+      "id": "63de809379e11300000178ae",
+      "text": " 　 https://jesterui.github.io",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526291,
+      "updated": 1675526295
+    },
+    {
+      "id": "63de804679e11300000178ab",
+      "text": "   これはどうなってるんだろう[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526214,
+      "updated": 1675526299
+    },
+    {
+      "id": "63de83b879e11300000f269f",
+      "text": "   　プロトコル的には普通に1対1のpublicチャットをやっているという感じなのかな",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675527097,
+      "updated": 1675527097
+    },
+    {
+      "id": "63de83b179e11300000f2692",
+      "text": " [nos2x]とは",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675527089,
+      "updated": 1675527089
+    },
+    {
+      "id": "63de83b179e11300000f2693",
+      "text": "  https://github.com/fiatjaf/nos2x",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675527089,
+      "updated": 1675527089
+    },
+    {
+      "id": "63de83b179e11300000f2694",
+      "text": "  Chrome拡張機能",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675527089,
+      "updated": 1675527089
+    },
+    {
+      "id": "63de83b179e11300000f2695",
+      "text": "  署名をブラウザの拡張機能でやることで、秘密鍵をクライアントに渡すことなくPostできるようにしている",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675527089,
+      "updated": 1675527089
+    },
+    {
+      "id": "63de83b179e11300000f2696",
+      "text": "   なるほど〜〜、頭良い[blu3mo.icon*3]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675527089,
+      "updated": 1675527089
+    },
+    {
+      "id": "63de83b179e11300000f2697",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675527089,
+      "updated": 1675527089
+    },
+    {
+      "id": "63de809779e11300000178b0",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1675526296,
+      "updated": 1675526296
+    }
+  ]
+}

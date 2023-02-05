@@ -1,0 +1,379 @@
+{
+  "id": "63c50b9fb0bdec001e3d2ac7",
+  "title": "PowerShell内でパイプを使用すると文字化けする",
+  "created": 1673857952,
+  "updated": 1673872742,
+  "lines": [
+    {
+      "id": "63c50b9fb0bdec001e3d2ac7",
+      "text": "PowerShell内でパイプを使用すると文字化けする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673857952,
+      "updated": 1673857963
+    },
+    {
+      "id": "63c50ba07838e30000f72241",
+      "text": "[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673857952,
+      "updated": 1673857989
+    },
+    {
+      "id": "63c50ba07838e30000f72242",
+      "text": " [https://gyazo.com/6adcfd2e84ac38c050c4d31eaf4a5efb]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673857952,
+      "updated": 1673857983
+    },
+    {
+      "id": "63c50ba07838e30000f72243",
+      "text": " \t[PowerShell]内で[パイプ]を使用すると、[UTF-8]の文字列が[ShiftJIS]として解釈されてしまい、[文字化け]する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673857952,
+      "updated": 1673858323
+    },
+    {
+      "id": "63c50ba07838e30000f72244",
+      "text": " \tここではechoコマンドに渡しているけれど、元々はesbuildに渡して駄目だったのでおそらくパイプ（かシェル）が原因",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673857952,
+      "updated": 1673857983
+    },
+    {
+      "id": "63c50ba07838e30000f72245",
+      "text": " \t\t[https://gyazo.com/a2da6ce38f3ac5a991427148bb3b5695]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673857952,
+      "updated": 1673857983
+    },
+    {
+      "id": "63c50ba07838e30000f72246",
+      "text": " \t\t$ deno bundle .\\test.ts | esbuild --minify",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673857952,
+      "updated": 1673857983
+    },
+    {
+      "id": "63c50df07838e30000f7226d",
+      "text": " \t\tdeno自身のパイプ出力がおかしいという説もあるか",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858545,
+      "updated": 1673858568
+    },
+    {
+      "id": "63c541fdaff09e00004ae044",
+      "text": " \t\t　+1[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1673871870,
+      "updated": 1673871874
+    },
+    {
+      "id": "63c541e3aff09e00004ae043",
+      "text": "  \t\t　denoもPowerShellも詳しくないけど",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1673871844,
+      "updated": 1673871876
+    },
+    {
+      "id": "63c54207aff09e00004ae045",
+      "text": "  \t\t　プログラムがパイプに書き込む時、それはファイル的なものとして開いてwriteしてるはずで、バイト列に変換するのはプログラムの側",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1673871880,
+      "updated": 1673871934
+    },
+    {
+      "id": "63c5423eaff09e00004ae046",
+      "text": "  \t\t　ファイル的なものの側にはエンコーディングの情報はないので、環境変数とか設定ファイルとかからエンコーディングを得ていると思う",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1673871934,
+      "updated": 1673871981
+    },
+    {
+      "id": "63c5426faff09e00004ae047",
+      "text": "  \t\t　その設定が実際のシェルのエンコーディングとあっていないのではないか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1673871983,
+      "updated": 1673872008
+    },
+    {
+      "id": "63c54288aff09e00004ae048",
+      "text": "  \t　　しらんけど()",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1673872009,
+      "updated": 1673872013
+    },
+    {
+      "id": "63c50cca7838e30000f72268",
+      "text": " \t`deno bundle .\\test.ts`単体であれば問題なく出力される",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858250,
+      "updated": 1673858278
+    },
+    {
+      "id": "63c50cdb7838e30000f72269",
+      "text": " \t\t[https://gyazo.com/2a032bb63491838544d2cbf59efc6348]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858268,
+      "updated": 1673858269
+    },
+    {
+      "id": "63c50ba07838e30000f72247",
+      "text": " [$OutputEncoding]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673857952,
+      "updated": 1673858036
+    },
+    {
+      "id": "63c50bf57838e30000f72249",
+      "text": " \tcode:OutputEncoding",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858038,
+      "updated": 1673858048
+    },
+    {
+      "id": "63c50c027838e30000f7224a",
+      "text": " \t Preamble          : ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50c027838e30000f7224b",
+      "text": "   BodyName          : utf-8",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50c027838e30000f7224c",
+      "text": "   EncodingName      : Unicode (UTF-8)",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50c027838e30000f7224d",
+      "text": "   HeaderName        : utf-8",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50c027838e30000f7224e",
+      "text": "   WebName           : utf-8",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50c027838e30000f7224f",
+      "text": "   WindowsCodePage   : 1200",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50c027838e30000f72250",
+      "text": "   IsBrowserDisplay  : True",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50c027838e30000f72251",
+      "text": "   IsBrowserSave     : True",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50c027838e30000f72252",
+      "text": "   IsMailNewsDisplay : True",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50c027838e30000f72253",
+      "text": "   IsMailNewsSave    : True",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50c027838e30000f72254",
+      "text": "   IsSingleByte      : False",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50c027838e30000f72255",
+      "text": "   EncoderFallback   : System.Text.EncoderReplacementFallback",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50c027838e30000f72256",
+      "text": "   DecoderFallback   : System.Text.DecoderReplacementFallback",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50c027838e30000f72257",
+      "text": "   IsReadOnly        : True",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50c027838e30000f72258",
+      "text": "   CodePage          : 65001",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858050,
+      "updated": 1673858050
+    },
+    {
+      "id": "63c50ba07838e30000f72248",
+      "text": "\t[$PSVersionTable]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673857952,
+      "updated": 1673858067
+    },
+    {
+      "id": "63c50c137838e30000f7225a",
+      "text": "\t\tcode:PSVersionTable",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858068,
+      "updated": 1673858073
+    },
+    {
+      "id": "63c50c187838e30000f7225b",
+      "text": "\t\t Name                           Value",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858073,
+      "updated": 1673858073
+    },
+    {
+      "id": "63c50c197838e30000f7225c",
+      "text": "   ----                           -----",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858073,
+      "updated": 1673858073
+    },
+    {
+      "id": "63c50c197838e30000f7225d",
+      "text": "   PSVersion                      7.3.1",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858073,
+      "updated": 1673858073
+    },
+    {
+      "id": "63c50c197838e30000f7225e",
+      "text": "   PSEdition                      Core",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858073,
+      "updated": 1673858073
+    },
+    {
+      "id": "63c50c197838e30000f7225f",
+      "text": "   GitCommitId                    7.3.1",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858073,
+      "updated": 1673858073
+    },
+    {
+      "id": "63c50c197838e30000f72260",
+      "text": "   OS                             Microsoft Windows 10.0.22000",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858073,
+      "updated": 1673858073
+    },
+    {
+      "id": "63c50c197838e30000f72261",
+      "text": "   Platform                       Win32NT",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858073,
+      "updated": 1673858073
+    },
+    {
+      "id": "63c50c197838e30000f72262",
+      "text": "   PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858073,
+      "updated": 1673858073
+    },
+    {
+      "id": "63c50c197838e30000f72263",
+      "text": "   PSRemotingProtocolVersion      2.3",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858073,
+      "updated": 1673858073
+    },
+    {
+      "id": "63c50c197838e30000f72264",
+      "text": "   SerializationVersion           1.1.0.1",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858073,
+      "updated": 1673858073
+    },
+    {
+      "id": "63c50c197838e30000f72265",
+      "text": "   WSManStackVersion              3.0",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858073,
+      "updated": 1673858073
+    },
+    {
+      "id": "63c50c307838e30000f72267",
+      "text": "  ちなみに、`PSVersion 5.1.22000.1335`でも同様の現象が発生した",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858097,
+      "updated": 1673858137
+    },
+    {
+      "id": "63c50c0d7838e30000f72259",
+      "text": "\tもうちょっと仕様を調べてみよう",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858061,
+      "updated": 1673858094
+    },
+    {
+      "id": "63c50d5e7838e30000f7226b",
+      "text": "\t\t読んでいるページ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858399,
+      "updated": 1673858404
+    },
+    {
+      "id": "63c50d637838e30000f7226c",
+      "text": "\t\t\t[https://learn.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-7.3 パイプラインについて - PowerShell | Microsoft Learn]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858404,
+      "updated": 1673858404
+    },
+    {
+      "id": "63c50c2b7838e30000f72266",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673858091,
+      "updated": 1673858091
+    },
+    {
+      "id": "63c545337838e30000a21b15",
+      "text": "自分の方でできそうなことが無かったので、denoとesbuildを分けて2行で実行するようにした[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673872692,
+      "updated": 1673872742
+    },
+    {
+      "id": "63c545357838e30000a21b16",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1673872694,
+      "updated": 1673872694
+    }
+  ]
+}
