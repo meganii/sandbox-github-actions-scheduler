@@ -31,7 +31,9 @@ const titles = pages.map((page) => {
     "id": page.id,
     "title": page.title,
     "created": page.created,
-    "updated": page.updated
+    "updated": page.updated,
+    "image": page.image,
+    "descriptions": page.descriptions,
   } as TitlePage;
 });
 titles.sort((a: TitlePage, b: TitlePage): number => {
