@@ -1,0 +1,540 @@
+{
+  "id": "63ee04e3027c16001b860566",
+  "title": "ScrapboxプロジェクトをKozanebaにインポートする(開発)",
+  "created": 1676543209,
+  "updated": 1676557404,
+  "lines": [
+    {
+      "id": "63ee04e3027c16001b860566",
+      "text": "ScrapboxプロジェクトをKozanebaにインポートする(開発)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543209,
+      "updated": 1676543223
+    },
+    {
+      "id": "63ee04f6aff09e0000f87ed5",
+      "text": "サクッとできる話ではないことがわかったので思考過程をここに置いていく[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543223,
+      "updated": 1676543248
+    },
+    {
+      "id": "63ee0510aff09e0000f87ed7",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543248,
+      "updated": 1676543248
+    },
+    {
+      "id": "63ee0510aff09e0000f87ed8",
+      "text": "Kozanebaのサンプルコードで「ソースコードからKozaneba用のJSONを作成する」があるので、これを使ってScrapboxからエクスポートしたJSONからKozaneba用のJSONを作ればいいと思った",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543248,
+      "updated": 1676543315
+    },
+    {
+      "id": "63ee0557aff09e0000f87ed9",
+      "text": "　エスクポートしたJSONにはリンクの情報がなかった",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543320,
+      "updated": 1676543339
+    },
+    {
+      "id": "63ee056eaff09e0000f87eda",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543342,
+      "updated": 1676543342
+    },
+    {
+      "id": "63ee16e4aff09e00000831e4",
+      "text": "前提として「ページの間のリンクをKozanebaの矢印としてインポートする」という仕様",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676547812,
+      "updated": 1676547812
+    },
+    {
+      "id": "63ee16e4aff09e00000831e5",
+      "text": "　線のないバラバラの要素としてから今でもできる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676547812,
+      "updated": 1676547812
+    },
+    {
+      "id": "63ee16eaaff09e00000831e6",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676547818,
+      "updated": 1676547818
+    },
+    {
+      "id": "63ee056eaff09e0000f87edb",
+      "text": "各ページのAPIを叩いてリンク情報を取得する？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543342,
+      "updated": 1676543358
+    },
+    {
+      "id": "63ee05df6eb4060000cd0dd3",
+      "text": "　リンク情報付きでページ一覧が得られるAPIがあったはず[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676543457,
+      "updated": 1676543473
+    },
+    {
+      "id": "63ee06216eb4060000cd0dd4",
+      "text": "　　[/scrapboxlab/api/pages/:projectname/search/titles]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676543526,
+      "updated": 1676543527
+    },
+    {
+      "id": "63ee08116eb4060000cd0dd5",
+      "text": "　　でもこれだと本文がない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676544019,
+      "updated": 1676544025
+    },
+    {
+      "id": "63ee0836aff09e0000f87ee9",
+      "text": "　　エクスポートしたJSONから作るケースなら手元に本文はある[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676544054,
+      "updated": 1676544084
+    },
+    {
+      "id": "63ee0854aff09e0000f87eea",
+      "text": "　　 [- というかKozaneba的には本文は使わないな]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676544084,
+      "updated": 1676547030
+    },
+    {
+      "id": "63ee13d6aff09e0000f87eed",
+      "text": "　　 　そんなことなかった、まあいいや",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676547031,
+      "updated": 1676547043
+    },
+    {
+      "id": "63ee1449aff09e0000f87eee",
+      "text": "　　 　UI経由で追加した時にはその時点でAPIを叩いてdescriptionを取得してる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676547146,
+      "updated": 1676547174
+    },
+    {
+      "id": "63ee1466aff09e0000f87eef",
+      "text": "　　 　一旦descriptionを空でやる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676547174,
+      "updated": 1676547194
+    },
+    {
+      "id": "63ee147baff09e0000f87ef0",
+      "text": "　　 　　後で考える",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676547196,
+      "updated": 1676547208
+    },
+    {
+      "id": "63ee04fbaff09e0000f87ed6",
+      "text": "　　これで良さそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676543228,
+      "updated": 1676544110
+    },
+    {
+      "id": "63ee086c6eb4060000cd0dd7",
+      "text": "　　先日inlineに井戸端補完機能をつけるときに使ったばかり",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676544110,
+      "updated": 1676544132
+    },
+    {
+      "id": "63ee0944aff09e0000f87eeb",
+      "text": "　　レスポンス眺めてみた、これで良さそう[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676544325,
+      "updated": 1676544337
+    },
+    {
+      "id": "63ee099b6eb4060000cd0dd8",
+      "text": "　　赤リンクも含まれるはず、まぁあっても良いか[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676544413,
+      "updated": 1676544445
+    },
+    {
+      "id": "63ee13a6aff09e0000f87eec",
+      "text": "　　　あった方が面白いかない方がいいかは不明[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676546983,
+      "updated": 1676547001
+    },
+    {
+      "id": "63ee05ccaff09e0000f87edf",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543436,
+      "updated": 1676543439
+    },
+    {
+      "id": "63ee05cfaff09e0000f87ee0",
+      "text": "とりあえず100ページ程度のプロジェクトを対象に実験しようとしているので、全ページ対象で良い",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543439,
+      "updated": 1676543772
+    },
+    {
+      "id": "63ee071caff09e0000f87ee1",
+      "text": "　が一般的にこの機能がリリースされた時に使ってみようとする人は10000ページあったりするので全体でやっても[毛玉問題]になるだけ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543772,
+      "updated": 1676543812
+    },
+    {
+      "id": "63ee0745aff09e0000f87ee2",
+      "text": "　ページを指定して、そのページと1ホップでリンクされているのものだけを対象にするのが一番有用だと思う",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543813,
+      "updated": 1676543856
+    },
+    {
+      "id": "63ee0770aff09e0000f87ee3",
+      "text": "　　100リンク超えてしまったようなページを指定して読み込む",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543857,
+      "updated": 1676543874
+    },
+    {
+      "id": "63ee0782aff09e0000f87ee4",
+      "text": "　　そうすると子のページの間のリンクが見えて、子をグループに分ける助けになる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543875,
+      "updated": 1676543911
+    },
+    {
+      "id": "63ee07a8aff09e0000f87ee5",
+      "text": "　　このユースケースだったら親から子へのリンクは自明だから描かない方がいいな",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543912,
+      "updated": 1676543932
+    },
+    {
+      "id": "63ee059baff09e0000f87edd",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543387,
+      "updated": 1676543387
+    },
+    {
+      "id": "63ee07faaff09e0000f87ee6",
+      "text": "有用かどうかはさておき面白いかもしれないこと",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676543994,
+      "updated": 1676544006
+    },
+    {
+      "id": "63ee0806aff09e0000f87ee8",
+      "text": "　指定したページ(orランダムページ)からランダムにリンクをたどっていくのを100回くらいやった結果を表示",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676544006,
+      "updated": 1676544048
+    },
+    {
+      "id": "63ee07ffaff09e0000f87ee7",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676544000,
+      "updated": 1676544000
+    },
+    {
+      "id": "63ee1a69aff09e00000831ed",
+      "text": "[/scrapboxlab/api/pages/:projectname/search/titles]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676548713,
+      "updated": 1676548726
+    },
+    {
+      "id": "63ee1a76aff09e00000831ef",
+      "text": "　タイトルはある",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676548726,
+      "updated": 1676548732
+    },
+    {
+      "id": "63ee1a7baff09e00000831f0",
+      "text": "　画像URLはある",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676548732,
+      "updated": 1676548744
+    },
+    {
+      "id": "63ee1a88aff09e00000831f1",
+      "text": "　本文はない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676548744,
+      "updated": 1676548750
+    },
+    {
+      "id": "63ee1a8eaff09e00000831f2",
+      "text": "　このページ自体のURLはない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676548750,
+      "updated": 1676548763
+    },
+    {
+      "id": "63ee1a9aaff09e00000831f3",
+      "text": "　　スペースの置換とURLエンコードをすればいいかな？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676548763,
+      "updated": 1676548788
+    },
+    {
+      "id": "63ee1ab8aff09e00000831f4",
+      "text": "　リンク情報はリンク先のページタイトルになってる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676548793,
+      "updated": 1676548807
+    },
+    {
+      "id": "63ee1a75aff09e00000831ee",
+      "text": "方針",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676548726,
+      "updated": 1676549853
+    },
+    {
+      "id": "63ee1eddaff09e00000831f6",
+      "text": "　大した分量ではないので素直に頂点集合と辺の集合をつくる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676549854,
+      "updated": 1676549895
+    },
+    {
+      "id": "63ee1f07aff09e00000831f7",
+      "text": "　有向辺にするかどうか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676549895,
+      "updated": 1676549932
+    },
+    {
+      "id": "63ee1f3daff09e00000831f8",
+      "text": "　　するのはできるけど双方向のやつをどう表示しようかな",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676549949,
+      "updated": 1676549970
+    },
+    {
+      "id": "63ee1f52aff09e00000831f9",
+      "text": "　　両矢印でいいか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676549970,
+      "updated": 1676549970
+    },
+    {
+      "id": "63ee1ed3aff09e00000831f5",
+      "text": "　赤リンクを含むためページ一覧に存在しない端点が発生しうる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676549844,
+      "updated": 1676550050
+    },
+    {
+      "id": "63ee1fa3aff09e00000831fb",
+      "text": "　　赤リンクの先をこざねとして追加しよう",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676550051,
+      "updated": 1676552823
+    },
+    {
+      "id": "63ee1f73aff09e00000831fa",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676550007,
+      "updated": 1676550007
+    },
+    {
+      "id": "63ee2a5daff09e00001069e8",
+      "text": "赤リンク、予想以上に多かったw",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676552797,
+      "updated": 1676552838
+    },
+    {
+      "id": "63ee2a5daff09e00001069e9",
+      "text": " [https://gyazo.com/6ae926fccbf166fc262b27369345056d]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676552797,
+      "updated": 1676552840
+    },
+    {
+      "id": "63ee2a5faff09e00001069ea",
+      "text": "　　赤リンクをインポートするのはやめます",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676552799,
+      "updated": 1676555706
+    },
+    {
+      "id": "63ee35baaff09e0000083202",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676555706,
+      "updated": 1676555711
+    },
+    {
+      "id": "63ee2e60aff09e00001069eb",
+      "text": "さて...",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676553824,
+      "updated": 1676553827
+    },
+    {
+      "id": "63ee2e63aff09e00001069ed",
+      "text": "\t[https://gyazo.com/58d2bdca9ff75cb0dedd5a34949a0996]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676553827,
+      "updated": 1676553831
+    },
+    {
+      "id": "63ee2e67aff09e00001069ee",
+      "text": "\t実は物理エンジン実装してある",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676553831,
+      "updated": 1676554452
+    },
+    {
+      "id": "63ee30d3aff09e00001069ef",
+      "text": "\t\t[https://gyazo.com/9d1baef134a404e4f21f2fece6cea622]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676554452,
+      "updated": 1676554452
+    },
+    {
+      "id": "63ee30d4aff09e00001069f0",
+      "text": "　　あんまり役に立ったことがないので公式ドキュメントにはないw",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676554452,
+      "updated": 1676555743
+    },
+    {
+      "id": "63ee35dfaff09e0000083204",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676555743,
+      "updated": 1676555744
+    },
+    {
+      "id": "63ee35c9aff09e0000083203",
+      "text": "　うーん、人類はこの毛玉問題を解決する手段をまだ発明していない…",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676555722,
+      "updated": 1676555722
+    },
+    {
+      "id": "63ee2e62aff09e00001069ec",
+      "text": "\t\t[https://gyazo.com/9b479212a7920bf6eb07dec777d861cb]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676553826,
+      "updated": 1676555288
+    },
+    {
+      "id": "63ee3417aff09e00001069f1",
+      "text": "　　孤立してるものを傍にどけたり、1つとしかつながってないものをそれのそばに置いたりするところまでは自明",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676555288,
+      "updated": 1676555327
+    },
+    {
+      "id": "63ee343faff09e00000831fd",
+      "text": "　　そこから先が急に難問になる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676555328,
+      "updated": 1676555341
+    },
+    {
+      "id": "63ee3423aff09e00000831fc",
+      "text": "　　　数百枚でのKJ法経験が何度もある僕にとってすら、この100枚のカードの毛玉を解きほぐすのに困難がある",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676555299,
+      "updated": 1676555424
+    },
+    {
+      "id": "63ee3474aff09e00000831fe",
+      "text": "　　巨大なハブになってる雑談ページをリンクから外そう",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676555381,
+      "updated": 1676555491
+    },
+    {
+      "id": "63ee3579aff09e0000083201",
+      "text": "　　あ、Scrapboxこざねにleave from linesメニューがついてないぞ…",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676555642,
+      "updated": 1676555661
+    },
+    {
+      "id": "63ee34e3aff09e0000083200",
+      "text": "　　まあインポートはできたし続きはまた明日",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676555491,
+      "updated": 1676555687
+    },
+    {
+      "id": "63ee34cdaff09e00000831ff",
+      "text": "　　あ、そうか、cloneして削除で同じことできるな",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676555469,
+      "updated": 1676555811
+    },
+    {
+      "id": "63ee362baff09e0000083206",
+      "text": "　　　Scrapboxこざねにcloneも付いてないじゃん！",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676555820,
+      "updated": 1676555834
+    },
+    {
+      "id": "63ee3614aff09e0000083205",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676555797,
+      "updated": 1676555797
+    },
+    {
+      "id": "63ee3c4baff09e0000083207",
+      "text": "メモ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676557388,
+      "updated": 1676557390
+    },
+    {
+      "id": "63ee3c4daff09e0000083209",
+      "text": "　ページ99枚",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676557390,
+      "updated": 1676557397
+    },
+    {
+      "id": "63ee3c55aff09e000008320a",
+      "text": "　リンク400本",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676557397,
+      "updated": 1676557401
+    },
+    {
+      "id": "63ee3c5caff09e000008320b",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676557404,
+      "updated": 1676557404
+    },
+    {
+      "id": "63ee3c4daff09e0000083208",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1676557390,
+      "updated": 1676557390
+    }
+  ]
+}

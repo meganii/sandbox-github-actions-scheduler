@@ -2,7 +2,7 @@
   "id": "63e2ea8ced4964001d7eec5c",
   "title": "2023/02/08",
   "created": 1675815566,
-  "updated": 1676215106,
+  "updated": 1676515550,
   "lines": [
     {
       "id": "63e2ea8ced4964001d7eec5c",
@@ -451,6 +451,153 @@
       "userId": "59fb21121207900012774b17",
       "created": 1675823761,
       "updated": 1675841709
+    },
+    {
+      "id": "63ed984b1280f00000267639",
+      "text": "  [/Mijinko-other/三項演算子で頑張るか、右辺に関数を書くか、非定数（変数）にしてしまうか]か[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515403,
+      "updated": 1676515423
+    },
+    {
+      "id": "63ed985b1280f0000026763a",
+      "text": "  函数に切り出しちゃえばよくない？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515420,
+      "updated": 1676515427
+    },
+    {
+      "id": "63ed98871280f00000267646",
+      "text": "   一度しか使わないかもしれないが気にしない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515464,
+      "updated": 1676515464
+    },
+    {
+      "id": "63ed988a1280f0000026764b",
+      "text": "   むしろ単体テストしやすくなる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515466,
+      "updated": 1676515466
+    },
+    {
+      "id": "63ed986e1280f0000026763d",
+      "text": "   code:extract.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515438,
+      "updated": 1676515446
+    },
+    {
+      "id": "63ed98751280f0000026763e",
+      "text": "    export const func = () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515446,
+      "updated": 1676515470
+    },
+    {
+      "id": "63ed98841280f0000026763f",
+      "text": "  \t\t  // 適当な処理",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515460,
+      "updated": 1676515460
+    },
+    {
+      "id": "63ed98841280f00000267640",
+      "text": "  \t\t  return 0",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515460,
+      "updated": 1676515460
+    },
+    {
+      "id": "63ed98841280f00000267641",
+      "text": "  \t\t}",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515460,
+      "updated": 1676515472
+    },
+    {
+      "id": "63ed98901280f0000026764c",
+      "text": "  \tcode:extract.test.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515472,
+      "updated": 1676515477
+    },
+    {
+      "id": "63ed98951280f0000026764d",
+      "text": "  \t import { func } from \"./extract.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515478,
+      "updated": 1676515485
+    },
+    {
+      "id": "63ed989d1280f0000026764e",
+      "text": "  \t import { assertEquals } from \"https://deno.land/std@0.177.0/testing.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515486,
+      "updated": 1676515515
+    },
+    {
+      "id": "63ed98bb1280f00000267650",
+      "text": "  \t ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515516,
+      "updated": 1676515516
+    },
+    {
+      "id": "63ed989e1280f0000026764f",
+      "text": "  \t Deno.test(\"func()\", () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515488,
+      "updated": 1676515524
+    },
+    {
+      "id": "63ed98c31280f00000267651",
+      "text": "  \t   // ...",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515524,
+      "updated": 1676515526
+    },
+    {
+      "id": "63ed98c31280f00000267652",
+      "text": "  \t });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515524,
+      "updated": 1676515527
+    },
+    {
+      "id": "63ed98c71280f00000267653",
+      "text": "  \tcode:main.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515528,
+      "updated": 1676515535
+    },
+    {
+      "id": "63ed98ce1280f00000267654",
+      "text": "  \t import { func } from \"./extract.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515535,
+      "updated": 1676515544
+    },
+    {
+      "id": "63ed98d81280f00000267655",
+      "text": "  \t ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515544,
+      "updated": 1676515544
+    },
+    {
+      "id": "63ed98d81280f00000267656",
+      "text": "  \t const result = func();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515545,
+      "updated": 1676515550
+    },
+    {
+      "id": "63ed98de1280f00000267657",
+      "text": "  \t ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676515550,
+      "updated": 1676515550
     },
     {
       "id": "63e3b0c47838e30000c494bb",

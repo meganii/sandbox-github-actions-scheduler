@@ -1,0 +1,407 @@
+{
+  "id": "63ede221e9950a001ba975e2",
+  "title": "scrapbox-userscript-std/PR:108",
+  "created": 1676534306,
+  "updated": 1676541060,
+  "lines": [
+    {
+      "id": "63ede221e9950a001ba975e2",
+      "text": "scrapbox-userscript-std/PR:108",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534329
+    },
+    {
+      "id": "63ede2227838e3000035c465",
+      "text": "from [@Mijinko_SD]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63edeb547838e30000c2dad9",
+      "text": "[https://github.com/takker99/scrapbox-userscript-std/pull/108 コードブロックの取得、および上書きを行う関数の追加 by MijinkoSD · Pull Request #108 · takker99/scrapbox-userscript-std]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676536660,
+      "updated": 1676536660
+    },
+    {
+      "id": "63ede2227838e3000035c466",
+      "text": "[/takker/⬜️コードブロックの取得、および上書きを行う関数の追加]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c467",
+      "text": " (nit) convert named functions to arrow functions",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c468",
+      "text": " 折角なのでテストを加えたい",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c469",
+      "text": "  `getCodeBlocks`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c46a",
+      "text": "  `updateCodeBlock`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c46b",
+      "text": "  ...",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c46c",
+      "text": "  `makeTitleChangeCommit`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c46d",
+      "text": "  `isCodeFile`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c46e",
+      "text": "   これの用途がいまいちわからない[takker.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c46f",
+      "text": "   `unknown`ではなく、いくらか型を絞ってしまってもいいのでは？",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2807838e3000035c481",
+      "text": "   それは[updateCodeBlock()]のnewCodeの[- 無駄に種類の多い]引数の型を判別するために用意したものです[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534400,
+      "updated": 1676534484
+    },
+    {
+      "id": "63ede2b97838e3000035c482",
+      "text": "   \tunknownにしたのは他でも使えるようにするためだけなので、ぶっちゃけ不要です",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534457,
+      "updated": 1676534481
+    },
+    {
+      "id": "63ede3bc7838e3000035c489",
+      "text": "   \tこれによる型判別を使用せずに、updateCodeBlock()の引数を`newCode: {content: string | string[]} | CodeFile`にするという手もある",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534716,
+      "updated": 1676534769
+    },
+    {
+      "id": "63ede3f17838e3000035c48a",
+      "text": "   \t\tこれだと関数内で`newCode`を使うのが楽になる反面、呼び出し方が若干複雑になるというデメリットもある",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534769,
+      "updated": 1676534829
+    },
+    {
+      "id": "63ede42e7838e3000035c48b",
+      "text": "   \t\tどちらが良いかわからなかった",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534830,
+      "updated": 1676534834
+    },
+    {
+      "id": "63ede2227838e3000035c470",
+      "text": "  `flatCodeBodies`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c471",
+      "text": "   まあこれはいいか[takker.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2e07838e3000035c483",
+      "text": "   よく使う処理を複数箇所に書きたくないので関数化しました[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534495,
+      "updated": 1676534534
+    },
+    {
+      "id": "63ede2227838e3000035c472",
+      "text": "  `makeCommits`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c473",
+      "text": "  `makeIndent`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c474",
+      "text": "  `makeCodeBlockTitle`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63eded437838e300005461f4",
+      "text": "  [テストコードの書き方]（というかそもそもテストで何をするのか）がよくわからなかったので、多分人任せになるかもしれません…[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676537155,
+      "updated": 1676541060
+    },
+    {
+      "id": "63ede2227838e3000035c475",
+      "text": " `getCodeBlocks`は`/rest`でいいと思います[takker.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c476",
+      "text": "  `pull()`は`getPage()`をちょこっとwrapしただけ。そもそも必要性があやしい",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c477",
+      "text": "  [組み込み型定義の違いでdirectoryを分け]たいので、`/rest`に置くのが適切",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c478",
+      "text": "   `/rest`はどの環境でも使えるファイルを置いている",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c479",
+      "text": "   `/websocket`はbrowser環境でしか動かせないので、ここに`getCodeBlocks`を入れると、不要な制約がかかってしまう",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c47a",
+      "text": "  　　ちなみに`/dom`と`/websocket`を分けているのは、importの副作用による不要なコードが混入するのを防ぐため",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c47b",
+      "text": "  　　 `/websocket`をimportに含めるとscrapbox-parserのコードが含まれてしまう",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c47c",
+      "text": "  　　 これは`/dom`だけ使うなら不要",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede3877838e3000035c488",
+      "text": "  　了解です[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534663,
+      "updated": 1676534687
+    },
+    {
+      "id": "63ede2227838e3000035c47d",
+      "text": " PRに[takker.icon]もcommitしたいけどできるのかな？[takker.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c47e",
+      "text": "  PRにcommitできるのはauthorだけ？",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede2227838e3000035c47f",
+      "text": "  うまいこと複数人が直接commitできるbranchを生やせばいいのかな？",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676534306
+    },
+    {
+      "id": "63ede5b47838e3000035c4a8",
+      "text": "  できるならできるようにしたい[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676535221,
+      "updated": 1676535225
+    },
+    {
+      "id": "63ede2227838e3000035c480",
+      "text": "\t`updateCodeFile.ts`の`CodeFile`の適切な名前を考えたい[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534306,
+      "updated": 1676536382
+    },
+    {
+      "id": "63ede9167838e3000035c4a9",
+      "text": "\t\t`browser/dom/extractCodeFiles.ts`の`CodeFile`と名前がぶつかってしまっている",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676536085,
+      "updated": 1676536389
+    },
+    {
+      "id": "63ede4c97838e3000035c48c",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534985,
+      "updated": 1676535884
+    },
+    {
+      "id": "63ede4cb7838e3000035c48d",
+      "text": "メモ[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534987,
+      "updated": 1676534988
+    },
+    {
+      "id": "63ede4cd7838e3000035c48f",
+      "text": "\t`local_test/fmt-watch.ps1`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534988,
+      "updated": 1676535000
+    },
+    {
+      "id": "63ede4d97838e3000035c490",
+      "text": "\tcode:fmt-watch.ps1",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676535001,
+      "updated": 1676535007
+    },
+    {
+      "id": "63ede4e07838e3000035c491",
+      "text": "\t $files = @(",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676535007,
+      "updated": 1676535083
+    },
+    {
+      "id": "63ede52b7838e3000035c49d",
+      "text": "      \"./local_test/test.ts\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676535083,
+      "updated": 1676535083
+    },
+    {
+      "id": "63ede52b7838e3000035c49e",
+      "text": "      \"./local_test/getCodeBlocks.test.ts\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676535083,
+      "updated": 1676535083
+    },
+    {
+      "id": "63ede52b7838e3000035c49f",
+      "text": "      \"./browser/websocket/mod.ts\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676535083,
+      "updated": 1676535083
+    },
+    {
+      "id": "63ede52b7838e3000035c4a0",
+      "text": "      \"./browser/websocket/updateCodeBlock.ts\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676535083,
+      "updated": 1676535083
+    },
+    {
+      "id": "63ede52b7838e3000035c4a1",
+      "text": "      \"./browser/websocket/updateCodeFile.ts\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676535083,
+      "updated": 1676535083
+    },
+    {
+      "id": "63ede52b7838e3000035c4a2",
+      "text": "      \"./browser/websocket/_codeBlock.ts\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676535083,
+      "updated": 1676535083
+    },
+    {
+      "id": "63ede52b7838e3000035c4a3",
+      "text": "      \"./rest/mod.ts\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676535083,
+      "updated": 1676535083
+    },
+    {
+      "id": "63ede52b7838e3000035c4a4",
+      "text": "      \"./rest/getCodeBlocks.ts\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676535083,
+      "updated": 1676535083
+    },
+    {
+      "id": "63ede52b7838e3000035c4a5",
+      "text": "  ) | ForEach-Object {$PSScriptRoot + \"/../\" + $PSItem}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676535083,
+      "updated": 1676535083
+    },
+    {
+      "id": "63ede52b7838e3000035c4a6",
+      "text": "  ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676535083,
+      "updated": 1676535083
+    },
+    {
+      "id": "63ede52b7838e3000035c4a7",
+      "text": "  deno fmt --watch $files",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676535083,
+      "updated": 1676535083
+    },
+    {
+      "id": "63ede4cc7838e3000035c48e",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1676534988,
+      "updated": 1676534988
+    }
+  ]
+}

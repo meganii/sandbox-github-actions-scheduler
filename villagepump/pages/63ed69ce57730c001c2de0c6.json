@@ -1,0 +1,253 @@
+{
+  "id": "63ed69ce57730c001c2de0c6",
+  "title": "プロジェクト間のページを同期",
+  "created": 1676503503,
+  "updated": 1676560881,
+  "lines": [
+    {
+      "id": "63ed69ce57730c001c2de0c6",
+      "text": "プロジェクト間のページを同期",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146361",
+      "text": "from [2023/02/15]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146363",
+      "text": "ある時点で自分のプロジェクトにpullしたいだけど、差分だけ上手に当てられないので全部更新するしかない[mtane0412.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503527
+    },
+    {
+      "id": "63ed69ce6eb4060000146364",
+      "text": "\tテロメアが全部バーってなるのがなんか気持ちよくない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146365",
+      "text": "\t　わ、これはわかる[はるひ.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146366",
+      "text": "\t　[project横断検索]はあるが自分が自由に横断できていない感覚[mtane0412.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1676503503,
+      "updated": 1676511208
+    },
+    {
+      "id": "63ed69ce6eb4060000146367",
+      "text": "\t[patch()]使えば更新できそう[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146368",
+      "text": "\t テロメアが全部更新されるのは避けられる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146369",
+      "text": "\t 元のページに別の更新を書き加えていると、削除されてしまう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb406000014636a",
+      "text": "\t  削除される部分があったときは、確認画面を出してuserに[conflict解決]させればいい？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb406000014636b",
+      "text": "\t code:pull.ts",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb406000014636c",
+      "text": "\t  import { patch } from \"../../takker/scrapbox-userscript-std/mod.ts\";",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb406000014636d",
+      "text": "\t  ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb406000014636e",
+      "text": "\t  export const setup = (project: string) => {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb406000014636f",
+      "text": "　 \t  scrapbox.PageMenu.addItem({",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146370",
+      "text": "　 \t    title: () => `pull request to /${project}/${scrapbox.Page!.title}`,",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146371",
+      "text": "　 \t    onClick: async () => {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146372",
+      "text": "　 \t      await patch(",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146373",
+      "text": "　 \t        project,",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146374",
+      "text": "　 \t        scrapbox.Page!.title,",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146375",
+      "text": "　 \t        // `/${project}/${scrapbox.Page!.title}`にあるページを全て上書きする",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146376",
+      "text": "　 \t        () => scrapbox.Page!.lines.map((line) => line),",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146377",
+      "text": "　 \t      );",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146378",
+      "text": "　 \t      alert(`overwrito /${project}/${scrapbox.Page!.title}`);",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb4060000146379",
+      "text": "　 \t    },",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb406000014637a",
+      "text": "　 \t  });",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb406000014637b",
+      "text": "　 \t};",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503503
+    },
+    {
+      "id": "63ed69ce6eb406000014637c",
+      "text": "\t[一度機械的に生成したページに、後からもう一度機械的に生成した内容をマージしたい]だ[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503503,
+      "updated": 1676503515
+    },
+    {
+      "id": "63ed69da6eb406000014637d",
+      "text": "\t\t今回は機械ではないが",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503515,
+      "updated": 1676503515
+    },
+    {
+      "id": "63ed69da6eb406000014637e",
+      "text": "\t[Scrapboxを一部以外全てミラーする運用]、[プロジェクト間ミラーページ]あたりにも近い？[はるひ.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1676503515,
+      "updated": 1676503515
+    },
+    {
+      "id": "63ee312e5f1e0d000051fdfe",
+      "text": "\t[双方向同期版scrapbox-duplicator]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1676554542,
+      "updated": 1676554555
+    },
+    {
+      "id": "63ee31365f1e0d000051fdff",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1676554550,
+      "updated": 1676554550
+    },
+    {
+      "id": "63ee491e55cbd3000044847e",
+      "text": "[複雑なアクセス権限を持たない]に抵触するかな[mtane0412.icon]",
+      "userId": "5ae7fecf7766b7001455cbd3",
+      "created": 1676560670,
+      "updated": 1676560837
+    },
+    {
+      "id": "63ee49c455cbd30000d1a428",
+      "text": " 個人プロジェクト-公開プロジェクトだと問題ないけど複数人のプロジェクトや非公開プロジェクトなどが絡まってくるとややこしくなってきそう",
+      "userId": "5ae7fecf7766b7001455cbd3",
+      "created": 1676560837,
+      "updated": 1676560881
+    },
+    {
+      "id": "63ee492055cbd3000044847f",
+      "text": "",
+      "userId": "5ae7fecf7766b7001455cbd3",
+      "created": 1676560672,
+      "updated": 1676560672
+    }
+  ]
+}
