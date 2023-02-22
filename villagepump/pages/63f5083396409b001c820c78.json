@@ -2,7 +2,7 @@
   "id": "63f5083396409b001c820c78",
   "title": "2023/2/21 Scrapboxの内容を元にしたチャットbotを実装する",
   "created": 1677002806,
-  "updated": 1677003575,
+  "updated": 1677027106,
   "lines": [
     {
       "id": "63f5083396409b001c820c78",
@@ -47,6 +47,13 @@
       "updated": 1677002874
     },
     {
+      "id": "63f527b379e11300000b2bbb",
+      "text": "　 [GPTIndexにScrapboxの内容を突っ込んで遊ぶ]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677010868,
+      "updated": 1677010870
+    },
+    {
       "id": "63f5087979e113000057275d",
       "text": "　 [OperandでObsidian Vaultを検索]",
       "userId": "5d89b1f60230ae001779e113",
@@ -69,10 +76,10 @@
     },
     {
       "id": "63f50a4179e1130000572777",
-      "text": "　 [LangChain]",
+      "text": "　 [LangChain Chat]",
       "userId": "5d89b1f60230ae001779e113",
       "created": 1677003330,
-      "updated": 1677003332
+      "updated": 1677010416
     },
     {
       "id": "63f5087579e113000057275b",
@@ -124,6 +131,13 @@
       "updated": 1677003095
     },
     {
+      "id": "63f5671eaff09e0000b30e35",
+      "text": "　　　　なるほど[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677027103,
+      "updated": 1677027106
+    },
+    {
       "id": "63f5096679e1130000572771",
       "text": "　 [Mem], [Operand]など英語ツールとかで出来ていることを、Scrapbox/日本語でやりたい[blu3mo.icon]",
       "userId": "5d89b1f60230ae001779e113",
@@ -132,31 +146,199 @@
     },
     {
       "id": "63f5098979e1130000572774",
-      "text": "　流れ",
+      "text": "　実装方法",
       "userId": "5d89b1f60230ae001779e113",
       "created": 1677003145,
-      "updated": 1677003150
+      "updated": 1677003911
     },
     {
-      "id": "63f508ff79e1130000572768",
+      "id": "63f50c8f79e11300001de937",
+      "text": "　 GPT-3に渡す適切なScrapboxの内容をどう選ぶかがむずい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677003920,
+      "updated": 1677003938
+    },
+    {
+      "id": "63f50ca379e11300001de938",
       "text": "　　[https://note.com/npaka/n/nf74a29c1d25d LangChain Chat のしくみ｜npaka｜note]",
       "userId": "5d89b1f60230ae001779e113",
-      "created": 1677003008,
-      "updated": 1677003189
+      "created": 1677003940,
+      "updated": 1677003940
     },
     {
       "id": "63f509b479e1130000572776",
-      "text": "  　",
+      "text": "  　[https://assets.st-note.com/img/1676524237894-7VDUzEGA8S.png?width=2000&height=2000&fit=bounds&quality=85]",
       "userId": "5d89b1f60230ae001779e113",
       "created": 1677003189,
-      "updated": 1677003575
+      "updated": 1677004041
+    },
+    {
+      "id": "63f50d0979e11300001de939",
+      "text": "   文書をベクトル化したものを使っている",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677004041,
+      "updated": 1677004060
+    },
+    {
+      "id": "63f521af79e1130000f536f2",
+      "text": "   これをforkするかな[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677009327,
+      "updated": 1677009370
+    },
+    {
+      "id": "63f5230179e1130000f536f4",
+      "text": "    [TextSplitter]を、Scrapboxに対応させたい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677009665,
+      "updated": 1677009685
+    },
+    {
+      "id": "63f5231579e1130000f536f5",
+      "text": "    　現状、Markdownとかの構造を読んでいい感じに分割するようになっている",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677009685,
+      "updated": 1677009697
+    },
+    {
+      "id": "63f5232279e1130000f536f6",
+      "text": "    　これを、Scrapboxでもできるようにしたい[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677009698,
+      "updated": 1677009711
+    },
+    {
+      "id": "63f5281779e11300000b2bbc",
+      "text": "    Embeddingにも、OpenAIのAPIを使っているみたい[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677010967,
+      "updated": 1677011372
+    },
+    {
+      "id": "63f529dc79e11300000b2bc2",
+      "text": "     https://langchain.readthedocs.io/en/latest/modules/indexes/examples/embeddings.html",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677011421,
+      "updated": 1677011421
+    },
+    {
+      "id": "63f529dd79e11300000b2bc3",
+      "text": "     価格: $0.0004 / 1K tokens",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677011421,
+      "updated": 1677012041
+    },
+    {
+      "id": "63f52cf779e11300000b2bc4",
+      "text": "      2000 token/pageだと見積もったら、一万ページのembeddingに大体1000円かかる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677012216,
+      "updated": 1677012299
+    },
+    {
+      "id": "63f52d4b79e11300000b2bc7",
+      "text": "      まあそんなオーダーか、耐えそう",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677012299,
+      "updated": 1677012314
+    },
+    {
+      "id": "63f52d3279e11300000b2bc6",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677012274,
+      "updated": 1677012275
+    },
+    {
+      "id": "63f50d1c79e11300001de93a",
+      "text": "  [https://github.com/minosvasilias/toolformer-zero GitHub - minosvasilias/toolformer-zero: React app implementing OpenAI and Google APIs to re-create behavior of the toolformer paper.]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677004060,
+      "updated": 1677004077
+    },
+    {
+      "id": "63f50d2c79e11300001de93b",
+      "text": "   [Google Programmable Search]APiを使っている",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677004077,
+      "updated": 1677004085
+    },
+    {
+      "id": "63f50d3579e11300001de93c",
+      "text": "   　試しに`site:scrapbox.io/blu3mo-public 質問`で検索すると良さそうな結果が出る",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677004085,
+      "updated": 1677004105
+    },
+    {
+      "id": "63f50d4979e11300001de93d",
+      "text": "   　ので、悪く無いかも",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677004105,
+      "updated": 1677004108
     },
     {
       "id": "63f5096879e1130000572772",
-      "text": "",
+      "text": "  というかBing AIで大体いける説はある",
       "userId": "5d89b1f60230ae001779e113",
       "created": 1677003113,
-      "updated": 1677003113
+      "updated": 1677007863
+    },
+    {
+      "id": "63f51bf479e1130000f536ed",
+      "text": "   `site:scrapbox.io/blu3mo-public の内容のみを参照して答えてください。`と伝えた上で質疑をすれば良さそう",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677007860,
+      "updated": 1677007876
+    },
+    {
+      "id": "63f51d4f79e1130000f536f1",
+      "text": "   ただ、Scrapboxのリンク構造を読ませるなどもやってみたいので、似たものを再実装したい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677008207,
+      "updated": 1677008228
+    },
+    {
+      "id": "63f525d979e11300000b2bba",
+      "text": "   あと、[LangChain]をScrapboxに最適化したい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677010394,
+      "updated": 1677010403
+    },
+    {
+      "id": "63f51d4a79e1130000f536ee",
+      "text": "  [https://github.com/namuan/dr-doc-search GitHub - namuan/dr-doc-search: Converse with book - Built with GPT-3]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677008203,
+      "updated": 1677008206
+    },
+    {
+      "id": "63f5224979e113000072d2d2",
+      "text": "  [https://github.com/hwchase17/notion-qa GitHub - hwchase17/notion-qa]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677009482,
+      "updated": 1677009483
+    },
+    {
+      "id": "63f5224a79e113000072d2d4",
+      "text": "   [Langchain]の人が最初に作ったやつ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677009483,
+      "updated": 1677009489
+    },
+    {
+      "id": "63f5225179e113000072d2d5",
+      "text": "   これのScrapbox版をやりたい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677009489,
+      "updated": 1677009669
+    },
+    {
+      "id": "63f5224979e113000072d2d3",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677009482,
+      "updated": 1677009482
     }
   ]
 }
