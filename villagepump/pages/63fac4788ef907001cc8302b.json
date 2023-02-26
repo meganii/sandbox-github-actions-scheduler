@@ -1,0 +1,386 @@
+{
+  "id": "63fac4788ef907001cc8302b",
+  "title": "diffToChanges()のleftに要素数0の配列を渡すと例外が発生する",
+  "created": 1677378681,
+  "updated": 1677378699,
+  "lines": [
+    {
+      "id": "63fac4788ef907001cc8302b",
+      "text": "diffToChanges()のleftに要素数0の配列を渡すと例外が発生する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378699
+    },
+    {
+      "id": "63fac47a7838e30000c8f63a",
+      "text": "from [@takker その2]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f63b",
+      "text": "想定内かもしれませんが、[scrapbox-userscript-std]の[diffToChanges()]のleftへ要素数0の配列を渡すと例外を引き起こします[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f63c",
+      "text": "\tif文などでの前処理無しに`let lineId = left[0].id;`[. https://github.com/takker99/scrapbox-userscript-std/blob/main/browser/websocket/diffToChanges.ts#L23]をしているのが原因です",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f63d",
+      "text": "\t [https://code2svg.vercel.app/svg/L13-27/https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.19.0/browser/websocket/diffToChanges.ts#.svg]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f63e",
+      "text": "\t なるほどたしかに[takker.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f63f",
+      "text": "\t `diffToChanges`はどこで使っていたかな",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f640",
+      "text": "\t  `makeChanges`ではそのまま渡しているだけ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f641",
+      "text": " \t  [https://code2svg.vercel.app/svg/L19-27/https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.19.0/browser/websocket/makeChanges.ts#.svg]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f642",
+      "text": " \t [patch()]でしか使っていないようですね",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f643",
+      "text": " \t  [https://code2svg.vercel.app/svg/L22-32/https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.19.0/browser/websocket/patch.ts#.svg]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f644",
+      "text": " \t  (略)",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f645",
+      "text": " \t  [https://code2svg.vercel.app/svg/L68-80/https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.19.0/browser/websocket/patch.ts#.svg]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f646",
+      "text": " \t  `head.lines`は少なくとも1行含むはず(タイトル行が入る)だから、現状ではバグらなそうです[takker.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f647",
+      "text": " \t  もちろんパーツごとに見たらあきらかにまずいです",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f648",
+      "text": "\t場当たり的にはなりますが、Options内に`left[0].id`が存在しなかった際に使用する行IDを格納することができれば回避できると思います",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f649",
+      "text": "\t\tその行IDは[InsertCommit]にしか使用されないため、実質的に挿入した行の真下に来る行になると思います",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f64a",
+      "text": "\t\tcode:lines_sample",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f64b",
+      "text": "\t\t 元々あった行",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f64c",
+      "text": "\t\t 挿入された行",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f64d",
+      "text": "\t\t 挿入された行その2",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f64e",
+      "text": "\t\t Options内で指定した行",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f64f",
+      "text": "\t `left: [PartialLine, ...PartialLine[]]`(`type PartialLine = Pick<Line, \"text\" | \"id\">;`)とする手もあります[takker.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f650",
+      "text": "\t  型定義の変更だけで済む",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f651",
+      "text": "\t  ただし、利用側で要素数が1以上であることを保証するコードを挿入する必要が生じる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f652",
+      "text": "\t  scrapboxでは何もない場所に文字列を挿入することを想定していないので、こっちの変更のほうがscrapboxにあうかなと思いました",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f653",
+      "text": "\t  \t確かに、行が1つも無いページは存在しない（少なくともタイトル行が存在する）ので、そうした方が良いかもしれませんが…[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f654",
+      "text": "\t  \t下の`PR:108`のようにページに含まれる行の1部分のみを切り取った場合は、`left`の要素数が0になるということが起こり得ると思います",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f655",
+      "text": "\tちなみに、[scrapbox-userscript-std/PR:108]にて追加した[updateCodeBlock()]はこの例外を想定していないため、`target`にコード本体がない（タイトル行しか無い）コードブロックを渡すと、[diffToChanges()]で例外が発生します",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f656",
+      "text": "\t\tすいません",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f657",
+      "text": "\t\t[/vim-jp-emojis/iinoyo.icon][takker.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f658",
+      "text": "  `TinyCodeBlock`がタイトル行と本文行とをばらばらに持ってしまっているからこうなったと。なるほど",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f659",
+      "text": "   [https://code2svg.vercel.app/svg/L8-30/https://raw.githubusercontent.com/MijinkoSD/scrapbox-userscript-std/ca6e48c553129a851779afacbc95ac10bd2217bc/rest/getCodeBlocks.ts#.svg]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f65a",
+      "text": "   `titleLine`と`bodyLines`は分ける必要ありますか？",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f65b",
+      "text": "    scrapboxの`lines`はタイトル行を含むので、それに合わせたほうが統一感がある",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f65c",
+      "text": "    コードブロックの中身だけ欲しい場合は、`getContent: (block: TinyCodeBlock) => string`のような函数を別途用意すれば取り出せる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f65d",
+      "text": "    同じ型なので、分けなくても実装上は多分問題ないです[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f65e",
+      "text": "    ただ、TitleとBodyで用途がまるで違うので分けています",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f65f",
+      "text": "    　TitleとBodyの双方に同じ処理をする（例えばforEachでまとめて操作する等）ということがまず無いので",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f660",
+      "text": "    　（コードブロックを取得してあれこれしている関係上）混ぜて置いておくと、呼び出しの際に適切なindexを指定しなければならず、色々と不便です",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f661",
+      "text": "   `projectName`と`pageTitle`のセットはほかのところでも多用するので、一つのinterfaceとして切り出したい",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f662",
+      "text": "    今回のPRとは関係ないので、やるとしたら別のPRでやる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f663",
+      "text": "    [/icons/わかる.icon][Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f664",
+      "text": "    　プロジェクト名・ページ名は結構いろんなところで渡している",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f665",
+      "text": "    　もっと言うとページID・プロジェクトID・ユーザーIDあたりも",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f666",
+      "text": "    pageInfoは当初TinyCodeBlockの中には入れていなかったのですが、後々でこのオブジェクトを別の関数（主にupdateなんちゃら）に渡す際に高確率で必要になることが判明したのと、[getCodeBlocks()]から作成する分にはなんら手間では無かったので入れました",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f667",
+      "text": "   (よくコードを読んでいなかったごめんなさい[takker.icon])",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f668",
+      "text": "   \tお互いにやることが多いので仕方ないです[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f669",
+      "text": "   ついでに、`nextLine`についても書いておこう（聞かれてないけれど）[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f66a",
+      "text": "     ↓な理由で生やしているのだろう、と推測が付いたのでとくに聞きませんでした[takker.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f66b",
+      "text": "   \tコードブロックの中身に関係ないのになんで格納しているか、という話ですが[InsertCommit]を作成する際にIDが必要になるので入れています",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f66c",
+      "text": "   \tじゃあ行IDだけstring型で入れておけばいいじゃんとなりますが、もし今後BaseLine型に含まれる他の値が必要になった場合に面倒なことになるので、BaseLineのオブジェクトをそのまま入れています",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f66d",
+      "text": "   \t\tただ、今のところはID以外使ったことはなかったはずです",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    },
+    {
+      "id": "63fac47a7838e30000c8f66e",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1677378681,
+      "updated": 1677378681
+    }
+  ]
+}
