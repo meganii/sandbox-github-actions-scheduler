@@ -1,0 +1,295 @@
+{
+  "id": "64030f50815772001b999dc7",
+  "title": "ChatGPT API: Chat",
+  "created": 1677922129,
+  "updated": 1677922359,
+  "lines": [
+    {
+      "id": "64030f50815772001b999dc7",
+      "text": "ChatGPT API: Chat",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922129
+    },
+    {
+      "id": "64030f4fe5172d0000cfec77",
+      "text": "from [ChatGPT APIを触ってみる]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922129
+    },
+    {
+      "id": "64030f4fe5172d0000cfec78",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922133
+    },
+    {
+      "id": "64030f59e5172d0000cfec9c",
+      "text": "https://platform.openai.com/docs/api-reference/chat",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922139,
+      "updated": 1677922141
+    },
+    {
+      "id": "64030f4fe5172d0000cfec79",
+      "text": "> Given a chat conversation, the model will return a chat completion response.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922129
+    },
+    {
+      "id": "64030f5fe5172d0000cfec9d",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922144,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec7a",
+      "text": "Create chat completion",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec7b",
+      "text": " `POST https://api.openai.com/v1/chat/completions`",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec7c",
+      "text": " request",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec7d",
+      "text": "  model",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec7e",
+      "text": "  　必須",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec7f",
+      "text": "   [gpt-3.5-turbo]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec80",
+      "text": "   [gpt-3.5-turbo-0301]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec81",
+      "text": "    [gpt-3.5-turbo]を指定しても勝手にこっちが使われている？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec82",
+      "text": "    4月とかにモデルのアップデートがあった時、[gpt-3.5-turbo]を指定してると自動的に最新のが使われて、日付指定の方は古い方が使われ続ける[nishio.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec83",
+      "text": "    　古いのは3ヶ月くらいで使えなくなるってどこかに書いてあった",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec84",
+      "text": "    　実験の再現性が必要な研究者でもなきゃ最新のでいいんじゃないかな",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec85",
+      "text": "    　なるほど[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec86",
+      "text": "  messages",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec87",
+      "text": "   必須",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec88",
+      "text": "  temperature",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec89",
+      "text": "   出力のランダムネス",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec8a",
+      "text": "   0~2の実数",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec8b",
+      "text": " response",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec8c",
+      "text": "  role",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec8d",
+      "text": "   発言者",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec8e",
+      "text": "  　system",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec8f",
+      "text": "  　　アシスタントの振る舞いを設定する立場",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec90",
+      "text": "  　　> 例えば以下のようなsystem文パラメータとして送ると、assinstantロールは、「役に立つアシスタント」として振る舞おうとします。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec91",
+      "text": "  　　 code:json",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec92",
+      "text": "  　　  [",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec93",
+      "text": "          {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec94",
+      "text": "          {\"role\": \"user\", \"content\": \"Who won the world series in 2020?\"},",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec95",
+      "text": "      ]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec96",
+      "text": "    > ただし、systemに配置する振る舞いの指示は、モデルとしてはあまり注意を払わないため、重要な指示はuserメッセージに配置した方が良いとのことです。（もともと本家のChatGPTはそのようなやり方でロールプレイなど、いろいろなことができていますね。）",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "6403101baff09e0000ed1b99",
+      "text": "    \t何のためにsystemがあるのか謎[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677922331,
+      "updated": 1677922359
+    },
+    {
+      "id": "64030f4fe5172d0000cfec97",
+      "text": "  　user",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec98",
+      "text": "  　　ユーザーの立場",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec99",
+      "text": "  　assistant",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec9a",
+      "text": "  　　アシスタント（ChatGPTなど）の立場",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922144
+    },
+    {
+      "id": "64030f4fe5172d0000cfec9b",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922129,
+      "updated": 1677922129
+    }
+  ]
+}

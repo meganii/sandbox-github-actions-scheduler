@@ -2,7 +2,7 @@
   "id": "63f5083396409b001c820c78",
   "title": "2023/2/21 Scrapboxの内容を元にしたチャットbotを実装する",
   "created": 1677002806,
-  "updated": 1677863168,
+  "updated": 1677928288,
   "lines": [
     {
       "id": "63f5083396409b001c820c78",
@@ -250,6 +250,13 @@
       "updated": 1677012314
     },
     {
+      "id": "6402af0679e11300004b785f",
+      "text": "      [/blu3mo-public]を素朴な[TextSplitter]にかけてembeddingしたら、100円くらいだった[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677897479,
+      "updated": 1677897515
+    },
+    {
       "id": "63f52d3279e11300000b2bc6",
       "text": "",
       "userId": "5d89b1f60230ae001779e113",
@@ -363,17 +370,157 @@
     },
     {
       "id": "640212f879e1130000aba0ba",
-      "text": "  ",
+      "text": " 対応にあたって、二つものが必要[blu3mo.icon]",
       "userId": "5d89b1f60230ae001779e113",
       "created": 1677857528,
-      "updated": 1677863168
+      "updated": 1677891513
     },
     {
-      "id": "6402259479e1130000eda5a9",
+      "id": "6402927f79e113000076efce",
+      "text": " 　1. Scrapbox対応のDocumentLoader",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677890176,
+      "updated": 1677890184
+    },
+    {
+      "id": "6402928779e113000076efcf",
+      "text": " 　 Evernote, Google Drive, Notion, Obsidian, PDF, .... など色々な形式のためのDocument Loaderが用意されている",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677890184,
+      "updated": 1677890233
+    },
+    {
+      "id": "640292b879e113000076efd0",
+      "text": " 　 　https://github.com/hwchase17/langchain/tree/master/langchain/document_loaders",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677890233,
+      "updated": 1677890233
+    },
+    {
+      "id": "640292b979e113000076efd1",
+      "text": " 　 残念ながらScrapboxはないので、自力で作る",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677890233,
+      "updated": 1677890246
+    },
+    {
+      "id": "640292ca79e113000076efd3",
+      "text": "　 　これはjsonを読むだけ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677890251,
+      "updated": 1677890255
+    },
+    {
+      "id": "640292c579e113000076efd2",
+      "text": " 　2. Scrapbox対応のTextSplitter",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677890246,
+      "updated": 1677890262
+    },
+    {
+      "id": "640292d679e113000076efd4",
+      "text": " 　　単純に文字数で分割、MarkDownの形式にそっていいところで分割、Pythonコードのいいところで分割、などのパターンが用意されている",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677890262,
+      "updated": 1677890330
+    },
+    {
+      "id": "6402930879e113000076efd5",
+      "text": " 　　　https://github.com/hwchase17/langchain/blob/master/langchain/text_splitter.py",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677890313,
+      "updated": 1677890314
+    },
+    {
+      "id": "6402930a79e113000076efd6",
+      "text": " 　　残念ながらScrapboxの箇条書き対応はない",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677890314,
+      "updated": 1677890332
+    },
+    {
+      "id": "6402931c79e113000076efd8",
+      "text": " 　　　[Scrapboxの文章はLLMにも読みやすいのでは]という仮説があって、Scrapbox対応のTextSplitterをうまく作ればそれができるはず",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677890332,
+      "updated": 1677890381
+    },
+    {
+      "id": "6402934779e113000076efd9",
+      "text": " >[https://twitter.com/blu3mo/status/1631857695044108288 @blu3mo]: Scrapboxプロジェクト（/blu3mo-public）をGPT-3に食わせてチャットをやってみた",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677890375,
+      "updated": 1677902598
+    },
+    {
+      "id": "6402c30379e1130000b68315",
+      "text": " >一部トンチンカンだけど、ちゃんとScrapboxの内容を元に答えられている",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677902595,
+      "updated": 1677902598
+    },
+    {
+      "id": "6402c30379e1130000b68316",
+      "text": " >[https://pbs.twimg.com/media/FqWFXl6WYAAwK5q.jpg][https://pbs.twimg.com/media/FqWF1sgWwAITh23.jpg]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677902595,
+      "updated": 1677902598
+    },
+    {
+      "id": "6402c30379e1130000b68317",
+      "text": "  とりあえずできた[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677902595,
+      "updated": 1677902602
+    },
+    {
+      "id": "6402c30a79e1130000b68319",
+      "text": "  改善事項",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677902602,
+      "updated": 1677902607
+    },
+    {
+      "id": "6402c30f79e1130000b6831a",
+      "text": "  　現状毎回4チャンクだけ文章を取ってきているが、渡せるtokenいっぱいまで渡したい",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677902607,
+      "updated": 1677902666
+    },
+    {
+      "id": "640326d9aff09e000076c3a0",
+      "text": "  　　わかるわかる[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677928153,
+      "updated": 1677928161
+    },
+    {
+      "id": "640326f9aff09e000076c3a1",
+      "text": "  　　ベストマッチから4チャンク連続で取ってる？個人的にはTop Kの値を増やして「関係ありそうなところをあちこち読む」のの方が「関係の発見」を強く支援してくれるのではないかと思ってる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677928185,
+      "updated": 1677928288
+    },
+    {
+      "id": "6402c34279e1130000b6831b",
+      "text": "  　[Scrapboxの文章はLLMにも読みやすいのでは]に書いた、箇条書き最適な[TextSplitter]を作る",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677902658,
+      "updated": 1677902682
+    },
+    {
+      "id": "6402c30779e1130000b68318",
+      "text": "  https://github.com/blu3mo/scrapchat",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1677902600,
+      "updated": 1677902785
+    },
+    {
+      "id": "6402c3bd79e1130000ac9282",
       "text": "",
       "userId": "5d89b1f60230ae001779e113",
-      "created": 1677862292,
-      "updated": 1677862292
+      "created": 1677902781,
+      "updated": 1677902781
     }
   ]
 }

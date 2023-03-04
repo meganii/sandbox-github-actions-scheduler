@@ -1,0 +1,589 @@
+{
+  "id": "640313e28b64e8001c16063a",
+  "title": "ChatGPT API: API reference",
+  "created": 1677923299,
+  "updated": 1677927018,
+  "lines": [
+    {
+      "id": "640313e28b64e8001c16063a",
+      "text": "ChatGPT API: API reference",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba82",
+      "text": "from [ChatGPT APIを触ってみる]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313eae5172d0000ddbacf",
+      "text": "[ChatGPT API]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923308,
+      "updated": 1677923316
+    },
+    {
+      "id": "640313e1e5172d0000ddba83",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923302
+    },
+    {
+      "id": "640313e1e5172d0000ddba84",
+      "text": "https://platform.openai.com/docs/api-reference/introduction",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba85",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba86",
+      "text": "Models",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba87",
+      "text": "> List and describe the various models available in the API. You can refer to the Models documentation to understand what models are available and the differences between them.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba88",
+      "text": " List models",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba89",
+      "text": " 　`GET https://api.openai.com/v1/models`",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba8a",
+      "text": " 　> Lists the currently available models, and provides basic information about each one such as the owner and availability.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba8b",
+      "text": "  なんかたくさん返ってきた[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba8c",
+      "text": " Retrieve model",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba8d",
+      "text": "  `GET https://api.openai.com/v1/models/{model}`",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba8e",
+      "text": "  > Retrieves a model instance, providing basic information about the model such as the owner and permissioning.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba8f",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba90",
+      "text": "Completions",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba91",
+      "text": "> Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba92",
+      "text": "　穴埋めしてくれる？Chatとは何が違う？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba93",
+      "text": "　Create completion",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba94",
+      "text": "　　`POST https://api.openai.com/v1/completions`",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba95",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba96",
+      "text": "[ChatGPT API: Chat]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba97",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba98",
+      "text": "Edits",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba99",
+      "text": "> Given a prompt and an instruction, the model will return an edited version of the prompt.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba9a",
+      "text": " 入力と指示を与えると、指示に沿って入力を編集してくれる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba9b",
+      "text": " Create edit",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba9c",
+      "text": "  `POST https://api.openai.com/v1/edits`",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba9d",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba9e",
+      "text": "Images",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddba9f",
+      "text": "> Given a prompt and/or an input image, the model will generate a new image.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaa0",
+      "text": " 言語以外もあるのか[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaa1",
+      "text": " https://platform.openai.com/docs/guides/images",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaa2",
+      "text": " Create image",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaa3",
+      "text": "  `POST https://api.openai.com/v1/images/generations`",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaa4",
+      "text": " Create image edit",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaa5",
+      "text": "  `POST https://api.openai.com/v1/images/edits`",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaa6",
+      "text": "  > Creates an edited or extended image given an original image and a prompt.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaa7",
+      "text": " Create image variation",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaa8",
+      "text": "  `POST https://api.openai.com/v1/images/variations`",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaa9",
+      "text": "  > Creates a variation of a given image.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaaa",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaab",
+      "text": "Embeddings",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaac",
+      "text": "> Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaad",
+      "text": "　そんなのもあるのか！[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaae",
+      "text": "　encoderとして使えそう",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaaf",
+      "text": "　https://platform.openai.com/docs/guides/embeddings/what-are-embeddings",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbab0",
+      "text": "　Create embeddings",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbab1",
+      "text": "　　`POST https://api.openai.com/v1/embeddings`",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "64032167e5172d0000b15989",
+      "text": "　models",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677926760,
+      "updated": 1677926763
+    },
+    {
+      "id": "6403216ae5172d0000b1598a",
+      "text": "　 > OpenAI offers one second-generation embedding model (denoted by -002 in the model ID) and 16 first-generation models (denoted by -001 in the model ID).",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677926763,
+      "updated": 1677926765
+    },
+    {
+      "id": "6403216be5172d0000b1598c",
+      "text": "  > We recommend using [text-embedding-ada-002] for nearly all use cases. It’s better, cheaper, and simpler to use. Read the blog post announcement.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677926765,
+      "updated": 1677926772
+    },
+    {
+      "id": "64032264e5172d0000f98c54",
+      "text": "  1536次元？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677927014,
+      "updated": 1677927018
+    },
+    {
+      "id": "640313e1e5172d0000ddbab2",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbab3",
+      "text": "Audio",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbab4",
+      "text": "> Learn how to turn audio into text.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbab5",
+      "text": " https://platform.openai.com/docs/guides/speech-to-text",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbab6",
+      "text": " Create transcription",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbab7",
+      "text": "  `POST https://api.openai.com/v1/audio/transcriptions`",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbab8",
+      "text": "  > Transcribes audio into the input language.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbab9",
+      "text": "   [文字起こし]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaba",
+      "text": "　Create translation",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbabb",
+      "text": "　　`POST https://api.openai.com/v1/audio/translations`",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbabc",
+      "text": "　  文字起こしして英語に翻訳",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbabd",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbabe",
+      "text": "Files",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbabf",
+      "text": "> Files are used to upload documents that can be used with features like [Fine-tuning].",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbac0",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbac1",
+      "text": "Fine-tunes",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbac2",
+      "text": "> Manage fine-tuning jobs to tailor a model to your specific training data.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbac3",
+      "text": " https://platform.openai.com/docs/guides/fine-tuning",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbac4",
+      "text": " Create fine-tune",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbac5",
+      "text": "  `POST https://api.openai.com/v1/fine-tunes`",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbac6",
+      "text": "  model",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbac7",
+      "text": "   > You can select one of \"[ada]\", \"[babbage]\", \"[curie]\", \"[davinci]\", or a fine-tuned model created after 2022-04-21.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbac8",
+      "text": " List fine-tunes",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbac9",
+      "text": "  `GET https://api.openai.com/v1/fine-tunes`",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbaca",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbacb",
+      "text": "Moderations",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbacc",
+      "text": "> Given a input text, outputs if the model classifies it as violating OpenAI's content policy.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbacd",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    },
+    {
+      "id": "640313e1e5172d0000ddbace",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923299,
+      "updated": 1677923299
+    }
+  ]
+}

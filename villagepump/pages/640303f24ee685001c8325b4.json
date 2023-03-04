@@ -1,0 +1,470 @@
+{
+  "id": "640303f24ee685001c8325b4",
+  "title": "ChatGPT APIを触ってみる",
+  "created": 1677919222,
+  "updated": 1677923297,
+  "lines": [
+    {
+      "id": "640303f24ee685001c8325b4",
+      "text": "ChatGPT APIを触ってみる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919222,
+      "updated": 1677919361
+    },
+    {
+      "id": "640303f9e5172d0000e9de6a",
+      "text": "[ChatGPT API]を触ってみる[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919226,
+      "updated": 1677920275
+    },
+    {
+      "id": "64030478e5172d0000e9de6c",
+      "text": "[https://qiita.com/mikito/items/b69f38c54b362c20e9e6 ChatGPT API利用方法の簡単解説 - Qiita]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919354,
+      "updated": 1677919358
+    },
+    {
+      "id": "6403047de5172d0000e9de6d",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919358,
+      "updated": 1677919358
+    },
+    {
+      "id": "640303f9e5172d0000e9de6b",
+      "text": "OpenAIのアカウントを作る",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919226,
+      "updated": 1677919388
+    },
+    {
+      "id": "6403049be5172d0000e9de6f",
+      "text": "API Keyを作る",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919388,
+      "updated": 1677919426
+    },
+    {
+      "id": "640304c0e5172d0000e9de70",
+      "text": "　[https://platform.openai.com/account/api-keys OpenAI API]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919426,
+      "updated": 1677919428
+    },
+    {
+      "id": "640305ebe5172d0000e9de85",
+      "text": "　安全な場所に保存しておく",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919724,
+      "updated": 1677919736
+    },
+    {
+      "id": "6403050ee5172d0000e9de73",
+      "text": " > なお、各種API呼び出しは有償ですが、アカウント取得後Free trialとして期限つきのクレジットが$18くらい貰えます。試したり遊んだりする分には十分な感じです。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919503,
+      "updated": 1677919503
+    },
+    {
+      "id": "64030517e5172d0000e9de76",
+      "text": " https://platform.openai.com/account/billing/overview",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919512,
+      "updated": 1677919515
+    },
+    {
+      "id": "6403050fe5172d0000e9de74",
+      "text": "  > Free trial",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919504,
+      "updated": 1677919519
+    },
+    {
+      "id": "64030510e5172d0000e9de75",
+      "text": "  > You are currently on the free trial. Head over to your Usage page to view how many free trial credits are remaining on your account.",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919506,
+      "updated": 1677919519
+    },
+    {
+      "id": "64030522e5172d0000e9de77",
+      "text": "  無料分を超えたら支払情報を入力するように求められる感じだろうか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919523,
+      "updated": 1677919556
+    },
+    {
+      "id": "64030498e5172d0000e9de6e",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919386,
+      "updated": 1677919386
+    },
+    {
+      "id": "6403055fe5172d0000e9de78",
+      "text": "基本的なAPI利用法",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919584,
+      "updated": 1677919584
+    },
+    {
+      "id": "64030613e5172d0000e9de86",
+      "text": "　code:sh",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919764,
+      "updated": 1677919767
+    },
+    {
+      "id": "64030616e5172d0000e9de87",
+      "text": "　 OPENAI_API_KEY=...",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919767,
+      "updated": 1677919767
+    },
+    {
+      "id": "6403055fe5172d0000e9de7a",
+      "text": " code:sh",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919585,
+      "updated": 1677919600
+    },
+    {
+      "id": "6403056ee5172d0000e9de7b",
+      "text": "  curl https://api.openai.com/v1/chat/completions \\",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919600,
+      "updated": 1677919600
+    },
+    {
+      "id": "6403056fe5172d0000e9de7c",
+      "text": "    -H \"Authorization: Bearer $OPENAI_API_KEY\" \\",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919600,
+      "updated": 1677919600
+    },
+    {
+      "id": "6403056fe5172d0000e9de7d",
+      "text": "    -H \"Content-Type: application/json\" \\",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919600,
+      "updated": 1677919600
+    },
+    {
+      "id": "6403056fe5172d0000e9de7e",
+      "text": "    -d '{",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919600,
+      "updated": 1677919600
+    },
+    {
+      "id": "6403056fe5172d0000e9de7f",
+      "text": "    \"model\": \"gpt-3.5-turbo\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919600,
+      "updated": 1677919600
+    },
+    {
+      "id": "6403056fe5172d0000e9de80",
+      "text": "    \"messages\": [",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919600,
+      "updated": 1677919600
+    },
+    {
+      "id": "6403056fe5172d0000e9de81",
+      "text": "      {\"role\": \"user\", \"content\": \"Scrapboxが流行するには何が必要ですか？\"}",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919600,
+      "updated": 1677919664
+    },
+    {
+      "id": "6403056fe5172d0000e9de82",
+      "text": "    ]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919600,
+      "updated": 1677919600
+    },
+    {
+      "id": "6403056fe5172d0000e9de83",
+      "text": "  }'",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919600,
+      "updated": 1677919600
+    },
+    {
+      "id": "6403055fe5172d0000e9de79",
+      "text": "　code:response（整形後）(json)",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919584,
+      "updated": 1677920661
+    },
+    {
+      "id": "6403067ae5172d0000e9de8a",
+      "text": "　 {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919867,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de8b",
+      "text": "  \t\"id\": \"chatcmpl-6qHsBjpXSxBpeNFjqsvZWEnap5uCl\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de8c",
+      "text": "  \t\"object\": \"chat.completion\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de8d",
+      "text": "  \t\"created\": 1677919779,",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de8e",
+      "text": "  \t\"model\": \"gpt-3.5-turbo-0301\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de8f",
+      "text": "  \t\"usage\": {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de90",
+      "text": "  \t\t\"prompt_tokens\": 23,",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de91",
+      "text": "  \t\t\"completion_tokens\": 585,",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de92",
+      "text": "  \t\t\"total_tokens\": 608",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de93",
+      "text": "  \t},",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de94",
+      "text": "  \t\"choices\": [",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de95",
+      "text": "  \t\t{",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de96",
+      "text": "  \t\t\t\"message\": {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de97",
+      "text": "  \t\t\t\t\"role\": \"assistant\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de98",
+      "text": "  \t\t\t\t\"content\": \"\\n\\nScrapboxの流行には、以下のような要素が必要です。\\n\\n1.単純性と使 いやすさ\\n\\nScrapboxが簡単に使え、使いやすいことが必要です。ユーザーがスムーズに記事を書けるように、優れたユーザーインターフェイスや操作性が必要になります。\\n\\n2.コミュニティとコラボレーション\\n\\nScrapboxは、コミュニティとコラボレーションを重視することが必要です。他の人と簡単に情報を共有し、相互作用することができるため、ユーザーがコンテンツの共同編集や共有を促す機能が必要です。\\n\\n3.検索エンジンの機能\\n\\nScrapboxは、情報を見つけやすくするために、優れた検索エンジンの機能が必要です。検索エンジンは、スピーディかつ正確な検索を提供し、ユーザーが必要な情報を簡単に見つけることができるようにする必要があります。\\n\\n4.拡張性\\n\\nScrapboxの大きな魅力の一つは、非常に拡張性が高いことです。プラグインやマクロ、APIなどを提供し、ユーザーが自分のニー ズに合わせてScrapboxをカスタマイズすることができるようにすることが必要です。\\n\\n5.セキュリティとプライバシー\\n\\nScrapboxは、ユーザーのデータに対するセキュリティとプライバシーを保護することが必要です。データベースのバックアップやセキュリティ機能、個人情報の取り扱い方針などを明確に設定し、ユーザーの信頼を勝ち取ることが必要です。\"",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de99",
+      "text": "  \t\t\t},",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de9a",
+      "text": "  \t\t\t\"finish_reason\": \"stop\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de9b",
+      "text": "  \t\t\t\"index\": 0",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de9c",
+      "text": "  \t\t}",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de9d",
+      "text": "  \t]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "6403067be5172d0000e9de9e",
+      "text": "  }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919869,
+      "updated": 1677919869
+    },
+    {
+      "id": "64030676e5172d0000e9de89",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677919863,
+      "updated": 1677919863
+    },
+    {
+      "id": "640307fee5172d0000e9deaf",
+      "text": "Usageが増えた",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677920255,
+      "updated": 1677920258
+    },
+    {
+      "id": "640307fce5172d0000e9dead",
+      "text": "[https://gyazo.com/0908bb2e9a072ed6a6737b7bfadc521c]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677920253,
+      "updated": 1677920254
+    },
+    {
+      "id": "64030803e5172d0000e9deb0",
+      "text": "　結構高くない？[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677920260,
+      "updated": 1677920264
+    },
+    {
+      "id": "64030869e5172d0000e9deb2",
+      "text": " 　$0.002 per 1k tokensなのか？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677920362,
+      "updated": 1677922390
+    },
+    {
+      "id": "64030877e5172d0000e9deb3",
+      "text": " 　返答が長いから？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677920377,
+      "updated": 1677922390
+    },
+    {
+      "id": "64031052e5172d0000e9df10",
+      "text": " 　response.usageにtoken数書いてあるな",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922388,
+      "updated": 1677922411
+    },
+    {
+      "id": "6403106ae5172d0000e9df11",
+      "text": " 　　608 / 1000 * $0.002 = $0.001216",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922411,
+      "updated": 1677922475
+    },
+    {
+      "id": "640310c0e5172d0000e9df13",
+      "text": " 　　???",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677922498,
+      "updated": 1677922498
+    },
+    {
+      "id": "640307fde5172d0000e9deae",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677920254,
+      "updated": 1677920254
+    },
+    {
+      "id": "6403089fe5172d0000e9deb4",
+      "text": "[ChatGPT API: API reference]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677920417,
+      "updated": 1677923297
+    },
+    {
+      "id": "640313a2e5172d0000e9df5e",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677923235,
+      "updated": 1677923235
+    },
+    {
+      "id": "640309d8e5172d0000e9ded5",
+      "text": "各言語のライブラリ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677920729,
+      "updated": 1677920743
+    },
+    {
+      "id": "640309e5e5172d0000e9ded6",
+      "text": "　[https://github.com/openai/openai-python/ GitHub - openai/openai-python: The OpenAI Python library provides convenient access to the OpenAI API from applications written in the Python language.]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677920743,
+      "updated": 1677920761
+    },
+    {
+      "id": "640309f8e5172d0000e9ded7",
+      "text": " [https://github.com/openai/openai-node/ GitHub - openai/openai-node: Node.js library for the OpenAI API]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677920761,
+      "updated": 1677920779
+    },
+    {
+      "id": "64030a04e5172d0000e9ded8",
+      "text": "　https://platform.openai.com/docs/libraries/community-libraries",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677920774,
+      "updated": 1677921029
+    },
+    {
+      "id": "6403093ae5172d0000e9decb",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1677920571,
+      "updated": 1677920571
+    }
+  ]
+}

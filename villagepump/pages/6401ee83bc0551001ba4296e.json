@@ -2,7 +2,7 @@
   "id": "6401ee83bc0551001ba4296e",
   "title": "雑に読むMisskey",
   "created": 1677848196,
-  "updated": 1677859480,
+  "updated": 1677922888,
   "lines": [
     {
       "id": "6401ee83bc0551001ba4296e",
@@ -41,10 +41,10 @@
     },
     {
       "id": "6401f1eb774b1700007a702b",
-      "text": "　　スケーラビリティの工夫",
-      "userId": "59fb21121207900012774b17",
+      "text": "　　[スケーラビリティ]の工夫",
+      "userId": "60508ed36a7abc00235e90c0",
       "created": 1677849068,
-      "updated": 1677859480
+      "updated": 1677914691
     },
     {
       "id": "6401f204774b1700007a702f",
@@ -66,6 +66,13 @@
       "userId": "59fb21121207900012774b17",
       "created": 1677849103,
       "updated": 1677849111
+    },
+    {
+      "id": "6402f5a6774b170000b03153",
+      "text": "　　　noteのデータはDBに保存されると思うけど、それがかなり大きくなったらどうする？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915558,
+      "updated": 1677915587
     },
     {
       "id": "6401f221774b1700007a7031",
@@ -94,6 +101,13 @@
       "userId": "59fb21121207900012774b17",
       "created": 1677849230,
       "updated": 1677849230
+    },
+    {
+      "id": "6402f554774b170000b03151",
+      "text": "　　　　これはS3とかに保存すればいいか（興味が消えた）",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915477,
+      "updated": 1677915526
     },
     {
       "id": "6401ee84774b170000c60940",
@@ -152,11 +166,417 @@
       "updated": 1677848196
     },
     {
-      "id": "6401ee84774b170000c60955",
+      "id": "64031246774b1700008e1230",
       "text": "",
       "userId": "59fb21121207900012774b17",
+      "created": 1677922887,
+      "updated": 1677922887
+    },
+    {
+      "id": "64031246774b1700008e1231",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677922887,
+      "updated": 1677922887
+    },
+    {
+      "id": "6401ee84774b170000c60955",
+      "text": "ActivityPubの実装",
+      "userId": "59fb21121207900012774b17",
       "created": 1677848196,
-      "updated": 1677849065
+      "updated": 1677922888
+    },
+    {
+      "id": "6402ea64774b1700005bcdfa",
+      "text": "　https://github.com/misskey-dev/misskey/tree/develop/packages/backend/src/core/activitypub",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677912677,
+      "updated": 1677922888
+    },
+    {
+      "id": "6402ea60774b1700005bcdf9",
+      "text": " ApInboxをちょっと見るといろんなアノテーションがいっぱい",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677912672,
+      "updated": 1677922888
+    },
+    {
+      "id": "6402eabc774b1700005bcdfb",
+      "text": " 仕組みを理解していない段階でこれを眺めるのは難しそう",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677912765,
+      "updated": 1677922888
+    },
+    {
+      "id": "6402ed8c774b1700005bce15",
+      "text": " 雑に[ActivityPub]の勧告読見ながら実装を見ていく[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913485,
+      "updated": 1677913504
+    },
+    {
+      "id": "6402eda8774b1700005bce22",
+      "text": " 　https://www.w3.org/TR/activitypub/",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913512,
+      "updated": 1677913513
+    },
+    {
+      "id": "6402ed8c774b1700005bce16",
+      "text": " 　2つのレイヤーがある",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913485,
+      "updated": 1677913501
+    },
+    {
+      "id": "6402ed8c774b1700005bce17",
+      "text": " 　　サーバー間で情報を共有するプロトコル",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913485,
+      "updated": 1677913501
+    },
+    {
+      "id": "6402ed8c774b1700005bce18",
+      "text": " 　　クライアント-サーバーでのプロトコル",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913485,
+      "updated": 1677913501
+    },
+    {
+      "id": "6402ed8c774b1700005bce19",
+      "text": " 　片方だけの実装でも良いが、1つを実装したらもう一方も実装が容易",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913485,
+      "updated": 1677913501
+    },
+    {
+      "id": "6402ed8c774b1700005bce1a",
+      "text": " 　　両者は似ているってことかな[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913485,
+      "updated": 1677913501
+    },
+    {
+      "id": "6402ed8c774b1700005bce1b",
+      "text": " 　サーバーのユーザーアカウントをユーザーのことをActorという",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913485,
+      "updated": 1677913501
+    },
+    {
+      "id": "6402ed8c774b1700005bce1c",
+      "text": " 　Actorにはメッセージをやり取りする方法（エンドポイント）が提供されている",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913485,
+      "updated": 1677913819
+    },
+    {
+      "id": "6402eec7774b1700005bce28",
+      "text": "　  [https://gyazo.com/28b76540c1d91aa8dbb74aee0260a0c1]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913799,
+      "updated": 1677913802
+    },
+    {
+      "id": "6402ed8c774b1700005bce1d",
+      "text": "　　　inbox メッセージを受信する",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913485,
+      "updated": 1677913800
+    },
+    {
+      "id": "6402ee49774b1700005bce24",
+      "text": "　　　 サーバー間のみが、誰かのinboxにPOSTできる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913673,
+      "updated": 1677913800
+    },
+    {
+      "id": "6402ee98774b1700005bce26",
+      "text": "　　　 misskeyだとサーバーのエンドポイントのPOSTの実装は[ここ https://github.com/misskey-dev/misskey/blob/e4fc9ea816eabba03933d9845ba0918b1ad365ab/packages/backend/src/server/ActivityPubServerService.ts#L92]（outboxも同様）",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913752,
+      "updated": 1677915233
+    },
+    {
+      "id": "6402f45d774b170000b0314a",
+      "text": "　　　  キューがつまれる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915229,
+      "updated": 1677915240
+    },
+    {
+      "id": "6402f462774b170000b0314d",
+      "text": "     　https://github.com/misskey-dev/misskey/blob/e4fc9ea816eabba03933d9845ba0918b1ad365ab/packages/backend/src/core/QueueService.ts#L59-L67",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915234,
+      "updated": 1677915243
+    },
+    {
+      "id": "6402f462774b170000b0314e",
+      "text": "    　取り出されるのはどこ？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915234,
+      "updated": 1677915251
+    },
+    {
+      "id": "6402f4e2774b170000b03150",
+      "text": "    　 QueueProcessorServiceがそれっぽい",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915363,
+      "updated": 1677915370
+    },
+    {
+      "id": "6402f994774b1700000f17d7",
+      "text": "    　 https://github.com/misskey-dev/misskey/blob/e4fc9ea816eabba03933d9845ba0918b1ad365ab/packages/backend/src/queue/QueueProcessorService.ts#LL112C117-L112C117",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677916565,
+      "updated": 1677916565
+    },
+    {
+      "id": "6402f9f5774b1700000f17d8",
+      "text": "    　 https://github.com/misskey-dev/misskey/blob/e4fc9ea816eabba03933d9845ba0918b1ad365ab/packages/backend/src/queue/processors/InboxProcessorService.ts#L62 で処理される",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677916662,
+      "updated": 1677916665
+    },
+    {
+      "id": "640300c9774b1700000f17db",
+      "text": "    　 Activityの種類によって処理が行われる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677918409,
+      "updated": 1677918416
+    },
+    {
+      "id": "640300cf774b1700000f17dc",
+      "text": "    　 　https://github.com/misskey-dev/misskey/blob/0ec5327474d7bf6f16ad5219e928e510e899d517/packages/backend/src/core/activitypub/ApInboxService.ts#L113",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677918416,
+      "updated": 1677918416
+    },
+    {
+      "id": "6402eeab774b1700005bce27",
+      "text": "　　　 actorはinboxからGETすることでメッセージを読むことができる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913771,
+      "updated": 1677915233
+    },
+    {
+      "id": "6402fd8e774b1700003dad36",
+      "text": "    キューの実装は[bull]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677917583,
+      "updated": 1677917607
+    },
+    {
+      "id": "6402fe1f774b170000c577ba",
+      "text": "     [BullMQ]に差し替えるPRを出すと喜ばれるかもしれない",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677917727,
+      "updated": 1677917748
+    },
+    {
+      "id": "6402fe62774b170000c577bb",
+      "text": "     https://github.com/misskey-dev/misskey/issues/6221",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677917794,
+      "updated": 1677917794
+    },
+    {
+      "id": "6402fe9d774b170000c577bc",
+      "text": "      redis 5だから..という話もあるけど、とっくにredis7だからこの点は問題ない",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677917854,
+      "updated": 1677918048
+    },
+    {
+      "id": "6402ff48774b1700000f17d9",
+      "text": "      　https://github.com/misskey-dev/misskey/blob/c7fbf5637ff6a4781f81babf81bee395b06a71c7/.devcontainer/docker-compose.yml#L20",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677918025,
+      "updated": 1677918049
+    },
+    {
+      "id": "6402ed8c774b1700005bce1f",
+      "text": "　　　outbox 送信する",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913485,
+      "updated": 1677913800
+    },
+    {
+      "id": "6402ee3a774b1700005bce23",
+      "text": "　　　　ここにActorが送信すると世界中にメッセージが配信される",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913658,
+      "updated": 1677913800
+    },
+    {
+      "id": "6402ed8c774b1700005bce21",
+      "text": "　　　　誰かのOutboxからメッセージをGETすることができる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913485,
+      "updated": 1677913861
+    },
+    {
+      "id": "6402ef07774b1700005bce29",
+      "text": "　　　　　サーバー to サーバー",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913863,
+      "updated": 1677913890
+    },
+    {
+      "id": "6402ef23774b1700005bce2b",
+      "text": "　　　　　　サーバー間で別のサーバーのユーザーのメッセージを受け渡すときに使うのかな[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913891,
+      "updated": 1677913905
+    },
+    {
+      "id": "6402ef1b774b1700005bce2a",
+      "text": "　　　　　クライアント to サーバー",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913883,
+      "updated": 1677913888
+    },
+    {
+      "id": "6402ed8c774b1700005bce14",
+      "text": "　　AlyssaがBenにメッセージを送信するとき、まず自分のoutboxにpostする",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677913485,
+      "updated": 1677914389
+    },
+    {
+      "id": "6402f119774b1700005bce2d",
+      "text": "　　するとサーバーがbenのinboxにpostする",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677914393,
+      "updated": 1677914405
+    },
+    {
+      "id": "6402f124774b1700005bce2e",
+      "text": "　　　BenのActivityStreams actor objectを検索する",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677914405,
+      "updated": 1677914417
+    },
+    {
+      "id": "6402f17d774b1700005bce2f",
+      "text": "　　　　ということは、misskeyのinboxの実装にもこういう実装があるはず[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677914493,
+      "updated": 1677914515
+    },
+    {
+      "id": "6402f0fe774b1700005bce2c",
+      "text": "　　AlyssaのスマホはinboxにGETをポーリングしてメッセージを確認する",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677914367,
+      "updated": 1677914978
+    },
+    {
+      "id": "6402f195774b1700005bce30",
+      "text": "　　　GET /inbox の実装どこ？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677914518,
+      "updated": 1677915275
+    },
+    {
+      "id": "6402f479774b170000b0314f",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915258,
+      "updated": 1677915258
+    },
+    {
+      "id": "6402f60b774b170000b03156",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915659,
+      "updated": 1677915659
+    },
+    {
+      "id": "6402f60b774b170000b03157",
+      "text": "noteのデータがどうなっているのか",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915659,
+      "updated": 1677915667
+    },
+    {
+      "id": "6402f612774b170000b03159",
+      "text": "　[noteのスキーマ https://github.com/misskey-dev/misskey/blob/e4fc9ea816eabba03933d9845ba0918b1ad365ab/packages/backend/src/models/schema/note.ts]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915667,
+      "updated": 1677915673
+    },
+    {
+      "id": "6402f6ad774b170000b0315c",
+      "text": "　 [OpenAPI]を使ってドキュメントを自動生成しているっぽい",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915821,
+      "updated": 1677915832
+    },
+    {
+      "id": "6402f6b7774b170000b0315d",
+      "text": "　 API https://misskey-hub.net/docs/api/endpoints.html",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915832,
+      "updated": 1677915836
+    },
+    {
+      "id": "6402f6c9774b170000b0315e",
+      "text": "　 >MisskeyはRESTを採用していません。",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915849,
+      "updated": 1677915857
+    },
+    {
+      "id": "6402f60f774b170000b03158",
+      "text": " DBは[PostgreSQL]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915663,
+      "updated": 1677915736
+    },
+    {
+      "id": "6402f619774b170000b0315b",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677915673,
+      "updated": 1677915673
+    },
+    {
+      "id": "64030180774b1700000f17dd",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677918592,
+      "updated": 1677918592
+    },
+    {
+      "id": "64030180774b1700000f17de",
+      "text": "貢献できそうなポイント",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677918592,
+      "updated": 1677918605
+    },
+    {
+      "id": "640301aa774b1700000f17e2",
+      "text": "　トレンドのハッシュタグのロジック",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677918634,
+      "updated": 1677918640
+    },
+    {
+      "id": "6403018c774b1700000f17e1",
+      "text": "　　https://github.com/misskey-dev/misskey/blob/01d4d55e78fd977b9d44a68a2504e6091d346b7a/packages/backend/src/server/api/endpoints/hashtags/trend.ts#L15",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677918605,
+      "updated": 1677918641
+    },
+    {
+      "id": "64030187774b1700000f17df",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1677918600,
+      "updated": 1677918600
     }
   ]
 }
