@@ -1,0 +1,267 @@
+{
+  "id": "6403fa6b73c04f001cfff233",
+  "title": "爆速Misskeyプラグイン開発日記",
+  "created": 1677982321,
+  "updated": 1677985788,
+  "lines": [
+    {
+      "id": "6403fa6b73c04f001cfff233",
+      "text": "爆速Misskeyプラグイン開発日記",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677982321,
+      "updated": 1677982321
+    },
+    {
+      "id": "6403fa795f1e0d000060e9ff",
+      "text": "[yuyasurarin.icon]による[Misskey]のプラグインを開発する日記",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677982321,
+      "updated": 1677982330
+    },
+    {
+      "id": "6403fa825f1e0d000060ea01",
+      "text": " 言語はMisskeyで使える[Aiscript]なのだがもちろん[highlight.js]が対応していないのでjavascriptにしておく",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677982330,
+      "updated": 1677982472
+    },
+    {
+      "id": "6403fa835f1e0d000060ea02",
+      "text": "なんとなくここにログ置いておいたらいいことがあるかもしれない",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677982332,
+      "updated": 1677982339
+    },
+    {
+      "id": "6403fbeb5f1e0d000060ea2b",
+      "text": " 参考",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677982691,
+      "updated": 1677982693
+    },
+    {
+      "id": "6403fbed5f1e0d000060ea2c",
+      "text": "  https://friendsyu.me/api-doc",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677982693,
+      "updated": 1677982878
+    },
+    {
+      "id": "6403fc9d5f1e0d000060ea2d",
+      "text": "  https://qiita.com/saki-lere/items/851c4500d56659d15c9c",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677982869,
+      "updated": 1677982872
+    },
+    {
+      "id": "6403fa8c5f1e0d000060ea03",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677982340,
+      "updated": 1677982340
+    },
+    {
+      "id": "6403fa8c5f1e0d000060ea04",
+      "text": "1. 選択したチャンネルにリノートするプラグイン",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677982340,
+      "updated": 1677982361
+    },
+    {
+      "id": "6403faa25f1e0d000060ea05",
+      "text": " RNするときにチャンネルが選べないのが不便",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677982362,
+      "updated": 1677982384
+    },
+    {
+      "id": "6403fab85f1e0d000060ea06",
+      "text": " 特定のチャンネルにRNするプラグインがあったので改造するだけで作れる",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677982384,
+      "updated": 1677982400
+    },
+    {
+      "id": "6403fb365f1e0d000060ea16",
+      "text": "  [https://misskey.io/notes/9axvw0tsy8 えふに / futchitwo :io: (@hakohako_f2) | Misskey.io]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677982510,
+      "updated": 1677982512
+    },
+    {
+      "id": "6403facb5f1e0d000060ea09",
+      "text": " code:js",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677982403,
+      "updated": 1677982461
+    },
+    {
+      "id": "6403fad05f1e0d000060ea0a",
+      "text": "  /// @ 0.12.4",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677982408,
+      "updated": 1677985169
+    },
+    {
+      "id": "640405995f1e0d000060ea2e",
+      "text": "  ### {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea2f",
+      "text": "    name: \"チャンネルにリノート\"",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea30",
+      "text": "    version: \"1.0.0\"",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea31",
+      "text": "    author: \"BcS114\"",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea32",
+      "text": "    description: \"選んだチャンネルにリノートします\"",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea33",
+      "text": "    permissions: [\"write:notes\",\"read:channels\"]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea34",
+      "text": "    config: null",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea35",
+      "text": "  }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea37",
+      "text": "  var channels = Mk:api(\"channels/followed\" {})",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea38",
+      "text": "  each (let channel, channels) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea39",
+      "text": "    let CHANNEL_ID = channel.id",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea3a",
+      "text": "    let CHANNEL_NAME = channel.name",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea3b",
+      "text": "    Plugin:register_note_action(`{CHANNEL_NAME}にリノート` @(note){",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea3c",
+      "text": "      Mk:api(\"notes/create\" { channelId: CHANNEL_ID renoteId: note.id })",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea3d",
+      "text": "      Mk:dialog(\"\" `{CHANNEL_NAME}にリノートしました`)",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea3e",
+      "text": "      note",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea3f",
+      "text": "    })",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405995f1e0d000060ea40",
+      "text": "  }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985169,
+      "updated": 1677985174
+    },
+    {
+      "id": "640405a35f1e0d000060ea41",
+      "text": " [https://gyazo.com/0565852ce684e4456e66bdda8ae537e7]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985180,
+      "updated": 1677985193
+    },
+    {
+      "id": "640405af5f1e0d000060ea43",
+      "text": " 完走した感想ですが",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985191,
+      "updated": 1677985765
+    },
+    {
+      "id": "640407ed5f1e0d000060ea44",
+      "text": "  apiの使い方をもう少し慣れれば速くなるかなと思った",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985765,
+      "updated": 1677985765
+    },
+    {
+      "id": "640405a45f1e0d000060ea42",
+      "text": "  人のプラグインを改造するだけでなく自分でも作りたいと思った",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985180,
+      "updated": 1677985783
+    },
+    {
+      "id": "640407ee5f1e0d000060ea45",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1677985766,
+      "updated": 1677985766
+    }
+  ]
+}

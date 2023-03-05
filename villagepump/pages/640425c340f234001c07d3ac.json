@@ -1,0 +1,582 @@
+{
+  "id": "640425c340f234001c07d3ac",
+  "title": "2023-03-31 LlamaIndexのコードを読む",
+  "created": 1677993411,
+  "updated": 1678008034,
+  "lines": [
+    {
+      "id": "640425c340f234001c07d3ac",
+      "text": "2023-03-31 LlamaIndexのコードを読む",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993438
+    },
+    {
+      "id": "640425c3aff09e0000e1ca63",
+      "text": "from [LlamaIndex]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca64",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993443
+    },
+    {
+      "id": "640425c3aff09e0000e1ca65",
+      "text": "LlamaIndexのコードを読む[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca66",
+      "text": "　LlamaIndexのNodeの単位をどうやって制御するのか[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca67",
+      "text": "　\thttps://github.com/jerryjliu/gpt_index/blob/main/gpt_index/readers/file/base.py",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca68",
+      "text": "\t　\tこれは単にファイルを読んでDocumentを返してるだけ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca69",
+      "text": "　\thttps://github.com/jerryjliu/gpt_index/blob/main/gpt_index/readers/string_iterable.py",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca6a",
+      "text": "　\t　これは文字列のリストを個別にDocumentにしてる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca6b",
+      "text": "　\tトークン数を数えるのにはこれを使ってる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca6c",
+      "text": "　　\t`tiktoken.get_encoding(\"gpt2\")`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca6d",
+      "text": "　　\tGPT2から変わってないのか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "64042a30aff09e0000adc57a",
+      "text": "　　\t\tYes",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677994545,
+      "updated": 1677994561
+    },
+    {
+      "id": "640425c3aff09e0000e1ca6e",
+      "text": "　　GPTIndexを作る際に勝手にドキュメントを結合してしまう？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca6f",
+      "text": "　　　DocumentStoreの中身が1個になっちゃう？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca70",
+      "text": "　　　ノードが分かれてるからちゃんとそのノードだけ読むようだ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca71",
+      "text": "　断片にインデックスをつけるのができるようになった",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677994611
+    },
+    {
+      "id": "64042a72aff09e0000adc57b",
+      "text": "　\tクオリアさんの過去発言データを整備すれば...",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677994611,
+      "updated": 1677994619
+    },
+    {
+      "id": "64042a75aff09e0000adc57c",
+      "text": "　\t[類似度Top Kをプロンプトに積みたい]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677994614,
+      "updated": 1677994631
+    },
+    {
+      "id": "640425c3aff09e0000e1ca72",
+      "text": "　`def get_queued_text_embeddings(self) -> Tuple[List[str], List[List[float]]]:`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca73",
+      "text": "\t\t`OpenAIEmbedding#get_embedding`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca74",
+      "text": "\t\t[https://platform.openai.com/docs/guides/embeddings/what-are-embeddings OpenAI API: Embeddings]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca75",
+      "text": "\t\tこの辺が最終的に呼ばれるのだろう",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca76",
+      "text": "\t流れがあやふやなので頭から[pdb]で追う",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca77",
+      "text": " `GPTVectorStoreIndex`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca78",
+      "text": "\t\t`BaseGPTIndex`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca79",
+      "text": "\t\t\tここで`OpenAIEmbedding`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca7a",
+      "text": "\t\t\t\tdefault: \"text-embedding-ada-002\"",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca7b",
+      "text": "   \t\tそうなのか〜",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca7c",
+      "text": "    - OpenAIEmbeddingMode.SIMILARITY_MODE",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca7d",
+      "text": "    - OpenAIEmbeddingMode.TEXT_SEARCH_MODE",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca7e",
+      "text": "\t    TEXT_SEARCH_MODEがdefault",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca7f",
+      "text": "\t\t\t`self.build_index_from_documents(documents)`が呼ばれる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca80",
+      "text": "\t\t\tそこの先は`_build_index_from_documents`が`@abstractmethod`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca81",
+      "text": "　　　で子クラスに戻る",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca82",
+      "text": "　　`self._use_async` default: Falseなので",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca83",
+      "text": " 　　code:py",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca84",
+      "text": "    for d in documents:",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca85",
+      "text": "        self._add_document_to_index(index_struct, d)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca86",
+      "text": "\t\t\t`self._get_node_embedding_results(...)`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca87",
+      "text": "\t\tcode:py",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca88",
+      "text": "   def _get_node_embedding_results(",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca89",
+      "text": "       self, nodes: List[Node], existing_node_ids: Set, doc_id: str",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca8a",
+      "text": "   ) -> List[NodeEmbeddingResult]:",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca8b",
+      "text": "\t\t各nodeのtextをqueueに入れてから",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca8c",
+      "text": "\t\t\t`result_ids, result_embeddings = self._embed_model.get_queued_text_embeddings()`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca8d",
+      "text": "\t\t\tここで`OpenAIEmbedding`に処理が移る",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca8e",
+      "text": " \t\t\tおっと違った`BaseEmbedding`の`get_queued_text_embeddings`だ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca8f",
+      "text": "  \t\t\tこれが`embeddings = self._get_text_embeddings(cur_batch_texts)`する",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca90",
+      "text": "  \t\t\tで、もちろん`_get_text_embeddings`が`OpenAIEmbedding`でオーバーライドされてるわけだ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca91",
+      "text": "  \t\t\t　だいぶ著者の気持ちが読めるようになってきたw",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca92",
+      "text": "  \t\t`OpenAIEmbedding#_get_text_embeddings`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca93",
+      "text": "\t\t\t\t\t`embeddings = get_embeddings(texts, engine=engine)`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca94",
+      "text": "\t\t\t\t\t\t`get_embeddings`の中でOpenAIを呼んでる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca95",
+      "text": "\t　\t\t\t\t\t`data = openai.Embedding.create(input=list_of_text, engine=engine).data`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca96",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca97",
+      "text": "`index.query`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca98",
+      "text": "\t`BaseGPTIndex#query`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca99",
+      "text": "\t\t`return query_runner.query(query_str, self._index_struct)`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca9a",
+      "text": "\t\t\t`/gpt_index/indices/query/query_runner.py`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca9b",
+      "text": "\t\t\t\t`return query_obj.query(query_bundle)`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca9c",
+      "text": "\t\t\t\t\t`/gpt_index/indices/query/base.py`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca9d",
+      "text": "\t\t\t\t\t`BaseGPTIndexQuery`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca9e",
+      "text": "\t\t\t\t\t`def _query(self, query_bundle: QueryBundle) -> Response:`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1ca9f",
+      "text": "\t\t\t\t\t`tuples = self.get_nodes_and_similarities_for_response(query_bundle)`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1caa0",
+      "text": "\t\t\t\t\t\tここで類似度に基づく検索をしている",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1caa1",
+      "text": "\t\t\t\t\t\t`[(Node(text='56: Have Presence of Mind.\\n...', doc_id='a8e898fd-...', embedding=None, extra_info=None, index=0, child_indices=set(), ref_doc_id='a51e3fc7-...', node_info={'start': 0, 'end': 602}), 0.800589425093737)]`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1caa2",
+      "text": "\t\t\t\t\t`text, response = self._get_text_from_node(query_bundle, node)`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1caa3",
+      "text": "\t\t\t\t\t なぜ`_get_text_from_node`が`response`を返す？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1caa4",
+      "text": "\t\t\t\t\t\t　recursiveのとき、リクエストを発行することがあるから",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1caa5",
+      "text": "\t\t\t\t\t\t　今回の場合はしないのでNoneが返る",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1caa6",
+      "text": "\t\t\t\t\t`response_str = self._give_response_for_nodes(query_bundle.query_str)`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1caa7",
+      "text": "\t\t\t\t\t\t`response = self.response_builder.get_response(...)`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1caa8",
+      "text": "\t\t\t\t\t\t`ResponseBuilder`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1caa9",
+      "text": "\t\t\t\t\t\t\t`give_response_single`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "640425c3aff09e0000e1caaa",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1677993411
+    },
+    {
+      "id": "64045d69aff09e00001130b3",
+      "text": "2023-03-05[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678007658,
+      "updated": 1678007834
+    },
+    {
+      "id": "64045d6aaff09e00001130b4",
+      "text": "\t`GPTVectorStoreIndexQuery`の`_get_nodes_for_response`で`query_result = self._vector_store.query(query_embedding, self._similarity_top_k)`してる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678007658,
+      "updated": 1678007703
+    },
+    {
+      "id": "640425c3aff09e0000e1caab",
+      "text": "\t`SimpleVectorStore#query`がユーティリティ関数`get_top_k_embeddings`を呼び出してる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1677993411,
+      "updated": 1678007897
+    },
+    {
+      "id": "64045e59aff09e0000c0338a",
+      "text": "\tこの中で、全部類似度を計算して、ソートしてK個取ったものを返してる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678007897,
+      "updated": 1678007952
+    },
+    {
+      "id": "64045e8daff09e0000c0338b",
+      "text": "　つまり「ベクトルサーチの結果をトークン上限Xで返させる」オプションはない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678007952,
+      "updated": 1678008034
+    },
+    {
+      "id": "64045e1baff09e00001130b5",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678007836,
+      "updated": 1678007836
+    }
+  ]
+}
