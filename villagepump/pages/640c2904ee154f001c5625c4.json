@@ -1,0 +1,729 @@
+{
+  "id": "640c2904ee154f001c5625c4",
+  "title": "GitHub Actionsでビルド済みファイルを添付したリリースを自動生成するようにした",
+  "created": 1678518533,
+  "updated": 1678525931,
+  "lines": [
+    {
+      "id": "640c2904ee154f001c5625c4",
+      "text": "GitHub Actionsでビルド済みファイルを添付したリリースを自動生成するようにした",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518533,
+      "updated": 1678518593
+    },
+    {
+      "id": "640c29227838e3000037cbc3",
+      "text": "[Mijinko_SD.icon] from [2023/03/11]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518549,
+      "updated": 1678518555
+    },
+    {
+      "id": "640c29167838e3000037cbc2",
+      "text": "初めて[GitHub Actions]をまともにいじったかも",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518536,
+      "updated": 1678518548
+    },
+    {
+      "id": "640c29127838e3000037cbba",
+      "text": " [https://gyazo.com/0d2d0cd7f1ac009bfd404480bf81f9d2] [https://gyazo.com/27129375124c2b5ab2ae69ce40a50a6e]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518533,
+      "updated": 1678518539
+    },
+    {
+      "id": "640c29127838e3000037cbbb",
+      "text": " releaseブランチへ出した[PR]がマージされると、自動的にビルド済みファイルを添付した[リリース]を作成するようにした",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518533,
+      "updated": 1678520688
+    },
+    {
+      "id": "640c29127838e3000037cbbc",
+      "text": "  これ作ったことない[takker.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518533,
+      "updated": 1678518539
+    },
+    {
+      "id": "640c29127838e3000037cbbd",
+      "text": "  　腰が重くて……",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518533,
+      "updated": 1678518539
+    },
+    {
+      "id": "640c29127838e3000037cbbe",
+      "text": "  簡単に作れるのかな？",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518533,
+      "updated": 1678518539
+    },
+    {
+      "id": "640c29127838e3000037cbbf",
+      "text": " 井戸端民は当たり前にやっているけれど、自分にとってはまあまあな進歩",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518533,
+      "updated": 1678518539
+    },
+    {
+      "id": "640c29127838e3000037cbc0",
+      "text": " 序盤調べるのがめんどくさかっただけで、意外とLinuxの知識だけでどうにかなるものなんだなーって気がした",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518533,
+      "updated": 1678518539
+    },
+    {
+      "id": "640c29127838e3000037cbc1",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518533,
+      "updated": 1678518533
+    },
+    {
+      "id": "640c29597838e3000037cbc4",
+      "text": "とりあえず、作った[workflow]ファイルを貼っておきます[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518604,
+      "updated": 1678520534
+    },
+    {
+      "id": "640c2b471280f00000097835",
+      "text": "\t[https://code2svg.vercel.app/svg/https://raw.githubusercontent.com/MijinkoSD/decorate_on_stdout/0.1.0/.github/workflows/create-release.yml#.jpg https://github.com/MijinkoSD/decorate_on_stdout/blob/0.1.0/.github/workflows/create-release.yml]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1678519111,
+      "updated": 1678519137
+    },
+    {
+      "id": "640c30f27838e3000037cc25",
+      "text": "\t\t#create-release.yml",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520549,
+      "updated": 1678520556
+    },
+    {
+      "id": "640c298c7838e3000037cbf1",
+      "text": "Actionsページに表示される名前",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518654,
+      "updated": 1678518703
+    },
+    {
+      "id": "640c29697838e3000037cbc6",
+      "text": " code:create-release.yml",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518620,
+      "updated": 1678518766
+    },
+    {
+      "id": "640c29757838e3000037cbc7",
+      "text": "  name: Create Release",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678518766
+    },
+    {
+      "id": "640c29757838e3000037cbc8",
+      "text": "Actionsの実行条件",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678518715
+    },
+    {
+      "id": "640c29827838e3000037cbf0",
+      "text": " code:create-release.yml",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518645,
+      "updated": 1678518766
+    },
+    {
+      "id": "640c29757838e3000037cbc9",
+      "text": "  on:",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678518766
+    },
+    {
+      "id": "640c29757838e3000037cbca",
+      "text": "    pull_request:",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678518766
+    },
+    {
+      "id": "640c29757838e3000037cbcb",
+      "text": "      types: [closed]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678518766
+    },
+    {
+      "id": "640c29757838e3000037cbcc",
+      "text": "      branches:",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678518766
+    },
+    {
+      "id": "640c29757838e3000037cbcd",
+      "text": "        - release",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678518766
+    },
+    {
+      "id": "640c29e37838e3000037cbf6",
+      "text": "Actionsの実行内容",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518741,
+      "updated": 1678518750
+    },
+    {
+      "id": "640c29cd7838e3000037cbf3",
+      "text": " code:create-release.yml",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518720,
+      "updated": 1678518766
+    },
+    {
+      "id": "640c29757838e3000037cbcf",
+      "text": "  jobs:",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678518766
+    },
+    {
+      "id": "640c2a0a7838e3000037cbf8",
+      "text": " ジョブの名前（`create_release`）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518781,
+      "updated": 1678518809
+    },
+    {
+      "id": "640c2a057838e3000037cbf7",
+      "text": "  code:create-release.yml",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518776,
+      "updated": 1678518782
+    },
+    {
+      "id": "640c29757838e3000037cbd0",
+      "text": "   create_release:",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524163
+    },
+    {
+      "id": "640c2a2d7838e3000037cbfa",
+      "text": "  最新版のUbuntu仮想環境上でジョブを実行する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518816,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2a2a7838e3000037cbf9",
+      "text": "   code:create-release.yml",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518814,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c29757838e3000037cbd1",
+      "text": "    runs-on: ubuntu-latest",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524204
+    },
+    {
+      "id": "640c2a4a7838e3000037cbfc",
+      "text": "  後に使用する[secrets.GITHUB_TOKEN]の権限",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518845,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2a837838e3000037cbfd",
+      "text": "  \t[権限の種類についてはこのページを参照 https://docs.github.com/ja/actions/using-workflows/workflow-syntax-for-github-actions#permissions]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518902,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2aa27838e3000037cbfe",
+      "text": "  \t[secrets]とは書いてあるが、GITHUB_TOKENはデフォルトで存在しているので、リポジトリのsecrets設定をいじる必要はない",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518933,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2a477838e3000037cbfb",
+      "text": "   code:create-release.yml",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518842,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c29757838e3000037cbd2",
+      "text": "    permissions:",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524206
+    },
+    {
+      "id": "640c29757838e3000037cbd3",
+      "text": "      contents: write",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524208
+    },
+    {
+      "id": "640c2af77838e3000037cbff",
+      "text": " \tジョブの詳細な実行内容",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519017,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2afd7838e3000037cc00",
+      "text": " \t\tcode:create-release.yml",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519024,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c29757838e3000037cbd4",
+      "text": "    steps:",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524209
+    },
+    {
+      "id": "640c2b237838e3000037cc02",
+      "text": "  \tよくわかんないけれど、チェックアウトしないと動かない",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519062,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2ba67838e3000037cc08",
+      "text": "  \t\tそういうものなので、一々調べてはいない[- し、きっと詳しい誰かが追記してくれる]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519192,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2b317838e3000037cc03",
+      "text": "  \t\t[actions/checkout][. https://github.com/actions/checkout]を使用している",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519076,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2b1e7838e3000037cc01",
+      "text": "    code:create-release.yml",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519057,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c29757838e3000037cbd5",
+      "text": "     - name: Checkout code",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524213
+    },
+    {
+      "id": "640c29757838e3000037cbd6",
+      "text": "       uses: actions/checkout@v3",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524216
+    },
+    {
+      "id": "640c2bc57838e3000037cc09",
+      "text": " \t\tPythonをUbuntu仮想環境上に導入する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519224,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2c1b7838e3000037cc0d",
+      "text": " \t\t\t[actions/setup-python][. https://github.com/actions/setup-python]を使用している",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519309,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2b4a7838e3000037cc04",
+      "text": "    code:create-release.yml",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519101,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c29757838e3000037cbd8",
+      "text": "     - name: Set up Python",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524222
+    },
+    {
+      "id": "640c29757838e3000037cbd9",
+      "text": "       uses: actions/setup-python@v4",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524224
+    },
+    {
+      "id": "640c29757838e3000037cbda",
+      "text": "       with:",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524226
+    },
+    {
+      "id": "640c29757838e3000037cbdb",
+      "text": "       python-version: \"3.10\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524228
+    },
+    {
+      "id": "640c2bc77838e3000037cc0a",
+      "text": " \t\t\t3.10使っているけれど、自分の開発環境は3.11なんだよなぁ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519226,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2c777838e3000037cc0f",
+      "text": " \t\t\t\t使えそうだったら直しておくか",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519402,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2c4d7838e3000037cc0e",
+      "text": " \t\t[Pythonのパッケージ]をインストール",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519360,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2b4f7838e3000037cc05",
+      "text": "  \t\tcode:create-release.yml",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519105,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c29757838e3000037cbdd",
+      "text": "     - name: Install dependencies",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524230
+    },
+    {
+      "id": "640c29757838e3000037cbde",
+      "text": "       run: |",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524232
+    },
+    {
+      "id": "640c29757838e3000037cbdf",
+      "text": "         python -m pip install -U pip",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524317
+    },
+    {
+      "id": "640c29757838e3000037cbe0",
+      "text": "         pip install build setuptools",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524318
+    },
+    {
+      "id": "640c315a7838e3000037cc26",
+      "text": "    `run`にはUbuntu上で実行するコマンドをそのまま書く",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520655,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c316d7838e3000037cc27",
+      "text": "    \t`run:`の直後に`|`を書いた後、複数行のコマンドを改行区切りで書けば、それぞれのコマンドを順番に実行してくれる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520672,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2bc87838e3000037cc0b",
+      "text": " \t\t\t必要あるかはわからないけれど、調べた感じどのサイトでも[pip install -U pip]を実行しているので、やった方が良いと思った",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519227,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2cda7838e3000037cc10",
+      "text": " \t\t\t今回はパッケージをビルドする[build][. https://pypi.org/project/build/]と、[pyproject.toml]内で使用している[setuptools][. https://pypi.org/project/setuptools/]が必要だったので、それらをインストールしてある",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519501,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2dd07838e3000037cc11",
+      "text": " \t\tパッケージをビルドする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519747,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2b537838e3000037cc06",
+      "text": "    code:create-release.yml",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519110,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c29757838e3000037cbe2",
+      "text": "     - name: Build package",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524243
+    },
+    {
+      "id": "640c29757838e3000037cbe3",
+      "text": "       run: python -m build",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524247
+    },
+    {
+      "id": "640c2bc97838e3000037cc0c",
+      "text": " \t\t\tビルド済みのファイルは`./dist/`内に保存される",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519228,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2e067838e3000037cc12",
+      "text": " \t\tリリースを作成する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519801,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2e207838e3000037cc17",
+      "text": " \t\t\t古来より親しまれてきた[actions/create-release][. https://github.com/actions/create-release]や[actions/upload-release-asset][. https://github.com/actions/upload-release-asset]は既にアーカイブされている",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519827,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2f007838e3000037cc19",
+      "text": " \t\t\tなので、代わりに[softprops/actions-gh-release][. https://github.com/softprops/action-gh-release]を利用する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520051,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2ef97838e3000037cc18",
+      "text": " \t\t\t\tこっちは、リリースの作成とassetの添付の両方を一度にこなすことができる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520043,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2b557838e3000037cc07",
+      "text": "    code:create-release.yml",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519113,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c29757838e3000037cbe5",
+      "text": "     - name: Create release",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524249
+    },
+    {
+      "id": "640c29757838e3000037cbe6",
+      "text": "       uses: softprops/action-gh-release@v1",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524251
+    },
+    {
+      "id": "640c29757838e3000037cbe7",
+      "text": "       with:",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524253
+    },
+    {
+      "id": "640c29757838e3000037cbe8",
+      "text": "         token: ${{ secrets.GITHUB_TOKEN }}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524304
+    },
+    {
+      "id": "640c29757838e3000037cbe9",
+      "text": "         name: ${{ github.event.pull_request.title }}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524305
+    },
+    {
+      "id": "640c29757838e3000037cbea",
+      "text": "         tag_name: ${{ github.event.pull_request.title }}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524306
+    },
+    {
+      "id": "640c29757838e3000037cbeb",
+      "text": "         body: ${{ github.event.pull_request.body }}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524307
+    },
+    {
+      "id": "640c29757838e3000037cbec",
+      "text": "         files: ./dist/*",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524308
+    },
+    {
+      "id": "640c29757838e3000037cbed",
+      "text": "         draft: false",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524309
+    },
+    {
+      "id": "640c29757838e3000037cbee",
+      "text": "         prerelease: false",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678518631,
+      "updated": 1678524310
+    },
+    {
+      "id": "640c2f4a7838e3000037cc1a",
+      "text": "    `token`で[secrets.GITHUB_TOKEN]を渡す",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520125,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2f6b7838e3000037cc1b",
+      "text": "    \t前述のpermissionの指定がおかしいとここでエラーを吐くので注意（1敗）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520158,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2f907838e3000037cc1d",
+      "text": "    \tリリース関係しかいじらないので、`contents`に`write`権限を持たせるだけで大抵は事足りると思う",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520195,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2f877838e3000037cc1c",
+      "text": "    `name`はリリースの名前を入れる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520186,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2fbd7838e3000037cc1e",
+      "text": "    \t今回はプルリクエストの名前をそのまま流用している",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520240,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2fe87838e3000037cc1f",
+      "text": "    `tag_name`はリリースと同時に作成するタグの名前",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520283,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2ff87838e3000037cc20",
+      "text": "    `body`はリリースの本文",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520299,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2ffd7838e3000037cc21",
+      "text": "    \tプルリクエスト作成時の本文をそのまま流用している",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520304,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c300e7838e3000037cc22",
+      "text": "    `files`はassetに入れるファイル",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520321,
+      "updated": 1678525910
+    },
+    {
+      "id": "640c45e47838e300003847c6",
+      "text": "    \t[glob]（[ワイルドカード]）で指定可",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678525910,
+      "updated": 1678525911
+    },
+    {
+      "id": "640c45e57838e300003847c7",
+      "text": "    \t複数指定する場合は複数行（[改行区切り]）で書く",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678525911,
+      "updated": 1678525931
+    },
+    {
+      "id": "640c30327838e3000037cc23",
+      "text": "    `draft`と`prerelease`は使用しないので明示的に`false`に設定してある",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520356,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c304e7838e3000037cc24",
+      "text": "    \tとはいえデフォルト値が`false`なので、別に書かなくても同じ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678520384,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2e1c7838e3000037cc15",
+      "text": "    [softprops/action-gh-release]でrelaeaseを作っている？",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519823,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2e1c7838e3000037cc16",
+      "text": "     [GitHub Actionsで井戸端プロジェクトのバックアップを取得しReleaseに登録する]では[ncipollo/release-action]を使ってたな[takker.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1678519823,
+      "updated": 1678524200
+    },
+    {
+      "id": "640c2afb1280f00000097826",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1678519035,
+      "updated": 1678519035
+    }
+  ]
+}
