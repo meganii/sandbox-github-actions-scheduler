@@ -1,0 +1,113 @@
+{
+  "id": "640ea08a20ebf9001b0757a6",
+  "title": "fixed: WindowsでUnicodeDecodeError(Scrapbox ChatGPT Connector)",
+  "created": 1678680203,
+  "updated": 1678680207,
+  "lines": [
+    {
+      "id": "640ea08a20ebf9001b0757a6",
+      "text": "fixed: WindowsでUnicodeDecodeError(Scrapbox ChatGPT Connector)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680203
+    },
+    {
+      "id": "640ea08baff09e000060277a",
+      "text": "from [Scrapbox ChatGPT Connector]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680203
+    },
+    {
+      "id": "640ea08baff09e000060277b",
+      "text": "fixed: WindowsでUnicodeDecodeError(Scrapbox ChatGPT Connector)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680203
+    },
+    {
+      "id": "640ea08baff09e000060277c",
+      "text": "\t`$ python make_index.py`  の実行でエラー ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680207
+    },
+    {
+      "id": "640ea08baff09e000060277d",
+      "text": "\t\t`UnicodeDecodeError: 'cp932' codec can't decode byte 0x83 in position 415: illegal multibyte sequence`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680207
+    },
+    {
+      "id": "640ea08baff09e000060277e",
+      "text": "\t\t　おっなるほど、ちなみにPythonのバージョンはいくつですか？起動すると表示されると思います[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680207
+    },
+    {
+      "id": "640ea08baff09e000060277f",
+      "text": "\t\t　\tPython 3.11.2でした[fumito.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680207
+    },
+    {
+      "id": "640ea08baff09e0000602780",
+      "text": "\t\t　\tじゃあバージョンではなくOS依存の問題っぽい、WindowsのデフォルトエンコーディングがUTF8でないことが原因だと思うので下記の修正を入れました✅",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680207
+    },
+    {
+      "id": "640ea08baff09e0000602781",
+      "text": "\t\t引数で `uft-8`を指定するように、`make_index.py`の一部を書換え",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680207
+    },
+    {
+      "id": "640ea08baff09e0000602782",
+      "text": "\t\t\tcode:python",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680207
+    },
+    {
+      "id": "640ea08baff09e0000602783",
+      "text": "\t\t\t -    data = json.load(open(jsonfile))",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680207
+    },
+    {
+      "id": "640ea08baff09e0000602784",
+      "text": "   \t+    data = json.load(open(jsonfile, encoding='utf-8'))",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680207
+    },
+    {
+      "id": "640ea08baff09e0000602785",
+      "text": "\t\t\tググって見つけた対応方法だけど、これでいいのかな？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680207
+    },
+    {
+      "id": "640ea08baff09e0000602786",
+      "text": "\t\t\tとりあえず実行してみたところ、大丈夫そう",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680207
+    },
+    {
+      "id": "640ea08baff09e0000602787",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678680203,
+      "updated": 1678680203
+    }
+  ]
+}
