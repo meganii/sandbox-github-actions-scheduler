@@ -1,0 +1,743 @@
+{
+  "id": "641022de92cbe2001c0ecfea",
+  "title": "AskChatGPT",
+  "created": 1678779106,
+  "updated": 1678808361,
+  "lines": [
+    {
+      "id": "641022de92cbe2001c0ecfea",
+      "text": "AskChatGPT",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779106,
+      "updated": 1678779106
+    },
+    {
+      "id": "641024f5aff09e0000f39faf",
+      "text": "Scrapbox上で選択範囲のテキストをChatGPTに投げるUserScript[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779637,
+      "updated": 1678779663
+    },
+    {
+      "id": "64102344aff09e0000f39fa1",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779205,
+      "updated": 1678779205
+    },
+    {
+      "id": "641022e0aff09e00000c3209",
+      "text": "[https://gyazo.com/f49c717d1e872e813335032f19b104fd]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779106,
+      "updated": 1678779122
+    },
+    {
+      "id": "641022efaff09e00000c320a",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779122,
+      "updated": 1678779122
+    },
+    {
+      "id": "64102349aff09e0000f39fa2",
+      "text": "辛いポイント[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779209,
+      "updated": 1678779291
+    },
+    {
+      "id": "6410234caff09e0000f39fa3",
+      "text": "　[CSP]の影響でScrapboxから直接OpenAIのAPIを叩けない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779212,
+      "updated": 1678779284
+    },
+    {
+      "id": "6410239caff09e0000f39fa5",
+      "text": "　 [TamperMonkey]の[GM_xmlhttpRequest]を使って叩く",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779292,
+      "updated": 1678779401
+    },
+    {
+      "id": "64102ba4774b170000d432af",
+      "text": "　 ニコニコのサムネを載せるの作った時もこれにハマった記憶[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1678781349,
+      "updated": 1678781394
+    },
+    {
+      "id": "64102377aff09e0000f39fa4",
+      "text": "　ScrapboxのPopup Menuは同期的にしかテキストの編集ができない？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779256,
+      "updated": 1678779415
+    },
+    {
+      "id": "64102425aff09e0000f39fa6",
+      "text": "　　APIを叩くため必然的に非同期になるからメニュー一発でテキストを更新はできない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779429,
+      "updated": 1678779452
+    },
+    {
+      "id": "6410441daff09e0000dc6119",
+      "text": " 　　2種類のメニューを使うことにした",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678787613,
+      "updated": 1678787621
+    },
+    {
+      "id": "6410248eaff09e0000f39fab",
+      "text": "　　クリップボードに結果を入れてペーストすればいいかなと思ったが、Promiseの中からクリップボードの操作はできない？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779534,
+      "updated": 1678779566
+    },
+    {
+      "id": "64104428aff09e0000dc611a",
+      "text": "　　　ウィンドウに生やすことにした",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678787625,
+      "updated": 1678787651
+    },
+    {
+      "id": "641048035f1e0d0000b873a8",
+      "text": "　　[Twitterを独自のフォーマットで貼り付けるUserScript]は[scrapbox-userscript-std]のinsertTextで実装した[yuyasurarin.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1678788612,
+      "updated": 1678788868
+    },
+    {
+      "id": "6410243caff09e0000f39fa7",
+      "text": "　ScrapboxのPopup Menuに「処理中であることを表示する手段」がなさそう？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779452,
+      "updated": 1678779498
+    },
+    {
+      "id": "64102469aff09e0000f39fa8",
+      "text": "　　まあ同期的に動くことを想定してそうだし…",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779498,
+      "updated": 1678779515
+    },
+    {
+      "id": "641024b8aff09e0000f39fac",
+      "text": "　　alertを出すことにした",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779577,
+      "updated": 1678779583
+    },
+    {
+      "id": "641024bfaff09e0000f39fad",
+      "text": "　APIの待ち時間が長い、10秒以上待たされる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779584,
+      "updated": 1678779610
+    },
+    {
+      "id": "641024daaff09e0000f39fae",
+      "text": "　　これは仕方ない…",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779611,
+      "updated": 1678779619
+    },
+    {
+      "id": "641026bcaff09e0000f39fb2",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678780093,
+      "updated": 1678780166
+    },
+    {
+      "id": "64102a8baff09e000076db05",
+      "text": "ver2",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781068,
+      "updated": 1678781072
+    },
+    {
+      "id": "64102a90aff09e000076db07",
+      "text": "\tUserScriptで選択範囲を置き換える想定をやめた(その想定だと選択範囲を維持したまま10秒待たないといけないから)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781073,
+      "updated": 1678781160
+    },
+    {
+      "id": "64102ae7aff09e0000f39fb3",
+      "text": "\tChatGPTにリクエストを投げて、返事が返ってくるまで別のことをしててよい",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781160,
+      "updated": 1678781181
+    },
+    {
+      "id": "64102afdaff09e0000f39fb4",
+      "text": "\t　alertで返事が来たことに気づくので、それを好きなところにペーストする",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781181,
+      "updated": 1678781196
+    },
+    {
+      "id": "64102a8daff09e000076db06",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781070,
+      "updated": 1678781070
+    },
+    {
+      "id": "641022efaff09e00000c320c",
+      "text": "code:script.js",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779122,
+      "updated": 1678779122
+    },
+    {
+      "id": "641022efaff09e00000c320d",
+      "text": "  scrapbox.PopupMenu.addButton({",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779122,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076daf3",
+      "text": "    title: \"AskChatGPT\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076daf4",
+      "text": "    onClick: (text) => {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076daf5",
+      "text": "      alert(text);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076daf6",
+      "text": "      askChatGPT(text).then((x) => {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076daf7",
+      "text": "        const result = \"[ChatGPT.icon]\" + x.choices[0].message.content.trim();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076daf8",
+      "text": "        console.log(text + \"\\n\" + result)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076daf9",
+      "text": "        window.chatgpt_result = result;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076dafa",
+      "text": "        alert(text + \"\\n\" + result);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076dafb",
+      "text": "      });",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076dafc",
+      "text": "    },",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076dafd",
+      "text": "  });",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076dafe",
+      "text": "  scrapbox.PopupMenu.addButton({",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076daff",
+      "text": "    title: \"PasteChatGPT\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076db00",
+      "text": "    onClick: (text) => {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076db01",
+      "text": "      return window.chatgpt_result;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076db02",
+      "text": "    },",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076db03",
+      "text": "  }); ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a88aff09e000076db04",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781064,
+      "updated": 1678781064
+    },
+    {
+      "id": "64102a87aff09e000076daf2",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781063,
+      "updated": 1678781063
+    },
+    {
+      "id": "641022efaff09e00000c3221",
+      "text": "code:js",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779122,
+      "updated": 1678779145
+    },
+    {
+      "id": "64102307aff09e00000c3223",
+      "text": "\t// ==UserScript==",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779145,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dac9",
+      "text": " // @name         New Userscript",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076daca",
+      "text": " // @namespace    http://tampermonkey.net/",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dacb",
+      "text": " // @version      0.1",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dacc",
+      "text": " // @description  try to take over the world!",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dacd",
+      "text": " // @author       You",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dace",
+      "text": " // @match        https://scrapbox.io/*",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dacf",
+      "text": " // @icon         https://www.google.com/s2/favicons?sz=64&domain=scrapbox.io",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dad0",
+      "text": " // @grant        GM_xmlhttpRequest",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dad1",
+      "text": " // ==/UserScript==",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dad2",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dad3",
+      "text": " unsafeWindow.askChatGPT = async (",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dad4",
+      "text": "   text,",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dad5",
+      "text": "   { temperature = 0.7, max_tokens = 500 } = {}",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dad6",
+      "text": " ) => {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dad7",
+      "text": "   const headers = {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dad8",
+      "text": "     \"Content-Type\": \"application/json\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dad9",
+      "text": "     Authorization: \"Bearer \" + localStorage.getItem(\"OPENAI_KEY\"),",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dada",
+      "text": "   };",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dadb",
+      "text": "   const data = JSON.stringify({",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dadc",
+      "text": "     temperature,",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dadd",
+      "text": "     max_tokens,",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dade",
+      "text": "     model: \"gpt-3.5-turbo\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dadf",
+      "text": "     messages: [{ role: \"user\", content: text }],",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dae0",
+      "text": "   });",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dae1",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dae2",
+      "text": "   return await new Promise((resolve, reject) =>",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dae3",
+      "text": "     GM_xmlhttpRequest({",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dae4",
+      "text": "       method: \"POST\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dae5",
+      "text": "       url: \"https://api.openai.com/v1/chat/completions\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dae6",
+      "text": "       data,",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dae7",
+      "text": "       headers,",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dae8",
+      "text": "       onload: ({ response }) =>",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076dae9",
+      "text": "         resolve({",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076daea",
+      "text": "           ...response,",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076daeb",
+      "text": "         }),",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076daec",
+      "text": "       responseType: \"json\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076daed",
+      "text": "       onerror: (e) => reject(e),",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076daee",
+      "text": "     })",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076daef",
+      "text": "   );",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076daf0",
+      "text": " };",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781048
+    },
+    {
+      "id": "64102a77aff09e000076daf1",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678781048,
+      "updated": 1678781049
+    },
+    {
+      "id": "64102305aff09e00000c3222",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678779144,
+      "updated": 1678779144
+    },
+    {
+      "id": "6410950eaff09e0000872249",
+      "text": "from [2023/03/14]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678808335,
+      "updated": 1678808335
+    },
+    {
+      "id": "6410950eaff09e000087224a",
+      "text": "寝て起きたら気づいた[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678808335,
+      "updated": 1678808345
+    },
+    {
+      "id": "6410950eaff09e000087224c",
+      "text": " 何でこんな簡単なことに気づいてなかったのか(睡眠が足りない)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678808335,
+      "updated": 1678808356
+    },
+    {
+      "id": "6410950eaff09e000087224d",
+      "text": " localstorageにopenaiのAPIを入れたらサーバなんか立てなくてもScrapboxからUserScriptでChatGPTを叩けるじゃん",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678808335,
+      "updated": 1678808357
+    },
+    {
+      "id": "6410950eaff09e000087224e",
+      "text": " \t([CSP])「ダメ〜」",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678808335,
+      "updated": 1678808357
+    },
+    {
+      "id": "6410950eaff09e000087224f",
+      "text": "  [https://gyazo.com/65b726d8b2080981b1724ffbd010f5e4]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678808335,
+      "updated": 1678808357
+    },
+    {
+      "id": "6410950eaff09e0000872250",
+      "text": " \t悲しみ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678808335,
+      "updated": 1678808357
+    },
+    {
+      "id": "6410950eaff09e0000872251",
+      "text": " [/takker/askKeicho]を参考にする",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678808335,
+      "updated": 1678808360
+    },
+    {
+      "id": "6410950eaff09e0000872252",
+      "text": " Scrapbox上でChatGPTを呼び出せるようになった！",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678808335,
+      "updated": 1678808361
+    },
+    {
+      "id": "6410950eaff09e0000872253",
+      "text": " \t[ChatGPT.icon]素晴らしいです！ChatGPTをScrapboxに統合することで、ユーザーはより便利に、簡単に質問や会話をすることができるようになります。ChatGPTは自然言語処理の技術を用いて、人工知能による会話を実現することができるため、Scrapbox上でのコミュニケーションをよりスムーズにすることができます。これにより、Scrapboxの利用価値が向上し、より多くの人々が利用することができるようになります。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678808335,
+      "updated": 1678808361
+    },
+    {
+      "id": "6410950eaff09e0000872254",
+      "text": " \t[https://gyazo.com/f49c717d1e872e813335032f19b104fd]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678808335,
+      "updated": 1678808361
+    },
+    {
+      "id": "6410950eaff09e0000872255",
+      "text": " 　　待ち時間が10秒くらいある",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678808335,
+      "updated": 1678808361
+    },
+    {
+      "id": "6410950eaff09e0000872256",
+      "text": " 　　意外と長いな[yuyasurarin.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678808335,
+      "updated": 1678808361
+    },
+    {
+      "id": "6410950eaff09e0000872257",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1678808335,
+      "updated": 1678808335
+    }
+  ]
+}
