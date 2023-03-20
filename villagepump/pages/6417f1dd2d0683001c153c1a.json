@@ -1,0 +1,1023 @@
+{
+  "id": "6417f1dd2d0683001c153c1a",
+  "title": "Twitterの画像をScrapboxに引用するスクリプトを作る",
+  "created": 1679290846,
+  "updated": 1679332724,
+  "lines": [
+    {
+      "id": "6417f1dd2d0683001c153c1a",
+      "text": "Twitterの画像をScrapboxに引用するスクリプトを作る",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1f6774b1700001ccde8",
+      "text": "（のりしろ）",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290871,
+      "updated": 1679290873
+    },
+    {
+      "id": "6417f1de774b1700001ccd9e",
+      "text": "　[ChatGPTでTwitterのツイートを取得する実験]をやったがうまくいかなかった",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290874
+    },
+    {
+      "id": "6417f1f1774b1700001ccde7",
+      "text": "　自分で作ることにした",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290866,
+      "updated": 1679290874
+    },
+    {
+      "id": "6417f1ed774b1700001ccde6",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290861,
+      "updated": 1679290861
+    },
+    {
+      "id": "6417f1de774b1700001ccd9f",
+      "text": "Twitterの画像をScrapboxに引用するスクリプトを作る",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccda0",
+      "text": "　https://pic.twitter.com/RFED10Ssn6 から画像に変換することはできなそう",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccda1",
+      "text": "　　上の例なら  https://twitter.com/motoso/status/1637434235534589952/photo/1 にリダイレクトされるだけ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccda2",
+      "text": "　　欲しいURLは https://pbs.twimg.com/media/FrlVwJyaUAA9iHC?format=jpg&name=large",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccda3",
+      "text": "　　https://twitter.com/motoso/status/1637434235534589952/photo/1 のレスポンスから再現できるか？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccda4",
+      "text": "  ブラウザアクセスをすると`document.querySelector(\"#id__a06mgrsipeq > div > div > div > div > div > a > div > div.r-1p0dtai.r-1pi2tsx.r-1d2f490.r-u8s1d.r-ipm5af.r-13qz1uu > div > img\")` にある",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccda5",
+      "text": "   ただし`#id__a06mgrsipeq`はアクセスごとに毎回変わる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccda6",
+      "text": " https://twitter.com/motoso/status/1637434235534589952 にブラウザアクセスしてレスポンスを持ってきたらなんとかできそうだなぁ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccda7",
+      "text": " Denoだとこんな感じでHTMLから復元できるなぁ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccda8",
+      "text": " code:ts",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccda9",
+      "text": "  import { load } from  \"https://esm.sh/cheerio@1.0.0-rc.12\";",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdaa",
+      "text": "  import puppeteer from \"https://deno.land/x/puppeteer@16.2.0/mod.ts\";",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdab",
+      "text": "  ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdac",
+      "text": "  const ACCOUNT_NAME = \"motoso\";",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdad",
+      "text": "  const ID = '1637434235534589952';",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdae",
+      "text": "  ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdaf",
+      "text": "  async function getLatestTweet() {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdb0",
+      "text": "    const browser = await puppeteer.launch();",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdb1",
+      "text": "    // TwitterのプロフィールページのURLを構築する",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdb2",
+      "text": "    const url = `https://twitter.com/${ACCOUNT_NAME}/status/${ID}`;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdb3",
+      "text": "  ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdb4",
+      "text": "    const page = await browser.newPage();",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdb5",
+      "text": "    // UAを設定しないとサポートされていないブラウザ扱いになる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdb6",
+      "text": "    // https://stackoverflow.com/questions/67010016/twitter-blocked-in-headless-chrome-puppeteer",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdb7",
+      "text": "    page.setUserAgent(",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdb8",
+      "text": "      \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36\"",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdb9",
+      "text": "      )",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdba",
+      "text": "    await page.goto(url);",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdbb",
+      "text": "    // ツイート表示まで待つ。要素表示まで待つに変更したい",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdbc",
+      "text": "    await new Promise(r => setTimeout(r, 2000));",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdbd",
+      "text": "    const html = await page.content();",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdbe",
+      "text": "    await browser.close();",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdbf",
+      "text": "    ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdc0",
+      "text": "    // Cheerioを使用して、HTMLからツイートのテキストを抽出する",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdc1",
+      "text": "    const $ = load(html);",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdc2",
+      "text": "    const lines :string[] = [];",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdc3",
+      "text": "    const tweetTextElement = $('#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div > div > section > div > div > div:nth-child(1) > div > div > article > div > div > div:nth-child(3) > div:nth-child(2)')",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdc4",
+      "text": "    const tweetText = tweetTextElement.text()",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdc5",
+      "text": "    lines.push(tweetText)",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdc6",
+      "text": "    // 最初のidが毎回変わるみたい",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdc7",
+      "text": "    const imageElement = $('[id^=\"id__\"] > div > div > div > div > div > a > div > div.r-1p0dtai.r-1pi2tsx.r-1d2f490.r-u8s1d.r-ipm5af.r-13qz1uu > div > img')",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdc8",
+      "text": "    const imageURl = imageElement[0].attribs.src",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdc9",
+      "text": "    // TODO: 画像をGyazoに送りつける",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdca",
+      "text": "    lines.push(imageURl)",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdcb",
+      "text": "    return(lines.join('\\n'))",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdcc",
+      "text": "  }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdcd",
+      "text": "  ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdce",
+      "text": "  console.log(await getLatestTweet());",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdcf",
+      "text": "  ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdd0",
+      "text": "　こういうのをUserScriptから呼び出せるかな？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdd1",
+      "text": "　　流石に重そう",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdd2",
+      "text": "　　API serverを立てて呼び出せば作れる[takker.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdd3",
+      "text": "　　 例：[tweet2image]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdd4",
+      "text": "　いい方法はあるだろうか",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdd5",
+      "text": "　deno、プロジェクトを作るのを考えずにコードを書いたらすぐ動くのいいな〜",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdd6",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdd7",
+      "text": "方法は2つ[takker.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdd8",
+      "text": " [puppeteer]経由でweb scrapingして取得する",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdd9",
+      "text": "  [基素.icon]さんの試したやつ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdda",
+      "text": " twitter.comの内部APIを借りて取得する",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccddb",
+      "text": "  [けしからん]ことしていいならこれが確実",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccddc",
+      "text": "   けしからんこと=[robots.txt]の禁止事項を無視する",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccddd",
+      "text": "   現状見る限りTwitterのAPIまわりはめちゃくちゃになっていそうなので、真面目に守る必要性をあんまり感じない",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccdde",
+      "text": "   ここまでTwitterの公式APIが壊れてるなら、なりふり構ってられない",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccddf",
+      "text": "  こんな感じかな[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccde0",
+      "text": "   https://github.com/fa0311/TweetURLtoData/blob/master/TweetURLtoData.py",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccde1",
+      "text": "   そんな感じです[takker.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccde2",
+      "text": "    もう作っているひといたのか",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417f1de774b1700001ccde3",
+      "text": "    自分だけrobots.txt守っているのもばからしいな(モラルハザード)",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679290846
+    },
+    {
+      "id": "6417fc231280f000006c07ad",
+      "text": "   あれ？[Twitterの内部API]のend pointってこんなに単純だったっけ？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293476,
+      "updated": 1679293498
+    },
+    {
+      "id": "6417fc391280f000006c07ae",
+      "text": "   　もっといろんなAPIを叩いていた覚えがあるのだが……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293498,
+      "updated": 1679293510
+    },
+    {
+      "id": "6417fc451280f000006c07af",
+      "text": "   　まあ試せばわかるか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293510,
+      "updated": 1679293514
+    },
+    {
+      "id": "6417fc4a1280f000006c07b0",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293515,
+      "updated": 1679293518
+    },
+    {
+      "id": "6417fc4e1280f000006c07b1",
+      "text": "[Twitterの内部API]で試す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293518,
+      "updated": 1679293524
+    },
+    {
+      "id": "6417fc561280f000006c07b2",
+      "text": " ported from [fa0311/TweetURLtoData https://github.com/fa0311/TweetURLtoData/blob/master/TweetURLtoData.py]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293527,
+      "updated": 1679293551
+    },
+    {
+      "id": "6417fc6f1280f000006c07b6",
+      "text": "  要[/takker/GM_fetch]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293552,
+      "updated": 1679293559
+    },
+    {
+      "id": "6417fc691280f000006c07b3",
+      "text": "  code:js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293546,
+      "updated": 1679293548
+    },
+    {
+      "id": "6417fcb11280f000006c07c7",
+      "text": "   window.getTweet = async (id, lang = \"en\") => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293618,
+      "updated": 1679293716
+    },
+    {
+      "id": "6417fc801280f000006c07c2",
+      "text": "     const params = new URLSearchParams([",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293569,
+      "updated": 1679293638
+    },
+    {
+      "id": "6417fc8c1280f000006c07c3",
+      "text": "       [\"features\", \"tfw_timeline_list:linktr.ee,tr.ee,terra.com.br,www.linktr.ee,www.tr.ee,www.terra.com.br;tfw_horizon_timeline_12034:treatment;tfw_tweet_edit_backend:on;tfw_refsrc_session:on;tfw_chin_pills_14741:color_icons;tfw_tweet_result_migration_13979:tweet_result;tfw_sensitive_media_interstitial_13963:interstitial;tfw_experiments_cookie_expiration:1209600;tfw_duplicate_scribes_to_settings:on;tfw_video_hls_dynamic_manifests_15082:true_bitrate;tfw_show_blue_verified_badge:off;tfw_related_videos_15128:many_vids;tfw_tweet_edit_frontend:on\"],",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293580,
+      "updated": 1679293638
+    },
+    {
+      "id": "6417fc991280f000006c07c5",
+      "text": "       [\"id\", id],",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293594,
+      "updated": 1679293638
+    },
+    {
+      "id": "6417ff501280f000006c07e3",
+      "text": "       // 不要だった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679294289,
+      "updated": 1679294291
+    },
+    {
+      "id": "6417fca21280f000006c07c6",
+      "text": "       // [\"lang\", lang],",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679294282,
+      "updated": 1679294293
+    },
+    {
+      "id": "6417fc8c1280f000006c07c4",
+      "text": "     ]);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293581,
+      "updated": 1679293638
+    },
+    {
+      "id": "6417fcc71280f000006c07c8",
+      "text": "     const res = await GM_fetch(`https://cdn.syndication.twimg.com/tweet-result?${params}`, {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293640,
+      "updated": 1679293690
+    },
+    {
+      "id": "6417fce61280f000006c07cd",
+      "text": "       headers: {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293671,
+      "updated": 1679293673
+    },
+    {
+      "id": "6417fce31280f000006c07cc",
+      "text": "         \"content-type\": \"application/json; charset=utf-8\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293668,
+      "updated": 1679293674
+    },
+    {
+      "id": "6417fcea1280f000006c07ce",
+      "text": "       },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293676,
+      "updated": 1679293677
+    },
+    {
+      "id": "6417fcf21280f000006c07cf",
+      "text": "     });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293683,
+      "updated": 1679293685
+    },
+    {
+      "id": "6417fcfb1280f000006c07d0",
+      "text": "     return await res.json();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293692,
+      "updated": 1679293695
+    },
+    {
+      "id": "6417fcff1280f000006c07d1",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293696,
+      "updated": 1679293697
+    },
+    {
+      "id": "6417f1de774b1700001ccde4",
+      "text": "  い　け　ま　し　た[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679290846,
+      "updated": 1679293840
+    },
+    {
+      "id": "6417fdb01280f000006c07d5",
+      "text": "   [https://gyazo.com/ebe0f523bba9771d49acd06016b334ff]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293874,
+      "updated": 1679293901
+    },
+    {
+      "id": "6417fdd91280f000006c07d7",
+      "text": "   展開先URLも含まれている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293915,
+      "updated": 1679294478
+    },
+    {
+      "id": "6417ffd11280f000006c07e4",
+      "text": "   `text`: tweet本文",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679294418,
+      "updated": 1679294435
+    },
+    {
+      "id": "6417ffe21280f000006c07e5",
+      "text": "   `photos`: 展開先画像URL",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679294435,
+      "updated": 1679294472
+    },
+    {
+      "id": "6417fff41280f000006c07e6",
+      "text": "   `entities.urls`: 展開先外部リンク",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679294453,
+      "updated": 1679294467
+    },
+    {
+      "id": "6417fd8f1280f000006c07d3",
+      "text": "  あと[cdn.syndication.twimg.com/robots.txt https://cdn.syndication.twimg.com/robots.txt]は空っぽだったので、怒られなければ使っても良さそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293840,
+      "updated": 1679293867
+    },
+    {
+      "id": "6417fdaa1280f000006c07d4",
+      "text": "   倫理面もクリア！！！",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293867,
+      "updated": 1679293871
+    },
+    {
+      "id": "64181c2f774b1700003c8ac0",
+      "text": "  試した。やりかた[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679301679,
+      "updated": 1679301750
+    },
+    {
+      "id": "64181c31774b1700003c8ac1",
+      "text": "  　[/takker/GM_fetch#63e0576b1280f000005cda28]を[TamperMonkey]に追加",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679301682,
+      "updated": 1679301781
+    },
+    {
+      "id": "64181c4a774b1700003c8ac2",
+      "text": "  　[Chrome Developer Tools]のコンソールに上のコードをコピペ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679301706,
+      "updated": 1679301726
+    },
+    {
+      "id": "64181c5f774b1700003c8ac3",
+      "text": "  　$ await window.getTweet('1637434235534589952')",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679301727,
+      "updated": 1679301733
+    },
+    {
+      "id": "64181cad774b1700003c8ac4",
+      "text": "  [twitter-info-proxy]を改造してこの機能を入れたい[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679301806,
+      "updated": 1679301837
+    },
+    {
+      "id": "6418285d774b1700003c8ac6",
+      "text": "  こんな感じで置換したら良さそう[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304797,
+      "updated": 1679304807
+    },
+    {
+      "id": "64182867774b1700003c8ac7",
+      "text": "  　code:js",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304808,
+      "updated": 1679304811
+    },
+    {
+      "id": "6418286b774b1700003c8ad4",
+      "text": "  　 const lines = [];　",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304811,
+      "updated": 1679304812
+    },
+    {
+      "id": "6418286b774b1700003c8ad5",
+      "text": "    ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304812,
+      "updated": 1679304812
+    },
+    {
+      "id": "6418286b774b1700003c8ad6",
+      "text": "    const text = tweet.text",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304812,
+      "updated": 1679304812
+    },
+    {
+      "id": "6418286b774b1700003c8ad7",
+      "text": "    // URLの置換",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304812,
+      "updated": 1679304812
+    },
+    {
+      "id": "6418286b774b1700003c8ad8",
+      "text": "    let replacedText = '';",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304812,
+      "updated": 1679304812
+    },
+    {
+      "id": "6418286b774b1700003c8ad9",
+      "text": "    tweet.entities.urls.forEach(i => {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304812,
+      "updated": 1679304812
+    },
+    {
+      "id": "6418286b774b1700003c8ada",
+      "text": "      replacedText = text.replace(i.url, i.expanded_url)",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304812,
+      "updated": 1679304812
+    },
+    {
+      "id": "6418286b774b1700003c8adb",
+      "text": "    })",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304812,
+      "updated": 1679304812
+    },
+    {
+      "id": "6418286b774b1700003c8adc",
+      "text": "    ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304812,
+      "updated": 1679304812
+    },
+    {
+      "id": "6418286b774b1700003c8add",
+      "text": "    lines.push(replacedText)",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304812,
+      "updated": 1679304812
+    },
+    {
+      "id": "6418286b774b1700003c8ade",
+      "text": "    // TODO: Gyazoにアップロードする",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304812,
+      "updated": 1679304812
+    },
+    {
+      "id": "6418286b774b1700003c8adf",
+      "text": "    lines.push(tweet.photos.map(u => u.url).join('\\n'))",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304812,
+      "updated": 1679304812
+    },
+    {
+      "id": "6418286b774b1700003c8ae0",
+      "text": "    lines.join('\\n')",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679304812,
+      "updated": 1679304812
+    },
+    {
+      "id": "641801d81280f000006c07e7",
+      "text": "  とりあえず動くものはできた[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679294938,
+      "updated": 1679332724
+    },
+    {
+      "id": "64187f99774b1700008d7079",
+      "text": "  　[/motoso/Tweetを取り込むPopup menu v2]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679327130,
+      "updated": 1679327130
+    },
+    {
+      "id": "6418807d774b1700008d707c",
+      "text": "  　TODO",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679327358,
+      "updated": 1679327359
+    },
+    {
+      "id": "64187fc0774b1700008d707a",
+      "text": "   　[scrapbox-url-customizer]に統合したい",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679327169,
+      "updated": 1679327360
+    },
+    {
+      "id": "64187fcb774b1700008d707b",
+      "text": "   　　TwitterのURLの場合だけこっちが読み出されるようにしたい",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679327179,
+      "updated": 1679327359
+    },
+    {
+      "id": "64188082774b1700008d707d",
+      "text": "   　Gyazoアップロード機能",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679327362,
+      "updated": 1679327365
+    },
+    {
+      "id": "64187f96774b1700008d7078",
+      "text": " 連ツイはどうすれば取得できる？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679327127,
+      "updated": 1679327127
+    },
+    {
+      "id": "64181035774b1700003c8abc",
+      "text": " 　これはAPIでも取れなかったので[Karel Capek]ではin_reply_toからやや複雑なSQLで自前で構築してます[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679298613,
+      "updated": 1679309965
+    },
+    {
+      "id": "6418103c774b1700003c8abd",
+      "text": " 　　当時、内部向けにしかないのかーと思った",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679298621,
+      "updated": 1679298686
+    },
+    {
+      "id": "64181072774b1700003c8abf",
+      "text": " 　　2.0なら取れるかも？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679298675,
+      "updated": 1679298675
+    },
+    {
+      "id": "6417fd881280f000006c07d2",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679293833,
+      "updated": 1679293833
+    },
+    {
+      "id": "6417f3376eb40600008fc502",
+      "text": "\t[- oEmbed APIを使うのが良さそう][inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1679291189,
+      "updated": 1679291727
+    },
+    {
+      "id": "6417f3356eb40600008fc501",
+      "text": "\t\thttps://developer.twitter.com/en/docs/twitter-for-websites/oembed-api",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1679291187,
+      "updated": 1679291200
+    },
+    {
+      "id": "6417f3436eb40600008fc503",
+      "text": "\t\t認証不要、RateLimitなし",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1679291201,
+      "updated": 1679291210
+    },
+    {
+      "id": "6417f34e6eb40600008fc504",
+      "text": "\t\tAPIなのでrobot.txtで不許可にもしていない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1679291211,
+      "updated": 1679291219
+    },
+    {
+      "id": "6417f3556eb40600008fc505",
+      "text": "\t\t[inline]はこれを使っている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1679291219,
+      "updated": 1679291224
+    },
+    {
+      "id": "6417f3826eb40600008fc506",
+      "text": "\t\t画像ではなくHTMLが取れる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1679291264,
+      "updated": 1679291269
+    },
+    {
+      "id": "6417f1de774b1700001ccde5",
+      "text": "  画像URLがとれないんですよね[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679290846,
+      "updated": 1679291292
+    },
+    {
+      "id": "6417f39d6eb40600008fc507",
+      "text": "  \tあ、そうか、これを使うときはwidgets.jsが取ってきて埋めてるのかな？[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1679291291,
+      "updated": 1679291315
+    },
+    {
+      "id": "6417f41a6eb40600008fc508",
+      "text": "  \t\twidgets.jsがiframeを作っていた、残念",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1679291416,
+      "updated": 1679291427
+    },
+    {
+      "id": "6417f393774b1700001ccde9",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1679291284,
+      "updated": 1679291284
+    }
+  ]
+}
