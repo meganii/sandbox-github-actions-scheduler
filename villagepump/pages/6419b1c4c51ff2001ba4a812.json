@@ -1,0 +1,379 @@
+{
+  "id": "6419b1c4c51ff2001ba4a812",
+  "title": "画像をGyazoにアップロード",
+  "created": 1679405558,
+  "updated": 1679405630,
+  "lines": [
+    {
+      "id": "6419b1c4c51ff2001ba4a812",
+      "text": "画像をGyazoにアップロード",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405558,
+      "updated": 1679405558
+    },
+    {
+      "id": "6419b201aff09e0000083630",
+      "text": "ちゃんと動くかは試してない[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405570,
+      "updated": 1679405584
+    },
+    {
+      "id": "6419b201aff09e0000083631",
+      "text": "　回答を見て「あー、fetchがあるから非同期になっちゃうのかー」と気づいた",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405570,
+      "updated": 1679405630
+    },
+    {
+      "id": "6419b201aff09e0000083632",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405570,
+      "updated": 1679405570
+    },
+    {
+      "id": "6419b1d5aff09e00000835ff",
+      "text": "画像のURLを与えられた時に、その画像をダウンロードしてGyazoにアップロードして、そのURLを取得するJavaScriptの関数を作れますか？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405558,
+      "updated": 1679405559
+    },
+    {
+      "id": "6419b1d7aff09e0000083600",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405559,
+      "updated": 1679405559
+    },
+    {
+      "id": "6419b1d7aff09e0000083601",
+      "text": "もちろん、以下にそのような機能を持つJavaScript関数を示します。ただし、Gyazoに画像をアップロードするには、Gyazo APIを使用する必要があります。そのため、まずGyazo APIキーを取得してください。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405559,
+      "updated": 1679405559
+    },
+    {
+      "id": "6419b1e7aff09e0000083602",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405559,
+      "updated": 1679405559
+    },
+    {
+      "id": "6419b1ecaff09e0000083605",
+      "text": "code:js",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405559,
+      "updated": 1679405559
+    },
+    {
+      "id": "6419b1f3aff09e0000083607",
+      "text": " // Gyazo APIキーの設定",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405559,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083608",
+      "text": " const GYAZO_ACCESS_TOKEN = \"your_gyazo_api_access_token_here\";",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083609",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008360a",
+      "text": " async function downloadAndUploadToGyazo(imageUrl) {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008360b",
+      "text": "   try {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008360c",
+      "text": "     // 画像をバイナリデータとしてダウンロード",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008360d",
+      "text": "     const response = await fetch(imageUrl);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008360e",
+      "text": "     const blob = await response.blob();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008360f",
+      "text": "     const formData = new FormData();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083610",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083611",
+      "text": "     // Gyazoにアップロードするためのデータを用意",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083612",
+      "text": "     formData.append(\"image\", blob);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083613",
+      "text": "     formData.append(\"access_token\", GYAZO_ACCESS_TOKEN);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083614",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083615",
+      "text": "     // Gyazo APIに画像をアップロード",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083616",
+      "text": "     const gyazoResponse = await fetch(\"https://upload.gyazo.com/api/upload\", {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083617",
+      "text": "       method: \"POST\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083618",
+      "text": "       body: formData",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083619",
+      "text": "     });",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008361a",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008361b",
+      "text": "     // アップロードした画像のURLを取得",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008361c",
+      "text": "     const gyazoData = await gyazoResponse.json();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008361d",
+      "text": "     const gyazoUrl = gyazoData.url;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008361e",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008361f",
+      "text": "     return gyazoUrl;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083620",
+      "text": "   } catch (error) {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083621",
+      "text": "     console.error(\"Error downloading and uploading image:\", error);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083622",
+      "text": "     return null;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083623",
+      "text": "   }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083624",
+      "text": " }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083625",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083626",
+      "text": " // 使用例",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083627",
+      "text": " const imageUrl = \"https://example.com/path/to/your/image.jpg\";",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083628",
+      "text": " downloadAndUploadToGyazo(imageUrl)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e0000083629",
+      "text": "   .then(gyazoUrl => {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008362a",
+      "text": "     console.log(\"Uploaded image URL:\", gyazoUrl);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008362b",
+      "text": "   })",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008362c",
+      "text": "   .catch(error => {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008362d",
+      "text": "     console.error(\"Error:\", error);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008362e",
+      "text": "   });",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1fdaff09e000008362f",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405565,
+      "updated": 1679405565
+    },
+    {
+      "id": "6419b1ecaff09e0000083606",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405559,
+      "updated": 1679405559
+    },
+    {
+      "id": "6419b1e8aff09e0000083603",
+      "text": "このコードは、指定された画像のURLから画像をダウンロードし、Gyazoにアップロードして新しいURLを取得する関数 downloadAndUploadToGyazo を提供しています。使用する前に、GYAZO_ACCESS_TOKEN を取得したGyazo APIキーに置き換えてください。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405559,
+      "updated": 1679405559
+    },
+    {
+      "id": "6419b1eaaff09e0000083604",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1679405559,
+      "updated": 1679405559
+    }
+  ]
+}
