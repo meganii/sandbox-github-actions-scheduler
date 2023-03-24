@@ -1,0 +1,169 @@
+{
+  "id": "641d24a6fc6d51001c4ee843",
+  "title": "選択範囲中のURL先コードをcode2svgの画像に変換するPopupMenu",
+  "created": 1679631527,
+  "updated": 1679631549,
+  "lines": [
+    {
+      "id": "641d24a6fc6d51001c4ee843",
+      "text": "選択範囲中のURL先コードをcode2svgの画像に変換するPopupMenu",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a657",
+      "text": "選択範囲中のURL先コードを[code2svg]の画像に変換する[PopupMenu]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24b81280f00000f2a66d",
+      "text": " from [/takker/選択範囲中のURL先コードをcode2svgの画像に変換するPopupMenu]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631544,
+      "updated": 1679631546
+    },
+    {
+      "id": "641d24ab1280f00000f2a66c",
+      "text": "コードの引用が楽になった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631531,
+      "updated": 1679631537
+    },
+    {
+      "id": "641d24a71280f00000f2a658",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a659",
+      "text": "[https://gyazo.com/b37d0b9068796d1a86b53d9e53a01954]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a65a",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a65b",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a65c",
+      "text": " scrapbox.PopupMenu.addButton({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a65d",
+      "text": "   title: (text) => /https?:\\/\\//.test(text) ? \"code2svg\" : \"\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a65e",
+      "text": "   onClick: (text) => text.replace(/https?:\\/\\/\\S+/g, (match) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a65f",
+      "text": "     const url = new URL(match);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a660",
+      "text": "     if (url.hostname === \"github.com\") {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a661",
+      "text": "       const [user, repo, filepath] = url.pathname.match(/^\\/([^\\\\]+)\\/([^\\\\]+)\\/blob\\/(.+)$/)?.slice?.(1) ?? [];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a662",
+      "text": "       const [, start, end] = url.hash.match(/L(\\d+)-L(\\d+)/) ?? url.hash.match(/L(\\d+)/) ?? [];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a663",
+      "text": "       return `[https://code2svg.vercel.app/svg/${",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a664",
+      "text": "         start && end ? `L${start}-${end}/` : start ? `L${start}/` : \"\"",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a665",
+      "text": "       }https://raw.githubusercontent.com/${user}/${repo}/${filepath}#.svg ${match}]`;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a666",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a667",
+      "text": "     return `[https://code2svg.vercel.app/svg/${match}#.svg ${match}]`;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a668",
+      "text": "   }),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a669",
+      "text": " });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    },
+    {
+      "id": "641d24a71280f00000f2a66a",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1679631527,
+      "updated": 1679631527
+    }
+  ]
+}
