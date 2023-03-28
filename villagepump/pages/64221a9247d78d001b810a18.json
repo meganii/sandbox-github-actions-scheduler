@@ -1,0 +1,1499 @@
+{
+  "id": "64221a9247d78d001b810a18",
+  "title": "ChatGPTでScrapboxTranslatorを作る",
+  "created": 1679956628,
+  "updated": 1679960240,
+  "lines": [
+    {
+      "id": "64221a9247d78d001b810a18",
+      "text": "ChatGPTでScrapboxTranslatorを作る",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956628,
+      "updated": 1679956628
+    },
+    {
+      "id": "64221a9479e11300001120c0",
+      "text": " ChatGPTを使って、「ChatGPTを使って翻訳するコード」を書く[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956628,
+      "updated": 1679956650
+    },
+    {
+      "id": "64221aaa79e11300001120c3",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956650,
+      "updated": 1679956650
+    },
+    {
+      "id": "64221c7f79e11300001120f2",
+      "text": "[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957120,
+      "updated": 1679960222
+    },
+    {
+      "id": "64221aaa79e11300001120c4",
+      "text": "code:prompt",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960239,
+      "updated": 1679960240
+    },
+    {
+      "id": "64221aaf79e11300001120c6",
+      "text": " jsonファイルの日本語ドキュメントを元に、英訳したjsonファイルを出力するPythonコードを書きたいです。",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956655,
+      "updated": 1679956899
+    },
+    {
+      "id": "64221ab479e11300001120c7",
+      "text": " # jsonファイルのフォーマット",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956660,
+      "updated": 1679956782
+    },
+    {
+      "id": "64221b2e79e11300001120ca",
+      "text": " ```",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956782,
+      "updated": 1679956788
+    },
+    {
+      "id": "64221b3479e11300001120cd",
+      "text": " {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956789,
+      "updated": 1679956808
+    },
+    {
+      "id": "64221b4879e11300001120ce",
+      "text": "   \"pages\": [",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956808,
+      "updated": 1679956808
+    },
+    {
+      "id": "64221b4879e11300001120cf",
+      "text": "     {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956808,
+      "updated": 1679956808
+    },
+    {
+      "id": "64221b4879e11300001120d0",
+      "text": "       \"title\": \"page1title\",",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956808,
+      "updated": 1679956808
+    },
+    {
+      "id": "64221b4879e11300001120d1",
+      "text": "       \"lines\": [",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956808,
+      "updated": 1679956808
+    },
+    {
+      "id": "64221b4879e11300001120d2",
+      "text": "         \"page1title\",",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956808,
+      "updated": 1679956808
+    },
+    {
+      "id": "64221b4879e11300001120d3",
+      "text": "         \"line2\",",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956808,
+      "updated": 1679956808
+    },
+    {
+      "id": "64221b4879e11300001120d4",
+      "text": "         \"line3\"",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956808,
+      "updated": 1679956808
+    },
+    {
+      "id": "64221b4879e11300001120d5",
+      "text": "       ]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956808,
+      "updated": 1679956808
+    },
+    {
+      "id": "64221b4879e11300001120d6",
+      "text": "     },",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956808,
+      "updated": 1679956851
+    },
+    {
+      "id": "64221b7379e11300001120e4",
+      "text": "     {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956852,
+      "updated": 1679956955
+    },
+    {
+      "id": "64221bdb79e11300001120ea",
+      "text": "       \"title\": \"page2title\",",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956955,
+      "updated": 1679956957
+    },
+    {
+      "id": "64221bdb79e11300001120eb",
+      "text": "       \"lines\": [",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956955,
+      "updated": 1679956955
+    },
+    {
+      "id": "64221bdb79e11300001120ec",
+      "text": "         \"page2title\",",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956955,
+      "updated": 1679956958
+    },
+    {
+      "id": "64221bdb79e11300001120ed",
+      "text": "         \"line2\",",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956955,
+      "updated": 1679956961
+    },
+    {
+      "id": "64221bdb79e11300001120ee",
+      "text": "         \"line3\"",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956955,
+      "updated": 1679956955
+    },
+    {
+      "id": "64221bdb79e11300001120ef",
+      "text": "       ]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956955,
+      "updated": 1679956955
+    },
+    {
+      "id": "64221bdb79e11300001120f0",
+      "text": "     },",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956955,
+      "updated": 1679956955
+    },
+    {
+      "id": "64221b8079e11300001120e7",
+      "text": "     ...",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956864,
+      "updated": 1679956866
+    },
+    {
+      "id": "64221b4879e11300001120dd",
+      "text": "   ]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956808,
+      "updated": 1679956808
+    },
+    {
+      "id": "64221b4879e11300001120de",
+      "text": " }",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956808,
+      "updated": 1679956808
+    },
+    {
+      "id": "64221b3279e11300001120cb",
+      "text": " ```",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956787,
+      "updated": 1679956787
+    },
+    {
+      "id": "64221b2a79e11300001120c9",
+      "text": " # 実行すること",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956778,
+      "updated": 1679956976
+    },
+    {
+      "id": "64221af679e11300001120c8",
+      "text": " 1. jsonファイルを受け取る",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956726,
+      "updated": 1679956968
+    },
+    {
+      "id": "64221bba79e11300001120e9",
+      "text": " 2. 全pageのtitleのみを抽出し、英訳し、日英のtitleをまとめたdictionaryを作る",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956922,
+      "updated": 1679957057
+    },
+    {
+      "id": "64221bfc79e11300001120f1",
+      "text": " 3. それぞれのページの本文（lines)を翻訳する。注意: 他のページのtitleへのリンクが[タイトル]と鉤括弧に囲われ含まれている。それらのタイトルは、dictionaryが持つ英訳に一字一句従って翻訳される必要がある。",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679956988,
+      "updated": 1679957276
+    },
+    {
+      "id": "64221d1e79e11300001120f3",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957278,
+      "updated": 1679957278
+    },
+    {
+      "id": "64221d1f79e11300001120f4",
+      "text": " # 翻訳の方法",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957280,
+      "updated": 1679957284
+    },
+    {
+      "id": "64221d2479e11300001120f5",
+      "text": " ChatGPT APIを用いる。ChatGPT APIの入力と出力のサンプルは以下の通りである。assistantに英訳する様に伝え、出力を使いたい。翻訳時に条件や注意点がある時は、そのことも伝える。",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957284,
+      "updated": 1679957473
+    },
+    {
+      "id": "64221d6579e11300001120f6",
+      "text": " ```sample call",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957349,
+      "updated": 1679957381
+    },
+    {
+      "id": "64221d6c79e1130000112102",
+      "text": " # Note: you need to be using OpenAI Python v0.27.0 for the code below to work",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957356,
+      "updated": 1679957357
+    },
+    {
+      "id": "64221d6c79e1130000112103",
+      "text": " import openai",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957357,
+      "updated": 1679957357
+    },
+    {
+      "id": "64221d6c79e1130000112104",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957357,
+      "updated": 1679957357
+    },
+    {
+      "id": "64221d6c79e1130000112105",
+      "text": " openai.ChatCompletion.create(",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957357,
+      "updated": 1679957357
+    },
+    {
+      "id": "64221d6c79e1130000112106",
+      "text": "   model=\"gpt-3.5-turbo\",",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957357,
+      "updated": 1679957357
+    },
+    {
+      "id": "64221d6c79e1130000112107",
+      "text": "   messages=[",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957357,
+      "updated": 1679957357
+    },
+    {
+      "id": "64221d6c79e1130000112108",
+      "text": "         {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957357,
+      "updated": 1679957357
+    },
+    {
+      "id": "64221d6c79e1130000112109",
+      "text": "         {\"role\": \"user\", \"content\": \"Who won the world series in 2020?\"},",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957357,
+      "updated": 1679957357
+    },
+    {
+      "id": "64221d6c79e113000011210a",
+      "text": "         {\"role\": \"assistant\", \"content\": \"The Los Angeles Dodgers won the World Series in 2020.\"},",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957357,
+      "updated": 1679957357
+    },
+    {
+      "id": "64221d6c79e113000011210b",
+      "text": "         {\"role\": \"user\", \"content\": \"Where was it played?\"}",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957357,
+      "updated": 1679957357
+    },
+    {
+      "id": "64221d6c79e113000011210c",
+      "text": "     ]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957357,
+      "updated": 1679957357
+    },
+    {
+      "id": "64221d6c79e113000011210d",
+      "text": " )",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957357,
+      "updated": 1679957357
+    },
+    {
+      "id": "64221d6d79e113000011210e",
+      "text": " ```",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957358,
+      "updated": 1679957358
+    },
+    {
+      "id": "64221d6e79e113000011210f",
+      "text": " ```sample response",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957358,
+      "updated": 1679957379
+    },
+    {
+      "id": "64221d7279e1130000112111",
+      "text": " {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957363,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e1130000112112",
+      "text": "  'id': 'chatcmpl-6p9XYPYSTTRi0xEviKjjilqrWU2Ve',",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e1130000112113",
+      "text": "  'object': 'chat.completion',",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e1130000112114",
+      "text": "  'created': 1677649420,",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e1130000112115",
+      "text": "  'model': 'gpt-3.5-turbo',",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e1130000112116",
+      "text": "  'usage': {'prompt_tokens': 56, 'completion_tokens': 31, 'total_tokens': 87},",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e1130000112117",
+      "text": "  'choices': [",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e1130000112118",
+      "text": "    {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e1130000112119",
+      "text": "     'message': {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e113000011211a",
+      "text": "       'role': 'assistant',",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e113000011211b",
+      "text": "       'content': 'The 2020 World Series was played in Arlington, Texas at the Globe Life Field, which was the new home stadium for the Texas Rangers.'},",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e113000011211c",
+      "text": "     'finish_reason': 'stop',",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e113000011211d",
+      "text": "     'index': 0",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e113000011211e",
+      "text": "    }",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e113000011211f",
+      "text": "   ]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d8079e1130000112120",
+      "text": " }",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957377,
+      "updated": 1679957377
+    },
+    {
+      "id": "64221d7179e1130000112110",
+      "text": " ```",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957361,
+      "updated": 1679957362
+    },
+    {
+      "id": "64221e7979e1130000112124",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957626,
+      "updated": 1679957631
+    },
+    {
+      "id": "64221e7f79e1130000112126",
+      "text": "[chatgpt.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957631,
+      "updated": 1679960208
+    },
+    {
+      "id": "64221e8679e1130000112127",
+      "text": "code: python",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957639,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112128",
+      "text": " import json",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957643,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112129",
+      "text": " import openai",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011212a",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011212b",
+      "text": " def translate(text, role=\"user\"):",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011212c",
+      "text": "     response = openai.ChatCompletion.create(",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011212d",
+      "text": "         model=\"gpt-3.5-turbo\",",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011212e",
+      "text": "         messages=[",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011212f",
+      "text": "             {\"role\": \"system\", \"content\": \"You are a helpful assistant that translates Japanese text to English.\"},",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112130",
+      "text": "             {\"role\": role, \"content\": text}",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112131",
+      "text": "         ]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112132",
+      "text": "     )",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112133",
+      "text": "     return response.choices[0].message.content",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112134",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112135",
+      "text": " def translate_json_file(input_file, output_file):",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112136",
+      "text": "     with open(input_file, 'r', encoding='utf-8') as f:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112137",
+      "text": "         data = json.load(f)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112138",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112139",
+      "text": "     title_translation_dict = {}",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011213a",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011213b",
+      "text": "     # Translate page titles",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011213c",
+      "text": "     for page in data['pages']:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011213d",
+      "text": "         translated_title = translate(page['title'])",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011213e",
+      "text": "         title_translation_dict[page['title']] = translated_title",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011213f",
+      "text": "         page['title'] = translated_title",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112140",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112141",
+      "text": "     # Translate lines with translated titles replaced",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112142",
+      "text": "     for page in data['pages']:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112143",
+      "text": "         translated_lines = []",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112144",
+      "text": "         for line in page['lines']:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112145",
+      "text": "             for jp_title, en_title in title_translation_dict.items():",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112146",
+      "text": "                 line = line.replace(f\"[{jp_title}]\", f\"[{en_title}]\")",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112147",
+      "text": "             translated_line = translate(line)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112148",
+      "text": "             translated_lines.append(translated_line)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112149",
+      "text": "         page['lines'] = translated_lines",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011214a",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011214b",
+      "text": "     with open(output_file, 'w', encoding='utf-8') as f:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011214c",
+      "text": "         json.dump(data, f, ensure_ascii=False, indent=2)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011214d",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011214e",
+      "text": " # Replace 'input.json' and 'output.json' with your desired file paths",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e113000011214f",
+      "text": " translate_json_file('input.json', 'output.json')",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e8b79e1130000112150",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957644,
+      "updated": 1679960211
+    },
+    {
+      "id": "64221e7a79e1130000112125",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957626,
+      "updated": 1679960214
+    },
+    {
+      "id": "6422289579e1130000c5e791",
+      "text": "　多分できたのでは[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960213,
+      "updated": 1679960213
+    },
+    {
+      "id": "64221ec879e1130000112154",
+      "text": "　　リンクは本文翻訳する前に置き換えたのか。うまくいくなら、確かにその方がシンプルだな",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957704,
+      "updated": 1679957729
+    },
+    {
+      "id": "64221eb579e1130000112152",
+      "text": "　　後で検証する",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957685,
+      "updated": 1679957695
+    },
+    {
+      "id": "6422271b79e1130000c5e6f9",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959836,
+      "updated": 1679959836
+    },
+    {
+      "id": "6422271b79e1130000c5e6fa",
+      "text": ">ありがとう。改善点として、ドキュメントに更新があった時に更新部分だけ翻訳し直す様にしたい。どの様な実装が良いかな。[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959836,
+      "updated": 1679959887
+    },
+    {
+      "id": "6422273d79e1130000c5e71e",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959869,
+      "updated": 1679959870
+    },
+    {
+      "id": "6422274279e1130000c5e71f",
+      "text": "[chatgpt.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959874,
+      "updated": 1679960205
+    },
+    {
+      "id": "6422272a79e1130000c5e6fb",
+      "text": "code: python",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959850,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422272f79e1130000c5e6fd",
+      "text": " import json",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e6fe",
+      "text": " import openai",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e6ff",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e700",
+      "text": " def has_changes(new_line, old_line):",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e701",
+      "text": "     return new_line != old_line",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e702",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e703",
+      "text": " def translate_updated_json(input_file, old_input_file, translated_file):",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e704",
+      "text": "     with open(input_file, 'r', encoding='utf-8') as f:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e705",
+      "text": "         new_data = json.load(f)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e706",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e707",
+      "text": "     with open(old_input_file, 'r', encoding='utf-8') as f:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e708",
+      "text": "         old_data = json.load(f)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e709",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e70a",
+      "text": "     with open(translated_file, 'r', encoding='utf-8') as f:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e70b",
+      "text": "         translated_data = json.load(f)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e70c",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e70d",
+      "text": "     for new_page, old_page, translated_page in zip(new_data['pages'], old_data['pages'], translated_data['pages']):",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e70e",
+      "text": "         if has_changes(new_page['title'], old_page['title']):",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e70f",
+      "text": "             translated_title = translate(new_page['title'])",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e710",
+      "text": "             translated_page['title'] = translated_title",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e711",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e712",
+      "text": "         for idx, (new_line, old_line) in enumerate(zip(new_page['lines'], old_page['lines'])):",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e713",
+      "text": "             if has_changes(new_line, old_line):",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e714",
+      "text": "                 translated_line = translate(new_line)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e715",
+      "text": "                 translated_page['lines'][idx] = translated_line",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e716",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e717",
+      "text": "     with open(translated_file, 'w', encoding='utf-8') as f:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e718",
+      "text": "         json.dump(translated_data, f, ensure_ascii=False, indent=2)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e719",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e71a",
+      "text": " # Replace the file paths with your desired file paths",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e71b",
+      "text": " translate_updated_json('input_new.json', 'input_old.json', 'output.json')",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "6422273079e1130000c5e71c",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679959856,
+      "updated": 1679959856
+    },
+    {
+      "id": "64221ebe79e1130000112153",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679957695,
+      "updated": 1679957695
+    },
+    {
+      "id": "6422287279e1130000c5e78a",
+      "text": ">この実装では、JSONファイルのページ数と構造が同じであることを前提としています。ファイル構造が大幅に変更される場合や、ページが追加/削除される場合は、この実装が正しく機能しない可能性があります。そのようなシナリオに対応するには、より堅[chatgpt.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960179,
+      "updated": 1679960189
+    },
+    {
+      "id": "6422287279e1130000c5e78b",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960179,
+      "updated": 1679960179
+    },
+    {
+      "id": "6422286f79e1130000c5e787",
+      "text": ">ファイル構造は同じだと思うけど、ページが追加/削除される可能性は大いにある。それに対応してほしい[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960175,
+      "updated": 1679960178
+    },
+    {
+      "id": "6422286f79e1130000c5e788",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960175,
+      "updated": 1679960176
+    },
+    {
+      "id": "6422288579e1130000c5e790",
+      "text": "[chatgpt.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960199,
+      "updated": 1679960201
+    },
+    {
+      "id": "6422286379e1130000c5e720",
+      "text": "code: python",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960163,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e754",
+      "text": " import json",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e755",
+      "text": " import openai",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e756",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e757",
+      "text": " def has_changes(new_line, old_line):",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e758",
+      "text": "     return new_line != old_line",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e759",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e75a",
+      "text": " def translate_updated_json(input_file, old_input_file, translated_file):",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e75b",
+      "text": "     with open(input_file, 'r', encoding='utf-8') as f:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e75c",
+      "text": "         new_data = json.load(f)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e75d",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e75e",
+      "text": "     with open(old_input_file, 'r', encoding='utf-8') as f:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e75f",
+      "text": "         old_data = json.load(f)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e760",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e761",
+      "text": "     with open(translated_file, 'r', encoding='utf-8') as f:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e762",
+      "text": "         translated_data = json.load(f)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e763",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e764",
+      "text": "     old_pages_dict = {page['title']: page for page in old_data['pages']}",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e765",
+      "text": "     translated_pages_dict = {page['title']: page for page in translated_data['pages']}",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e766",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e767",
+      "text": "     new_translated_pages = []",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e768",
+      "text": "     for new_page in new_data['pages']:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e769",
+      "text": "         new_title = new_page['title']",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e76a",
+      "text": "         if new_title not in old_pages_dict:  # Page is added",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e76b",
+      "text": "             translated_page = {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e76c",
+      "text": "                 'title': translate(new_title),",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e76d",
+      "text": "                 'lines': [translate(line) for line in new_page['lines']]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e76e",
+      "text": "             }",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e76f",
+      "text": "         else:  # Page exists in the old data",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e770",
+      "text": "             old_page = old_pages_dict[new_title]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e771",
+      "text": "             translated_page = translated_pages_dict[new_title]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e772",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e773",
+      "text": "             if has_changes(new_page['title'], old_page['title']):",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e774",
+      "text": "                 translated_page['title'] = translate(new_page['title'])",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e775",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e776",
+      "text": "             for idx, (new_line, old_line) in enumerate(zip(new_page['lines'], old_page['lines'])):",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e777",
+      "text": "                 if has_changes(new_line, old_line):",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e778",
+      "text": "                     translated_page['lines'][idx] = translate(new_line)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e779",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e77a",
+      "text": "         new_translated_pages.append(translated_page)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e77b",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e77c",
+      "text": "     # Remove deleted pages from the translated data",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e77d",
+      "text": "     translated_data['pages'] = [page for page in translated_data['pages'] if page['title'] in old_pages_dict]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e77e",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e77f",
+      "text": "     translated_data['pages'] = new_translated_pages",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e780",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e781",
+      "text": "     with open(translated_file, 'w', encoding='utf-8') as f:",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e782",
+      "text": "         json.dump(translated_data, f, ensure_ascii=False, indent=2)",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e783",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e784",
+      "text": " # Replace the file paths with your desired file paths",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e785",
+      "text": " translate_updated_json('input_new.json', 'input_old.json', 'output.json')",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286779e1130000c5e786",
+      "text": " ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    },
+    {
+      "id": "6422286479e1130000c5e753",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1679960167,
+      "updated": 1679960167
+    }
+  ]
+}
