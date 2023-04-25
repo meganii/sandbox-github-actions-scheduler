@@ -1,0 +1,1765 @@
+{
+  "id": "6447719607742d001b240a1d",
+  "title": "Gyazzみたいなエディタ作りでReact.jsを学ぶ:hooksを使った書き方",
+  "created": 1682403735,
+  "updated": 1682403788,
+  "lines": [
+    {
+      "id": "6447719607742d001b240a1d",
+      "text": "Gyazzみたいなエディタ作りでReact.jsを学ぶ:hooksを使った書き方",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403735,
+      "updated": 1682403735
+    },
+    {
+      "id": "644771966eb4060000d5e225",
+      "text": "from [Gyazzみたいなエディタ作りでReact.jsを学ぶ]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771cb6eb4060000d5e31f",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403788,
+      "updated": 1682403788
+    },
+    {
+      "id": "644771966eb4060000d5e227",
+      "text": "[** クラスベースのコンポーネントはもう古い？]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e228",
+      "text": "\thooksで書くより回りくどいと感じた[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e229",
+      "text": "\t (クラスベース未経験の発言なので留意)",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e22a",
+      "text": "\t そういう実験ができる規模で始めてるのでいろいろ意見ください、書き直して比較してみます[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e22b",
+      "text": "\t  了解です！[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e22c",
+      "text": "\t ざっくりとですが、たとえば`Editor.js`ならこう書けそうです[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e22d",
+      "text": "\t  code:Editor-hook.js",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e22e",
+      "text": "\t   // importこれであってるか自信ない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e22f",
+      "text": "\t   import React, { useState, useEffect, useCallback, useMemo  } from 'react'; ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e230",
+      "text": "    import Line from './Line' ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e231",
+      "text": "    ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e232",
+      "text": "    const useLines = (initialLines) => {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e233",
+      "text": "      const [lines, setLines] = useState(initialLines);",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e234",
+      "text": "      useEffect(() => setLines(initialLines), [initialLines]);",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e235",
+      "text": "   これなんだろう？（無くても動いた）[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e236",
+      "text": "   `useLines`に渡されるlines(`initialLines`)そのものの変更に対応するために入れました[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e237",
+      "text": "    `<Editor lines={lines} />`のlinesを変更するロジックを入れると変化がわかるはず",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e238",
+      "text": "    現状だと[Appから渡されるlinesの中身が変わらない https://github.com/inajob/simple-inline-editor/blob/b72f82dda555562d86b4d535842c88526873f455/src/components/App.js#L7]ため、この行があってもなくても挙動がわからない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e239",
+      "text": "    あー、なるほど・・[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e23a",
+      "text": "    \tまだデータのロードとかは頭が回ってないですね。きっとそこまで作ったらわかるのでしょう。",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e23b",
+      "text": "   useEffectでstate更新について",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e23c",
+      "text": "   　ここ[Gyazzみたいなエディタ作りでReact.jsを学ぶ#6365b19c6eb4060000f6d8ed]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e23d",
+      "text": "   　これ、Lineコンポーネントに適切にkeyを指定すると要らなくなりますね[miyamonz.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e23e",
+      "text": "   　　たぶん",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e23f",
+      "text": "   　　アプリケーションのコード全体見てないので、どこで状態管理してるのかとか分からんので一概には言えないですが",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e240",
+      "text": "   　https://beta.reactjs.org/learn/you-might-not-need-an-effect#resetting-all-state-when-a-prop-changes",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e241",
+      "text": "   code:Editor-hook.js",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e242",
+      "text": "      const modify = useCallback(",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e243",
+      "text": "        (lineIdx, text) => setLines((prev) => {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e244",
+      "text": "          prev[lineIdx] = text;",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e245",
+      "text": "          return [...prev];",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e246",
+      "text": "        }),",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e247",
+      "text": "        []",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e248",
+      "text": "      );",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e249",
+      "text": "      ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e24a",
+      "text": "      return [lines, modify];",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e24b",
+      "text": "    };",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e24c",
+      "text": "      ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e24d",
+      "text": "    export const Editor = (props) => {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e24e",
+      "text": "      const [cursor, setCursor] = useState({",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e24f",
+      "text": "        row: 0,",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e250",
+      "text": "        col: 0,",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e251",
+      "text": "      });",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e252",
+      "text": "      const [lines, modify] = useLines(props.lines);",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e253",
+      "text": "      const lineProps = useMemo(",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e254",
+      "text": "        () => lines.map((line, index) => ({",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e255",
+      "text": "          value: line,",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e256",
+      "text": "          handleChange: (e) => modify(index, e.target.value),",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e257",
+      "text": "          onKeyDown: (e) => setCursor((prev) => {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e258",
+      "text": "            switch(e.key) {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e259",
+      "text": "              case \"ArrowUp\":",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e25a",
+      "text": "                return { row: prev.row - 1, col: prev.col };",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e25b",
+      "text": "              case \"ArrowDown\":",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e25c",
+      "text": "                return { row: prev.row + 1, col: prev.col };",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e25d",
+      "text": "              default:",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e25e",
+      "text": "                // 同じobjectを返せば再レンダリングされない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e25f",
+      "text": "                return prev;",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e260",
+      "text": "            }",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e261",
+      "text": "          }),",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e262",
+      "text": "        })),",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e263",
+      "text": "        [lines, modify]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e264",
+      "text": "      );",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e265",
+      "text": "      ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e266",
+      "text": "      return (<div> ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e267",
+      "text": "        {lineProps.map((props, index) => (",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e268",
+      "text": "          <Line",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e269",
+      "text": "            key={index}",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e26a",
+      "text": "            isFocus={index === cursor.row}",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e26b",
+      "text": "            {...props}",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e26c",
+      "text": "          />",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e26d",
+      "text": "        ))}",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e26e",
+      "text": "      </div>);",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e26f",
+      "text": "    };",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e270",
+      "text": "    ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e271",
+      "text": "   逆にめんどくさくなっているような……",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e272",
+      "text": "    `useLines()`に一部切り出したけど、中途半端かも",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e273",
+      "text": "     この規模だとあんまりうれしくない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e274",
+      "text": "    event listenerまでまとめて配列にして生成したのは、再レンダリングを防ぐため",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e275",
+      "text": "     arrow functionの形で渡すと、毎回新しいobjectを生成することになるため、何度もevent listenerの登録解除が繰り返されてしまう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e276",
+      "text": "     小規模のコードなら、あまりきにしなくてもいいっちゃいい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e277",
+      "text": "   \tとてもありがたい！自分ではこれまだ書けないですね・・[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e278",
+      "text": "   \t\tそして逆に面倒くさくなっている気持ちは確かに・・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e279",
+      "text": "   \tこれ自分が設計ミスっていると思うんですよね。ただより適切な設計がどういうものか自分にもわからないです……[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e27a",
+      "text": "   \t ScrapBubbleの複雑さと同じ匂いを感じる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e27b",
+      "text": "   \t [クラスコンポーネント]では、設計に悩む感じがなかったので、その点だけ見るとクラスベースの方が良さそうだな・・[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e27c",
+      "text": "   \t \tそれゆえに？見やすいというのも大事",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e27d",
+      "text": "   \t \t元の設計ではevent listenerの差し替えによる再レンダリングとか考えてなかったけどどう動くんだろう？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e27e",
+      "text": "   \t \t 動作内容自体は同じのはずです[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e27f",
+      "text": "   \t [immer]使ったらもう少しきれいになりそう[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e280",
+      "text": "   ざっと書くつもりが、だいぶ大事になってしまった",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e281",
+      "text": "    行編集と文字編集とがばらばらになっているのがめんどく感じた",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e282",
+      "text": "     前者はReactで管理しているが、後者は<textarea />が管理している",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e283",
+      "text": "    とはいえ、文字編集までReactで管理させると、Scrapboxのように全てを自前で実装しなければならなくなるので、かなりハードルが高くなる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e284",
+      "text": "    \tそうなんですよ、日本語入力とか考えるとこのくらいの役割分担の方が結果楽になりそうだなと思っています[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e285",
+      "text": "    \t一応先行例[. [Zatsu wiki]]はあるので、このコードを参考に後々実装してみるのもありかも[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e286",
+      "text": "    \t\tひとまずこの実装は汚いけど一度書いているので、まず知見のあるこっちでやってみます。",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e287",
+      "text": "    \t\t\t[/nishio/複数の問題を一度に解決しようとすると高確率で失敗する]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e288",
+      "text": "  `<Line />`を例にあげたほうが適切でした。こっちはかなりすっきりします[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e289",
+      "text": "   code:Line-hook.js",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e28a",
+      "text": "    import React, { useRef, useEffect } from 'react'; ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e28b",
+      "text": "      ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e28c",
+      "text": "    export const Line = (props) => {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e28d",
+      "text": "      const ref = useRef();",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e28e",
+      "text": "      useEffect(() =>{",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e28f",
+      "text": "        if (props.isFocus) {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e290",
+      "text": "          ref.current?.focus?.();",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e291",
+      "text": "        }",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e292",
+      "text": "      } ,[props.isFocus]);",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e293",
+      "text": "      ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e294",
+      "text": "      return ( ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e295",
+      "text": "        <textarea ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e296",
+      "text": "           ref={ref}",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e297",
+      "text": "           value={props.value} ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e298",
+      "text": "           onChange={props.onChange} ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e299",
+      "text": "           onKeyDown={props.onKeyDown} ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e29a",
+      "text": "        />",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e29b",
+      "text": "      );",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e29c",
+      "text": "    };",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e29d",
+      "text": "   お、まだ理解してないけどソースはすっきりした気がします[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e29e",
+      "text": "   refでDOMにアクセスしている点は同じですね[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e29f",
+      "text": "   `focus()`の実行タイミングを変えています",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2a0",
+      "text": "    Componentの再レンダリング時(`componentWillUpdate`)とunmount時(`componentWillUnmount`)から",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2a1",
+      "text": "    `props.isFocus`の変更時(`useEffect(() => {...}, [props.isFocus])`)に変えた",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2a2",
+      "text": "     [useEffect()]は、第二引数の配列に指定した変数の変更をトリガーに実行されるevent listenerのようなイメージ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2a3",
+      "text": "     　わかりやすい説明！[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2a4",
+      "text": "    処理が一カ所にまとまった点がポイント",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2a5",
+      "text": "    タイミング、これで問題ないかな、、後で実際に試してみます[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2a6",
+      "text": "    　DOM構築後にfocusしてほしい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2a7",
+      "text": "    　確認した。動いた。",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2a8",
+      "text": "    　[https://ja.reactjs.org/docs/hooks-effect.html#effects-without-cleanup 副作用フックの利用法 – React]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2a9",
+      "text": "     \tまさにこの例だ。クラスベースの書き方とフックを使った書き方が併記されている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2aa",
+      "text": " 僕は[関数コンポーネント]だけでKozanebaなどを作ってます。Reactを始めたタイミングでもう「クラスコンポーネントもあるけど関数コンポーネントに移行していくよ」という流れだったので〜[nishio.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2ab",
+      "text": " \t使い分けるものではなくて、統一した方が良いんですかね？（上のEditor.jsの例はクラスベースの方が良い気がしてる・・）[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2ac",
+      "text": " \t\t移行という表現だし今から書くならクラスベースじゃない方が良さそうだな・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2ad",
+      "text": " \t\t「使い分ける」のためには両方を知って「どちらが向いてるか」を判断できるようになる必要があるが、僕は面倒だったので「移行していくって言ってるんだったら関数コンポーネントだけでいいや」と学習をサボった[nishio.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2ae",
+      "text": " \t\t ドキュメントのサンプルがクラスコンポーネントの書き方でだけ書かれてるとかで少し困った",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2af",
+      "text": " 普段仕事でもReactで書いてますが、関数コンポーネントとhooksでしか書いてません[miyamonz.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2b0",
+      "text": "  hooksの使い方を理解すれば、特に問題なく使えるかと思われます。",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2b1",
+      "text": "\t[** →hookで作り直してみることにする]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2b2",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2b3",
+      "text": "[** 今わかっているおかしなところ]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2b4",
+      "text": "\tlintがエラーを出している",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2b5",
+      "text": "\t\tcode: pre",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2b6",
+      "text": "\t\t src\\components\\Editor.js",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2b7",
+      "text": "     Line 16:5:   Do not mutate state directly. Use setState()  react/no-direct-mutation-state",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2b8",
+      "text": "     Line 24:6:   Do not mutate state directly. Use setState()  react/no-direct-mutation-state",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2b9",
+      "text": "     Line 28:6:   Do not mutate state directly. Use setState()  react/no-direct-mutation-state",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2ba",
+      "text": "  setStateするStateを作る時に既存のStateを上書きしているのがダメ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2bb",
+      "text": "  \tわかっていたけど、これでも動くっしょと思って取り敢えず実装している",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2bc",
+      "text": "  全部コピーすればよいのかな？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2bd",
+      "text": "  こんな感じに、前のobjectを破棄して作り直せばいいと思う[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2be",
+      "text": "   code:immutable.js",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2bf",
+      "text": "    this.setState({",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2c0",
+      "text": "      cursor: {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2c1",
+      "text": "        row: this.state.cursor.row + 1,",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2c2",
+      "text": "        col: this.state.cursor.col,",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2c3",
+      "text": "      }",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2c4",
+      "text": "      lines: this.state.lines",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2c5",
+      "text": "    })",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2c6",
+      "text": "   なんか大がかりになってしまった",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2c7",
+      "text": "    stateを`cursor`と`lines`とで別々に持たせればすっきりしそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2c8",
+      "text": "    あ、もしかしてクラスベースだと、`this.state`にすべての状態を詰め込まないといけないのか？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2c9",
+      "text": "   linesは別のオブジェクトにしないといけない？ e.g. `[...this.state.lines]`[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2ca",
+      "text": "   オブジェクトがいくつも入れ子になってる時の非破壊的更新に関しては、手で書いて複雑だなーと思い出したタイミングで[immer]を使うようになりました[nishio.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2cb",
+      "text": "   \timmer！みてみる[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2cc",
+      "text": "   \t\t取り敢えずまだ不要そう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2cd",
+      "text": "   \t名前だけ聞いたことあったけど、[非破壊更新]を便利にやるやつだったのか[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2ce",
+      "text": "   \t　[/nishio/immer]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2cf",
+      "text": "   \t　[/mrsekut-p/Immer]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2d0",
+      "text": "     immer自体はReactと関係ないようだ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2d1",
+      "text": "      [コードサイズも小さい https://esm.sh/v96/immer@9.0.16/es2022/immer.bundle.js]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2d2",
+      "text": "   \t　React hooks版",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2d3",
+      "text": "    \t　https://github.com/immerjs/use-immer",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2d4",
+      "text": "      ちょっとwrapした程度の簡単なコード",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2d5",
+      "text": "      このくらいなら楽にPreact hooksとも組み合わせられそうだ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2d6",
+      "text": " \t→ hookで書き直した結果この部分はすっきりした",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2d7",
+      "text": " テキストエリアにフォーカスを与えているところ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2d8",
+      "text": " \thttps://github.com/inajob/simple-inline-editor/blob/b72f82dda555562d86b4d535842c88526873f455/src/components/Line.js#L16",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2d9",
+      "text": " \t\tこうするしかないのかな？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2da",
+      "text": " \t\tたぶんそれしかないです。DOM操作はref経由でやるしかない[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2db",
+      "text": " \t→ このまま(useEffectに逃がしたが、本質は同じ）",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2dc",
+      "text": "\tマウスでフォーカス当てた後、入力すると（前回当たってた方に）戻される[sta.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2dd",
+      "text": "\t [Gyazzみたいなエディタ作りでReact.jsを学ぶ#6365f0506eb40600005f5619] 直しました[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2de",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2df",
+      "text": "[**  hookで書き直してみる]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2e0",
+      "text": "\tひとまずuseMemoとかは無しで愚直にやってみる[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2e1",
+      "text": "\thttps://github.com/inajob/simple-inline-editor/blob/543df124b28944798e2faa326e04221bc90ad7e6/src/components/Editor.js",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2e2",
+      "text": "code: Editor.js",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2e3",
+      "text": " import React, { useState, useEffect } from 'react';",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2e4",
+      "text": " import Line from './Line';",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2e5",
+      "text": " ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2e6",
+      "text": " export const Editor = (props) => {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2e7",
+      "text": "   const [cursor, setCursor] = useState({",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2e8",
+      "text": "     row: 0,",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2e9",
+      "text": "     col: 0,",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2ea",
+      "text": "   });",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2eb",
+      "text": "   const [lines, setLines] = useState(props.lines);",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2ec",
+      "text": " ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2ed",
+      "text": "   return (",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2ee",
+      "text": "     <div>",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2ef",
+      "text": "       {lines.map((line, index) => (",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2f0",
+      "text": "         <Line",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2f1",
+      "text": "           key={index}",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2f2",
+      "text": "           isFocus={index === cursor.row}",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2f3",
+      "text": "           value={line}",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2f4",
+      "text": "           onChange={(e) => ((i) => {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2f5",
+      "text": "             setLines((prev) => {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2f6",
+      "text": "               prev[i] = e.target.value;",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2f7",
+      "text": "               return [...prev];",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2f8",
+      "text": "             })",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2f9",
+      "text": "           })(index)}",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2fa",
+      "text": "           onKeyDown={(e) => setCursor((prev) => {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2fb",
+      "text": "             switch(e.key) {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2fc",
+      "text": "               case \"ArrowUp\":",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2fd",
+      "text": "                 return { row: prev.row - 1, col: prev.col };",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2fe",
+      "text": "               case \"ArrowDown\":",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e2ff",
+      "text": "                 return { row: prev.row + 1, col: prev.col };",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e300",
+      "text": "               default:",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e301",
+      "text": "                 // 同じobjectを返せば再レンダリングされない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e302",
+      "text": "                 return prev;",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e303",
+      "text": "             }",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e304",
+      "text": "           })}",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e305",
+      "text": "         />",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e306",
+      "text": "       ))}",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e307",
+      "text": "     </div>);",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e308",
+      "text": " };",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e309",
+      "text": " ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e30a",
+      "text": " export default Editor",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e30b",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e30c",
+      "text": "\t最適化を除くとクラスベースなものと比べて読みにくいということはないかな",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e30d",
+      "text": "\t\tメモ化とかを頑張ったので可読性が下がったという理解",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e30e",
+      "text": "\t\t\t[早すぎる最適化]的な問題かな？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e30f",
+      "text": "\t\t\t単に理解が追い付いていないだけかも",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e310",
+      "text": "\tlinePropsもあえてJSXの中に展開して書く事でひとまず短いうちは読みやすい書き方にした",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e311",
+      "text": "\tLine.jsは上で[takker.icon]さんが示してくれたままのもの",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e312",
+      "text": "\tいくつかこれには無駄がある",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e313",
+      "text": "\t\tEditor.js",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e314",
+      "text": "\t\t\t匿名関数がレンダリングのたびに生成・設定される",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e315",
+      "text": "\t\t\t\t[Gyazzみたいなエディタ作りでReact.jsを学ぶ#6365b19c6eb4060000f6d920]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e316",
+      "text": "    > event listenerまでまとめて配列にして生成したのは、再レンダリングを防ぐため",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e317",
+      "text": "    >   arrow functionの形で渡すと、毎回新しいobjectを生成することになるため、何度もevent listenerの登録解除が繰り返されてしまう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e318",
+      "text": "   気にするのは、画面がちらついて困るようになってからでもいいかも[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e319",
+      "text": "    [富豪的プログラミング]だ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e31a",
+      "text": "\t\tLine.js",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e31b",
+      "text": "\t\t\t特に無さそう？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e31c",
+      "text": "\tひとまず最適化の話は考えずエディタとしての機能を足していこう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e31d",
+      "text": "\t\tその流れでまたReact的な側面で詰まるだろうからそこで学びを得たい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    },
+    {
+      "id": "644771966eb4060000d5e31e",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403736,
+      "updated": 1682403736
+    }
+  ]
+}

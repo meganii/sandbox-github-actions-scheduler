@@ -1,0 +1,1170 @@
+{
+  "id": "644771c007c4db001ccfdea3",
+  "title": "Gyazzみたいなエディタ作りでReact.jsを学ぶ:開発ログ",
+  "created": 1682403777,
+  "updated": 1682415127,
+  "lines": [
+    {
+      "id": "644771c007c4db001ccfdea3",
+      "text": "Gyazzみたいなエディタ作りでReact.jsを学ぶ:開発ログ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082609d",
+      "text": "from [Gyazzみたいなエディタ作りでReact.jsを学ぶ]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c76eb406000082613a",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403784,
+      "updated": 1682403784
+    },
+    {
+      "id": "644771c06eb406000082609f",
+      "text": "[** エディタとしての基本機能を実装]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260a0",
+      "text": "\thttps://github.com/inajob/simple-inline-editor/commit/789b18281d8df8d5cd4238c757151675bd8722d7",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260a1",
+      "text": "\t行の分割や結合も実装した",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260a2",
+      "text": "\tここまでは問題なさそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260a3",
+      "text": "\t新たな疑問",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260a4",
+      "text": "\t\tテストを作るとしたらどうするのが良いのか・・？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260a5",
+      "text": " \t\t抽象化層が必要かな？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260a6",
+      "text": " \t\treduxなら出来そうな気がするが、大がかりすぎる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260a7",
+      "text": " \t\tあるイベントが発火したときにlines,rowが意図した変化をするかテストで保証したい気持ちがある",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260a8",
+      "text": " \t\thookにきりだしてテストかな[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260a9",
+      "text": " \t\t [icon-suggestion]のテストがわかりやすい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260aa",
+      "text": " \tこれ、React以外で作る方法がイメージつかないのだが、ほかのフレームワークでも同じようなノリで作れるものなのだろうか？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260ab",
+      "text": "\thttps://github.com/inajob/simple-inline-editor/commit/d799909d044742c872af2c8508c8cef60a11af9d",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260ac",
+      "text": "\t\tマウスクリックに対応",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260ad",
+      "text": "\t\tここも問題なし",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260ae",
+      "text": "\t次やること",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260af",
+      "text": "\t\t行を分割するようなEnterが発生したときに次の行に分割後の文字列が入り、カーソルが移動するのは良いのだが、カーソルの左右位置がおかしい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260b0",
+      "text": "\t\t\t今はRowはReactで制御しているがColumnはエディタコンポーネントに任せているのでそのツケが回ってきている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260b1",
+      "text": "\thttps://github.com/inajob/simple-inline-editor/commit/822aa44e88c9d244811f1bb55ffddc2926a6fc32",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260b2",
+      "text": "\t\tと思ったけどColumn制御は簡単だった",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260b3",
+      "text": "\t\tColumnをいじったときだけuseEffectが発動するのでなんかいい感じになる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260b4",
+      "text": "\t\tここまででエディタコンポーネントとして割と違和感なく動くようになったような気がする",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260b5",
+      "text": "\thttps://github.com/inajob/simple-inline-editor/commit/ba59eb857933b42ac20ad486e3b7fc0d8507099e",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260b6",
+      "text": "\t\t行の末尾で→、行頭で←キーを押したときにカーソルを行移動させる処理を追加",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260b7",
+      "text": "\thttps://github.com/inajob/simple-inline-editor/commit/24b855f43d58120ed4eded8d72a54db9815bc74d",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260b8",
+      "text": "\t\t見出し書式に対応",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260b9",
+      "text": "\t\t[https://gyazo.com/dd78979b234819f5bfe0f49fffaa6bbb]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260ba",
+      "text": "\t\t\t普通のエディタっぽい見た目になった",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260bb",
+      "text": "\t\t\tLineコンポーネントが見出しを判断する設計で良いかは疑問が残るな",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260bc",
+      "text": "\t\t\t\tMarkdown以外に対応する必要があるか？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260bd",
+      "text": "\thttps://github.com/inajob/simple-inline-editor/commit/291130cd5fdc566171395b56c06388f6c585bf74",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260be",
+      "text": "\t\tURLっぽい文字があるとリンクにするようにした",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260bf",
+      "text": "\t\t[https://gyazo.com/b650297af854c6ccd0947ad14bff5304]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260c0",
+      "text": "\t\t\tおーWikiっぽい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260c1",
+      "text": "　\tフォーカスが当たっていない行をHTMLとしてレンダリングするようにした",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260c2",
+      "text": "　\t\t微妙に上下位置がずれるのが気になる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260c3",
+      "text": "　\t\t\tスタイルをうまいこと指定したら直った",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260c4",
+      "text": "　\tWikiパーサーみたいなのを書く羽目になっている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260c5",
+      "text": "　\t\tLineコンポーネントの中に書いてしまったが、外に出した方が良い",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260c6",
+      "text": "　\t\t文字列→JSXする関数を外から与える方式にすると良さそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260c7",
+      "text": "　\tあとは記法をどんどん定義していけばインラインの書式は簡単に増やせる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260c8",
+      "text": "　\t\tここは面白くないので後回し",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260c9",
+      "text": "　\tなんとなくMarkdown風にしているが、Markdownの表とかは対応する気はない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260ca",
+      "text": "　\t\t1ペイン編集画面でMarkdownの表記法と見た目の表をうまく両立させる良い方法が思いつかない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260cb",
+      "text": "\thttps://github.com/inajob/simple-inline-editor/commit/fb61d4df6eb067c93c5fad489f3fc20849c75d25",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260cc",
+      "text": "\t\t`<Enter>`で連続改行できない の解決",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260cd",
+      "text": "\t\tなんとなくフォーカスのある行を黄色くした",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260ce",
+      "text": "[** 箇条書きのスタイル]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260cf",
+      "text": "\tMarkdown準拠の箇条書きに対応したい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260d0",
+      "text": "\t\tScrapbox風でもよいのだが、ここは好み",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260d1",
+      "text": "\t編集行の箇条書きのバレットをどう表示するか？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260d2",
+      "text": "\t\ta. 編集文字に含める",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260d3",
+      "text": "\t\t\tカーソルが当たったときに表示文字がずれるのが気になる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260d4",
+      "text": "\t\t\t現行のinlineはこっち",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260d5",
+      "text": "\t\tb. 行のスタイルに含め、編集文字に含めない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260d6",
+      "text": "\t\t\t箇条書きスタイルそのものを消すのがちょっと直観的でない動きになりそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260d7",
+      "text": "\t\t\tScrapboxはこれに近そう（そもそも実装方式が違うので比較できないが）",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260d8",
+      "text": "\tbで実装した",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260d9",
+      "text": "\t\thttps://github.com/inajob/simple-inline-editor/commit/37d298a2df3bf116c3023eb29fba1854c884c64f",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260da",
+      "text": "\t\t\tリスト記法を認識して書式をつける",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260db",
+      "text": "\t\t\t\t箇条書きのバレットを表示するのにflexを使った",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260dc",
+      "text": "\t\t\t改行時にリストの深さを維持する",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260dd",
+      "text": "\t\thttps://github.com/inajob/simple-inline-editor/commit/3c35432afc254728b6fde2438de9a0587f102697",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260de",
+      "text": "\t\t\tTab, Shift+Tabでリストのインデントを上げ下げできる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260df",
+      "text": "[** ブロック記法]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260e0",
+      "text": "\t今のinlineは以下のような記法",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260e1",
+      "text": "\t\tcode: pre",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260e2",
+      "text": "\t\t >> type",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260e3",
+      "text": "\t\t body",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260e4",
+      "text": "\t\t <<",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260e5",
+      "text": "\t\tScrapboxみたいにリスト下にブロック要素を入れられるようにしたい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260e6",
+      "text": "\t\tmarkdownとの互換性は気にしない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260e7",
+      "text": "\t\t\t[- そもそもmarkdownだとリスト下にブロック要素を入れられないからな・・]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260e8",
+      "text": "\t\t\t\t[Markdownってコードブロックをインデントの下に置けないと勝手に思っていたが普通にできた]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260e9",
+      "text": "\tinlineのときはブロック要素を入れ子にする仕様も考えていたが、、いらないかな",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260ea",
+      "text": "\tひとまず通常のブロック記法を実装してみるか",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260eb",
+      "text": "\thttps://github.com/inajob/simple-inline-editor/commit/d31b807e34a7fbb30de65c632ab680ca6bc31106",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260ec",
+      "text": "\t\tシンプルなブロック記法を実装した",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260ed",
+      "text": "\thttps://github.com/inajob/simple-inline-editor/commit/c4dbfc0848dd0d17eabb37e31f5408c790cf2584",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260ee",
+      "text": "\t\tブロックのインデントを実装した",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260ef",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260f0",
+      "text": "[** ブロック記法のバリエーション]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260f1",
+      "text": "\t役立つブロック記法を実装して効果を確認したい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260f2",
+      "text": "\t\tプレビューのあるブロック",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260f3",
+      "text": "\t\t\tカンマ区切りテキストを表にするやつ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260f4",
+      "text": "\t\t\t\t楽そう、これからやろう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260f5",
+      "text": "\t\t\tmermaidとかが良いかな？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260f6",
+      "text": "\t\t\t\treactでうまくやる方法を探さないと",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260f7",
+      "text": "\t\t\t\t\t[https://future-architect.github.io/articles/20221027a/ Mermaid.jsをReact上でレンダリングする | フューチャー技術ブログ]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260f8",
+      "text": "\t\t\t\t\t\tあった、結構新しい記事で筋が良い",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260f9",
+      "text": "\t\t\tinlineではプレビューは下に出るようにしたが、やはり左右２ペインにしたい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260fa",
+      "text": "\t\t\t\tしかしスマートフォンだと下の方が良い",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260fb",
+      "text": "\t\t\t\t\tレスポンシブデザインにするか・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260fc",
+      "text": "\t\t\t\t\tスマートフォンは後回しにしよう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260fd",
+      "text": "\thttps://github.com/inajob/simple-inline-editor/commit/9f0ed76d0c295490395d4ccfe3c4b2be90e75934",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260fe",
+      "text": "\t\tテーブル記法",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb40600008260ff",
+      "text": "\thttps://github.com/inajob/simple-inline-editor/commit/befec1b50f4f9add49e71abfa8fb6cf4269f8a0a",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826100",
+      "text": "\t\tブロック記法編集を左右２ペインにした",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826101",
+      "text": "\t\t[https://gyazo.com/ae1fe43724acc56d8ae8a29421bbdd23]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826102",
+      "text": "\t\tこれもflexを使ったら簡単だった",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826103",
+      "text": "\tここまででおおむね元の実装に追いついたかな",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826104",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826105",
+      "text": "[** Mac/Chromeで日本語入力確定時に二重に文字が確定されてしまう]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826106",
+      "text": "\t手元環境がWindowsで直すのがつらい・・（Macもあるにはある）",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826107",
+      "text": "\t[https://qiita.com/ledsun/items/31e43a97413dd3c8e38e ブラウザでIME確定時のEnterキー入力をハンドリングしない - Qiita]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826108",
+      "text": " \tこの問題だった",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826109",
+      "text": " \t`keyCode`を使うのをやめたかったのだが・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082610a",
+      "text": " https://github.com/inajob/simple-inline-editor/commit/274dfbb3f8a32f216724148b9c9bedc68bcc30d2",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082610b",
+      "text": " \tfixed",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082610c",
+      "text": "[** コピーしたときにMarkdownがコピーされるようにする]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082610d",
+      "text": "\tlist itemは簡単そう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082610e",
+      "text": "\t\t行頭の`-`は疑似要素で出しているのでコピーできない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082610f",
+      "text": "\t\tfont-size:0の要素でコピーしたいMarkdownを用意しておけばOK",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826110",
+      "text": "\t\thttps://github.com/inajob/simple-inline-editor/commit/a7b80e3eda353796de38a4b34ea756b797614f3c",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826111",
+      "text": "\t\t\tできた",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826112",
+      "text": "\tblock要素はどうすればよいか・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826113",
+      "text": "\t\t一旦似たように対応した",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826114",
+      "text": "\t\t\thttps://github.com/inajob/simple-inline-editor/commit/fca1f062b15de3502c5906312062342d4009292b",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826115",
+      "text": "[** 細かい修正]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826116",
+      "text": "\t行選択",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826117",
+      "text": " \thttps://github.com/inajob/simple-inline-editor/commit/7d7e358f02a57c416c4977dad83f43652c75aa2e",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826118",
+      "text": " \t\t使い勝手が悪いが、切り出しなどを実装する際の布石",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826119",
+      "text": " \t\treactでselectionchangeイベントがサポートされていないので無理やりくっつける",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082611a",
+      "text": "\t折り返しがあるとレイアウトが崩れる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082611b",
+      "text": "\t\thttps://github.com/inajob/simple-inline-editor/commit/5cc7896cdfae2d46bfab170e04f963bb35214d15",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082611c",
+      "text": "\t\t泥臭いtipsがたくさんある・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082611d",
+      "text": "\t\t\tdisplay:none の要素のscrollHeightは0になってしまうので、直前でdisplay: blockにしている、最後に戻すので見た目には影響なし",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082611e",
+      "text": "\t\t\t文字のない行の高さが0になる問題が出ていた",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082611f",
+      "text": "\t\t\t\tfixed https://github.com/inajob/simple-inline-editor/commit/9a7292b64822295e42729fa9fb04a6656452613b",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826120",
+      "text": "\t\t\t1行内で選択したときも行選択が発動してうざかった",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826121",
+      "text": "\t\t\t\tfixed https://github.com/inajob/simple-inline-editor/commit/83f7c6e4efd3aeedf3346b94036efc18ad3ae6b8",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826122",
+      "text": "\tスマートフォンで行選択が動かない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826123",
+      "text": "\t\thttps://developer.mozilla.org/ja/docs/Web/API/Node/selectstart_event",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826124",
+      "text": "\t\t\tSafari on iOSはselectstartをサポートしていない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826125",
+      "text": "\t\thttps://github.com/inajob/simple-inline-editor/commit/d11f106557f93b9032a470e523a54b19dcf597b6",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826126",
+      "text": "\t\t\t操作性は悪いが修正した",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826127",
+      "text": "\t\t\tグローバルにイベントハンドラを仕込みっぱなしにするのは微妙だが、仕方ない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826128",
+      "text": "\tMarkdownを貼り付けたときにいい感じに整形される",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826129",
+      "text": "\t\thttps://github.com/inajob/simple-inline-editor/commit/735815d8ba631f1cf94bc2f0e57a0d2f48b60788",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082612a",
+      "text": "\tメモ化",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082612b",
+      "text": "\t\thttps://github.com/inajob/simple-inline-editor/commit/998c5daa39ae4e3f0b057975f6440a27e195ce8d",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082612c",
+      "text": "\t\t[Gyazzみたいなエディタ作りでReact.jsを学ぶ#6365b19c6eb4060000f6d8ff]のあたりが参考になった（今更）",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082612d",
+      "text": "\t\t useCallbackの依存とか、「これ、人間が書くのか、、」という気持ちになるな",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644795891280f00000b3ea30",
+      "text": "\t\t code actionがほしいですね[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1682412939,
+      "updated": 1682412945
+    },
+    {
+      "id": "644795931280f00000b3ea31",
+      "text": "\t\tそれより`var`が視界に入って発狂しそうになった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1682412949,
+      "updated": 1682412974
+    },
+    {
+      "id": "644795ab1280f00000b3ea32",
+      "text": "\t\t `const`つかって",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1682412974,
+      "updated": 1682412978
+    },
+    {
+      "id": "64479da06eb40600003bddc0",
+      "text": "\t\t お、後で直します！[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682415009,
+      "updated": 1682415017
+    },
+    {
+      "id": "644771c06eb406000082612e",
+      "text": "　フォーカスを与える処理をLineからEditorに移動させる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb406000082612f",
+      "text": "　\t`forwardRef`に手を出してしまった・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "6447960f1280f00000b3ea35",
+      "text": "　\t [createRef()]の使い道がよくわからない[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1682413073,
+      "updated": 1682413086
+    },
+    {
+      "id": "644771c06eb4060000826130",
+      "text": "　\thttps://github.com/inajob/simple-inline-editor/commit/bb44f88a7071b9acdafafc3ab353198b2d0173ba",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644795e51280f00000b3ea33",
+      "text": "　\tなぜfunctional componentに直に`forEach`が書かれているの……？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1682413031,
+      "updated": 1682413060
+    },
+    {
+      "id": "644796021280f00000b3ea34",
+      "text": "　\tなんかやばそうな設計してそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1682413060,
+      "updated": 1682413070
+    },
+    {
+      "id": "64479dfa6eb40600003bddc1",
+      "text": "　\t元の設計に戻したほうが良いかも、、[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682415098,
+      "updated": 1682415107
+    },
+    {
+      "id": "64479e066eb40600003bddc2",
+      "text": "　\t Lineでfocusの処理をするやつ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682415111,
+      "updated": 1682415127
+    },
+    {
+      "id": "644771c06eb4060000826131",
+      "text": "　クリックした時行頭に戻る仕様をなんとかする",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826132",
+      "text": "　\tクリックされた場所が何文字目かを知る必要がある",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826133",
+      "text": "　\t\tこれ、Scrapboxは各文字をspanで囲っていたやつでは・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826134",
+      "text": "　\t\t`document.getSelection()`の`focusNode`, `focusOffset`をうまいこと見てやれば何とか文字が数えられそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826135",
+      "text": "　\t\t\t泥臭いし書式が増えたときに対応が煩雑になりそう・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826136",
+      "text": "　\tなんとかしたが、これは・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826137",
+      "text": "　\t必須の機能ではないので、ひとまずコメントにしておこう（上のcommitに混ざってしまっている・・）",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    },
+    {
+      "id": "644771c06eb4060000826138",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1682403777,
+      "updated": 1682403777
+    }
+  ]
+}
