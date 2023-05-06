@@ -2,7 +2,7 @@
   "id": "643bc128fa948c001c3932bc",
   "title": "chatGPTとchatするUserScript",
   "created": 1681637685,
-  "updated": 1681893330,
+  "updated": 1683385153,
   "lines": [
     {
       "id": "643bc128fa948c001c3932bc",
@@ -10,6 +10,41 @@
       "userId": "616ca537c25a92001e5f1e0d",
       "created": 1681637685,
       "updated": 1681637685
+    },
+    {
+      "id": "64566ade5f1e0d0000f15388",
+      "text": "使い方",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683385055,
+      "updated": 1683385057
+    },
+    {
+      "id": "64566ae15f1e0d0000f15389",
+      "text": "　導入すると青いボタンが行ごとに出るので実行しちゃってください",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683385057,
+      "updated": 1683385085
+    },
+    {
+      "id": "64566b375f1e0d0000f1538c",
+      "text": "　 行の下に返答が挿入されます",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683385143,
+      "updated": 1683385153
+    },
+    {
+      "id": "64566aff5f1e0d0000f1538b",
+      "text": "　[** 多分]並列処理できます",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683385087,
+      "updated": 1683385126
+    },
+    {
+      "id": "64566ae15f1e0d0000f1538a",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683385058,
+      "updated": 1683385058
     },
     {
       "id": "643bc10b5f1e0d0000550a43",
@@ -40,18 +75,11 @@
       "updated": 1681637745
     },
     {
-      "id": "643bc3235f1e0d0000550a99",
-      "text": "＊＊現在工事中＊＊",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1681638221,
-      "updated": 1681638229
-    },
-    {
       "id": "643bc3265f1e0d0000550a9a",
-      "text": "",
+      "text": "もうChatGPTのAPIの無料期間終わってるから試せない！誰か試して(投げやり)[yuyasurarin.icon*2]",
       "userId": "616ca537c25a92001e5f1e0d",
       "created": 1681638224,
-      "updated": 1681638224
+      "updated": 1683384835
     },
     {
       "id": "643bc3275f1e0d0000550a9b",
@@ -62,10 +90,31 @@
     },
     {
       "id": "643bc1475f1e0d0000550a48",
-      "text": "必要：[AskChatGPT](の[TamperMonkey]部分)",
+      "text": "必要",
       "userId": "616ca537c25a92001e5f1e0d",
       "created": 1681637745,
-      "updated": 1681893330
+      "updated": 1683384793
+    },
+    {
+      "id": "645669d75f1e0d00003f6e1b",
+      "text": " [AskChatGPT](の[TamperMonkey]部分)をtamperMonkeyに導入する",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683384792,
+      "updated": 1683384792
+    },
+    {
+      "id": "645669d45f1e0d00003f6e1a",
+      "text": " [このリンク https://scrapbox-bundler.vercel.app/?url=https://scrapbox.io/api/code/villagepump/chatGPTとchatするUserScript/sc.js&run&reload&minify&bundle]でbundleした以下のコードを自分のページに貼り付ける",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683384788,
+      "updated": 1683384798
+    },
+    {
+      "id": "64566ad75f1e0d0000f15387",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683385048,
+      "updated": 1683385048
     },
     {
       "id": "643bc10c5f1e0d0000550a44",
@@ -76,24 +125,479 @@
     },
     {
       "id": "643bc1ad5f1e0d0000550a8a",
-      "text": "  askChatGPT(text).then((x) => {",
+      "text": "  import { joinPageRoom } from \"https://raw.githubusercontent.com/takker99/scrapbox-headless-script/0.3.1/mod.ts\";",
       "userId": "616ca537c25a92001e5f1e0d",
       "created": 1681637847,
-      "updated": 1681637893
+      "updated": 1683383597
     },
     {
-      "id": "643bc1ad5f1e0d0000550a8b",
-      "text": "  \tconst result = \"[ChatGPT.icon]\" + x.choices[0].message.content.trim();",
+      "id": "6456652e5f1e0d00003f6dd6",
+      "text": "  ",
       "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1681637847,
-      "updated": 1681637904
+      "created": 1683383597,
+      "updated": 1683383597
     },
     {
-      "id": "643bc1ad5f1e0d0000550a8f",
-      "text": "  });",
+      "id": "6456652e5f1e0d00003f6dd7",
+      "text": "  function updateButtonStyle(button, lineElement, indent) {",
       "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1681637847,
-      "updated": 1681637893
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6dd8",
+      "text": "    const head = lineElement.getElementsByClassName(\"indent\")[0]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6dd9",
+      "text": "      ?? lineElement.getElementsByClassName(\"char-index\")[0];",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6dda",
+      "text": "    const offset = lineElement.getBoundingClientRect().left;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6ddb",
+      "text": "    const left = indent === 0 ? offset : head.getBoundingClientRect().left;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6ddc",
+      "text": "    button.style.left = `calc(${Math.round(left - offset)}px - ${lineElement.getElementsByClassName(\"code-body\").length > 0 ? 2.0 : 1.0}em)`;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6ddd",
+      "text": "  }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6dde",
+      "text": "  ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6ddf",
+      "text": "  async function onButtonClick(lineElement) { // async を追加",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6de0",
+      "text": "    const result = await askChatGPT(lineElement.innerText.trimStart()); // await を追加",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6de1",
+      "text": "    let answer;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6de2",
+      "text": "    if (!result.error) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6de3",
+      "text": "      answer = result.choices[0].message.content.trim();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6de4",
+      "text": "    } else {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6de5",
+      "text": "      answer = \"test\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6de6",
+      "text": "    }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6de7",
+      "text": "    const { insert, cleanup } = await joinPageRoom(scrapbox.Project.name, scrapbox.Page.title);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6de8",
+      "text": "  ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6de9",
+      "text": "    const nextLineElement = lineElement.nextElementSibling;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6dea",
+      "text": "    if (nextLineElement) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6deb",
+      "text": "      await insert(lineElement.textContent.match(/^\\s*/)[0].replace(/\\t/g,\" \")+\" \"+answer, nextLineElement.id.slice(1));",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683384569
+    },
+    {
+      "id": "6456652e5f1e0d00003f6dec",
+      "text": "    } else {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6ded",
+      "text": "      await insert(lineElement.textContent.match(/^\\s*/)[0].replace(/\\t/g,\" \")+\" \"+answer, \"_end\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683384573
+    },
+    {
+      "id": "6456652e5f1e0d00003f6dee",
+      "text": "    }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6def",
+      "text": "  ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6df0",
+      "text": "    cleanup();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6df1",
+      "text": "  }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6df2",
+      "text": "  ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6df3",
+      "text": "  function renderButton() {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6df4",
+      "text": "    if (scrapbox.Layout !== \"page\") return;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6df5",
+      "text": "  ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6df6",
+      "text": "    scrapbox.Page.lines.forEach(line => {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6df7",
+      "text": "      const lineElement = document.querySelector(`#L${line.id}`);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6df8",
+      "text": "      let button = lineElement.querySelector(\"a\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6df9",
+      "text": "  ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6dfa",
+      "text": "      if (button) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6dfb",
+      "text": "        if (line.text.trim() === \"\") {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6dfc",
+      "text": "          button.style.display = \"none\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6dfd",
+      "text": "        } else {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6dfe",
+      "text": "          button.style.display = \"inline\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6dff",
+      "text": "          updateButtonStyle(button, lineElement, lineElement.indent);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e00",
+      "text": "        }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e01",
+      "text": "      } else if (line.text.trim() !== \"\") {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e02",
+      "text": "        button = document.createElement(\"a\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e03",
+      "text": "        button.type = \"button\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e04",
+      "text": "        button.style.position = \"absolute\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e05",
+      "text": "        button.style.fontSize = \"20px\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e06",
+      "text": "        button.style.zIndex = \"200\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e07",
+      "text": "        updateButtonStyle(button, lineElement, lineElement.indent);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e08",
+      "text": "  ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e09",
+      "text": "        button.addEventListener(\"click\", () => onButtonClick(lineElement));",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e0a",
+      "text": "  ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e0b",
+      "text": "        const icon = document.createElement(\"i\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e0c",
+      "text": "        icon.className = \"fas fa-caret-down\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e0d",
+      "text": "  ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e0e",
+      "text": "        button.append(icon);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e0f",
+      "text": "        lineElement.insertAdjacentElement(\"afterbegin\", button);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e10",
+      "text": "      }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e11",
+      "text": "    });",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e12",
+      "text": "  }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e13",
+      "text": "  const start = Date.now();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e14",
+      "text": "  // 処理",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e15",
+      "text": "  renderButton();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e16",
+      "text": "  scrapbox.addListener(\"lines:changed\", renderButton);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e17",
+      "text": "  const end = Date.now();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
+    },
+    {
+      "id": "6456652e5f1e0d00003f6e18",
+      "text": "  console.log(`ButtonのRenderingにかかった時間: ${end - start}ミリ秒`);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1683383597,
+      "updated": 1683383597
     },
     {
       "id": "643bc1615f1e0d0000550a49",
@@ -111,10 +615,10 @@
     },
     {
       "id": "643bc1845f1e0d0000550a5e",
-      "text": "   // @name         New Userscript",
+      "text": "   // @name         Fetch ChatGPT",
       "userId": "616ca537c25a92001e5f1e0d",
       "created": 1681637806,
-      "updated": 1681637806
+      "updated": 1683383570
     },
     {
       "id": "643bc1845f1e0d0000550a5f",
