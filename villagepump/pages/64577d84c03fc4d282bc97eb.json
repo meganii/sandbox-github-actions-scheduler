@@ -1,0 +1,736 @@
+{
+  "id": "64577d84c03fc4d282bc97eb",
+  "title": "何かのコード 2023/05/07",
+  "created": 1683455364,
+  "updated": 1683456152,
+  "lines": [
+    {
+      "id": "64577d84c03fc4d282bc97eb",
+      "text": "何かのコード 2023/05/07",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1683455364,
+      "updated": 1683456152
+    },
+    {
+      "id": "64577d84aff09e0000b64bd5",
+      "text": "from [2023/05/07]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bd6",
+      "text": "何かのコード",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bd7",
+      "text": "https://scrapbox-bundler.vercel.app?url=https://scrapbox.io/api/code/villagepump/2023%252F05%252F07/popup.ts&bundle&minify&run&reload",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bd8",
+      "text": "$ deno check --remote -r=https://scrapbox.io https://scrapbox.io/api/code/villagepump/2023%2F05%2F07/popup.ts",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bd9",
+      "text": "code:popup.ts",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bda",
+      "text": " import { upload } from \"../../takker/deno-gyazo/mod.ts\";",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bdb",
+      "text": " import { getGyazoToken } from \"../../takker/scrapbox-userscript-std/rest.ts\";",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bdc",
+      "text": " import { useStatusBar, insertText } from \"../../takker/scrapbox-userscript-std/dom.ts\";",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bdd",
+      "text": " import { Scrapbox } from \"../../takker/scrapbox-jp%2Ftypes/userscript.ts\";",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bde",
+      "text": " declare const scrapbox: Scrapbox;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bdf",
+      "text": " declare const GM_fetch: typeof fetch;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64be0",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64be1",
+      "text": " const convert = async (url: URL): Promise<string> => {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64be2",
+      "text": "   const res = await GM_fetch(url);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64be3",
+      "text": "   const blob = await res.blob();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64be4",
+      "text": "   const tokenResult = await getGyazoToken();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64be5",
+      "text": "   if (!tokenResult.ok || !tokenResult.value) throw Error(\"Unauthorized token\");",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64be6",
+      "text": "   const result = await upload(await res.blob(), {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64be7",
+      "text": "     accessToken: tokenResult.value,",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64be8",
+      "text": "     refererURL: location.href,",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64be9",
+      "text": "   });",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bea",
+      "text": "   if (!result.ok) throw Error(result.value.name);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64beb",
+      "text": "   return `[${result.value.permalink_url}]`;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bec",
+      "text": " }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bed",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bee",
+      "text": " const urlRegExp = /\\[https?:\\/\\/[^\\s\\]]+\\.(?:png|jpe?g|gif|svg)\\]/g;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bef",
+      "text": " scrapbox.PopupMenu.addButton({",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bf0",
+      "text": "   title: (text) => urlRegExp.test(text) ? \"replace & upload\" : \"\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bf1",
+      "text": "   onClick: (text) => {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bf2",
+      "text": "     let hasPromise = false;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bf3",
+      "text": "     let total = 0;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bf4",
+      "text": "   ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bf5",
+      "text": "     const nodes = text.split(urlRegExp).map((node) => {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bf6",
+      "text": "       const url = node.match(urlRegExp)?.[1];",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bf7",
+      "text": "       if (!url) return node;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bf8",
+      "text": "       hasPromise = true;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bf9",
+      "text": "       total++;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bfa",
+      "text": "       return [convert(new URL(url.slice(1, -1))), node];",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bfb",
+      "text": "     });",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bfc",
+      "text": "     ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bfd",
+      "text": "     if (!hasPromise) return (nodes as string[]).join(\"\");",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bfe",
+      "text": "     ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64bff",
+      "text": "     const { render, dispose } = useStatusBar();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c00",
+      "text": "     let done = 0;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c01",
+      "text": "     let failed = 0;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c02",
+      "text": "     const render_ = () =>",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c03",
+      "text": "       render(",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c04",
+      "text": "         { type: \"spinner\" },",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c05",
+      "text": "         {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c06",
+      "text": "           type: \"text\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c07",
+      "text": "           text: `URL: ${done}/${total} converted, ${failed} failed`,",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c08",
+      "text": "         },",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c09",
+      "text": "       );",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c0a",
+      "text": "     ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c0b",
+      "text": "     render_();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c0c",
+      "text": "     (async () => {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c0d",
+      "text": "       try {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c0e",
+      "text": "         const fragments = await Promise.all(",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c0f",
+      "text": "           nodes.map(async (node) => {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c10",
+      "text": "             if (typeof node === \"string\") return node;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c11",
+      "text": "             try {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c12",
+      "text": "               const converted = await node[0];",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c13",
+      "text": "               done++;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c14",
+      "text": "               return converted;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c15",
+      "text": "             } catch (e: unknown) {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c16",
+      "text": "               // 変換に失敗したときは、元の文字列を返す",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c17",
+      "text": "               console.error(e);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c18",
+      "text": "               failed++;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c19",
+      "text": "               return node[1];",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c1a",
+      "text": "             } finally {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c1b",
+      "text": "               render_();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c1c",
+      "text": "             }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c1d",
+      "text": "           }),",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c1e",
+      "text": "         );",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c1f",
+      "text": "         render(",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c20",
+      "text": "           { type: \"check-circle\" },",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c21",
+      "text": "           {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c22",
+      "text": "             type: \"text\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c23",
+      "text": "             text: `URL: ${done}/${total} converted, ${failed} failed`,",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c24",
+      "text": "           },",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c25",
+      "text": "         );",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c26",
+      "text": "         await insertText(fragments.join(\"\"));",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c27",
+      "text": "       } finally {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c28",
+      "text": "         setTimeout(dispose, 1000);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c29",
+      "text": "       }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c2a",
+      "text": "     })();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c2b",
+      "text": "     return undefined;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c2c",
+      "text": "   },",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c2d",
+      "text": " });",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577d84aff09e0000b64c2e",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455364,
+      "updated": 1683455364
+    },
+    {
+      "id": "64577e14aff09e0000b64c31",
+      "text": "GPT-3.5",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455508,
+      "updated": 1683455510
+    },
+    {
+      "id": "64577e16aff09e0000b64c33",
+      "text": "\tこのコードは、ScrapboxというWebノートアプリケーション上で動作するユーザースクリプトです。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455510,
+      "updated": 1683455511
+    },
+    {
+      "id": "64577e17aff09e0000b64c35",
+      "text": " このスクリプトは、テキスト中に含まれる画像のURLをクリックしたときに、その画像をGyazoという画像アップロードサービスにアップロードして、アップロードされた画像のURLに置き換える機能を追加します。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455511,
+      "updated": 1683455511
+    },
+    {
+      "id": "64577e17aff09e0000b64c37",
+      "text": " 具体的には、以下の機能を提供しています。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455511,
+      "updated": 1683455511
+    },
+    {
+      "id": "64577e17aff09e0000b64c38",
+      "text": "  テキスト中に含まれる画像のURLをクリックすると、その画像をGyazoにアップロードし、アップロードされた画像のURLに置き換えます。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455511,
+      "updated": 1683455519
+    },
+    {
+      "id": "64577e17aff09e0000b64c3a",
+      "text": "  複数の画像が含まれる場合、すべての画像をアップロードしてから、テキスト中のURLをアップロードされた画像のURLに置き換えます。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455511,
+      "updated": 1683455519
+    },
+    {
+      "id": "64577e17aff09e0000b64c3b",
+      "text": "  アップロードの進捗をステータスバーに表示します。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455511,
+      "updated": 1683455519
+    },
+    {
+      "id": "64577e17aff09e0000b64c3c",
+      "text": "  アップロードに失敗した場合は、元のURLをそのまま表示します。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455511,
+      "updated": 1683455519
+    },
+    {
+      "id": "64577e17aff09e0000b64c3d",
+      "text": "  このスクリプトは、DenoというJavaScript/TypeScriptランタイムで動作することを前提にしており、外部モジュールを使用しています。具体的には、Gyazo APIを呼び出すためのライブラリ、ScrapboxのAPIを呼び出すためのライブラリ、Scrapbox上での操作を簡単にするためのライブラリを使用しています。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455511,
+      "updated": 1683455519
+    },
+    {
+      "id": "64577e14aff09e0000b64c32",
+      "text": "[nishio.icon]\"テキスト中に含まれる画像のURLをクリックすると\" こう判断した理由は？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455508,
+      "updated": 1683455598
+    },
+    {
+      "id": "64577e6baff09e0000b64c3e",
+      "text": "ChatGPT",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455596,
+      "updated": 1683455596
+    },
+    {
+      "id": "64577e6baff09e0000b64c3f",
+      "text": " 申し訳ありません、前回の回答が不正確でした。このスクリプトは、テキスト中に含まれる画像のURLを自動的に検出して、それを置き換えるわけではありません。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455596,
+      "updated": 1683455602
+    },
+    {
+      "id": "64577e6baff09e0000b64c41",
+      "text": " このスクリプトは、スクラップボックスのポップアップメニューに「replace & upload」というボタンを追加し、ユーザーがこのボタンをクリックしたときに、ポップアップされたテキストの中に含まれる画像のURLを自動的に検出して、それらのURLをGyazoにアップロードして、アップロードされた画像のURLに置き換えます。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455596,
+      "updated": 1683455602
+    }
+  ]
+}

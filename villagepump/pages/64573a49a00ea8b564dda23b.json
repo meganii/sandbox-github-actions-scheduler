@@ -1,0 +1,155 @@
+{
+  "id": "64573a49a00ea8b564dda23b",
+  "title": "Pythonでクラスをexportする方法",
+  "created": 1683438154,
+  "updated": 1683456427,
+  "lines": [
+    {
+      "id": "64573a49a00ea8b564dda23b",
+      "text": "Pythonでクラスをexportする方法",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1683438154,
+      "updated": 1683438157
+    },
+    {
+      "id": "64573a707838e3000005cf32",
+      "text": "[Mijinko_SD.icon] from [2023/05/07]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1683438154,
+      "updated": 1683438160
+    },
+    {
+      "id": "64573a707838e3000005cf33",
+      "text": "[Pythonでクラスをexportする方法]を探していた",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1683438154,
+      "updated": 1683438154
+    },
+    {
+      "id": "64573a707838e3000005cf34",
+      "text": "\t[https://gyazo.com/07e5df73f0cefe66336216fdfc70ce30] [https://gyazo.com/4eb36292f06841b68ace22dc914ba59e]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1683438154,
+      "updated": 1683438154
+    },
+    {
+      "id": "64573a707838e3000005cf35",
+      "text": "\t← ダメな例　良い例 →",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1683438154,
+      "updated": 1683438154
+    },
+    {
+      "id": "64573a707838e3000005cf36",
+      "text": "\tとりあえず[__all__]に名前を突っ込んでおけばexportできる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1683438154,
+      "updated": 1683438154
+    },
+    {
+      "id": "64573a707838e3000005cf37",
+      "text": " [https://docs.python.org/ja/3/tutorial/modules.html#importing-from-a-package 6. モジュール — Python 3.11.3 ドキュメント #importing-from-a-package]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1683438154,
+      "updated": 1683439438
+    },
+    {
+      "id": "64573edde5172d00009c7019",
+      "text": "  > import 文の使う規約は、パッケージの __init__.py コードに __all__ という名前のリストが定義されていれば、 from package import * が現れたときに import すべきモジュール名のリストとして使う、というものです。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1683439326,
+      "updated": 1683439371
+    },
+    {
+      "id": "64573f0ee5172d00009c701a",
+      "text": "  これ？[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1683439374,
+      "updated": 1683439381
+    },
+    {
+      "id": "64573eb4e5172d00009c7018",
+      "text": " exportというのはどういう動作を指しているんだろう[yosider.icon][nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683439284,
+      "updated": 1683455117
+    },
+    {
+      "id": "6457405de5172d00009c701c",
+      "text": "  他の.pyからimportできるようにしたい？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1683439709,
+      "updated": 1683439726
+    },
+    {
+      "id": "645781067838e300001eb2b9",
+      "text": "　　\tこれ[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1683456224,
+      "updated": 1683456233
+    },
+    {
+      "id": "645781207838e300001eb2ba",
+      "text": "　　\t正確には、別のファイルで実装したクラスを、また別のファイルを経由してimportできるようにしたかった",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1683456250,
+      "updated": 1683456313
+    },
+    {
+      "id": "645781607838e300001eb2bb",
+      "text": "　　\tファイルAで定義したクラスを、ファイルBをimportすることでも使えるようにするのが目的",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1683456314,
+      "updated": 1683456370
+    },
+    {
+      "id": "645781b47838e300001eb2bc",
+      "text": "　　\t\t[mod.ts]のように、同じパッケージディレクトリで定義したものをまとめてexportしたかった",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1683456397,
+      "updated": 1683456427
+    },
+    {
+      "id": "6457404ee5172d00009c701b",
+      "text": "　　「exportする」という手段の質問をしてるけど、それによって達成したかった目的が謎だ[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683439694,
+      "updated": 1683455175
+    },
+    {
+      "id": "64577cc7aff09e00007fa7bd",
+      "text": "　　 多分手段の選択が間違ってる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455175,
+      "updated": 1683455185
+    },
+    {
+      "id": "64577cd1aff09e00007fa7be",
+      "text": "　　 なんか名前ついてたな、なんだっけ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455186,
+      "updated": 1683455195
+    },
+    {
+      "id": "64577cdaaff09e00007fa7bf",
+      "text": "　　 　[XY問題]かな？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455195,
+      "updated": 1683455202
+    },
+    {
+      "id": "645780f27838e300001eb2b3",
+      "text": "　　JavaScript的なexportをイメージしてました[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1683456204,
+      "updated": 1683456219
+    },
+    {
+      "id": "64577c90aff09e00007fa7bc",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1683455121,
+      "updated": 1683455121
+    }
+  ]
+}
