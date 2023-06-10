@@ -2,7 +2,7 @@
   "id": "648144713aa6cb001c415db2",
   "title": "time-mirror",
   "created": 1686193267,
-  "updated": 1686199826,
+  "updated": 1686376609,
   "lines": [
     {
       "id": "648144713aa6cb001c415db2",
@@ -103,6 +103,132 @@
       "updated": 1686195451
     },
     {
+      "id": "6483eded1280f00000be7f95",
+      "text": "今のところ、10秒前の状態を表示するみたい？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686367725,
+      "updated": 1686367737
+    },
+    {
+      "id": "6483edf81280f00000be7f96",
+      "text": " 理想は10分前くらいなのかな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686367737,
+      "updated": 1686367745
+    },
+    {
+      "id": "6483f68c79e11300008590c0",
+      "text": " 今（2023/6/10）の実装：再生を始めた所から再生しつ続ける[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686369932,
+      "updated": 1686370062
+    },
+    {
+      "id": "6483f6c379e11300008590c2",
+      "text": " 　なので、特定のn分前を再生するのではない",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686369987,
+      "updated": 1686370001
+    },
+    {
+      "id": "6483f6d079e11300008590c3",
+      "text": " 　動画の再生バーを操作すれば、任意のタイミングの過去の映像を見る事が出来る",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686370001,
+      "updated": 1686370085
+    },
+    {
+      "id": "648407f71280f00000be8068",
+      "text": " 　なるほど[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686374391,
+      "updated": 1686374397
+    },
+    {
+      "id": "648407fc1280f00000be8069",
+      "text": "  　[- あー、てことは、]`getDisplayMedia()`[- で取得したデータをそのまま流すだけでいいみたいですね]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686374397,
+      "updated": 1686375435
+    },
+    {
+      "id": "648408171280f00000be806a",
+      "text": "  　　[- ならかなり小規模なコードで済むはずです]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686374424,
+      "updated": 1686375436
+    },
+    {
+      "id": "64840c0b1280f000003c7d9c",
+      "text": "  　[MediaStream]を直接渡すと、シーク不能になるっぽい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375436,
+      "updated": 1686375451
+    },
+    {
+      "id": "64840c4b1280f000003c7da2",
+      "text": "  　 seekableにできないかな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375500,
+      "updated": 1686375506
+    },
+    {
+      "id": "64840c4a1280f000003c7da1",
+      "text": "   　[/unarist/MediaRecorderAPIで作ったwebmをseekableにしたい]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375499,
+      "updated": 1686375508
+    },
+    {
+      "id": "64840d7f1280f000003c7da8",
+      "text": "   　currentTimeに大きな値を入れる方法は、ライブストリーミングだと不能",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375808,
+      "updated": 1686375829
+    },
+    {
+      "id": "64840c1e1280f000003c7d9d",
+      "text": "  　適宜blob URLを差し替える以外に方法がなさそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375455,
+      "updated": 1686375469
+    },
+    {
+      "id": "64840f7e1280f000003c7da9",
+      "text": " 再生バー操作ができなくなってもいいなら、時間差でcanvasに描画した画像をvideo要素にstreamingする手があります[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686376319,
+      "updated": 1686376365
+    },
+    {
+      "id": "6483edec1280f00000be7f94",
+      "text": "  再生バーをDOMで構築するなら操作もできるかも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686367725,
+      "updated": 1686376527
+    },
+    {
+      "id": "6484106e1280f000003c7dac",
+      "text": "   過去の映像をメモリにblobで保存しておき、巻き戻し操作が発生したらそれを呼び出して再生する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686376559,
+      "updated": 1686376609
+    },
+    {
+      "id": "648410501280f000003c7dab",
+      "text": "   video側でのseekは依然不能だが、どうせPiPだとunseekableなので気にする必要はない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686376529,
+      "updated": 1686376558
+    },
+    {
+      "id": "6484100d1280f000003c7daa",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686376462,
+      "updated": 1686376462
+    },
+    {
       "id": "64814cf91280f000001ea2bd",
       "text": "`cursor: \"always\"`は無効です[takker.icon]",
       "userId": "5ef2bdebb60650001e1280f0",
@@ -159,11 +285,25 @@
       "updated": 1686195696
     },
     {
+      "id": "648399061280f0000094d6e6",
+      "text": " 仕組み上reactを使う必要がないので消す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686345993,
+      "updated": 1686346031
+    },
+    {
       "id": "64814d481280f000001ea2c2",
       "text": " https://scrapbox-bundler.vercel.app?url=https://scrapbox.io/api/code/villagepump/time-mirror/script.ts&bundle&minify&run&reload",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1686195528,
       "updated": 1686195545
+    },
+    {
+      "id": "64840a0e1280f00000d532d8",
+      "text": " $ deno check --remote -r=https://scrapbox.io https://scrapbox.io/api/code/villagepump/time-mirror/script.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686374927,
+      "updated": 1686374949
     },
     {
       "id": "648148301280f000001ea22f",
@@ -177,119 +317,343 @@
       "text": " /// <reference no-default-lib=\"true\" />",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1686194475,
-      "updated": 1686194475
+      "updated": 1686375130
     },
     {
-      "id": "6481492b1280f000001ea244",
+      "id": "64840ad91280f00000d532da",
       "text": " /// <reference lib=\"esnext\" />",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194475,
-      "updated": 1686194475
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
-      "id": "6481492b1280f000001ea245",
+      "id": "64840ad91280f00000d532db",
       "text": " /// <reference lib=\"dom\" />",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194475,
-      "updated": 1686194475
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
-      "id": "6481492b1280f000001ea246",
+      "id": "64840ad91280f00000d532dc",
       "text": " ",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194475,
-      "updated": 1686194475
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
-      "id": "648148341280f000001ea230",
-      "text": " import { setup } from \"./mod.tsx\";",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194227,
-      "updated": 1686194237
-    },
-    {
-      "id": "6481492e1280f000001ea247",
+      "id": "64840ad91280f00000d532dd",
       "text": " import { Scrapbox } from \"https://raw.githubusercontent.com/scrapbox-jp/types/0.4.2/userscript.ts\";",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194478,
-      "updated": 1686194518
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
-      "id": "6481483d1280f000001ea231",
+      "id": "64840ad91280f00000d532de",
       "text": " declare const scrapbox: Scrapbox;",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194237,
-      "updated": 1686194527
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
-      "id": "648149571280f000001ea248",
+      "id": "64840ad91280f00000d532df",
       "text": " ",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194519,
-      "updated": 1686194519
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
-      "id": "6481484e1280f000001ea234",
-      "text": " const ops = await setup();",
+      "id": "64840ad91280f00000d532e0",
+      "text": " let video: HTMLVideoElement | undefined;",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194254,
-      "updated": 1686194259
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
-      "id": "6481483e1280f000001ea232",
+      "id": "64840ad91280f00000d532e1",
       "text": " scrapbox.PageMenu.addItem({",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194239,
-      "updated": 1686194252
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
-      "id": "648148581280f000001ea235",
+      "id": "64840ad91280f00000d532e2",
       "text": "   title: \"recording\",",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194264,
-      "updated": 1686194397
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
-      "id": "6481485b1280f000001ea236",
-      "text": "   onClick: () => ops.isRecording ? ops.stop() : ops.start(),",
+      "id": "64840ad91280f00000d532e3",
+      "text": "   onClick: async () => {",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194266,
-      "updated": 1686194408
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
-      "id": "648148491280f000001ea233",
+      "id": "64840ad91280f00000d532e4",
+      "text": "     if (video) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532e5",
+      "text": "     const stream = await navigator.mediaDevices.getDisplayMedia({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532e6",
+      "text": "       video: true,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532e7",
+      "text": "       audio: false,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532e8",
+      "text": "     });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532e9",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532ea",
+      "text": "     video = document.createElement(\"video\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532eb",
+      "text": "     video.style.maxWidth = \"50%\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532ec",
+      "text": "     video.style.position = \"fixed\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375781
+    },
+    {
+      "id": "64840ad91280f00000d532ed",
+      "text": "     video.style.bottom = \"5%\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532ee",
+      "text": "     video.style.left = \"5%\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532ef",
+      "text": "     video.controls = true;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532f0",
+      "text": "     video.autoplay = true;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532f1",
+      "text": "     video.srcObject = stream;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840d071280f000003c7da3",
+      "text": "     video.currentTime = 7*24*60*1000;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375688,
+      "updated": 1686375689
+    },
+    {
+      "id": "64840d081280f000003c7da4",
+      "text": "     video.onseeked = ()=>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375689,
+      "updated": 1686375689
+    },
+    {
+      "id": "64840d081280f000003c7da5",
+      "text": "       alert(\"after-seeked: \"+video.duration);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375689,
+      "updated": 1686375689
+    },
+    {
+      "id": "64840d081280f000003c7da6",
+      "text": "       video.onseeked = undefined;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375689,
+      "updated": 1686375689
+    },
+    {
+      "id": "64840d081280f000003c7da7",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375689,
+      "updated": 1686375689
+    },
+    {
+      "id": "64840ad91280f00000d532f2",
+      "text": "     document.body.append(video);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532f3",
+      "text": "   },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532f4",
       "text": " });",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194249,
-      "updated": 1686194262
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
-      "id": "648148ec1280f000001ea239",
+      "id": "64840ad91280f00000d532f5",
       "text": " scrapbox.PageMenu.addItem({",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194412,
-      "updated": 1686194412
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
-      "id": "648148ec1280f000001ea23a",
-      "text": "   title: \"PiP\",",
+      "id": "64840ad91280f00000d532f6",
+      "text": "   title: \"stop\",",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194412,
-      "updated": 1686194418
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
-      "id": "648148ec1280f000001ea23b",
-      "text": "   onClick: () => ops.isRecording && ops.pip(),",
+      "id": "64840ad91280f00000d532f7",
+      "text": "   onClick: () => {",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194412,
-      "updated": 1686194425
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
-      "id": "648148ec1280f000001ea23c",
+      "id": "64840ad91280f00000d532f8",
+      "text": "     if (!video) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532f9",
+      "text": "     const stream = video.srcObject;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532fa",
+      "text": "     if (stream instanceof MediaStream) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532fb",
+      "text": "       for (const track of stream.getTracks()) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532fc",
+      "text": "         track.stop();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532fd",
+      "text": "       }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532fe",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d532ff",
+      "text": "     video.srcObject = null;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d53300",
+      "text": "     video.remove();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d53301",
+      "text": "     video = undefined;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d53302",
+      "text": "   },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d53303",
       "text": " });",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686194412,
-      "updated": 1686194412
+      "created": 1686375130,
+      "updated": 1686375130
+    },
+    {
+      "id": "64840ad91280f00000d53304",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686375130,
+      "updated": 1686375130
     },
     {
       "id": "648148fc1280f000001ea23d",
@@ -307,731 +671,360 @@
     },
     {
       "id": "6481449c1280f000001ea12a",
-      "text": "code:mod.tsx",
+      "text": "code:mod.ts",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1686193309,
-      "updated": 1686194149
+      "updated": 1686368619
     },
     {
       "id": "648149101280f000001ea23f",
       "text": " /// <reference no-default-lib=\"true\" />",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1686194448,
-      "updated": 1686195430
+      "updated": 1686369255
     },
     {
-      "id": "64814ce61280f000001ea249",
+      "id": "6483f3e61280f00000be8021",
       "text": " /// <reference lib=\"esnext\" />",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
+      "created": 1686369255,
+      "updated": 1686369255
     },
     {
-      "id": "64814ce61280f000001ea24a",
+      "id": "6483f3e61280f00000be8022",
       "text": " /// <reference lib=\"dom\" />",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
+      "created": 1686369255,
+      "updated": 1686369255
     },
     {
-      "id": "64814ce61280f000001ea24b",
+      "id": "6483f3e61280f00000be8023",
       "text": " ",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
+      "created": 1686369255,
+      "updated": 1686369255
     },
     {
-      "id": "64814ce61280f000001ea24c",
-      "text": " /** @jsx h */",
+      "id": "6483f3e61280f00000be8024",
+      "text": " export const start = async (): Promise<readonly [MediaStream, () => void]> => {",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
+      "created": 1686369255,
+      "updated": 1686369255
     },
     {
-      "id": "64814ce61280f000001ea24d",
-      "text": " /** @jsxFrag Fragment */",
+      "id": "6483f3e61280f00000be8025",
+      "text": "   const stream = await navigator.mediaDevices.getDisplayMedia({",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
+      "created": 1686369255,
+      "updated": 1686369255
     },
     {
-      "id": "64814ce61280f000001ea24e",
-      "text": " import { h, render } from \"https://esm.sh/preact@10.11.3\";",
+      "id": "6483f3e61280f00000be8026",
+      "text": "     video: true,",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
+      "created": 1686369255,
+      "updated": 1686369255
     },
     {
-      "id": "64814ce61280f000001ea24f",
-      "text": " import {",
+      "id": "6483f3e61280f00000be8027",
+      "text": "     audio: false,",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
+      "created": 1686369255,
+      "updated": 1686369255
     },
     {
-      "id": "64814ce61280f000001ea250",
-      "text": "   useCallback,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea251",
-      "text": "   useEffect,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea252",
-      "text": "   useRef,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea253",
-      "text": "   useState,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea254",
-      "text": " } from \"https://esm.sh/preact@10.11.3/hooks\";",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea255",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea256",
-      "text": " export interface Operators {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea257",
-      "text": "   isRecording: boolean;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea258",
-      "text": "   start: () => void;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea259",
-      "text": "   stop: () => void;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea25a",
-      "text": "   pip: () => void;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea25b",
-      "text": " }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea25c",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea25d",
-      "text": " const App = (",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea25e",
-      "text": "   { setOperators }: { setOperators: (operators: Operators) => void },",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea25f",
-      "text": " ) => {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea260",
-      "text": "   const [isRecording, setRecording] = useState(false);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea261",
-      "text": "   const [recordedChunks, setRecordedChunks] = useState<Blob[]>([]);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea263",
-      "text": "   const recordedVideoRef = useRef<HTMLVideoElement>(null);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea264",
-      "text": "   const [mediaRecorder, setMediaRecorder] = useState<",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea265",
-      "text": "     MediaRecorder | undefined",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea266",
-      "text": "   >();",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea267",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea26e",
-      "text": "   const start = useCallback(async () => {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea26f",
-      "text": "     const stream = await navigator.mediaDevices.getDisplayMedia({",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea270",
-      "text": "       video: true,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea271",
-      "text": "       audio: false,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea272",
-      "text": "     });",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea273",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea274",
-      "text": "     const recorder = new MediaRecorder(stream);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea275",
-      "text": "     recorder.addEventListener(\"dataavailable\", (event) => {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686199784
-    },
-    {
-      "id": "64815dea1280f0000093aeec",
-      "text": "       if (event.data.size === 0) return;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686199786,
-      "updated": 1686199788
-    },
-    {
-      "id": "64815dea1280f0000093aeed",
-      "text": "       setRecordedChunks((prev) => [...prev, event.data]);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686199786,
-      "updated": 1686199788
-    },
-    {
-      "id": "64815de81280f0000093aeeb",
-      "text": "     });",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686199784,
-      "updated": 1686199784
-    },
-    {
-      "id": "64814ce61280f000001ea276",
-      "text": "     recorder.start(100); // collect 100ms of data at a time",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea277",
-      "text": "     setMediaRecorder(recorder);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea278",
-      "text": "     setRecording(true);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea27a",
-      "text": "   }, []);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea27b",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea27c",
-      "text": "   const stop = useCallback(() => {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea27d",
-      "text": "     mediaRecorder?.stop?.();",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea27e",
-      "text": "     mediaRecorder?.stream?.getTracks?.()?.forEach?.((track) => track.stop());",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea27f",
-      "text": "     setRecording(false);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea281",
-      "text": "   }, [mediaRecorder]);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea282",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea283",
-      "text": "   const pip = useCallback(() => {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea284",
-      "text": "     recordedVideoRef.current?.requestPictureInPicture?.();",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea285",
-      "text": "   }, [recordedVideoRef.current]);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea286",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea287",
-      "text": "   useEffect(() => {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea288",
-      "text": "     if (!isRecording) return;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686199818
-    },
-    {
-      "id": "64814ce61280f000001ea289",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea28a",
-      "text": "     const timer = setInterval(() => {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea28b",
-      "text": "       const blob = new Blob(recordedChunks, { type: \"video/webm\" });",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea28c",
-      "text": "       const url = URL.createObjectURL(blob);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea28d",
-      "text": "       if (!recordedVideoRef.current) return;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea28e",
-      "text": "       const currentTime = recordedVideoRef.current.currentTime;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea28f",
-      "text": "       recordedVideoRef.current.src = url;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea290",
-      "text": "       recordedVideoRef.current.currentTime = currentTime;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea291",
-      "text": "     }, 1000); // 10 minutes",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea292",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea293",
-      "text": "     return clearInterval(timer);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea294",
-      "text": "   }, [isRecording, recordedChunks, recordedVideoRef.current]);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686199826
-    },
-    {
-      "id": "64814ce61280f000001ea295",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea296",
-      "text": "   const exportRef = useRef<Operators>({ start, stop, pip, isRecording });",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea297",
-      "text": "   useEffect(() => {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea298",
-      "text": "     // currentの参照を壊さずに更新する",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea299",
-      "text": "     Object.assign(",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea29a",
-      "text": "       exportRef.current,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea29b",
-      "text": "       { start, stop, pip, isRecording },",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea29c",
-      "text": "     );",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea29d",
-      "text": "   }, [start, stop, pip, isRecording]);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea29e",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea29f",
-      "text": "   useEffect(",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2a0",
-      "text": "     () => setOperators(exportRef.current),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2a1",
-      "text": "     [setOperators],",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2a2",
-      "text": "   );",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2a3",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2a4",
-      "text": "   return (",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2a5",
-      "text": "     <video",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2a6",
-      "text": "       ref={recordedVideoRef}",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2a7",
-      "text": "       style={{ \"maxWidth\": \"50%\" }}",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2a8",
-      "text": "       autoPlay",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2a9",
-      "text": "       controls",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2aa",
-      "text": "     />",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2ab",
-      "text": "   );",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2ac",
-      "text": " };",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2ad",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2ae",
-      "text": " export const setup = (): Promise<Operators> => {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195582
-    },
-    {
-      "id": "64814ce61280f000001ea2af",
-      "text": "   const div = document.createElement(\"div\");",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2b0",
-      "text": "   document.body.append(div);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2b1",
-      "text": "   return new Promise<Operators>((resolve) => {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195577
-    },
-    {
-      "id": "64814ce61280f000001ea2b2",
-      "text": "     render(<App setOperators={resolve} />, div);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
-    },
-    {
-      "id": "64814ce61280f000001ea2b3",
+      "id": "6483f3e61280f00000be8028",
       "text": "   });",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
+      "created": 1686369255,
+      "updated": 1686369255
     },
     {
-      "id": "64814ce61280f000001ea2b4",
+      "id": "6483f3e61280f00000be8029",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be802a",
+      "text": "   const chunks: Blob[] = [];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be802b",
+      "text": "   const offscreen = document.createElement(\"canvas\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be802c",
+      "text": "   const ctx = offscreen.getContext(\"2d\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be802d",
+      "text": "   if (!ctx) throw Error(\"cannot get a contex from <canvas>\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be802e",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be802f",
+      "text": "   const recorder = new MediaRecorder(stream);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8030",
+      "text": "   let animationId: number | undefined;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8031",
+      "text": "   recorder.addEventListener(\"dataavailable\", async (event) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8032",
+      "text": "     if (event.data.size === 0) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8033",
+      "text": "     chunks.push(event.data);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8034",
+      "text": "     const url = URL.createObjectURL(event.data);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8035",
+      "text": "     const video = document.createElement(\"video\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8036",
+      "text": "     video.src = url;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8037",
+      "text": "     await new Promise(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8038",
+      "text": "       (resolve) =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8039",
+      "text": "         video.addEventListener(\"loadedmetadata\", resolve, { once: true }),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be803a",
+      "text": "     );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be803b",
+      "text": "     video.play();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be803c",
+      "text": "     offscreen.width = video.videoWidth;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be803d",
+      "text": "     offscreen.height = video.videoHeight;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be803e",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be803f",
+      "text": "     const tick = () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8040",
+      "text": "       ctx.drawImage(video, 0, 0);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8041",
+      "text": "       animationId = requestAnimationFrame(tick);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8042",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8043",
+      "text": "     tick();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8044",
+      "text": "   });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8045",
+      "text": "   recorder.start(5 * 1000); // collect data by 10min",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369344
+    },
+    {
+      "id": "6483f3e61280f00000be8046",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8047",
+      "text": "   return [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8048",
+      "text": "     offscreen.captureStream(),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8049",
+      "text": "     /** disposer */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be804a",
+      "text": "     () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be804b",
+      "text": "       recorder.stop();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be804c",
+      "text": "       recorder.stream.getTracks().forEach((track) => track.stop());",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be804d",
+      "text": "       if (animationId !== undefined) cancelAnimationFrame(animationId);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be804e",
+      "text": "     },",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be804f",
+      "text": "   ] as const;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8050",
       "text": " };",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1686195430,
-      "updated": 1686195430
+      "created": 1686369255,
+      "updated": 1686369255
+    },
+    {
+      "id": "6483f3e61280f00000be8051",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686369255,
+      "updated": 1686369255
     },
     {
       "id": "64814ce61280f000001ea2b5",
