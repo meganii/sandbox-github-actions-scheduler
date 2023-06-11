@@ -2,7 +2,7 @@
   "id": "648144713aa6cb001c415db2",
   "title": "time-mirror",
   "created": 1686193267,
-  "updated": 1686376609,
+  "updated": 1686430379,
   "lines": [
     {
       "id": "648144713aa6cb001c415db2",
@@ -192,6 +192,153 @@
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1686375455,
       "updated": 1686375469
+    },
+    {
+      "id": "6484ce0879e1130000ed0333",
+      "text": "  　 [MediaSource]と[SourceBuffer]を使うと、随時データをbufferにappendしていけるらしい[blu3mo.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686425096,
+      "updated": 1686430366
+    },
+    {
+      "id": "6484e29c1280f000005cfbd3",
+      "text": "  　  こいつか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686430366,
+      "updated": 1686430377
+    },
+    {
+      "id": "6484e2a71280f000005cfbd5",
+      "text": "  　   https://developer.mozilla.org/ja/docs/Web/API/Media_Source_Extensions_API",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1686430378,
+      "updated": 1686430379
+    },
+    {
+      "id": "6484ced179e1130000ed0360",
+      "text": "  　 ざっくり以下のコードのようなイメージ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425297,
+      "updated": 1686425304
+    },
+    {
+      "id": "6484ce8079e1130000ed0334",
+      "text": "  　 code: js",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425216,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed0335",
+      "text": "  　    useEffect(() => {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed0336",
+      "text": "         mediaSource.current.addEventListener('sourceopen', () => {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed0337",
+      "text": "           sourceBuffer.current = mediaSource.current.addSourceBuffer('video/webm;codecs=opus,vp8');",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed0338",
+      "text": "         });",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed0339",
+      "text": "       }, []);",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed033a",
+      "text": "     ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed0357",
+      "text": "       useInterval(() => {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed0358",
+      "text": "         if (sourceBuffer.current && sourceBuffer.current.updating === false) {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed0359",
+      "text": "           let blob = new Blob(recordedChunks, { type: 'video/webm' });",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed035a",
+      "text": "           blob.arrayBuffer().then(data => {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed035b",
+      "text": "             sourceBuffer.current.appendBuffer(data);",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed035c",
+      "text": "           });",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed035d",
+      "text": "           setRecordedChunks([]);",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed035e",
+      "text": "         }",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425283
+    },
+    {
+      "id": "6484cec279e1130000ed035f",
+      "text": "       }, isPlaying ? 1000 : null);",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425283,
+      "updated": 1686425295
+    },
+    {
+      "id": "6484ced979e1130000ed0361",
+      "text": "   　ただ、色々エラーにぶつかって上手くいっていない[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1686425305,
+      "updated": 1686425362
     },
     {
       "id": "64840f7e1280f000003c7da9",
