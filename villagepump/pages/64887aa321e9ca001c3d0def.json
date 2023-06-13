@@ -1,0 +1,239 @@
+{
+  "id": "64887aa321e9ca001c3d0def",
+  "title": "TCPの状態遷移図",
+  "created": 1686665941,
+  "updated": 1686666021,
+  "lines": [
+    {
+      "id": "64887aa321e9ca001c3d0def",
+      "text": "TCPの状態遷移図",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665941,
+      "updated": 1686665941
+    },
+    {
+      "id": "64887b195b98c20000807de6",
+      "text": "[[https://plantuml-proxy.vercel.app/svg/https://scrapbox.io/api/code/villagepump/TCPの状態遷移図/tcpstd.pu#.svg]]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686666010,
+      "updated": 1686666021
+    },
+    {
+      "id": "64887ad55b98c20000807dc6",
+      "text": "code:tcpstd.pu",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665941,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dc7",
+      "text": " @startdot",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dc8",
+      "text": " digraph std {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dc9",
+      "text": "   size =\"8.5, 11\";",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dca",
+      "text": "   rankdir = TD;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dcb",
+      "text": "   ratio=auto;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dcc",
+      "text": "   label=\"TCPの状態遷移図\";",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dcd",
+      "text": "   node [fontsize = 12, shape = box, style=rounded];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dce",
+      "text": "   edge [fontsize = 10];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dcf",
+      "text": "   \"CLOSED\"->\"LISTEN\"       [label=\"パッシブオープン（TCB生成）\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dd0",
+      "text": "   \"CLOSED\"->\"SYN_SENT\"     [label=\"アクティブオープン（TCB生成とSYNの送信）\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dd1",
+      "text": "   \"LISTEN\"->\"SYN_RECEIVED\" [label=\"SYNの受信（SYN/ACKの送信）\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dd2",
+      "text": "   \"LISTEN\"->\"CLOSED\"       [label=\"クローズ（TCB削除）\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dd3",
+      "text": "   \"LISTEN\"->\"SYN_SENT\"     [label=\"SENT（SYNの送信）\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dd4",
+      "text": "   \"SYN_RECEIVED\"->\"ESTABLISHED\"  [label=\"ACKの受信\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dd5",
+      "text": "   \"SYN_RECEIVED\"->\"FIN_WAIT_1\"   [label=\"クローズ（FINの送信）\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dd6",
+      "text": "   \"SYN_SENT\"->\"ESTABLISHED\"  [label=\"SYN/ACKの受信（ACKの送信）\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dd7",
+      "text": "   \"SYN_SENT\"->\"SYN_RECEIVED\" [label=\"SYNの受信（ACKの送信）\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dd8",
+      "text": "   \"ESTABLISHED\"->\"FIN_WAIT_1\"   [label=\"クローズ（FINの送信）\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dd9",
+      "text": "   \"FIN_WAIT_1\"->\"FIN_WAIT_2\"   [label=\"ACKの受信\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dda",
+      "text": "   \"FIN_WAIT_1\"->\"CLOSING\"      [label=\"FINの受信（ACKの送信）\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807ddb",
+      "text": "   \"FIN_WAIT_1\"->\"TIME_WAIT\"    [label=\"FIN ACKの受信（ACKの送信）\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807ddc",
+      "text": "   \"FIN_WAIT_2\"->\"TIME_WAIT\"    [label=\"FINの受信（ACKの送信）\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807ddd",
+      "text": "   \"CLOSING\"->\"TIME_WAIT\"    [label=\"FIN ACKの受信\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807dde",
+      "text": "   \"TIME_WAIT\"->\"CLOSED\"       [label=\"タイムアウト待ち（TCB削除）\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807ddf",
+      "text": "   \"ESTABLISHED\"->\"CLOSE_WAIT\"   [label=\"FIN ACKの受信\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807de0",
+      "text": "   \"CLOSE_WAIT\"->\"LAST_ACK\"     [label=\"クローズ（FINの送信）\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807de1",
+      "text": "   \"LAST_ACK\"->\"CLOSED\"       [label=\"FIN ACKの受信\"];",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807de2",
+      "text": " }",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807de3",
+      "text": " @enddot",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    },
+    {
+      "id": "64887ad65b98c20000807de4",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1686665943,
+      "updated": 1686665943
+    }
+  ]
+}
