@@ -1,0 +1,204 @@
+{
+  "id": "648d6473fe1a68001ca6f38a",
+  "title": "雑に読むCloudflare Workers",
+  "created": 1686987893,
+  "updated": 1686990889,
+  "lines": [
+    {
+      "id": "648d6473fe1a68001ca6f38a",
+      "text": "雑に読むCloudflare Workers",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686987893,
+      "updated": 1686988312
+    },
+    {
+      "id": "648d647b774b170000b82b59",
+      "text": "https://developers.cloudflare.com/workers/learning/how-workers-works/",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686987899,
+      "updated": 1686987900
+    },
+    {
+      "id": "648d647d774b170000b82b5b",
+      "text": "[基素.icon]教えてチャッピー",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686987902,
+      "updated": 1686988549
+    },
+    {
+      "id": "648d6706774b170000b61e2c",
+      "text": "[GPT-4.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988550,
+      "updated": 1686988553
+    },
+    {
+      "id": "648d6709774b170000b61e2d",
+      "text": " [Cloudflare Workers]について説明しよう！",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988553,
+      "updated": 1686988581
+    },
+    {
+      "id": "648d6714774b170000b61e2f",
+      "text": " Cloudflare Workersは、ブラウザやNode.jsで動くJavaScriptに似ているように思えるけど、ちょっと考え方が違うよ。",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988564,
+      "updated": 1686988564
+    },
+    {
+      "id": "648d6714774b170000b61e30",
+      "text": " WorkersはV8エンジンという、ChromeブラウザやNode.jsと同じものを使って動いているんだ。",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988564,
+      "updated": 1686988564
+    },
+    {
+      "id": "648d6714774b170000b61e31",
+      "text": " そして、たくさんのブラウザと同じような機能も使えるよ。",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988564,
+      "updated": 1686988564
+    },
+    {
+      "id": "648d673e774b170000b61e3d",
+      "text": "  [/nwtgck/Cloudflare Workersを軽く使ってみてこれがサーバーレス（ラムダ/FaaS）のスタンダードになってほしいなと思った]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988607,
+      "updated": 1686988607
+    },
+    {
+      "id": "648d673f774b170000b61e3e",
+      "text": "   >[Service Worker]のように書けるため、[** Service Workerの知識がそのまま使える]ところが非常に気に入った。",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988607,
+      "updated": 1686988607
+    },
+    {
+      "id": "648d673f774b170000b61e3f",
+      "text": "   他のサービスはそのまま使えない",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988607,
+      "updated": 1686988607
+    },
+    {
+      "id": "648d673f774b170000b61e40",
+      "text": "   　>ラップというのは凝りたいときに細かな再現できない差みたいなもので苦しめられる経験則がある",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988607,
+      "updated": 1686988607
+    },
+    {
+      "id": "648d6714774b170000b61e32",
+      "text": " それから、ブラウザやNode.jsで書かれたJavaScriptとの大きな違いがあるんだ。",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988564,
+      "updated": 1686988564
+    },
+    {
+      "id": "648d6714774b170000b61e34",
+      "text": " 一般的に、JavaScriptは各人のパソコン上（ブラウザや中央サーバー）で動くけど、WorkersはCloudflareのEdge Networkという世界中に広がる大きなネットワーク上で動くのさ。",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988564,
+      "updated": 1686988564
+    },
+    {
+      "id": "648d6714774b170000b61e35",
+      "text": " このネットワークには何千ものマシンがあって、それぞれがWorkersを動かしているんだ。",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988564,
+      "updated": 1686988564
+    },
+    {
+      "id": "648d6714774b170000b61e36",
+      "text": " そして、それぞれのWorkersは何千ものユーザーが作ったアプリケーションを動かすことができるよ。",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988564,
+      "updated": 1686988564
+    },
+    {
+      "id": "648d6714774b170000b61e37",
+      "text": " それから、JavaScriptでの違いについて説明するよ。",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988564,
+      "updated": 1686990057
+    },
+    {
+      "id": "648d6714774b170000b61e39",
+      "text": " 3つの大きな違いがある。それが、「Isolates」、「Compute per Request」、「Distributed Execution」だよ。",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988564,
+      "updated": 1686988564
+    },
+    {
+      "id": "648d6d7d774b170000b61e54",
+      "text": " ここから下はチャッピーにきくより普通にドキュメント読んだ方がよかった[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686990205,
+      "updated": 1686990889
+    },
+    {
+      "id": "648d671d774b170000b61e3a",
+      "text": " JavaScriptと[WebAssembly]がアップロードできる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988573,
+      "updated": 1686990846
+    },
+    {
+      "id": "648d671d774b170000b61e3b",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988573,
+      "updated": 1686988573
+    },
+    {
+      "id": "648d671d774b170000b61e3c",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988573,
+      "updated": 1686988573
+    },
+    {
+      "id": "648d64a8774b170000b82b5d",
+      "text": "[/daiiz/Cloudflare Workers]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686987944,
+      "updated": 1686987944
+    },
+    {
+      "id": "648d64a8774b170000b82b5e",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686987944,
+      "updated": 1686988603
+    },
+    {
+      "id": "648d64e5774b170000b61e1f",
+      "text": "[/nishio/Cloudflare Workers]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988005,
+      "updated": 1686988005
+    },
+    {
+      "id": "648d6542774b170000b61e25",
+      "text": "[今出川FM#635dfbc15e90c00000ebf983]8",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988098,
+      "updated": 1686988108
+    },
+    {
+      "id": "648d64e2774b170000b61e1e",
+      "text": " [https://blog.notainc.com/entry/2022/08/10/184926 #今出川FM : hiroshiとコンテナの好きなところやCloudflare Workersの思い出などについて話しました - Helpfeel Developers' Blog]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988102,
+      "updated": 1686988108
+    },
+    {
+      "id": "648d6512774b170000b61e20",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1686988051,
+      "updated": 1686988051
+    }
+  ]
+}
