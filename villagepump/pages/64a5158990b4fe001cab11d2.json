@@ -2,7 +2,7 @@
   "id": "64a5158990b4fe001cab11d2",
   "title": "Tweetの画像をGyazoにuploadするUserScript",
   "created": 1688540555,
-  "updated": 1688552004,
+  "updated": 1688631403,
   "lines": [
     {
       "id": "64a5158990b4fe001cab11d2",
@@ -222,158 +222,32 @@
       "updated": 1688541306
     },
     {
-      "id": "64a5292f1280f00000686e8f",
-      "text": "1. tweetの画像を含むページのリストを作る",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545584,
-      "updated": 1688545600
-    },
-    {
-      "id": "64a529a61280f00000686eaa",
-      "text": "https://scrapbox-bundler.vercel.app?url=https://scrapbox.io/api/code/villagepump/Tweetの画像をGyazoにuploadするUserScript/list.ts&bundle&minify&run",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545704,
-      "updated": 1688545878
-    },
-    {
-      "id": "64a529d31280f00000686ead",
-      "text": "$ deno check --remote -r=https://scrapbox.io https://scrapbox.io/api/code/villagepump/Tweetの画像をGyazoにuploadするUserScript/list.ts",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545748,
-      "updated": 1688545770
-    },
-    {
-      "id": "64a5293f1280f00000686e90",
-      "text": "code:list.ts",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545600,
-      "updated": 1688545609
-    },
-    {
-      "id": "64a5299f1280f00000686ea8",
-      "text": " import { exportPages } from \"../../takker/scrapbox-userscript-std/rest.ts\";",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545696,
-      "updated": 1688545700
-    },
-    {
-      "id": "64a529b71280f00000686eab",
-      "text": " import { Scrapbox } from \"../../takker/scrapbox-jp%2Ftypes/userscript.ts\";",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545719,
-      "updated": 1688545826
-    },
-    {
-      "id": "64a529a01280f00000686ea9",
-      "text": " declare const scrapbox: Scrapbox;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545697,
-      "updated": 1688545745
-    },
-    {
-      "id": "64a529d01280f00000686eac",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545745,
-      "updated": 1688545745
-    },
-    {
-      "id": "64a5294b1280f00000686e9d",
-      "text": " const result = await exportPages(scrapbox.Project.name, { metadata: false });",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545612,
-      "updated": 1688545846
-    },
-    {
-      "id": "64a5294b1280f00000686e9e",
-      "text": " if (!result.ok) {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545612,
-      "updated": 1688545612
-    },
-    {
-      "id": "64a5294b1280f00000686e9f",
-      "text": "   alert(`${result.value.name} ${result.value.message}`);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545612,
-      "updated": 1688545612
-    },
-    {
-      "id": "64a5294b1280f00000686ea0",
-      "text": " } else {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545612,
-      "updated": 1688545612
-    },
-    {
-      "id": "64a5294b1280f00000686ea1",
-      "text": "   const titles = result.value.pages.flatMap(",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545612,
-      "updated": 1688545612
-    },
-    {
-      "id": "64a5294b1280f00000686ea2",
-      "text": "     (page) => page.lines.some((line) => line.includes(\"pbs.twimg.com/media\")) ? [page.title] : []",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545612,
-      "updated": 1688545612
-    },
-    {
-      "id": "64a5294b1280f00000686ea3",
-      "text": "   );",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545612,
-      "updated": 1688545612
-    },
-    {
-      "id": "64a5294b1280f00000686ea4",
-      "text": "   const blob = new Blob([JSON.stringify(titles)], { type: \"application/json\" });",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545612,
-      "updated": 1688545612
-    },
-    {
-      "id": "64a5294b1280f00000686ea5",
-      "text": "   const url = URL.createObjectURL(blob);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545612,
-      "updated": 1688545612
-    },
-    {
-      "id": "64a5294b1280f00000686ea6",
-      "text": "   open(url);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545612,
-      "updated": 1688545612
-    },
-    {
-      "id": "64a5294b1280f00000686ea7",
-      "text": " }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545612,
-      "updated": 1688545612
-    },
-    {
-      "id": "64a529481280f00000686e91",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545609,
-      "updated": 1688545609
-    },
-    {
       "id": "64a51b7f1280f00000686e83",
-      "text": "",
+      "text": "gyazoに画像を移したいprojectで以下を実行する",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688542080,
-      "updated": 1688542080
+      "updated": 1688629492
     },
     {
-      "id": "64a52ab61280f00000686eaf",
-      "text": "2. ↑で取得したページを順次回って貼り直していく",
+      "id": "64a670f31280f00000132c45",
+      "text": "必要なもの",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688545975,
-      "updated": 1688546040
+      "created": 1688629492,
+      "updated": 1688629497
+    },
+    {
+      "id": "64a670f71280f00000132c46",
+      "text": " admin以上の権限",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629497,
+      "updated": 1688629501
+    },
+    {
+      "id": "64a670fb1280f00000132c47",
+      "text": " [GM fetch]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629501,
+      "updated": 1688629505
     },
     {
       "id": "64a51b7f1280f00000686e82",
@@ -426,10 +300,10 @@
     },
     {
       "id": "64a52ba31280f00000686ebb",
-      "text": " import { getPage, patch } from \"../../takker/scrapbox-userscript-std/mod.ts\";",
+      "text": " import { getPage, exportPages, patch, Socket, makeSocket, disconnect } from \"../../takker/scrapbox-userscript-std/mod.ts\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688546212,
-      "updated": 1688550074
+      "updated": 1688629420
     },
     {
       "id": "64a52b9a1280f00000686eba",
@@ -446,39 +320,95 @@
       "updated": 1688546155
     },
     {
+      "id": "64a6705b1280f00000132c32",
+      "text": " const getTargetedPages = async (project: string): Promise<string[]> => { ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629341,
+      "updated": 1688629341
+    },
+    {
+      "id": "64a6705b1280f00000132c33",
+      "text": "   const result = await exportPages(scrapbox.Project.name, { metadata: false });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629341,
+      "updated": 1688629341
+    },
+    {
+      "id": "64a6705b1280f00000132c34",
+      "text": "   if (!result.ok) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629341,
+      "updated": 1688629341
+    },
+    {
+      "id": "64a6705b1280f00000132c35",
+      "text": "     alert(`${result.value.name} ${result.value.message}`);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629341,
+      "updated": 1688629341
+    },
+    {
+      "id": "64a6705b1280f00000132c36",
+      "text": "     throw Error(result.value.name);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629341,
+      "updated": 1688629341
+    },
+    {
+      "id": "64a6705b1280f00000132c37",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629341,
+      "updated": 1688629341
+    },
+    {
+      "id": "64a6705b1280f00000132c38",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629341,
+      "updated": 1688629341
+    },
+    {
+      "id": "64a6705b1280f00000132c39",
+      "text": "   return result.value.pages.flatMap(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629341,
+      "updated": 1688629521
+    },
+    {
+      "id": "64a6705b1280f00000132c3a",
+      "text": "     (page) => page.lines.some((line) => line.includes(\"pbs.twimg.com/media\")) ? [page.title] : []",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629341,
+      "updated": 1688629341
+    },
+    {
+      "id": "64a6705b1280f00000132c3b",
+      "text": "   );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629341,
+      "updated": 1688629341
+    },
+    {
+      "id": "64a6705b1280f00000132c3c",
+      "text": " };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629341,
+      "updated": 1688629341
+    },
+    {
+      "id": "64a670571280f00000132c1a",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629337,
+      "updated": 1688629337
+    },
+    {
       "id": "64a52d791280f00000686ec8",
       "text": " const main = async () => {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688546682,
       "updated": 1688548470
-    },
-    {
-      "id": "64a51b7d1280f00000686e80",
-      "text": "   const file = await upload({ accept: \"application/json\" });",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688542077,
-      "updated": 1688546691
-    },
-    {
-      "id": "64a52d841280f00000686ecb",
-      "text": "   if (!file) return;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688546693,
-      "updated": 1688546698
-    },
-    {
-      "id": "64a52b6b1280f00000686eb4",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688546156,
-      "updated": 1688546156
-    },
-    {
-      "id": "64a52b6c1280f00000686eb5",
-      "text": "   const list = JSON.parse(await file.text());",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688546157,
-      "updated": 1688546174
     },
     {
       "id": "64a530a71280f00000686f57",
@@ -488,312 +418,333 @@
       "updated": 1688547500
     },
     {
+      "id": "64a6706f1280f00000132c3d",
+      "text": "   const list = await getTargetedPages(project);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629361,
+      "updated": 1688629361
+    },
+    {
+      "id": "64a670721280f00000132c3e",
+      "text": "   let socket: Socket | undefined;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629364,
+      "updated": 1688629376
+    },
+    {
+      "id": "64a670841280f00000132c3f",
+      "text": "   try {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629381,
+      "updated": 1688629383
+    },
+    {
       "id": "64a52b7f1280f00000686eb6",
-      "text": "   for (let i = 0; i < list.length; i++) {",
+      "text": "     for (let i = 0; i < list.length; i++) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688546176,
-      "updated": 1688551050
+      "updated": 1688629390
     },
     {
       "id": "64a53e8a1280f00000997bfd",
-      "text": "     const title = list[i];",
+      "text": "       const title = list[i];",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551051,
-      "updated": 1688551057
+      "updated": 1688629390
     },
     {
       "id": "64a52b941280f00000686eb8",
-      "text": "     const result = await getPage(project, title);",
+      "text": "       const result = await getPage(project, title);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688546197,
-      "updated": 1688547504
+      "updated": 1688629390
     },
     {
       "id": "64a52bb51280f00000686ebc",
-      "text": "     if (!result.ok) continue;",
+      "text": "       if (!result.ok) continue;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688546230,
-      "updated": 1688546332
+      "updated": 1688629390
     },
     {
       "id": "64a530ec1280f00000686f5d",
-      "text": "     ",
+      "text": "       ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547565,
-      "updated": 1688547565
+      "updated": 1688629390
     },
     {
       "id": "64a530ed1280f00000686f5e",
-      "text": "     const stack: [string, URL[]][] = [];",
+      "text": "       const stack: [string, URL[]][] = [];",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547566,
-      "updated": 1688550044
+      "updated": 1688629390
     },
     {
       "id": "64a52bc91280f00000686ebe",
-      "text": "     const blocks = parse(result.value.lines.map((line) => line.text).join(\"\\n\"), { hasTitle: true });",
+      "text": "       const blocks = parse(result.value.lines.map((line) => line.text).join(\"\\n\"), { hasTitle: true });",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688546249,
-      "updated": 1688546385
+      "updated": 1688629390
     },
     {
       "id": "64a52c351280f00000686ec3",
-      "text": "     let lineNo = 0;",
+      "text": "       let lineNo = 0;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688546358,
-      "updated": 1688546370
+      "updated": 1688629390
     },
     {
       "id": "64a53bbd1280f00000686f85",
-      "text": "     let total = 0;",
+      "text": "       let total = 0;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688550337,
-      "updated": 1688550337
+      "updated": 1688629390
     },
     {
       "id": "64a52c421280f00000686ec4",
-      "text": "     for (const block of blocks) {",
+      "text": "       for (const block of blocks) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688546372,
-      "updated": 1688546967
+      "updated": 1688629390
     },
     {
       "id": "64a53f111280f00000997c00",
-      "text": "       switch (block.type) {",
+      "text": "         switch (block.type) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551186,
-      "updated": 1688551192
+      "updated": 1688629390
     },
     {
       "id": "64a53f171280f00000997c01",
-      "text": "         case \"title\":",
+      "text": "           case \"title\":",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551192,
-      "updated": 1688551200
+      "updated": 1688629390
     },
     {
       "id": "64a53f1e1280f00000997c03",
-      "text": "           lineNo++;",
+      "text": "             lineNo++;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551200,
-      "updated": 1688551203
+      "updated": 1688629390
     },
     {
       "id": "64a53f221280f00000997c04",
-      "text": "           break;",
+      "text": "             break;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551203,
-      "updated": 1688551207
+      "updated": 1688629390
     },
     {
       "id": "64a53f251280f00000997c05",
-      "text": "         case \"codeBlock\":",
+      "text": "           case \"codeBlock\":",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551207,
-      "updated": 1688551213
+      "updated": 1688629390
     },
     {
       "id": "64a53f321280f00000997c06",
-      "text": "           lineNo += block.content.split(\"\\n\").length + 1;",
+      "text": "             lineNo += block.content.split(\"\\n\").length + 1;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551219,
-      "updated": 1688551223
+      "updated": 1688629390
     },
     {
       "id": "64a53f371280f00000997c07",
-      "text": "           break;",
+      "text": "             break;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551224,
-      "updated": 1688551225
+      "updated": 1688629390
     },
     {
       "id": "64a53f411280f00000997c09",
-      "text": "         case \"table\":",
+      "text": "           case \"table\":",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551234,
-      "updated": 1688551240
+      "updated": 1688629390
     },
     {
       "id": "64a53f3d1280f00000997c08",
-      "text": "           lineNo += block.cells.length + 1;",
+      "text": "             lineNo += block.cells.length + 1;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551230,
-      "updated": 1688551233
+      "updated": 1688629390
     },
     {
       "id": "64a53f481280f00000997c0a",
-      "text": "           break;",
+      "text": "             break;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551241,
-      "updated": 1688551243
+      "updated": 1688629390
     },
     {
       "id": "64a53f4a1280f00000997c0b",
-      "text": "         case \"line\": {",
+      "text": "           case \"line\": {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551243,
-      "updated": 1688551259
+      "updated": 1688629390
     },
     {
       "id": "64a53f531280f00000997c0c",
-      "text": "           const urls = block.nodes.flatMap((node) => getURLs(node));",
+      "text": "             const urls = block.nodes.flatMap((node) => getURLs(node));",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551252,
-      "updated": 1688551253
+      "updated": 1688629390
     },
     {
       "id": "64a53f531280f00000997c0d",
-      "text": "           if (urls.length > 0) {",
+      "text": "             if (urls.length > 0) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551252,
-      "updated": 1688551253
+      "updated": 1688629390
     },
     {
       "id": "64a53f531280f00000997c0e",
-      "text": "             total += urls.length;",
+      "text": "               total += urls.length;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551252,
-      "updated": 1688551253
+      "updated": 1688629390
     },
     {
       "id": "64a53f531280f00000997c0f",
-      "text": "             stack.push([result.value.lines[lineNo].id, urls]);",
+      "text": "               stack.push([result.value.lines[lineNo].id, urls]);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551252,
-      "updated": 1688551253
+      "updated": 1688629390
     },
     {
       "id": "64a53f531280f00000997c10",
-      "text": "           }",
+      "text": "             }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551252,
-      "updated": 1688551253
+      "updated": 1688629390
     },
     {
       "id": "64a53f531280f00000997c11",
-      "text": "           lineNo++;",
+      "text": "             lineNo++;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551252,
-      "updated": 1688551253
+      "updated": 1688629390
     },
     {
       "id": "64a53f561280f00000997c12",
-      "text": "           break;",
+      "text": "             break;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551255,
-      "updated": 1688551257
+      "updated": 1688629390
     },
     {
       "id": "64a53f5b1280f00000997c13",
-      "text": "         }",
+      "text": "           }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551260,
-      "updated": 1688551261
+      "updated": 1688629390
     },
     {
       "id": "64a53f191280f00000997c02",
-      "text": "       }",
+      "text": "         }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551194,
-      "updated": 1688551194
+      "updated": 1688629390
     },
     {
       "id": "64a52e971280f00000686f51",
-      "text": "     }",
+      "text": "       }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688546968,
-      "updated": 1688546968
+      "updated": 1688629390
     },
     {
       "id": "64a53bd01280f00000686f87",
-      "text": "     if (total === 0) continue;",
+      "text": "       if (total === 0) continue;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688550353,
-      "updated": 1688550361
+      "updated": 1688629390
     },
     {
       "id": "64a530e61280f00000686f5c",
-      "text": "     console.debug(`[${i}/${list.length}] replace ${total} links in \"/${project}/${result.value.title}\"`);",
+      "text": "       console.debug(`[${i}/${list.length}] replace ${total} links in \"/${project}/${result.value.title}\"`);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547559,
-      "updated": 1688551073
+      "updated": 1688629390
     },
     {
       "id": "64a531c51280f00000686f65",
-      "text": "     const pairs: [string, string][] = [];",
+      "text": "       const pairs: [string, string][] = [];",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547782,
-      "updated": 1688550057
+      "updated": 1688629390
     },
     {
       "id": "64a532091280f00000686f69",
-      "text": "     let counter = 0;",
+      "text": "       let counter = 0;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547850,
-      "updated": 1688547853
+      "updated": 1688629390
     },
     {
       "id": "64a531531280f00000686f60",
-      "text": "     for (const [hash, urls] of stack) {",
+      "text": "       for (const [hash, urls] of stack) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547668,
-      "updated": 1688547696
+      "updated": 1688629390
     },
     {
       "id": "64a5317b1280f00000686f62",
-      "text": "       for (const url of urls) {",
+      "text": "         for (const url of urls) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547708,
-      "updated": 1688547715
+      "updated": 1688629390
     },
     {
       "id": "64a531811280f00000686f63",
-      "text": "         const permalink = await uploadAndReplace(project, result.value.title, hash, url);",
+      "text": "           const permalink = await uploadAndReplace(project, result.value.title, hash, url);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547715,
-      "updated": 1688547771
+      "updated": 1688629390
     },
     {
       "id": "64a531db1280f00000686f66",
-      "text": "         if (!permalink) continue;",
+      "text": "           if (!permalink) continue;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547804,
-      "updated": 1688547812
+      "updated": 1688629390
     },
     {
       "id": "64a532051280f00000686f68",
-      "text": "         console.debug(`[${i}/${list.length}][${counter}/${total}] ${url} => ${permalink}`);",
+      "text": "           console.debug(`[${i}/${list.length}][${counter}/${total}] ${url} => ${permalink}`);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547846,
-      "updated": 1688551084
+      "updated": 1688629390
     },
     {
       "id": "64a531e31280f00000686f67",
-      "text": "         pairs.push([`${url}`, permalink]);",
+      "text": "           pairs.push([`${url}`, permalink]);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547812,
-      "updated": 1688547839
+      "updated": 1688629390
     },
     {
       "id": "64a532271280f00000686f6a",
-      "text": "         counter++;",
+      "text": "           counter++;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547880,
-      "updated": 1688547882
+      "updated": 1688629390
     },
     {
       "id": "64a531821280f00000686f64",
-      "text": "       }",
+      "text": "         }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547715,
-      "updated": 1688547716
+      "updated": 1688629390
     },
     {
       "id": "64a5316e1280f00000686f61",
-      "text": "     }",
+      "text": "       }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547696,
-      "updated": 1688547696
+      "updated": 1688629390
     },
     {
       "id": "64a53b141280f00000686f83",
@@ -817,74 +768,109 @@
       "updated": 1688550164
     },
     {
+      "id": "64a670ba1280f00000132c44",
+      "text": "       socket ??= await makeSocket();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629437,
+      "updated": 1688629445
+    },
+    {
       "id": "64a532331280f00000686f6b",
-      "text": "     await patch(project, result.value.title, (lines) => lines.map((line) => {",
+      "text": "       await patch(project, result.value.title, (lines) => lines.map((line) => {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547892,
-      "updated": 1688547939
+      "updated": 1688629397
     },
     {
       "id": "64a5328c1280f00000686f71",
-      "text": "         let text = line.text;",
+      "text": "           let text = line.text;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547985,
-      "updated": 1688548017
+      "updated": 1688629397
     },
     {
       "id": "64a532721280f00000686f6d",
-      "text": "         for (const [b, a] of pairs) {",
+      "text": "           for (const [b, a] of pairs) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547955,
-      "updated": 1688548017
+      "updated": 1688629397
     },
     {
       "id": "64a5327d1280f00000686f6e",
-      "text": "           text = text.replaceAll(b, a);",
+      "text": "             text = text.replaceAll(b, a);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547967,
-      "updated": 1688548017
+      "updated": 1688629397
     },
     {
       "id": "64a5327e1280f00000686f6f",
-      "text": "         }",
+      "text": "           }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547967,
-      "updated": 1688548017
+      "updated": 1688629397
     },
     {
       "id": "64a532a21280f00000686f72",
-      "text": "         return text;",
+      "text": "           return text;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688548003,
-      "updated": 1688548017
+      "updated": 1688629397
     },
     {
       "id": "64a532611280f00000686f6c",
-      "text": "       })",
+      "text": "         }),",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688547939,
-      "updated": 1688548017
+      "updated": 1688629430
+    },
+    {
+      "id": "64a670b41280f00000132c43",
+      "text": "         { socket }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629430,
+      "updated": 1688629432
     },
     {
       "id": "64a532b11280f00000686f73",
-      "text": "     );",
+      "text": "       );",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688548018,
-      "updated": 1688548020
+      "updated": 1688629397
     },
     {
       "id": "64a53aed1280f00000686f81",
-      "text": "     console.debug(`[${i}/${list.length}] replaced links in \"/${project}/${result.value.title}\"`);",
+      "text": "       console.debug(`[${i}/${list.length}] replaced links in \"/${project}/${result.value.title}\"`);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688550126,
-      "updated": 1688551088
+      "updated": 1688629397
     },
     {
       "id": "64a52b8b1280f00000686eb7",
-      "text": "   }",
+      "text": "     }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688546188,
-      "updated": 1688546188
+      "updated": 1688629397
+    },
+    {
+      "id": "64a670941280f00000132c40",
+      "text": "   } finally {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629398,
+      "updated": 1688629401
+    },
+    {
+      "id": "64a670971280f00000132c41",
+      "text": "     if (socket) disconnect(socket);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629401,
+      "updated": 1688629412
+    },
+    {
+      "id": "64a670981280f00000132c42",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688629402,
+      "updated": 1688629402
     },
     {
       "id": "64a52b681280f00000686eb2",
@@ -1146,6 +1132,13 @@
       "updated": 1688541375
     },
     {
+      "id": "64a678611280f00000132c4f",
+      "text": "     checked = true;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688631394,
+      "updated": 1688631395
+    },
+    {
       "id": "64a515a91280f00000686e24",
       "text": "     if (!result.ok) {",
       "userId": "5ef2bdebb60650001e1280f0",
@@ -1169,13 +1162,6 @@
     {
       "id": "64a515a91280f00000686e27",
       "text": "       );",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688540585,
-      "updated": 1688541375
-    },
-    {
-      "id": "64a515a91280f00000686e28",
-      "text": "       checked = true;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688540585,
       "updated": 1688541375
@@ -1230,13 +1216,6 @@
       "updated": 1688541375
     },
     {
-      "id": "64a515a91280f00000686e30",
-      "text": "       checked = true;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688540585,
-      "updated": 1688541375
-    },
-    {
       "id": "64a515a91280f00000686e31",
       "text": "       return;",
       "userId": "5ef2bdebb60650001e1280f0",
@@ -1252,10 +1231,24 @@
     },
     {
       "id": "64a515a91280f00000686e33",
-      "text": "   }",
+      "text": "   } else if (!token) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688540585,
-      "updated": 1688541375
+      "updated": 1688631382
+    },
+    {
+      "id": "64a678541280f00000132c4a",
+      "text": "     return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688631382,
+      "updated": 1688631384
+    },
+    {
+      "id": "64a678561280f00000132c4b",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688631384,
+      "updated": 1688631385
     },
     {
       "id": "64a518d41280f00000686e79",
