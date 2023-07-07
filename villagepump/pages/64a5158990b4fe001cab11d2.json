@@ -2,7 +2,7 @@
   "id": "64a5158990b4fe001cab11d2",
   "title": "Tweetの画像をGyazoにuploadするUserScript",
   "created": 1688540555,
-  "updated": 1688631403,
+  "updated": 1688684141,
   "lines": [
     {
       "id": "64a5158990b4fe001cab11d2",
@@ -61,6 +61,69 @@
       "updated": 1688551857
     },
     {
+      "id": "64a746191280f0000022a579",
+      "text": "使い方",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688684057,
+      "updated": 1688684059
+    },
+    {
+      "id": "64a746261280f0000022a57e",
+      "text": " requirements",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688684071,
+      "updated": 1688684071
+    },
+    {
+      "id": "64a746261280f0000022a57f",
+      "text": "  admin以上の権限",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688684071,
+      "updated": 1688684071
+    },
+    {
+      "id": "64a746261280f0000022a580",
+      "text": "  [GM fetch]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688684071,
+      "updated": 1688684071
+    },
+    {
+      "id": "64a7461b1280f0000022a57a",
+      "text": " 1. [ここ https://scrapbox-bundler.vercel.app?url=https://scrapbox.io/api/code/villagepump/Tweetの画像をGyazoにuploadするUserScript/script.ts&bundle&minify&run&reload]を押して出てきたコードをコピーする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688684059,
+      "updated": 1688684092
+    },
+    {
+      "id": "64a7463b1280f0000022a581",
+      "text": " 2. gyazoに画像を移動したいprojectをブラウザで開く",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688684092,
+      "updated": 1688684115
+    },
+    {
+      "id": "64a746521280f0000022a582",
+      "text": " 3. 開発コンソールを開いて1.のコードを貼り付けて実行する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688684115,
+      "updated": 1688684131
+    },
+    {
+      "id": "64a746621280f0000022a584",
+      "text": " 4. おわり",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688684131,
+      "updated": 1688684136
+    },
+    {
+      "id": "64a746181280f0000022a578",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688684057,
+      "updated": 1688684057
+    },
+    {
       "id": "64a541f71280f00000997c2d",
       "text": "井戸端には900枚くらいtwitter由来の画像があった",
       "userId": "5ef2bdebb60650001e1280f0",
@@ -87,6 +150,20 @@
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688551928,
       "updated": 1688551928
+    },
+    {
+      "id": "64a745e71280f0000022a575",
+      "text": "2023-07-07 07:53:48 古いページから更新するようにした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688684008,
+      "updated": 1688684035
+    },
+    {
+      "id": "64a746021280f0000022a577",
+      "text": " [2023/07/06#64a675411280f000002f6943]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688684035,
+      "updated": 1688684050
     },
     {
       "id": "64a541d61280f00000997c1f",
@@ -220,34 +297,6 @@
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688541304,
       "updated": 1688541306
-    },
-    {
-      "id": "64a51b7f1280f00000686e83",
-      "text": "gyazoに画像を移したいprojectで以下を実行する",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688542080,
-      "updated": 1688629492
-    },
-    {
-      "id": "64a670f31280f00000132c45",
-      "text": "必要なもの",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688629492,
-      "updated": 1688629497
-    },
-    {
-      "id": "64a670f71280f00000132c46",
-      "text": " admin以上の権限",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688629497,
-      "updated": 1688629501
-    },
-    {
-      "id": "64a670fb1280f00000132c47",
-      "text": " [GM fetch]",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1688629501,
-      "updated": 1688629505
     },
     {
       "id": "64a51b7f1280f00000686e82",
@@ -418,11 +467,18 @@
       "updated": 1688547500
     },
     {
+      "id": "64a745f31280f0000022a576",
+      "text": "   // 古いページから更新する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1688684019,
+      "updated": 1688684027
+    },
+    {
       "id": "64a6706f1280f00000132c3d",
-      "text": "   const list = await getTargetedPages(project);",
+      "text": "   const list = (await getTargetedPages(project)).reverse();",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1688629361,
-      "updated": 1688629361
+      "updated": 1688684018
     },
     {
       "id": "64a670721280f00000132c3e",
