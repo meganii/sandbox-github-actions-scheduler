@@ -1,0 +1,225 @@
+{
+  "id": "64b8f7b1facf0c001cd20169",
+  "title": "テンソル計算よもやま話(仮)",
+  "created": 1689843637,
+  "updated": 1689845923,
+  "lines": [
+    {
+      "id": "64b8f7b1facf0c001cd20169",
+      "text": "テンソル計算よもやま話(仮)",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843655
+    },
+    {
+      "id": "64b8f7cfed60e6000005fcaa",
+      "text": "デカいから切り出した。誰かもっといいタイトル付けて[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843664,
+      "updated": 1689843689
+    },
+    {
+      "id": "64b8f9091280f00000d76aaa",
+      "text": "[スカラーを1次元ベクトルと同一視できないだろうか]から別の話になっているから、まずはそこを切り出そう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689843982,
+      "updated": 1689844107
+    },
+    {
+      "id": "64b8f7d0ed60e6000005fcab",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843672,
+      "updated": 1689843672
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc72",
+      "text": "from [2023/07/20]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843637
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc73",
+      "text": "テンソル計算使ったことないから、そもそもド基礎から分かってない[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843637
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc74",
+      "text": "\t理解すると何か便利そうな気配はあるけど行列代数([線型代数])で満足してしまっている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689843637,
+      "updated": 1689844185
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc75",
+      "text": "\t　座標系に不変な式を書くときにに必要[takker.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843637
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc76",
+      "text": "\t　物理だと、2階テンソルの発散やHookeの法則の一般系を表すときに必要になる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843637
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc77",
+      "text": "\t　いくつかのnablaの計算がわかりやすくなる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843637
+    },
+    {
+      "id": "64b8f9dc1280f00000d76aac",
+      "text": "\t　　[/takker/Nablaの演算法則メモ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844192,
+      "updated": 1689844205
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc78",
+      "text": "\tパッと見た感じ、まずテンソルの[積演算]何個あんねんw から始まる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843637
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc79",
+      "text": "\t 添字記法の場合は、ただのスカラー積[$ a^ib_i]だけですべて表現できる[takker.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843637
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc7a",
+      "text": "\t 　現代でテンソルが使われている分野はすべてこれが主流",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843637
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc7b",
+      "text": "\t 添字記法だと座標系に不変な量を表せなくて不満だったので、[シンボリック記法]でいい感じに書ける方法を模索してた[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689843637,
+      "updated": 1689844291
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc7c",
+      "text": "\t  しかし、[シンボリック記法]だけで済ませようとすると、演算子がたくさん必要になる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689843637,
+      "updated": 1689844257
+    },
+    {
+      "id": "64b8fa401280f00000d76aad",
+      "text": "\t   [$ \\bullet\\otimes\\bullet,\\bullet\\cdot\\bullet,\\bullet:\\bullet,\\mathrm{tr}(\\bullet),\\bullet^\\top,\\bullet^{-1}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844292,
+      "updated": 1689844361
+    },
+    {
+      "id": "64b90068ed60e600009fa3a1",
+      "text": "\t   \t色んな[ベイマックス]がいるね[$ (\\bull-\\bull)][Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689845864,
+      "updated": 1689845923
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc7d",
+      "text": "\t  添字記法を使わないと表現できない演算もある",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843637
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc7e",
+      "text": "\t   例：[$ A_{ij}={{W_i}^k}_j b_k]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843637
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc7f",
+      "text": "\t  　無理やり表現しようとすると、新しい演算子を導入せざるをえなくなり……",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843637
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc80",
+      "text": "\t  　現代で[添字記法]が主流なのは、このあたりが理由だと思う[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689843637,
+      "updated": 1689844235
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc81",
+      "text": "\t あと上付き文字と下付き文字が嫌いだったから、それに変わる記法を作った",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843637
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc82",
+      "text": "\t  まだ冗長感は否めない",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843637
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc83",
+      "text": "\tどうでもいいけど[\\bm]を省略したくなるなぁ。基本的に全部 `\\bm` になるし",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689843637,
+      "updated": 1689844220
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc84",
+      "text": " \tスカラーとベクトルをすべて通常字体でごちゃまぜに書いている電磁気学の本があった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689843637,
+      "updated": 1689844097
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc85",
+      "text": " \t さすがに読みにくかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689843637,
+      "updated": 1689844097
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc86",
+      "text": " \t それは流石にイヤ[Summer498.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689843637,
+      "updated": 1689844097
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc87",
+      "text": " \t たまにやる[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689843637,
+      "updated": 1689844097
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fc88",
+      "text": " \t  [スカラーを1次元ベクトルと同一視できないだろうか]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689843637,
+      "updated": 1689844097
+    },
+    {
+      "id": "64b8f7b4ed60e6000005fca9",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1689843637,
+      "updated": 1689843637
+    }
+  ]
+}

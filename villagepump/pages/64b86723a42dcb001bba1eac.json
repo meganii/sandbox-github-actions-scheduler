@@ -1,0 +1,267 @@
+{
+  "id": "64b86723a42dcb001bba1eac",
+  "title": "座標変換と計量行列を統一的に表す",
+  "created": 1689806633,
+  "updated": 1689808556,
+  "lines": [
+    {
+      "id": "64b86723a42dcb001bba1eac",
+      "text": "座標変換と計量行列を統一的に表す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689806633,
+      "updated": 1689806633
+    },
+    {
+      "id": "64b8676a1280f0000032b39e",
+      "text": "[tensor]の成分を表す記法[$ [\\pmb A]^{\\sf EE} ]を導入すると、座標変換行列と[計量行列]がどちらも[恒等tensor][$ \\pmb I]の成分だったということがわかる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689806701,
+      "updated": 1689808480
+    },
+    {
+      "id": "64b8672d1280f0000032b39b",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689806640,
+      "updated": 1689806736
+    },
+    {
+      "id": "64b86a611280f0000032b3b4",
+      "text": "まだ書き途中[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807460,
+      "updated": 1689807463
+    },
+    {
+      "id": "64b86a611280f0000032b3b3",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807460,
+      "updated": 1689807460
+    },
+    {
+      "id": "64b867261280f0000032b399",
+      "text": "座標変換行列[$ a_{ij}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689806633,
+      "updated": 1689806852
+    },
+    {
+      "id": "64b8672b1280f0000032b39a",
+      "text": "　決まった名前はない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689806638,
+      "updated": 1689806666
+    },
+    {
+      "id": "64b867471280f0000032b39d",
+      "text": "共変計量行列[$ g_{ij}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689806666,
+      "updated": 1689806682
+    },
+    {
+      "id": "64b867431280f0000032b39c",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689806662,
+      "updated": 1689806662
+    },
+    {
+      "id": "64b868061280f0000032b3a0",
+      "text": "基底[$ {\\sf E}:=(\\pmb e_0,\\pmb e_1,\\cdots,\\pmb e_n), {\\sf F}:=(\\pmb f_0,\\pmb f_1,\\cdots,\\pmb f_n)]があったとき、2階tensor[$ \\pmb A]の[$ ij]成分は",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689806857,
+      "updated": 1689806935
+    },
+    {
+      "id": "64b868541280f0000032b3a2",
+      "text": " (EとE)[$ \\pmb e_i\\cdot\\pmb A\\cdot\\pmb e_j]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689806935,
+      "updated": 1689806966
+    },
+    {
+      "id": "64b868751280f0000032b3a3",
+      "text": " (FとF)[$ \\pmb f_i\\cdot\\pmb A\\cdot\\pmb f_j]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689806968,
+      "updated": 1689806983
+    },
+    {
+      "id": "64b8687a1280f0000032b3a4",
+      "text": " (EとF)[$ \\pmb e_i\\cdot\\pmb A\\cdot\\pmb f_j]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689806973,
+      "updated": 1689806978
+    },
+    {
+      "id": "64b868861280f0000032b3a5",
+      "text": "と表せる。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689806985,
+      "updated": 1689807025
+    },
+    {
+      "id": "64b868ae1280f0000032b3a7",
+      "text": "成分を表す新しい記号を導入する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807025,
+      "updated": 1689807041
+    },
+    {
+      "id": "64b868911280f0000032b3a6",
+      "text": " [$ [\\pmb A]^{\\sf EF}_{ij}:=\\pmb e_i\\cdot\\pmb A\\cdot\\pmb f_j=\\pmb A:\\pmb e_i\\pmb f_j ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689806996,
+      "updated": 1689807361
+    },
+    {
+      "id": "64b868b51280f0000032b3a8",
+      "text": " [$ [\\pmb A]^{\\sf EF}:=\\begin{pmatrix}\\pmb e_0\\cdot\\pmb A\\cdot\\pmb f_0&\\pmb e_0\\cdot\\pmb A\\cdot\\pmb f_1&\\cdots&\\pmb e_0\\cdot\\pmb A\\cdot\\pmb f_n\\\\\\pmb e_1\\cdot\\pmb A\\cdot\\pmb f_0&\\pmb e_1\\cdot\\pmb A\\cdot\\pmb f_1&\\cdots&\\pmb e_1\\cdot\\pmb A\\cdot\\pmb f_n\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\pmb e_n\\cdot\\pmb A\\cdot\\pmb f_0&\\pmb e_n\\cdot\\pmb A\\cdot\\pmb f_1&\\cdots&\\pmb e_n\\cdot\\pmb A\\cdot\\pmb f_n\\end{pmatrix} ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807032,
+      "updated": 1689807226
+    },
+    {
+      "id": "64b8698a1280f0000032b3aa",
+      "text": "  添字が無いときは、表現行列と一致させる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807245,
+      "updated": 1689807266
+    },
+    {
+      "id": "64b8699f1280f0000032b3ab",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807266,
+      "updated": 1689807266
+    },
+    {
+      "id": "64b8699f1280f0000032b3ac",
+      "text": "他の階数の場合",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807266,
+      "updated": 1689807273
+    },
+    {
+      "id": "64b869a61280f0000032b3ad",
+      "text": " [$ [\\pmb a]^{\\sf E}_i:=\\pmb a\\cdot\\pmb e_i ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807273,
+      "updated": 1689807294
+    },
+    {
+      "id": "64b869bc1280f0000032b3ae",
+      "text": " [$ [{\\cal\\pmb A}]^{\\sf EFG}_{ijk}:={\\cal\\pmb A}\\vdots\\pmb e_i\\pmb f_j\\pmb g_k ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807295,
+      "updated": 1689807336
+    },
+    {
+      "id": "64b869e61280f0000032b3af",
+      "text": "  [$ \\vdots]は3重縮合",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807337,
+      "updated": 1689807346
+    },
+    {
+      "id": "64b868091280f0000032b3a1",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689806860,
+      "updated": 1689806860
+    },
+    {
+      "id": "64b86a6b1280f0000032b3b5",
+      "text": "計算",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807470,
+      "updated": 1689807471
+    },
+    {
+      "id": "64b86a191280f0000032b3b0",
+      "text": "[$ [\\pmb A]^{\\sf FG}=[\\pmb I\\pmb A\\pmb I]^{\\sf FG} ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807389,
+      "updated": 1689807415
+    },
+    {
+      "id": "64b86a351280f0000032b3b2",
+      "text": "  [$ =[\\pmb I]^{\\sf F\\bar E}[\\pmb A]^{\\sf EE}[\\pmb I]^{\\sf\\bar EG} ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807417,
+      "updated": 1689807452
+    },
+    {
+      "id": "64b86a1a1280f0000032b3b1",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807389,
+      "updated": 1689807480
+    },
+    {
+      "id": "64b86a781280f0000032b3b7",
+      "text": "[$ [\\pmb A]^{\\sf\\bar E\\bar E}=[\\pmb I\\pmb A\\pmb I]^{\\sf\\bar E\\bar E} ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807483,
+      "updated": 1689807493
+    },
+    {
+      "id": "64b86a781280f0000032b3b8",
+      "text": "  [$ =[\\pmb I]^{\\sf\\bar E\\bar E}[\\pmb A]^{\\sf EE}[\\pmb I]^{\\sf\\bar E\\bar E} ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807484,
+      "updated": 1689807508
+    },
+    {
+      "id": "64b86a6f1280f0000032b3b6",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689807475,
+      "updated": 1689807475
+    },
+    {
+      "id": "64b86ea91280f0000032b3ed",
+      "text": "座標変換は元のtensorを変化させない→元が恒等テンソルなんだから当然",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689808556,
+      "updated": 1689808556
+    },
+    {
+      "id": "64b86e2c1280f0000032b3d6",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689808431,
+      "updated": 1689808431
+    },
+    {
+      "id": "64b86e2d1280f0000032b3d7",
+      "text": "[* 課題]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689808432,
+      "updated": 1689808443
+    },
+    {
+      "id": "64b86e2e1280f0000032b3d9",
+      "text": "複素線型空間への拡張を試していない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689808433,
+      "updated": 1689808448
+    },
+    {
+      "id": "64b86e3d1280f0000032b3da",
+      "text": " [$ \\bar E]という表記が衝突しそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689808448,
+      "updated": 1689808457
+    },
+    {
+      "id": "64b86e2e1280f0000032b3d8",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689808433,
+      "updated": 1689808433
+    }
+  ]
+}

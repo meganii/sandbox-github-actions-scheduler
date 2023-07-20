@@ -1,0 +1,281 @@
+{
+  "id": "64b8f972c86e5f001c833a35",
+  "title": "スカラーを1次元ベクトルと同一視できないだろうか",
+  "created": 1689844083,
+  "updated": 1689844146,
+  "lines": [
+    {
+      "id": "64b8f972c86e5f001c833a35",
+      "text": "スカラーを1次元ベクトルと同一視できないだろうか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1aaa",
+      "text": "from [テンソル計算よもやま話(仮)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1aab",
+      "text": "[スカラー]を[1次元ベクトル]と同一視できないだろうか[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844112
+    },
+    {
+      "id": "64b8f9911280f000004b1ace",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844118,
+      "updated": 1689844118
+    },
+    {
+      "id": "64b8f96e1280f000004b1aad",
+      "text": "スカラーは[0階テンソル][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1aae",
+      "text": " そうなのか[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1aaf",
+      "text": " [次元]は[成分]の数、[階]は添字の数を表すというイメージ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ab0",
+      "text": "  なるほど〜[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ab1",
+      "text": " 例：2次元4階テンソルの成分は",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ab2",
+      "text": "  [$ \\begin{matrix}A_{0000},&A_{0001},&A_{0010},&A_{0011},\\\\A_{0100},&A_{0101},&A_{0110},&A_{0111},\\\\A_{1000},&A_{1001},&A_{1010},&A_{1011},\\\\A_{1100},&A_{1101},&A_{1110},&A_{1111}\\end{matrix}]の[$ 2^4=16]個",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ab3",
+      "text": "  多すぎワロタ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ab4",
+      "text": " プログラムで言うと、[多次元配列]の次元が階に、配列の添字の範囲が次元に相当する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ab5",
+      "text": "  `int fourth_order_tensor[2][2][2][2];`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ab6",
+      "text": "  階ごとに次元が違う場合もあるのだろうか[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ab7",
+      "text": "  もちろんできます[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ab8",
+      "text": "   例：2次元x3次元の2階tensor[* の表現行列]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ab9",
+      "text": "    [$ \\begin{pmatrix}0&72&5\\\\2&3+i&67\\end{pmatrix}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1aba",
+      "text": " 　　ただ、物理だと同じ次元のtensorしか扱わない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1abb",
+      "text": " 　　 3次元空間で考えるので",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1abc",
+      "text": " 　　 解析力学や現代物理学だと違うかもしれない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1abd",
+      "text": " スカラーは添字がないので0階",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f9951280f000004b1acf",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844121,
+      "updated": 1689844121
+    },
+    {
+      "id": "64b8f96e1280f000004b1abe",
+      "text": "同一視できないことはないが区別した方が便利なものを雑に壺に入れて混ぜてしまう感がある[nishio.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1abf",
+      "text": " 「ベクトルをスカラー倍したものは同じ次元のベクトルになる」という法則はシンプル",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ac0",
+      "text": " 区別したらどう便利なのだろう[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ac1",
+      "text": "  [スカラーを1次元ベクトルと同一視できないだろうか#64b8f96e1280f000004b1abf]はその例？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844139
+    },
+    {
+      "id": "64b8f96e1280f000004b1ac2",
+      "text": "  [broadcasting]と[要素積]があればスカラー倍いらなくなるのではないか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ac3",
+      "text": "   要素積の使い勝手が悪そう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ac4",
+      "text": "    こいつの応用例を知らない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ac5",
+      "text": "   スカラー倍は[線型空間]の定義に関わる重要な演算なので、スカラー倍を代替することは考えにくい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ac6",
+      "text": "   　単に考えにくいだけ。要素積をベースとした構造を作ってみるとなにか面白いものが見えるかもしれない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ac7",
+      "text": "   broadcastingは何だっけ？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ac8",
+      "text": "    検索しても数学の放送しかでてこなかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1ac9",
+      "text": "    サイズの違う配列同士の演算をいい感じにやってくれるやつ[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1aca",
+      "text": "     [https://note.nkmk.me/python-numpy-broadcasting/ NumPyのブロードキャスト（形状の自動変換） | note.nkmk.me]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f9ac1280f000004b1ad0",
+      "text": "     [numpy]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844144,
+      "updated": 1689844146
+    },
+    {
+      "id": "64b8f96e1280f000004b1acb",
+      "text": "     1次元ベクトルを相手のshapeにbroadcastして要素積を取るとスカラー積と同じ結果になる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1acc",
+      "text": "   なんか余計に複雑になるだけな気がするな…[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    },
+    {
+      "id": "64b8f96e1280f000004b1acd",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689844083,
+      "updated": 1689844083
+    }
+  ]
+}
