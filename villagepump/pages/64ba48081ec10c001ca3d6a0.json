@@ -1,0 +1,547 @@
+{
+  "id": "64ba48081ec10c001ca3d6a0",
+  "title": "滑面領域における摩擦損失係数の理論式を陽に解く",
+  "created": 1689929738,
+  "updated": 1689929822,
+  "lines": [
+    {
+      "id": "64ba48081ec10c001ca3d6a0",
+      "text": "滑面領域における摩擦損失係数の理論式を陽に解く",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929738
+    },
+    {
+      "id": "64ba48071280f00000d62952",
+      "text": "from [2022/11/05]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929738
+    },
+    {
+      "id": "64ba48071280f00000d62953",
+      "text": "滑面領域における摩擦損失係数の理論式を陽に解く",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929738
+    },
+    {
+      "id": "64ba48071280f00000d62954",
+      "text": "[対数関数]と一次函数が混じった函数の逆函数に特別な名前が付いているか知っている方はいらっしゃいませんか？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929773
+    },
+    {
+      "id": "64ba48071280f00000d62955",
+      "text": " 具体的には[陰函数][$ F(R_e,\\sqrt{f}):=\\frac{1}{\\sqrt{f}}-1.74+2.0\\log\\left(\\frac{18.7}{R_e\\sqrt{f}}\\right)=0]を[$ R_e]から[$ \\sqrt{f}]の函数に書き換えたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929738
+    },
+    {
+      "id": "64ba48071280f00000d62956",
+      "text": "  ちなみにこの式は、[滑面乱流]にて[Reynolds数][$ R_e]から[摩擦損失係数][$ f](流体の壁面摩擦によるエネルギ損失を表す係数)を算出する実験式",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929738
+    },
+    {
+      "id": "64ba48071280f00000d62957",
+      "text": " 調べようにも、検索ワードがわからず手も足もでない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929738
+    },
+    {
+      "id": "64ba48311280f00000d6299b",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929779,
+      "updated": 1689929780
+    },
+    {
+      "id": "64ba48071280f00000d62958",
+      "text": "見つかった！[LambertのW函数][$ W]を使えばいけそう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62959",
+      "text": " https://ja.wikipedia.org/wiki/ランベルトのW関数",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6295a",
+      "text": " [$ f:z\\mapsto ze^z]の逆函数を[$ W]と定義する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6295b",
+      "text": " [$ x:=\\ln f(z)=\\ln z+z] then [$ z=(\\ln\\circ f)^{-1}(x)=f^{-1}(e^z)=W(e^x)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6295c",
+      "text": "  check: [$ W(e^{\\ln z+z})=W(ze^z)=z]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6295d",
+      "text": "   あってる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6295e",
+      "text": " [$ 0=y+a+b\\ln(yx)]を[$ x\\mapsto y]に変形できれば、題意を[陽な函数]に変形できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6295f",
+      "text": "  [$ \\iff y+b\\ln y+b\\ln x+a=0]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62960",
+      "text": "  [$ \\iff \\ln\\left(y^be^y\\right)=-b\\ln x-a]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62961",
+      "text": "   詰まった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62962",
+      "text": "   この展開はむりそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62963",
+      "text": " wikiによると、[$ e^{-cx}=a(x-r)]の形なら[$ W]で表せるらしい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62964",
+      "text": " [$ 0=y+a+b\\ln(yx)]は無理じゃないか？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62965",
+      "text": "  [$ \\iff e^{-a-y}=y^bx^b]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62966",
+      "text": "  [$ \\iff e^{-y}=e^a(y^bx^b)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62967",
+      "text": "  [無理ゲー]感でてる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62968",
+      "text": " これ以上は自力じゃ無理そう……[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62969",
+      "text": " とりあえず、Wの性質だけでも調べておくか。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6296a",
+      "text": "  逆函数の性質",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6296b",
+      "text": "　  [$ W(ze^z)=z]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6296c",
+      "text": " 　  [$ W(z\\ln z)=W(\\ln z(e^{\\ln z}))=\\ln z]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6296d",
+      "text": "　  [$ W(z)e^{W(z)}=z]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6296e",
+      "text": "　   両辺の[$ \\ln]をとる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6296f",
+      "text": "　    [$ \\ln W(z)=\\ln z-W(z)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62970",
+      "text": "　   [$ e^z]代入",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62971",
+      "text": "　    [$ \\ln W(e^z)=z-W(e^z)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62972",
+      "text": "　    [$ \\therefore z=x+\\ln x\\iff x=W(e^z)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62973",
+      "text": " ひらめいた！！！",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62974",
+      "text": "  [$ 0=y+a+b\\ln(yx)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62975",
+      "text": "  [$ \\iff y+b\\ln y+b\\ln x+a=0]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62976",
+      "text": "  [$ \\iff \\frac{y}{b}+\\ln y+\\ln x+\\frac{a}{b}=0]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62977",
+      "text": "   ([$ b\\neq0]と仮定)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62978",
+      "text": "  [$ \\iff \\frac{y}{b}+\\ln\\frac{y}{b}+\\ln x+\\frac{a}{b}+\\ln b=0]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62979",
+      "text": "  [$ \\iff \\frac{y}{b}+\\ln\\frac{y}{b}=-\\frac{a}{b}-\\ln xb]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6297a",
+      "text": "  [$ \\iff \\frac{y}{b}=W\\left(e^{-\\frac{a}{b}-\\ln xb}\\right)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6297b",
+      "text": "  [$ \\underline{\\iff y=bW\\left(\\frac{e^{-\\frac{a}{b}}}{xb}\\right)\\quad}_\\blacksquare]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6297c",
+      "text": "   check: [$ \\frac{y}{b}e^\\frac{y}{b}=\\frac1{xb}e^{-\\frac{a}{b}}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6297d",
+      "text": "    [$ \\iff xye^\\frac{y}{b}=e^{-\\frac{a}{b}}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6297e",
+      "text": "    [$ \\iff yb^{-1}+\\ln xy=-ab^{-1}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6297f",
+      "text": "    [$ \\iff 0=y+a+b\\ln xy]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62980",
+      "text": "    あってる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62981",
+      "text": " あとは[$ a,b]に実験式の定数を代入すればおしまい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62982",
+      "text": "  [$ \\frac{1}{\\sqrt{f}}-1.74+2.0\\log\\left(\\frac{18.7}{R_e\\sqrt{f}}\\right)=0]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62983",
+      "text": "  [$ \\iff \\frac1{\\sqrt{f}}+0.8-2.0\\log(R_e\\sqrt{f})=0]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62984",
+      "text": "  [$ \\iff{\\sqrt{f}}^{-1}+0.8+\\frac{2.0}{\\ln10}\\ln({R_e}^{-1}{\\sqrt{f}}^{-1})=0]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62985",
+      "text": "  [$ y=\\frac1{\\sqrt{f}},a=0.8,b=\\frac{2.0}{\\ln10},x={R_e}^{-1}]を代入すれば、[$ R_e\\mapsto f]が以下のように求まる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62986",
+      "text": "  [$ \\underline{\\frac{1}{\\sqrt{f}}=\\frac{2.0}{\\ln10}W\\left(\\frac{\\ln 10}{2.0}10^{-0.4}R_e\\right)\\quad}_\\blacksquare]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62987",
+      "text": " これで一件落着ですね！",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62988",
+      "text": "  [よかった、これで解決ですね]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62989",
+      "text": " ところで粗面乱流・遷移領域・滑面乱流を表現する内挿式があってですね(白目)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6298a",
+      "text": "  [$ F(R_e,\\sqrt{f}):=\\frac{1}{\\sqrt{f}}-1.74+2.0\\log\\left(\\frac{2k_s}{d}+\\frac{18.7}{R_e\\sqrt{f}}\\right)=0]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6298b",
+      "text": "   [Colebrook式]といいます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6298c",
+      "text": "  [$ \\frac{k_s}{d}]は定数扱いしていいのですが……これ解けるの？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6298d",
+      "text": "  等価な方程式はこれ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6298e",
+      "text": "   [$ y+a+b\\ln(c+xy)=0]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d6298f",
+      "text": "  あとは誰か解いてくれ([丸投げ])",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba48071280f00000d62990",
+      "text": "  wikipedia見たら、陽に解いた式があるっぽい？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929785
+    },
+    {
+      "id": "64ba485b1280f00000d6299d",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929821,
+      "updated": 1689929822
+    },
+    {
+      "id": "64ba48071280f00000d62991",
+      "text": "[\" [対数関数]と一次函数が混じった函数の逆函数に特別な名前が付いているか知っている方はいらっしゃいませんか？]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929817
+    },
+    {
+      "id": "64ba48071280f00000d62992",
+      "text": " 「[お客様の中にお医者様はいませんか！？]」の強い版みたいで笑ってしまった[issac-37765679.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929817
+    },
+    {
+      "id": "64ba48071280f00000d62993",
+      "text": " お客様の中に[超越函数つよつよ様]はいませんか！？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929817
+    },
+    {
+      "id": "64ba48501280f00000d6299c",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929810,
+      "updated": 1689929810
+    },
+    {
+      "id": "64ba48071280f00000d62994",
+      "text": "[ランベルトのW関数]は[井戸端で既出]だった[hatori.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929808
+    },
+    {
+      "id": "64ba48071280f00000d62995",
+      "text": "　[豆知識#62684c698ee92a0000174941]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929808
+    },
+    {
+      "id": "64ba48071280f00000d62996",
+      "text": "　！！？！！！？！！[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929808
+    },
+    {
+      "id": "64ba48071280f00000d62997",
+      "text": "　 しかも自分でコメントしてたのにすっかり忘れてた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929808
+    },
+    {
+      "id": "64ba48071280f00000d62998",
+      "text": "　 [ブラケティングしなかったのが運の尽き]だったか……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929808
+    },
+    {
+      "id": "64ba48071280f00000d62999",
+      "text": "　この[伏線回収]あつ[はるひ.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929808
+    },
+    {
+      "id": "64ba48071280f00000d6299a",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1689929738,
+      "updated": 1689929738
+    }
+  ]
+}
