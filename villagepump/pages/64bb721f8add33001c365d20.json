@@ -1,0 +1,778 @@
+{
+  "id": "64bb721f8add33001c365d20",
+  "title": "原始ピタゴラス数を求める",
+  "created": 1690006050,
+  "updated": 1690006778,
+  "lines": [
+    {
+      "id": "64bb721f8add33001c365d20",
+      "text": "原始ピタゴラス数を求める",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006050,
+      "updated": 1690006050
+    },
+    {
+      "id": "64bb7253ed60e6000010c2b3",
+      "text": "from [2023/07/22]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006099,
+      "updated": 1690006111
+    },
+    {
+      "id": "64bb7263ed60e6000010c2b4",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006114,
+      "updated": 1690006114
+    },
+    {
+      "id": "64bb7222ed60e6000010c24d",
+      "text": "[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006050,
+      "updated": 1690006071
+    },
+    {
+      "id": "64bb7238ed60e6000010c24e",
+      "text": "\t[原始ピタゴラス数]を求める公式の導出が[歯ごたえ]があった記憶がある",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006071,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c24f",
+      "text": " \t\t久々にやってみるか",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c250",
+      "text": " \t\t[箇条書き式清書]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c251",
+      "text": "  \t\t[$ \\{(a,b,c)\\in\\N^3|a^2+b^2=c^2\\ \\land\\ \\gcd(a,b,c)=1\\}]を[陽に求める]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c252",
+      "text": "  \t\t\t1. [$ a]が偶数、[$ b, c]が奇数",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c253",
+      "text": "   \t\t\t1. [$ a,b,c]の少なくとも 1 つが奇数 ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c254",
+      "text": "   \t\t\t\t全部偶数だと[$ \\gcd(a,b,c)=1]に反する",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c255",
+      "text": "   \t\t\t2. [$ c]は奇数",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c256",
+      "text": "   \t\t\t\t偶数と仮定すると [[1.1.]] より[$ a,b]は共に奇数なので以下が成立",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c257",
+      "text": "    \t\t\t\t[$ a^2+b^2\\equiv 1+1=2 \\mod 4 ]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c258",
+      "text": "     \t\t\t\t[$ ^{\\forall c\\in\\N}[c^2\\not\\equiv2\\mod4] ]なので仮定と矛盾",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c259",
+      "text": "     \t3. [$ a]を偶数としても一般性を失わない",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c25a",
+      "text": "     \t\t加算の可換性から",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c25b",
+      "text": "    \t2. [$ c=n^2+m^2],[$ b=n^2-m^2], [$ a=2nm] ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c25c",
+      "text": "   \t\t\t1. [$ \\frac{c+b}{2},\\frac{c-b}{2}]は平方数",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c25d",
+      "text": "   \t\t\t\t平方数でないと仮定すると共通因数[$ p\\ge2]を持つ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c25e",
+      "text": "   \t\t\t\t\t[$ \\frac{a^2}{4}]が平方数のため",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c25f",
+      "text": "   \t\t\t\t[$ c+b=2u^2p],[$ c-b=2v^2p]とおける",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c260",
+      "text": "   \t\t\t\t\t[$ c=(u^2+v^2)p],[$ b=(u^2-b^2)p],[$ a=4u^2v^2p^2]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c261",
+      "text": "   \t\t\t\t\t\t原始ピタゴラス数であることに矛盾",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006074
+    },
+    {
+      "id": "64bb7239ed60e6000010c262",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006156
+    },
+    {
+      "id": "64bb7239ed60e6000010c263",
+      "text": " 議論",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006162
+    },
+    {
+      "id": "64bb7318ed60e6000010c2cb",
+      "text": " \t>[$ \\{(a,b,c)\\in\\N^3|\\lambda(a^2+b^2)=\\lambda c^2\\ \\land\\ \\gcd(a,b,c)=1\\}]を陽に求めたい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006296,
+      "updated": 1690006317
+    },
+    {
+      "id": "64bb7239ed60e6000010c264",
+      "text": "  \t[$ \\{(a,b,c)\\in\\N^3|a^2+b^2=c^2\\ \\land\\ \\gcd(a,b,c)=1\\}]を陽に求めたい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006294
+    },
+    {
+      "id": "64bb7239ed60e6000010c265",
+      "text": "   \tラムダ消せたわ。[takker.icon]ありがと。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006294
+    },
+    {
+      "id": "64bb7239ed60e6000010c266",
+      "text": "   \t [うい][takker.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006294
+    },
+    {
+      "id": "64bb72f7ed60e6000010c2ca",
+      "text": "  >1.2 の後",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006263,
+      "updated": 1690006283
+    },
+    {
+      "id": "64bb7239ed60e6000010c26e",
+      "text": "\t\t\t3. [$ a,b]の片方のみが偶数",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006259
+    },
+    {
+      "id": "64bb7239ed60e6000010c26f",
+      "text": "\t\t\t [- 1.より][$ \\sout{2\\not|a\\land2\\not|b\\lor}][takker.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006337
+    },
+    {
+      "id": "64bb7239ed60e6000010c271",
+      "text": " \t\t\t\t[[2.]] の[$ c]は奇数は結論だから[[3.]]は要らない気がする[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006259
+    },
+    {
+      "id": "64bb7239ed60e6000010c272",
+      "text": " \t\t\t\t\tあ。[$ c]が奇数から暗黙のうちに導いたやつを厳密に導こうとしてるんか",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006259
+    },
+    {
+      "id": "64bb7239ed60e6000010c273",
+      "text": " \t\t\t\t[$ c]が奇数なら[$ a^2,b^2]のどちらか一方が偶数なのはたしかに自明だ[takker.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006259
+    },
+    {
+      "id": "64bb7239ed60e6000010c274",
+      "text": " \t\t\t\t で、[$ \\bullet^2]だと偶奇が保存されるから、[\" [$ a,b]のどちらか一方のみが偶数]も自明ということか",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006259
+    },
+    {
+      "id": "64bb7239ed60e6000010c275",
+      "text": " \t\t\t\t \tうん。そこまで込みで自明かなと[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006259
+    },
+    {
+      "id": "64bb7239ed60e6000010c276",
+      "text": "\t\t[$ c=n^2+m^2],[$ b=n^2-m^2], [$ a=2nm]とできる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006381,
+      "updated": 1690006395
+    },
+    {
+      "id": "64bb7239ed60e6000010c277",
+      "text": "  \t[$ a^2=c^2-b^2]より[$ a^2=(c+b)(c-b)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006382,
+      "updated": 1690006395
+    },
+    {
+      "id": "64bb7239ed60e6000010c278",
+      "text": "  \t\t[$ c, b]が奇数とすると[$ c+b]も[$ c-b]も偶数",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006382,
+      "updated": 1690006395
+    },
+    {
+      "id": "64bb7239ed60e6000010c279",
+      "text": "  \t\t\t[$ c+b=2n^2],[$ c-b=2m^2]とおいてみる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006382,
+      "updated": 1690006395
+    },
+    {
+      "id": "64bb7239ed60e6000010c27a",
+      "text": "\t\t\t\t\t\t元の式に代入すると",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006382,
+      "updated": 1690006395
+    },
+    {
+      "id": "64bb7239ed60e6000010c27b",
+      "text": " \t\t\t\t\t\t[$ (2nm)^2+(n^2-m^2)=(n^2+m^2)]となる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006382,
+      "updated": 1690006395
+    },
+    {
+      "id": "64bb7239ed60e6000010c27c",
+      "text": " \t[$ c=n^2+m^2],[$ b=n^2-m^2], [$ a=2nm] の全域性を示したい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006380,
+      "updated": 1690006398
+    },
+    {
+      "id": "64bb7239ed60e6000010c27d",
+      "text": " \t\t[$ c,b]を奇数とする",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006380,
+      "updated": 1690006398
+    },
+    {
+      "id": "64bb7239ed60e6000010c27e",
+      "text": " \t\t\t[$ \\frac{c+b}{2},\\frac{c-b}{2}]は平方数である",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006380,
+      "updated": 1690006398
+    },
+    {
+      "id": "64bb7239ed60e6000010c27f",
+      "text": " \t\t\t\t平方数でないと仮定すると共通因数[$ p\\ge2]を持つ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006380,
+      "updated": 1690006398
+    },
+    {
+      "id": "64bb7239ed60e6000010c280",
+      "text": " \t\t\t\t\t[$ \\frac{a^2}{4}]が平方数のため",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006380,
+      "updated": 1690006398
+    },
+    {
+      "id": "64bb7239ed60e6000010c281",
+      "text": " \t\t\t\t[$ c+b=2u^2p],[$ c-b=2v^2p]とおくと、",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006380,
+      "updated": 1690006398
+    },
+    {
+      "id": "64bb7239ed60e6000010c282",
+      "text": " \t\t\t\t\t[$ c=(u^2+v^2)p],[$ b=(u^2-b^2)p],[$ a=4u^2v^2p^2]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006380,
+      "updated": 1690006398
+    },
+    {
+      "id": "64bb7239ed60e6000010c283",
+      "text": " \t\t\t\t\t\t原始ピタゴラス数であることに矛盾",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006380,
+      "updated": 1690006398
+    },
+    {
+      "id": "64bb7239ed60e6000010c284",
+      "text": "  >[$ a^2=(c+b)(c-b)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006738
+    },
+    {
+      "id": "64bb7239ed60e6000010c285",
+      "text": " \t\t[$ a,b]どっちが奇数だ？[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006162
+    },
+    {
+      "id": "64bb7239ed60e6000010c287",
+      "text": "  \t\tどちらでも成立しそう[takker.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006162
+    },
+    {
+      "id": "64bb7239ed60e6000010c288",
+      "text": "  \t\t\t確認したらどっちでも良かった[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006162
+    },
+    {
+      "id": "64bb7239ed60e6000010c289",
+      "text": "  \t\t[$ a]を偶数とすると、",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006162
+    },
+    {
+      "id": "64bb7239ed60e6000010c28a",
+      "text": "  \t\t [$ \\exist n\\in\\N.a=2n\\land n^2=\\frac{c+b}{2}\\frac{c-b}{2}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006162
+    },
+    {
+      "id": "64bb7239ed60e6000010c28b",
+      "text": " \t\t [$ p:=\\frac{c+b}{2},q:=\\frac{c-b}{2}]とすれば",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006162
+    },
+    {
+      "id": "64bb7239ed60e6000010c28c",
+      "text": "  \t\t [$ a=\\sqrt{4pq},b=p-q,c=p+q]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006162
+    },
+    {
+      "id": "64bb7239ed60e6000010c28d",
+      "text": "  \t\tになる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006162
+    },
+    {
+      "id": "64bb7239ed60e6000010c28e",
+      "text": "  \t\tあとは[$ p,q]を任意の自然数で表せる形に変換できればいい？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006162
+    },
+    {
+      "id": "64bb7239ed60e6000010c28f",
+      "text": "   \t\t[$ p,q]のどちらかが奇数ー①",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006162
+    },
+    {
+      "id": "64bb7239ed60e6000010c290",
+      "text": "   \t\t[$ p>q]ー②",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006162
+    },
+    {
+      "id": "64bb7239ed60e6000010c291",
+      "text": "   \t\t[$ \\exist n\\in\\N.pq=n^2]ー③",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006162
+    },
+    {
+      "id": "64bb7239ed60e6000010c292",
+      "text": "   \t\t①、③から、[$ \\exist n\\in\\N.pq=4n^2]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006162
+    },
+    {
+      "id": "64bb7239ed60e6000010c293",
+      "text": " \t迷いの軌跡",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006749
+    },
+    {
+      "id": "64bb7239ed60e6000010c294",
+      "text": " \t\t[$ c^2=a^2+b^2=(2n+1)^2+(2m)^2=4(n^2+n+m^2)+1]となる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006749
+    },
+    {
+      "id": "64bb7239ed60e6000010c295",
+      "text": " \t\t\t[() TODO] 変数は 1 つで表せたはずなのでどうやったら消せるか考える",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006749
+    },
+    {
+      "id": "64bb7239ed60e6000010c296",
+      "text": " \t\t\t\t[() 天下り][$ a=4n^2-1,\\ b=4n]とおくと[$ c^2=(4n^2-1)^2+(4n)^2=(16n^4-8n^2+1)+(16n^2)=(4n^2+1)^2]でピタゴラスの等式を満たす",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006749
+    },
+    {
+      "id": "64bb7239ed60e6000010c297",
+      "text": " \t\t\t\t\tこれが答えだったはずなんだけどどうやって示せるかな～[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006749
+    },
+    {
+      "id": "64bb7239ed60e6000010c298",
+      "text": " \t\t\t\t\t\t示すだけならこの式をいきなり書いて全て取りつくしていることを示せばいいけど、非天下り式の導出がしたい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006749
+    },
+    {
+      "id": "64bb7239ed60e6000010c299",
+      "text": " \t\t\t\t\t多分奇数以外の条件を調べる必要がある",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006749
+    },
+    {
+      "id": "64bb7239ed60e6000010c29a",
+      "text": " \t\t\t\t\t[カンニング]したらそもそも違うしw",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006749
+    },
+    {
+      "id": "64bb7239ed60e6000010c29b",
+      "text": " \t\t\t\t\t\t[$ (n^2-m^2)^2+(2mn)^2=(n^2+m^2)^2]らしい。自由度 2 やん",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006749
+    },
+    {
+      "id": "64bb7239ed60e6000010c29c",
+      "text": " \t\t\t\t\t\t\tこの式から[$ \\frac{c-a}{2}],[$ \\frac{c+a}{2}]が平方数であることを示せればいいのはわかるが、式を知らない状態でどうやってこの発想ができよう？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006749
+    },
+    {
+      "id": "64bb7239ed60e6000010c29d",
+      "text": " \t\t\t\t\t\t\t\t[$ (c^2-a^2)=(c+a)(c-a)]から示していけばいいのか",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006749
+    },
+    {
+      "id": "64bb74eaed60e6000010c2cc",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006762,
+      "updated": 1690006769
+    },
+    {
+      "id": "64bb7239ed60e6000010c29e",
+      "text": "\t\t>   \t2. [$ c=n^2+m^2],[$ b=n^2-m^2], [$ a=2nm] ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006765
+    },
+    {
+      "id": "64bb7239ed60e6000010c29f",
+      "text": "  >   \t\t\t1. [$ \\frac{c+b}{2},\\frac{c-b}{2}]は平方数",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006765
+    },
+    {
+      "id": "64bb7239ed60e6000010c2a0",
+      "text": "  >   \t\t\t\t平方数でないと仮定すると共通因数[$ p\\ge2]を持つ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006765
+    },
+    {
+      "id": "64bb7239ed60e6000010c2a1",
+      "text": "  >   \t\t\t\t\t[$ \\frac{a^2}{4}]が平方数のため",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006765
+    },
+    {
+      "id": "64bb7239ed60e6000010c2a2",
+      "text": "  >   \t\t\t\t[$ c+b=2u^2p],[$ c-b=2v^2p]とおける",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006765
+    },
+    {
+      "id": "64bb7239ed60e6000010c2a3",
+      "text": "  >   \t\t\t\t\t[$ c=(u^2+v^2)p],[$ b=(u^2-b^2)p],[$ a=4u^2v^2p^2]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006765
+    },
+    {
+      "id": "64bb7239ed60e6000010c2a4",
+      "text": "  >   \t\t\t\t\t\t原始ピタゴラス数であることに矛盾",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006765
+    },
+    {
+      "id": "64bb7239ed60e6000010c2a5",
+      "text": "\t\t\t[$ ^{\\forall n\\in\\N\\exist s,t\\in\\N}n=s^2t]を使ったのか[takker.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006778
+    },
+    {
+      "id": "64bb7239ed60e6000010c2a6",
+      "text": "\t\t\t んで[$ \\implies t=1]が導ければ、平方数であることを示せると",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006778
+    },
+    {
+      "id": "64bb7239ed60e6000010c2a7",
+      "text": "\t\t\t この方法は思いつかなかった",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006778
+    },
+    {
+      "id": "64bb7239ed60e6000010c2a8",
+      "text": "\t\t\t [$ ^{\\forall n\\in\\N}\\left[^{\\forall m\\in\\N}n\\ne m^2 \\rightarrow^{\\exist s,t\\in\\N}n=s^2t\\right] ]だね[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006778
+    },
+    {
+      "id": "64bb7239ed60e6000010c2a9",
+      "text": "\t\t\t [$ ^{\\forall n\\in\\N\\exist s,t\\in\\N}n=s^2t]でもあってると思う[takker.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006778
+    },
+    {
+      "id": "64bb7239ed60e6000010c2aa",
+      "text": "\t\t\t\t 証明",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006778
+    },
+    {
+      "id": "64bb7239ed60e6000010c2ab",
+      "text": "\t\t\t\t  [$ \\top]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006778
+    },
+    {
+      "id": "64bb7239ed60e6000010c2ac",
+      "text": "\t\t\t\t  [$ \\iff^{\\forall n\\in\\N}n=n]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006778
+    },
+    {
+      "id": "64bb7239ed60e6000010c2ad",
+      "text": "\t\t\t\t  [$ \\implies^{\\forall n\\in\\N\\exist t\\in\\N}n=t]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006778
+    },
+    {
+      "id": "64bb7239ed60e6000010c2ae",
+      "text": "\t\t\t\t  [$ \\iff^{\\forall n\\in\\N\\exist t\\in\\N}n=1^2\\cdot t]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006778
+    },
+    {
+      "id": "64bb7239ed60e6000010c2af",
+      "text": "\t\t\t\t  [$ \\implies^{\\forall n\\in\\N\\exist s,t\\in\\N}n=s^2t]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006778
+    },
+    {
+      "id": "64bb7239ed60e6000010c2b0",
+      "text": "\t\t\t\t なるほど。矛盾を導く文脈で見てたから[$ n\\ne m^2]を入れたくなったけど[$ t=1]を導く文脈だとそっちでもいいのか[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006074,
+      "updated": 1690006778
+    },
+    {
+      "id": "64bb7240ed60e6000010c2b1",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006080,
+      "updated": 1690006083
+    },
+    {
+      "id": "64bb7243ed60e6000010c2b2",
+      "text": "[takker.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006083,
+      "updated": 1690006132
+    },
+    {
+      "id": "64bb726eed60e6000010c2b5",
+      "text": " [$ n\\equiv0,1,2,3,4,5,6,7\\pmod8]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006126,
+      "updated": 1690006145
+    },
+    {
+      "id": "64bb7282ed60e6000010c2c0",
+      "text": " [$ \\implies n^2\\equiv0,1,4,9,16,25,36,49\\pmod8]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006145,
+      "updated": 1690006145
+    },
+    {
+      "id": "64bb7282ed60e6000010c2c1",
+      "text": "    [$ \\equiv0,1,4,1,0,1,0,1]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006145,
+      "updated": 1690006145
+    },
+    {
+      "id": "64bb7282ed60e6000010c2c2",
+      "text": " 偶数なら0,奇数なら1,奇数の4倍なら4になる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006145,
+      "updated": 1690006145
+    },
+    {
+      "id": "64bb7282ed60e6000010c2c3",
+      "text": " [$ u=m+n\\land v=mn\\iff m^2-um+v=n^2-un+v=0]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006145,
+      "updated": 1690006145
+    },
+    {
+      "id": "64bb7282ed60e6000010c2c4",
+      "text": "  [$ m=\\frac12(u\\pm\\sqrt{u^2-4v})]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006145,
+      "updated": 1690006145
+    },
+    {
+      "id": "64bb7282ed60e6000010c2c5",
+      "text": "  [$ u^2-4v\\equiv0,1\\pmod4]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006145,
+      "updated": 1690006145
+    },
+    {
+      "id": "64bb7282ed60e6000010c2c6",
+      "text": "   常に成立",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006145,
+      "updated": 1690006145
+    },
+    {
+      "id": "64bb7282ed60e6000010c2c7",
+      "text": "  [$ \\pmb f:(m,n)\\mapsto(m+n,mn) ]としたとき、[$ \\pmb f ]は全単射かつ[$ \\pmb f[\\N^2]=\\N^2 ]だろうか？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006145,
+      "updated": 1690006145
+    },
+    {
+      "id": "64bb7282ed60e6000010c2c8",
+      "text": "   [$ m\\le n]とすれば全単射は可能",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006145,
+      "updated": 1690006145
+    },
+    {
+      "id": "64bb7282ed60e6000010c2c9",
+      "text": "   [$ \\pmb f[\\N^2]=\\N^2 ]が求まればいい？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690006145,
+      "updated": 1690006145
+    }
+  ]
+}
