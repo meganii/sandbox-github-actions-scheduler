@@ -1,0 +1,288 @@
+{
+  "id": "64bfd5adc6e666001c04f855",
+  "title": "NP完全な問題を行列で表現する",
+  "created": 1690293679,
+  "updated": 1690293694,
+  "lines": [
+    {
+      "id": "64bfd5adc6e666001c04f855",
+      "text": "NP完全な問題を行列で表現する",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293694
+    },
+    {
+      "id": "64bfd5afed60e60000656db1",
+      "text": "from [2023/07/25]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656db2",
+      "text": "[NP完全な問題を視覚的にこねる]で紹介した問題は行列で表現できる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656db3",
+      "text": "\t[$ A\\bm v=\\bm 1]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656db4",
+      "text": "\t\t[$ A_{i,j}]には[$ i]番目の節に[$ j]番目の変数が含まれる場合[$ 1]が入る",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656db5",
+      "text": "\t\t\tそうでない場合は[$ 0]が入る",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656db6",
+      "text": "\t\t\t1行に入る[$ 1]は丁度[$ 3]つ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656db7",
+      "text": "\t\t\t右辺の[$ \\bm 1]は要素が全部[$ 1]のベクトル",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656db8",
+      "text": "\t\t\t\t全ての節が[$ {\\rm  True}]であることを表す",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656db9",
+      "text": "\t\t十分に条件を縛ると変数に対して式が少なくなるのでこれは劣決定問題",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dba",
+      "text": "\t\t解全体を[$ \\bm v=A^-\\bm 1+{\\rm Ker}(A)\\bm t]のように書ける",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dbb",
+      "text": "\t\t[$ \\bm y = \\bm b+W\\bm x]と書き直す",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dbc",
+      "text": "\t\t\tこの [$ \\bm y]が 0-1 ベクトルになって欲しい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dbd",
+      "text": "\t\t\t\tならないこともある (unsatisfied)",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dbe",
+      "text": "\t\tこの線形方程式、図的にはどういう感じなんだろう",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dbf",
+      "text": "\t\t関連しそうな解説 [http://www-adsys.sys.i.kyoto-u.ac.jp/mohzeki/Presentation/lecturenote20150909.pdf 「今日からできるスパースモデリング」]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dc0",
+      "text": "\t\t\t解[$ \\bm v]はスパースなのか？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dc1",
+      "text": "[$ \\min_\\bm x \\{-y_i\\log y_i-(1-y_i)\\log(1-y_i)\\}]を求めたい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dc2",
+      "text": "\tただし[$ \\bm y=\\bm b+W\\bm x]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dc3",
+      "text": "\t\t最小値は定義域の端 [$ \\{0,1\\}]で、傾きが 0 ではない",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dc4",
+      "text": "\t\t\t勾配法を使う場合定義域外にはみ出した値を域内に戻す処理が必要",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dc5",
+      "text": "\t\t\t\t逆にそれさえできれば最小値にすぐに落ちていきそうな気はしている",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dc6",
+      "text": "\t\t\t\t\t最小値に向けて勾配がどんどん急になるから",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dc7",
+      "text": "\t\t\t\t初期値が最大値だった場合は勾配が 0 なので動き出さない問題がある",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dc8",
+      "text": "\t\t\tこの要件を満たしてほしいだけなら[$ \\min\\{-(y_i-\\frac{1}{2})^2\\}\\qquad y_i\\in[0,1] ]でいいじゃん",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dc9",
+      "text": "\t局所解が有りそうだけど、どんな形をしているのだろうか",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dca",
+      "text": "\t[$ \\min_\\bm x (y_i)^2(1-y_i)^2]でもいい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dcb",
+      "text": "\t\tもっと別の関数でも良い",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dcc",
+      "text": " \t\t[$ y_i=0\\ {\\rm or}\\ 1]で最小値を取る関数の[$ y_i]に線形関数を入れたときの挙動を知りたい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dcd",
+      "text": " \t\t\tベクトル微分を詳しく勉強する必要があるな",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dce",
+      "text": " \t\t[$ y_i\\in\\{0,1\\}]がよくわからなかった[takker.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dcf",
+      "text": " \t\t 離散函数？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dd0",
+      "text": " \t\t 連続関数なんだけど最小を取ると[$ \\ y_i\\in\\{0,1\\}]になるようにしたい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dd1",
+      "text": " とりあえず[$ \\frac{\\partial}{\\partial x_i}(y_i)^2(1-y_i)^2=0]を探すしか無いかなあ[takker.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dd2",
+      "text": "  当たり前だけど",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dd3",
+      "text": "\t非凸関数でも「極小値が全て最小値かつその時のパラメータはどれを選んでも良い」条件だったらうまく最適化できないもんかなぁ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dd4",
+      "text": "\t\t[$ y_i=\\{0,1\\}]になればOKなので、0 でも 1 でもいい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dd5",
+      "text": "\t\t上に凸の部分が最小化に悪影響を及ぼす可能性？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dd6",
+      "text": "\tある関数[$ f]の最小値が存在するなら必ずその最小値に収束することを示す論法について調べる必要があるな",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    },
+    {
+      "id": "64bfd5afed60e60000656dd7",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1690293679,
+      "updated": 1690293679
+    }
+  ]
+}
