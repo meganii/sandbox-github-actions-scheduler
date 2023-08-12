@@ -2,7 +2,7 @@
   "id": "64d0f599ea7c21001b580fed",
   "title": "長いページから出るときが重い",
   "created": 1691415962,
-  "updated": 1691494590,
+  "updated": 1691817742,
   "lines": [
     {
       "id": "64d0f599ea7c21001b580fed",
@@ -418,6 +418,13 @@
       "updated": 1691432159
     },
     {
+      "id": "64d6e0e8ed60e600007c853f",
+      "text": " \t\t\t[2023/07/28]からリンクを踏んだ時のパフォーマンス分析",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691803879,
+      "updated": 1691803927
+    },
+    {
       "id": "64d134dded60e600007f9d29",
       "text": " \t\t\t`removeChild` でほとんどの時間を食ってる",
       "userId": "6436266c7ac3c0001bed60e6",
@@ -531,10 +538,591 @@
     },
     {
       "id": "64d178cb5f1e0d000090c7da",
+      "text": "\t\t\t\t\tこれだと長時間かけて遷移した後に Script が起動されて遷移後のページが(見た目だけ)真っ白になりますね[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691449548,
+      "updated": 1691804119
+    },
+    {
+      "id": "64d6e8b0ed60e60000ffa6f9",
+      "text": " \t\t\t\t\tafter change ではなく before change にラインを削除する処理を挟みたいんだろうな～って思って調べているがそれらしいのが見つからない",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691805871,
+      "updated": 1691805953
+    },
+    {
+      "id": "64d6e938ed60e60000ffa6fa",
+      "text": " \t\t\t\t\t[/kembo/Scrapbox の UserScript でページ遷移をキャッチする方法]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691806007,
+      "updated": 1691806008
+    },
+    {
+      "id": "64d6e93ded60e60000ffa6fb",
+      "text": " \t\t\t\t\t\t興味深い。JSでDOM再構成の話が速いという文脈で載っている",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691806012,
+      "updated": 1691806075
+    },
+    {
+      "id": "64d6e97ced60e60000ffa6fc",
+      "text": " \t\t\t\t\t\t\t今は遅いという文脈でJSでDOM再構成の話をしているのと対象的",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691806075,
+      "updated": 1691806077
+    },
+    {
+      "id": "64d6f7ae1280f00000f37fb1",
+      "text": " \t\t\t\t\tあー、タイミングそこなのか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1691809710,
+      "updated": 1691809717
+    },
+    {
+      "id": "64d6f7b71280f00000f37fb2",
+      "text": " \t\t\t\t\t　別の方法を使わないとだめか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1691809719,
+      "updated": 1691809725
+    },
+    {
+      "id": "64d6ea2ced60e60000ffa6fd",
+      "text": " \t\t\t\t全部のリンクに onClicked イベントリスナを追加するのを思いついた。入るときに重くなりそう。[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691806251,
+      "updated": 1691806381
+    },
+    {
+      "id": "64d6eaafed60e60000ffa6fe",
+      "text": " \t\t\t\t\tリンクがクリックされた時にページのコンテンツを全部消す",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691806381,
+      "updated": 1691806415
+    },
+    {
+      "id": "64d6ead9ed60e60000ffa6ff",
+      "text": " \t\t\t\t\t\t消した後にリンク遷移が行われるかは謎。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691806424,
+      "updated": 1691806437
+    },
+    {
+      "id": "64d6eae6ed60e60000ffa700",
+      "text": " \t\t\t\t\t\t最悪リンク遷移時のDOMいじりとコンテンツ消しが同時に走ってぶつかる可能性",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691806437,
+      "updated": 1691806489
+    },
+    {
+      "id": "64d6ee525f1e0d00009b7c77",
+      "text": " \t\t\t\t\t\t[https://gyazo.com/3b4e3e5f3b752daf3e056ee4e89c9643][yuyasurarin.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691807315,
+      "updated": 1691807318
+    },
+    {
+      "id": "64d6ee545f1e0d00009b7c78",
+      "text": "        先に消しておいてもぶつかった",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691807316,
+      "updated": 1691807338
+    },
+    {
+      "id": "64d6f145ed60e600007c854c",
+      "text": "        remove の直前に取ってくる動作じゃないのか[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691808068,
+      "updated": 1691808084
+    },
+    {
+      "id": "64d6f2baed60e600007c854d",
+      "text": "      こんなの作ってみたけど重いのは解消されていない[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691808441,
+      "updated": 1691808461
+    },
+    {
+      "id": "64d6f2cbed60e600007c854e",
+      "text": "      \tcode:scripts.js",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691808458,
+      "updated": 1691808467
+    },
+    {
+      "id": "64d6f2d5ed60e600007c854f",
+      "text": "      \t scrapbox.addListener(\"page:changed\", () => {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691808468,
+      "updated": 1691808517
+    },
+    {
+      "id": "64d6f306ed60e600007c8558",
+      "text": "        \tconst anchors = document.getElementById(\"editor\")",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691808517,
+      "updated": 1691808517
+    },
+    {
+      "id": "64d6f306ed60e600007c8559",
+      "text": "        \t\t.getElementsByTagName(\"a\");",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691808517,
+      "updated": 1691808517
+    },
+    {
+      "id": "64d6f306ed60e600007c855a",
+      "text": "        \t[...anchors].forEach(e=>{e.onclick=()=>{  // s/onClick/onclick/g",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691808517,
+      "updated": 1691811647
+    },
+    {
+      "id": "64d6f306ed60e600007c855b",
+      "text": "        \t\tconst lines = document.getElementById(\"editor\")",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691808517,
+      "updated": 1691808517
+    },
+    {
+      "id": "64d6f306ed60e600007c855c",
+      "text": "        \t\t\t.getElementsByClassName(\"lines\")?.[0];",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691808517,
+      "updated": 1691808517
+    },
+    {
+      "id": "64d6f306ed60e600007c855d",
+      "text": "        \t\tif (lines) lines.textContent = \"\";",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691808517,
+      "updated": 1691808517
+    },
+    {
+      "id": "64d6f306ed60e600007c855e",
+      "text": "        \t}});\t",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691808517,
+      "updated": 1691808517
+    },
+    {
+      "id": "64d6f306ed60e600007c855f",
+      "text": "        });",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691808517,
+      "updated": 1691808517
+    },
+    {
+      "id": "64d6f7c01280f00000f37fb3",
+      "text": "      [HTMLElement.onclick]は非推奨[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1691809729,
+      "updated": 1691811221
+    },
+    {
+      "id": "64d6f7ce1280f00000f37fb4",
+      "text": "       他に登録されているevent listenerを削除してしまう(はず)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1691809742,
+      "updated": 1691809760
+    },
+    {
+      "id": "64d6f7e01280f00000f37fb5",
+      "text": "       もしかして意図的に削除してる？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1691809760,
+      "updated": 1691809767
+    },
+    {
+      "id": "64d6fc71ed60e6000095747b",
+      "text": "       \tいや、雑に書き換えてるだけ[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691810928,
+      "updated": 1691810936
+    },
+    {
+      "id": "64d6fd971280f00000ff1a30",
+      "text": "      \t今気づいたけど、s/`onClick`/`onclick`/g だった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1691811223,
+      "updated": 1691811239
+    },
+    {
+      "id": "64d6ff7fed60e600007c857c",
+      "text": "      \t\t何語かと思ったけど、[sed]コマンドらしい。 [Vim.icon] か。[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691811710,
+      "updated": 1691811792
+    },
+    {
+      "id": "64d6fda71280f00000ff1a31",
+      "text": "      \t [\" 解消されてない]のはそもそもevent listenerが登録されていないのが理由かもしれない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1691811239,
+      "updated": 1691811266
+    },
+    {
+      "id": "64d6fef0ed60e600007c857a",
+      "text": "       \t これはヒドイwww[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691811567,
+      "updated": 1691811586
+    },
+    {
+      "id": "64d6fe965f1e0d00006c6a78",
+      "text": "      \t 置き換えたら[長いページから出るときが重い#64d6ee525f1e0d00009b7c77]と同じエラーが出て遷移しても表示されない[yuyasurarin.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691811479,
+      "updated": 1691811506
+    },
+    {
+      "id": "64d6ff14ed60e600007c857b",
+      "text": "      \t \tじゃ、ダメなコードということで[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691811602,
+      "updated": 1691811615
+    },
+    {
+      "id": "64d6ffd45f1e0d00000b2d06",
+      "text": "      \t \t`$(\".line\").slice(1)[1].remove()`で一行だけ消した場合でもエラー出る[yuyasurarin.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691811798,
+      "updated": 1691811814
+    },
+    {
+      "id": "64d6ffebed60e600007c857d",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691811818,
+      "updated": 1691811818
+    },
+    {
+      "id": "64d6e577ed60e600007c8546",
+      "text": "[2023/08/12]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691805046,
+      "updated": 1691805055
+    },
+    {
+      "id": "64d6e1a0ed60e600007c8540",
+      "text": " 今重いことに気が付いた！！[yuyasurarin.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691804063,
+      "updated": 1691804196
+    },
+    {
+      "id": "64d6e2065f1e0d00003472ca",
+      "text": "  日記から移動しようとしたときに2秒ぐらいかかってるのこれか～",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691804166,
+      "updated": 1691804207
+    },
+    {
+      "id": "64d6e2265f1e0d00003472cb",
+      "text": "\t\t\t[2023/07/28]のページから移動するとき50秒ぐらいかかりませんか？[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691804198,
+      "updated": 1691804252
+    },
+    {
+      "id": "64d6e34d5f1e0d00003472ce",
+      "text": "\t\t\t[https://gyazo.com/bce92b4b2b0dcb9adf84208f2530d443]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691804494,
+      "updated": 1691804494
+    },
+    {
+      "id": "64d6e23ded60e600007c8541",
+      "text": "   [https://gyazo.com/c74449a3cbb5dbf454a8c36520b79912]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691804220,
+      "updated": 1691804459
+    },
+    {
+      "id": "64d6e346ed60e600007c8542",
+      "text": "\t\t\t15秒くらいか～[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691804485,
+      "updated": 1691804519
+    },
+    {
+      "id": "64d6e3425f1e0d00003472cd",
+      "text": "    ここはCPUの性能依存ぽい?[yuyasurarin.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691804482,
+      "updated": 1691804531
+    },
+    {
+      "id": "64d6e3a3ed60e600007c8543",
+      "text": "    \t[Summer498.icon](50秒)のCPUは[AMD] [Ryzen] 7 4800H with Radeon Graphics (2.90 GHz, 8コア)",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691804578,
+      "updated": 1691804761
+    },
+    {
+      "id": "64d6e4545f1e0d00003472d3",
+      "text": "      19,150[\" https://pcfreebook.com/article/458629156.html]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691804757,
+      "updated": 1691804798
+    },
+    {
+      "id": "64d6e3655f1e0d00003472cf",
+      "text": "     [yuyasurarin.icon](15秒) AMD Ryzen 5 5500",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691804518,
+      "updated": 1691804729
+    },
+    {
+      "id": "64d6e4695f1e0d00003472d5",
+      "text": "      20,000",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691804777,
+      "updated": 1691804777
+    },
+    {
+      "id": "64d6e4715f1e0d00003472d8",
+      "text": "      ...誤差では？",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691804786,
+      "updated": 1691804788
+    },
+    {
+      "id": "64d6e4e2ed60e600007c8544",
+      "text": "      \tというか[Summer498.icon]のCPUの稼働率が全然上がってないからボトルネックそこじゃない気がする",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691804897,
+      "updated": 1691804926
+    },
+    {
+      "id": "64d6e4265f1e0d00003472d0",
+      "text": "     [https://qiita.com/jkr_2255/items/5cdead4ee7fa289bfeed Reflowを制するものはDOMを制す - Qiita]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691804711,
+      "updated": 1691805309
+    },
+    {
+      "id": "64d6e67c5f1e0d00003472da",
+      "text": " なんもわからんので全部display:noneしてやれ[yuyasurarin.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691805309,
+      "updated": 1691811970
+    },
+    {
+      "id": "64d700815f1e0d00000b2d07",
+      "text": "  code:js",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691811970,
+      "updated": 1691811977
+    },
+    {
+      "id": "64d700885f1e0d00000b2d08",
+      "text": "   scrapbox.addListener(\"page:changed\", () => {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691811977,
+      "updated": 1691811977
+    },
+    {
+      "id": "64d700885f1e0d00000b2d09",
+      "text": "   \tconst anchors = document.getElementById(\"editor\")",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691811977,
+      "updated": 1691811977
+    },
+    {
+      "id": "64d700885f1e0d00000b2d0a",
+      "text": "   \t\t.getElementsByTagName(\"a\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691811977,
+      "updated": 1691811977
+    },
+    {
+      "id": "64d700885f1e0d00000b2d0b",
+      "text": "   \t[...anchors].forEach(e=>{e.onclick=()=>{  // s/onClick/onclick/g",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691811977,
+      "updated": 1691811977
+    },
+    {
+      "id": "64d700885f1e0d00000b2d0c",
+      "text": "   \t\t$(\".line\").css(\"display\",\"none\")",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691811977,
+      "updated": 1691812812
+    },
+    {
+      "id": "64d700885f1e0d00000b2d0f",
+      "text": "   \t}});\t",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691811977,
+      "updated": 1691811977
+    },
+    {
+      "id": "64d700885f1e0d00000b2d10",
+      "text": "   });",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691811977,
+      "updated": 1691811977
+    },
+    {
+      "id": "64d6e67a5f1e0d00003472d9",
+      "text": "\t\tそれ DOM 消えてないんじゃない？[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691805306,
+      "updated": 1691812017
+    },
+    {
+      "id": "64d700bd5f1e0d000053920b",
+      "text": " \t\tスタイルの再計算が重いなら計算しないように..みたいな[yuyasurarin.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691812030,
+      "updated": 1691812042
+    },
+    {
+      "id": "64d700a7ed60e600007c857f",
+      "text": "\t\t\t\tあ～そういう[コト！？][Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691812007,
+      "updated": 1691812068
+    },
+    {
+      "id": "64d703ce5f1e0d0000a3c822",
+      "text": " てか重い原因関連ページリストって言ってたじゃん[yuyasurarin.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691812815,
+      "updated": 1691812827
+    },
+    {
+      "id": "64d703da5f1e0d0000a3c823",
+      "text": "  [長いページから出るときが重い#64d134c8ed60e600007f9cef]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691812827,
+      "updated": 1691812837
+    },
+    {
+      "id": "64d703e55f1e0d0000a3c824",
+      "text": "  ならリスト消せばいいじゃん",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691812838,
+      "updated": 1691812850
+    },
+    {
+      "id": "64d703f25f1e0d0000a3c825",
+      "text": "  `$(\"related-page-list\").remove()`",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691812850,
+      "updated": 1691813763
+    },
+    {
+      "id": "64d700c8ed60e600007c8580",
+      "text": "   移動したときに再追加されないのでx",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691812039,
+      "updated": 1691813818
+    },
+    {
+      "id": "64d707855f1e0d000032d75e",
+      "text": "  多いのは2hopだから2hopだけ消そう",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691813766,
+      "updated": 1691813778
+    },
+    {
+      "id": "64d707925f1e0d000032d75f",
+      "text": "   `$(\".links-2-hop\").remove()`",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691813778,
+      "updated": 1691813807
+    },
+    {
+      "id": "64d70aed5f1e0d0000afaa38",
+      "text": "    結局こっちも消したら2回遷移でエラーでちゃう[yuyasurarin.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691814639,
+      "updated": 1691814652
+    },
+    {
+      "id": "64d704795f1e0d0000a3c82d",
+      "text": "  なんか微妙だからlineのほうも非表示にしとこ(意味あるのかはわからない)",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691812985,
+      "updated": 1691813846
+    },
+    {
+      "id": "64d707d65f1e0d000032d761",
+      "text": "   `$(\".links-2-hop\").remove()`",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691813847,
+      "updated": 1691813883
+    },
+    {
+      "id": "64d707de5f1e0d000032d762",
+      "text": "   `$(\".line\").css(\"display\",\"none\")`",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691813855,
+      "updated": 1691813876
+    },
+    {
+      "id": "64d708145f1e0d000032d763",
+      "text": "   [https://gyazo.com/2e0e3ab04d33a45bfe7f03958fbd3575]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691813909,
+      "updated": 1691813910
+    },
+    {
+      "id": "64d708155f1e0d000032d764",
+      "text": "  TODO:関連ページリストをクリックしたときは動いていないので",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691813910,
+      "updated": 1691813969
+    },
+    {
+      "id": "64d708515f1e0d000032d765",
+      "text": "  `s/document.getElementById(\"editor\").getElementsByTagName(\"a\");/document.getElementsByTagName(\"a\")`",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691813970,
+      "updated": 1691814695
+    },
+    {
+      "id": "64d707bb5f1e0d000032d760",
+      "text": "  マシになった気がする[yuyasurarin.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691813820,
+      "updated": 1691814701
+    },
+    {
+      "id": "64d70b655f1e0d0000afaa39",
+      "text": "   [https://gyazo.com/1d6aa6067690dd17b574a115d965da01]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1691814758,
+      "updated": 1691814759
+    },
+    {
+      "id": "64d70b665f1e0d0000afaa3a",
       "text": "",
       "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1691449548,
-      "updated": 1691449548
+      "created": 1691814759,
+      "updated": 1691814759
+    },
+    {
+      "id": "64d6f88e1280f00000f37fb6",
+      "text": "まともに解決するには、[React]のDOM更新algorithmに修正を加えるしかない[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1691809934,
+      "updated": 1691809959
+    },
+    {
+      "id": "64d6f88f1280f00000f37fb7",
+      "text": "\tScrapbox 君 React で動いてたのね[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691809935,
+      "updated": 1691817742
+    },
+    {
+      "id": "64d70084ed60e600007c857e",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691811971,
+      "updated": 1691811971
     }
   ]
 }

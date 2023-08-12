@@ -1,0 +1,323 @@
+{
+  "id": "64d6daf9140224001c77af7c",
+  "title": "開いているページをエクスポートするUserScript",
+  "created": 1691802379,
+  "updated": 1691810011,
+  "lines": [
+    {
+      "id": "64d6daf9140224001c77af7c",
+      "text": "開いているページをエクスポートするUserScript",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802379,
+      "updated": 1691802379
+    },
+    {
+      "id": "64d6db28ed60e6000073067e",
+      "text": "ボタン用の画像: [https://scrapbox.io/files/64d6cf929d602b001cf95ae9.svg]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802407,
+      "updated": 1691802461
+    },
+    {
+      "id": "64d6db48ed60e60000730680",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802438,
+      "updated": 1691802438
+    },
+    {
+      "id": "64d6db1bed60e6000073067c",
+      "text": "c.f. [/customize/特定のページのみを含んだexport用dataを生成するbookmarklet]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802395,
+      "updated": 1691802406
+    },
+    {
+      "id": "64d6db1ced60e6000073067d",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802395,
+      "updated": 1691802395
+    },
+    {
+      "id": "64d6dc18ed60e60000730687",
+      "text": "【緩募】minify バージョン",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802647,
+      "updated": 1691802662
+    },
+    {
+      "id": "64d6db0ced60e6000073065b",
+      "text": "code:script.js",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802379,
+      "updated": 1691802387
+    },
+    {
+      "id": "64d6db15ed60e6000073065d",
+      "text": " scrapbox.PageMenu.addMenu({",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802387,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e6000073065e",
+      "text": " \ttitle: 'export data',",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e6000073065f",
+      "text": " \timage: 'https://scrapbox.io/files/64d6cf929d602b001cf95ae9.svg',",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730660",
+      "text": " \tonClick: async () => {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730661",
+      "text": " \t\tconst projectName = `${scrapbox.Project.name}`;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730662",
+      "text": " \t\tconst pageName = `${encodeURIComponent(scrapbox.Page.title)}`;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730663",
+      "text": " \t\tconst target = `/api/pages/${projectName}/${pageName}`;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730664",
+      "text": " \t\tconst response = await fetch(target);  // 重いページで重くなる可能性がある",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730665",
+      "text": " \t\tconst json = await response.json();",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730666",
+      "text": " \t\tconst exportData = {pages: [{",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730667",
+      "text": " \t\t\ttitle: json.title,",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730668",
+      "text": " \t\t\tcreated: json.created,",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730669",
+      "text": " \t\t\tupdated: json.updated,",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e6000073066a",
+      "text": " \t\t\tlines: json.lines,",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e6000073066b",
+      "text": " \t\t},],};",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e6000073066c",
+      "text": " \t\tconst blob = new Blob([JSON.stringify(exportData,null,'    ')], {type: 'octet/stream'}); // download dataを作成",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e6000073066d",
+      "text": " \t\tconst url = window.URL.createObjectURL(blob); // download linkを生成",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e6000073066e",
+      "text": " \t\t// 同一scrapbox pageに隠しa要素を作り、それを踏んでdownloadを実行する",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e6000073066f",
+      "text": " \t\tconst a = document.createElement('a');",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730670",
+      "text": " \t\ta.href = url;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730671",
+      "text": " \t\ta.download = `${projectName}-${pageName}.json`;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730672",
+      "text": " \t\ta.style.display = 'none';",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730673",
+      "text": " \t\t",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730674",
+      "text": " \t\tdocument.body.appendChild(a);",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730675",
+      "text": " \t\ta.click(); // downloadを実行",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730676",
+      "text": " \t\t// 後始末",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730677",
+      "text": " \t\twindow.URL.revokeObjectURL(url);",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730678",
+      "text": " \t\ta.parentNode.removeChild(a);",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db19ed60e60000730679",
+      "text": " \t},",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802672
+    },
+    {
+      "id": "64d6db19ed60e6000073067b",
+      "text": " });",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802392,
+      "updated": 1691802392
+    },
+    {
+      "id": "64d6db0ded60e6000073065c",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802380,
+      "updated": 1691802380
+    },
+    {
+      "id": "64d6db7bed60e60000730681",
+      "text": "ボタン用の画像の SVG",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802490,
+      "updated": 1691802502
+    },
+    {
+      "id": "64d6dbb3ed60e60000730685",
+      "text": "\t[https://fontawesome.com/icons/file-export?f=classic&s=solid&pc=%23848484 File Export Classic Solid Icon | Font Awesome]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802546,
+      "updated": 1691802550
+    },
+    {
+      "id": "64d6db87ed60e60000730683",
+      "text": "code:export.svg",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802502,
+      "updated": 1691802515
+    },
+    {
+      "id": "64d6db95ed60e60000730684",
+      "text": " <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"1em\" viewBox=\"0 0 576 512\"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#848484}</style><path d=\"M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V288H216c-13.3 0-24 10.7-24 24s10.7 24 24 24H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zM384 336V288H494.1l-39-39c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l80 80c9.4 9.4 9.4 24.6 0 33.9l-80 80c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l39-39H384zm0-208H256V0L384 128z\"/></svg>",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802516,
+      "updated": 1691802531
+    },
+    {
+      "id": "64d6db7bed60e60000730682",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1691802490,
+      "updated": 1691802490
+    },
+    {
+      "id": "64d6f8d61280f00000f37fb8",
+      "text": "昔作ったやつだ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1691810006,
+      "updated": 1691810011
+    },
+    {
+      "id": "64d6f8d71280f00000f37fb9",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1691810007,
+      "updated": 1691810007
+    }
+  ]
+}
