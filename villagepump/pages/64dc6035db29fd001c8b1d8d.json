@@ -1,0 +1,421 @@
+{
+  "id": "64dc6035db29fd001c8b1d8d",
+  "title": "ElectronでUserScriptの試行錯誤をしたい",
+  "created": 1692164150,
+  "updated": 1692166224,
+  "lines": [
+    {
+      "id": "64dc6035db29fd001c8b1d8d",
+      "text": "ElectronでUserScriptの試行錯誤をしたい",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc65e8518c250000ae557e",
+      "text": "モチベーション",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165607,
+      "updated": 1692165614
+    },
+    {
+      "id": "64dc6633518c250000ae5583",
+      "text": " [takker.icon]さんのコード資産を使って試行錯誤したいが、Deno(TypeScript)からJavaScriptへのトランスコンパイルと、Scrapboxページへの貼付け作業が都度発生して、試すのが億劫になる",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165683,
+      "updated": 1692165828
+    },
+    {
+      "id": "64dc65ef518c250000ae557f",
+      "text": "  https://github.com/takker99/scrapbox-userscript-std",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165614,
+      "updated": 1692165685
+    },
+    {
+      "id": "64dc6626518c250000ae5581",
+      "text": "  https://github.com/takker99/scrapbox-select-suggestion",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165669,
+      "updated": 1692165685
+    },
+    {
+      "id": "64dc6626518c250000ae5582",
+      "text": "  https://github.com/takker99/ScrapBubble",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165669,
+      "updated": 1692165685
+    },
+    {
+      "id": "64dc65ef518c250000ae5580",
+      "text": " トランスコンパイルとUserScriptの貼り付け作業をなくして、試行錯誤を簡単にしたい",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165614,
+      "updated": 1692165902
+    },
+    {
+      "id": "64dc66c9518c250000ae5584",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165832,
+      "updated": 1692165832
+    },
+    {
+      "id": "64dc6717518c250000ae5585",
+      "text": "試したこと",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165910,
+      "updated": 1692165941
+    },
+    {
+      "id": "64dc6737518c250000ae5586",
+      "text": " Electronのpreload機能を利用して、ページ呼び出し前に、UserScriptをinjectする",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165943,
+      "updated": 1692166010
+    },
+    {
+      "id": "64dc6097518c250000b91bd3",
+      "text": " とりあえず、[https://raw.githubusercontent.com/takker99/ScrapBubble/0.9.1/mod.tsx]を読み込んで、[ScrapBubble]を動かせた",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164246,
+      "updated": 1692164760
+    },
+    {
+      "id": "64dc675b518c250000ae5587",
+      "text": "  https://github.com/meganii/sandbox-electron-scrapbox",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165978,
+      "updated": 1692165980
+    },
+    {
+      "id": "64dc629e518c250000b91bd8",
+      "text": " 　正しく動いているかどうかは要確認",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164765,
+      "updated": 1692164774
+    },
+    {
+      "id": "64dc609a518c250000b91bd4",
+      "text": "  Electronのセキュリティのお作法からは逸脱しているっぽいので、どこまで許容できるか",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164249,
+      "updated": 1692165984
+    },
+    {
+      "id": "64dc60d2518c250000b91bd5",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164305,
+      "updated": 1692164305
+    },
+    {
+      "id": "64dc64a1518c250000ae5572",
+      "text": "やっていること",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165280,
+      "updated": 1692165282
+    },
+    {
+      "id": "64dc64d1518c250000ae5577",
+      "text": " `src/index.ts`にScrapBubbleの読み込みを記述",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165328,
+      "updated": 1692165375
+    },
+    {
+      "id": "64dc64a3518c250000ae5573",
+      "text": "  code:src/index.ts",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165282,
+      "updated": 1692165369
+    },
+    {
+      "id": "64dc64bc518c250000ae5574",
+      "text": "   import * as scrapBubble from \"https://raw.githubusercontent.com/takker99/ScrapBubble/0.9.1/mod.tsx\";",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165306,
+      "updated": 1692165369
+    },
+    {
+      "id": "64dc64bc518c250000ae5575",
+      "text": "   scrapBubble.mount();",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165307,
+      "updated": 1692165369
+    },
+    {
+      "id": "64dc633e518c250000ae556f",
+      "text": " `deno run --allow-net --allow-read --allow-env --allow-run script/bundle.ts`で、JavaScript（`dist/index.js`）に変換",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164925,
+      "updated": 1692165454
+    },
+    {
+      "id": "64dc64bd518c250000ae5576",
+      "text": " `npm start`でElectron起動",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165308,
+      "updated": 1692165563
+    },
+    {
+      "id": "64dc65bc518c250000ae557b",
+      "text": " \tElectronの`preload.js`から`dist/index.js`を読み込んで、Scrapboxのbodyに追加",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165563,
+      "updated": 1692165569
+    },
+    {
+      "id": "64dc6502518c250000ae5578",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165377,
+      "updated": 1692165586
+    },
+    {
+      "id": "64dc6502518c250000ae5579",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165377,
+      "updated": 1692165377
+    },
+    {
+      "id": "64dc6074518c250000b91bd1",
+      "text": "[meganii.icon]の認識（JavaScript、TypeScript、Deno周りの解像度が低い）",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164211,
+      "updated": 1692164442
+    },
+    {
+      "id": "64dc6084518c250000b91bd2",
+      "text": "　Electronは、デフォルトだとCommonJSで動かす必要がある",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164227,
+      "updated": 1692164335
+    },
+    {
+      "id": "64dc60f0518c250000b91bd6",
+      "text": " 　Top Level awaitなどDenoで普通に使えるものが、CommonJSだと未サポート（要確認）",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164335,
+      "updated": 1692164722
+    },
+    {
+      "id": "64dc61ac518c250000b91bd7",
+      "text": " 　方針として、①ScrapBubbleの元コードをCommonJSで動かせるようにするか、②ElectronからESMを読み込めるようにするか",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164523,
+      "updated": 1692164689
+    },
+    {
+      "id": "64dc6072518c250000b91bcf",
+      "text": "　①は、元のコードを変えていかなければならなさそうなので、見送り",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164209,
+      "updated": 1692165193
+    },
+    {
+      "id": "64dc644a518c250000ae5571",
+      "text": "　ElectronにCSPヘッダを追加できそうだったので、生成したscriptタグからトランスコンパイル後のJavaScriptを読み込ませることで②を実現",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165193,
+      "updated": 1692165193
+    },
+    {
+      "id": "64dc63fe518c250000ae5570",
+      "text": "　　もっと良い方法があれば知りたい",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165117,
+      "updated": 1692165133
+    },
+    {
+      "id": "64dc62fe518c250000ae556e",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164861,
+      "updated": 1692164861
+    },
+    {
+      "id": "64dc65e4518c250000ae557c",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165603,
+      "updated": 1692165603
+    },
+    {
+      "id": "64dc65e4518c250000ae557d",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692165603,
+      "updated": 1692165603
+    },
+    {
+      "id": "64dc6037518c250000b91bb6",
+      "text": "from [2023/08/15]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bb8",
+      "text": "Electronのpreload.jsを利用して、[ScrapBubble]を動かせた[meganii.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692165243
+    },
+    {
+      "id": "64dc6037518c250000b91bb9",
+      "text": " [https://gyazo.com/3afe5428eb8cf7681fee83dd2079f01d]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bba",
+      "text": " いちいち[scrapbox-bundler]等でbundleしてScrapboxに貼り付け直さなくても、ローカルでbundleして、そのまま`preload.js`でbundleしたjsを読み込むことができそう。UserScriptのDebugが捗るはず。",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bbb",
+      "text": " 　気になるけどわからぬ[yosider.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bbc",
+      "text": " 　　ローカルでbundleする方法",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bbd",
+      "text": " 　　\t[scrapbox-bundler]は（あえて）Webブラウザでesbuildを利用できるようにするツールなので、（逆に）通常通りローカルでビルドツールを利用する[meganii.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bbe",
+      "text": " 　　\t `deno bundle <url> | esbuild --minify`みたいなやつということだろうか[yosider.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bbf",
+      "text": " 　　\t  from [scrapbox-bundler]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bc0",
+      "text": " 　　[preload.js]とは",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bc1",
+      "text": " 　　 [https://www.electronjs.org/ja/docs/latest/tutorial/tutorial-preload プリロードスクリプトの利用 | Electron]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bc2",
+      "text": "     >プリロードスクリプトは、Chrome 拡張機能の コンテンツスクリプト と同様の、レンダラーがウェブページを読み込む前に注入されるスクリプトです。",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bc3",
+      "text": "    [Electron]で特定のページを表示するときに、事前に任意のJavaScriptを読み込ませることができる[meganii.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bc4",
+      "text": "    　なるほどです[yosider.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bc5",
+      "text": "    まずElectron製のScrapboxアプリが気になる[yosider.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bc6",
+      "text": "    　[ガワアプリ]なので、中で`https://scrapbox.io/`に遷移しているだけですねー[meganii.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bc7",
+      "text": "  [ElectronでESMを呼]べなくて苦労している",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bc8",
+      "text": "  　毎回、CommonJSとESMを調べている気がしてよくない",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bc9",
+      "text": " これどういう仕組だろう。イメージがつかなかった[takker.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bca",
+      "text": "  何らかのボタンを押すと、bundle→コード書き換え→リロードが自動で走るという解釈でいいのかな",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bcb",
+      "text": "  違いそう。terminalでbundleをしたコードを[preload.js]が勝手に読み取ってくれるのか",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6037518c250000b91bcc",
+      "text": "   [hot reload]かな",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    },
+    {
+      "id": "64dc6849518c250000ae5588",
+      "text": "   hot reloadまではできていませんでした[meganii.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692166216,
+      "updated": 1692166224
+    },
+    {
+      "id": "64dc6037518c250000b91bcd",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1692164150,
+      "updated": 1692164150
+    }
+  ]
+}
