@@ -2,7 +2,7 @@
   "id": "64d6daf9140224001c77af7c",
   "title": "開いているページをエクスポートするUserScript",
   "created": 1691802379,
-  "updated": 1691810011,
+  "updated": 1692341500,
   "lines": [
     {
       "id": "64d6daf9140224001c77af7c",
@@ -41,10 +41,38 @@
     },
     {
       "id": "64d6dc18ed60e60000730687",
-      "text": "【緩募】minify バージョン",
+      "text": "[minify バージョン https://scrapbox-bundler.vercel.app?url=https://scrapbox.io/api/code/villagepump/開いているページをエクスポートするUserScript/script.js&minify&run&reload]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1691802647,
-      "updated": 1691802662
+      "updated": 1692341403
+    },
+    {
+      "id": "64df14a8ed60e600008e75ed",
+      "text": "code:script_min.js",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1692341416,
+      "updated": 1692341416
+    },
+    {
+      "id": "64df14a8ed60e600008e75ee",
+      "text": " scrapbox.PageMenu.addMenu({title:\"export data\",image:\"https://scrapbox.io/files/64d6cf929d602b001cf95ae9.svg\",onClick:async()=>{const o=`${scrapbox.Project.name}`,a=`${encodeURIComponent(scrapbox.Page.title)}`,c=`/api/pages/${o}/${a}`,t=await(await fetch(c)).json(),s={pages:[{title:t.title,created:t.created,updated:t.updated,lines:t.lines}]},d=new Blob([JSON.stringify(s,null,\"    \")],{type:\"octet/stream\"}),n=window.URL.createObjectURL(d),e=document.createElement(\"a\");e.href=n,e.download=`${o}-${a}.json`,e.style.display=\"none\",document.body.appendChild(e),e.click(),window.URL.revokeObjectURL(n),e.parentNode.removeChild(e)}});",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1692341416,
+      "updated": 1692341416
+    },
+    {
+      "id": "64df1498ed60e600008e75da",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1692341399,
+      "updated": 1692341399
+    },
+    {
+      "id": "64df14f4ed60e600008e75ef",
+      "text": "readable バージョン",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1692341492,
+      "updated": 1692341500
     },
     {
       "id": "64d6db0ced60e6000073065b",
@@ -313,11 +341,11 @@
       "updated": 1691810011
     },
     {
-      "id": "64d6f8d71280f00000f37fb9",
+      "id": "64df05761280f00000166cce",
       "text": "",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1691810007,
-      "updated": 1691810007
+      "created": 1692337529,
+      "updated": 1692337529
     }
   ]
 }
