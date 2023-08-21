@@ -1,0 +1,547 @@
+{
+  "id": "64e2fff9890adc001c0a5b02",
+  "title": "Twitter（X）のツイート取得APIの変更",
+  "created": 1692598266,
+  "updated": 1692600147,
+  "lines": [
+    {
+      "id": "64e2fff9890adc001c0a5b02",
+      "text": "Twitter（X）のツイート取得APIの変更",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b17000023218a",
+      "text": "from [2023/08/16]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e30002774b1700002321d5",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598279,
+      "updated": 1692598279
+    },
+    {
+      "id": "64e2fff5774b17000023218b",
+      "text": "[takker.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598275
+    },
+    {
+      "id": "64e2fff5774b17000023218c",
+      "text": "https://twitter.com/yukimotosyuji/status/1689569843891363840",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598283
+    },
+    {
+      "id": "64e2fff5774b17000023218d",
+      "text": " 変換されない。",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b17000023218e",
+      "text": " 　2023/8/16 16:27:13 自分の環境だとCtrl + Shift + Vで貼り付けると変換される[yosider.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b17000023218f",
+      "text": " 　 2023-08-20 されない[基素.icon][dokudami.icon]",
+      "userId": "5ca094b00af7b0001732ef92",
+      "created": 1692598266,
+      "updated": 1692600147
+    },
+    {
+      "id": "64e2fff5774b170000232190",
+      "text": " 　[scrapbox-url-customizer]による変換のほうです。説明不足で失礼しました[takker.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b170000232191",
+      "text": " 埋込みが生きているのは確認済み",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b170000232192",
+      "text": " APIが変わったか？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b170000232193",
+      "text": " https://cdn.syndication.twimg.com/tweet-result?id=1110439106041929729&lang=en&token=2owjpclbr6f",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b170000232194",
+      "text": " はーん。`token`をつけないと何も帰ってこないようにコードが変わったのか",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b170000232195",
+      "text": " 次はこの`token`を生成しているコードを特定する",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b170000232196",
+      "text": "  見つけた",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b170000232197",
+      "text": "   https://platform.twitter.com/embed/embed.Tweet.bd47d2de82f3b8777f30.js",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b170000232198",
+      "text": "   code:js",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b170000232199",
+      "text": "      s = i[0],",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b17000023219a",
+      "text": "      a = i[1],",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b17000023219b",
+      "text": "      o = i[2],",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b17000023219c",
+      "text": "      c = i[3],",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b17000023219d",
+      "text": "      u = function (e) {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b17000023219e",
+      "text": "            this.Tweet = function (e) {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b17000023219f",
+      "text": "              return {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321a0",
+      "text": "                fetch: function (t, r) {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321a1",
+      "text": "                  return e.get(",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321a2",
+      "text": "                    'tweet-result',",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321a3",
+      "text": "                    (0, n.Z) ({",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321a4",
+      "text": "                    }, t, {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321a5",
+      "text": "                      token: c(o(s(t.id) / 1000000000000000 * a.PI))",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321a6",
+      "text": "   `t.id`はtweet id",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321a7",
+      "text": "   code:2.js",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321a8",
+      "text": "        i = [",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321a9",
+      "text": "            Number,",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321aa",
+      "text": "            window.Math,",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321ab",
+      "text": "            function (e) {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321ac",
+      "text": "              return e.toString(Math.pow(6, 2))",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321ad",
+      "text": "            },",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321ae",
+      "text": "            function (e) {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321af",
+      "text": "              return e.replace(/(0+|\\.)/g, '')",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321b0",
+      "text": "            }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321b1",
+      "text": "          ],",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321b2",
+      "text": "   code:js",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321b3",
+      "text": "                    }),",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321b4",
+      "text": "                    r",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321b5",
+      "text": "                  ).then(",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321b6",
+      "text": "                    (",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321b7",
+      "text": "                      function (e) {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321b8",
+      "text": "                        return e &&",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321b9",
+      "text": "                        (e.id_str || 'TweetTombstone' === e.__typename) ? Promise.resolve(e) : Promise.reject(new Error('could not parse api response'))",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321ba",
+      "text": "                      }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321bb",
+      "text": "                    )",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321bc",
+      "text": "                  )",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321bd",
+      "text": "                }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321be",
+      "text": "              }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321bf",
+      "text": "            }(e),",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321c0",
+      "text": "  解読終了",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321c1",
+      "text": "   code:ts",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321c2",
+      "text": "    const token = (id: string): string =>",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321c3",
+      "text": "      (parseInt(id) / 1000000000000000 * Math.PI)",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321c4",
+      "text": "      .toString(Math.pow(6, 2))",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321c5",
+      "text": "      .replace(/(0+|\\.)/g, \"\");",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321c6",
+      "text": "   ✅テスト",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321c7",
+      "text": "    $ ((id) => (parseInt(id) / 1000000000000000 * Math.PI).toString(Math.pow(6, 2)).replace(/(0+|\\.)/g, \"\"))(\"1110439106041929729\")",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321c8",
+      "text": "    2owjpclbr6fになった",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321c9",
+      "text": "   [toString()]の引数はなんだろう[yosider.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321ca",
+      "text": "    [https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Number/toString#引数 Number.prototype.toString() - JavaScript | MDN]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321cb",
+      "text": "    > radix 省略可",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321cc",
+      "text": "    > 数値を表現するために使われる基数を指定する、 2 から 36 までの整数です。既定値は 10 です。",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321cd",
+      "text": "    何進数かということか",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321ce",
+      "text": "  [twitter解析勢]ﾋｪ…[yosider.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321cf",
+      "text": " ちょっとまって！`token`に適当な文字列渡しても通っちゃう！",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321d0",
+      "text": "  https://cdn.syndication.twimg.com/tweet-result?id=1110439106041929729&token=x",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321d1",
+      "text": "  https://cdn.syndication.twimg.com/tweet-result?id=1689569843891363840&token=x",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321d2",
+      "text": "  ガバすぎる……なんのためにtoken生成コードがあるんだよ……",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321d3",
+      "text": "  草[wogikaze.icon][yosider.icon][Summer498.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    },
+    {
+      "id": "64e2fff5774b1700002321d4",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1692598266,
+      "updated": 1692598266
+    }
+  ]
+}
