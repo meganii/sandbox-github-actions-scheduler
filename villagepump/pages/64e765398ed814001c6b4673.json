@@ -1,0 +1,610 @@
+{
+  "id": "64e765398ed814001c6b4673",
+  "title": "mermaid.jsの円グラフが表示されない",
+  "created": 1692886334,
+  "updated": 1692891942,
+  "lines": [
+    {
+      "id": "64e765398ed814001c6b4673",
+      "text": "mermaid.jsの円グラフが表示されない",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886334,
+      "updated": 1692886334
+    },
+    {
+      "id": "64e765115f1e0d000018dd01",
+      "text": "from [2023/08/24]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886334,
+      "updated": 1692886342
+    },
+    {
+      "id": "64e765125f1e0d000018dd02",
+      "text": " 今日が終わるまでに解決するぞ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886336,
+      "updated": 1692886349
+    },
+    {
+      "id": "64e770aa5f1e0d00006f5936",
+      "text": " ０時になったので一応終了",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889303,
+      "updated": 1692889308
+    },
+    {
+      "id": "64e770b25f1e0d00006f5937",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889311,
+      "updated": 1692889312
+    },
+    {
+      "id": "64e778595f1e0d00008d7c58",
+      "text": "2023/8/25",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891273,
+      "updated": 1692891288
+    },
+    {
+      "id": "64e7786c5f1e0d00008d7c65",
+      "text": " `-39`という値がどこから来たのか調査してきた",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891289,
+      "updated": 1692891303
+    },
+    {
+      "id": "64e7785c5f1e0d00008d7c59",
+      "text": " code:js",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891273,
+      "updated": 1692891278
+    },
+    {
+      "id": "64e778615f1e0d00008d7c5a",
+      "text": "  const y = 450",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891278,
+      "updated": 1692891278
+    },
+    {
+      "id": "64e778615f1e0d00008d7c5b",
+      "text": "  u = E.parentElement.offsetWidth",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891278,
+      "updated": 1692891278
+    },
+    {
+      "id": "64e778615f1e0d00008d7c5c",
+      "text": "  ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891278,
+      "updated": 1692891278
+    },
+    {
+      "id": "64e778615f1e0d00008d7c5d",
+      "text": "  l = Math.min(u, y) / 2 - 40",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891278,
+      "updated": 1692891278
+    },
+    {
+      "id": "64e778615f1e0d00008d7c5e",
+      "text": "  T ?? (T = 2);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891278,
+      "updated": 1692891278
+    },
+    {
+      "id": "64e778615f1e0d00008d7c5f",
+      "text": "  ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891278,
+      "updated": 1692891278
+    },
+    {
+      "id": "64e778615f1e0d00008d7c60",
+      "text": "  attr(\"r\", l + T / 2)",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891278,
+      "updated": 1692891278
+    },
+    {
+      "id": "64e778615f1e0d00008d7c61",
+      "text": "  function attr(i, v) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891278,
+      "updated": 1692891278
+    },
+    {
+      "id": "64e778615f1e0d00008d7c62",
+      "text": "  \tattrConstant)(_, v)",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891278,
+      "updated": 1692891278
+    },
+    {
+      "id": "64e778615f1e0d00008d7c63",
+      "text": "  }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891278,
+      "updated": 1692891278
+    },
+    {
+      "id": "64e7787d5f1e0d00008d7c66",
+      "text": " 端折りまくってるから最後のv以外の情報はない(各行は変えてないので１行で検索すれば出てくる)",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891306,
+      "updated": 1692891350
+    },
+    {
+      "id": "64e778aa5f1e0d00008d7c68",
+      "text": "  CSSで`E.parentElement.offsetWidth`が0になってしまっているので",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891350,
+      "updated": 1692891381
+    },
+    {
+      "id": "64e778c95f1e0d00008d7c69",
+      "text": "   0 => -40 => -39、というわけ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891382,
+      "updated": 1692891410
+    },
+    {
+      "id": "64e778e65f1e0d00008d7c6a",
+      "text": "   だからCSSを剝がしてやるときっちり動く",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891410,
+      "updated": 1692891422
+    },
+    {
+      "id": "64e7792c5f1e0d00008d7c6b",
+      "text": "   code:style.css",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891482,
+      "updated": 1692891484
+    },
+    {
+      "id": "64e7792f5f1e0d00008d7c6c",
+      "text": "    div[id^=dmermaid-preview] {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891484,
+      "updated": 1692891537
+    },
+    {
+      "id": "64e779645f1e0d00008d7c6e",
+      "text": "       visibility: inherit; ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891537,
+      "updated": 1692891680
+    },
+    {
+      "id": "64e779645f1e0d00008d7c6f",
+      "text": "       width: auto;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891537,
+      "updated": 1692891682
+    },
+    {
+      "id": "64e779645f1e0d00008d7c70",
+      "text": "       height: auto;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891537,
+      "updated": 1692891685
+    },
+    {
+      "id": "64e779645f1e0d00008d7c71",
+      "text": "    }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891537,
+      "updated": 1692891539
+    },
+    {
+      "id": "64e779315f1e0d00008d7c6d",
+      "text": "   なおったよー",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891486,
+      "updated": 1692891942
+    },
+    {
+      "id": "64e7787d5f1e0d00008d7c67",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692891306,
+      "updated": 1692891306
+    },
+    {
+      "id": "64e770b35f1e0d00006f5938",
+      "text": "2023/8/24のまとめ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889312,
+      "updated": 1692889320
+    },
+    {
+      "id": "64e770bb5f1e0d00006f5939",
+      "text": " まずindex.jsに問題があるのは確定",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889320,
+      "updated": 1692889332
+    },
+    {
+      "id": "64e770c75f1e0d00006f593a",
+      "text": "  `<circle>`要素の値がおかしいというエラーが発生している",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889332,
+      "updated": 1692889372
+    },
+    {
+      "id": "64e770f05f1e0d00006f593b",
+      "text": " エラーの行にブレイクポイントを置いてステップ実行",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889373,
+      "updated": 1692889419
+    },
+    {
+      "id": "64e7711b5f1e0d00006f593c",
+      "text": "  `mermaid-preview-svg`というクラスの要素がページの一番下にできるので非表示にするCSSを剥いで見てみる",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889416,
+      "updated": 1692889448
+    },
+    {
+      "id": "64e7713b5f1e0d00006f593d",
+      "text": "   きちんと表示され、エラーはでない",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889448,
+      "updated": 1692889458
+    },
+    {
+      "id": "64e771af5f1e0d00006f5942",
+      "text": "    ここが謎すぎる[wogikaze.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889564,
+      "updated": 1692889566
+    },
+    {
+      "id": "64e771455f1e0d00006f593e",
+      "text": "   ちゃっかりコードブロックの位置に移動しても表示されている",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889458,
+      "updated": 1692889483
+    },
+    {
+      "id": "64e7715e5f1e0d00006f593f",
+      "text": "    表示されたあとならコードブロックをいじってもエラーでない",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889483,
+      "updated": 1692889502
+    },
+    {
+      "id": "64e771725f1e0d00006f5940",
+      "text": " 再レンダリング(再計算)の条件はコードブロックの編集",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889503,
+      "updated": 1692889531
+    },
+    {
+      "id": "64e765205f1e0d000018dd04",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886349,
+      "updated": 1692886349
+    },
+    {
+      "id": "64e7719a5f1e0d00006f5941",
+      "text": "2023/8/24",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889543,
+      "updated": 1692889544
+    },
+    {
+      "id": "64e765215f1e0d000018dd05",
+      "text": "まずindex.jsのどのあたりにmermaidの解析があるのか調べる",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886350,
+      "updated": 1692886365
+    },
+    {
+      "id": "64e765305f1e0d000018dd06",
+      "text": " `function CodeBlock`に`text:_`と`mermaid:be`を発見",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886365,
+      "updated": 1692886401
+    },
+    {
+      "id": "64e7651c5f1e0d000018dd03",
+      "text": "  code:mermaid",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886345,
+      "updated": 1692886429
+    },
+    {
+      "id": "64e765725f1e0d000018dd08",
+      "text": "  ブロックの時に何か処理するのかと思いきや何も書いてないように見える",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886430,
+      "updated": 1692886452
+    },
+    {
+      "id": "64e765875f1e0d000018dd09",
+      "text": "  わからないので次",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886452,
+      "updated": 1692886458
+    },
+    {
+      "id": "64e7658d5f1e0d000018dd0a",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886458,
+      "updated": 1692886458
+    },
+    {
+      "id": "64e7658e5f1e0d000018dd0b",
+      "text": "code:mmd_",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886458,
+      "updated": 1692889106
+    },
+    {
+      "id": "64e765905f1e0d000018dd0c",
+      "text": " flowchart LR",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886460,
+      "updated": 1692886493
+    },
+    {
+      "id": "64e765b05f1e0d000018dd0d",
+      "text": " A --> B",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886493,
+      "updated": 1692886493
+    },
+    {
+      "id": "64e7655e5f1e0d000018dd07",
+      "text": "code:a.mmd",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886411,
+      "updated": 1692886515
+    },
+    {
+      "id": "64e765c55f1e0d000018dd0e",
+      "text": " pie title Pets adopted by volunteers",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886514,
+      "updated": 1692886985
+    },
+    {
+      "id": "64e7679c5f1e0d0000c4e706",
+      "text": "    \"Dogs\" : 386",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886985,
+      "updated": 1692886985
+    },
+    {
+      "id": "64e7679c5f1e0d0000c4e707",
+      "text": "    \"Cats\" : 85",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886985,
+      "updated": 1692886985
+    },
+    {
+      "id": "64e7679c5f1e0d0000c4e708",
+      "text": "    \"Rats\" : 15",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886985,
+      "updated": 1692887221
+    },
+    {
+      "id": "64e7704d5f1e0d000099430d",
+      "text": "    \"Birds\": 11",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889228,
+      "updated": 1692891873
+    },
+    {
+      "id": "64e765c85f1e0d000018dd0f",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886517,
+      "updated": 1692886620
+    },
+    {
+      "id": "64e7662f5f1e0d000018dd10",
+      "text": "[https://gyazo.com/6e3d0cf3238b13e359226a24be6a9909]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886619,
+      "updated": 1692886626
+    },
+    {
+      "id": "64e766345f1e0d000018dd11",
+      "text": " pieとかいた瞬間にエラーが発生していた",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886626,
+      "updated": 1692886636
+    },
+    {
+      "id": "64e76b1e5f1e0d0000861173",
+      "text": " [https://github.com/mui/material-ui/issues/5338 Error: <circle> attribute r: A negative value is not valid. (\"-1.6\") · Issue #5338 · mui/material-ui · GitHub]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692887883,
+      "updated": 1692887884
+    },
+    {
+      "id": "64e7709e5f1e0d00006f5935",
+      "text": "  エラーなのでcssの問題ではない",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889291,
+      "updated": 1692889298
+    },
+    {
+      "id": "64e771d65f1e0d00006f5943",
+      "text": "  code:js",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889602,
+      "updated": 1692889606
+    },
+    {
+      "id": "64e771d95f1e0d00006f5945",
+      "text": "   function attrConstant(i, v) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889606,
+      "updated": 1692889612
+    },
+    {
+      "id": "64e771da5f1e0d00006f5946",
+      "text": "       return function() {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889607,
+      "updated": 1692889612
+    },
+    {
+      "id": "64e771da5f1e0d00006f5947",
+      "text": "           this.setAttribute(i, v)\t//break point",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889607,
+      "updated": 1692889628
+    },
+    {
+      "id": "64e771da5f1e0d00006f5948",
+      "text": "       }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889607,
+      "updated": 1692889612
+    },
+    {
+      "id": "64e771e55f1e0d00006f5949",
+      "text": "   }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889618,
+      "updated": 1692889619
+    },
+    {
+      "id": "64e76b1f5f1e0d0000861174",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692887884,
+      "updated": 1692887885
+    },
+    {
+      "id": "64e766405f1e0d000018dd13",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886637,
+      "updated": 1692887767
+    },
+    {
+      "id": "64e76aaa5f1e0d000086116c",
+      "text": "全然わからん...",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692887767,
+      "updated": 1692887770
+    },
+    {
+      "id": "64e76aad5f1e0d000086116d",
+      "text": "とりあえず使えそうな情報",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692887770,
+      "updated": 1692887775
+    },
+    {
+      "id": "64e76ab25f1e0d000086116e",
+      "text": " code:js",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692887775,
+      "updated": 1692887796
+    },
+    {
+      "id": "64e76ac65f1e0d000086116f",
+      "text": "  angerouslySetInnerHTML: {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692887796,
+      "updated": 1692887796
+    },
+    {
+      "id": "64e76ac75f1e0d0000861170",
+      "text": "      __html: _",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692887796,
+      "updated": 1692887800
+    },
+    {
+      "id": "64e76ac75f1e0d0000861171",
+      "text": "  }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692887796,
+      "updated": 1692887800
+    },
+    {
+      "id": "64e766355f1e0d000018dd12",
+      "text": " のhtmlを見てみるとsvgなのはsvgだが貼り付けてみると表示されない",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692886626,
+      "updated": 1692887824
+    },
+    {
+      "id": "64e76ace5f1e0d0000861172",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692887804,
+      "updated": 1692887804
+    },
+    {
+      "id": "64e76d785f1e0d00007a0870",
+      "text": "全く分からない！",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692888485,
+      "updated": 1692888488
+    },
+    {
+      "id": "64e76fc25f1e0d0000e07fcc",
+      "text": " 治った！？",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889072,
+      "updated": 1692889073
+    },
+    {
+      "id": "64e76fc45f1e0d0000e07fcd",
+      "text": " [https://gyazo.com/054cf87ac9f0e85bce746b3a8f116890]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889073,
+      "updated": 1692889074
+    },
+    {
+      "id": "64e7702f5f1e0d000099430a",
+      "text": "  ステップ実行したらちゃんと表示してくれる",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889180,
+      "updated": 1692889187
+    },
+    {
+      "id": "64e7703d5f1e0d000099430b",
+      "text": "  [https://gyazo.com/6c9a590d8f291af312ab837878b7fa2b]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889194,
+      "updated": 1692889195
+    },
+    {
+      "id": "64e7703e5f1e0d000099430c",
+      "text": "   一度表示したあとならちゃんと表示される",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889195,
+      "updated": 1692889273
+    },
+    {
+      "id": "64e76fc65f1e0d0000e07fce",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692889074,
+      "updated": 1692889074
+    },
+    {
+      "id": "64e76d7a5f1e0d00007a0871",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1692888487,
+      "updated": 1692888487
+    }
+  ]
+}
