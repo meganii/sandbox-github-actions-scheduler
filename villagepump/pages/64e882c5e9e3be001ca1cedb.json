@@ -1,0 +1,246 @@
+{
+  "id": "64e882c5e9e3be001ca1cedb",
+  "title": "長めの検索候補のフォントを小さくするUserScript",
+  "created": 1692959433,
+  "updated": 1692959991,
+  "lines": [
+    {
+      "id": "64e882c5e9e3be001ca1cedb",
+      "text": "長めの検索候補のフォントを小さくするUserScript",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959433,
+      "updated": 1692959436
+    },
+    {
+      "id": "64e882d9cc1fc100006401a8",
+      "text": "Scrapboxの[検索窓]に表示される[検索候補]が長文だったとき、その[フォントサイズ]を小さくする。",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959949
+    },
+    {
+      "id": "64e884eccc1fc10000efa0d3",
+      "text": "\t2段階で小さくする",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959981,
+      "updated": 1692959991
+    },
+    {
+      "id": "64e882d9cc1fc100006401a9",
+      "text": "",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e884d6cc1fc10000efa0d0",
+      "text": "比較図",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959958,
+      "updated": 1692959958
+    },
+    {
+      "id": "64e884d6cc1fc10000efa0d1",
+      "text": "\t[https://gyazo.com/562dc0a009acb4af97e348f0a9268348][https://gyazo.com/031b2a39aab553d4c974eeeaa2a7c840]",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959958,
+      "updated": 1692959958
+    },
+    {
+      "id": "64e884d8cc1fc10000efa0d2",
+      "text": "",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959961,
+      "updated": 1692959961
+    },
+    {
+      "id": "64e882dacc1fc100006401aa",
+      "text": "code:script.js",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401ab",
+      "text": " // バイトで数えられるようにする",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401ac",
+      "text": " String.prototype.byte = function() {",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401ad",
+      "text": " \treturn encodeURIComponent(this).replace(/%../g,'x').length",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401ae",
+      "text": " }",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401af",
+      "text": " const form = document.querySelector('.form-group');",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401b0",
+      "text": " // バイト数の設定（min以下なら何もしない。min<バイト<=maxなら少し小さく。maxより長いと最小にする）",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401b1",
+      "text": " const min = 57;",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401b2",
+      "text": " const max = 72; // or 68",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401b3",
+      "text": " ",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401b4",
+      "text": " form.addEventListener('keyup', e => {",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401b5",
+      "text": " \tlet items = form.querySelectorAll('ul li a')",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401b6",
+      "text": " \titems.forEach(item=>{",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401b7",
+      "text": " \t\t// 検索候補の文字数をバイト数で取得",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401b8",
+      "text": " \t\tlet len = item.text.byte()",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401b9",
+      "text": " \t\t//console.log(len, item.text)",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401ba",
+      "text": " \t\t// 文字数に応じてフォントサイズを変更する",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401bb",
+      "text": " \t\tif(len > min && len <= max) {",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401bc",
+      "text": " \t\t\titem.setAttribute('style', 'font-size: 0.9em')",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401bd",
+      "text": " \t\t\tconsole.log(item)",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401be",
+      "text": " \t\t} else if(len > max) {",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401bf",
+      "text": " \t\t\titem.setAttribute('style', 'font-size: 1px') // or 0.5em",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401c0",
+      "text": "     \t\tconsole.log(item)",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401c1",
+      "text": " \t\t}",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401c2",
+      "text": " \t})",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dacc1fc100006401c3",
+      "text": " })",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959450,
+      "updated": 1692959450
+    },
+    {
+      "id": "64e882dbcc1fc100006401c4",
+      "text": "",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692959452,
+      "updated": 1692959452
+    }
+  ]
+}

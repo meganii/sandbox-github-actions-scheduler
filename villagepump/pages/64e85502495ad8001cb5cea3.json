@@ -1,0 +1,197 @@
+{
+  "id": "64e85502495ad8001cb5cea3",
+  "title": "所属プロジェクト一覧の表示数を減らすUserScript",
+  "created": 1692947717,
+  "updated": 1692948009,
+  "lines": [
+    {
+      "id": "64e85502495ad8001cb5cea3",
+      "text": "所属プロジェクト一覧の表示数を減らすUserScript",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947914
+    },
+    {
+      "id": "64e855dacc1fc10000a20ce6",
+      "text": "指定したプロジェクトのみ[プロジェクト一覧]に表示される",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947931,
+      "updated": 1692948009
+    },
+    {
+      "id": "64e8550bcc1fc10000a20ce1",
+      "text": "",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947723,
+      "updated": 1692947723
+    },
+    {
+      "id": "64e85504cc1fc10000a20ccd",
+      "text": "code:script.js",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cce",
+      "text": " // 表示させたいプロジェクトを「/PROJECT_NAME/」という形式で登録する",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20ccf",
+      "text": " const shownList = [",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cd0",
+      "text": " \t'/PROJECT1/',",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cd1",
+      "text": " \t'/PROJECT2/'",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cd2",
+      "text": " ]",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cd3",
+      "text": " // 一旦折りたたまれているプロジェクトも表示させる（全プロジェクト数を数えるため）",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cd4",
+      "text": " const listMenuButton = document.querySelector('.list-menu-button a');",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cd5",
+      "text": " if(listMenuButton) listMenuButton.click();",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cd6",
+      "text": " ",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cd7",
+      "text": " // グローバルメニューの項目のリストから「プロジェクト」だけを取り出す",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cd8",
+      "text": " const globalMenuList = document.querySelectorAll('.project-list-tab ~ li a');",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cd9",
+      "text": " const projectListNumber = document.querySelectorAll('.project-display-name').length;",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cda",
+      "text": " console.log(globalMenuList);",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cdb",
+      "text": " for(let i = 0;i < projectListNumber; i++) {",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cdc",
+      "text": "\t",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cdd",
+      "text": "\t// 登録されているプロジェクト名以外を非表示にする",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cde",
+      "text": " \tconst projectName = globalMenuList[i].href.replace('https://scrapbox.io','');",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20cdf",
+      "text": " \tif(!shownList.includes(projectName)) globalMenuList[i].style.setProperty('display', 'none');",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e85504cc1fc10000a20ce0",
+      "text": " }",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947717,
+      "updated": 1692947717
+    },
+    {
+      "id": "64e8550dcc1fc10000a20ce2",
+      "text": "",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947726,
+      "updated": 1692947726
+    },
+    {
+      "id": "64e85578cc1fc10000a20ce3",
+      "text": "課題",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947834,
+      "updated": 1692947840
+    },
+    {
+      "id": "64e85580cc1fc10000a20ce5",
+      "text": "\tこれだとページをロードして1回目に[global menu]を開いた時しかプロジェクトの表示数が減らない",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947840,
+      "updated": 1692947906
+    },
+    {
+      "id": "64e8557fcc1fc10000a20ce4",
+      "text": "",
+      "userId": "5f0e769da385ed001ecc1fc1",
+      "created": 1692947840,
+      "updated": 1692947840
+    }
+  ]
+}
