@@ -1,0 +1,239 @@
+{
+  "id": "64f2f3df0885dd001c2f6e70",
+  "title": "コードブロック記法の拡張子を指定する記法",
+  "created": 1693643743,
+  "updated": 1693644618,
+  "lines": [
+    {
+      "id": "64f2f3df0885dd001c2f6e70",
+      "text": "コードブロック記法の拡張子を指定する記法",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643743,
+      "updated": 1693643743
+    },
+    {
+      "id": "64f2f3df1280f00000e1bf1f",
+      "text": "`code:A(B)`と記述することで、[コードブロック記法]のタイトルをAとしたままBの言語の[syntax highlight]を適用できるらしい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643743,
+      "updated": 1693643757
+    },
+    {
+      "id": "64f2f3df1280f00000e1bf20",
+      "text": "つまり、こういうこと",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643743,
+      "updated": 1693643743
+    },
+    {
+      "id": "64f2f3df1280f00000e1bf21",
+      "text": "\tcode:TypeScript(sh)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643743,
+      "updated": 1693643743
+    },
+    {
+      "id": "64f2f3df1280f00000e1bf22",
+      "text": "\t if [1 -gt 0]; then",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643743,
+      "updated": 1693643743
+    },
+    {
+      "id": "64f2f3df1280f00000e1bf23",
+      "text": "\t     echo \"I'm TypeScript!\"",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643743,
+      "updated": 1693643743
+    },
+    {
+      "id": "64f2f3df1280f00000e1bf24",
+      "text": "\t fi",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643743,
+      "updated": 1693643743
+    },
+    {
+      "id": "64f2f3df1280f00000e1bf25",
+      "text": "\t`code:TypeScript(sh)`と記述しているので、タイトルはTypeScriptなのに[syntax highlight]はshが適用されている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643743,
+      "updated": 1693643743
+    },
+    {
+      "id": "64f2f40a1280f00000e1bf2a",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643786,
+      "updated": 1693643786
+    },
+    {
+      "id": "64f2f6421280f00000d61784",
+      "text": "実装",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644355,
+      "updated": 1693644363
+    },
+    {
+      "id": "64f2f64f1280f00000d61794",
+      "text": " [assets/index.js]を読むと、だいたいこんな感じ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644367,
+      "updated": 1693644377
+    },
+    {
+      "id": "64f2f64b1280f00000d61786",
+      "text": " code:detectCodeBlockStart.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644363,
+      "updated": 1693644610
+    },
+    {
+      "id": "64f2f6661280f00000d61795",
+      "text": "  export const detectCodeBlockStart = (text) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644390,
+      "updated": 1693644613
+    },
+    {
+      "id": "64f2f64d1280f00000d61788",
+      "text": "     const matches = text.match(/^\\s*code:(.+)\\(([^()]+)\\)$/)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644365,
+      "updated": 1693644418
+    },
+    {
+      "id": "64f2f6821280f00000d61796",
+      "text": "       ?? text.match(/^\\s*code:(.+)$/);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644418,
+      "updated": 1693644423
+    },
+    {
+      "id": "64f2f6a61280f00000d61797",
+      "text": "     if (!matches) return {};",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644454,
+      "updated": 1693644461
+    },
+    {
+      "id": "64f2f6ad1280f00000d61798",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644461,
+      "updated": 1693644461
+    },
+    {
+      "id": "64f2f6ae1280f00000d61799",
+      "text": "     const [, filename, lang] = matches;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644464,
+      "updated": 1693644486
+    },
+    {
+      "id": "64f2f6cb1280f00000d6179b",
+      "text": "     return {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644492,
+      "updated": 1693644496
+    },
+    {
+      "id": "64f2f6cf1280f00000d6179c",
+      "text": "       filename: filename.trim(),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644496,
+      "updated": 1693644503
+    },
+    {
+      "id": "64f2f6d61280f00000d6179e",
+      "text": "       lang: lang || filename.split(\".\").pop() ?? \"\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644503,
+      "updated": 1693644591
+    },
+    {
+      "id": "64f2f6d01280f00000d6179d",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644496,
+      "updated": 1693644537
+    },
+    {
+      "id": "64f2f6fe1280f00000d6179f",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644543,
+      "updated": 1693644618
+    },
+    {
+      "id": "64f2f7491280f00000d617a4",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644618,
+      "updated": 1693644618
+    },
+    {
+      "id": "64f2f6421280f00000d61783",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693644355,
+      "updated": 1693644355
+    },
+    {
+      "id": "64f2f3df1280f00000e1bf26",
+      "text": "参考元とまともな実用例",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643743,
+      "updated": 1693643785
+    },
+    {
+      "id": "64f2f3df1280f00000e1bf27",
+      "text": "\t[/forum-jp/code:sh が bash にされてしまう#612c724d6e28f90000f1e4d3]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643743,
+      "updated": 1693643785
+    },
+    {
+      "id": "64f2f3df1280f00000e1bf28",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643743,
+      "updated": 1693643743
+    },
+    {
+      "id": "64f2f4321280f00000e1bf2b",
+      "text": "正式名称が分からなかった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643827,
+      "updated": 1693643851
+    },
+    {
+      "id": "64f2f4531280f00000e1bf2f",
+      "text": " 他の表現",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643860,
+      "updated": 1693643862
+    },
+    {
+      "id": "64f2f44c1280f00000e1bf2e",
+      "text": "  [/takker/code:filename(language)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643852,
+      "updated": 1693643863
+    },
+    {
+      "id": "64f2f43f1280f00000e1bf2d",
+      "text": "  [/programming-notes/コードブロック記法の拡張子を明示的に指定]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643839,
+      "updated": 1693643863
+    },
+    {
+      "id": "64f2f43c1280f00000e1bf2c",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693643836,
+      "updated": 1693643836
+    }
+  ]
+}
