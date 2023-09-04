@@ -1,0 +1,232 @@
+{
+  "id": "64f5aa602db3a2001b498b1f",
+  "title": "日記の書き込みからアクティブユーザー数を調べる",
+  "created": 1693821538,
+  "updated": 1693822159,
+  "lines": [
+    {
+      "id": "64f5aa602db3a2001b498b1f",
+      "text": "日記の書き込みからアクティブユーザー数を調べる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821538,
+      "updated": 1693821538
+    },
+    {
+      "id": "64f5aa611280f00000d16d29",
+      "text": "ふと思いついたのでメモ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821538,
+      "updated": 1693821546
+    },
+    {
+      "id": "64f5aa691280f00000d16d2b",
+      "text": "これでそれなりに正確な[アクティブユーザー]数を把握できるはず",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821546,
+      "updated": 1693822145
+    },
+    {
+      "id": "64f5acb31280f00000d16d49",
+      "text": "type checkとlinterは誰かやって",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693822132,
+      "updated": 1693822159
+    },
+    {
+      "id": "64f5acc51280f00000d16d4a",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693822150,
+      "updated": 1693822150
+    },
+    {
+      "id": "64f5aa691280f00000d16d2c",
+      "text": "code:print.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821546,
+      "updated": 1693821553
+    },
+    {
+      "id": "64f5aa701280f00000d16d2d",
+      "text": " import { getPage } from \"../../takker/scrapbox-userscript-std/rest.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821553,
+      "updated": 1693821575
+    },
+    {
+      "id": "64f5aa8b1280f00000d16d2e",
+      "text": " import { lightFormat } from \"../../takker/date-fns/lightFormat.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821581,
+      "updated": 1693821595
+    },
+    {
+      "id": "64f5ab641280f00000d16d3b",
+      "text": " import { addDays } from \"../../takker/date-fns/addDays.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821798,
+      "updated": 1693821807
+    },
+    {
+      "id": "64f5aa9a1280f00000d16d2f",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821595,
+      "updated": 1693821595
+    },
+    {
+      "id": "64f5aaa01280f00000d16d30",
+      "text": " const start = new Date(2020, 0, 1);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821601,
+      "updated": 1693821614
+    },
+    {
+      "id": "64f5aafb1280f00000d16d36",
+      "text": " const project = \"villagepump\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821692,
+      "updated": 1693821698
+    },
+    {
+      "id": "64f5ab971280f00000d16d3e",
+      "text": " type DateStr = `${number}/${number}/${number}`;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821848,
+      "updated": 1693821865
+    },
+    {
+      "id": "64f5ab031280f00000d16d37",
+      "text": " const toTitle = (date: Date): DateStr",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821700,
+      "updated": 1693821873
+    },
+    {
+      "id": "64f5abb01280f00000d16d3f",
+      "text": "   => lightFormat(date, \"yyyy/MM/dd\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821873,
+      "updated": 1693821874
+    },
+    {
+      "id": "64f5aaba1280f00000d16d32",
+      "text": " const now = new Date();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821627,
+      "updated": 1693821666
+    },
+    {
+      "id": "64f5aae21280f00000d16d33",
+      "text": " let i = start;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821667,
+      "updated": 1693821670
+    },
+    {
+      "id": "64f5abda1280f00000d16d42",
+      "text": " const data = new Map<DateStr, number>();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821915,
+      "updated": 1693821948
+    },
+    {
+      "id": "64f5aaad1280f00000d16d31",
+      "text": " while (toTitle(i) !== toTitle(now)) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821614,
+      "updated": 1693821762
+    },
+    {
+      "id": "64f5abbe1280f00000d16d40",
+      "text": "   const key = toTitle(i);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821887,
+      "updated": 1693821934
+    },
+    {
+      "id": "64f5aaf11280f00000d16d34",
+      "text": "   const res = await getPage(project, key);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821683,
+      "updated": 1693821934
+    },
+    {
+      "id": "64f5abc91280f00000d16d41",
+      "text": "   data.set(key, res.ok ? res.value.collaboraters.length + 1 : 0);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821899,
+      "updated": 1693821981
+    },
+    {
+      "id": "64f5ab551280f00000d16d3a",
+      "text": "   i = addDays(start, 1);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821782,
+      "updated": 1693821792
+    },
+    {
+      "id": "64f5aaf21280f00000d16d35",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821683,
+      "updated": 1693821683
+    },
+    {
+      "id": "64f5ab731280f00000d16d3c",
+      "text": " console.debug(data);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821812,
+      "updated": 1693821999
+    },
+    {
+      "id": "64f5ac2e1280f00000d16d43",
+      "text": " await navigetor.clipboard.writeText(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821999,
+      "updated": 1693822019
+    },
+    {
+      "id": "64f5ac601280f00000d16d46",
+      "text": "   [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693822049,
+      "updated": 1693822051
+    },
+    {
+      "id": "64f5ac621280f00000d16d47",
+      "text": "     \"table:active users\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693822051,
+      "updated": 1693822117
+    },
+    {
+      "id": "64f5ac421280f00000d16d44",
+      "text": "     ...[...data.entries()].map(([date, num]) => ` ${date}\\t${num}`,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693822019,
+      "updated": 1693822121
+    },
+    {
+      "id": "64f5aca91280f00000d16d48",
+      "text": "   ].join(\"\\n\")",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693822122,
+      "updated": 1693822127
+    },
+    {
+      "id": "64f5ac431280f00000d16d45",
+      "text": " );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693822021,
+      "updated": 1693822021
+    },
+    {
+      "id": "64f5aa621280f00000d16d2a",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1693821540,
+      "updated": 1693821540
+    }
+  ]
+}
