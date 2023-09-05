@@ -1,0 +1,218 @@
+{
+  "id": "64f657bd976a2c001cab8dc0",
+  "title": "削除操作とログの話",
+  "created": 1693865918,
+  "updated": 1693866309,
+  "lines": [
+    {
+      "id": "64f657bd976a2c001cab8dc0",
+      "text": "削除操作とログの話",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865918
+    },
+    {
+      "id": "64f657bced60e60000c3a9fd",
+      "text": "from [2023/09/05]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865918
+    },
+    {
+      "id": "64f657bced60e60000c3a9fe",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865927
+    },
+    {
+      "id": "64f657bced60e60000c3a9ff",
+      "text": "[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865918
+    },
+    {
+      "id": "64f657bced60e60000c3aa00",
+      "text": "\t起きたら昨日の削除事故[. [2023/09/04の文言削除事故の話]]の続報が来てた",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865918
+    },
+    {
+      "id": "64f657bced60e60000c3aa02",
+      "text": "\t別枠で[削除操作とログの話]を掘りたい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865953
+    },
+    {
+      "id": "64f657bced60e60000c3aa03",
+      "text": "\t実は[2023/09/04の文言削除事故の話]以外にも Scrapbox は削除操作のログが残らないことがある",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865962
+    },
+    {
+      "id": "64f657bced60e60000c3aa04",
+      "text": "\t\t1. 最近はページ削除のログが events 上に上がってこないことが話題になってる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865962
+    },
+    {
+      "id": "64f657bced60e60000c3aa05",
+      "text": "\t\t2. それ以外にも、行を削除すると stream 上にログが上がってこないという挙動がある",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865962
+    },
+    {
+      "id": "64f657bced60e60000c3aa06",
+      "text": "\t\t\tなお、行削除しても modified date でソートすると上に上がって来る",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865962
+    },
+    {
+      "id": "64f657bced60e60000c3aa07",
+      "text": "\t\t\t\tmodified date で上に上がってきてるのに stream 上で上がってきていないと行ごと消したのかなと推測できる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865962
+    },
+    {
+      "id": "64f657bced60e60000c3aa08",
+      "text": "\t\t\t行削除動作は history から辿れる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865962
+    },
+    {
+      "id": "64f657bced60e60000c3aa09",
+      "text": "\t\t\t\t[\" 行ごと消したのかなと推測]して history をたどると削除された行を見れる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865962
+    },
+    {
+      "id": "64f657bced60e60000c3aa0d",
+      "text": "\t\t\tしかし、コレを悪用することが可能 (と予想している)",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865962
+    },
+    {
+      "id": "64f657bced60e60000c3aa0e",
+      "text": "\t\t\t\t文字列を全選択して削除するとページ名が untitled にすり替わる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865962
+    },
+    {
+      "id": "64f657bced60e60000c3aa0f",
+      "text": "\t\t\t\tその状態でページを削除すると untitled が削除されたことが events 上に上がってくる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865962
+    },
+    {
+      "id": "64f657bced60e60000c3aa10",
+      "text": "\t\t\t\tuntitled が削除されていても「うっかり白紙ページ作って消したのかな」と思われるだけで確認されづらい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865962
+    },
+    {
+      "id": "64f657bced60e60000c3aa11",
+      "text": "\t\t\t\tこのため悪意ある編集者がコッソリとページを 1 枚削除することが可能になってしまっている",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865962
+    },
+    {
+      "id": "64f657bced60e60000c3aa12",
+      "text": " \t\t\t\tおまけに今は[\" 1]のせいでログにすら残らないため、ホントにサイレント削除できてしまう",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693865962
+    },
+    {
+      "id": "64f657bced60e60000c3aa13",
+      "text": "\t[\" 行削除動作は history から辿れる]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693865918,
+      "updated": 1693866068
+    },
+    {
+      "id": "64f6583bed60e60000c3aa1a",
+      "text": "\t\tここホントかな？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693866045,
+      "updated": 1693866068
+    },
+    {
+      "id": "64f65841ed60e60000c3aa1b",
+      "text": "\t\t[\" 1]が発生するようになって以降は[\" 行削除動作は history から辿れる]かどうかを確かめたことがないから分からん",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693866051,
+      "updated": 1693866075
+    },
+    {
+      "id": "64f65841ed60e60000c3aa1c",
+      "text": "\t\t\tひょっとしたら [\" 1] と似たバグとして history から辿れなくなるバグが起こってるかも？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693866051,
+      "updated": 1693866075
+    },
+    {
+      "id": "64f65841ed60e60000c3aa1d",
+      "text": "\t\t\tだとしたらもっとマズい。削除を追えなくなるから",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693866051,
+      "updated": 1693866075
+    },
+    {
+      "id": "64f6591ced60e60000c3aa1e",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693866269,
+      "updated": 1693866274
+    },
+    {
+      "id": "64f65921ed60e60000c3aa1f",
+      "text": "この辺に似た話が載ってる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693866274,
+      "updated": 1693866280
+    },
+    {
+      "id": "64f65926ed60e60000c3aa20",
+      "text": "\t[/forum-jp/削除に気付く仕組みが欲しい]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693866280,
+      "updated": 1693866281
+    },
+    {
+      "id": "64f65939ed60e60000c3aa21",
+      "text": "\t[/forum-jp/削除したページをゴミ箱から復旧できるようにしてほしい]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693866300,
+      "updated": 1693866300
+    },
+    {
+      "id": "64f6593aed60e60000c3aa22",
+      "text": "\t\tゴミ箱ってどこで見れるんだろ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693866300,
+      "updated": 1693866309
+    },
+    {
+      "id": "64f65826ed60e60000c3aa18",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1693866024,
+      "updated": 1693866024
+    }
+  ]
+}
