@@ -2,7 +2,7 @@
   "id": "64fece6e9479cf001cf0d4e9",
   "title": "タスクリンクV2の実装",
   "created": 1694420591,
-  "updated": 1694422882,
+  "updated": 1694492199,
   "lines": [
     {
       "id": "64fece6e9479cf001cf0d4e9",
@@ -195,31 +195,122 @@
     },
     {
       "id": "64fece981280f000000df78d",
-      "text": " export type Status = \"⬜\" | \"📝\" | \"🚧\" | \"⏳\" | \"✅\" | \"❌\";",
+      "text": " export type Status = \"schedule\" | \"todo\" | \"deadline\" | \"done\" | \"note\" | \"up-down\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694420633,
-      "updated": 1694420633
+      "updated": 1694476802
     },
     {
       "id": "64fece981280f000000df78e",
       "text": " export const isStatus = (status: string): status is Status =>",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694476678,
+      "updated": 1694476678
     },
     {
       "id": "64fece981280f000000df78f",
-      "text": "   [\"⬜\", \"📝\", \"🚧\", \"⏳\", \"✅\", \"❌\"].includes(status);",
+      "text": "   [\"schedule\", \"todo\", \"deadline\", \"done\", \"note\", \"up-down\"].includes(status);",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694476678,
+      "updated": 1694476837
     },
     {
       "id": "64fece981280f000000df790",
       "text": " ",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694476678,
+      "updated": 1694476678
+    },
+    {
+      "id": "64ffb3051280f00000cfbf13",
+      "text": " export interface Repeat {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694479110,
+      "updated": 1694479117
+    },
+    {
+      "id": "64ffb30c1280f00000cfbf15",
+      "text": "   frequency: \"year\" | \"month\" | \"week\" | \"date\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694479117,
+      "updated": 1694479169
+    },
+    {
+      "id": "64ffb3431280f00000cfbf17",
+      "text": "   count: number;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694479171,
+      "updated": 1694479184
+    },
+    {
+      "id": "64ffb5c31280f00000cfbf20",
+      "text": "   shift: number;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694479812,
+      "updated": 1694479816
+    },
+    {
+      "id": "64ffb30d1280f00000cfbf16",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694479118,
+      "updated": 1694479118
+    },
+    {
+      "id": "64ffb39c1280f00000cfbf1a",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694479261,
+      "updated": 1694479261
+    },
+    {
+      "id": "64ffb5f61280f00000cfbf21",
+      "text": " /** 曜日指定情報を加えたDate */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694479863,
+      "updated": 1694479872
+    },
+    {
+      "id": "64ffb39c1280f00000cfbf1b",
+      "text": " export interface ExDate {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694479261,
+      "updated": 1694479266
+    },
+    {
+      "id": "64ffb3a21280f00000cfbf1c",
+      "text": "   base: Date;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694479266,
+      "updated": 1694479366
+    },
+    {
+      "id": "64ffb3ac1280f00000cfbf1e",
+      "text": "   startOfDay: 0 | 1 | 2 | 3 | 4 | 5 | 6;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694479276,
+      "updated": 1694479365
+    },
+    {
+      "id": "64ffb3e71280f00000cfbf1f",
+      "text": "   weekNum: number;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694479335,
+      "updated": 1694479341
+    },
+    {
+      "id": "64ffb3a31280f00000cfbf1d",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694479268,
+      "updated": 1694479268
+    },
+    {
+      "id": "64ffb3061280f00000cfbf14",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694479110,
+      "updated": 1694479110
     },
     {
       "id": "64fece981280f000000df791",
@@ -251,10 +342,10 @@
     },
     {
       "id": "64fece981280f000000df794",
-      "text": "   /** タスクの状態 */",
+      "text": "   /** howm記号 */",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694420633,
-      "updated": 1694420633
+      "updated": 1694476849
     },
     {
       "id": "64fece981280f000000df795",
@@ -264,221 +355,130 @@
       "updated": 1694420633
     },
     {
-      "id": "64fece981280f000000df796",
-      "text": "   /** 自分の意志では動かせない期日 */",
+      "id": "64ffb2b61280f00000cfbf10",
+      "text": "   ",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694479030,
+      "updated": 1694479030
     },
     {
-      "id": "64fece981280f000000df797",
-      "text": "   due?: Date;",
+      "id": "64ffb2c71280f00000cfbf12",
+      "text": "   /** hown記号のオプション */",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694479047,
+      "updated": 1694479055
     },
     {
-      "id": "64fece981280f000000df798",
-      "text": " ",
+      "id": "64ffb2b61280f00000cfbf11",
+      "text": "   speed?: number;",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694479030,
+      "updated": 1694479046
     },
     {
-      "id": "64fece981280f000000df799",
-      "text": "   /** 予想所要時間 (単位はmin) **/",
+      "id": "64ffb35e1280f00000cfbf18",
+      "text": "   ",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694479199,
+      "updated": 1694479199
     },
     {
-      "id": "64fece981280f000000df79a",
+      "id": "64ffb35e1280f00000cfbf19",
+      "text": "   repeat?: Repeat;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694479199,
+      "updated": 1694479215
+    },
+    {
+      "id": "64ffaa371280f00000cfbeba",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694476855,
+      "updated": 1694476855
+    },
+    {
+      "id": "64ffaa411280f00000cfbebc",
+      "text": "   /** 開始日時 */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694476865,
+      "updated": 1694476870
+    },
+    {
+      "id": "64ffaa371280f00000cfbebb",
+      "text": "   start: ExDate;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694476855,
+      "updated": 1694479707
+    },
+    {
+      "id": "64ffab301280f00000cfbec0",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694477105,
+      "updated": 1694477105
+    },
+    {
+      "id": "64ffab351280f00000cfbec2",
+      "text": "   /** 終了日時 */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694477109,
+      "updated": 1694477153
+    },
+    {
+      "id": "64ffab301280f00000cfbec1",
+      "text": "   end?: ExDate;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694477105,
+      "updated": 1694479710
+    },
+    {
+      "id": "64ffab441280f00000cfbecc",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694477124,
+      "updated": 1694477124
+    },
+    {
+      "id": "64ffab3e1280f00000cfbec9",
+      "text": "   /** 所要時間 (単位はmin) **/",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694477118,
+      "updated": 1694477122
+    },
+    {
+      "id": "64ffab3e1280f00000cfbeca",
       "text": "   duration?: number;",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694477118,
+      "updated": 1694477118
     },
     {
-      "id": "64fece981280f000000df79b",
-      "text": " ",
+      "id": "64ffaa4b1280f00000cfbebd",
+      "text": "   ",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694476875,
+      "updated": 1694476875
     },
     {
-      "id": "64fece981280f000000df79c",
-      "text": "   /** いつ頃やりたいか",
+      "id": "64ffaa7e1280f00000cfbebf",
+      "text": "   /** `true`なら`start`と`end`のhours以下を無視する */",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694476927,
+      "updated": 1694477101
     },
     {
-      "id": "64fece981280f000000df79d",
-      "text": "    *",
+      "id": "64ffaa4b1280f00000cfbebe",
+      "text": "   isAllDay: boolean;",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694476875,
+      "updated": 1694476926
     },
     {
-      "id": "64fece981280f000000df79e",
-      "text": "    * 指定がない場合は、`due`の2週間前か今日のどちらか遅いほうを仮に入れておく。",
+      "id": "64ffaa2b1280f00000cfbeb9",
+      "text": "   ",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df79f",
-      "text": "    * `due`もないなら空にする",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7a0",
-      "text": "    */",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7a1",
-      "text": "   startAt?: {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7a2",
-      "text": "     type: \"date\";",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7a3",
-      "text": "     year: number;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7a4",
-      "text": "     month: number;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7a5",
-      "text": "     date: number;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7a6",
-      "text": "     hours?: number;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7a7",
-      "text": "     minutes?: number;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7a8",
-      "text": "   } | {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7a9",
-      "text": "     type: \"week\";",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7aa",
-      "text": "     year: number;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7ab",
-      "text": "     week: number;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7ac",
-      "text": "   } | {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7ad",
-      "text": "     type: \"month\";",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7ae",
-      "text": "     year: number;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7af",
-      "text": "     month: number;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7b0",
-      "text": "   } | {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7b1",
-      "text": "     type: \"year\";",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7b2",
-      "text": "     year: number;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7b3",
-      "text": "   };",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7b4",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694476844,
+      "updated": 1694476844
     },
     {
       "id": "64fece981280f000000df7b5",
@@ -507,6 +507,160 @@
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694420633,
       "updated": 1694420633
+    },
+    {
+      "id": "64ffaf1a1280f00000cfbedb",
+      "text": " const detectEnd = (text: string, start: Date): [string] | [string, Date] => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478106,
+      "updated": 1694492154
+    },
+    {
+      "id": "64ffaf411280f00000cfbedd",
+      "text": "   if (!text.includes(\"/\")) return text;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478145,
+      "updated": 1694492175
+    },
+    {
+      "id": "64ffe6161280f00000cfbf23",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694492183,
+      "updated": 1694492183
+    },
+    {
+      "id": "64ffafbc1280f00000cfbeec",
+      "text": "   {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478269,
+      "updated": 1694478269
+    },
+    {
+      "id": "64ffafbe1280f00000cfbeed",
+      "text": "     const end = text.match(/\\/\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2})/);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478270,
+      "updated": 1694492192
+    },
+    {
+      "id": "64ffafcf1280f00000cfbeee",
+      "text": "     if(end) return [params.slice(end), new Date(end));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478288,
+      "updated": 1694478681
+    },
+    {
+      "id": "64ffafed1280f00000cfbeef",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478318,
+      "updated": 1694478318
+    },
+    {
+      "id": "64ffaff71280f00000cfbef1",
+      "text": "   {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478327,
+      "updated": 1694478327
+    },
+    {
+      "id": "64ffaff71280f00000cfbef2",
+      "text": "     const end = params.match(/\\/\\d{2}-\\d{2}(?:T\\d{2}:\\d{2})/)?.[0];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478327,
+      "updated": 1694492194
+    },
+    {
+      "id": "64ffaff71280f00000cfbef3",
+      "text": "     if(end) return [params.slice(end), new Date(`${start.getFullYear()}-${end}`)];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478327,
+      "updated": 1694478695
+    },
+    {
+      "id": "64ffaff71280f00000cfbef4",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478327,
+      "updated": 1694478327
+    },
+    {
+      "id": "64ffb0271280f00000cfbef5",
+      "text": "   {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478376,
+      "updated": 1694478376
+    },
+    {
+      "id": "64ffb0271280f00000cfbef6",
+      "text": "     const end = params.match(/\\/\\d{2}(?:T\\d{2}:\\d{2})/)?.[0];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478376,
+      "updated": 1694492196
+    },
+    {
+      "id": "64ffb0271280f00000cfbef7",
+      "text": "     if(end) return [params.slice(end), new Date(`${start.getFullYear()}-${zero(start.getMonth() + 1)}-${end}`)];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478376,
+      "updated": 1694478696
+    },
+    {
+      "id": "64ffb0271280f00000cfbef8",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478376,
+      "updated": 1694478418
+    },
+    {
+      "id": "64ffb0651280f00000cfbef9",
+      "text": "   {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478437,
+      "updated": 1694478437
+    },
+    {
+      "id": "64ffb0651280f00000cfbefa",
+      "text": "     const end = params.match(/\\/\\d{2}:\\d{2}/)?.[0];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478437,
+      "updated": 1694492199
+    },
+    {
+      "id": "64ffb09d1280f00000cfbf01",
+      "text": "     if(end) return [params.slice(end), new Date(`${start.getFullYear()}-${zero(start.getMonth() + 1)}-${}T${end}`)];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478494,
+      "updated": 1694478698
+    },
+    {
+      "id": "64ffb0651280f00000cfbefc",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478437,
+      "updated": 1694478437
+    },
+    {
+      "id": "64ffb0ac1280f00000cfbf02",
+      "text": "   return [fragment];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478509,
+      "updated": 1694478703
+    },
+    {
+      "id": "64ffaf301280f00000cfbedc",
+      "text": " };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478128,
+      "updated": 1694478513
+    },
+    {
+      "id": "64ffaf191280f00000cfbeda",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478106,
+      "updated": 1694478106
     },
     {
       "id": "64fece981280f000000df7b9",
@@ -552,73 +706,150 @@
     },
     {
       "id": "64fece981280f000000df7bf",
-      "text": "   const status = text.match(/^[\\uFE00-\\uFE0F]*([⬜📝🚧⏳✅❌])/u)?.[1] ?? \"\";",
+      "text": "   const matched = text.match(/@(\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2})?)(?:\\((\\+|-)?(\\d+)\\*(Sun|Mon|Tue|Wed|Thu|Fri|Sat)(?:(\\+|-)(\\d+))?\\))?/i);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694420633,
-      "updated": 1694420633
+      "updated": 1694479800
     },
     {
       "id": "64fece981280f000000df7c0",
-      "text": "   if (!isStatus(status)) return;",
+      "text": "   if (!matched) return;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694420633,
-      "updated": 1694420633
+      "updated": 1694477891
     },
     {
-      "id": "64fece981280f000000df7c1",
-      "text": " ",
+      "id": "64ffac101280f00000cfbed3",
+      "text": "   /** 開始日時 */",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694477328,
+      "updated": 1694477332
     },
     {
-      "id": "64fece981280f000000df7c2",
-      "text": "   const dueData = detectDue(text);",
+      "id": "64ffab991280f00000cfbed0",
+      "text": "   const start = new Date(matched[1]);",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694477209,
+      "updated": 1694477895
     },
     {
-      "id": "64fece981280f000000df7c3",
-      "text": "   const due = dueData?.due;",
+      "id": "64ffac1b1280f00000cfbed4",
+      "text": "   /** `true`なら`start`と`end`のhours以下を無視する */",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694477339,
+      "updated": 1694477340
     },
     {
-      "id": "64fece981280f000000df7c4",
-      "text": " ",
+      "id": "64ffabee1280f00000cfbed1",
+      "text": "   const isAllDay = s.includes(\":\");",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694477294,
+      "updated": 1694477324
     },
     {
-      "id": "64fece981280f000000df7c5",
-      "text": "   const startAtMatches = text.match(",
+      "id": "64ffac2c1280f00000cfbed5",
+      "text": "   ",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694477356,
+      "updated": 1694477356
     },
     {
-      "id": "64fece981280f000000df7c6",
-      "text": "     /@(\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2}(?:\\/\\d{2}:\\d{2}|D\\d{1,4})?|D\\d{1,4})?|\\d{4}(?:-\\d{2}(?:-\\d{2})?|-w\\d{2})?(?:D\\d+)?)/,",
+      "id": "64ffae161280f00000cfbed6",
+      "text": "   let splitted = text.slice(matched.index + matched[0].length);",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694477846,
+      "updated": 1694478710
     },
     {
-      "id": "64fece981280f000000df7c7",
-      "text": "   );",
+      "id": "64ffb1b01280f00000cfbf09",
+      "text": "   let end = undefined;",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694478769,
+      "updated": 1694478773
+    },
+    {
+      "id": "64ffaec01280f00000cfbed8",
+      "text": "   const regExp = /^D(\\d+)/i;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478016,
+      "updated": 1694478042
+    },
+    {
+      "id": "64ffaedc1280f00000cfbed9",
+      "text": "   const regExp = /^\\/\\d{2}:\\d{2}/i;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478044,
+      "updated": 1694478074
     },
     {
       "id": "64fece981280f000000df7c8",
-      "text": " ",
+      "text": "   while (splitted !== \"\" || !(end || duration) || !status) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694420633,
-      "updated": 1694420633
+      "updated": 1694479002
+    },
+    {
+      "id": "64ffb1f31280f00000cfbf0f",
+      "text": "     if (!end) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478835,
+      "updated": 1694478843
+    },
+    {
+      "id": "64ffb0c71280f00000cfbf03",
+      "text": "      const result = detectEnd(splitted, start);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478535,
+      "updated": 1694478867
+    },
+    {
+      "id": "64ffb1de1280f00000cfbf0b",
+      "text": "     splitted = result[0];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478814,
+      "updated": 1694478874
+    },
+    {
+      "id": "64ffb1d91280f00000cfbf0a",
+      "text": "     if (result[1]) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478809,
+      "updated": 1694478884
+    },
+    {
+      "id": "64ffb1e71280f00000cfbf0c",
+      "text": "       end = result[1];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478825,
+      "updated": 1694478889
+    },
+    {
+      "id": "64ffb1e91280f00000cfbf0d",
+      "text": "       continue;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478825,
+      "updated": 1694478828
+    },
+    {
+      "id": "64ffb1ec1280f00000cfbf0e",
+      "text": "     }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478828,
+      "updated": 1694478828
+    },
+    {
+      "id": "64ffb1921280f00000cfbf07",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694478739,
+      "updated": 1694478777
+    },
+    {
+      "id": "64ffaea91280f00000cfbed7",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694477993,
+      "updated": 1694477993
     },
     {
       "id": "64fece981280f000000df7c9",
