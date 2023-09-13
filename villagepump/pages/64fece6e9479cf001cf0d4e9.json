@@ -2,7 +2,7 @@
   "id": "64fece6e9479cf001cf0d4e9",
   "title": "タスクリンクV2の実装",
   "created": 1694420591,
-  "updated": 1694492199,
+  "updated": 1694595909,
   "lines": [
     {
       "id": "64fece6e9479cf001cf0d4e9",
@@ -145,13 +145,6 @@
       "updated": 1694422871
     },
     {
-      "id": "64fed7561280f000000df892",
-      "text": "　 曜日指定などの計算も考慮する",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694422871,
-      "updated": 1694422880
-    },
-    {
       "id": "64fed6e11280f000000df88a",
       "text": "　[howmのリマインダの記号]の種類&数値",
       "userId": "5ef2bdebb60650001e1280f0",
@@ -187,6 +180,580 @@
       "updated": 1694420591
     },
     {
+      "id": "650150081280f00000020346",
+      "text": "暫定仕様",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584840,
+      "updated": 1694584846
+    },
+    {
+      "id": "6501501f1280f0000002034c",
+      "text": "　記号の挿入位置を決める",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584864,
+      "updated": 1694584870
+    },
+    {
+      "id": "650150261280f0000002034d",
+      "text": "  [howmのリマインダの記号]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584871,
+      "updated": 1694584871
+    },
+    {
+      "id": "650150261280f0000002034e",
+      "text": "  　開始日時の直前に連結する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584871,
+      "updated": 1694584871
+    },
+    {
+      "id": "650150261280f0000002034f",
+      "text": "   ✅`[エンジニアの知的生産術買いたい-9@2023-09-12]`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584871,
+      "updated": 1694584871
+    },
+    {
+      "id": "650150261280f00000020350",
+      "text": "   ✅`[-9@2023-09-12エンジニアの知的生産術買いたい]`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584871,
+      "updated": 1694584871
+    },
+    {
+      "id": "650150261280f00000020351",
+      "text": "   ❌`[エンジニアの知的生産術買いたい-9 @2023-09-12]`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584871,
+      "updated": 1694584871
+    },
+    {
+      "id": "650150261280f00000020352",
+      "text": "   ❌`[-9 @2023-09-12エンジニアの知的生産術買いたい]`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584871,
+      "updated": 1694584871
+    },
+    {
+      "id": "6501500d1280f00000020347",
+      "text": "  終了日時/見積もり時間/繰り返し指定",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584846,
+      "updated": 1694584873
+    },
+    {
+      "id": "6501500d1280f00000020348",
+      "text": "  　開始日時の直後に連結する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584846,
+      "updated": 1694584873
+    },
+    {
+      "id": "6501500d1280f00000020349",
+      "text": "  　「終了日時 or 見積もり時間→繰り返し指定」の順に連結する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584846,
+      "updated": 1694584873
+    },
+    {
+      "id": "6501500d1280f0000002034a",
+      "text": "　後方互換性",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584846,
+      "updated": 1694584846
+    },
+    {
+      "id": "6501500d1280f0000002034b",
+      "text": "　 行頭に✅❌があるタスクは完了`.`と同義とみなす",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584846,
+      "updated": 1694584846
+    },
+    {
+      "id": "650150071280f00000020345",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584840,
+      "updated": 1694584840
+    },
+    {
+      "id": "65016bcd1280f0000002035d",
+      "text": "なるべく正規表現一発でdetectしたい[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694591950,
+      "updated": 1694592867
+    },
+    {
+      "id": "65016d5b1280f00000020374",
+      "text": " リマインダ記号",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592348,
+      "updated": 1694592353
+    },
+    {
+      "id": "65016d601280f00000020375",
+      "text": "  `/([\\+\\-!~.])(\\d+)?/`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592353,
+      "updated": 1694592437
+    },
+    {
+      "id": "65016d4b1280f00000020372",
+      "text": " 開始日時",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592332,
+      "updated": 1694592332
+    },
+    {
+      "id": "65016d4b1280f00000020373",
+      "text": "  `/@(\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2})?)/`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592332,
+      "updated": 1694592479
+    },
+    {
+      "id": "65016cb61280f00000020361",
+      "text": " 終了日時",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592183,
+      "updated": 1694592189
+    },
+    {
+      "id": "65016bcd1280f0000002035e",
+      "text": "  `/\\/((?:(?:(?:\\d{4}-)?\\d{2}-)?\\d{2}(?:T\\d{2}:\\d{2})?)|\\d{2}:\\d{2})/`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694591950,
+      "updated": 1694592244
+    },
+    {
+      "id": "65016cbe1280f00000020362",
+      "text": " 所要時間",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592191,
+      "updated": 1694592469
+    },
+    {
+      "id": "65016cc31280f00000020363",
+      "text": "  `/D(\\d+)/`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592196,
+      "updated": 1694592207
+    },
+    {
+      "id": "65016dbbb8bbfc0000d30754",
+      "text": "  見積もり時間とは(何か機能がある)？",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1694592444,
+      "updated": 1694592454
+    },
+    {
+      "id": "65016d021280f00000020364",
+      "text": "  所要時間といったほうが正確かも[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592259,
+      "updated": 1694592463
+    },
+    {
+      "id": "65016e1b1280f00000020379",
+      "text": "  タスク(予定)に使う時間の長さを指定する[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592540,
+      "updated": 1694592558
+    },
+    {
+      "id": "65016e2e1280f0000002037a",
+      "text": "   終了日時の代替",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592558,
+      "updated": 1694592581
+    },
+    {
+      "id": "65016e471280f0000002037b",
+      "text": "   相対的に指定したいとき、開始日時なしで長さだけ指定したいときに使う",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592584,
+      "updated": 1694592608
+    },
+    {
+      "id": "65016e3fb8bbfc0000d30756",
+      "text": "\t\tなるほど[はるひ.icon]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1694592575,
+      "updated": 1694592595
+    },
+    {
+      "id": "65016dc41280f00000020378",
+      "text": " 繰り返し",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592453,
+      "updated": 1694592453
+    },
+    {
+      "id": "65016d181280f00000020365",
+      "text": "  `/R([YMWD])?(\\d+)/)/`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592281,
+      "updated": 1694592285
+    },
+    {
+      "id": "65016db81280f00000020376",
+      "text": " 合体",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592441,
+      "updated": 1694592445
+    },
+    {
+      "id": "65016dbd1280f00000020377",
+      "text": "  `/(?:([\\+\\-!~.])(\\d+)?)?@(\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2})?)(?:\\/(\\d{2}:\\d{2}|(?:(?:(?:\\d{4}-)?\\d{2}-)?\\d{2}(?:T\\d{2}:\\d{2})?))|D(\\d+))?(?:R([YMWD])?(\\d+))?/i`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592445,
+      "updated": 1694593663
+    },
+    {
+      "id": "65016f0d1280f0000002037c",
+      "text": "  [https://regexper.com/#%2F%28%3F%3A%28%5B%5C%2B%5C-!~.%5D%29%28%5Cd%2B%29%3F%29%3F%40%28%5Cd%7B4%7D-%5Cd%7B2%7D-%5Cd%7B2%7D%28%3F%3AT%5Cd%7B2%7D%3A%5Cd%7B2%7D%29%3F%29%28%3F%3A%5C%2F%28%5Cd%7B2%7D%3A%5Cd%7B2%7D%7C%28%3F%3A%28%3F%3A%28%3F%3A%5Cd%7B4%7D-%29%3F%5Cd%7B2%7D-%29%3F%5Cd%7B2%7D%28%3F%3AT%5Cd%7B2%7D%3A%5Cd%7B2%7D%29%3F%29%29%7CD%28%5Cd%2B%29%29%3F%28%3F%3AR%28%5BYMWD%5D%29%3F%28%5Cd%2B%29%29%3F%2Fi regexper]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694592782,
+      "updated": 1694593674
+    },
+    {
+      "id": "6501728c1280f0000002037d",
+      "text": "  https://regexr.com/ でマッチするか確認した",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593677,
+      "updated": 1694593695
+    },
+    {
+      "id": "6501729e1280f0000002037e",
+      "text": "   code:test-pattern",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593695,
+      "updated": 1694593703
+    },
+    {
+      "id": "650172a61280f0000002037f",
+      "text": "    +3@2023-04-34",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593703,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020380",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020381",
+      "text": "    [ごはんを食べる+3@2023-04-34/23D45]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020382",
+      "text": "    [ごはんを食べる+3@2023-04-34/05-23D45]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020383",
+      "text": "    [ごはんを食べる+3@2023-04-34/2023-05-23D45]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020384",
+      "text": "    [ごはんを食べる+3@2023-04-34/2023-05-23T05:67:76D45]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020385",
+      "text": "    [ごはんを食べる+3@2023-04-34/05-23T05:67:76D45]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020386",
+      "text": "    [ごはんを食べる+3@2023-04-34/23T05:67:76D45]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020387",
+      "text": "    [ごはんを食べる+3@2023-04-34/T05:67:76D45]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020388",
+      "text": "    [ごはんを食べる+3@2023-04-34/05:67:76D45]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020389",
+      "text": "    [ごはんを食べる+3@2023-04-34/05:67D45]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f0000002038a",
+      "text": "    [ごはんを食べる+3@2023-04-34D45/05:67]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f0000002038b",
+      "text": "    [ごはんを食べる+3@2023-04-34D45/05:67R4]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f0000002038c",
+      "text": "    [ごはんを食べる+3@2023-04-34D45R4/05:67]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f0000002038d",
+      "text": "    [ごはんを食べる+3@2023-04-34D45R47/05:67]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f0000002038e",
+      "text": "    [ごはんを食べる+3@2023-04-34D45R/05:67]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f0000002038f",
+      "text": "    [ごはんを食べる+3@2023-04-34D45RM8/05:67]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020390",
+      "text": "    [ごはんを食べる+3@2023-04-34D45RY8/05:67]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020391",
+      "text": "    [ごはんを食べる+3@2023-04-34D45RW8/05:67]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020392",
+      "text": "    [ごはんを食べる+3@2023-04-34D45RD8/05:67]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020393",
+      "text": "    [ごはんを食べる+3@2023-04-34/05-34RD8/05:67]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020394",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020395",
+      "text": "    [!@2002-10-20 ハイウェイ惑星 〆切]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020396",
+      "text": "    [ハイウェイ惑星 〆切!4@2002-10-20]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020397",
+      "text": "    [-@2002-10-20 ハイウェイ惑星 買おう]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020398",
+      "text": "    [ハイウェイ惑星 買おうかな~@2023-09-12]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f00000020399",
+      "text": "    [ハイウェイ惑星+@2002-10-20 買おう]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f0000002039a",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f0000002039b",
+      "text": "    [読書会@2023-04-11T13:00]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f0000002039c",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f0000002039d",
+      "text": "    Edit the Expression & Text to see matches. Roll over matches or the expression for details. PCRE & JavaScript flavors of RegEx are supported. Validate your expression with Tests mode.",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f0000002039e",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f0000002039f",
+      "text": "    The side bar includes a Cheatsheet, full Reference, and Help. You can also Save & Share with the Community and view patterns you create or favorite in My Patterns.",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f000000203a0",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f000000203a1",
+      "text": "    Explore results with the Tools below. Replace & List output custom results. Details lists capture groups. Explain describes your expression in plain English.",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "650172ae1280f000000203a2",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593711,
+      "updated": 1694593711
+    },
+    {
+      "id": "65016bd01280f00000020360",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694591953,
+      "updated": 1694591953
+    },
+    {
+      "id": "65014da61280f0000002032b",
+      "text": "後で実装するもの",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584231,
+      "updated": 1694584234
+    },
+    {
+      "id": "65014dd51280f00000020331",
+      "text": " いろんなパターンを一度に実装するのはつらい[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584278,
+      "updated": 1694584289
+    },
+    {
+      "id": "65014daa1280f0000002032c",
+      "text": "　高度な日付指定",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584234,
+      "updated": 1694584264
+    },
+    {
+      "id": "65014dc71280f0000002032f",
+      "text": "　　曜日指定",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584264,
+      "updated": 1694584266
+    },
+    {
+      "id": "65014db81280f0000002032d",
+      "text": " 　 `/(\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2})?)(?:\\((\\+|-)?(\\d+)\\*(Sun|Mon|Tue|Wed|Thu|Fri|Sat)(?:(\\+|-)(\\d+))?\\))?/`で認識",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584249,
+      "updated": 1694584267
+    },
+    {
+      "id": "65014dc01280f0000002032e",
+      "text": "　 yyyy-MM-00で月末",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584256,
+      "updated": 1694584273
+    },
+    {
+      "id": "650150301280f00000020354",
+      "text": "　記号の順序を順不同にする or フォーマットを正式に決める",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584881,
+      "updated": 1694584900
+    },
+    {
+      "id": "650150431280f00000020355",
+      "text": "　　順不同が好ましいが、誤判定する恐れがある[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584900,
+      "updated": 1694584914
+    },
+    {
+      "id": "65014da61280f0000002032a",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584231,
+      "updated": 1694584231
+    },
+    {
       "id": "64fece771280f000000df788",
       "text": "code:parse.ts",
       "userId": "5ef2bdebb60650001e1280f0",
@@ -202,17 +769,234 @@
     },
     {
       "id": "64fece981280f000000df78e",
-      "text": " export const isStatus = (status: string): status is Status =>",
+      "text": " export const toStatus = (symbol: string): Status | undefined => {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694476678,
-      "updated": 1694476678
+      "updated": 1694593853
     },
     {
-      "id": "64fece981280f000000df78f",
-      "text": "   [\"schedule\", \"todo\", \"deadline\", \"done\", \"note\", \"up-down\"].includes(status);",
+      "id": "6501733d1280f000000203a7",
+      "text": "   switch (symbol) {",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694476678,
-      "updated": 1694476837
+      "created": 1694593854,
+      "updated": 1694593860
+    },
+    {
+      "id": "650173431280f000000203a8",
+      "text": "     case \"\":",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593860,
+      "updated": 1694593874
+    },
+    {
+      "id": "650173531280f000000203a9",
+      "text": "       return \"schedule\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593877,
+      "updated": 1694593885
+    },
+    {
+      "id": "6501735b1280f000000203aa",
+      "text": "     case \"+\":",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593885,
+      "updated": 1694593888
+    },
+    {
+      "id": "6501735f1280f000000203ab",
+      "text": "       return \"todo\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593888,
+      "updated": 1694593893
+    },
+    {
+      "id": "650173721280f000000203b2",
+      "text": "     case \"-\":",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593907,
+      "updated": 1694593913
+    },
+    {
+      "id": "650173731280f000000203b3",
+      "text": "       return \"note\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593909,
+      "updated": 1694593917
+    },
+    {
+      "id": "650173631280f000000203ac",
+      "text": "     case \"!\":",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593893,
+      "updated": 1694593897
+    },
+    {
+      "id": "650173671280f000000203ad",
+      "text": "       return \"deadline\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593897,
+      "updated": 1694593903
+    },
+    {
+      "id": "6501737d1280f000000203b4",
+      "text": "     case \".\":",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593918,
+      "updated": 1694593922
+    },
+    {
+      "id": "650173911280f000000203b6",
+      "text": "       return \"done\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593939,
+      "updated": 1694593942
+    },
+    {
+      "id": "650173951280f000000203b7",
+      "text": "     case \"~\":",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593942,
+      "updated": 1694593948
+    },
+    {
+      "id": "650173821280f000000203b5",
+      "text": "       return \"up-down\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593923,
+      "updated": 1694593950
+    },
+    {
+      "id": "650173a01280f000000203b8",
+      "text": "     default:",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593953,
+      "updated": 1694593955
+    },
+    {
+      "id": "650173a31280f000000203b9",
+      "text": "       return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593955,
+      "updated": 1694593957
+    },
+    {
+      "id": "650173a51280f000000203ba",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593958,
+      "updated": 1694593960
+    },
+    {
+      "id": "650173a81280f000000203bb",
+      "text": " };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593961,
+      "updated": 1694593962
+    },
+    {
+      "id": "650177991280f000000203e2",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594970,
+      "updated": 1694594970
+    },
+    {
+      "id": "6501779a1280f000000203e3",
+      "text": " export const toFrequency = (symbol: string): \"yearly\" | \"monthly\" | \"weekly\" | \"daily\" | undefined => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594971,
+      "updated": 1694595095
+    },
+    {
+      "id": "650177b01280f000000203e4",
+      "text": "   switch(symbol.toLowerCase()) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594993,
+      "updated": 1694595026
+    },
+    {
+      "id": "650177c91280f000000203e6",
+      "text": "     case \"y\":",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595018,
+      "updated": 1694595031
+    },
+    {
+      "id": "650177e91280f000000203ee",
+      "text": "       return \"yearly\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595050,
+      "updated": 1694595087
+    },
+    {
+      "id": "650177d61280f000000203e8",
+      "text": "     case \"m\":",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595031,
+      "updated": 1694595037
+    },
+    {
+      "id": "650177f11280f000000203ef",
+      "text": "       return \"monthly\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595059,
+      "updated": 1694595084
+    },
+    {
+      "id": "650177dc1280f000000203ea",
+      "text": "     case \"w\":",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595037,
+      "updated": 1694595061
+    },
+    {
+      "id": "650177fb1280f000000203f0",
+      "text": "       return \"weekly\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595069,
+      "updated": 1694595082
+    },
+    {
+      "id": "650177df1280f000000203eb",
+      "text": "     case \"d\":",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595041,
+      "updated": 1694595043
+    },
+    {
+      "id": "650178001280f000000203f1",
+      "text": "       return \"daily\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595074,
+      "updated": 1694595079
+    },
+    {
+      "id": "650177e21280f000000203ec",
+      "text": "     default:",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595043,
+      "updated": 1694595046
+    },
+    {
+      "id": "650177e61280f000000203ed",
+      "text": "       return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595048,
+      "updated": 1694595049
+    },
+    {
+      "id": "650177ca1280f000000203e7",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595019,
+      "updated": 1694595019
+    },
+    {
+      "id": "650177b51280f000000203e5",
+      "text": " }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594998,
+      "updated": 1694594998
     },
     {
       "id": "64fece981280f000000df790",
@@ -230,10 +1014,10 @@
     },
     {
       "id": "64ffb30c1280f00000cfbf15",
-      "text": "   frequency: \"year\" | \"month\" | \"week\" | \"date\",",
+      "text": "   type: \"yearly\" | \"monthly\" | \"weekly\" | \"daily\",",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694479117,
-      "updated": 1694479169
+      "updated": 1694595361
     },
     {
       "id": "64ffb3431280f00000cfbf17",
@@ -241,13 +1025,6 @@
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694479171,
       "updated": 1694479184
-    },
-    {
-      "id": "64ffb5c31280f00000cfbf20",
-      "text": "   shift: number;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694479812,
-      "updated": 1694479816
     },
     {
       "id": "64ffb30d1280f00000cfbf16",
@@ -262,6 +1039,13 @@
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694479261,
       "updated": 1694479261
+    },
+    {
+      "id": "65014de61280f00000020332",
+      "text": " /* いずれ実装する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584294,
+      "updated": 1694584302
     },
     {
       "id": "64ffb5f61280f00000cfbf21",
@@ -304,6 +1088,13 @@
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694479268,
       "updated": 1694479268
+    },
+    {
+      "id": "65014de81280f00000020333",
+      "text": " */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694584297,
+      "updated": 1694584298
     },
     {
       "id": "64ffb3061280f00000cfbf14",
@@ -405,10 +1196,10 @@
     },
     {
       "id": "64ffaa371280f00000cfbebb",
-      "text": "   start: ExDate;",
+      "text": "   start: Date;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694476855,
-      "updated": 1694479707
+      "updated": 1694591725
     },
     {
       "id": "64ffab301280f00000cfbec0",
@@ -426,10 +1217,10 @@
     },
     {
       "id": "64ffab301280f00000cfbec1",
-      "text": "   end?: ExDate;",
+      "text": "   end?: Date;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694477105,
-      "updated": 1694479710
+      "updated": 1694591722
     },
     {
       "id": "64ffab441280f00000cfbecc",
@@ -502,6 +1293,20 @@
       "updated": 1694420633
     },
     {
+      "id": "65017b261280f00000020402",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595879,
+      "updated": 1694595879
+    },
+    {
+      "id": "65017b271280f00000020403",
+      "text": " const zero = (n: number): string => `${n}`.padStart(2, \"0\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595879,
+      "updated": 1694595909
+    },
+    {
       "id": "64fece981280f000000df7b8",
       "text": " ",
       "userId": "5ef2bdebb60650001e1280f0",
@@ -509,46 +1314,60 @@
       "updated": 1694420633
     },
     {
+      "id": "650179e51280f000000203fe",
+      "text": " /** 終了日時をparseする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595558,
+      "updated": 1694595569
+    },
+    {
+      "id": "65017a061280f00000020400",
+      "text": "  *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595591,
+      "updated": 1694595592
+    },
+    {
+      "id": "650179f61280f000000203ff",
+      "text": "  * 正規表現で予め絞り込まれた文字列が入力されると仮定している。予期しない文字列が渡されたら例外を投げる。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595575,
+      "updated": 1694595610
+    },
+    {
+      "id": "65017a091280f00000020401",
+      "text": "  */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694595594,
+      "updated": 1694595611
+    },
+    {
       "id": "64ffaf1a1280f00000cfbedb",
-      "text": " const detectEnd = (text: string, start: Date): [string] | [string, Date] => {",
+      "text": " const detectEnd = (text: string, start: Date): Date => {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694478106,
-      "updated": 1694492154
-    },
-    {
-      "id": "64ffaf411280f00000cfbedd",
-      "text": "   if (!text.includes(\"/\")) return text;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478145,
-      "updated": 1694492175
-    },
-    {
-      "id": "64ffe6161280f00000cfbf23",
-      "text": "   ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694492183,
-      "updated": 1694492183
+      "updated": 1694595574
     },
     {
       "id": "64ffafbc1280f00000cfbeec",
       "text": "   {",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478269,
-      "updated": 1694478269
+      "created": 1694595550,
+      "updated": 1694595550
     },
     {
       "id": "64ffafbe1280f00000cfbeed",
-      "text": "     const end = text.match(/\\/\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2})/);",
+      "text": "     const end = text.match(/\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2})/);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694478270,
-      "updated": 1694492192
+      "updated": 1694595636
     },
     {
       "id": "64ffafcf1280f00000cfbeee",
-      "text": "     if(end) return [params.slice(end), new Date(end));",
+      "text": "     if(end) return new Date(end);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694478288,
-      "updated": 1694478681
+      "updated": 1694595647
     },
     {
       "id": "64ffafed1280f00000cfbeef",
@@ -573,10 +1392,10 @@
     },
     {
       "id": "64ffaff71280f00000cfbef3",
-      "text": "     if(end) return [params.slice(end), new Date(`${start.getFullYear()}-${end}`)];",
+      "text": "     if(end) return new Date(`${start.getFullYear()}-${end}`);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694478327,
-      "updated": 1694478695
+      "updated": 1694595711
     },
     {
       "id": "64ffaff71280f00000cfbef4",
@@ -601,10 +1420,10 @@
     },
     {
       "id": "64ffb0271280f00000cfbef7",
-      "text": "     if(end) return [params.slice(end), new Date(`${start.getFullYear()}-${zero(start.getMonth() + 1)}-${end}`)];",
+      "text": "     if(end) return new Date(`${start.getFullYear()}-${zero(start.getMonth() + 1)}-${end}`);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694478376,
-      "updated": 1694478696
+      "updated": 1694595753
     },
     {
       "id": "64ffb0271280f00000cfbef8",
@@ -615,38 +1434,17 @@
     },
     {
       "id": "64ffb0651280f00000cfbef9",
-      "text": "   {",
+      "text": "   ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694478437,
-      "updated": 1694478437
-    },
-    {
-      "id": "64ffb0651280f00000cfbefa",
-      "text": "     const end = params.match(/\\/\\d{2}:\\d{2}/)?.[0];",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478437,
-      "updated": 1694492199
+      "updated": 1694595731
     },
     {
       "id": "64ffb09d1280f00000cfbf01",
-      "text": "     if(end) return [params.slice(end), new Date(`${start.getFullYear()}-${zero(start.getMonth() + 1)}-${}T${end}`)];",
+      "text": "   return new Date(`${start.getFullYear()}-${zero(start.getMonth() + 1)}-${zero(start.getDate())}T${end}`);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694478494,
-      "updated": 1694478698
-    },
-    {
-      "id": "64ffb0651280f00000cfbefc",
-      "text": "   }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478437,
-      "updated": 1694478437
-    },
-    {
-      "id": "64ffb0ac1280f00000cfbf02",
-      "text": "   return [fragment];",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478509,
-      "updated": 1694478703
+      "updated": 1694595744
     },
     {
       "id": "64ffaf301280f00000cfbedc",
@@ -684,11 +1482,11 @@
       "updated": 1694420633
     },
     {
-      "id": "64fece981280f000000df7bc",
-      "text": "  * @param [today] 現在時刻 debug用に外部から指定できるようにしてある",
+      "id": "650179931280f000000203fd",
+      "text": "  * @return 解析結果。Taskでなければ`undefined`を返す",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694595476,
+      "updated": 1694595491
     },
     {
       "id": "64fece981280f000000df7bd",
@@ -706,10 +1504,24 @@
     },
     {
       "id": "64fece981280f000000df7bf",
-      "text": "   const matched = text.match(/@(\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2})?)(?:\\((\\+|-)?(\\d+)\\*(Sun|Mon|Tue|Wed|Thu|Fri|Sat)(?:(\\+|-)(\\d+))?\\))?/i);",
+      "text": "   const matched = text.match(",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694420633,
-      "updated": 1694479800
+      "updated": 1694593732
+    },
+    {
+      "id": "650172c31280f000000203a3",
+      "text": "     /(?:([\\+\\-!~.])(\\d+)?)?@(\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2})?)(?:\\/(\\d{2}:\\d{2}|(?:(?:(?:\\d{4}-)?\\d{2}-)?\\d{2}(?:T\\d{2}:\\d{2})?))|D(\\d+))?(?:R([YMWD])?(\\d+))?/i",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593732,
+      "updated": 1694594295
+    },
+    {
+      "id": "650172c71280f000000203a4",
+      "text": "   );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593735,
+      "updated": 1694593736
     },
     {
       "id": "64fece981280f000000df7c0",
@@ -719,1327 +1531,256 @@
       "updated": 1694477891
     },
     {
-      "id": "64ffac101280f00000cfbed3",
-      "text": "   /** 開始日時 */",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694477328,
-      "updated": 1694477332
-    },
-    {
-      "id": "64ffab991280f00000cfbed0",
-      "text": "   const start = new Date(matched[1]);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694477209,
-      "updated": 1694477895
-    },
-    {
-      "id": "64ffac1b1280f00000cfbed4",
-      "text": "   /** `true`なら`start`と`end`のhours以下を無視する */",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694477339,
-      "updated": 1694477340
-    },
-    {
-      "id": "64ffabee1280f00000cfbed1",
-      "text": "   const isAllDay = s.includes(\":\");",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694477294,
-      "updated": 1694477324
-    },
-    {
-      "id": "64ffac2c1280f00000cfbed5",
+      "id": "650172cd1280f000000203a5",
       "text": "   ",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694477356,
-      "updated": 1694477356
+      "created": 1694593742,
+      "updated": 1694593742
     },
     {
-      "id": "64ffae161280f00000cfbed6",
-      "text": "   let splitted = text.slice(matched.index + matched[0].length);",
+      "id": "650172d41280f000000203a6",
+      "text": "   const [",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694477846,
-      "updated": 1694478710
+      "created": 1694593749,
+      "updated": 1694594455
+    },
+    {
+      "id": "650175911280f000000203d1",
+      "text": "     matchedText,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594450,
+      "updated": 1694594454
+    },
+    {
+      "id": "650173bf1280f000000203be",
+      "text": "     statusSym = \"\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694593984,
+      "updated": 1694594045
+    },
+    {
+      "id": "650173d31280f000000203bf",
+      "text": "     speedStr,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594004,
+      "updated": 1694594036
+    },
+    {
+      "id": "650173e21280f000000203c0",
+      "text": "     startStr,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594019,
+      "updated": 1694594034
+    },
+    {
+      "id": "650174001280f000000203c1",
+      "text": "     endStr,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594048,
+      "updated": 1694594068
+    },
+    {
+      "id": "650174151280f000000203c2",
+      "text": "     durationStr,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594070,
+      "updated": 1694594073
+    },
+    {
+      "id": "6501742d1280f000000203c3",
+      "text": "     repeatSym = \"D\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594094,
+      "updated": 1694594122
+    },
+    {
+      "id": "650174491280f000000203c4",
+      "text": "     countStr,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594122,
+      "updated": 1694594185
+    },
+    {
+      "id": "650174981280f000000203c5",
+      "text": "   ] = matched;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594201,
+      "updated": 1694594205
+    },
+    {
+      "id": "6501759b1280f000000203d2",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594460,
+      "updated": 1694594460
+    },
+    {
+      "id": "6501759b1280f000000203d3",
+      "text": "   /** task name */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594460,
+      "updated": 1694594463
+    },
+    {
+      "id": "650174c51280f000000203c6",
+      "text": "   const name = `${[...text].slice(0, matched.index).join(\"\")}${[...text].slice(matched.index + [...matchedText].length).join(\"\")}`;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594246,
+      "updated": 1694594676
+    },
+    {
+      "id": "650174ce1280f000000203c8",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594255,
+      "updated": 1694594257
+    },
+    {
+      "id": "650174c61280f000000203c7",
+      "text": "   const status_ = toStatus(statusSym);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594246,
+      "updated": 1694594271
+    },
+    {
+      "id": "6501750e1280f000000203cb",
+      "text": "   // /[\\+\\-!~.]/以外にマッチするはずがない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594319,
+      "updated": 1694594338
+    },
+    {
+      "id": "650174de1280f000000203c9",
+      "text": "   if (!status_) throw Error(\"status must be +,,-,!,~,.\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594271,
+      "updated": 1694594315
+    },
+    {
+      "id": "650174fb1280f000000203ca",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594300,
+      "updated": 1694594300
+    },
+    {
+      "id": "650175331280f000000203ce",
+      "text": "   // 後方互換性用コード",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594356,
+      "updated": 1694594361
+    },
+    {
+      "id": "650175391280f000000203cf",
+      "text": "   // 先頭が✅か❌のときは、`done`とみなす",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594362,
+      "updated": 1694594377
+    },
+    {
+      "id": "650176901280f000000203d6",
+      "text": "   /** task status */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594705,
+      "updated": 1694594713
+    },
+    {
+      "id": "650175481280f000000203d0",
+      "text": "   const status = /^[\\uFE00-\\uFE0F]*[✅❌]/.test(text) ? \"done\" : status_;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594377,
+      "updated": 1694594432
+    },
+    {
+      "id": "650176dd1280f000000203d8",
+      "text": "   /** 開始日時 */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594782,
+      "updated": 1694594782
+    },
+    {
+      "id": "650176dd1280f000000203d9",
+      "text": "   const start = new Date(startStr);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594782,
+      "updated": 1694594794
+    },
+    {
+      "id": "650176f31280f000000203da",
+      "text": "   /** `true`なら`start`と`end`のhours以下を無視する */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594804,
+      "updated": 1694594804
+    },
+    {
+      "id": "650176f31280f000000203db",
+      "text": "   const isAllDay = startStr.includes(\":\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694594804,
+      "updated": 1694594804
     },
     {
       "id": "64ffb1b01280f00000cfbf09",
-      "text": "   let end = undefined;",
+      "text": "   ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694478769,
-      "updated": 1694478773
+      "updated": 1694595197
     },
     {
-      "id": "64ffaec01280f00000cfbed8",
-      "text": "   const regExp = /^D(\\d+)/i;",
+      "id": "650178921280f000000203f3",
+      "text": "   const task: Task = { name, status, start, isAllDay, raw: text };",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478016,
-      "updated": 1694478042
+      "created": 1694595219,
+      "updated": 1694595309
     },
     {
-      "id": "64ffaedc1280f00000cfbed9",
-      "text": "   const regExp = /^\\/\\d{2}:\\d{2}/i;",
+      "id": "650179381280f000000203fa",
+      "text": "   if (speedStr) task.speed = parseInt(speedStr);",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478044,
-      "updated": 1694478074
+      "created": 1694595385,
+      "updated": 1694595403
     },
     {
-      "id": "64fece981280f000000df7c8",
-      "text": "   while (splitted !== \"\" || !(end || duration) || !status) {",
+      "id": "6501792c1280f000000203f8",
+      "text": "   const type = toFrequency(repeatSym);",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694479002
+      "created": 1694595373,
+      "updated": 1694595373
     },
     {
-      "id": "64ffb1f31280f00000cfbf0f",
-      "text": "     if (!end) {",
+      "id": "650179011280f000000203f6",
+      "text": "   if (type) task.repeat = { type, count: parseInt(countStr ?? \"1\") };",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478835,
-      "updated": 1694478843
+      "created": 1694595330,
+      "updated": 1694595372
     },
     {
-      "id": "64ffb0c71280f00000cfbf03",
-      "text": "      const result = detectEnd(splitted, start);",
+      "id": "650178ec1280f000000203f4",
+      "text": "   if (endStr) task.end = detectEnd(endStr);",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478535,
-      "updated": 1694478867
+      "created": 1694595309,
+      "updated": 1694595422
     },
     {
-      "id": "64ffb1de1280f00000cfbf0b",
-      "text": "     splitted = result[0];",
+      "id": "650178f51280f000000203f5",
+      "text": "   if (durationStr) task.duration = parseInt(durationStr);",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478814,
-      "updated": 1694478874
+      "created": 1694595318,
+      "updated": 1694595443
     },
     {
-      "id": "64ffb1d91280f00000cfbf0a",
-      "text": "     if (result[1]) {",
+      "id": "650179831280f000000203fb",
+      "text": "   ",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478809,
-      "updated": 1694478884
+      "created": 1694595460,
+      "updated": 1694595460
     },
     {
-      "id": "64ffb1e71280f00000cfbf0c",
-      "text": "       end = result[1];",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478825,
-      "updated": 1694478889
-    },
-    {
-      "id": "64ffb1e91280f00000cfbf0d",
-      "text": "       continue;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478825,
-      "updated": 1694478828
-    },
-    {
-      "id": "64ffb1ec1280f00000cfbf0e",
-      "text": "     }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478828,
-      "updated": 1694478828
-    },
-    {
-      "id": "64ffb1921280f00000cfbf07",
-      "text": "     ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694478739,
-      "updated": 1694478777
-    },
-    {
-      "id": "64ffaea91280f00000cfbed7",
-      "text": "   }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694477993,
-      "updated": 1694477993
-    },
-    {
-      "id": "64fece981280f000000df7c9",
-      "text": "   // タスク名を取り出す",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7ca",
-      "text": "   const name = [...text.replace(/^[\\uFE00-\\uFE0F]*/, \"\")].slice(1).join(\"\")",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7cb",
-      "text": "     .replace(dueData?.raw ?? \"\", \"\")",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7cc",
-      "text": "     .replace(startAtMatches?.[0] ?? \"\", \"\")",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7cd",
-      "text": "     .trim();",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7ce",
-      "text": "   if (!startAtMatches) {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7cf",
-      "text": "     if (!due) return { name, status, raw: text };",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7d0",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7d1",
-      "text": "     // startAtがないときは、dueから仮の値を計算する",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7d2",
-      "text": "     const startAt_ = subWeeks(due, 2);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7d3",
-      "text": "     today ??= new Date();",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7d4",
-      "text": "     const startAt = startAt_.getTime() > today.getTime() ? startAt_ : today;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7d5",
-      "text": "     return {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7d6",
-      "text": "       name,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7d7",
-      "text": "       status,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7d8",
-      "text": "       due,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7d9",
-      "text": "       startAt: {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7da",
-      "text": "         type: \"date\",",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7db",
-      "text": "         year: startAt.getFullYear(),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7dc",
-      "text": "         month: startAt.getMonth(),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7dd",
-      "text": "         date: startAt.getDate(),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7de",
-      "text": "       },",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7df",
-      "text": "       raw: text,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7e0",
-      "text": "     };",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7e1",
-      "text": "   }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7e2",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7e3",
-      "text": "   {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7e4",
-      "text": "     const matches = startAtMatches[1].match(",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7e5",
-      "text": "       /(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2})(?:(\\/)(\\d{2}):(\\d{2})|(D)(\\d+))?/,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7e6",
-      "text": "     );",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7e7",
-      "text": "     if (matches) {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7e8",
-      "text": "       const [, year, month, date, hours, minutes, slash, h, m, d, duration] =",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7e9",
-      "text": "         matches;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7ea",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7eb",
-      "text": "       const startAt = {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7ec",
-      "text": "         type: \"date\",",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7ed",
-      "text": "         year: parseInt(year),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7ee",
-      "text": "         month: parseInt(month) - 1,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7ef",
-      "text": "         date: parseInt(date),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7f0",
-      "text": "         hours: parseInt(hours),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7f1",
-      "text": "         minutes: parseInt(minutes),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7f2",
-      "text": "       } as const;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7f3",
-      "text": "       const task: Task = {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7f4",
-      "text": "         name,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7f5",
-      "text": "         status,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7f6",
-      "text": "         startAt,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7f7",
-      "text": "         ...(due ? { due } : {}),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7f8",
-      "text": "         raw: text,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7f9",
-      "text": "       };",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7fa",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7fb",
-      "text": "       // 見積もり時間を計算する",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7fc",
-      "text": "       if (slash || d) {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7fd",
-      "text": "         if (slash) {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7fe",
-      "text": "           const start = new Date(",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df7ff",
-      "text": "             startAt.year,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df800",
-      "text": "             startAt.month,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df801",
-      "text": "             startAt.date,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df802",
-      "text": "             startAt.hours,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df803",
-      "text": "             startAt.minutes,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df804",
-      "text": "           );",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df805",
-      "text": "           const end = new Date(",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df806",
-      "text": "             startAt.year,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df807",
-      "text": "             startAt.month,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df808",
-      "text": "             startAt.date,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df809",
-      "text": "             parseInt(h),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df80a",
-      "text": "             parseInt(m),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df80b",
-      "text": "           );",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df80c",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df80d",
-      "text": "           task.duration = Math.max(",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df80e",
-      "text": "             0,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df80f",
-      "text": "             end.getTime() >= start.getTime()",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df810",
-      "text": "               ? Math.round((end.getTime() - start.getTime()) / 60000)",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df811",
-      "text": "               // 終了時刻が開始時刻より早い場合は、日をまたいでいると判断する",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df812",
-      "text": "               : Math.round((end.getTime() - start.getTime()) / 60000 + 1440),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df813",
-      "text": "           );",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df814",
-      "text": "         } else {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df815",
-      "text": "           task.duration = parseInt(duration);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df816",
-      "text": "         }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df817",
-      "text": "       }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df818",
-      "text": "       return task;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df819",
-      "text": "     }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df81a",
-      "text": "   }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df81b",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df81c",
-      "text": "   {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df81d",
-      "text": "     const matches = startAtMatches[1].match(",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df81e",
-      "text": "       /(\\d{4})-(\\d{2})-(\\d{2})(?:D(\\d+))?/,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df81f",
-      "text": "     );",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df820",
-      "text": "     if (matches) {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df821",
-      "text": "       const [, year, month, date, duration] = matches;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df822",
-      "text": "       const task: Task = {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df823",
-      "text": "         name,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df824",
-      "text": "         status,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df825",
-      "text": "         ...(due ? { due } : {}),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df826",
-      "text": "         startAt: {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df827",
-      "text": "           type: \"date\",",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df828",
-      "text": "           year: parseInt(year),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df829",
-      "text": "           month: parseInt(month) - 1,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df82a",
-      "text": "           date: parseInt(date),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df82b",
-      "text": "         },",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df82c",
-      "text": "         raw: text,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df82d",
-      "text": "       };",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df82e",
-      "text": "       if (duration) {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df82f",
-      "text": "         task.duration = parseInt(duration);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df830",
-      "text": "       }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df831",
-      "text": "       return task;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df832",
-      "text": "     }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df833",
-      "text": "   }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df834",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df835",
-      "text": "   {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df836",
-      "text": "     const matches = startAtMatches[1].match(/(\\d{4})-w(\\d{2})(?:D(\\d+))?/);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df837",
-      "text": "     if (matches) {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df838",
-      "text": "       const [, year, week, duration] = matches;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df839",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df83a",
-      "text": "       const task: Task = {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df83b",
-      "text": "         name,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df83c",
-      "text": "         status,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df83d",
-      "text": "         ...(due ? { due } : {}),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df83e",
-      "text": "         startAt: {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df83f",
-      "text": "           type: \"week\",",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df840",
-      "text": "           year: parseInt(year),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df841",
-      "text": "           week: parseInt(week),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df842",
-      "text": "         },",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df843",
-      "text": "         raw: text,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df844",
-      "text": "       };",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df845",
-      "text": "       if (duration) {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df846",
-      "text": "         task.duration = parseInt(duration);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df847",
-      "text": "       }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df848",
-      "text": "       return task;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df849",
-      "text": "     }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df84a",
-      "text": "   }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df84b",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df84c",
-      "text": "   {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df84d",
-      "text": "     const matches = startAtMatches[1].match(/(\\d{4})-(\\d{2})(?:D(\\d+))?/);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df84e",
-      "text": "     if (matches) {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df84f",
-      "text": "       const [, year, month, duration] = matches;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df850",
-      "text": "       const task: Task = {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df851",
-      "text": "         name,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df852",
-      "text": "         status,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df853",
-      "text": "         ...(due ? { due } : {}),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df854",
-      "text": "         startAt: {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df855",
-      "text": "           type: \"month\",",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df856",
-      "text": "           year: parseInt(year),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df857",
-      "text": "           month: parseInt(month) - 1,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df858",
-      "text": "         },",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df859",
-      "text": "         raw: text,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df85a",
-      "text": "       };",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df85b",
-      "text": "       if (duration) {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df85c",
-      "text": "         task.duration = parseInt(duration);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df85d",
-      "text": "       }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df85e",
-      "text": "       return task;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df85f",
-      "text": "     }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df860",
-      "text": "   }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df861",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df862",
-      "text": "   const matches = startAtMatches[1].match(/(\\d{4})(?:D(\\d+))?/);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df863",
-      "text": "   if (!matches) return;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df864",
-      "text": "   const [, year, duration] = matches;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df865",
-      "text": "   const task: Task = {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df866",
-      "text": "     name,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df867",
-      "text": "     status,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df868",
-      "text": "     ...(due ? { due } : {}),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df869",
-      "text": "     startAt: {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df86a",
-      "text": "       type: \"year\",",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df86b",
-      "text": "       year: parseInt(year),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df86c",
-      "text": "     },",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df86d",
-      "text": "     raw: text,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df86e",
-      "text": "   };",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df86f",
-      "text": "   if (duration) {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df870",
-      "text": "     task.duration = parseInt(duration);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df871",
-      "text": "   }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df872",
+      "id": "650179831280f000000203fc",
       "text": "   return task;",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
+      "created": 1694595460,
+      "updated": 1694595462
     },
     {
       "id": "64fece981280f000000df873",
@@ -2051,83 +1792,6 @@
     {
       "id": "64fece981280f000000df874",
       "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df875",
-      "text": " const detectDue = (text: string): { due: Date; raw: string } | undefined => {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df876",
-      "text": "   const dueMatches = text.match(/~(\\d{4})-(\\d{2})-(\\d{2})/);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df877",
-      "text": "   if (!dueMatches) return;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df878",
-      "text": " ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df879",
-      "text": "   const due = new Date(",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df87a",
-      "text": "     parseInt(dueMatches[1]),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df87b",
-      "text": "     parseInt(dueMatches[2]) - 1,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df87c",
-      "text": "     parseInt(dueMatches[3]),",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df87d",
-      "text": "   );",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df87e",
-      "text": "   return { due, raw: dueMatches[0] };",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694420633,
-      "updated": 1694420633
-    },
-    {
-      "id": "64fece981280f000000df87f",
-      "text": " };",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694420633,
       "updated": 1694420633
