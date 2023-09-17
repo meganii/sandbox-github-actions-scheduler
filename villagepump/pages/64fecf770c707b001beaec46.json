@@ -2,7 +2,7 @@
   "id": "64fecf770c707b001beaec46",
   "title": "howm のリマインダの inline 実装",
   "created": 1694420856,
-  "updated": 1694611587,
+  "updated": 1694907139,
   "lines": [
     {
       "id": "64fecf770c707b001beaec46",
@@ -290,6 +290,440 @@
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1694420856,
       "updated": 1694420856
+    },
+    {
+      "id": "65062d771280f000003aa25a",
+      "text": "スコア計算実装",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694903672,
+      "updated": 1694903677
+    },
+    {
+      "id": "65062d7c1280f000003aa25c",
+      "text": " http://inline.inajob.tk/web/static/js/inline-editor/utils/render.mjs 206行目以降にある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694903677,
+      "updated": 1694903704
+    },
+    {
+      "id": "65062d971280f000003aa25d",
+      "text": "   (render.mjsはhttp://inline.inajob.tk/web/static/js/main.d93c876e.chunk.js のソースマップから復元したファイル。アクセスしても404 not foundとなる)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694903704,
+      "updated": 1694903934
+    },
+    {
+      "id": "65062e7c1280f000003aa262",
+      "text": "  優先度最低は`-9999`で擬似的に再現している",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694903932,
+      "updated": 1694903944
+    },
+    {
+      "id": "65062db91280f000003aa25e",
+      "text": " 生HTMLを作ってて恐れ入った",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694903738,
+      "updated": 1694903799
+    },
+    {
+      "id": "65062df61280f000003aa25f",
+      "text": "  あの……react……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694903799,
+      "updated": 1694903803
+    },
+    {
+      "id": "65062e9c6eb40600008db31a",
+      "text": "  うごけば良い[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694903967,
+      "updated": 1694903968
+    },
+    {
+      "id": "65062ea06eb40600008db31b",
+      "text": "  \tこの時はReactよくわかってなくて、全体的に生のHTMLを作ってます・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694903969,
+      "updated": 1694903986
+    },
+    {
+      "id": "65062f2d6eb40600008db31d",
+      "text": "  \t既存のライブラリとかを使うときも出力がHTMLの物とかが多くて、HTMLのレンダリングは自前という方針でやっていた",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694904110,
+      "updated": 1694904186
+    },
+    {
+      "id": "65062f446eb40600008db31e",
+      "text": "  \t\t行やブロックごとにReactでキャッシュさせているので、無意味ということはない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694904133,
+      "updated": 1694904165
+    },
+    {
+      "id": "65062f9b6eb40600008db31f",
+      "text": "  \t\tシンタックスハイライトとか",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694904220,
+      "updated": 1694904226
+    },
+    {
+      "id": "65062ef01280f000003aa263",
+      "text": "  [\" うごけば良い]大事[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904049,
+      "updated": 1694904107
+    },
+    {
+      "id": "65062e1f1280f000003aa260",
+      "text": " コンソール見たら`invalid schedule [2023-05-18ポッドキャストテスト]`が出力されてた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694903840,
+      "updated": 1694903856
+    },
+    {
+      "id": "65062ee06eb40600008db31c",
+      "text": " \tおや、消しておこう done[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694904033,
+      "updated": 1694904357
+    },
+    {
+      "id": "650630246eb40600008db320",
+      "text": " \t\t単に対象行を消しただけ、パーサーを賢くすれば、そもそもスケジュールと認識しないようにもできそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694904357,
+      "updated": 1694904381
+    },
+    {
+      "id": "650630f51280f000003aa28e",
+      "text": " \t\tserverでパースしたスケジュールを、clientで更にパースしてるみたい？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904566,
+      "updated": 1694904608
+    },
+    {
+      "id": "650630ef1280f000003aa284",
+      "text": "  \t\tcode:js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904560,
+      "updated": 1694904609
+    },
+    {
+      "id": "650630f21280f000003aa285",
+      "text": "  \t\t         case \"schedule\":",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904563,
+      "updated": 1694904609
+    },
+    {
+      "id": "650630f31280f000003aa286",
+      "text": "               ret += \"<span class='mode'>&gt;&gt; schedule</span>\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904563,
+      "updated": 1694904609
+    },
+    {
+      "id": "650630f31280f000003aa287",
+      "text": "               global.sendSearchSchedule().then((resp) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904563,
+      "updated": 1694904609
+    },
+    {
+      "id": "650630f31280f000003aa288",
+      "text": "                 resp.json().then((o) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904563,
+      "updated": 1694904609
+    },
+    {
+      "id": "650630f31280f000003aa289",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904563,
+      "updated": 1694904609
+    },
+    {
+      "id": "650630f31280f000003aa28a",
+      "text": "                   let body = [];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904563,
+      "updated": 1694904609
+    },
+    {
+      "id": "650630f31280f000003aa28b",
+      "text": "                   body.push(\"<span class='mode'>&gt;&gt; schedule</span>\")",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904563,
+      "updated": 1694904609
+    },
+    {
+      "id": "650630f31280f000003aa28c",
+      "text": "                   o.lines.forEach((v)=>{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904563,
+      "updated": 1694904609
+    },
+    {
+      "id": "650630f31280f000003aa28d",
+      "text": "                     let m = v.text.match(/^\\[(\\d{4})-(\\d{2})-(\\d{2})\\](([@.\\-~+!])(\\d+|)|)/)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904563,
+      "updated": 1694904609
+    },
+    {
+      "id": "6506312a1280f000003aa28f",
+      "text": "    server側で雑にパースして、clientで正確にパースしているのかな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904619,
+      "updated": 1694904646
+    },
+    {
+      "id": "65062ef31280f000003aa264",
+      "text": " バグ発見",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904053,
+      "updated": 1694904056
+    },
+    {
+      "id": "65062ef71280f000003aa265",
+      "text": "  line 287",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904056,
+      "updated": 1694904064
+    },
+    {
+      "id": "65062f0a1280f000003aa266",
+      "text": "   code:js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904075,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa267",
+      "text": "    case \"-\": // note",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa268",
+      "text": "      v.label = \"覚書\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa269",
+      "text": "      if(!number){",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa26a",
+      "text": "        number = 7;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa26b",
+      "text": "      }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa26c",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa26d",
+      "text": "      // その日に優先度が0となり X日かけて沈んでいく",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa26e",
+      "text": "      if(today.getTime() < date.getTime()){ // その日が来るまで現れない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa26f",
+      "text": "        v.priority = -9999;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa270",
+      "text": "      }else{",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa271",
+      "text": "        // TODO: 指定日以降は現れない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa272",
+      "text": "    ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa273",
+      "text": "        v.priority = Math.floor((today.getTime() - date.getTime())/oneday);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa274",
+      "text": "      }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f0c1280f000003aa275",
+      "text": "      break;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904077,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f3d1280f000003aa277",
+      "text": "   `-{number}`は`number`日で1沈む識別子のはず",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904126,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062f561280f000003aa278",
+      "text": "   `v.priority = Math.floor((today.getTime() - date.getTime())/oneday);`だと`number`に関係なく沈み具合が決まってしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904150,
+      "updated": 1694904452
+    },
+    {
+      "id": "650630501280f000003aa282",
+      "text": "   `v.priority = -Math.floor((today.getTime() - date.getTime())/number);`で直るかな？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904401,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062fad1280f000003aa279",
+      "text": "   ん？バグじゃなくて未実装なだけか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904237,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062fbc1280f000003aa27a",
+      "text": "    [\" // TODO: 指定日以降は現れない]とある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904253,
+      "updated": 1694904452
+    },
+    {
+      "id": "65062fc21280f000003aa27b",
+      "text": "    てかよく見たら`v.priority = Math.floor((today.getTime() - date.getTime())/oneday);`は他の処理をそのままコピペしただけか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904259,
+      "updated": 1694904452
+    },
+    {
+      "id": "6506307b1280f000003aa283",
+      "text": "  `+`もなにか変な気がする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694904445,
+      "updated": 1694904457
+    },
+    {
+      "id": "65062d781280f000003aa25b",
+      "text": "\tJavaScriptはこうやって人に見られてしまうのが面白い[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694903673,
+      "updated": 1694904765
+    },
+    {
+      "id": "650631bc6eb4060000fe1af8",
+      "text": "\t\tそして、よく考えたらinline全体は実はソースを公開しているので、URL貼っておきます",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694904766,
+      "updated": 1694904779
+    },
+    {
+      "id": "650631a66eb4060000fe1af7",
+      "text": "\t\t\thttps://github.com/inajob/go-webapp",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694904743,
+      "updated": 1694904794
+    },
+    {
+      "id": "650631f86eb4060000fe1afc",
+      "text": "\t\t\t\tリポジトリ名からしてやる気を感じない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694904827,
+      "updated": 1694904832
+    },
+    {
+      "id": "650631d96eb4060000fe1afa",
+      "text": "\t\t\t\tscheduleのパーサー（サーバ側)",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694904794,
+      "updated": 1694904809
+    },
+    {
+      "id": "650631e76eb4060000fe1afb",
+      "text": "\t\t\t\t\thttps://github.com/inajob/go-webapp/blob/master/pkg/file/schedule-parser.go",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694904809,
+      "updated": 1694904809
+    },
+    {
+      "id": "650631d16eb4060000fe1af9",
+      "text": "\t\t\tセキュリティ上まずいところがあったら、突かずにそっと教えてね",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694904786,
+      "updated": 1694904878
+    },
+    {
+      "id": "65063ac11280f000003aa290",
+      "text": "\t\t公開してたの知らなかった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694907074,
+      "updated": 1694907104
+    },
+    {
+      "id": "65063ae01280f000003aa291",
+      "text": "\t\t repo名がinlineと関係なかったから気づかなかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1694907104,
+      "updated": 1694907139
+    },
+    {
+      "id": "6506321c6eb4060000fe1afd",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1694904861,
+      "updated": 1694904861
     }
   ]
 }
