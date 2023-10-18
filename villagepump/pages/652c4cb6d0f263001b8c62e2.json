@@ -2,7 +2,7 @@
   "id": "652c4cb6d0f263001b8c62e2",
   "title": "確率1/Nのくじを何回引くと何%で当たるか",
   "created": 1697402039,
-  "updated": 1697548079,
+  "updated": 1697616684,
   "lines": [
     {
       "id": "652c4cb6d0f263001b8c62e2",
@@ -153,10 +153,10 @@
     },
     {
       "id": "652e7dc4ed60e600005d650f",
-      "text": "\t\t",
+      "text": "\t\tA: 当たるまで引く場合の引く回数の期待値",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1697545669,
-      "updated": 1697545921
+      "updated": 1697599078
     },
     {
       "id": "652e7a15ed60e600005d650c",
@@ -201,11 +201,186 @@
       "updated": 1697548019
     },
     {
-      "id": "652e86f3ed60e600005d6516",
+      "id": "652f4e8ded60e6000060dcf1",
+      "text": " 特殊事例よりも一般的に確率[$ \\frac{K}{N}]のくじの諸々を求めることで各種確率分布を導くほうが楽しそう",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1697599117,
+      "updated": 1697599167
+    },
+    {
+      "id": "652f4ed6ed60e6000060dcf2",
+      "text": " \tちゃんと確率を教えるところではこれをやると思う",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1697599191,
+      "updated": 1697599206
+    },
+    {
+      "id": "652f4f29ed60e6000060dcf3",
+      "text": " \t1. [$ n]回引いて[$ k]回当たる確率",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1697599274,
+      "updated": 1697613994
+    },
+    {
+      "id": "652f4f46ed60e6000060dcf4",
+      "text": " \t\t[$ _nC_k\\left(\\frac KN\\right)^k\\left(1-\\frac KN\\right)^{n-k}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1697599302,
+      "updated": 1697614901
+    },
+    {
+      "id": "652f8c35ed60e600002b24ee",
+      "text": "  \t\t[$ =\\,_nC_kp^k(1-p)^{n-k}\\quad\\left(p=\\frac{K}{N}\\right)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1697614901,
+      "updated": 1697614926
+    },
+    {
+      "id": "652f919eed60e600002b24f4",
       "text": "",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1697548019,
-      "updated": 1697548079
+      "created": 1697616286,
+      "updated": 1697616647
+    },
+    {
+      "id": "652f633aaff09e00009e9bac",
+      "text": "[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697604410,
+      "updated": 1697604424
+    },
+    {
+      "id": "652f6348aff09e00009e9bad",
+      "text": "\tA:  1%で当たるくじを当たるまで引く場合の引く回数の期待値",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697604425,
+      "updated": 1697604901
+    },
+    {
+      "id": "652f6511aff09e00009e9bb2",
+      "text": "\t\t[$ E = 1 \\times {1\\over 100} + 2 \\times {99 \\over 100} \\times {1\\over 100} + 3 \\times {99 \\over 100} \\times {99 \\over 100} \\times {1\\over 100} + \\ldots]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697604882,
+      "updated": 1697604888
+    },
+    {
+      "id": "652f634caff09e00009e9bae",
+      "text": "\t\tこのn項までの和をSnとした場合",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697604428,
+      "updated": 1697604738
+    },
+    {
+      "id": "652f6481aff09e00009e9bb0",
+      "text": "\t\t[$ Sn - {99 \\over 100} Sn = 1 \\times {1\\over 100} + 1 \\times {99 \\over 100} \\times {1\\over 100} + 1 \\times {99 \\over 100} \\times {99 \\over 100} \\times {1\\over 100} + \\ldots] ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697604738,
+      "updated": 1697604785
+    },
+    {
+      "id": "652f646aaff09e00009e9baf",
+      "text": "\t\tとなって[$ n\\to \\infty]で1になる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697604715,
+      "updated": 1697604842
+    },
+    {
+      "id": "652f64c5aff09e00009e9bb1",
+      "text": "\t\tよって[$ E = 100]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697604806,
+      "updated": 1697604895
+    },
+    {
+      "id": "652f651baff09e00009e9bb4",
+      "text": "\tC: 1%で当たるくじを100回引いた時の当たる回数の期待値",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697604891,
+      "updated": 1697604952
+    },
+    {
+      "id": "652f65b4aff09e00009e9bb8",
+      "text": "\t\t1回引いた時の当たる回数の期待値が[$ E_1 = 1 \\times {1\\over 100} + 0 \\times {99 \\over 100} = {1 \\over 100}]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697605045,
+      "updated": 1697605106
+    },
+    {
+      "id": "652f654aaff09e00009e9bb7",
+      "text": "\t\t各試行は独立なので「和の期待値は期待値の和」が成立して[$ E = 1]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697604938,
+      "updated": 1697605173
+    },
+    {
+      "id": "652f6613aff09e000051cf43",
+      "text": "\tではなぜBが1にならないかというと",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697605139,
+      "updated": 1697605231
+    },
+    {
+      "id": "652f66f2aff09e00009e9bbc",
+      "text": "\t\tCは",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697605363,
+      "updated": 1697605367
+    },
+    {
+      "id": "652f66fbaff09e00009e9bbd",
+      "text": "\t\t\t[$ 0\\times P(X=0) + 1 \\times P(X = 1) + 2 \\times P(X = 2) + \\ldots = 1]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697605372,
+      "updated": 1697605372
+    },
+    {
+      "id": "652f6674aff09e00009e9bba",
+      "text": "\t\tと言っていて、もちろん",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697605237,
+      "updated": 1697605389
+    },
+    {
+      "id": "652f6701aff09e00009e9bbf",
+      "text": "\t\t\t[$ P(X=0) + P(X = 1) + P(X = 2) + \\ldots = 1]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697605378,
+      "updated": 1697605389
+    },
+    {
+      "id": "652f672eaff09e00009e9bc0",
+      "text": "\t\t\t[$ P(X = 2) + \\ldots > 0]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697605423,
+      "updated": 1697605432
+    },
+    {
+      "id": "652f66fdaff09e00009e9bbe",
+      "text": "\t\tなのでB、つまり",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697605374,
+      "updated": 1697605454
+    },
+    {
+      "id": "652f66b3aff09e00009e9bbb",
+      "text": "   [$ P(X = 1) + P(X = 2) + \\ldots]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697605300,
+      "updated": 1697605466
+    },
+    {
+      "id": "652f6758aff09e00009e9bc1",
+      "text": "\t\tは1になれないというわけ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697605464,
+      "updated": 1697605482
+    },
+    {
+      "id": "652f675caff09e00009e9bc2",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1697605469,
+      "updated": 1697605469
     }
   ]
 }
