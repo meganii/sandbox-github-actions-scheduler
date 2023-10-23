@@ -1,0 +1,974 @@
+{
+  "id": "6535a76b434ae2001cf828da",
+  "title": "ごった煮Stream",
+  "created": 1698015167,
+  "updated": 1698016758,
+  "lines": [
+    {
+      "id": "6535a76b434ae2001cf828da",
+      "text": "ごった煮Stream",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015167,
+      "updated": 1698015167
+    },
+    {
+      "id": "6535a7fe518c250000380b73",
+      "text": " ごった煮Stream用のScrapbox Privateプロジェクトを用意して、UserScriptから単純に複数のプロジェクトのstream apiを叩いてマージする",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015181,
+      "updated": 1698015454
+    },
+    {
+      "id": "6535a8a6518c250000380b76",
+      "text": " 要改良だが、なんとなく雰囲気は掴めた",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015348,
+      "updated": 1698015423
+    },
+    {
+      "id": "6535a8e8518c250000380b77",
+      "text": "  [https://gyazo.com/2c27b6bfdd70416b27806883402c70fb]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015414,
+      "updated": 1698015427
+    },
+    {
+      "id": "6535aa76518c250000380b7e",
+      "text": "  [Deno Fest]に参加したので、せっかくなら[Fresh]で[Deno Deploy]試すかと思ったけど、そうするとPrivateプロジェクトの更新を追いたくなったときに困るので断念した",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015812,
+      "updated": 1698015885
+    },
+    {
+      "id": "6535a8e9518c250000380b78",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015416,
+      "updated": 1698015416
+    },
+    {
+      "id": "6535a913518c250000380b79",
+      "text": "　複数のScrapboxプロジェクトのStreamをある程度リアルタイムで追っかけたいときに便利そう",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015458,
+      "updated": 1698015504
+    },
+    {
+      "id": "6535a99e518c250000380b7c",
+      "text": "　\t[nishio.icon][sta.icon][基素.icon]をごった煮すると面白い",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015596,
+      "updated": 1698015721
+    },
+    {
+      "id": "6535a943518c250000380b7b",
+      "text": "　RSSとの棲み分けは要検討",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015505,
+      "updated": 1698015593
+    },
+    {
+      "id": "6535aa6e518c250000380b7d",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015805,
+      "updated": 1698015808
+    },
+    {
+      "id": "6535a915518c250000380b7a",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015459,
+      "updated": 1698015459
+    },
+    {
+      "id": "6535a7f1518c250000380af3",
+      "text": "code:js",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015167,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380af5",
+      "text": " // 前提: https://scrapbox.io/stream/{projectName}/ などのstreamページで実行",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380af6",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380af7",
+      "text": " (() => {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380af8",
+      "text": "     if (scrapbox.Layout != \"stream\") {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380af9",
+      "text": "         console.log(\"NOT stream page\");",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380afa",
+      "text": "         return;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380afb",
+      "text": "     } else {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380afc",
+      "text": "         console.log(\"stream page\");",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380afd",
+      "text": "     }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380afe",
+      "text": "     ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380aff",
+      "text": "     // Helper関数",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b00",
+      "text": "     function createElementWithClassName(elementName, className) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b01",
+      "text": "         const element = document.createElement(elementName);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b02",
+      "text": "         if (className) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b03",
+      "text": "             element.className = className;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b04",
+      "text": "         }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b05",
+      "text": "         return element;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b06",
+      "text": "     }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b07",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b08",
+      "text": "     async function main() {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b09",
+      "text": "         // script実行日時（比較用に取得）",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b0a",
+      "text": "         const currentDate = new Date();",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b0b",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b0c",
+      "text": "         // 既存Streamを削除",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b0d",
+      "text": "         const divStream = document.querySelector(\".stream\");",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b0e",
+      "text": "         divStream.style = \"display:none;\";  //読み込み完了まで非表示にする",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b0f",
+      "text": "         if (divStream) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b10",
+      "text": "             divStream.removeChild(divStream.firstChild);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b11",
+      "text": "         }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b12",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b13",
+      "text": "         // 対象Stream一覧",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b14",
+      "text": "         const urls = [",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b15",
+      "text": "             \"https://scrapbox.io/api/stream/villagepump/\",",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b16",
+      "text": "             \"https://scrapbox.io/api/stream/arpla/\",",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b17",
+      "text": "         ]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b18",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b19",
+      "text": "         // 対象Stream一覧からJSONデータを取得",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b1a",
+      "text": "         const response = await Promise.all(urls.map(url => fetch(url)));",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b1b",
+      "text": "         const streams = await Promise.all(response.map(res => res.json()));",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b1c",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b1d",
+      "text": "         // 対象Stream一覧から取得したJSONデータをマージ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b1e",
+      "text": "         const mergedPages = [];",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b1f",
+      "text": "         for (const stream of streams) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b20",
+      "text": "             const pages = stream.pages;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b21",
+      "text": "             for (const page of pages) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b22",
+      "text": "                 // linesの中で最新updatedを取得してlatestUpdatedに追加",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b23",
+      "text": "                 page.lines.sort((a, b) => {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b24",
+      "text": "                     return a.updated > b.updated ? 1 : -1",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b25",
+      "text": "                 });",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b26",
+      "text": "                 const { updated } = page.lines[page.lines.length - 1];",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b27",
+      "text": "                 page[\"latestUpdated\"] = updated;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b28",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b29",
+      "text": "                 // マージ時のprojectName判断用に追加",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b2a",
+      "text": "                 page[\"projectName\"] = stream.projectName;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b2b",
+      "text": "             }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b2c",
+      "text": "             mergedPages.push(...pages);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b2d",
+      "text": "         }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b2e",
+      "text": "         // 更新日順にソート",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b2f",
+      "text": "         mergedPages.sort((a, b) => {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b30",
+      "text": "             return a.latestUpdated < b.latestUpdated ? 1 : -1;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b31",
+      "text": "         });",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b32",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b33",
+      "text": "         // 指定した範囲（分）の更新を取得・描画",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b34",
+      "text": "         const renderTimeRange = (from, to) => {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b35",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b36",
+      "text": "             const beforeFrom = (currentDate - (-from * 60 * 1000));",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b37",
+      "text": "             const beforeTo = (currentDate - (-to * 60 * 1000));",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b38",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b39",
+      "text": "             console.log(`from: ${new Date(beforeFrom)} to:${new Date(beforeTo)}`);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b3a",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b3b",
+      "text": "             const pagesOfTimeRange = mergedPages.filter((page) => {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b3c",
+      "text": "                 const latest = page.latestUpdated * 1000;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b3d",
+      "text": "                 return beforeFrom <= latest && latest < beforeTo;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b3e",
+      "text": "             });",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b3f",
+      "text": "             // console.log(pagesOfTimeRange);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b40",
+      "text": "             if (pagesOfTimeRange.length === 0) { return; }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b41",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b42",
+      "text": "             const h1TimeRange = createElementWithClassName(\"h1\", \"time-range\");",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b43",
+      "text": "             h1TimeRange.textContent = `${-from}分以内の更新`;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b44",
+      "text": "             divStream.appendChild(h1TimeRange);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b45",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b46",
+      "text": "             for (const page of pagesOfTimeRange) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b47",
+      "text": "                 const a = document.createElement(\"a\");",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b48",
+      "text": "                 a.href = `https://scrapbox.io/${page.projectName}/${page.title}`;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b49",
+      "text": "                 a.textContent = `${page.projectName}: ${page.title}`;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b4a",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b4b",
+      "text": "                 const divTitle = createElementWithClassName(\"div\", \"line line-title\");",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b4c",
+      "text": "                 divTitle.appendChild(a);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b4d",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b4e",
+      "text": "                 const divLines = createElementWithClassName(\"div\", \"lines\");",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b4f",
+      "text": "                 divLines.appendChild(divTitle);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b50",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b51",
+      "text": "                 const betweenLines = page.lines.filter(line => {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b52",
+      "text": "                     const latest = line.updated * 1000;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b53",
+      "text": "                     return beforeFrom <= latest && latest < beforeTo;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b54",
+      "text": "                 });",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b55",
+      "text": "                 for (const line of betweenLines) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b56",
+      "text": "                     const divLine = createElementWithClassName(\"div\", \"line\");",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b57",
+      "text": "                     divLine.textContent = line.text;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b58",
+      "text": "                     divLines.appendChild(divLine);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b59",
+      "text": "                 }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b5a",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b5b",
+      "text": "                 const divPage = createElementWithClassName(\"div\", \"page\");",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b5c",
+      "text": "                 divPage.appendChild(divLines);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b5d",
+      "text": "                 divStream.appendChild(divPage);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b5e",
+      "text": "             }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b5f",
+      "text": "         };",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b60",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b61",
+      "text": "         // 既存Streamを削除",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b62",
+      "text": "         if (divStream.firstChild) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b63",
+      "text": "             divStream.removeChild(divStream.firstChild);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b64",
+      "text": "         }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b65",
+      "text": "         divStream.style = '';   // display: none;を削除",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b66",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b67",
+      "text": "         renderTimeRange(-10, 0);    // 10分前から今までの更新を追加",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b68",
+      "text": "         renderTimeRange(-30, -10);  // 30分前から10分前までの更新を追加",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b69",
+      "text": "         renderTimeRange(-60, -30);  // 60分前から30分前までの更新を追加",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b6a",
+      "text": "         renderTimeRange(-180, -60); // 180分前から60分前までの更新を追加",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b6b",
+      "text": "         renderTimeRange(-360, -180);// 360分前から180分前までの更新を追加",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b6c",
+      "text": "         renderTimeRange(-720, -360);// 720分前から360分前までの更新を追加",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b6d",
+      "text": "     }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b6e",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b6f",
+      "text": "     main();",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f4518c250000380b70",
+      "text": " })();",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1698015171,
+      "updated": 1698015171
+    },
+    {
+      "id": "6535a7f2518c250000380af4",
+      "text": "[:tiken:.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1698015169,
+      "updated": 1698016758
+    },
+    {
+      "id": "6535adf25e90c000008f7983",
+      "text": "",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1698016754,
+      "updated": 1698016754
+    }
+  ]
+}
