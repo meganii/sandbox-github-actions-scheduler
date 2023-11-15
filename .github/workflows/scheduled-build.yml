@@ -30,6 +30,9 @@ jobs:
           service_account: ${{ secrets.SERVICE_ACCOUNT }}
 
       - uses: denoland/setup-deno@v1
+        with:
+          deno-version: "1.38.0"
+
       - name: Backup data
         run: >
           deno run
