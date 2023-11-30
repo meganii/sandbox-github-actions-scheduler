@@ -1,0 +1,841 @@
+{
+  "id": "6567fec75ae04c00245e6595",
+  "title": "井戸端データを分析する",
+  "created": 1701314248,
+  "updated": 1701319982,
+  "lines": [
+    {
+      "id": "6567fec75ae04c00245e6595",
+      "text": "井戸端データを分析する",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567ff41aff09e0000e19e14",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314369,
+      "updated": 1701314369
+    },
+    {
+      "id": "6567ff41aff09e0000e19e15",
+      "text": "のりしろ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314369,
+      "updated": 1701314375
+    },
+    {
+      "id": "6567fec8aff09e000063349f",
+      "text": "\t[井戸端から自分の書いたものだけフィルターしたい]にて、どうフィルターするかの検討のために分析してみた[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314407
+    },
+    {
+      "id": "6567ff49aff09e0000e19e16",
+      "text": "\t自分も分析したい人向けガイド",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314377,
+      "updated": 1701314490
+    },
+    {
+      "id": "6567ffcfaff09e00006514fe",
+      "text": "\t　これを使うと井戸端のデータがJSONL形式で保存される",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314512,
+      "updated": 1701314560
+    },
+    {
+      "id": "6567ffb9aff09e00006334ca",
+      "text": "　\t\thttps://github.com/nishio/from_scrapbox/blob/main/tasks/crawl_scrapbox/run.sh",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314490,
+      "updated": 1701314561
+    },
+    {
+      "id": "6567ffbeaff09e00006334cb",
+      "text": "　　　井戸端に限らず任意のプロジェクトを対象にできる、管理者権限は必要ない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314494,
+      "updated": 1701314602
+    },
+    {
+      "id": "65680030aff09e00006334cc",
+      "text": "\t\tここでやってる分析は下記コードにある",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314609,
+      "updated": 1701314650
+    },
+    {
+      "id": "6568005aaff09e00006334ce",
+      "text": "\t\t\thttps://github.com/nishio/from_scrapbox/blob/main/etude/stat.py",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314650,
+      "updated": 1701314651
+    },
+    {
+      "id": "65680031aff09e00006334cd",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314609,
+      "updated": 1701314609
+    },
+    {
+      "id": "6567ff49aff09e0000e19e17",
+      "text": "---",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314377,
+      "updated": 1701314409
+    },
+    {
+      "id": "6567fec8aff09e00006334a0",
+      "text": "井戸端データを分析する",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334a1",
+      "text": " 1ポモドーロ、データ分析するか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334a2",
+      "text": " [scrapbox-external-backup]、ページの作成者データがないな",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334a3",
+      "text": " 捨ててるのか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334a4",
+      "text": "　 `const { id, title, created, updated, lines } = await res.json();`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334a5",
+      "text": "　これは厳密にはJSON Lines形式ではない(行末にカンマがあるせいでvalidなJSONLではない)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334a6",
+      "text": "　\t[JSON Lines https://jsonlines.org/]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334a7",
+      "text": "　元のコードとの互換性を保つのをやめた",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334a8",
+      "text": "　[parse | /flags/mod.ts | std@0.208.0 | Deno https://deno.land/std@0.208.0/flags/mod.ts?s=parse]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334a9",
+      "text": "　\t`--dist-data`的なやつ`dist-data`でargsに入っちゃうのか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334aa",
+      "text": "　\tPythonのargparseなら`dist_data`に置き換えてくれるのに",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334ab",
+      "text": "　code::",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334ac",
+      "text": "　 num_pages 22977 num_my_pages 1342 num_pages_with_me 1989",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334ad",
+      "text": "  num_lines 740316 num_my_lines 65458",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334ae",
+      "text": "\t井戸端の2.3万ページのうち、僕がuserになってるのが1342件、collaboratorsに入ってるのが1989件",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334af",
+      "text": "\t井戸端の74万行のうち、僕がuserなのが6.5万行",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334b0",
+      "text": "\t追加分析(stat2)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334b1",
+      "text": "\t\t100%僕の行なのが439ページ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334b2",
+      "text": "\t\t[https://gyazo.com/092646c0260e7a4d207a84f708c61186]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334b3",
+      "text": "\t追加分析(stat3)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314700
+    },
+    {
+      "id": "6567fec8aff09e00006334b4",
+      "text": "\t\t[https://gyazo.com/bec088f16aaec2bc4d3597f1401e8505][https://gyazo.com/0ede3c955090520e17113ce8de543c58]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334b5",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334b6",
+      "text": "　　両軸とも10の対数、横がページの行数、縦が僕の行の行数",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334b7",
+      "text": "　　　縦軸の下の方に分布があるのは自分が1行や2行だけ書いてるページがそれなりに多いということ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334b8",
+      "text": "　　　横軸の左端には少ない、1行2行だけのページは少ないということ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334b9",
+      "text": "　　　斜めライン(ほぼ自分の行)のケースが多いことに関して",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334ba",
+      "text": "　　　　切り出すと更新者が自分になっちゃうからだろうな",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334bb",
+      "text": "　　　右の濃い部分",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334bc",
+      "text": "　　　　数百行のページの中で数十行だけ書いている",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334bd",
+      "text": "　　　　こういうのは盛り上がった議論っぽいな",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334be",
+      "text": "\tstat4",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314703
+    },
+    {
+      "id": "6567fec8aff09e00006334bf",
+      "text": "\t\t[https://gyazo.com/c553d52566c40682eb9b57497c301a12]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334c0",
+      "text": "\t\t縦軸は比率",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334c1",
+      "text": "\t\tstat2の左端でなだらかな山になっていたのは、数百行のページに1割程度書き込んでる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334c2",
+      "text": "\t\tしかも今気づいたけど上のヒストグラムも二つ峰があって、井戸端にやたらこういう性質のページがあるということ…",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334c3",
+      "text": "\t\t\t[https://gyazo.com/65ce664c71aca735ef8a57a769d719a2]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334c4",
+      "text": "\t\tはっ、これ日記ページではw",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334c5",
+      "text": "\t\t\t\"20\"で始まるページを捨てたら綺麗に消えたw",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334c6",
+      "text": "\t\t\t[https://gyazo.com/2512d336d525369e9194f5fa528b25f9]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334c7",
+      "text": "\t\t\t「[井戸端の日記ページは独特なScrapboxの使い方]」ということがデータで再確認されたw",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334c8",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6567fec8aff09e00006334c9",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701314248,
+      "updated": 1701314248
+    },
+    {
+      "id": "6568093faff09e00006334e9",
+      "text": "\t[collaborators]概念が謎",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701316928,
+      "updated": 1701317795
+    },
+    {
+      "id": "65680944aff09e00006334eb",
+      "text": "\t\t[https://gyazo.com/40a40dae32db7624969880e05955efd8]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701316932,
+      "updated": 1701316936
+    },
+    {
+      "id": "65680945aff09e00006334ec",
+      "text": "\t\tAさんが書いたものをBさんが切り出した場合、Aさんはcollaboratorsに入らない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701316933,
+      "updated": 1701317010
+    },
+    {
+      "id": "65680962aff09e00006334ed",
+      "text": "\t\t　切り出しの設計がおかしすぎる[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701316962,
+      "updated": 1701317231
+    },
+    {
+      "id": "656809fd5e90c000008d4d0f",
+      "text": "\t\t　これある[cFQ2f7LRuLYP.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1701317116,
+      "updated": 1701317128
+    },
+    {
+      "id": "65680a0d5e90c000008d4d10",
+      "text": "\t\t　　[作成者ロンダリング]ができてしまう",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1701317133,
+      "updated": 1701317153
+    },
+    {
+      "id": "65680c225f1e0d000032ea1f",
+      "text": "\t\t　　わかる[wogikaze.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1701317667,
+      "updated": 1701317671
+    },
+    {
+      "id": "6568097aaff09e0000651504",
+      "text": "　　自分が参加した議論を、誰かが良かれと思って切り出して整理してくれる、これはいいことなので妨げたくない[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701316986,
+      "updated": 1701317276
+    },
+    {
+      "id": "65680a92aff09e0000651505",
+      "text": "　　　一方でコラボレーターから外れるので",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317267,
+      "updated": 1701317288
+    },
+    {
+      "id": "656809d3aff09e00006334ee",
+      "text": "　　　アイコンがあれば[modified with icon]で辿れる[cFQ2f7LRuLYP.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1701317075,
+      "updated": 1701317417
+    },
+    {
+      "id": "65680b255e90c000005241be",
+      "text": "　　　　けど、「アイコンを付していない」場合は追えなくなってしまう[cFQ2f7LRuLYP.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1701317413,
+      "updated": 1701317415
+    },
+    {
+      "id": "65680ab4aff09e0000651506",
+      "text": "　　　　それ気になった、本当にそう？[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317301,
+      "updated": 1701317357
+    },
+    {
+      "id": "65680ccbaff09e00008e3e2c",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317835,
+      "updated": 1701317838
+    },
+    {
+      "id": "65680cceaff09e00008e3e2d",
+      "text": "実験してみる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317838,
+      "updated": 1701317845
+    },
+    {
+      "id": "65680aefaff09e000065150d",
+      "text": "\t以前話題になっていたけど詳細な調査をしたことがなかった、気になる[inajob.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317359,
+      "updated": 1701317846
+    },
+    {
+      "id": "65680b736eb4060000d34bd8",
+      "text": "\t\t[2022/11/22#637c798a55cbd30000c9a9c5]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317492,
+      "updated": 1701317847
+    },
+    {
+      "id": "65680b696eb4060000d34bd7",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1701317482,
+      "updated": 1701317482
+    },
+    {
+      "id": "65680b24aff09e000065150f",
+      "text": "[テスト]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317412,
+      "updated": 1701317828
+    },
+    {
+      "id": "65680b045e90c000005241bc",
+      "text": "　アッ　既存の「テスト」ページに暴発切り出してしまったっ[! [cFQ2f7LRuLYP.icon*2]]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1701317380,
+      "updated": 1701317617
+    },
+    {
+      "id": "65680b94aff09e00008e3e11",
+      "text": "　　「テスト」という名前のページがすでにあったwしかもすでに僕が書いてた[nishio.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1701317525,
+      "updated": 1701318554
+    },
+    {
+      "id": "65680cbdaff09e00008e3e27",
+      "text": "　　いいタイトルをつけたのでもう一度お願いします",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317822,
+      "updated": 1701317824
+    },
+    {
+      "id": "65680cbdaff09e00008e3e28",
+      "text": "　　YES[cFQ2f7LRuLYP.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317822,
+      "updated": 1701317824
+    },
+    {
+      "id": "65680cbdaff09e00008e3e29",
+      "text": "[切り出し時のコントリビュータの実験]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317822,
+      "updated": 1701317829
+    },
+    {
+      "id": "65680cc4aff09e00008e3e2a",
+      "text": "　切り出した[cFQ2f7LRuLYP.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317829,
+      "updated": 1701317829
+    },
+    {
+      "id": "65680cc4aff09e00008e3e2b",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317829,
+      "updated": 1701317829
+    },
+    {
+      "id": "65680c6faff09e00008e3e18",
+      "text": "結果",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317744,
+      "updated": 1701317854
+    },
+    {
+      "id": "65680b95aff09e00008e3e13",
+      "text": " [https://gyazo.com/320c4041f2ce0a1090b03dbd7b81b555]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317526,
+      "updated": 1701317860
+    },
+    {
+      "id": "65680ba8aff09e00008e3e14",
+      "text": " 　中を見てしまったので未読の緑は消えてしまったが、一覧には出ている[nishio.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1701317544,
+      "updated": 1701319612
+    },
+    {
+      "id": "65680bb0aff09e00008e3e16",
+      "text": " [https://gyazo.com/da49a965e72d80089ab6cdad0f7e8bf4]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317553,
+      "updated": 1701317863
+    },
+    {
+      "id": "65680bbcaff09e00008e3e17",
+      "text": " 　Byのアイコンリストからは外れている[nishio.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1701317565,
+      "updated": 1701319622
+    },
+    {
+      "id": "65680da9aff09e00008e3e38",
+      "text": "\t\t\t謎の実装だな、フィルターのためにこの値を使ってるのかと思ったが、それとは別に「アイコンがついてるかどうかの値」を別途内部的に持ってるのか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318057,
+      "updated": 1701318060
+    },
+    {
+      "id": "65680daaaff09e00008e3e3a",
+      "text": "　\t\t\t毎回行をチェックするわけではないだろうから…",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318058,
+      "updated": 1701318062
+    },
+    {
+      "id": "65680daaaff09e00008e3e3b",
+      "text": "JSON",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318058,
+      "updated": 1701318064
+    },
+    {
+      "id": "65680da9aff09e00008e3e39",
+      "text": " https://scrapbox.io/api/pages/villagepump/切り出し時のコントリビュータの実験",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318057,
+      "updated": 1701318070
+    },
+    {
+      "id": "65680d08aff09e00008e3e2e",
+      "text": " code:json",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317897,
+      "updated": 1701318068
+    },
+    {
+      "id": "65680d9daff09e00008e3e2f",
+      "text": "  {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318046,
+      "updated": 1701318068
+    },
+    {
+      "id": "65680d9eaff09e00008e3e30",
+      "text": "    \"title\": \"切り出し時のコントリビュータの実験\", ...",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318046,
+      "updated": 1701318068
+    },
+    {
+      "id": "65680d9eaff09e00008e3e31",
+      "text": "    \"user\": {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318046,
+      "updated": 1701318068
+    },
+    {
+      "id": "65680d9eaff09e00008e3e32",
+      "text": "      \"name\": \"cFQ2f7LRuLYP\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318046,
+      "updated": 1701318068
+    },
+    {
+      "id": "65680d9eaff09e00008e3e33",
+      "text": "    }, ...",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318046,
+      "updated": 1701318068
+    },
+    {
+      "id": "65680d9eaff09e00008e3e34",
+      "text": "    \"icons\": [\"nishio\", \"cFQ2f7LRuLYP\"], ...",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318046,
+      "updated": 1701318068
+    },
+    {
+      "id": "65680d9eaff09e00008e3e35",
+      "text": "    \"collaborators\": []",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318046,
+      "updated": 1701318068
+    },
+    {
+      "id": "65680d9eaff09e00008e3e36",
+      "text": "  }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318046,
+      "updated": 1701318068
+    },
+    {
+      "id": "65680d9eaff09e00008e3e37",
+      "text": " おっと、予想外[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318046,
+      "updated": 1701318216
+    },
+    {
+      "id": "65680bdfaff09e0000651515",
+      "text": "\t\t「Byのアイコンリスト」とcollaboratorsは別なのか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701317599,
+      "updated": 1701318113
+    },
+    {
+      "id": "65680de0aff09e00008e3e3d",
+      "text": "\t\tByのアイコンリスト = `user + collaborators` かな",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318113,
+      "updated": 1701318136
+    },
+    {
+      "id": "65680dd0aff09e00008e3e3c",
+      "text": "\t\t[\" それとは別に「アイコンがついてるかどうかの値」を別途内部的に持ってるのか]は、「Yes, それが\"icons\"」ということ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318096,
+      "updated": 1701318175
+    },
+    {
+      "id": "65680e03aff09e00008e3e3e",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318147,
+      "updated": 1701318147
+    },
+    {
+      "id": "6568105aaff09e00008e3e3f",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318747,
+      "updated": 1701318747
+    },
+    {
+      "id": "6568105baff09e00008e3e40",
+      "text": "[https://gyazo.com/5d4c430ff040f52e9537505648a94acc]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318747,
+      "updated": 1701318749
+    },
+    {
+      "id": "6568105caff09e00008e3e41",
+      "text": "\tえー[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318749,
+      "updated": 1701318754
+    },
+    {
+      "id": "65681062aff09e00008e3e43",
+      "text": "\t\tアイコンはあるけどuserでもcollaboratorsでもないページか491件もあるw",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318754,
+      "updated": 1701319637
+    },
+    {
+      "id": "65681061aff09e00008e3e42",
+      "text": "\t\t食い違い方のどっちかが無視できるくらい小さいことを期待したのだがどっちも多いなぁw",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701318754,
+      "updated": 1701319675
+    },
+    {
+      "id": "656813fbaff09e0000651518",
+      "text": "\t\tアイコンがないけどコラボレーターのケース: ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701319675,
+      "updated": 1701319714
+    },
+    {
+      "id": "65681422aff09e000065151a",
+      "text": "\t\t ブラケティングだけした",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701319714,
+      "updated": 1701319714
+    },
+    {
+      "id": "6568145baff09e000065151d",
+      "text": "\t\t 　これ、後で見てもどこを僕が編集したかとかわからない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701319772,
+      "updated": 1701319789
+    },
+    {
+      "id": "65681414aff09e0000651519",
+      "text": "\t\tアイコンがあるけどコラボレーターでないケース:",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701319700,
+      "updated": 1701319711
+    },
+    {
+      "id": "65681423aff09e000065151b",
+      "text": "\t\t 誰かが言及のためにアイコンを置いた",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701319716,
+      "updated": 1701319726
+    },
+    {
+      "id": "6568142eaff09e000065151c",
+      "text": "\t\t 自分がアイコンを置いた後に切り出しが行われた",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701319726,
+      "updated": 1701319744
+    },
+    {
+      "id": "656813e1aff09e0000651517",
+      "text": "　あー、コラボレーターが「ソフトウェアの実装上は素直な発想だけど、実際に使ってみるとUXとしては微妙」ということか？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701319649,
+      "updated": 1701319823
+    },
+    {
+      "id": "6568146faff09e000065151e",
+      "text": "　　「更新者」がユーザに見えにくい状態で、その情報でフィルターするとユーザが挙動を理解しにくい",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701319792,
+      "updated": 1701319918
+    },
+    {
+      "id": "656814eeaff09e0000651521",
+      "text": "　　一方で「更新者」をユーザに見えやすくするのは避けたい",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701319919,
+      "updated": 1701319936
+    },
+    {
+      "id": "65681500aff09e0000651522",
+      "text": "　　そこで「ユーザが能動的に自分の存在を表明したアイコンの有無」をフィルターに使う",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701319937,
+      "updated": 1701319964
+    },
+    {
+      "id": "6568151daff09e0000651523",
+      "text": "　だとすると更新者情報は無視してアイコンの有無でフィルターするのがいいか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701319965,
+      "updated": 1701319982
+    },
+    {
+      "id": "656814baaff09e0000651520",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1701319866,
+      "updated": 1701319866
+    }
+  ]
+}
