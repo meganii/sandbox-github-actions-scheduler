@@ -1,0 +1,267 @@
+{
+  "id": "659bbbf72a2a79002417601b",
+  "title": "WebSocket経由でページ作成する",
+  "created": 1704705041,
+  "updated": 1704706075,
+  "lines": [
+    {
+      "id": "659bbbf72a2a79002417601b",
+      "text": "WebSocket経由でページ作成する",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705041,
+      "updated": 1704705075
+    },
+    {
+      "id": "659bbcc2518c2500000b1c65",
+      "text": "[meganii.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705140,
+      "updated": 1704705140
+    },
+    {
+      "id": "659bbc9a518c2500000b1c63",
+      "text": " [ScrapboxのWebSocket]経由でページを作成するサンプルを見つけられなかったで、[pin-diary-6]を見ながら試してみた",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705100,
+      "updated": 1704705309
+    },
+    {
+      "id": "659bbcea518c2500000b1c66",
+      "text": "　[こいつ・・・動くぞ！]となって、[takker.icon]さんスゴイと改めて感じている",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705179,
+      "updated": 1704706069
+    },
+    {
+      "id": "659bbcae518c2500000b1c64",
+      "text": "  [https://gyazo.com/36d6a0eac747c0b163f7c6e5878c441f]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705120,
+      "updated": 1704706075
+    },
+    {
+      "id": "659bc067518c250000b1a4fe",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704706072,
+      "updated": 1704706072
+    },
+    {
+      "id": "659bbc5f518c2500000b1c44",
+      "text": "code:typescript",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705041,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c46",
+      "text": " import { Socket, disconnect, makeSocket, patch } from \"https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.24.3/browser/websocket/mod.ts\"",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c47",
+      "text": " import { sleep } from \"https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.24.3/sleep.ts\"",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c48",
+      "text": " import { useStatusBar } from \"https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.24.3/mod.ts\"",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c49",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c4a",
+      "text": " const project = 'hogehoge-project'",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705174
+    },
+    {
+      "id": "659bbc66518c2500000b1c4b",
+      "text": " const title = 'Test page from websoket'",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c4c",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c4d",
+      "text": " const { render, dispose } = useStatusBar()",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c4e",
+      "text": " let socket: Socket | undefined",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c4f",
+      "text": " try {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c50",
+      "text": "     render(",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c51",
+      "text": "         { type: \"spinner\" },",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c52",
+      "text": "         { type: \"text\", text: `Updating...` },",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c53",
+      "text": "     )",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c54",
+      "text": "     socket = await makeSocket()",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c55",
+      "text": "     await patch(project, title, (lines) => [",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c56",
+      "text": "         lines[0].text,",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c57",
+      "text": "         ...lines.splice(1).map(line => line.text),",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c58",
+      "text": "         'updated'",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c59",
+      "text": "     ], { socket })",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c5a",
+      "text": " } catch (e: unknown) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c5b",
+      "text": "     console.error(e)",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c5c",
+      "text": " } finally {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c5d",
+      "text": "     if (socket) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c5e",
+      "text": "         await disconnect(socket)",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c5f",
+      "text": "     }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c60",
+      "text": "     await sleep(1000)",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c61",
+      "text": "     dispose()",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc66518c2500000b1c62",
+      "text": " }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705048,
+      "updated": 1704705048
+    },
+    {
+      "id": "659bbc60518c2500000b1c45",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704705041,
+      "updated": 1704705041
+    }
+  ]
+}

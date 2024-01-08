@@ -2,7 +2,7 @@
   "id": "64dc6035db29fd001c8b1d8d",
   "title": "ElectronでUserScriptの試行錯誤をしたい",
   "created": 1692164150,
-  "updated": 1692166224,
+  "updated": 1704710334,
   "lines": [
     {
       "id": "64dc6035db29fd001c8b1d8d",
@@ -416,6 +416,279 @@
       "userId": "649a24da357c4d001c518c25",
       "created": 1692164150,
       "updated": 1692164150
+    },
+    {
+      "id": "659bab05518c250000ac5581",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704700599,
+      "updated": 1704700599
+    },
+    {
+      "id": "659bab06518c250000ac5582",
+      "text": " `importPages`でインポートすれば、`Your input is too large`を回避するために、UserScriptをいちいち分割貼り付けしなくてもよいのではないか説[meganii.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704700599,
+      "updated": 1704700605
+    },
+    {
+      "id": "659bab06518c250000ac5583",
+      "text": "  [https://gyazo.com/794b81e0d88c3c2c6cbb6d48b60f920e]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704700599,
+      "updated": 1704700599
+    },
+    {
+      "id": "659bab8f1280f000007a84bd",
+      "text": "  これが理想[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704700817,
+      "updated": 1704700847
+    },
+    {
+      "id": "659baba31280f000007a84bf",
+      "text": "  [scrapbox-bundler]では[scrapbox json data]を出力するところまでやってくれる(設定がちょいめんどい)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704700837,
+      "updated": 1704700866
+    },
+    {
+      "id": "659babed1280f000007a84c1",
+      "text": "  　これで分割貼付け回避",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704700911,
+      "updated": 1704700921
+    },
+    {
+      "id": "659babc11280f000007a84c0",
+      "text": "  UserScript版scrapbox-bundlerを作って、importもしくはwebsocket経由で簡単に取り込めたらいいなとは思っているが、まだ着手してない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704700867,
+      "updated": 1704700987
+    },
+    {
+      "id": "659bab921280f000007a84be",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704700821,
+      "updated": 1704700821
+    },
+    {
+      "id": "659bac6a1280f000007a84c2",
+      "text": "UserScript、CLI、web browserだけで実現する場合[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701036,
+      "updated": 1704701061
+    },
+    {
+      "id": "659bac831280f000007a84c4",
+      "text": " development",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701061,
+      "updated": 1704701084
+    },
+    {
+      "id": "659bac9a1280f000007a84c5",
+      "text": "  コードの変更があるたびにbundleし直す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701084,
+      "updated": 1704701092
+    },
+    {
+      "id": "659baca21280f000007a84c6",
+      "text": "   [esbuild]のwatch機能で実現可",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701092,
+      "updated": 1704701104
+    },
+    {
+      "id": "659bacae1280f000007a84c7",
+      "text": "  bundled codeをscrapboxのページに書き込んでリロード",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701104,
+      "updated": 1704701124
+    },
+    {
+      "id": "659bad0c1280f000007a84cd",
+      "text": "   [Scrapboxのimport API]は避けた方がいい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701198,
+      "updated": 1704701210
+    },
+    {
+      "id": "659bad181280f000007a84ce",
+      "text": "   　hot reloadを繰り返すので、[429 Too Many Requests]を吐く可能性が高くなる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701210,
+      "updated": 1704701250
+    },
+    {
+      "id": "659bad411280f000007a84d0",
+      "text": "   [localhost]からデータを読み込み、[WebSocket]経由でscrapboxに書き込むほうが無難",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701251,
+      "updated": 1704701300
+    },
+    {
+      "id": "659bad751280f000007a84d1",
+      "text": "    browserでタブを開いておく必要あり",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701303,
+      "updated": 1704701326
+    },
+    {
+      "id": "659bb816518c250000251954",
+      "text": "    WebSoket経由だと文字数制限は受けない？[meganii.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704703944,
+      "updated": 1704704396
+    },
+    {
+      "id": "659bd08e1280f00000b057a7",
+      "text": "    試してないのでわかりません。もしかしたら受けるかも[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704710288,
+      "updated": 1704710298
+    },
+    {
+      "id": "659baccc1280f000007a84c8",
+      "text": " production",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701134,
+      "updated": 1704701137
+    },
+    {
+      "id": "659bacd01280f000007a84c9",
+      "text": "  URLからbundleする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701137,
+      "updated": 1704701160
+    },
+    {
+      "id": "659bacea1280f000007a84ca",
+      "text": "   [scrapbox-bundler]をUserScriptとして実装し直せばいい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701164,
+      "updated": 1704701178
+    },
+    {
+      "id": "659bacf81280f000007a84cb",
+      "text": "   [GM fetch]でCSPを回避する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701178,
+      "updated": 1704701189
+    },
+    {
+      "id": "659bad9a1280f000007a84d3",
+      "text": "   ここでlocalhostも読み込めるなら、ローカルで編集したコードをそのまま取り込めるかも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701339,
+      "updated": 1704701366
+    },
+    {
+      "id": "659badb51280f000007a84d4",
+      "text": "    その場合dev modeとツールを統一できる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701366,
+      "updated": 1704701385
+    },
+    {
+      "id": "659badc71280f000007a84d5",
+      "text": "    wasm版[esbuild]だと差分だけbundleできないところが欠点。速度は遅い",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701385,
+      "updated": 1704701421
+    },
+    {
+      "id": "659badec1280f000007a84d6",
+      "text": "    　それでも手作業でコードを貼り付けるよりはずっと早い",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701421,
+      "updated": 1704701430
+    },
+    {
+      "id": "659bad041280f000007a84cc",
+      "text": "  書き込み",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701189,
+      "updated": 1704701333
+    },
+    {
+      "id": "659bad931280f000007a84d2",
+      "text": "   websocketで書き込む",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701333,
+      "updated": 1704701338
+    },
+    {
+      "id": "659bac701280f000007a84c3",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704701043,
+      "updated": 1704701043
+    },
+    {
+      "id": "659bb844518c250000251955",
+      "text": "ハリボテだけど、Electronのpreload.jsでUserScriptを無理矢理読み込ませて、ローカルだけで動作確認したあと、[Scrapboxのimport API]で任意のプロジェクトにImportできるようにした[meganii.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704703989,
+      "updated": 1704704094
+    },
+    {
+      "id": "659bb844518c250000251956",
+      "text": "https://github.com/meganii/sandbox-electron-scrapbox",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704703989,
+      "updated": 1704703990
+    },
+    {
+      "id": "659bb844518c250000251957",
+      "text": "　流れ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704703990,
+      "updated": 1704704109
+    },
+    {
+      "id": "659bb8bb518c250000251959",
+      "text": "　　Denoで`src/index.ts`をいじる",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704704109,
+      "updated": 1704704132
+    },
+    {
+      "id": "659bb8d7518c25000025195a",
+      "text": "　　ESBuildでbundleして、Electronのpreload.jsから読み込み動作確認",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704704136,
+      "updated": 1704704197
+    },
+    {
+      "id": "659bb915518c25000025195b",
+      "text": "　　Importボタンを押すと、Electronがローカルファイル(bundle済み)を読み込み、importAPIでアップロード",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704704199,
+      "updated": 1704704260
+    },
+    {
+      "id": "659bb8b6518c250000251958",
+      "text": "　Electronでブラウザを開いているので、WebScket経由でもいけそう",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704704103,
+      "updated": 1704704292
+    },
+    {
+      "id": "659bb958518c25000025195c",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1704704266,
+      "updated": 1704704266
+    },
+    {
+      "id": "659bd0b51280f00000b057a9",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1704710327,
+      "updated": 1704710327
     }
   ]
 }
