@@ -1,0 +1,183 @@
+{
+  "id": "65a2ae473237d30023d6d7b6",
+  "title": "特定のタグのあるページからランダムで表示 する ランダムジャンプボタン",
+  "created": 1705160263,
+  "updated": 1705160281,
+  "lines": [
+    {
+      "id": "65a2ae473237d30023d6d7b6",
+      "text": "特定のタグのあるページからランダムで表示 する ランダムジャンプボタン",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690453",
+      "text": "from [2024/01/13]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690454",
+      "text": "[特定のタグのあるページからランダムで表示]する[ランダムジャンプボタン]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690455",
+      "text": "　code:jump.js",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690456",
+      "text": "　 export const jump1hop = (title) =>",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690457",
+      "text": "　　  scrapbox.PageMenu.addMenu({",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690458",
+      "text": "      title: `Jump a page which has ${title}`,",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690459",
+      "text": "      image: \"https://img.icons8.com/ios/180/shuffle.png\",",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c0000069045a",
+      "text": "      onClick: async () => {",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c0000069045b",
+      "text": "        const res = await fech(`/api/pages/${scrapbox.Project.name}/${title}`);",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c0000069045c",
+      "text": "        const page = await res.json();",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c0000069045d",
+      "text": "        const links1hopLc = page.relatedPages.links1hop.map((link) => link.titleLc);",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c0000069045e",
+      "text": "        if (links1hopLc.length === 0) return;",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c0000069045f",
+      "text": "        const index = Math.floor(Math.random() * links1hopLc.length);",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690460",
+      "text": "        const a = document.createElement(\"a\");",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690461",
+      "text": "        a.href = `./${encodeURIComponent(links1hopLc[index])}`;",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690462",
+      "text": "        document.body.append(a);",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690463",
+      "text": "        a.click();",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690464",
+      "text": "        a.remove();",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690465",
+      "text": "      },",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690466",
+      "text": "    });",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690467",
+      "text": "    ",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae475e90c00000690468",
+      "text": "",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160263,
+      "updated": 1705160263
+    },
+    {
+      "id": "65a2ae4c5e90c00000690469",
+      "text": "[井戸端さんぽ神]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160268,
+      "updated": 1705160281
+    },
+    {
+      "id": "65a2ae4c5e90c0000069046a",
+      "text": "",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1705160268,
+      "updated": 1705160268
+    }
+  ]
+}
