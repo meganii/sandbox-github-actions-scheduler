@@ -2,7 +2,7 @@
   "id": "659f910e7dd3fb00234cf0d3",
   "title": "論文のURLからタイトルと著者名と所属を抽出してScrapboxに貼りたい",
   "created": 1704956177,
-  "updated": 1704960967,
+  "updated": 1705317707,
   "lines": [
     {
       "id": "659f910e7dd3fb00234cf0d3",
@@ -146,10 +146,360 @@
     },
     {
       "id": "659f93711280f0000034d169",
-      "text": "",
-      "userId": "5ef2bdebb60650001e1280f0",
+      "text": "　[Semantic scholar]のAPIが便利みたい",
+      "userId": "5d89b1f60230ae001779e113",
       "created": 1704956786,
-      "updated": 1704956786
+      "updated": 1705316393
+    },
+    {
+      "id": "65a5103e79e1130000133f18",
+      "text": "　 これで多分fetchできる",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705316415,
+      "updated": 1705316419
+    },
+    {
+      "id": "65a5102879e1130000133ef0",
+      "text": "　 code: js",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705316393,
+      "updated": 1705316407
+    },
+    {
+      "id": "65a5103279e1130000133ef1",
+      "text": "　  async function fetchPaperDetails(paperTitle) {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705316402,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f44",
+      "text": "       const apiKey = 'YOUR_API_KEY'; // Replace with your Semantic Scholar API key, if required",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f45",
+      "text": "       const searchUrl = `https://api.semanticscholar.org/graph/v1/paper/search?query=${encodeURIComponent(paperTitle)}`;",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f46",
+      "text": "   ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f47",
+      "text": "       try {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f48",
+      "text": "           // Search for the paper by title",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f49",
+      "text": "           let searchResponse = await fetch(searchUrl);",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f4a",
+      "text": "           let searchData = await searchResponse.json();",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f4b",
+      "text": "   ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f4c",
+      "text": "           // Check if any papers were found",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f4d",
+      "text": "           if (searchData && searchData.data && searchData.data.length > 0) {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f4e",
+      "text": "               // Assume the first result is the desired paper",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f4f",
+      "text": "               let paperId = searchData.data[0].paperId;",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f50",
+      "text": "   ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f51",
+      "text": "               // Fetch detailed information about the paper",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f52",
+      "text": "               const detailsUrl = `https://api.semanticscholar.org/graph/v1/paper/${paperId}?fields=url,year,authors,externalIds`;",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f53",
+      "text": "               let detailsResponse = await fetch(detailsUrl);",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f54",
+      "text": "               let detailsData = await detailsResponse.json();",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f55",
+      "text": "   ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f56",
+      "text": "               if (detailsData) {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f57",
+      "text": "                   // Extract required details",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f58",
+      "text": "                   let title = detailsData.title;",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f59",
+      "text": "                   let doiUrl = detailsData.url;",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f5a",
+      "text": "                   let authors = detailsData.authors.map(author => author.name).join(', ');",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f5b",
+      "text": "   ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f5c",
+      "text": "                   return { title, doiUrl, authors };",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f5d",
+      "text": "               } else {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f5e",
+      "text": "                   throw new Error('Paper details not found');",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f5f",
+      "text": "               }",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f60",
+      "text": "           } else {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f61",
+      "text": "               throw new Error('No papers found with the given title');",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f62",
+      "text": "           }",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f63",
+      "text": "       } catch (error) {",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f64",
+      "text": "           console.error('Error fetching paper details:', error);",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f65",
+      "text": "           throw error;",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f66",
+      "text": "       }",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f67",
+      "text": "   }",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f68",
+      "text": "   ",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f69",
+      "text": "   // Usage example",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f6a",
+      "text": "   fetchPaperDetails('Example Paper Title')",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f6b",
+      "text": "       .then(details => console.log(details))",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a512d379e1130000133f6c",
+      "text": "       .catch(error => console.error(error));",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317075,
+      "updated": 1705317075
+    },
+    {
+      "id": "65a513dd79e1130000133f6e",
+      "text": "  あ、書いてから気づいたけどUserScriptから外部API叩けないんだった[blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317342,
+      "updated": 1705317359
+    },
+    {
+      "id": "65a513ea79e1130000133f70",
+      "text": "  　忘れてた〜〜",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317355,
+      "updated": 1705317357
+    },
+    {
+      "id": "65a5153879e1130000f1e7e3",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317689,
+      "updated": 1705317689
+    },
+    {
+      "id": "65a5153879e1130000f1e7e4",
+      "text": "　[/UIPedia/ACM Digital Libraryから情報取得してUIPediaページを作成するブックマークレット]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317689,
+      "updated": 1705317689
+    },
+    {
+      "id": "65a5153979e1130000f1e7e5",
+      "text": "　　これが[bookmarklet]で目的を達成をしていた",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317690,
+      "updated": 1705317707
+    },
+    {
+      "id": "65a513de79e1130000133f6f",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1705317343,
+      "updated": 1705317343
     }
   ]
 }
