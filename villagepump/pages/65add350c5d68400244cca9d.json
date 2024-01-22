@@ -1,0 +1,463 @@
+{
+  "id": "65add350c5d68400244cca9d",
+  "title": "linux のディレクトリ周りのコマンドと罠",
+  "created": 1705890643,
+  "updated": 1705921717,
+  "lines": [
+    {
+      "id": "65add350c5d68400244cca9d",
+      "text": "linux のディレクトリ周りのコマンドと罠",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890643,
+      "updated": 1705890643
+    },
+    {
+      "id": "65add352ed60e600001b75f8",
+      "text": "ディレクトリいじり、大体思ったように動かないので罠事例集をまとめておきたい[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890643,
+      "updated": 1705890663
+    },
+    {
+      "id": "65add5d0ed60e600001b7612",
+      "text": " やらかしたときに都度事例を投げ入れていく",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705891281,
+      "updated": 1705891301
+    },
+    {
+      "id": "65add367ed60e600001b75fa",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890664,
+      "updated": 1705890664
+    },
+    {
+      "id": "65add4e8ed60e600001b760c",
+      "text": "主な \"思ったように動かない\" の原因:",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705891048,
+      "updated": 1705891080
+    },
+    {
+      "id": "65ade073ed60e600004f5dc7",
+      "text": " 自分の原因",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705894004,
+      "updated": 1705894014
+    },
+    {
+      "id": "65ade076ed60e600004f5dcb",
+      "text": "  ファイルとディレクトリの混同",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705894007,
+      "updated": 1705894008
+    },
+    {
+      "id": "65add509ed60e600001b760f",
+      "text": "  親ディレクトリが存在しない",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705891081,
+      "updated": 1705894008
+    },
+    {
+      "id": "65add523ed60e600001b7610",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705891108,
+      "updated": 1705891108
+    },
+    {
+      "id": "65add368ed60e600001b75fb",
+      "text": "コピー",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890664,
+      "updated": 1705890671
+    },
+    {
+      "id": "65add37eed60e600001b7601",
+      "text": " `cp path/to/src path/to/dst`",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890687,
+      "updated": 1705890764
+    },
+    {
+      "id": "65add443ed60e600001b7609",
+      "text": " コピー先の親ディレクトリが存在しない場合、エラーが発生する。回避方法はない。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890884,
+      "updated": 1705890911
+    },
+    {
+      "id": "65add480ed60e600001b760a",
+      "text": "  `cp path/to/src path/to/EMPTY/dst`",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890944,
+      "updated": 1705890979
+    },
+    {
+      "id": "65add481ed60e600001b760b",
+      "text": "  `cp -RT` はこれを回避するためには使えない",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890945,
+      "updated": 1705894070
+    },
+    {
+      "id": "65ade0aaed60e600004f5dce",
+      "text": "  `cp -p` は「パーミッション」「所有者」「タイムスタンプ」を保持したままコピーする",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705894059,
+      "updated": 1705894097
+    },
+    {
+      "id": "65ade0d5ed60e600004f5dcf",
+      "text": "   [[NOT]] parent",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705894102,
+      "updated": 1705894117
+    },
+    {
+      "id": "65adf4a6ed60e600005c4e2c",
+      "text": "　親ディレクトリも作りたい場合は `tar` が使える（未検証[Summer498.icon]）",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705899175,
+      "updated": 1705899255
+    },
+    {
+      "id": "65adf4e3ed60e600005c4e2e",
+      "text": " 　`tar -cf path/to/src - | tar -xf path/to/dst`",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705899236,
+      "updated": 1705899237
+    },
+    {
+      "id": "65adf495ed60e600005c4e2a",
+      "text": "  　大昔の cpコマンドは再帰コピーができず、そうゆう用途には tarコマンドを使っていた",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705899157,
+      "updated": 1705899237
+    },
+    {
+      "id": "65add37aed60e600001b75fe",
+      "text": "   　ただしこれはバッドノウハウ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890683,
+      "updated": 1705899237
+    },
+    {
+      "id": "65adf4b6ed60e600005c4e2d",
+      "text": "    　当時が反映された悲しいノウハウ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705899191,
+      "updated": 1705899237
+    },
+    {
+      "id": "65ae45e75b98c20000943d96",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705919976,
+      "updated": 1705919976
+    },
+    {
+      "id": "65ae45db5b98c20000943d94",
+      "text": "シンボリックリンク",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705919964,
+      "updated": 1705919974
+    },
+    {
+      "id": "65ae45dc5b98c20000943d95",
+      "text": "　ファイルをコピーしなくてもシンボリックリンクを貼るだけで十分な場合もある",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705919964,
+      "updated": 1705920060
+    },
+    {
+      "id": "65ae45e95b98c20000943d97",
+      "text": "　`ln -s リンク元 リンク先`",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705919978,
+      "updated": 1705920111
+    },
+    {
+      "id": "65ae46405b98c20000943d98",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920065,
+      "updated": 1705920065
+    },
+    {
+      "id": "65add36eed60e600001b75fc",
+      "text": "削除",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890671,
+      "updated": 1705890672
+    },
+    {
+      "id": "65add386ed60e600001b7602",
+      "text": " `rmdir path/to/trash`",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890694,
+      "updated": 1705890775
+    },
+    {
+      "id": "65add3a7ed60e600001b7605",
+      "text": " `rm path/to/trash`",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890728,
+      "updated": 1705890787
+    },
+    {
+      "id": "65ae43905b98c20000943d92",
+      "text": "　[rm -rfをよく使う]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705919376,
+      "updated": 1705919754
+    },
+    {
+      "id": "65ae1b47ed60e600005db12a",
+      "text": " `mv` でとりあえず見えない所へ移動してしばらく放置 [suto3.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705909064,
+      "updated": 1705909082
+    },
+    {
+      "id": "65ae0f745b98c200006882c2",
+      "text": "  消すときはなるべく`rm -i` で消している",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705906036,
+      "updated": 1705906141
+    },
+    {
+      "id": "65ae0fb85b98c200006882c3",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705906105,
+      "updated": 1705906105
+    },
+    {
+      "id": "65add370ed60e600001b75fd",
+      "text": "作成",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890672,
+      "updated": 1705890676
+    },
+    {
+      "id": "65add38aed60e600001b7603",
+      "text": " `mkdir path/to/new/dir`",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890698,
+      "updated": 1705890804
+    },
+    {
+      "id": "65add390ed60e600001b7604",
+      "text": " `touch path/to/new/file`",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890704,
+      "updated": 1705890815
+    },
+    {
+      "id": "65add433ed60e600001b7606",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890868,
+      "updated": 1705890874
+    },
+    {
+      "id": "65ae475e5b98c20000943d99",
+      "text": "ファイル（ディレクリ）の移動",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920351,
+      "updated": 1705920388
+    },
+    {
+      "id": "65ade14ced60e600004f5dd0",
+      "text": "　`mv old_path new_path`",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705894221,
+      "updated": 1705920581
+    },
+    {
+      "id": "65ae47875b98c20000943d9a",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920392,
+      "updated": 1705920392
+    },
+    {
+      "id": "65ae47945b98c20000943d9b",
+      "text": "ファイル名（ディレクリ名）の変更",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920405,
+      "updated": 1705920434
+    },
+    {
+      "id": "65ae479e5b98c20000943d9c",
+      "text": "　`mv　old_name new_name`",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920414,
+      "updated": 1705920493
+    },
+    {
+      "id": "65ae47b85b98c20000943d9d",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920440,
+      "updated": 1705920440
+    },
+    {
+      "id": "65ae48a45b98c20000943d9e",
+      "text": "ファイル（ディレクリ）のパーミッションの変更",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920676,
+      "updated": 1705920852
+    },
+    {
+      "id": "65ae48c05b98c20000943d9f",
+      "text": "　`chmod`",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920704,
+      "updated": 1705920714
+    },
+    {
+      "id": "65ae48c05b98c20000943da0",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920704,
+      "updated": 1705920704
+    },
+    {
+      "id": "65ae48c05b98c20000943da1",
+      "text": "ファイル（ディレクリ）の所有者の変更",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920704,
+      "updated": 1705921713
+    },
+    {
+      "id": "65ae48e35b98c20000943da2",
+      "text": " `chown`",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920739,
+      "updated": 1705920820
+    },
+    {
+      "id": "65ae491c5b98c20000943da5",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920796,
+      "updated": 1705920796
+    },
+    {
+      "id": "65ae48e35b98c20000943da3",
+      "text": "ファイル（ディレクリ）のグループの変更",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920740,
+      "updated": 1705921717
+    },
+    {
+      "id": "65ae48f95b98c20000943da4",
+      "text": "　`chgrp`",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920762,
+      "updated": 1705920829
+    },
+    {
+      "id": "65ae491d5b98c20000943da6",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705920797,
+      "updated": 1705920797
+    },
+    {
+      "id": "65ade156ed60e600004f5dd5",
+      "text": "歴史的経緯などのウンチク",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705894231,
+      "updated": 1705894254
+    },
+    {
+      "id": "65ade174ed60e600004f5dd7",
+      "text": " 主な \"思ったように動かない\" の原因:",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705894261,
+      "updated": 1705894264
+    },
+    {
+      "id": "65ade14ded60e600004f5dd1",
+      "text": "  ソフトウェア側の原因",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705894221,
+      "updated": 1705894264
+    },
+    {
+      "id": "65ade153ed60e600004f5dd2",
+      "text": "   [バッドノウハウ]と[奥が深い症候群]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705894228,
+      "updated": 1705894264
+    },
+    {
+      "id": "65ade153ed60e600004f5dd3",
+      "text": "   歴史的理由（しがらみ）",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705894228,
+      "updated": 1705894264
+    },
+    {
+      "id": "65add438ed60e600001b7607",
+      "text": " トリビア",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1705890873,
+      "updated": 1705894264
+    },
+    {
+      "id": "65ade0b85b98c200006882b3",
+      "text": " 　Q:どうしてUNIXのコマンドは cp とか rm とか分かりにくい省略形なのか？",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705894073,
+      "updated": 1705894691
+    },
+    {
+      "id": "65ade10a5b98c200006882b5",
+      "text": "　　 A:開発当初のサーバーと端末間の通信速度がとっても遅く、通信時間を節約するため短いコマンド名になった",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705894155,
+      "updated": 1705895102
+    },
+    {
+      "id": "65ade213ed60e600004f5dd8",
+      "text": " 　　 [草.icon][Summer498.icon][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1705894420,
+      "updated": 1705895344
+    },
+    {
+      "id": "65ade22a5b98c200006882b6",
+      "text": " 　Q:どうしてUNIXのコマンドは危険な操作でも確認を取らないで、いきなり処理を初めてしまうの？",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705894442,
+      "updated": 1705894711
+    },
+    {
+      "id": "65ade27b5b98c200006882b7",
+      "text": " 　　A:シェルスクリプトやパイプラインを有効活用するため",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705894523,
+      "updated": 1705894715
+    },
+    {
+      "id": "65ade2ce5b98c200006882b8",
+      "text": " 　　ベル研究所でUNIXを作ったときは、外部に広く普及するとは想定していなかった",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705894607,
+      "updated": 1705894739
+    },
+    {
+      "id": "65ade0be5b98c200006882b4",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1705894079,
+      "updated": 1705894079
+    }
+  ]
+}
