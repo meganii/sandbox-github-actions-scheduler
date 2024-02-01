@@ -1,0 +1,596 @@
+{
+  "id": "65bb5b1b704c7c00243cf64c",
+  "title": "神メソッド",
+  "created": 1706777372,
+  "updated": 1706778432,
+  "lines": [
+    {
+      "id": "65bb5b1b704c7c00243cf64c",
+      "text": "神メソッド",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b24ed60e600003b6c84",
+      "text": "もしかして: [神クラス]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777380,
+      "updated": 1706777389
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c50",
+      "text": "from [2024/02/01]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c51",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777377
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c52",
+      "text": "[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c53",
+      "text": " ワイの過去に作ったプログラムから[$ \\argmin,\\argmax,\\min,\\max]の全てを1つのメソッドから呼び出せるようにした[神メソッド]を発掘した",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c54",
+      "text": "  作ってるときは超楽しいが、保守のときに「あ～、楽しくて作っちゃったのねん……。でもやっぱシンプルな実装のほうがいいわ」ってなる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c55",
+      "text": "   [https://github.com/Summer498/MusicAnalyzer-Server/blob/main/chordToRoman/src/lib/Graph/Graph.ts MusicAnalyzer-Server/chordToRoman/src/lib/Graph/Graph.ts at main · Summer498/MusicAnalyzer-Server · GitHub]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c56",
+      "text": "  code:ts",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c57",
+      "text": "   class MaxCalculableArray<T> extends Array<T> {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c58",
+      "text": "       #args: T[][];",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c59",
+      "text": "       #values: number[];",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c5a",
+      "text": "       #memo_funcs: (((i: T) => number) | undefined)[];",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c5b",
+      "text": "       constructor(...items: T[]) {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c5c",
+      "text": "           super(items.length);",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c5d",
+      "text": "           this.#args = [[this[0]], [this[0]]]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c5e",
+      "text": "           this.#values = [Infinity, -Infinity];",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c5f",
+      "text": "           this.#memo_funcs = [undefined, undefined];",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c60",
+      "text": "           items.forEach((_, i) => { this[i] = items[i]; });",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c61",
+      "text": "       }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c62",
+      "text": "       #willRenew: ((val: number) => boolean)[] = [",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c63",
+      "text": "           val => val < this.#values[0],",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c64",
+      "text": "           val => val > this.#values[1]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c65",
+      "text": "       ]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c66",
+      "text": "       #renew_min_or_max(f: (i: T) => number, is_max: number) {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c67",
+      "text": "           this.#args[is_max] = [this[0]];",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c68",
+      "text": "           this.#values[is_max] = (is_max) ? -Infinity : Infinity;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c69",
+      "text": "           for (const i of this) {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c6a",
+      "text": "               const val = f(i);",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c6b",
+      "text": "               if (this.#willRenew[is_max](val)) {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c6c",
+      "text": "                   this.#args[is_max] = [i];",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c6d",
+      "text": "                   this.#values[is_max] = val;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c6e",
+      "text": "                   continue;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c6f",
+      "text": "               }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c70",
+      "text": "               if (val == this.#values[is_max]) { this.#args[is_max].push(i); }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c71",
+      "text": "           }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c72",
+      "text": "       }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c73",
+      "text": "       #checkCache(f: (i: T) => number, is_max: number) {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c74",
+      "text": "           if (this.#memo_funcs[is_max] === f) { return; }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c75",
+      "text": "           this.#renew_min_or_max(f, is_max);",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c76",
+      "text": "           this.#memo_funcs[is_max] = f;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c77",
+      "text": "       }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c78",
+      "text": "       min(f: (i: T) => number) { this.#checkCache(f, 0); return this.#values[0]; }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c79",
+      "text": "       argMin(f: (i: T) => number) { this.#checkCache(f, 0); return this.#args[0][0]; }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c7a",
+      "text": "       argMins(f: (i: T) => number) { this.#checkCache(f, 0); return this.#args[0]; }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c7b",
+      "text": "       max(f: (i: T) => number) { this.#checkCache(f, 1); return this.#values[1]; }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c7c",
+      "text": "       argMax(f: (i: T) => number) { this.#checkCache(f, 1); return this.#args[1][0]; }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c7d",
+      "text": "       argMaxes(f: (i: T) => number) { this.#checkCache(f, 1); return this.#args[1]; }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c7e",
+      "text": "   }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c7f",
+      "text": "  ここまで来るとコピペのほうが善だわ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c80",
+      "text": "  普通の配列を一旦 `new MaxCalculableArray(...arr);` でクラス化しなきゃいけないのが💩ポイント",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c81",
+      "text": "  当時は for ループが嫌いだったからこんな事をしていたな",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c82",
+      "text": "   思想が強い",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b1bed60e600003b6c83",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777372,
+      "updated": 1706777372
+    },
+    {
+      "id": "65bb5b47ed60e600003b6c85",
+      "text": "これがクソゴツいのはクラスになってるせい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777416,
+      "updated": 1706777438
+    },
+    {
+      "id": "65bb5b60ed60e600003b6c87",
+      "text": "\tリファクタリング後も結局神メソッドのままだったが[ダイエット大成功]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777441,
+      "updated": 1706777481
+    },
+    {
+      "id": "65bb5b8bed60e600003b6c88",
+      "text": "\tcode:ts",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777483,
+      "updated": 1706777498
+    },
+    {
+      "id": "65bb5b9aed60e600003b6c89",
+      "text": "\t type: Comparition = (a:number, b:number) => boolean;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777499,
+      "updated": 1706777672
+    },
+    {
+      "id": "65bb5c28ed60e600003b6c8c",
+      "text": "\t const is_lesser: Comparition = (a,b) => a<b;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777641,
+      "updated": 1706777866
+    },
+    {
+      "id": "65bb5c1ded60e600003b6c8b",
+      "text": "\t const is_greater: Comparition = (a,b) => a>b;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777629,
+      "updated": 1706777873
+    },
+    {
+      "id": "65bb5c80ed60e600003b6c92",
+      "text": "\t ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777728,
+      "updated": 1706777728
+    },
+    {
+      "id": "65bb5ca5ed60e600003b6c97",
+      "text": "\t const argsMinMax = (f: (i:T) => number, space: T[], compare:Comparition) => {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777766,
+      "updated": 1706777825
+    },
+    {
+      "id": "65bb5d59ed60e600003b6c9e",
+      "text": "\t \tlet val = (compare(0,1)) ? Infinity : -Infinity;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777945,
+      "updated": 1706778137
+    },
+    {
+      "id": "65bb5d9ded60e600003b6c9f",
+      "text": "\t \tconst args: number[] = [];",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706778013,
+      "updated": 1706778043
+    },
+    {
+      "id": "65bb5ce2ed60e600003b6c9a",
+      "text": "\t \tspace.foreach(e => {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777827,
+      "updated": 1706777916
+    },
+    {
+      "id": "65bb5d38ed60e600003b6c9c",
+      "text": "\t \t\tconst res = f(e);",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777913,
+      "updated": 1706778062
+    },
+    {
+      "id": "65bb5d52ed60e600003b6c9d",
+      "text": "\t \t\tif(compare(res, val)){",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777938,
+      "updated": 1706778166
+    },
+    {
+      "id": "65bb5e40ed60e600003b6ca3",
+      "text": "\t \t\t\targs = [e];",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706778176,
+      "updated": 1706778199
+    },
+    {
+      "id": "65bb5e33ed60e600003b6ca2",
+      "text": "\t \t\t\tval = res;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706778163,
+      "updated": 1706778178
+    },
+    {
+      "id": "65bb5e2fed60e600003b6ca1",
+      "text": "\t \t\t} ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706778160,
+      "updated": 1706778204
+    },
+    {
+      "id": "65bb5e5ced60e600003b6ca4",
+      "text": "\t \t\telse if(res===val){ args.push(e); }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706778204,
+      "updated": 1706778224
+    },
+    {
+      "id": "65bb5d36ed60e600003b6c9b",
+      "text": "\t \t})",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777911,
+      "updated": 1706777911
+    },
+    {
+      "id": "65bb5dc4ed60e600003b6ca0",
+      "text": "\t \treturn {val, args}",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706778052,
+      "updated": 1706778079
+    },
+    {
+      "id": "65bb5ce0ed60e600003b6c99",
+      "text": "\t }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777825,
+      "updated": 1706777825
+    },
+    {
+      "id": "65bb5ca6ed60e600003b6c98",
+      "text": "\t ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777766,
+      "updated": 1706777766
+    },
+    {
+      "id": "65bb5c52ed60e600003b6c8e",
+      "text": "\t const min = (f: (i:T) => number, space: T[]) => argsMinMax(f, space, is_lesser).val;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777683,
+      "updated": 1706777701
+    },
+    {
+      "id": "65bb5c52ed60e600003b6c8f",
+      "text": "\t const max = (f: (i:T) => number, space: T[]) => argsMinMax(f, space, is_greater).val;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777683,
+      "updated": 1706777703
+    },
+    {
+      "id": "65bb5bfced60e600003b6c8a",
+      "text": "\t const argsMin = (f: (i:T) => number, space: T[]) => argsMinMax(f, space, is_lesser).args;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777596,
+      "updated": 1706777755
+    },
+    {
+      "id": "65bb5c92ed60e600003b6c93",
+      "text": "\t const argsMax = (f: (i:T) => number, space: T[]) => argsMinMax(f, space, is_greater).args;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777746,
+      "updated": 1706777757
+    },
+    {
+      "id": "65bb5c92ed60e600003b6c94",
+      "text": "\t const argMin = (f: (i:T) => number, space: T[]) => argsMinMax(f, space, is_lesser).args[0];",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777746,
+      "updated": 1706777747
+    },
+    {
+      "id": "65bb5c92ed60e600003b6c95",
+      "text": "\t const argMax = (f: (i:T) => number, space: T[]) => argsMinMax(f, space, is_greater).args[0];",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777747,
+      "updated": 1706777747
+    },
+    {
+      "id": "65bb5c92ed60e600003b6c96",
+      "text": " なおこのコードのテストはしていない",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706777747,
+      "updated": 1706778425
+    },
+    {
+      "id": "65bb5f39ed60e600003b6ca6",
+      "text": "  思い出して手打ちしてるだけ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706778425,
+      "updated": 1706778432
+    },
+    {
+      "id": "65bb5f2ded60e600003b6ca5",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1706778413,
+      "updated": 1706778413
+    }
+  ]
+}
