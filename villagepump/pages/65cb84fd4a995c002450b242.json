@@ -1,0 +1,2339 @@
+{
+  "id": "65cb84fd4a995c002450b242",
+  "title": "navbar周りのUserCSSの再設計",
+  "created": 1707836803,
+  "updated": 1707843981,
+  "lines": [
+    {
+      "id": "65cb84fd4a995c002450b242",
+      "text": "navbar周りのUserCSSの再設計",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836803,
+      "updated": 1707836809
+    },
+    {
+      "id": "65cb9372ffff360000c710d4",
+      "text": "リファクタリングしたい気分だったので",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840370,
+      "updated": 1707840423
+    },
+    {
+      "id": "65cb9cb3ffff360000d18a29",
+      "text": "",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707842740,
+      "updated": 1707842740
+    },
+    {
+      "id": "65cb9c65ffff360000c710fa",
+      "text": "#2024/02/14 01:44",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707842662,
+      "updated": 1707842766
+    },
+    {
+      "id": "65cb9ccdffff360000d18a2a",
+      "text": " 適用してみました[per_terra.icon]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707842766,
+      "updated": 1707842771
+    },
+    {
+      "id": "65cb9cd0ffff360000d18a2b",
+      "text": "  問題があればロールバック、そうでなければそれぞれのページに変更を適用しようと思っています",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707842768,
+      "updated": 1707842876
+    },
+    {
+      "id": "65cb9c66ffff360000c710fb",
+      "text": " [/icons/感謝.icon][blu3mo.icon]",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1707842662,
+      "updated": 1707843689
+    },
+    {
+      "id": "65cba06279e1130000b48c0a",
+      "text": "",
+      "userId": "5d89b1f60230ae001779e113",
+      "created": 1707843682,
+      "updated": 1707843682
+    },
+    {
+      "id": "65cb8589ffff36000061b06c",
+      "text": "[* 既知の問題]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836809,
+      "updated": 1707840368
+    },
+    {
+      "id": "65cb937cffff360000c710d5",
+      "text": " brand iconが左にずれている",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840381,
+      "updated": 1707840450
+    },
+    {
+      "id": "65cb93c1ffff360000c710d9",
+      "text": "  [ScrapboxのBrand iconを井戸端にするUserCSS#62f398be5b98c20000cd0886]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840450,
+      "updated": 1707840543
+    },
+    {
+      "id": "65cb941fffff360000c710db",
+      "text": "   `margin-left: -4px`をしているらしい",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840543,
+      "updated": 1707840550
+    },
+    {
+      "id": "65cb93d8ffff360000c710da",
+      "text": " project titleの隣の日付が上にずれている",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840473,
+      "updated": 1707840595
+    },
+    {
+      "id": "65cb9467ffff360000c710dc",
+      "text": "  navbarのheightが40pxなのに対してproject-homeのheightは42px",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840616,
+      "updated": 1707840791
+    },
+    {
+      "id": "65cb9517ffff360000c710de",
+      "text": "   [scrapboxのトップページへのリンクをnav barに固定するUserCSS#61fe31a67838e300009a0f78]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840791,
+      "updated": 1707840795
+    },
+    {
+      "id": "65cb951cffff360000c710df",
+      "text": "    `top: -2px`とあるので下揃えで済ませているらしい",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840796,
+      "updated": 1707840842
+    },
+    {
+      "id": "65cb9564ffff360000c710e0",
+      "text": " project titleがPC環境を前提に配置されている",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840868,
+      "updated": 1707840889
+    },
+    {
+      "id": "65cb9579ffff360000c710e1",
+      "text": "  モバイル環境とかPWA環境とかで見るとちょっとずれて見える",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840889,
+      "updated": 1707840910
+    },
+    {
+      "id": "65cb9592ffff360000c710e2",
+      "text": "   下矢印がないとか、PWA環境だと戻るボタンが表示されるとか",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840914,
+      "updated": 1707840943
+    },
+    {
+      "id": "65cb9631ffff360000c710e3",
+      "text": " expandable menuが短くなっている",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841073,
+      "updated": 1707841108
+    },
+    {
+      "id": "65cb9640ffff360000c710e4",
+      "text": "  これは好みの問題か",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841089,
+      "updated": 1707841094
+    },
+    {
+      "id": "65cb9656ffff360000c710e5",
+      "text": "  project titleが常に見えていて欲しい人もいるかも",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841110,
+      "updated": 1707841160
+    },
+    {
+      "id": "65cb9382ffff360000c710d6",
+      "text": "",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840387,
+      "updated": 1707840387
+    },
+    {
+      "id": "65cb9768ffff360000c710e6",
+      "text": "[/icons/-.icon]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841384,
+      "updated": 1707841389
+    },
+    {
+      "id": "65cb85cdffff36000061b06f",
+      "text": "一旦元に戻す",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836878,
+      "updated": 1707836888
+    },
+    {
+      "id": "65cb85d7ffff36000061b070",
+      "text": "code:reset.css",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836888,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85daffff36000061b071",
+      "text": " /* https://scrapbox.io/villagepump/navbarが画面幅いっぱいに表示されるようになったのを元に戻すUserCSS */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b072",
+      "text": " .app .navbar .row {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b073",
+      "text": "     max-width: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b074",
+      "text": "     margin: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b075",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b076",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b077",
+      "text": " /* https://scrapbox.io/villagepump/プロジェクトタイトルの隣に今日の日付を表示するUserCSS */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b078",
+      "text": " .quick-launch .project-home {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b079",
+      "text": "     padding: 0 12px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b07a",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b07b",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b07c",
+      "text": " .quick-launch .project-home .title::after {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b07d",
+      "text": "     content: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b07e",
+      "text": "     margin-left: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b07f",
+      "text": "     padding: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b080",
+      "text": "     background-image: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b081",
+      "text": "     background-size: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b082",
+      "text": "     background-repeat: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b083",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b084",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b085",
+      "text": " /* https://scrapbox.io/villagepump/scrapboxのトップページへのリンクをnav_barに固定するUserCSS */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b086",
+      "text": " .quick-launch .project-home {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b087",
+      "text": "     position: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b088",
+      "text": "     top: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b089",
+      "text": "     left: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b08a",
+      "text": "     z-index: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b08b",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b08c",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b08d",
+      "text": " .quick-launch .project-home {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b08e",
+      "text": "     --tool-text-color: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b08f",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b090",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b091",
+      "text": " /* project titleの字体調節 */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b092",
+      "text": " /* https://scrapbox.io/villagepump/Settings#61fe3aa17838e30000725668 */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b093",
+      "text": " .quick-launch .project-home, .quick-launch .project-home .title {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b094",
+      "text": "     font-family: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b095",
+      "text": "     font-weight: 600;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b096",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b097",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb92e4ffff360000c710d2",
+      "text": " /* mobile edit menuを押せるように、.expandable-menuの長さを制限する */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840229,
+      "updated": 1707840238
+    },
+    {
+      "id": "65cb92eeffff360000c710d3",
+      "text": " /* Settings https://scrapbox.io/villagepump/Settings#62e5e0641280f0000006829e */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840238,
+      "updated": 1707840250
+    },
+    {
+      "id": "65cb92d2ffff360000c710ce",
+      "text": " .expandable-menu {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840211,
+      "updated": 1707840221
+    },
+    {
+      "id": "65cb92dcffff360000c710d0",
+      "text": " \tmax-width: calc(100% - 50px);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840221,
+      "updated": 1707840225
+    },
+    {
+      "id": "65cb92ddffff360000c710d1",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840221,
+      "updated": 1707840221
+    },
+    {
+      "id": "65cb92d3ffff360000c710cf",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707840211,
+      "updated": 1707840211
+    },
+    {
+      "id": "65cb85dbffff36000061b098",
+      "text": " /* https://scrapbox.io/villagepump/ScrapboxのBrand_iconを井戸端にするUserCSS */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b099",
+      "text": " body {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b09a",
+      "text": "     --logo-url: url(\"/assets/img/logo_cut.svg\");",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b09b",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b09c",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b09d",
+      "text": " .brand-icon {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b09e",
+      "text": "     content: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b09f",
+      "text": "     width: 32px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b0a0",
+      "text": "     height: 32px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b0a1",
+      "text": "     background-size: 100%;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b0a2",
+      "text": "     background-position: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b0a3",
+      "text": "     background-repeat: no-repeat;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b0a4",
+      "text": "     background-color: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b0a5",
+      "text": "     border-radius: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b0a6",
+      "text": "     border: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b0a7",
+      "text": "     background-origin: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b0a8",
+      "text": "     margin-left: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85dbffff36000061b0a9",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836891,
+      "updated": 1707836891
+    },
+    {
+      "id": "65cb85ccffff36000061b06d",
+      "text": "",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707836877,
+      "updated": 1707836877
+    },
+    {
+      "id": "65cb9774ffff360000c710e7",
+      "text": "[/icons/-.icon]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841396,
+      "updated": 1707841404
+    },
+    {
+      "id": "65cb9021ffff360000c710c3",
+      "text": "[navbarが画面幅いっぱいに表示されるようになったのを元に戻すUserCSS]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839521,
+      "updated": 1707839557
+    },
+    {
+      "id": "65cb881affff360000c71057",
+      "text": " [/per-terra/navbarの幅を制限する]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837467,
+      "updated": 1707839519
+    },
+    {
+      "id": "65cb8827ffff360000c7105a",
+      "text": "code:style.css",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837479,
+      "updated": 1707837484
+    },
+    {
+      "id": "65cb8823ffff360000c71059",
+      "text": "\t.app .navbar .row { /* TODO: .app を後で外す */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837476,
+      "updated": 1707838562
+    },
+    {
+      "id": "65cb882effff360000c7105f",
+      "text": " \tmax-width: 1200px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837487,
+      "updated": 1707837487
+    },
+    {
+      "id": "65cb882effff360000c71060",
+      "text": " \tmargin-right: auto;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837487,
+      "updated": 1707837487
+    },
+    {
+      "id": "65cb882effff360000c71061",
+      "text": " \tmargin-left: auto;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837487,
+      "updated": 1707837487
+    },
+    {
+      "id": "65cb882effff360000c71062",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837487,
+      "updated": 1707837487
+    },
+    {
+      "id": "65cb881affff360000c71058",
+      "text": "",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837467,
+      "updated": 1707837467
+    },
+    {
+      "id": "65cb904affff360000c710c4",
+      "text": "[scrapboxのトップページへのリンクをnav barに固定するUserCSS]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839563,
+      "updated": 1707839581
+    },
+    {
+      "id": "65cb8743ffff360000613d00",
+      "text": " [/per-terra/titleをnavbarに固定する]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837252,
+      "updated": 1707839561
+    },
+    {
+      "id": "65cb9987ffff360000c710f5",
+      "text": " brand iconが大きいのでそれに合わせて余白を変更",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841928,
+      "updated": 1707841943
+    },
+    {
+      "id": "65cb97bbffff360000c710f1",
+      "text": " プロジェクトタイトルが長いとき用にwidthを画面幅に合わせて狭めるコードが入ってるけど、「井戸端」程度では必要なさそう",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841468,
+      "updated": 1707841577
+    },
+    {
+      "id": "65cb873cffff360000613cfe",
+      "text": "code:style.css",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837245,
+      "updated": 1707837251
+    },
+    {
+      "id": "65cb873cffff360000613cff",
+      "text": "\t.container:has(.quick-launch) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837245,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d07",
+      "text": " \twidth: 100%;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d08",
+      "text": " \tmax-width: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d09",
+      "text": " \tpadding: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d0a",
+      "text": " \tmargin: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d0b",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb97a2ffff360000c710e8",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841443,
+      "updated": 1707841443
+    },
+    {
+      "id": "65cb8751ffff360000613d0c",
+      "text": " .quick-launch .flex-box {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d0d",
+      "text": " \tdisplay: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d0e",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb97a3ffff360000c710e9",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841444,
+      "updated": 1707841444
+    },
+    {
+      "id": "65cb8751ffff360000613d0f",
+      "text": " .quick-launch .flex-box .flex-item {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d10",
+      "text": " \tmin-width: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d11",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb97a4ffff360000c710ea",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841445,
+      "updated": 1707841445
+    },
+    {
+      "id": "65cb8751ffff360000613d12",
+      "text": " .quick-launch .flex-box .flex-item:has(.left-box) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d13",
+      "text": " \tcontainer-type: inline-size;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d14",
+      "text": " \tposition: fixed;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d15",
+      "text": " \ttop: 0;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d16",
+      "text": " \tz-index: 1000;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d17",
+      "text": " \twidth: 100%;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d18",
+      "text": " \theight: 40px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d19",
+      "text": " \tpointer-events: none;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d1a",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb97a5ffff360000c710eb",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841446,
+      "updated": 1707841446
+    },
+    {
+      "id": "65cb8751ffff360000613d1b",
+      "text": " .quick-launch .flex-box .flex-item:has(.right-box) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d1c",
+      "text": " \tpadding-right: 8px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d1d",
+      "text": " \tpadding-left: 8px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d1e",
+      "text": "     margin-right: auto;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d1f",
+      "text": "     margin-left: auto;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d20",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d21",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d22",
+      "text": " @media (min-width: 768px) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d23",
+      "text": " \t.quick-launch .flex-box .flex-item:has(.right-box) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d24",
+      "text": " \t\twidth: 736px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d25",
+      "text": " \t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d26",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d27",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d28",
+      "text": " @media (min-width: 992px) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d29",
+      "text": " \t.quick-launch .flex-box .flex-item:has(.right-box) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d2a",
+      "text": " \t\twidth: 956px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d2b",
+      "text": " \t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d2c",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d2d",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d2e",
+      "text": " @media (min-width: 1200px) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d2f",
+      "text": " \t.quick-launch .flex-box .flex-item:has(.right-box) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d30",
+      "text": " \t\twidth: 1156px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d31",
+      "text": " \t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d32",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d33",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d34",
+      "text": " @media (min-width: 992px) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d35",
+      "text": " \t.quick-launch .flex-box .flex-item:has(.right-box) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d36",
+      "text": " \t\twidth: calc(100% - 60px);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d37",
+      "text": " \t\tmax-width: 1200px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d38",
+      "text": " \t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d39",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d3a",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d3b",
+      "text": " @media (min-width: 768px) and (max-width: 991px) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d3c",
+      "text": " \t.quick-launch .flex-box .flex-item:has(.right-box) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d3d",
+      "text": " \t\twidth: calc(100% - 30px);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d3e",
+      "text": " \t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d3f",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb97a8ffff360000c710ec",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841448,
+      "updated": 1707841448
+    },
+    {
+      "id": "65cb8751ffff360000613d40",
+      "text": " .quick-launch .left-box { /* 非PWA; 下矢印なし */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d41",
+      "text": " \t--padding: 16px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d42",
+      "text": " \t--history-back-button: 30px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d43",
+      "text": " \t--brand-icon: 32px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d44",
+      "text": " \t--kamon-caret-down: 24px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d45",
+      "text": " \t--width-ratio: 0.3;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d46",
+      "text": " \t--col-brand: calc((100cqw - var(--padding) * 2) * var(--width-ratio));",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d47",
+      "text": " \t--col-brand-contents: var(--brand-icon);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d48",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d49",
+      "text": " \t--toggle-button: 24px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d4a",
+      "text": " \t--page-menu: calc(158px + var(--toggle-button));",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d4b",
+      "text": " \t--mobile-edit-tools: calc(280px + var(--toggle-button));",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d4c",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d4d",
+      "text": " \twidth: var(--col-brand);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d4e",
+      "text": " \tpadding-left: var(--col-brand-contents);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d4f",
+      "text": " \tmargin-left: var(--padding);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d50",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d51",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d52",
+      "text": " @media (max-width: 767px) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d53",
+      "text": " \t.quick-launch .left-box { ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d54",
+      "text": " \t\t--padding: 8px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d55",
+      "text": " \t\t--width-ratio: 0.7;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d56",
+      "text": " \t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d57",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d58",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d59",
+      "text": " .app:has(.navbar .kamon-caret-down) .quick-launch .left-box { /* 非PWA; 下矢印あり */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d5a",
+      "text": " \t--col-brand-contents: calc(var(--brand-icon) + var(--kamon-caret-down));",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d5b",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d5c",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d5d",
+      "text": " .app:has(.navbar .history-back-button) .quick-launch .left-box { /* PWA; 下矢印なし */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d5e",
+      "text": " \t--col-brand-contents: calc(var(--history-back-button) + var(--brand-icon));",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d5f",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d60",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d61",
+      "text": " .app:has(.navbar .history-back-button):has(.navbar .kamon-caret-down) .quick-launch .left-box { /* PWA; 下矢印あり */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d62",
+      "text": " \t--col-brand-contents: calc(var(--history-back-button) + var(--brand-icon) + var(--kamon-caret-down));",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d63",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb97adffff360000c710ed",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841453,
+      "updated": 1707841453
+    },
+    {
+      "id": "65cb8751ffff360000613d64",
+      "text": " .quick-launch .left-box > * {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d65",
+      "text": " \tpointer-events: auto;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d66",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb97adffff360000c710ee",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841454,
+      "updated": 1707841454
+    },
+    {
+      "id": "65cb8751ffff360000613d67",
+      "text": " .quick-launch .project-home {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d68",
+      "text": " \tmin-height: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d69",
+      "text": " \t/* padding: 0 6px; */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707841717
+    },
+    {
+      "id": "65cb98b5ffff360000c710f3",
+      "text": " \tpadding: 0 8px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841717,
+      "updated": 1707841724
+    },
+    {
+      "id": "65cb8751ffff360000613d6a",
+      "text": " \tborder: unset;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d6b",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb97afffff360000c710ef",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841455,
+      "updated": 1707841455
+    },
+    {
+      "id": "65cb8751ffff360000613d6c",
+      "text": " .app:not(:has(.navbar .kamon-caret-down)) .quick-launch .project-home {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d6d",
+      "text": " \t/* margin-left: 2px; */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707841838
+    },
+    {
+      "id": "65cb992dffff360000c710f4",
+      "text": " \tmargin-left: 4px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841838,
+      "updated": 1707841849
+    },
+    {
+      "id": "65cb8751ffff360000613d6e",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb97b0ffff360000c710f0",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841456,
+      "updated": 1707841456
+    },
+    {
+      "id": "65cb8751ffff360000613d6f",
+      "text": " @media (max-width: 767px) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d70",
+      "text": " \t.app:has(.page-menu.xs) .quick-launch .left-box {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d71",
+      "text": " \t\t--expandable-menu: var(--page-menu);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d72",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d73",
+      "text": " \t\tclip-path: inset(0 max(var(--padding) + var(--col-brand) - (100cqw - var(--expandable-menu)), 0px) 0 0);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d74",
+      "text": " \t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d75",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d76",
+      "text": " \t.app:has(.page-menu.xs.mobile-edit-tools) .quick-launch .left-box {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d77",
+      "text": " \t\t--expandable-menu: var(--mobile-edit-tools);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d78",
+      "text": " \t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8751ffff360000613d79",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837265,
+      "updated": 1707837265
+    },
+    {
+      "id": "65cb8744ffff360000613d01",
+      "text": "",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837253,
+      "updated": 1707837253
+    },
+    {
+      "id": "65cb9065ffff360000c710c5",
+      "text": "[プロジェクトタイトルの隣に今日の日付を表示するUserCSS]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839589,
+      "updated": 1707839603
+    },
+    {
+      "id": "65cb86b6ffff36000061b0c7",
+      "text": " [/per-terra/titleの隣に今日の日付を表示する]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837111,
+      "updated": 1707839589
+    },
+    {
+      "id": "65cb99acffff360000c710f6",
+      "text": " [navbar周りのUserCSSの再設計#65cb9987ffff360000c710f5]と同様に余白を変更",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841964,
+      "updated": 1707841993
+    },
+    {
+      "id": "65cb869affff36000061b0b0",
+      "text": "code:style.css",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837083,
+      "updated": 1707837104
+    },
+    {
+      "id": "65cb86b0ffff36000061b0b2",
+      "text": " .quick-launch .project-home::after {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837105,
+      "updated": 1707837109
+    },
+    {
+      "id": "65cb86b4ffff36000061b0bd",
+      "text": " \tdisplay: block;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837109,
+      "updated": 1707837109
+    },
+    {
+      "id": "65cb86b4ffff36000061b0be",
+      "text": " \tflex-shrink: 0;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837109,
+      "updated": 1707837109
+    },
+    {
+      "id": "65cb86b4ffff36000061b0bf",
+      "text": " \theight: 36px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837109,
+      "updated": 1707837109
+    },
+    {
+      "id": "65cb86b4ffff36000061b0c0",
+      "text": " \taspect-ratio: 4 / 3;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837109,
+      "updated": 1707837109
+    },
+    {
+      "id": "65cb86b4ffff36000061b0c1",
+      "text": " \t/* margin-left: 6px; */",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837109,
+      "updated": 1707841658
+    },
+    {
+      "id": "65cb9879ffff360000c710f2",
+      "text": " \tmargin-left: 10px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707841658,
+      "updated": 1707841664
+    },
+    {
+      "id": "65cb86b4ffff36000061b0c2",
+      "text": " \tcontent: \"\";",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837109,
+      "updated": 1707837109
+    },
+    {
+      "id": "65cb86b4ffff36000061b0c3",
+      "text": " \tbackground-image: url(\"https://daiiz-apps.appspot.com/today/jp.svg\");",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837109,
+      "updated": 1707837109
+    },
+    {
+      "id": "65cb86b4ffff36000061b0c4",
+      "text": " \tbackground-repeat: no-repeat;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837109,
+      "updated": 1707837109
+    },
+    {
+      "id": "65cb86b4ffff36000061b0c5",
+      "text": " \tbackground-size: contain;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837109,
+      "updated": 1707837109
+    },
+    {
+      "id": "65cb86b4ffff36000061b0c6",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837109,
+      "updated": 1707837109
+    },
+    {
+      "id": "65cb86acffff36000061b0b1",
+      "text": "",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837101,
+      "updated": 1707837101
+    },
+    {
+      "id": "65cb8879ffff360000c71063",
+      "text": "[/per-terra/navbarの幅を制限するとnavbarに固定したtitleがずれるのを修正する]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837562,
+      "updated": 1707840021
+    },
+    {
+      "id": "65cb8879ffff360000c71064",
+      "text": "code:style.css",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837562,
+      "updated": 1707837574
+    },
+    {
+      "id": "65cb8886ffff360000c71066",
+      "text": " .quick-launch .flex-box .flex-item:has(.left-box) {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837575,
+      "updated": 1707837578
+    },
+    {
+      "id": "65cb8889ffff360000c71067",
+      "text": " \tleft: max((100% - 1200px) / 2 - 16px, 0px);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837578,
+      "updated": 1707837578
+    },
+    {
+      "id": "65cb8889ffff360000c71068",
+      "text": " \tmax-width: calc(1200px + 16px * 2);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837578,
+      "updated": 1707837578
+    },
+    {
+      "id": "65cb8889ffff360000c71069",
+      "text": " \tmargin-right: auto;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837578,
+      "updated": 1707837578
+    },
+    {
+      "id": "65cb8889ffff360000c7106a",
+      "text": " \tmargin-left: auto;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837578,
+      "updated": 1707837578
+    },
+    {
+      "id": "65cb8889ffff360000c7106b",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837578,
+      "updated": 1707837578
+    },
+    {
+      "id": "65cb8881ffff360000c71065",
+      "text": "",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837569,
+      "updated": 1707837569
+    },
+    {
+      "id": "65cb87d1ffff360000c71054",
+      "text": "[** 井戸端用のカスタム]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837394,
+      "updated": 1707837614
+    },
+    {
+      "id": "65cb8b0cffff360000c7107d",
+      "text": "[ScrapboxのBrand iconを井戸端にするUserCSS]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838220,
+      "updated": 1707839652
+    },
+    {
+      "id": "65cb8ab7ffff360000c7107a",
+      "text": "code:style.css",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838136,
+      "updated": 1707838139
+    },
+    {
+      "id": "65cb8a9fffff360000c71078",
+      "text": "\t.brand-icon {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838112,
+      "updated": 1707838142
+    },
+    {
+      "id": "65cb8abeffff360000c7107b",
+      "text": "\t\t--logo-url: url(\"/api/pages/villagepump/brand-icon/icon\");",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838142,
+      "updated": 1707838201
+    },
+    {
+      "id": "65cb8b1affff360000c7107e",
+      "text": "\t\t",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838235,
+      "updated": 1707838235
+    },
+    {
+      "id": "65cb8b76ffff360000c71083",
+      "text": "\t\twidth: 40px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838327,
+      "updated": 1707838345
+    },
+    {
+      "id": "65cb8b89ffff360000c71084",
+      "text": "\t\theight: 40px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838345,
+      "updated": 1707838349
+    },
+    {
+      "id": "65cba18affff360000ffcc94",
+      "text": "\t\tbackground-color: white;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707843978,
+      "updated": 1707843978
+    },
+    {
+      "id": "65cba18bffff360000ffcc96",
+      "text": "\t\tbackground-position: center;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707843980,
+      "updated": 1707843980
+    },
+    {
+      "id": "65cba18cffff360000ffcc97",
+      "text": "\t\tbackground-size: cover;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707843981,
+      "updated": 1707843981
+    },
+    {
+      "id": "65cb8b74ffff360000c71082",
+      "text": "\t\tborder: 4px solid transparent;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838325,
+      "updated": 1707838325
+    },
+    {
+      "id": "65cb8b2dffff360000c71080",
+      "text": "\t\tborder-radius: 50%;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838254,
+      "updated": 1707838261
+    },
+    {
+      "id": "65cb8abeffff360000c7107c",
+      "text": "\t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838143,
+      "updated": 1707838143
+    },
+    {
+      "id": "65cb8beeffff360000c71085",
+      "text": "\t",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838447,
+      "updated": 1707838447
+    },
+    {
+      "id": "65cb8befffff360000c71086",
+      "text": "\t.quick-launch .left-box {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838447,
+      "updated": 1707838450
+    },
+    {
+      "id": "65cb8bf1ffff360000c71087",
+      "text": "\t\t--brand-icon: 40px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838450,
+      "updated": 1707838458
+    },
+    {
+      "id": "65cb8bf1ffff360000c71088",
+      "text": "\t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838450,
+      "updated": 1707838450
+    },
+    {
+      "id": "65cb8a9fffff360000c71079",
+      "text": "",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838112,
+      "updated": 1707838112
+    },
+    {
+      "id": "65cb91caffff360000c710cd",
+      "text": "[scrapboxのトップページへのリンクをnav barに固定するUserCSS#61fe31a67838e300009a0f8e]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839947,
+      "updated": 1707839947
+    },
+    {
+      "id": "65cb87d6ffff360000c71056",
+      "text": "code:style.css",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837399,
+      "updated": 1707837410
+    },
+    {
+      "id": "65cb8a58ffff360000c71074",
+      "text": "\t.quick-launch .project-home {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838041,
+      "updated": 1707838056
+    },
+    {
+      "id": "65cb8a5fffff360000c71076",
+      "text": "\t\t--tool-text-color: white;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838048,
+      "updated": 1707838048
+    },
+    {
+      "id": "65cb8a5dffff360000c71075",
+      "text": "\t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838046,
+      "updated": 1707838047
+    },
+    {
+      "id": "65cb919cffff360000c710ca",
+      "text": "",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839901,
+      "updated": 1707839905
+    },
+    {
+      "id": "65cb91a7ffff360000c710cc",
+      "text": "[Settings#61fe3aa17838e30000725668]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839912,
+      "updated": 1707839912
+    },
+    {
+      "id": "65cb919effff360000c710cb",
+      "text": "code:style.css",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839905,
+      "updated": 1707839906
+    },
+    {
+      "id": "65cb87d4ffff360000c71055",
+      "text": "\t.quick-launch .project-home .title {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837396,
+      "updated": 1707837674
+    },
+    {
+      "id": "65cb8a19ffff360000c71072",
+      "text": "\t\tfont-family: serif;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837977,
+      "updated": 1707837982
+    },
+    {
+      "id": "65cb8a1dffff360000c71073",
+      "text": "\t\tfont-weight: 400;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837982,
+      "updated": 1707838008
+    },
+    {
+      "id": "65cb88eaffff360000c71070",
+      "text": "\t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837674,
+      "updated": 1707837674
+    },
+    {
+      "id": "65cb88e5ffff360000c7106d",
+      "text": "",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707837670,
+      "updated": 1707837670
+    },
+    {
+      "id": "65cb8ceaffff360000c71089",
+      "text": "[brand-iconをふりかけにするUserCSS]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838699,
+      "updated": 1707838699
+    },
+    {
+      "id": "65cb90d7ffff360000c710c8",
+      "text": " 再構築に伴って不要な記述を削除",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839704,
+      "updated": 1707839846
+    },
+    {
+      "id": "65cb9167ffff360000c710c9",
+      "text": "  brand-iconのmargin-leftを考慮していた部分を削除",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839848,
+      "updated": 1707839873
+    },
+    {
+      "id": "65cb8cebffff360000c7108a",
+      "text": "code:style.css",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838699,
+      "updated": 1707838711
+    },
+    {
+      "id": "65cb8cf7ffff360000c7108c",
+      "text": " :root {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839804
+    },
+    {
+      "id": "65cb8cf7ffff360000c7108d",
+      "text": "   --furikake-high-bottom: 15px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707838711
+    },
+    {
+      "id": "65cb8cf7ffff360000c7108e",
+      "text": "   --furikake-high-left: -7px;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707838711
+    },
+    {
+      "id": "65cb8cf7ffff360000c71090",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707838711
+    },
+    {
+      "id": "65cb8d02ffff360000c710af",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838723,
+      "updated": 1707838723
+    },
+    {
+      "id": "65cb8cf7ffff360000c71091",
+      "text": " @keyframes brand-furikake {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707838711
+    },
+    {
+      "id": "65cb8cf7ffff360000c71092",
+      "text": " \t0% {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839179
+    },
+    {
+      "id": "65cb8e26ffff360000c710b6",
+      "text": " \t\tmargin: 0;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839015,
+      "updated": 1707839180
+    },
+    {
+      "id": "65cb8cf7ffff360000c71094",
+      "text": " \t\ttransform: rotate(0deg);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839180
+    },
+    {
+      "id": "65cb8cf7ffff360000c71095",
+      "text": " \t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839178
+    },
+    {
+      "id": "65cb8cf7ffff360000c71096",
+      "text": " \t25% {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839177
+    },
+    {
+      "id": "65cb8e0affff360000c710b5",
+      "text": " \t\tmargin: 0 0 var(--furikake-high-bottom) var(--furikake-high-left);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838987,
+      "updated": 1707839182
+    },
+    {
+      "id": "65cb8cf7ffff360000c71098",
+      "text": " \t\ttransform: rotate(150deg);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839183
+    },
+    {
+      "id": "65cb8cf7ffff360000c71099",
+      "text": " \t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839176
+    },
+    {
+      "id": "65cb8cf7ffff360000c7109a",
+      "text": " \t30.0% { margin: 0 0 var(--furikake-high-bottom) var(--furikake-high-left); }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839175
+    },
+    {
+      "id": "65cb8cf7ffff360000c7109b",
+      "text": " \t36.7% { margin: 0 0 0 var(--furikake-low-left); }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839175
+    },
+    {
+      "id": "65cb8cf7ffff360000c7109c",
+      "text": " \t43.3% { margin: 0 0 var(--furikake-high-bottom) var(--furikake-high-left); }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839174
+    },
+    {
+      "id": "65cb8cf7ffff360000c7109d",
+      "text": " \t50.0% { margin: 0 0 0 var(--furikake-low-left); }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839172
+    },
+    {
+      "id": "65cb8cf7ffff360000c7109e",
+      "text": " \t85% {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839172
+    },
+    {
+      "id": "65cb8cf7ffff360000c7109f",
+      "text": " \t\ttransform: rotate(150deg);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839185
+    },
+    {
+      "id": "65cb8cf7ffff360000c710a0",
+      "text": " \t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839171
+    },
+    {
+      "id": "65cb8cf7ffff360000c710a1",
+      "text": " \t100% {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839169
+    },
+    {
+      "id": "65cb8cf7ffff360000c710a2",
+      "text": " \t\tmargin: 0;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839186
+    },
+    {
+      "id": "65cb8cf7ffff360000c710a3",
+      "text": " \t\ttransform: rotate(0deg);",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839186
+    },
+    {
+      "id": "65cb8cf7ffff360000c710a4",
+      "text": " \t}",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707839167
+    },
+    {
+      "id": "65cb8cf7ffff360000c710a5",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838711,
+      "updated": 1707838711
+    },
+    {
+      "id": "65cb8efeffff360000c710b9",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839231,
+      "updated": 1707839231
+    },
+    {
+      "id": "65cb8efeffff360000c710ba",
+      "text": " .navbar-brand .brand-icon {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839231,
+      "updated": 1707839294
+    },
+    {
+      "id": "65cb8efeffff360000c710bb",
+      "text": " \tanimation-duration: 1.5s;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839231,
+      "updated": 1707839251
+    },
+    {
+      "id": "65cb8efeffff360000c710bc",
+      "text": " \tanimation-timing-function: ease;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839231,
+      "updated": 1707839251
+    },
+    {
+      "id": "65cb8efeffff360000c710bd",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839231,
+      "updated": 1707839238
+    },
+    {
+      "id": "65cb8f5cffff360000c710c1",
+      "text": " ",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839324,
+      "updated": 1707839324
+    },
+    {
+      "id": "65cb8efeffff360000c710be",
+      "text": " .navbar-brand:hover .brand-icon {",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839231,
+      "updated": 1707839298
+    },
+    {
+      "id": "65cb8efeffff360000c710bf",
+      "text": " \tanimation-name: brand-furikake;",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839231,
+      "updated": 1707839253
+    },
+    {
+      "id": "65cb8efeffff360000c710c0",
+      "text": " }",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707839231,
+      "updated": 1707839244
+    },
+    {
+      "id": "65cb8cf3ffff360000c7108b",
+      "text": "",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707838709,
+      "updated": 1707838709
+    },
+    {
+      "id": "65cb9a57ffff3600003bb2cb",
+      "text": "[UserCSS.icon]",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707842136,
+      "updated": 1707842136
+    },
+    {
+      "id": "65cb9a57ffff3600003bb2cc",
+      "text": "",
+      "userId": "5f1d18b112e799001effff36",
+      "created": 1707842136,
+      "updated": 1707842136
+    }
+  ]
+}
