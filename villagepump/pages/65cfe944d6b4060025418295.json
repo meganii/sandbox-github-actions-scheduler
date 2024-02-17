@@ -1,0 +1,1093 @@
+{
+  "id": "65cfe944d6b4060025418295",
+  "title": "Gyazzみたいなエディタ作りでReact.jsを学ぶ: TypeScript/Deno化",
+  "created": 1708124486,
+  "updated": 1708179142,
+  "lines": [
+    {
+      "id": "65cfe944d6b4060025418295",
+      "text": "Gyazzみたいなエディタ作りでReact.jsを学ぶ: TypeScript/Deno化",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c78e",
+      "text": "from [Gyazzみたいなエディタ作りでReact.jsを学ぶ]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe94e6eb406000022c7d5",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124495,
+      "updated": 1708124495
+    },
+    {
+      "id": "65cfe9586eb406000022c7d6",
+      "text": "[** 強引なDeno推し(感謝]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124505,
+      "updated": 1708133760
+    },
+    {
+      "id": "65cfe9446eb406000022c790",
+      "text": "[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c791",
+      "text": " 今Denoで書き換えてます",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c792",
+      "text": " \t強引なDeno推しを受けているw[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c793",
+      "text": " \t\t気にはなるけど、採用するかは考えさせてください",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c794",
+      "text": " 大量の型エラーが発生している。おそらくバグってる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c795",
+      "text": " どうしてこんなに[React.forwardRef]が使われているんだ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c796",
+      "text": " `Ref.current`に`Ref[]`をつっこむという見たことない手段使っている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c797",
+      "text": " 　しかもrendering毎に[createRef()]で初期化しまくっているので意味がなくなっている用に思う",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c798",
+      "text": " 　あ、過去にも似たような質問してた",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c799",
+      "text": "　なるべくロジックには手を加えず、型エラー中心に直します",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c79a",
+      "text": "　できた！",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c79b",
+      "text": "　 draft PRしておきます",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c79c",
+      "text": "　 https://github.com/inajob/simple-inline-editor/pull/1",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c79d",
+      "text": "　 JSからTSに変えただけなので、Nodeに戻すこともできます",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c79e",
+      "text": "　 　その場合は`import ... from \"....ts(x)\"`の`.ts(x)`を全て消し、`deps.ts`,`deno.jsonc`,`deno.lock`,`.vscode/settings.json`を消し、`package.json`,`tsconfig.json`,`.eslintrc.json`,`prettier.json`を入れる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c79f",
+      "text": "　 　 あー,Nodeに切り替えると、TSとlinterとformatterの設定が必要になるのか……めんどくさい～[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7a0",
+      "text": "　 わーい、勉強します[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7a1",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7a2",
+      "text": "聞きたいこと",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7a3",
+      "text": " `popupHandlers[popup.index].handler()`が動作しない可能性がある",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7a4",
+      "text": "  `TextareaWithMenu`にて`popupHandlers[].handler()`はある条件のとき引数なし函数に変換される[. https://github.com/inajob/simple-inline-editor/blob/244f388d7c738130ad61b6748036cbbd3537e7ed/src/components/TextareaWithMenu.js#L115-L136]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7a5",
+      "text": "  しかし条件に当てはまらないときは、`select`を渡さないと実行時エラーを引き起こす",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7a6",
+      "text": "  \t手元だと動くけど、型に厳密にやろうとするとエラーになる感じですかね？[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7a7",
+      "text": "  \tなります。ただ実行エラーはおきないようです[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7a8",
+      "text": "   \t`select.selection === \"\" && candidate !== \"\"`のときは`popupHandlers`が`{ name: string; hadler: () => void }[]`に、[- そうでないときは]`{ name: string; handler: (select: TextFragment) => void }[]`[- になる]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7a9",
+      "text": "   \t 勘違いしてた。そうでないときは`{ name: string; handler: (select: TextFragment) => { target: { value: string; } } }[]`になる[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7aa",
+      "text": "   \t返り値が`void`なので型エラーになる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7ab",
+      "text": "   \tただし、コード上は返り値があるかどうかのチェックを入れているので、実行時エラーは起きない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7ac",
+      "text": "   \t[https://code2svg.vercel.app/svg/L225-229/https://raw.githubusercontent.com/takker99/simple-inline-editor/38a019a5024744c36b7aea771c3dc86608077263/components/TextareaWithMenu.tsx#.svg https://github.com/takker99/simple-inline-editor/blob/38a019a5024744c36b7aea771c3dc86608077263/components/TextareaWithMenu.tsx#L225-L229]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7ad",
+      "text": "  `handler()`は返り値がないはずだが、[L178 https://github.com/inajob/simple-inline-editor/blob/244f388d7c738130ad61b6748036cbbd3537e7ed/src/components/TextareaWithMenu.js#L178]で返り値を使っている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7ae",
+      "text": "  \thttps://github.com/inajob/simple-inline-editor/blob/244f388d7c738130ad61b6748036cbbd3537e7ed/src/components/App.js#L18 みたいなのを想定してます[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7af",
+      "text": "  \t\tが、引数なし関数の方と一貫してないな・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7b0",
+      "text": "  \t\t 引数なしのほうは返してませんね[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7b1",
+      "text": "  \t\t上の話もあるしselectを渡して返り値で行の書き換えを指示する方法に統一するほうが良さそうな気がしてます",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7b2",
+      "text": " \t勘違いしてました。`{ name: string; handler: (select: TextFragment) => Event | void }[]`という想定だったんですね[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7b3",
+      "text": " \t これなら問題ない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7b4",
+      "text": " \t `target`を指定して`Event`を作るのは無理があるので、ここの型定義を工夫する必要あり",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7b5",
+      "text": " \t  `React.ChangeEvent`も`{ target: { value: string; } }`も受け取れるように設計し直す",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7b6",
+      "text": " \t  あっだめだ。[Editor.jsのonChangeの定義 https://github.com/inajob/simple-inline-editor/blob/244f388d7c738130ad61b6748036cbbd3537e7ed/src/components/Editor.js#L194-L199]で`target.selectionStart`などを使っているから、戻り値を`{ target: { value: string; } }`にするとエラーになる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7b7",
+      "text": " \t  これ以上は、このあたりのロジックが何をしようとしているのか理解しないと修正できなさそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7b8",
+      "text": " `props.setLine()`の引数は`{ prefix: string; selection: string; suffix: string; }`のはずだが、`string`を渡している[箇所 https://github.com/inajob/simple-inline-editor/blob/244f388d7c738130ad61b6748036cbbd3537e7ed/src/components/TextareaWithMenu.js#L132]がある",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7b9",
+      "text": " \tsetSelectのことかな？setLineだとしたら例をどこか示してもらえると理解できるかも[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7ba",
+      "text": "  URL貼りました[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7bb",
+      "text": "  https://github.com/inajob/simple-inline-editor/blob/244f388d7c738130ad61b6748036cbbd3537e7ed/src/components/Editor.js#L171 で作った関数なので、`string`1つの引数が正解という認識です[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7bc",
+      "text": "  ごめんなさい、ここは自分のreadingミスです[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7bd",
+      "text": "  　`LineProps.setLine`と`TextareaWithMenu.setLine`の型定義を勘違いしていた",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7be",
+      "text": "  　[直しました https://github.com/takker99/simple-inline-editor/commit/9b339534ea97f3ed702173e94e0c8662825dacca]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7bf",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe96b6eb406000022c7d7",
+      "text": "[** 勉強してみる]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124524,
+      "updated": 1708124882
+    },
+    {
+      "id": "65cfe9446eb406000022c7c0",
+      "text": "[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7c1",
+      "text": "\t[takker.icon]さんからのPRについて、今後の作業",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7c2",
+      "text": "\t\t動作の確認",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9c76eb406000022c7dd",
+      "text": "\t\t\tなんか動いてそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124616,
+      "updated": 1708124619
+    },
+    {
+      "id": "65cfe9ca6eb406000022c7de",
+      "text": "\t\t\t❓SourceMapが生成されてないのでconsole.logの出力がどこの物かわからない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124619,
+      "updated": 1708125522
+    },
+    {
+      "id": "65cfe9e36eb406000022c7df",
+      "text": "\t\t\t\tdeno.jsoncにsourceMapの設定ができるようだが、設定しても有効になっている様子が無い",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124644,
+      "updated": 1708124665
+    },
+    {
+      "id": "65cfed9c1280f0000037a68e",
+      "text": "\t\t\t\tbundled codeを見ればだいたいわかります[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708125597,
+      "updated": 1708125633
+    },
+    {
+      "id": "65cff8d51280f0000003de9b",
+      "text": "\t\t\t\t (packupの場合)型を搾り取ったコードを順番に羅列しているだけなので、[minify]したコードより素直です",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708128470,
+      "updated": 1708128525
+    },
+    {
+      "id": "65cff90d1280f0000003de9c",
+      "text": "\t\t\t\t minified codeでもformatすれば元のコードの構造とほぼ同じなので見当づきます",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708128526,
+      "updated": 1708128560
+    },
+    {
+      "id": "65cfedf46eb4060000c76da7",
+      "text": "\t\t\t\t\tまぁ確かに・・[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708125685,
+      "updated": 1708125691
+    },
+    {
+      "id": "65cfe9446eb406000022c7c3",
+      "text": "\t\tじっくり差分を見て感想を書く",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708179118
+    },
+    {
+      "id": "65cfe9446eb406000022c7c4",
+      "text": "\t\t\tTypeScriptをちゃんと読むのは初めてだと思う",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7c5",
+      "text": "\t\t\tそうなんだ[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7c6",
+      "text": "\t\t\t [inajob.icon]さんがよく書くのはGoとかC++だっけ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7c7",
+      "text": "\t\t\t \t最近はGoが多いけど、、人のコードを直したり、機能を足したりが多いのでなかなか体系的には学べていません[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7c8",
+      "text": "\t\t\t \t\tよくない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7c9",
+      "text": "\t\t\t \t\t仕事だと[そーっと周りに影響を与えないようにメスを入れるみたいな謎の能力]を求められる・・",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1708124486,
+      "updated": 1708128714
+    },
+    {
+      "id": "65cfe9446eb406000022c7ca",
+      "text": "\t\t\t \t\t\tこんな仕事ばかりやっていると1からコーディンする能力がどんどん下がっていく",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7cb",
+      "text": "\t\t\t \t\t\t\t下がるとそういう仕事が来なくなる・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7cc",
+      "text": "\t\t\t \t\t\t\t\t悪循環",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7cd",
+      "text": "\t\t\t フロントエンドをやっていた頃はJavaScriptをよく書いていました（結構昔なのでもう色々違っていますが・・）[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfeba06eb406000022c7eb",
+      "text": "\t\t\tDeno",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708125089,
+      "updated": 1708125102
+    },
+    {
+      "id": "65cfea226eb406000022c7e0",
+      "text": " \t\t\tdeps.ts",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124707,
+      "updated": 1708125093
+    },
+    {
+      "id": "65cfea2d6eb406000022c7e1",
+      "text": " \t\t\t\tここに依存を寄せるのがDenoの1つのやり方らしい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124718,
+      "updated": 1708125093
+    },
+    {
+      "id": "65d08a8c1280f00000bd51ef",
+      "text": " \t\t\t\tfreshとかのフレームワーク系は[import map]を使っている印象[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708165771,
+      "updated": 1708165794
+    },
+    {
+      "id": "65cfeba66eb406000022c7ec",
+      "text": " \t\tTypeScript",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708125095,
+      "updated": 1708125100
+    },
+    {
+      "id": "65cfea396eb406000022c7e2",
+      "text": " \t\t\t拡張子はtsx, tsを使い分ける必要あり",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708125096,
+      "updated": 1708125106
+    },
+    {
+      "id": "65cfea4a6eb406000022c7e3",
+      "text": " \t\t\t\ttsのファイルの中にJSXを書くとビルドが失敗する",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124747,
+      "updated": 1708125106
+    },
+    {
+      "id": "65cfea586eb406000022c7e4",
+      "text": " \t\t\tReact.FC？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124761,
+      "updated": 1708125106
+    },
+    {
+      "id": "65cfea616eb406000022c7e5",
+      "text": " \t\t\t\tReactの型定義をいい感じにするものらしい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124770,
+      "updated": 1708125106
+    },
+    {
+      "id": "65cfea6d6eb406000022c7e7",
+      "text": " \t\t\t\t仕組みはよくわからんが、使い方は見たらだいたいわかる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124782,
+      "updated": 1708125106
+    },
+    {
+      "id": "65cfea786eb406000022c7e8",
+      "text": " \t\t\tuseForwardRefがなにか込み入っている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124793,
+      "updated": 1708125106
+    },
+    {
+      "id": "65cfea856eb406000022c7e9",
+      "text": " \t\t\t\thttps://stackoverflow.com/a/73748435 からとってきたものらしい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124806,
+      "updated": 1708125106
+    },
+    {
+      "id": "65cfed531280f0000037a68d",
+      "text": " \t\t\t\t被せないと型エラーを解決できませんでした[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708125523,
+      "updated": 1708125548
+    },
+    {
+      "id": "65cfebe66eb406000022c7ed",
+      "text": " \t\t\t型をチェックしているIF文、nullを想定したプロパティアクセス",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708125159,
+      "updated": 1708125184
+    },
+    {
+      "id": "65cfeb7c6eb406000022c7ea",
+      "text": "\t \t\t\tifの条件でinstanceOfとかをAnd条件でつなげると、型推論してくれる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708125053,
+      "updated": 1708125185
+    },
+    {
+      "id": "65cfec026eb406000022c7ee",
+      "text": "\t \t\t\tnullの可能性があるときにそのままプロパティにアクセスするのはNG",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708125187,
+      "updated": 1708125217
+    },
+    {
+      "id": "65cfecd16eb406000022c7ef",
+      "text": "\t \t\t\t\t`?.` でアクセスする(オプションチェーン演算子)",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708125394,
+      "updated": 1708125483
+    },
+    {
+      "id": "65cfecee6eb406000022c7f0",
+      "text": "\t \t\t\t非nullアサーション`!`",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708125423,
+      "updated": 1708125439
+    },
+    {
+      "id": "65cfed251280f0000037a68b",
+      "text": "\t \t\t\t あんまりやりたくない[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708125478,
+      "updated": 1708125488
+    },
+    {
+      "id": "65cfed361280f0000037a68c",
+      "text": "\t \t\t\t  バグの元",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708125495,
+      "updated": 1708125507
+    },
+    {
+      "id": "65cfeedb6eb4060000c76da8",
+      "text": "\t \t\t`React.ClipboardEventHandler<HTMLTextAreaElement>`",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708125916,
+      "updated": 1708125920
+    },
+    {
+      "id": "65cfeee36eb4060000c76da9",
+      "text": "\t \t\t\tイベントハンドラはこういう型になる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708125924,
+      "updated": 1708125936
+    },
+    {
+      "id": "65cfeef26eb4060000c76daa",
+      "text": "\t \t\t\t要素の種類も関係してくる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708125939,
+      "updated": 1708125956
+    },
+    {
+      "id": "65cfef9f6eb4060000c76dae",
+      "text": "\t \t\tJavaScriptでのサンプルを見つけてきたときに、そのまま真似して書くだけでは済まないのがやや面倒",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708126112,
+      "updated": 1708126150
+    },
+    {
+      "id": "65cfefc56eb4060000c76daf",
+      "text": "\t \t\t\t[型の恩恵]をどの程度感じるかだな、これは慣れかも",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1708126150,
+      "updated": 1708128261
+    },
+    {
+      "id": "65cff79f1280f0000003de95",
+      "text": "\t \t\t\tTypeScriptに書き換える代わりに、JavaScriptに`//@ts-check`と[JSDoc]を付けるだけでも同じ恩恵を得られます[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708128159,
+      "updated": 1708128225
+    },
+    {
+      "id": "65cff7bd1280f0000003de96",
+      "text": "\t \t\t\t そのままweb browserでもうごかせますし、まずはこっちのほうが楽かも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708128190,
+      "updated": 1708128255
+    },
+    {
+      "id": "65d0b4846eb4060000e59721",
+      "text": "\t \t\thttps://github.com/inajob/simple-inline-editor/blob/9b339534ea97f3ed702173e94e0c8662825dacca/components/TextareaWithMenu.tsx#L170 ここのifでのチェックはあったほうが良いのはわかるけど、特にこれを書かなくても警告になったりしないように見える",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708176518,
+      "updated": 1708176550
+    },
+    {
+      "id": "65d0b5926eb4060000e59722",
+      "text": "\t \t\t\tこういうのは人間が気を遣って書くもの？ or 何か検出する手段がある？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708176788,
+      "updated": 1708176802
+    },
+    {
+      "id": "65d0bbf76eb4060000e59737",
+      "text": "\t \t\thttps://github.com/inajob/simple-inline-editor/blob/9b339534ea97f3ed702173e94e0c8662825dacca/components/Line.tsx#L106 ここは自分の環境だと赤線が入っている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708178425,
+      "updated": 1708178435
+    },
+    {
+      "id": "65d0bc026eb4060000e59738",
+      "text": "\t \t\t\t`const result: React.ReactNode = [];` で良さそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708178436,
+      "updated": 1708178454
+    },
+    {
+      "id": "65cfef3f6eb4060000c76dab",
+      "text": "\t \tその他",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708126016,
+      "updated": 1708126019
+    },
+    {
+      "id": "65cfef426eb4060000c76dac",
+      "text": "\t \t\t`// eslint-disable-next-line react-hooks/exhaustive-deps`",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708126019,
+      "updated": 1708126021
+    },
+    {
+      "id": "65cfef456eb4060000c76dad",
+      "text": "\t \t\t\tuseEffectで依存オブジェクトが無い事を強行する",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708126022,
+      "updated": 1708126038
+    },
+    {
+      "id": "65cff8031280f0000003de97",
+      "text": "\t \t\t\tそれ無視しちゃだめな警告のような……[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708128260,
+      "updated": 1708128270
+    },
+    {
+      "id": "65cff8296eb4060000010048",
+      "text": "\t \t\t\tあとで精査しよう、起動時に一回走れば良さそうな処理に見える[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708128297,
+      "updated": 1708128315
+    },
+    {
+      "id": "65cff8521280f0000003de9a",
+      "text": "\t \t\t\t その場合は`useEffect(() => {/* ... */}, [])`を使ってください[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708128339,
+      "updated": 1708128364
+    },
+    {
+      "id": "65d0af6c6eb4060000e5971f",
+      "text": "\t \t\t\t https://github.com/inajob/simple-inline-editor/blob/9b339534ea97f3ed702173e94e0c8662825dacca/components/Editor.tsx#L170 の話ですね。このままで良いという理解[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708175214,
+      "updated": 1708175225
+    },
+    {
+      "id": "65d0afcb6eb4060000e59720",
+      "text": "\t \t\t\t \tと思ったけどこのコメントを消しても`deno task fmt`はエラーや警告が出たりしないな",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708175309,
+      "updated": 1708175341
+    },
+    {
+      "id": "65cfe9446eb406000022c7ce",
+      "text": "\t\t他のプロジェクトからの取り込みがいい感じにできるか確認（もともとの目的）",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9886eb406000022c7d9",
+      "text": "\t\t\t雑に `import { App } from \"../simple-inline-editor/components/App.tsx\"` とかしたら読み込めた！",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124553,
+      "updated": 1708124576
+    },
+    {
+      "id": "65cfe99f6eb406000022c7da",
+      "text": "\t\t\t\tこれでいいかな・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124576,
+      "updated": 1708124579
+    },
+    {
+      "id": "65cfe9a26eb406000022c7db",
+      "text": "\t\t\tCSSは何かモジュール化？した方が良さそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124579,
+      "updated": 1708124592
+    },
+    {
+      "id": "65cfe9af6eb406000022c7dc",
+      "text": "\t\t\t\tこれはDenoとかTypeScriptの範疇ではないので後で考えよう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124592,
+      "updated": 1708124605
+    },
+    {
+      "id": "65cff81b1280f0000003de98",
+      "text": "\t\t\t\t[@import]のことかな[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708128284,
+      "updated": 1708128294
+    },
+    {
+      "id": "65cfe9446eb406000022c7cf",
+      "text": "\t\t自分が良いものと感じたらマージする",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7d0",
+      "text": "\t\t\t取り込みがいい感じ、とかも観点だが、普通にTypeScriptにしたほうがメンテしやすいだろうという気がする",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cfe9446eb406000022c7d1",
+      "text": "\t\t\t型がないと、引数に一体何が入ってきているのかわからなくなりますからね[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65d0bc456eb4060000e59739",
+      "text": "\t\t\t手元でpullして少し編集したが、勉強になりそうだし、型があったほうがべんりそうだ[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708178503,
+      "updated": 1708178528
+    },
+    {
+      "id": "65d0bc5f6eb4060000e5973a",
+      "text": "\t\t\t\t一方でReact周りの型については（DOM周りの型と比べて）詳しくないので、始めはいろいろ躓きそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708178529,
+      "updated": 1708178574
+    },
+    {
+      "id": "65d0bc966eb4060000e5973b",
+      "text": "\t\t\t\t\t型を気にしなければ動くのに、型パズルが謎でうまくビルドできないのはややストレス",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708178584,
+      "updated": 1708178605
+    },
+    {
+      "id": "65cfe9446eb406000022c7d2",
+      "text": "\t文脈を理解してプログラムを修正して、その後質疑にも応じてくれるって[すごいプログラミング学習支援サービス]だよなと思う",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65cff83d1280f0000003de99",
+      "text": "\t [人力LLM][takker.icon]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1708128318,
+      "updated": 1708128735
+    },
+    {
+      "id": "65d0bebf6eb4060000e5973c",
+      "text": "\t めちゃいいです[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708179138,
+      "updated": 1708179142
+    },
+    {
+      "id": "65cfe9446eb406000022c7d3",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708124486
+    },
+    {
+      "id": "65d08ad41280f00000bd51f1",
+      "text": "設計面でいうと、[useRef()]を大量に使っている点が気になります[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708165843,
+      "updated": 1708165864
+    },
+    {
+      "id": "65d08ae91280f00000bd51f2",
+      "text": " Reactは大抵の場合[useState()],[useMemo()],[useCallback()],[useEffect()]で事足りる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708165864,
+      "updated": 1708165894
+    },
+    {
+      "id": "65d08b071280f00000bd51f3",
+      "text": " 　ちょっと複雑な状態遷移をさせたいとき[useReducer]使うくらい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708165894,
+      "updated": 1708165905
+    },
+    {
+      "id": "65d08b131280f00000bd51f4",
+      "text": " [useRef()]の出番はDOM操作する場合など特殊な場合に限定される",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708165905,
+      "updated": 1708165928
+    },
+    {
+      "id": "65d0b3abed60e60000ccf018",
+      "text": "  ほう[メモる.icon][Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1708176299,
+      "updated": 1708176347
+    },
+    {
+      "id": "65d08b2a1280f00000bd51f5",
+      "text": " ロジック追わないと必要な処理なのかは明言できませんが、そのあたりで直感センサーが警戒反応を示しています",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708165929,
+      "updated": 1708166036
+    },
+    {
+      "id": "65cfe9446eb406000022c7d4",
+      "text": "\t使用箇所をメモしてみる[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708124486,
+      "updated": 1708177839
+    },
+    {
+      "id": "65d0b6fb6eb4060000e59724",
+      "text": "\t\t日本語入力中かを保持するフラグ(Boolean)",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177149,
+      "updated": 1708177720
+    },
+    {
+      "id": "65d0b7406eb4060000e59726",
+      "text": "\t\t\thttps://github.com/inajob/simple-inline-editor/blob/9b339534ea97f3ed702173e94e0c8662825dacca/components/Editor.tsx#L39",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177218,
+      "updated": 1708177219
+    },
+    {
+      "id": "65d0b70a6eb4060000e59725",
+      "text": "\t\t\tこれをuseStateにすると、再レンダリングされてしまって都合が悪かった",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177165,
+      "updated": 1708177188
+    },
+    {
+      "id": "65d0b9766eb4060000e59736",
+      "text": "\t\t\tこれはDOM操作ではない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177784,
+      "updated": 1708177827
+    },
+    {
+      "id": "65d0b6f56eb4060000e59723",
+      "text": "\t\tポップアップ要素",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177143,
+      "updated": 1708177335
+    },
+    {
+      "id": "65d0b7b76eb4060000e59728",
+      "text": "\t\t\thttps://github.com/inajob/simple-inline-editor/blob/9b339534ea97f3ed702173e94e0c8662825dacca/components/Editor.tsx#L93",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177337,
+      "updated": 1708177338
+    },
+    {
+      "id": "65d0b7ba6eb4060000e59729",
+      "text": "\t\t\t行選択の状況が変わった時に、ポップアップの位置を調節する（DOM操作）",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177340,
+      "updated": 1708177795
+    },
+    {
+      "id": "65d0b7b06eb4060000e59727",
+      "text": "\t\t各行のTextarea",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177330,
+      "updated": 1708177474
+    },
+    {
+      "id": "65d0b8306eb4060000e5972b",
+      "text": "\t\t\thttps://github.com/inajob/simple-inline-editor/blob/9b339534ea97f3ed702173e94e0c8662825dacca/components/Editor.tsx#L173",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177458,
+      "updated": 1708177459
+    },
+    {
+      "id": "65d0b8356eb4060000e5972c",
+      "text": "\t\t\tフォーカスが移動したときに、今フォーカスのあるTextareaにfocusを与える（DOM操作）",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177463,
+      "updated": 1708177801
+    },
+    {
+      "id": "65d0b93d6eb4060000e59735",
+      "text": "\t\t\t\tもともとuseStateを使っていたが、何か微妙だったので今の形にした",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177728,
+      "updated": 1708177756
+    },
+    {
+      "id": "65d0b8526eb4060000e5972e",
+      "text": "\t\t\t配列になっていて一見不気味だと思う",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177492,
+      "updated": 1708177498
+    },
+    {
+      "id": "65d0b8376eb4060000e5972d",
+      "text": "\t\t各行のDIV",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177465,
+      "updated": 1708177612
+    },
+    {
+      "id": "65d0b8a56eb4060000e59730",
+      "text": "\t\t\thttps://github.com/inajob/simple-inline-editor/blob/9b339534ea97f3ed702173e94e0c8662825dacca/components/Line.tsx#L227",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177575,
+      "updated": 1708177576
+    },
+    {
+      "id": "65d0b8a46eb4060000e5972f",
+      "text": "\t\t\tマウスドラッグを検知したときに、DIV全体を選択する（DOM操作）",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177575,
+      "updated": 1708177808
+    },
+    {
+      "id": "65d0b9186eb4060000e59732",
+      "text": "\t\tポップアップ要素",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177690,
+      "updated": 1708177693
+    },
+    {
+      "id": "65d0b91b6eb4060000e59733",
+      "text": "\t\t\thttps://github.com/inajob/simple-inline-editor/blob/9b339534ea97f3ed702173e94e0c8662825dacca/components/TextareaWithMenu.tsx#L182",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177693,
+      "updated": 1708177694
+    },
+    {
+      "id": "65d0b91d6eb4060000e59734",
+      "text": "\t\t\t文字選択の状況が変わったときに、ポップアップの位置を調整する（DOM操作）",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177696,
+      "updated": 1708177816
+    },
+    {
+      "id": "65d0b8ce6eb4060000e59731",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708177616,
+      "updated": 1708177616
+    }
+  ]
+}
