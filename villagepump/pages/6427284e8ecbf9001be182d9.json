@@ -2,7 +2,7 @@
   "id": "6427284e8ecbf9001be182d9",
   "title": "scrapbox-url-customizer",
   "created": 1680287823,
-  "updated": 1703402474,
+  "updated": 1708419768,
   "lines": [
     {
       "id": "6427284e8ecbf9001be182d9",
@@ -362,179 +362,11 @@
       "updated": 1695387672
     },
     {
-      "id": "6427284e774b1700009c6633",
-      "text": "     gyazoにuploadする機能を実装し忘れてた",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6634",
-      "text": "     　読者の課題とする",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6635",
-      "text": "     　 [証明は読者に任せる]よくない()[yosider.icon]",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6636",
-      "text": "     　 99%の読者がやらないやつ[基素.icon]",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6637",
-      "text": "     　 書きたくなってきた[takker.icon]",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6638",
-      "text": "     　 code:ts",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6639",
-      "text": "        import { upload, UploadResult } from \"../../takker/deno-gyazo/mod.ts\";",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c663a",
-      "text": "        import { getGyazoToken } from \"../../takkerscrapbox-userscript-std/rest.ts\";",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c663b",
-      "text": "        ",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c663c",
-      "text": "        const accessToken = token ?? await (async () => {",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c663d",
-      "text": "          const result = await getGyazoToken();",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c663e",
-      "text": "          if (!result.ok) throw new Error(JSON.stringify(result.value));",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c663f",
-      "text": "          const accessToken = result.value;",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6640",
-      "text": "          if (!accessToken) throw new Error(\"Could not get the access token\");",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6641",
-      "text": "          return accessToken;",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6642",
-      "text": "        })();",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6643",
-      "text": "        ",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6644",
-      "text": "        const image = await (await GM_fetch(url)).blob();",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6645",
-      "text": "        const result = await upload(image, { refererURL: twitterURL, accessToken });",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6646",
-      "text": "        if (!result.ok) throw result.value;",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6647",
-      "text": "        const gyazoURL = result.value.permalink_url;",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6648",
-      "text": "       あきた",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c6649",
-      "text": "       まあこのあたりのsnippetを",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c664a",
-      "text": "        [https://code2svg.vercel.app/svg/L95-96/https://raw.githubusercontent.com/takker99/scrapbox-url-customizer/0.1.2/middlewares/formatTweet.ts#.svg https://github.com/takker99/scrapbox-url-customizer/blob/0.1.2/middlewares/formatTweet.ts#L95-L96]",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
-    },
-    {
-      "id": "6427284e774b1700009c664b",
-      "text": "       に挿入すれば動くと思います(適当)",
-      "userId": "59fb21121207900012774b17",
-      "created": 1680287823,
-      "updated": 1680287823
+      "id": "65d46a821280f00000ef8640",
+      "text": "     [tweetの画像をgyazoにuploadして置換する機能 (scrapbox-url-customizer)]を実装し忘れてた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419718,
+      "updated": 1708419768
     },
     {
       "id": "6427284e774b1700009c664c",

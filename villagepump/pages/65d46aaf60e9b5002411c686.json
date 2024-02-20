@@ -1,0 +1,288 @@
+{
+  "id": "65d46aaf60e9b5002411c686",
+  "title": "tweetの画像をgyazoにuploadして置換する機能 (scrapbox-url-customizer)",
+  "created": 1708419759,
+  "updated": 1708423219,
+  "lines": [
+    {
+      "id": "65d46aaf60e9b5002411c686",
+      "text": "tweetの画像をgyazoにuploadして置換する機能 (scrapbox-url-customizer)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d477241280f00000ef8651",
+      "text": "tweet展開時に、画像をgyazoるようにした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708422951,
+      "updated": 1708422966
+    },
+    {
+      "id": "65d477f51280f00000d12463",
+      "text": " gyazo側で元のtweet URLと紐づくようになっている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708423161,
+      "updated": 1708423173
+    },
+    {
+      "id": "65d4782e1280f00000d12464",
+      "text": " [https://gyazo.com/ad49675e0112e0f0f023d603442e10ce]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708423217,
+      "updated": 1708423219
+    },
+    {
+      "id": "65d478301280f00000d12465",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708423219,
+      "updated": 1708423219
+    },
+    {
+      "id": "65d477241280f00000ef8652",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708422951,
+      "updated": 1708422951
+    },
+    {
+      "id": "65d46aac1280f00000005a36e7",
+      "text": "from [scrapbox-url-customizer]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f00000001f69c7",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f0000000be9f5c",
+      "text": "[gyazo]に[pbs.twimg.com]の画像uploadする機能を実装し忘れてた[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708422949
+    },
+    {
+      "id": "65d46aac1280f0000000270572",
+      "text": "　読者の課題とする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f0000000dca028",
+      "text": "　 [証明は読者に任せる]よくない()[yosider.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f0000000780ec6",
+      "text": "　 99%の読者がやらないやつ[基素.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f000000051ca7d",
+      "text": "　 書きたくなってきた[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f0000000282b85",
+      "text": "　 code:ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f0000000f49d57",
+      "text": "   import { upload, UploadResult } from \"../../takker/deno-gyazo/mod.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f00000001114f3",
+      "text": "   import { getGyazoToken } from \"../../takkerscrapbox-userscript-std/rest.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f0000000a8ae89",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f00000005430a6",
+      "text": "   const accessToken = token ?? await (async () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f00000005e8ade",
+      "text": "     const result = await getGyazoToken();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f0000000298253",
+      "text": "     if (!result.ok) throw new Error(JSON.stringify(result.value));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f00000007c2c3b",
+      "text": "     const accessToken = result.value;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f00000000cd286",
+      "text": "     if (!accessToken) throw new Error(\"Could not get the access token\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f000000052e66b",
+      "text": "     return accessToken;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f00000003f171c",
+      "text": "   })();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f0000000681f4d",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f0000000483293",
+      "text": "   const image = await (await GM_fetch(url)).blob();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f0000000dae8b0",
+      "text": "   const result = await upload(image, { refererURL: twitterURL, accessToken });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f00000009d5d86",
+      "text": "   if (!result.ok) throw result.value;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f000000083dbb0",
+      "text": "   const gyazoURL = result.value.permalink_url;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f0000000738a31",
+      "text": "  あきた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f00000006d03ca",
+      "text": "  まあこのあたりのsnippetを",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f00000002b7454",
+      "text": "   [https://code2svg.vercel.app/svg/L95-96/https://raw.githubusercontent.com/takker99/scrapbox-url-customizer/0.1.2/middlewares/formatTweet.ts#.svg https://github.com/takker99/scrapbox-url-customizer/blob/0.1.2/middlewares/formatTweet.ts#L95-L96]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f00000007f277b",
+      "text": "  に挿入すれば動くと思います(適当)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46aac1280f000000005b104",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419759,
+      "updated": 1708419759
+    },
+    {
+      "id": "65d46ac31280f00000ef8643",
+      "text": "[2024/02/20]で話題に上がったので実装してみる[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419783,
+      "updated": 1708419808
+    },
+    {
+      "id": "65d46ac51280f00000ef8644",
+      "text": " 18:42:01 テスト中",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708419785,
+      "updated": 1708422126
+    },
+    {
+      "id": "65d475001280f00000ef864e",
+      "text": " 18:46:41 問題なさそうなのでreleaseする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708422404,
+      "updated": 1708422409
+    },
+    {
+      "id": "65d473e81280f00000ef864c",
+      "text": "  https://github.com/takker99/scrapbox-url-customizer/pull/50",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708422124,
+      "updated": 1708422933
+    },
+    {
+      "id": "65d477111280f00000ef8650",
+      "text": " 18:55:30 released!",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708422933,
+      "updated": 1708422936
+    },
+    {
+      "id": "65d4767d1280f00000ef864f",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708422785,
+      "updated": 1708422785
+    }
+  ]
+}
