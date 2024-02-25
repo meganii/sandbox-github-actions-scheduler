@@ -1,0 +1,750 @@
+{
+  "id": "65dace2fc76d440024877d2f",
+  "title": "UserCSSにより井戸端ページの編集が遅くなった",
+  "created": 1708838449,
+  "updated": 1708840750,
+  "lines": [
+    {
+      "id": "65dace2fc76d440024877d2f",
+      "text": "UserCSSにより井戸端ページの編集が遅くなった",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b604",
+      "text": "from [Gyazzみたいなエディタ作りでReact.jsを学ぶ: TypeScript/Deno化]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b605",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838455
+    },
+    {
+      "id": "65dace2f6eb406000058b606",
+      "text": "\tこのページ重たくなってきたな・・[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b607",
+      "text": "\t\tソースコードがあると重くなる？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b608",
+      "text": "\t\t切り出してみた",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b609",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b60a",
+      "text": "\t相変わらず重いか・・・・[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b60b",
+      "text": "\t\t原因は別にあるのか・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b60c",
+      "text": "\t\t日記ページとかと比べて特段長いページとかでもないのだが、不思議だ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b60d",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b60e",
+      "text": "あんまりにも遅いので、[web browserのremote debug]した[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b60f",
+      "text": " chrome for android",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b610",
+      "text": "　`keypress`が連続している",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b611",
+      "text": " 　[https://gyazo.com/0693bf579220347859522a89acd0c36c]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b612",
+      "text": "　1つの`keypress`で2回CSS再計算が走っている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b613",
+      "text": "　 [https://gyazo.com/4205d794c29ac043945152e7a008ad4f]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b614",
+      "text": "  １つ目はまちまち",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b615",
+      "text": "   editor関連のemitchangeか、navbarのstate changeが走っている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b616",
+      "text": "   　後者はこの前うｐした荒ぶるnavbarと関連していそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b617",
+      "text": "   　 なぜだが知らないが、scroll eventが発生するたびに`getStyle()`でスタイルを再計算させていた",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b618",
+      "text": "   　 道理でnavbarが荒ぶるわけだ [2024/02/21#65d5471f1280f000006153d9]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b619",
+      "text": "   　  これ、今まではこうなってなかったということ？[per_terra.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b61a",
+      "text": "   　   いつかは記録し忘れましたが、荒ぶることはありませんでした[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b61b",
+      "text": "   　    最近変更されたのかな[per_terra.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b61c",
+      "text": "   　   [navbar周りのUserCSSの再設計#65cc77b6ffff360000a03db6]だった",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b61d",
+      "text": "   　 でも、editorにfocusが無いときに荒ぶらない理由がわからないな",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b61e",
+      "text": "   　 　focusがなくてもロジックは同じだった",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b61f",
+      "text": "   　 わかった",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b620",
+      "text": "   　 　focusがあたっているときは、`getStyle()`が`position: absolute;`などを返して、positionを上書きする",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b621",
+      "text": "   　 　 defaultは`position: fixed;`",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b622",
+      "text": "   　 　 [navbar周りのUserCSSの再設計#65cc77b6ffff360000a03db6]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b623",
+      "text": "   　 　  この辺の話な気がする[per_terra.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b624",
+      "text": "   　 　  iOSのせいだったのかー[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b625",
+      "text": "   　 　focusがあたっていないときは、`getStyle()`が`null`を返す",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b626",
+      "text": "   　 [/takker/scrapbox上でリアルタイムに残り時間を表示するUserScript@0.0.2]の`style`書き換え処理が [/shokai/iOS Safariはスクリーンキーボードを開いているとposition: fixedがスクロールに付いてこなくなる]と衝突しているのかと思い、UserScriptを切って試してみましたが、特に変わらず",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b627",
+      "text": "  　  井戸端のCSSのせいではなさそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b628",
+      "text": "   　  別のprojectでも再現しました",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b629",
+      "text": "    `emitChange`で`cloneDeep`しているところがあるのが気になる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b62a",
+      "text": "  2つ目は[jQuery]の`Sizzle`が主な原因",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b62b",
+      "text": "  この2つが非常に長いスタイル再計算を引き起こしている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b62c",
+      "text": "   [強制リフロー]の可能性がある？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b62d",
+      "text": " 一通りキー入力した後のfreeze時の動き",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b62e",
+      "text": "  [https://gyazo.com/2a3eaf7b506a06e2e8cdcb0780e03c9c]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b62f",
+      "text": "  `input`eventが続いている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b630",
+      "text": "  それぞれ1つのCSS再計算を引き起こしている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b631",
+      "text": "  どうやら主に`getTextRect`がレンダリングを遅くしているようだ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b632",
+      "text": "  　`curCSS`という関数名や[Window.getComputedStyle()]まわりを実行しているっぽい雰囲気から原因は察せた",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b633",
+      "text": "  最上部のグラフの紫色が落ち込んでいるところは、[CSSStyleDeclaration.getPropertyValue()]や[document.querySelectorAll()]が割りを食っているところ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b634",
+      "text": "  　いずれにしろCSS周りで時間を食っているようだ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b635",
+      "text": " laptopで書いていて気づいたけど、smartphoneほどではないにしろPCで書いても動きが遅いな……",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b636",
+      "text": " 確かに重いかも[wogikaze.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b637",
+      "text": "  UserCSSを無効にしてみると普通に軽い",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b638",
+      "text": "   CSSが長い再計算を引き起こしている？[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b639",
+      "text": "  [navbar周りのUserCSSの再設計]かな？[wogikaze.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b63a",
+      "text": "   でも最近更新されたわけじゃないのか",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b63b",
+      "text": "   importしているのが悪い？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b63c",
+      "text": "    一回コメントアウトしてみる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b63d",
+      "text": "    多分importは関係ない。初回読み込みが遅くなるだけだから",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b63e",
+      "text": "     そう思う[per_terra.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b63f",
+      "text": "    disableしてみた[wogikaze.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b640",
+      "text": "    　とても軽い気がする?(プラセボかも",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b641",
+      "text": "    　↓の確認をするために戻した2024/2/23 11:23",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b642",
+      "text": "   　　インデントするとまだ重い",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b643",
+      "text": "  複雑なCSSをcutすれば直る？[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b644",
+      "text": "   [:has()]系が怪しい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b645",
+      "text": " 気のせいじゃなかったのか[per_terra.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b646",
+      "text": "  なんとかする",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b647",
+      "text": "   [hr.iconをCSSで描画するUserCSS]がhas大量なので一旦ロールバックした",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b648",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b649",
+      "text": "自分のプロジェクトに井戸端のCSS、ページをコピーしてみたものの重くならず[wogikaze.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b64a",
+      "text": " [https://gyazo.com/fc42fbc5d0b29b4f077ab3dd6525288b][https://gyazo.com/fcdc58876cfdc7fe60bcd78b962f7931]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b64b",
+      "text": "  my project/villagepump",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b64c",
+      "text": "  そもそも自分のプロジェクトだと`keypress`ログが見つからない??",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b64d",
+      "text": "  再現できたっぽい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b64e",
+      "text": "  　navbarのcssを含めると重くなった",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b64f",
+      "text": "  　ただ、navbarのcssだけだと重くならない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b650",
+      "text": "  　keypressのイベントも生えてきた[wogikaze.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b651",
+      "text": "  　一度でも読み込むと重くなってしまう？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b652",
+      "text": "  　わからないことが多すぎる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b653",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b654",
+      "text": "CSSを無効にして書き込んでみる[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b655",
+      "text": "おお～、ラグがPCと同程度にまで減ったぞ！",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b656",
+      "text": "やはり井戸端のCSSが重すぎることが主因のようだ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b657",
+      "text": "ネストCSSが異常に重たい[wogikaze.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b658",
+      "text": "  Vivaldiが悪いのかも",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b659",
+      "text": "  Chromeだと再現しない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b65a",
+      "text": "   そこそこに軽い",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b65b",
+      "text": " うげ[per_terra.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b65c",
+      "text": "  弊環境だと微妙に再現しないので困っている",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b65d",
+      "text": "  全部無効化してどんなもんか試している",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b65e",
+      "text": "   うーん、分からん",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b65f",
+      "text": "    確かに軽い気がする",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b660",
+      "text": "  自分のプロジェクトに井戸端のCSS適用したら余裕でサクサク動くな…",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b661",
+      "text": "   [- 井戸端そのものが重かったりするのか？]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b662",
+      "text": "    読み込むページに依る",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b663",
+      "text": "    [長いページから出るときが重い]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b664",
+      "text": " code:css",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b665",
+      "text": "  .line:not(.cursor-line) .deco:has(.deco-\\'):has(.deco-_){display:flex;align-items:center;text-align:center;&:before,&:after{flex-grow:1;min-width:30px;content:\"\";border-top:1px solid #afafaf}&:has(.deco--){&:before,&:after{border-style:dashed none none}}&:before{margin-right:10px}&:after{margin-left:10px}:has(.deco-_){text-decoration:none !important}}.line a.link.icon:is([href$=\"/icons/hr\"],[href$=\"/icons/hrd\"]){width:100%;img,span{display:none};&:before{display:inline-block;width:100%;vertical-align:middle;content:\"\";border-top:1px solid #afafaf}&:is([href$=\"/icons/hrd\"]):before{border-style:dashed none none}}",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b666",
+      "text": " ネストCSSのみを抜き出してきた[wogikaze.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b667",
+      "text": "  私のコードです…[per_terra.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dad721e2dacc00008c8ca3",
+      "text": "  work4aiもネストと:hasなるべく避けるか…[nomadoor.icon]",
+      "userId": "5f0ae250e8cd56001ee2dacc",
+      "created": 1708840739,
+      "updated": 1708840750
+    },
+    {
+      "id": "65dace2f6eb406000058b668",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b669",
+      "text": "      ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b66a",
+      "text": "\tセーフモードなら重くなくなっている、感謝[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    },
+    {
+      "id": "65dace2f6eb406000058b66b",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708838449,
+      "updated": 1708838449
+    }
+  ]
+}
