@@ -1,0 +1,323 @@
+{
+  "id": "65dd207e2fd8d20024f78207",
+  "title": "CLIから画像をscrapbox.ioにアップロード",
+  "created": 1708990591,
+  "updated": 1708991470,
+  "lines": [
+    {
+      "id": "65dd207e2fd8d20024f78207",
+      "text": "CLIから画像をscrapbox.ioにアップロード",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d25a",
+      "text": "from [2022/02/27]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990596
+    },
+    {
+      "id": "65dd207e6eb406000075d25b",
+      "text": "Scrapboxで[Gyazo]ではなくてscrapbox.ioにアップロードするのをCLIから実行する方法は公開されている？[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990596,
+      "updated": 1708990666
+    },
+    {
+      "id": "65dd207e6eb406000075d25d",
+      "text": " 調べてみます[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d25e",
+      "text": " \tありがとうございます！[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d25f",
+      "text": " だいたいわかった[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d260",
+      "text": "  1. `POST https://scrapbox.io/api/gcs/:project_id/upload-request`",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d261",
+      "text": "   要`X-CSRF-TOKEN`",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d262",
+      "text": "   `:project_id`はscrapbox projectのidを入れる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d263",
+      "text": "   要求",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d264",
+      "text": "    code:ts",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d265",
+      "text": "     interface UploadRequestBody {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d266",
+      "text": "       contentType: string;",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d267",
+      "text": "       md5: string;",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d268",
+      "text": "       name: string;",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d269",
+      "text": "       size: number;",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d26a",
+      "text": "     }",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d26b",
+      "text": "    `md5`にはuploadしたいファイルの[MD5] hashを入れる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d26c",
+      "text": "   応答",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d26d",
+      "text": "    code:ts",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d26e",
+      "text": "     interface UploadRequestResult {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d26f",
+      "text": "       signedUrl: string;",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d270",
+      "text": "       fileId: string;",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d271",
+      "text": "     }",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d272",
+      "text": "  2. 返ってきた`signedUrl`を`PUT`する",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d273",
+      "text": "   `Content-Type`に[2022/02/27#621b0bc71280f0000098dedf]を入れる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d274",
+      "text": "   要求にuploadしたいファイルを入れる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d275",
+      "text": "  3. `POST https://scrapbox.io/api/gcs/:project_id/verify`",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d276",
+      "text": "   要`X-CSRF-TOKEN`",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d277",
+      "text": "   要求",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d278",
+      "text": "    code:ts",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d279",
+      "text": "     interface VerifyBody {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d27a",
+      "text": "       fileId: string;",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d27b",
+      "text": "       md5: string;",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d27c",
+      "text": "     }",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d27d",
+      "text": "   応答",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d27e",
+      "text": "    code:ts",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d27f",
+      "text": "     interface VerifyResult {",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d280",
+      "text": "       embedUrl: string;",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d281",
+      "text": "       originalname: string;",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d282",
+      "text": "     }",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d283",
+      "text": "    この`embedUrl`が最終的なファイルのURL",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd207e6eb406000075d284",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1708990591,
+      "updated": 1708990591
+    },
+    {
+      "id": "65dd23cf1280f000005f6f63",
+      "text": "[/takker/📝scrapoxのfile upload機能をscrapbox-userscript-stdに実装する]で実装した",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708991444,
+      "updated": 1708991470
+    },
+    {
+      "id": "65dd23dc1280f000005f6f65",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1708991455,
+      "updated": 1708991455
+    }
+  ]
+}
