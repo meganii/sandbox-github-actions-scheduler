@@ -1,0 +1,281 @@
+{
+  "id": "65f2824b2568850025d50b8f",
+  "title": "infoboxの実装詳細 takker",
+  "created": 1710391884,
+  "updated": 1710402442,
+  "lines": [
+    {
+      "id": "65f2824b2568850025d50b8f",
+      "text": "infoboxの実装詳細 takker",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467316",
+      "text": "from [2024/03/14]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467317",
+      "text": "infoboxの実装詳細[takker.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467318",
+      "text": "\t[api/pages/:project/:title]に生えてる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467319",
+      "text": "  `infobox`という名前で[table記法]を書いた時、その要素が`infoboxDefinition`に格納されている",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b17000046731a",
+      "text": "  `hallucination`って書いてある時点でLLM使ってるの確定だ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b17000046731b",
+      "text": "  `Page.infoboxResult`は[infobox-menu]に表示されるinfoboxのデータ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b17000046731c",
+      "text": "   [https://gyazo.com/7440a95dc691a0c42940ad64b2746308]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b17000046731d",
+      "text": "  code:ts",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b17000046731e",
+      "text": "   // 新規に生えたpropertiesのみ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b17000046731f",
+      "text": "   export interface Page {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467320",
+      "text": "     infoboxDefinition: string[];",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467321",
+      "text": "     infoboxResult: InfoboxResultItem[];",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467322",
+      "text": "   }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467323",
+      "text": "   ",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467324",
+      "text": "   export interface InfoboxResultItem {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467325",
+      "text": "     hallucination: boolean;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467326",
+      "text": "     infobox: Record<string, string>;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467327",
+      "text": "     title: string;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467328",
+      "text": "     truncated: boolean;",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467329",
+      "text": "   }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b17000046732a",
+      "text": " さらに、[関連ページリスト]のデータに該当する`RelatedPage`に、infobox用のpropertyが生えてる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b17000046732b",
+      "text": "  code:ts",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b17000046732c",
+      "text": "   export interface RelatedPage {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b17000046732d",
+      "text": "     infoboxResult: InfoboxResultItem[];",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b17000046732e",
+      "text": "   }",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b17000046732f",
+      "text": "  `infoboxResult`は`ProjectRelatedPage`([External Links]のデータ)には生えていない",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467330",
+      "text": "  これらがページ下部のinfoboxに表示される",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2ab881280f00000f0949c",
+      "text": "  [https://gyazo.com/07d7d8aed5251a2ee48576c6e4cb13b3]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1710402442,
+      "updated": 1710402442
+    },
+    {
+      "id": "65f2824b774b170000467331",
+      "text": " 編集中の更新",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467332",
+      "text": "\t LLMの生成が完了したタイミングや、ページデータが更新されたタイミングで、[ScrapboxのWebSocket]から`infobox:reload`や`literal-database:reload`が送られてくる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467333",
+      "text": "\t  `infobox:reload`：infoboxの変更？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467334",
+      "text": "\t  `literal-database:reload`：おそらくLLMがデータを生成したときに出される",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467335",
+      "text": "\t これらが送られてきたら[api/pages/:project/:title]を叩き直してデータを更新している",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467336",
+      "text": "\t  リンクデータや関連ページデータの更新差分をwebsocketから送っている実装と比べると、だいぶ大雑把な方法に感じる[takker.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467337",
+      "text": "\t  今後修正する予定なのだろうな",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467338",
+      "text": "\t   最適化は使われ方がわかった後のほうがコスパ良い[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b170000467339",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    },
+    {
+      "id": "65f2824b774b17000046733a",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1710391884,
+      "updated": 1710391884
+    }
+  ]
+}
