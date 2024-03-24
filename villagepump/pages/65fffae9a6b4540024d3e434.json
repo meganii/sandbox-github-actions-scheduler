@@ -1,0 +1,288 @@
+{
+  "id": "65fffae9a6b4540024d3e434",
+  "title": "GM_fetchがない環境でurl-customizerでtweetが展開できない",
+  "created": 1711274748,
+  "updated": 1711275845,
+  "lines": [
+    {
+      "id": "65fffae9a6b4540024d3e434",
+      "text": "GM_fetchがない環境でurl-customizerでtweetが展開できない",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274748,
+      "updated": 1711275274
+    },
+    {
+      "id": "65fffafb5f1e0d0000f2d9b9",
+      "text": "注：自分用に改造しているのが悪さをしている可能性がある点[wogikaze.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274748,
+      "updated": 1711274777
+    },
+    {
+      "id": "65fffb125f1e0d0000f2d9bb",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274771,
+      "updated": 1711274771
+    },
+    {
+      "id": "65fffb125f1e0d0000f2d9bc",
+      "text": "テスト用リンク",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274771,
+      "updated": 1711274788
+    },
+    {
+      "id": "65fffb215f1e0d0000f2d9bd",
+      "text": "　https://twitter.com/Colon_BR/status/1771490154277974290",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274785,
+      "updated": 1711274886
+    },
+    {
+      "id": "65fffbb21280f00000b4a954",
+      "text": "　[cdn.syndication.twimg.com/tweet-result?id=:tweetId]で中身を見ればわかりそう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711274932,
+      "updated": 1711274950
+    },
+    {
+      "id": "65fffbc51280f00000b4a955",
+      "text": "　 https://cdn.syndication.twimg.com/tweet-result?id=1771490154277974290&token=x",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711274950,
+      "updated": 1711274971
+    },
+    {
+      "id": "65fffafd5f1e0d0000f2d9ba",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274750,
+      "updated": 1711274750
+    },
+    {
+      "id": "65fffb345f1e0d0000f2d9be",
+      "text": "エラー",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274804,
+      "updated": 1711274805
+    },
+    {
+      "id": "65fffb355f1e0d0000f2d9c0",
+      "text": " [https://gyazo.com/8a2bd7b26c1913cc924dc5301dafd2b4]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274805,
+      "updated": 1711274806
+    },
+    {
+      "id": "65fffb365f1e0d0000f2d9c1",
+      "text": " コード",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274806,
+      "updated": 1711274823
+    },
+    {
+      "id": "65fffb465f1e0d0000f2d9c2",
+      "text": " code:js",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274823,
+      "updated": 1711274826
+    },
+    {
+      "id": "65fffb485f1e0d0000f2d9c3",
+      "text": "  if (\"images\" in tweet) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274824,
+      "updated": 1711274826
+    },
+    {
+      "id": "65fffb485f1e0d0000f2d9c4",
+      "text": "      return [",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274825,
+      "updated": 1711274826
+    },
+    {
+      "id": "65fffb485f1e0d0000f2d9c5",
+      "text": "        `[${escapeForEmbed(tweet.screenName)}(@${escapeForEmbed(tweet.userName)}) ${url.origin}${url.pathname}]`,",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274825,
+      "updated": 1711274826
+    },
+    {
+      "id": "65fffb485f1e0d0000f2d9c6",
+      "text": "        ...tweet.description.split(\"\\n\").map((line) => `> ${escapeForEmbed(line)}`),",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274825,
+      "updated": 1711274826
+    },
+    {
+      "id": "65fffb485f1e0d0000f2d9c7",
+      "text": "        ...tweet.images.length > 0 ? [`> ${tweet.images.map((image) => `[${image}]`)}`] : []",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274825,
+      "updated": 1711274826
+    },
+    {
+      "id": "65fffb485f1e0d0000f2d9c8",
+      "text": "      ].join(\"\\n\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274825,
+      "updated": 1711274826
+    },
+    {
+      "id": "65fffb485f1e0d0000f2d9c9",
+      "text": "    }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274825,
+      "updated": 1711274826
+    },
+    {
+      "id": "65fffb345f1e0d0000f2d9bf",
+      "text": " `tweet.userName`が`undefined`？？[wogikaze.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711274805,
+      "updated": 1711274846
+    },
+    {
+      "id": "65fffb575f1e0d0000f2d9ca",
+      "text": " これ[api/embed-text/twitter]の場合のコードが走ってるな[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711274840,
+      "updated": 1711275050
+    },
+    {
+      "id": "65fffc345f1e0d0000f2d9cb",
+      "text": "  ほんとだ[wogikaze.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711275060,
+      "updated": 1711275071
+    },
+    {
+      "id": "65fffc445f1e0d0000f2d9cc",
+      "text": "   なら理解できる",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711275077,
+      "updated": 1711275086
+    },
+    {
+      "id": "65fffc945f1e0d0000f2d9cd",
+      "text": "   [いまさらtwitter埋め込みが死をどうにかしようとしている#6557403b5e90c000004f458c]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711275156,
+      "updated": 1711275156
+    },
+    {
+      "id": "65fffc945f1e0d0000f2d9ce",
+      "text": "   すみませんでした[- [wogikaze.icon]]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711275157,
+      "updated": 1711275172
+    },
+    {
+      "id": "65fffcba1280f00000b4a959",
+      "text": "   既出だったんだ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711275196,
+      "updated": 1711275200
+    },
+    {
+      "id": "65fffcc41280f00000b4a95a",
+      "text": "    先人に感謝",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711275206,
+      "updated": 1711275214
+    },
+    {
+      "id": "65fffc3f1280f00000b4a957",
+      "text": "  `GM_fetch`がない環境で実行しようとして、この分岐を踏んだということかな[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711275073,
+      "updated": 1711275194
+    },
+    {
+      "id": "65fffb921280f00000b4a953",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711274899,
+      "updated": 1711274899
+    },
+    {
+      "id": "65fffce25f1e0d0000fd260c",
+      "text": "`// @match        https://scrapbox.io/*`が`// @match        https://scrapbox.io/+`になってた",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711275237,
+      "updated": 1711275249
+    },
+    {
+      "id": "65fffcf15f1e0d0000fd260f",
+      "text": " (なんでや)[wogikaze.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711275249,
+      "updated": 1711275249
+    },
+    {
+      "id": "65ffff131280f00000084c4f",
+      "text": " 似てるから間違えるのもしゃーない[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711275796,
+      "updated": 1711275801
+    },
+    {
+      "id": "65ffff221280f00000084c50",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711275811,
+      "updated": 1711275811
+    },
+    {
+      "id": "65ffff221280f00000084c51",
+      "text": "[api/embed-text/twitter]の型定義修正PR出してくれるひとがいたらうれしーなー(ﾁﾗﾁﾗ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711275811,
+      "updated": 1711275845
+    },
+    {
+      "id": "65fffce45f1e0d0000fd260e",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711275237,
+      "updated": 1711275237
+    },
+    {
+      "id": "65fffd305f1e0d0000fd2610",
+      "text": "> [ころんびぁ☕️ 3/24名古屋COMITIA Cｰ47(@Colon_BR) https://twitter.com/Colon_BR/status/1771490154277974290]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711275312,
+      "updated": 1711275314
+    },
+    {
+      "id": "65fffd325f1e0d0000fd2612",
+      "text": "> 謎ピースび☕️ ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711275314,
+      "updated": 1711275314
+    },
+    {
+      "id": "65fffd325f1e0d0000fd2613",
+      "text": "> [https://pbs.twimg.com/media/GJWYxFhboAAApop.jpg]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711275314,
+      "updated": 1711275314
+    },
+    {
+      "id": "65fffd325f1e0d0000fd2614",
+      "text": "> ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711275314,
+      "updated": 1711275314
+    },
+    {
+      "id": "65fffd305f1e0d0000fd2611",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1711275312,
+      "updated": 1711275312
+    }
+  ]
+}
