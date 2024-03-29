@@ -2,7 +2,7 @@
   "id": "633762337081b2001dd3c5d1",
   "title": "2022/10/01",
   "created": 1664574003,
-  "updated": 1688774011,
+  "updated": 1711706090,
   "lines": [
     {
       "id": "633762337081b2001dd3c5d1",
@@ -215,165 +215,11 @@
       "updated": 1664614820
     },
     {
-      "id": "633801a21280f00000f5cad2",
-      "text": " \t\t [entry point https://inajob.github.io/mce3/js/mce3.js]",
+      "id": "66068fb21280f00000ce3f93",
+      "text": "    [魔法陣言語parserのcode reading]",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664614820,
-      "updated": 1664614945
-    },
-    {
-      "id": "633802171280f00000f5cad3",
-      "text": " \t\t  `init()`でSVGとラスタイメージを生成している",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664614937,
-      "updated": 1664614960
-    },
-    {
-      "id": "6338022e1280f00000f5cad4",
-      "text": " \t\t   `(function(){/*...*/}).toString()`という黒魔術っぽいコードがある",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664614960,
-      "updated": 1664614994
-    },
-    {
-      "id": "633802501280f00000f5cad5",
-      "text": " \t\t  class",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664614994,
-      "updated": 1664615044
-    },
-    {
-      "id": "633802811280f00000f5cad7",
-      "text": "  \t\t  `RendererSVG`[. https://inajob.github.io/mce3/js/render-svg.js ]",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664615043,
-      "updated": 1664615089
-    },
-    {
-      "id": "633802de1280f00000f5cada",
-      "text": "  \t\t   SVGレンダラー",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664615136,
-      "updated": 1664615140
-    },
-    {
-      "id": "6338026f1280f00000f5cad6",
-      "text": "  \t\t  `SimpleParser`[. https://inajob.github.io/mce3/js/render-base.js ]",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664615024,
-      "updated": 1664615107
-    },
-    {
-      "id": "633802d31280f00000f5cad9",
-      "text": "  \t\t   [魔法陣言語]の中間言語のパーサー",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664615125,
-      "updated": 1664618311
-    },
-    {
-      "id": "633802c21280f00000f5cad8",
-      "text": "  \t\t  `Renderer`[. https://inajob.github.io/mce3/js/render.js ]",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664615108,
-      "updated": 1664615123
-    },
-    {
-      "id": "633802e31280f00000f5cadb",
-      "text": "  \t\t  　ラスタレンダラー",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664615141,
-      "updated": 1664615143
-    },
-    {
-      "id": "633803741280f00000f5cadc",
-      "text": "  \t\t [worker https://inajob.github.io/mce3/js/worker.js]で構文解析している？",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664615286,
-      "updated": 1664615297
-    },
-    {
-      "id": "633803801280f00000f5cadd",
-      "text": "  \t\t 　じゃあなんでentry pointでもパーサーを使っているんだろう？",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664615299,
-      "updated": 1664615311
-    },
-    {
-      "id": "633808696eb406000067bd23",
-      "text": "  \t\t 　\tどこだろう？ 黒魔術っぽいところは単に文字列を作ってるだけですね。[inajob.icon]",
-      "userId": "58442db3ee4a2400116eb406",
-      "created": 1664616568,
-      "updated": 1664616599
-    },
-    {
-      "id": "633808b61280f00000abc59f",
-      "text": "  \t\t 　\t`draw()`の`worker.onmessage`の`var out = p.parse(sout);`です(`var p = new SimpleParser();`)[takker.icon]",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664616632,
-      "updated": 1664616673
-    },
-    {
-      "id": "63380bb06eb406000067bd26",
-      "text": "  \t\t 　\t\t魔法陣言語をレンダー用の中間言語（文字列）としてWorkerとやり取りしているようで、受け取った文字列をレンダー言語の構造に変換するのがSimpleParserのようですね（おおむね改行区切りでリストにするだけですが）[inajob.icon]",
-      "userId": "58442db3ee4a2400116eb406",
-      "created": 1664617407,
-      "updated": 1664617485
-    },
-    {
-      "id": "63380c076eb406000067bd27",
-      "text": "  \t\t 　\t\t\tWebWorkerのメッセージでArrayを渡せないんだっけ？（忘れた）",
-      "userId": "58442db3ee4a2400116eb406",
-      "created": 1664617494,
-      "updated": 1664617588
-    },
-    {
-      "id": "63380c546eb406000067bd28",
-      "text": "  \t\t 　\t\t\t\thttps://developer.mozilla.org/ja/docs/Web/API/Worker/postMessage",
-      "userId": "58442db3ee4a2400116eb406",
-      "created": 1664617571,
-      "updated": 1664617571
-    },
-    {
-      "id": "63380c566eb406000067bd29",
-      "text": "  \t\t 　\t\t\t\tいけそうにみえるな",
-      "userId": "58442db3ee4a2400116eb406",
-      "created": 1664617572,
-      "updated": 1664617582
-    },
-    {
-      "id": "63380c686eb406000067bd2a",
-      "text": "  \t\t 　\t\t\t\tかつてはダメだったのかな・・？覚えてないです",
-      "userId": "58442db3ee4a2400116eb406",
-      "created": 1664617590,
-      "updated": 1664617600
-    },
-    {
-      "id": "63380f4a1280f00000f5cb14",
-      "text": "  \t\t 　\t\tデータコピーの都合がつかなかったのかな？[takker.icon]",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664618316,
-      "updated": 1664618350
-    },
-    {
-      "id": "633808996eb406000067bd24",
-      "text": "  \tgin.jsっていう古のパーサージェネレータに依存しているのを何とかしたい[inajob.icon]",
-      "userId": "58442db3ee4a2400116eb406",
-      "created": 1664616616,
-      "updated": 1664616666
-    },
-    {
-      "id": "633808c46eb406000067bd25",
-      "text": "  \t\thttps://nanto.asablo.jp/blog/2007/09/12/1793275",
-      "userId": "58442db3ee4a2400116eb406",
-      "created": 1664616659,
-      "updated": 1664616660
-    },
-    {
-      "id": "63380a361280f00000abc5a3",
-      "text": "  \t\t機械的にmordernizeできるか試してみたけど無理だった[takker.icon]",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1664617016,
-      "updated": 1664617030
+      "created": 1711706035,
+      "updated": 1711706090
     },
     {
       "id": "6337d0bbe8db3200006a7287",

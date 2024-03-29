@@ -1,0 +1,274 @@
+{
+  "id": "66068fc44f8a5f0025dcf50c",
+  "title": "魔法陣言語parserのcode reading",
+  "created": 1711706053,
+  "updated": 1711706942,
+  "lines": [
+    {
+      "id": "66068fc44f8a5f0025dcf50c",
+      "text": "魔法陣言語parserのcode reading",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f00000000bb23e",
+      "text": "from [2022/10/01]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068ff91280f00000ce3f94",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706107,
+      "updated": 1711706107
+    },
+    {
+      "id": "66068ffa1280f00000ce3f95",
+      "text": "背景[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706107,
+      "updated": 1711706205
+    },
+    {
+      "id": "660690061280f00000ce3f97",
+      "text": " [魔法陣言語]はinajob.github.ioで試せるが、clientで実行する必要がある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706120,
+      "updated": 1711706203
+    },
+    {
+      "id": "66068ffc1280f00000ce3f96",
+      "text": " [serverless function]にできればscrapboxにも埋め込めて便利そう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706110,
+      "updated": 1711706163
+    },
+    {
+      "id": "660690311280f00000ce3f99",
+      "text": " ということで、parser部分だけ抜き出して再実装しようと試みた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706163,
+      "updated": 1711706196
+    },
+    {
+      "id": "66068fc41280f00000001a99a8",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f0000000e3c6fe",
+      "text": "[entry point https://inajob.github.io/mce3/js/mce3.js]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f00000004c940c",
+      "text": " `init()`でSVGとラスタイメージを生成している",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f0000000f99cac",
+      "text": "  `(function(){/*...*/}).toString()`という黒魔術っぽいコードがある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f0000000be235c",
+      "text": " class",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f00000000fba06",
+      "text": "  `RendererSVG`[. https://inajob.github.io/mce3/js/render-svg.js ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f000000082bb1f",
+      "text": "   SVGレンダラー",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f0000000900763",
+      "text": "  `SimpleParser`[. https://inajob.github.io/mce3/js/render-base.js ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f00000002e5ecc",
+      "text": "   [魔法陣言語]の中間言語のパーサー",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f0000000c6cdf1",
+      "text": "  `Renderer`[. https://inajob.github.io/mce3/js/render.js ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f0000000c58e4a",
+      "text": "  　ラスタレンダラー",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "660692031280f00000d6cf5b",
+      "text": "  `MCL`[. https://inajob.github.io/mce3/js/mcl.js]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706633,
+      "updated": 1711706638
+    },
+    {
+      "id": "6606920d1280f00000d6cf5c",
+      "text": "   [魔法陣言語]を中間言語に変換するparsr",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706639,
+      "updated": 1711706650
+    },
+    {
+      "id": "6606922a1280f00000d6cf5d",
+      "text": "   [gin.js]っていう古の[パーサージェネレータ]に依存しているのを何とかしたい[inajob.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706668,
+      "updated": 1711706669
+    },
+    {
+      "id": "6606922b1280f00000d6cf5e",
+      "text": "   \thttps://nanto.asablo.jp/blog/2007/09/12/1793275",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706669,
+      "updated": 1711706669
+    },
+    {
+      "id": "6606922b1280f00000d6cf5f",
+      "text": "   \t機械的にmordernizeできるか試してみたけど無理だった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706669,
+      "updated": 1711706669
+    },
+    {
+      "id": "660692421280f00000d6cf60",
+      "text": "   `MCL`がお目当てのparserっぽい[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706692,
+      "updated": 1711706707
+    },
+    {
+      "id": "66068fc41280f0000000b1503a",
+      "text": " [worker https://inajob.github.io/mce3/js/worker.js]で構文解析している？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f0000000ab7956",
+      "text": " 　じゃあなんでentry pointでもパーサーを使っているんだろう？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f0000000d21cad",
+      "text": " 　\tどこだろう？ 黒魔術っぽいところは単に文字列を作ってるだけですね。[inajob.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f00000006d99fd",
+      "text": " 　\t`draw()`の`worker.onmessage`の`var out = p.parse(sout);`です(`var p = new SimpleParser();`)[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f0000000d71e95",
+      "text": " 　\t\t魔法陣言語をレンダー用の中間言語（文字列）としてWorkerとやり取りしているようで、受け取った文字列をレンダー言語の構造に変換するのがSimpleParserのようですね（おおむね改行区切りでリストにするだけですが）[inajob.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f00000009c5d2d",
+      "text": " 　\t\t\tWebWorkerのメッセージでArrayを渡せないんだっけ？（忘れた）",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f0000000df4ebb",
+      "text": " 　\t\t\t\thttps://developer.mozilla.org/ja/docs/Web/API/Worker/postMessage",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f000000060b3e7",
+      "text": " 　\t\t\t\tいけそうにみえるな",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f0000000164baf",
+      "text": " 　\t\t\t\tかつてはダメだったのかな・・？覚えてないです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "66068fc41280f0000000a6176c",
+      "text": " 　\t\tデータコピーの都合がつかなかったのかな？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706053,
+      "updated": 1711706053
+    },
+    {
+      "id": "6606918e1280f00000ce3f9a",
+      "text": " 　\t\t今のJSなら中間言語は不要そう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706512,
+      "updated": 1711706520
+    },
+    {
+      "id": "66068fde1280f0000000754897",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706080,
+      "updated": 1711706080
+    },
+    {
+      "id": "660693361280f000004dd523",
+      "text": "`MCL`をcode readingする",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706936,
+      "updated": 1711706942
+    },
+    {
+      "id": "660693361280f000004dd524",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711706937,
+      "updated": 1711706937
+    }
+  ]
+}
