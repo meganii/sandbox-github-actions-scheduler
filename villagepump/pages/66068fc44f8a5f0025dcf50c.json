@@ -2,7 +2,7 @@
   "id": "66068fc44f8a5f0025dcf50c",
   "title": "魔法陣言語parserのcode reading",
   "created": 1711706053,
-  "updated": 1711706942,
+  "updated": 1711790104,
   "lines": [
     {
       "id": "66068fc44f8a5f0025dcf50c",
@@ -111,10 +111,10 @@
     },
     {
       "id": "66068fc41280f00000002e5ecc",
-      "text": "   [魔法陣言語]の中間言語のパーサー",
+      "text": "   [魔法陣言語の描画専用言語]のパーサー",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711706053,
-      "updated": 1711706053
+      "updated": 1711768614
     },
     {
       "id": "66068fc41280f0000000c6cdf1",
@@ -139,23 +139,16 @@
     },
     {
       "id": "6606920d1280f00000d6cf5c",
-      "text": "   [魔法陣言語]を中間言語に変換するparsr",
+      "text": "   [魔法陣言語]を[魔法陣言語の描画専用言語]に変換するparsr",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711706639,
-      "updated": 1711706650
+      "updated": 1711768607
     },
     {
       "id": "6606922a1280f00000d6cf5d",
       "text": "   [gin.js]っていう古の[パーサージェネレータ]に依存しているのを何とかしたい[inajob.icon]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711706668,
-      "updated": 1711706669
-    },
-    {
-      "id": "6606922b1280f00000d6cf5e",
-      "text": "   \thttps://nanto.asablo.jp/blog/2007/09/12/1793275",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1711706669,
       "updated": 1711706669
     },
     {
@@ -244,10 +237,10 @@
     },
     {
       "id": "6606918e1280f00000ce3f9a",
-      "text": " 　\t\t今のJSなら中間言語は不要そう",
+      "text": " 　\t\t今のJSなら[魔法陣言語の描画専用言語]は不要そう",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711706512,
-      "updated": 1711706520
+      "updated": 1711768621
     },
     {
       "id": "66068fde1280f0000000754897",
@@ -264,11 +257,389 @@
       "updated": 1711706942
     },
     {
+      "id": "660766461280f00000c29763",
+      "text": " [gin.js]で文法定義されている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760967,
+      "updated": 1711761027
+    },
+    {
+      "id": "660766841280f00000c29764",
+      "text": "  `$`で始まるものは定義済み終端記号",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711761028,
+      "updated": 1711761046
+    },
+    {
+      "id": "660766951280f00000c29765",
+      "text": "   `$DECIMAL`：数値",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711761046,
+      "updated": 1711761052
+    },
+    {
+      "id": "6607669c1280f00000c29766",
+      "text": "   `$JS_STRING`：JSの文字列",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711761052,
+      "updated": 1711761067
+    },
+    {
+      "id": "660766d31280f00000c29768",
+      "text": "  `[]`,`\"\"`,`<>`で囲まれた文字列が終端記号となる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711761108,
+      "updated": 1711761135
+    },
+    {
+      "id": "660766ef1280f00000c29769",
+      "text": "   `<>`は中身を正規表現として解釈する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711761136,
+      "updated": 1711761146
+    },
+    {
+      "id": "660767d31280f00000c2976b",
+      "text": "  `:`の前で認識した記号は、その後と同名の関数(別途定義)で処理される",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711761364,
+      "updated": 1711761395
+    },
+    {
+      "id": "6607670e1280f00000c2976a",
+      "text": "  `PROGRAM`から解析を開始する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711761167,
+      "updated": 1711761363
+    },
+    {
+      "id": "660768081280f00000c2976c",
+      "text": "  `/[ \\r\\n]/`は適宜無視される",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711761416,
+      "updated": 1711761423
+    },
+    {
       "id": "660693361280f000004dd524",
-      "text": "",
+      "text": "  code:js",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711706937,
-      "updated": 1711706937
+      "updated": 1711761028
+    },
+    {
+      "id": "660766411280f00000c29750",
+      "text": "     this.parser = new Gin.Grammar({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c29751",
+      "text": "       Stmnt: /Cmp:cmp | [!] ARG:push [=] Cmp:assign/,  // 代入演算、即値",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c29752",
+      "text": "       Cmp: / Expr ([<] Expr:gt | [>] Expr:lt | [==] Expr:eq | [!=] Expr:neq)* /,      // 比較演算",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c29753",
+      "text": "       Expr: / Term ([+] Term:add | [-] Term:sub)* /,   // 加減演算",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c29754",
+      "text": "       Term: / Fctr ([*] Fctr:mul | [/] Fctr:div | [%] Fctr:mod)* /, // 乗除演算",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c29755",
+      "text": "       // 数字、変数、関数、文字列、括弧",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c29756",
+      "text": "       Fctr: / $DECIMAL:fpush | Def | Call | $JS_STRING:push | [(] Cmp:pushn [)] /,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c29757",
+      "text": "       // 変数、関数呼び出し[ブロック付き]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c29758",
+      "text": "       Call: /(ARG:vpush|[(] Cmp[)]):callBegin ((\"(\" ARGLIST{0,1} \")\":prepareBlock ((\"{\" PROGRAM \"}\"){0,1}):funcBody) {0,1}):funcCall/,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c29759",
+      "text": "       // 関数定義",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c2975a",
+      "text": "       Def: /[\\\\]:defBegin (\"(\" ARGLIST{0,1} \")\":prepareBlock \"{\" PROGRAM \"}\":funcBody):funcDef/,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c2975b",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c2975c",
+      "text": "       // プログラム全行",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c2975d",
+      "text": "       PROGRAM: /((LINE:line (<;>){0,1})*)/,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c2975e",
+      "text": "       LINE: /Stmnt COMM/, //ブロック解析",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c2975f",
+      "text": "       COMM: /<(\\/\\/[^\\r\\n]*|)>/,            //コメント",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c29760",
+      "text": "       ARGLIST: /Stmnt:arg (',' ARGLIST){0,1}/, // 引数リスト",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c29761",
+      "text": "       ARG: /<[a-zA-Z][a-zA-Z0-9]*>/,      //識別子",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "660766421280f00000c29762",
+      "text": "     },\"PROGRAM\",  new Gin.Parser.RegExp(/[ \\r\\n]/));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761028
+    },
+    {
+      "id": "66076e8c1280f00000c29774",
+      "text": " 仕様書も参照したいが、リンク切れなのでコードから文法を推測するしかない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711763084,
+      "updated": 1711763107
+    },
+    {
+      "id": "6607703e1280f00000c29775",
+      "text": " コードから関数定義(`Def`)の様子がわからない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711763519,
+      "updated": 1711763673
+    },
+    {
+      "id": "660770461280f00000c29776",
+      "text": "  `\\(a,b,c){ PROGRAM }`と書くみたい？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711763527,
+      "updated": 1711763561
+    },
+    {
+      "id": "660770691280f00000c29777",
+      "text": "  関数名の定義はしないの？無名関数なのか？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711763561,
+      "updated": 1711763574
+    },
+    {
+      "id": "660777fb6eb4060000b556f7",
+      "text": "   Yes、変数に代入して使います[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1711765500,
+      "updated": 1711765519
+    },
+    {
+      "id": "6607812f1280f000004eab5a",
+      "text": "   あたった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711767856,
+      "updated": 1711767859
+    },
+    {
+      "id": "660770ce1280f00000c29778",
+      "text": "  それに`Fctr`に`Def`が含まれているから、`3+\\(a,b,c){...}`もvalidになってしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711763662,
+      "updated": 1711763690
+    },
+    {
+      "id": "660770ea1280f00000c29779",
+      "text": "   どう計算するんだろう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711763690,
+      "updated": 1711763695
+    },
+    {
+      "id": "660778196eb4060000b556f8",
+      "text": "   これは実行時エラーになりそう[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1711765529,
+      "updated": 1711765536
+    },
+    {
+      "id": "660781911280f000004eab5d",
+      "text": "   単に文法エラーにしてないだけですね。了解です[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711767954,
+      "updated": 1711767994
+    },
+    {
+      "id": "660766401280f00000c2974f",
+      "text": " [bread-n-butter]で実装し直してみる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711760962,
+      "updated": 1711761462
+    },
+    {
+      "id": "660775391280f00000c297c8",
+      "text": "  途中まで書いて挫折",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711764793,
+      "updated": 1711764798
+    },
+    {
+      "id": "6607753d1280f00000c297c9",
+      "text": "  　上述した不可解な文法があり、具体的なコードのイメージがつかなかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711764798,
+      "updated": 1711764840
+    },
+    {
+      "id": "660775671280f00000c297ca",
+      "text": "  　やっぱり作例か仕様書がないと、これ以上読み解けない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711764840,
+      "updated": 1711764850
+    },
+    {
+      "id": "6607785f6eb4060000b556fa",
+      "text": "  　後で見えるところに置きますね[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1711765599,
+      "updated": 1711765609
+    },
+    {
+      "id": "660778666eb4060000b556fb",
+      "text": "  　 現時点だと[MCE3 https://inajob.github.io/mce3/js/mce3.js]の、ソースのpreludeが参考になるかも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711765607,
+      "updated": 1711767908
+    },
+    {
+      "id": "6607815c1280f000004eab5b",
+      "text": "  　  これか！ありがとうございます[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711767900,
+      "updated": 1711767913
+    },
+    {
+      "id": "660781771280f000004eab5c",
+      "text": "  　  変数宣言・代入に`!`をつけるのか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711767927,
+      "updated": 1711767949
+    },
+    {
+      "id": "660782656eb40600003b4ebe",
+      "text": "  　  \tやりたくなかったけど、パーサー周りで試行錯誤して、よくわからなかったので妥協した記憶[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1711768167,
+      "updated": 1711768185
+    },
+    {
+      "id": "660782b81280f000004eab5f",
+      "text": "  　  \t歴史的経緯[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711768249,
+      "updated": 1711768255
+    },
+    {
+      "id": "6607811c6eb40600003b4eb7",
+      "text": "  　 リンク切れ解消しました！",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1711767838,
+      "updated": 1711767842
+    },
+    {
+      "id": "660781f21280f000004eab5e",
+      "text": "  　 ありがとうございます！見れました！[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711768051,
+      "updated": 1711768058
+    },
+    {
+      "id": "6607683e1280f00000c2976e",
+      "text": "  15:28:39 字句解析までできた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711761472,
+      "updated": 1711780126
+    },
+    {
+      "id": "6607b11a1280f00000336d95",
+      "text": "  　https://github.com/takker99/magical-circle-engine/commit/839eba8c74917bf35a7beb560079aea19fc8d6e0",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711780123,
+      "updated": 1711780123
+    },
+    {
+      "id": "6607682e1280f00000c2976d",
+      "text": "\t\t\tはやい！[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1711761455,
+      "updated": 1711790104
+    },
+    {
+      "id": "6607d8156eb40600005d13fc",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1711790101,
+      "updated": 1711790101
     }
   ]
 }
