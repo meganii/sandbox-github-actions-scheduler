@@ -2,7 +2,7 @@
   "id": "6604da87be05b000242885b7",
   "title": "問：空でない有限全順序集合のHasse図が一直線上に並ぶことを示せ",
   "created": 1711594120,
-  "updated": 1711606719,
+  "updated": 1711941634,
   "lines": [
     {
       "id": "6604da87be05b000242885b7",
@@ -838,6 +838,13 @@
       "updated": 1711601136
     },
     {
+      "id": "660a1a761280f00000344461",
+      "text": "     →(A)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711938166,
+      "updated": 1711938172
+    },
+    {
       "id": "6604eb6b1280f000006a28d7",
       "text": "  >ここまで解いてる[takker.icon]",
       "userId": "5ef2bdebb60650001e1280f0",
@@ -929,242 +936,718 @@
       "updated": 1711598524
     },
     {
+      "id": "660a1a7f1280f00000344462",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711938175,
+      "updated": 1711938175
+    },
+    {
+      "id": "660a1a7f1280f00000344463",
+      "text": "(A)背理法で解く",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711938175,
+      "updated": 1711938199
+    },
+    {
+      "id": "660a1a971280f00000344464",
+      "text": "　途中でステップを進める作業が出てくる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711938199,
+      "updated": 1711938221
+    },
+    {
+      "id": "660a1aad1280f00000344465",
+      "text": "　数ステップ進めて、数学的帰納法を適用する述語[$ P(n)]を特定する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711938221,
+      "updated": 1711938264
+    },
+    {
+      "id": "660a1ae01280f00000344466",
+      "text": "  [$ \\forall x\\in U.]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711938271,
+      "updated": 1711938284
+    },
+    {
+      "id": "660a1ae61280f00000344467",
+      "text": "   [$ \\lnot(x=\\max U)\\land\\lnot\\exist y\\in U.S(x,y)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711938278,
+      "updated": 1711938284
+    },
+    {
+      "id": "660a1ae61280f00000344468",
+      "text": "   [$ \\iff\\begin{dcases}\\exist m\\in U.x<m\\\\\\forall y\\in U. (x<y\\implies\\exist u\\in U.(x< u< y))\\end{dcases}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711938278,
+      "updated": 1711938284
+    },
+    {
+      "id": "660a1ae61280f00000344469",
+      "text": "   [$ \\iff\\exist m_0\\in U\\begin{dcases}x<m_0\\\\\\exist m_1\\in U.(x<m_1<m_0)\\\\\\forall y\\in U. (x<y\\implies\\exist u\\in U.(x< u< y))\\end{dcases}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711938278,
+      "updated": 1711938284
+    },
+    {
+      "id": "660a1bb31280f0000034446c",
+      "text": "   [$ \\iff\\exist m_0,m_1\\in U\\begin{dcases}x<m_1<m_0\\\\\\forall y\\in U. (x<y\\implies\\exist u\\in U.(x< u< y))\\end{dcases}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711938483,
+      "updated": 1711938494
+    },
+    {
+      "id": "660a1b9a1280f0000034446b",
+      "text": "   [$ \\iff\\exist m_0,m_1,m_2\\in U\\begin{dcases}x<m_2<m_1<m_0\\\\\\forall y\\in U. (x<y\\implies\\exist u\\in U.(x< u< y))\\end{dcases}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711938458,
+      "updated": 1711938512
+    },
+    {
+      "id": "660a1bd81280f0000034446d",
+      "text": "   [$ \\iff\\exist m_0,m_1,m_2,m_3\\in U\\begin{dcases}x<m_3<m_2<m_1<m_0\\\\\\forall y\\in U. (x<y\\implies\\exist u\\in U.(x< u< y))\\end{dcases}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711938521,
+      "updated": 1711938532
+    },
+    {
+      "id": "660a1bf81280f0000034446e",
+      "text": "   [$ \\cdots]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711938552,
+      "updated": 1711938557
+    },
+    {
+      "id": "660a1bfe1280f0000034446f",
+      "text": "   [$ \\implies\\forall n\\in\\N\\exist m:[1..n]\\to U\\forall i\\le n\\forall j<i.x<m_i<m_j ]ー(1)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711938558,
+      "updated": 1711939457
+    },
+    {
+      "id": "660a1f641280f00000344473",
+      "text": "   このあとの展開",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711939428,
+      "updated": 1711939431
+    },
+    {
+      "id": "660a1f571280f00000344472",
+      "text": "    [$ \\forall i\\le n\\forall j<i.x<m_i<m_j]から[$ m_\\bullet]の単射性を示せるはず",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711939415,
+      "updated": 1711939471
+    },
+    {
+      "id": "660a20051280f00000344476",
+      "text": "    [$ U ]は有限集合だから[$ \\exist l\\in\\N\\exist\\phi:[1..l]⤖U ]が成立",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711939589,
+      "updated": 1711941295
+    },
+    {
+      "id": "660a202f1280f00000344477",
+      "text": "    (1)に[$ n=l+1 ]を代入して[$ m_\\bullet:[1..l+1]\\rightarrowtail U ]を得る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711939631,
+      "updated": 1711939666
+    },
+    {
+      "id": "660a26431280f000003444a1",
+      "text": "     単射を[$ \\rightarrowtail]と表している",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941187,
+      "updated": 1711941197
+    },
+    {
+      "id": "660a1f911280f00000344474",
+      "text": "    これと[$ \\phi:[1..l]⤖U ]より単射[$ \\phi^{-1}(m_\\bullet):[1..l+1]\\rightarrowtail[1..l] ]を得る",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711939473,
+      "updated": 1711939690
+    },
+    {
+      "id": "660a20fb1280f00000344478",
+      "text": "    しかし[鳩の巣原理]よりこれは矛盾",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711939835,
+      "updated": 1711939849
+    },
+    {
+      "id": "660a210a1280f00000344479",
+      "text": "    以上より[$ \\forall x\\in U.(x\\neq\\max U\\land\\lnot\\exist y\\in U.S(x,y)\\implies\\bot)]が得られる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711939850,
+      "updated": 1711939877
+    },
+    {
+      "id": "660a21ae1280f0000034447d",
+      "text": "   あとは(1)を[数学的帰納法]で示せばいい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940014,
+      "updated": 1711940027
+    },
+    {
+      "id": "660a217c1280f0000034447a",
+      "text": "   かなり回りくどいが、証明はできそうなのでこの方針でいく[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711939964,
+      "updated": 1711939997
+    },
+    {
+      "id": "660a219d1280f0000034447b",
+      "text": "    refactoringは後でやればいい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711939997,
+      "updated": 1711940005
+    },
+    {
+      "id": "660a21a41280f0000034447c",
+      "text": " 証明",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940005,
+      "updated": 1711940053
+    },
+    {
+      "id": "660a21d51280f0000034447e",
+      "text": "  [$ \\forall x\\in U.]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940053,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a21d61280f0000034447f",
+      "text": "   [$ \\lnot(x=\\max U)\\land\\lnot\\exist y\\in U.S(x,y)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940054,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a21d61280f00000344480",
+      "text": "   [$ \\iff\\begin{dcases}\\exist m_1\\in U.x<m_1\\\\\\forall y\\in U. (x<y\\implies\\exist u\\in U.(x< u< y))\\end{dcases}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940054,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a22371280f00000344483",
+      "text": "   [$ \\iff\\begin{dcases}\\exist m_1,m_2\\in U.(x<m_2<m_1)\\\\\\forall y\\in U. (x<y\\implies\\exist u\\in U.(x< u< y))\\end{dcases}]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940151,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a21e11280f00000344481",
+      "text": "   [$ \\iff\\begin{dcases}\\exist m:[1..2]\\to U\\forall i\\le 2\\forall j<i.x<m_i<m_j\\\\\\forall y\\in U. (x<y\\implies\\exist u\\in U.(x< u< y))\\end{dcases} ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940065,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a22bb1280f00000344484",
+      "text": "   [$ \\iff\\begin{dcases}P(2)\\\\\\forall y\\in U. (x<y\\implies\\exist u\\in U.(x< u< y))\\end{dcases} ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940283,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a22c51280f00000344485",
+      "text": "     [$ P(n):\\iff\\exist m:[1..n]\\to U\\forall i\\le n\\forall j<i.x<m_i<m_j ]とした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940293,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a22d71280f00000344486",
+      "text": "   [$ \\iff\\begin{dcases}P(2)\\\\\\forall y\\in U. (x<y\\implies\\exist u\\in U.(x< u< y))\\\\\\forall n\\ge2.\\end{dcases} ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940311,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a23881280f00000344489",
+      "text": "       [$ P(n)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940488,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a239a1280f0000034448a",
+      "text": "       [$ \\iff\\exist m:[1..n]\\to U\\forall i\\le n\\forall j<i.x<m_i<m_j ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940506,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a23ac1280f0000034448b",
+      "text": "       [$ \\iff\\exist m:[1..n]\\to U\\forall i\\le n\\begin{dcases}\\forall j<i.x<m_i<m_j\\\\\\exist u\\in U.(x<u<m_i)\\end{dcases} ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940524,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a23ef1280f0000034448c",
+      "text": "         [$ \\because\\forall y\\in U. (x<y\\implies\\exist u\\in U.(x< u< y))]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940591,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a23fe1280f0000034448d",
+      "text": "       [$ \\iff\\exist m:[1..n+1]\\to U\\forall i\\le n+1\\forall j<i.x<m_i<m_j ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940607,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a24511280f0000034448e",
+      "text": "         [$ m_{n+1}]に[$ u]を割り当てた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940689,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a24611280f0000034448f",
+      "text": "       [$ \\iff P(n+1)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940704,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a24741280f00000344490",
+      "text": "   [$ \\implies\\begin{dcases}P(2)\\\\\\forall n\\ge2.(P(n)\\implies P(n+1))\\end{dcases} ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940724,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a248c1280f00000344491",
+      "text": "   [$ \\implies\\forall n\\ge2.P(n)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940748,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a27fa1280f000003444ac",
+      "text": "     [$ \\because][数学的帰納法]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941626,
+      "updated": 1711941634
+    },
+    {
+      "id": "660a24a41280f00000344492",
+      "text": "   [$ \\iff\\forall n\\ge2\\exist m:[1..n]\\to U\\forall i\\le n\\forall j<i.x<m_i<m_j ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940772,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a24ca1280f00000344493",
+      "text": "   [$ \\implies\\forall n\\ge2\\exist m:[1..n]\\to U\\forall i,j\\in[1..n]. ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940810,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a24e71280f00000344494",
+      "text": "      [$ m_i=m_j]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940839,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a24ee1280f00000344495",
+      "text": "      [$ \\iff \\lnot(m_i<m_j)\\land m_i=m_j]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940847,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a25141280f00000344496",
+      "text": "      [$ \\implies\\lnot(j<i)\\land m_i=m_j]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940885,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a251d1280f00000344497",
+      "text": "        [$ \\because\\forall i\\le n\\forall j<i.x<m_i<m_j]の対偶",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940893,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a25391280f00000344498",
+      "text": "      [$ \\iff(\\lnot(j\\le i)\\lor j=i)\\land m_i=m_j]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940922,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a25641280f00000344499",
+      "text": "      [$ \\implies (i\\le j\\lor i=j)\\land m_i=m_j]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940964,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a256d1280f0000034449a",
+      "text": "        [$ \\because][完全律]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940972,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a257d1280f0000034449b",
+      "text": "      [$ \\iff (i<j\\lor i=j)\\land m_i=m_j]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711940989,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a25c81280f0000034449c",
+      "text": "      [$ \\implies(m_j<m_i\\lor i=j)\\land m_i=m_j]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941064,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a25d51280f0000034449d",
+      "text": "        [$ \\because\\forall i\\le n\\forall j<i.x<m_i<m_j]の[$ i]に[$ j]を、[$ j]に[$ i]を代入",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941078,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a25f41280f0000034449e",
+      "text": "      [$ \\implies i=j]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941108,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a260f1280f0000034449f",
+      "text": "   [$ \\implies\\forall n\\ge2\\exist m:[1..n]\\to U\\forall i,j\\in[1..n].(m_i=m_j\\implies i=j) ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941135,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a262e1280f000003444a0",
+      "text": "   [$ \\iff \\forall n\\ge2\\exist m:[1..n]\\rightarrowtail U ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941166,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a26531280f000003444a2",
+      "text": "   [$ \\iff\\begin{dcases}\\forall n\\ge2\\exist m:[1..n]\\rightarrowtail U\\\\\\exist n\\in\\N\\exist\\phi:[1..n]⤖U\\end{dcases} ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941203,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a267a1280f000003444a3",
+      "text": "     [$ \\because U]は有限集合",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941242,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a268a1280f000003444a4",
+      "text": "   [$ \\implies\\exist n\\in\\N\\exist\\phi:[1..n]⤖U\\exist m:[1..n+1]\\rightarrowtail U ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941259,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a26cf1280f000003444a5",
+      "text": "   [$ \\implies\\exist n\\in\\N\\exist\\psi:[1..n+1]\\rightarrowtail[1..n] ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941327,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a26f61280f000003444a6",
+      "text": "     [$ \\phi^{-1}\\circ m]を[$ \\psi]と置いた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941366,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a270a1280f000003444a7",
+      "text": "   [$ \\implies\\bot]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941386,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a27121280f000003444a8",
+      "text": "     [$ \\because][鳩の巣原理]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941394,
+      "updated": 1711941430
+    },
+    {
+      "id": "660a27181280f000003444a9",
+      "text": "  [$ \\implies\\forall x\\in U.\\lnot(\\exist y\\in U.S(x,y)\\land\\lnot x=\\max U)]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941400,
+      "updated": 1711941562
+    },
+    {
+      "id": "660a279b1280f000003444ab",
+      "text": "  [$ \\underline{\\iff\\forall x\\in U.(\\lnot\\exist y\\in U.S(x,y)\\implies x=\\max U)\\quad}_\\blacksquare]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941531,
+      "updated": 1711941582
+    },
+    {
+      "id": "660a276c1280f000003444aa",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1711941484,
+      "updated": 1711941584
+    },
+    {
       "id": "6604ebbcaff09e00001fc999",
       "text": "",
-      "userId": "582e63d27c56960011aff09e",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711598524,
-      "updated": 1711598524
+      "updated": 1711940059
     },
     {
       "id": "6604de7e1280f0000041f7f1",
       "text": " 証明(失敗)",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595134,
-      "updated": 1711596029
+      "updated": 1711940059
     },
     {
       "id": "6604de821280f0000041f7f2",
       "text": "  1. [$ \\forall x,y,z\\in U.]",
-      "userId": "582e63d27c56960011aff09e",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595138,
-      "updated": 1711598520
+      "updated": 1711940059
     },
     {
       "id": "6604de8a1280f0000041f7f3",
       "text": "    [$ S(x,y)\\land S(x,z)]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595147,
-      "updated": 1711595153
+      "updated": 1711940059
     },
     {
       "id": "6604de911280f0000041f7f4",
       "text": "    [$ \\iff x\\le y\\land x\\le z\\land\\forall u\\in U.(x\\le u\\le y\\implies x=u\\lor u=y)\\land\\forall u\\in U.(x\\le u\\le z\\implies x=u\\lor u=z)]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595154,
-      "updated": 1711595569
+      "updated": 1711940059
     },
     {
       "id": "6604dee71280f0000041f7f5",
       "text": "    [$ \\implies x\\le y\\land x\\le z\\land(x\\le x\\le y\\implies x=x\\lor x=y)\\land(x\\le x\\le z\\implies x=x\\lor x=z)]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595239,
-      "updated": 1711595458
+      "updated": 1711940059
     },
     {
       "id": "6604df031280f0000041f7f6",
       "text": "      [$ \\because u=x]を代入",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595268,
-      "updated": 1711595441
+      "updated": 1711940059
     },
     {
       "id": "6604dfc91280f0000041f7fa",
       "text": "    [$ \\implies x\\le y\\land x\\le z\\land(x\\le y\\implies x=y)\\land(x\\le z\\implies x=z)]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595465,
-      "updated": 1711595486
+      "updated": 1711940059
     },
     {
       "id": "6604dfdf1280f0000041f7fb",
       "text": "      [$ \\because][反射律]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595487,
-      "updated": 1711595494
+      "updated": 1711940059
     },
     {
       "id": "6604dfe71280f0000041f7fc",
       "text": "    [$ \\implies x=y\\land x=z]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595495,
-      "updated": 1711595512
+      "updated": 1711940059
     },
     {
       "id": "6604dff11280f0000041f7fd",
       "text": "    [$ \\implies y=z]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595505,
-      "updated": 1711595511
+      "updated": 1711940059
     },
     {
       "id": "6604dffd1280f0000041f7fe",
       "text": "   [$ \\underline{\\therefore\\forall x,y,z\\in U.S(x,y)\\land S(x,z)\\implies y=z\\quad}_\\blacksquare]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595517,
-      "updated": 1711595538
+      "updated": 1711940059
     },
     {
       "id": "6604e0131280f0000041f7ff",
       "text": "  2. [$ \\forall x,y,z\\in U.]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595538,
-      "updated": 1711595550
+      "updated": 1711940059
     },
     {
       "id": "6604e0221280f0000041f800",
       "text": "    [$ S(x,z)\\land S(y,z)]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595554,
-      "updated": 1711595564
+      "updated": 1711940059
     },
     {
       "id": "6604e0351280f0000041f801",
       "text": "    [$ \\iff x\\le z\\land y\\le z\\land\\forall u\\in U.(x\\le u\\le z\\implies x=u\\lor u=z)\\land\\forall u\\in U.(y\\le u\\le z\\implies y=u\\lor u=z)]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595573,
-      "updated": 1711595588
+      "updated": 1711940059
     },
     {
       "id": "6604df351280f0000041f7f7",
       "text": "    [$ \\implies x\\le z\\land y\\le z\\land(x\\le z\\le z\\implies x=z\\lor z=z)\\land(y\\le z\\le z\\implies y=z\\lor z=z)]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595317,
-      "updated": 1711595634
+      "updated": 1711940059
     },
     {
       "id": "6604e0561280f0000041f802",
       "text": "      [$ \\because u=z]を代入",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595605,
-      "updated": 1711595607
+      "updated": 1711940059
     },
     {
       "id": "6604e0751280f0000041f804",
       "text": "    [$ \\implies x\\le z\\land y\\le z\\land(x\\le z\\implies x=z)\\land(y\\le z\\implies y=z)]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595637,
-      "updated": 1711595651
+      "updated": 1711940059
     },
     {
       "id": "6604e0581280f0000041f803",
       "text": "      [$ \\because][反射律]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595607,
-      "updated": 1711595655
+      "updated": 1711940059
     },
     {
       "id": "6604e0881280f0000041f806",
       "text": "    [$ \\implies x=z\\land y=z]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595655,
-      "updated": 1711595663
+      "updated": 1711940059
     },
     {
       "id": "6604e0901280f0000041f807",
       "text": "    [$ \\implies x=y]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595664,
-      "updated": 1711595670
+      "updated": 1711940059
     },
     {
       "id": "6604e0871280f0000041f805",
       "text": "   [$ \\underline{\\therefore\\forall x,y,z\\in U.S(x,z)\\land S(y,z)\\implies x=y\\quad}_\\blacksquare]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595655,
-      "updated": 1711595711
+      "updated": 1711940059
     },
     {
       "id": "6604e0c01280f0000041f809",
       "text": "  ちょっとまって。おかしいぞ[takker.icon]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595712,
-      "updated": 1711595724
+      "updated": 1711940059
     },
     {
       "id": "6604e0c81280f0000041f80a",
       "text": "   半順序集合なら分岐も合流も可能",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595720,
-      "updated": 1711595762
+      "updated": 1711940059
     },
     {
       "id": "6604e0f31280f0000041f80b",
       "text": "   全順序集合になって初めて分岐・合流不能になる",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595763,
-      "updated": 1711595779
+      "updated": 1711940059
     },
     {
       "id": "6604e1031280f0000041f80c",
       "text": "   にも関わらず、1,2を反射律のみで証明してしまった",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595779,
-      "updated": 1711595801
+      "updated": 1711940059
     },
     {
       "id": "6604e1191280f0000041f80d",
       "text": "   これでは半順序集合でも分岐・合流不可になってしまう！",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595801,
-      "updated": 1711595824
+      "updated": 1711940059
     },
     {
       "id": "6604e1c81280f0000041f80e",
       "text": "  あ……[$ x=x\\lor x=y\\implies x=y]してた……",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595976,
-      "updated": 1711595989
+      "updated": 1711940059
     },
     {
       "id": "6604e1d51280f0000041f80f",
       "text": "  　正：[$ x=x\\le x=y\\iff\\top]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711595989,
-      "updated": 1711596009
+      "updated": 1711940059
     },
     {
       "id": "6604e1f21280f0000041f810",
       "text": "  仕切り直し！！",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711596018,
-      "updated": 1711596021
+      "updated": 1711940059
     },
     {
       "id": "6604e2c71280f0000041f817",
       "text": "  そもそも[$ S(a,b)]の定義を間違えていた",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711596231,
-      "updated": 1711596248
+      "updated": 1711940059
     },
     {
       "id": "6604e2d81280f0000041f818",
       "text": "  　誤[$ S(a,b):\\iff a\\le b\\land\\forall x\\in U.(a\\le x\\le b\\implies a=x\\lor x=b)]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711596248,
-      "updated": 1711596266
+      "updated": 1711940059
     },
     {
       "id": "6604e2e01280f0000041f819",
       "text": "  　正[$ S(a,b):\\iff a< b\\land\\forall x\\in U.(a\\le x\\le b\\implies a=x\\lor x=b)]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711596256,
-      "updated": 1711596261
+      "updated": 1711940059
     },
     {
       "id": "6604e2ec1280f0000041f81a",
       "text": "  　「誤」だと、反射律[$ \\forall x\\in U. S(x,x)]が成立してしまい、非常に面倒な場合分けが生じてしまう",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711596268,
-      "updated": 1711596299
+      "updated": 1711940059
     },
     {
       "id": "6604e09b1280f0000041f808",
