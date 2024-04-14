@@ -1,15 +1,239 @@
 {
   "id": "65fffae9a6b4540024d3e434",
-  "title": "GM_fetchがない環境でurl-customizerでtweetが展開できない",
+  "title": "✅️GM_fetchがない環境でurl-customizerでtweetが展開できない",
   "created": 1711274748,
-  "updated": 1711275845,
+  "updated": 1713050219,
   "lines": [
     {
       "id": "65fffae9a6b4540024d3e434",
-      "text": "GM_fetchがない環境でurl-customizerでtweetが展開できない",
-      "userId": "616ca537c25a92001e5f1e0d",
+      "text": "✅️GM_fetchがない環境でurl-customizerでtweetが展開できない",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711274748,
-      "updated": 1711275274
+      "updated": 1713049716
+    },
+    {
+      "id": "661b10841280f0000067dd70",
+      "text": "2024-04-14 修正完了[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049733,
+      "updated": 1713049741
+    },
+    {
+      "id": "661b108d1280f0000067dd73",
+      "text": " 0.3.3にupdateしてください",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049741,
+      "updated": 1713049757
+    },
+    {
+      "id": "661b11e91280f00000e8c3e6",
+      "text": " 変更点",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713050089,
+      "updated": 1713050096
+    },
+    {
+      "id": "661b11f01280f00000e8c3e7",
+      "text": "  default formatterで`userName`を使わないようにした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713050096,
+      "updated": 1713050109
+    },
+    {
+      "id": "661b12071280f00000e8c3e8",
+      "text": "  画像や動画しかないtweetは`no description provided`と表示する(後述)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713050119,
+      "updated": 1713050144
+    },
+    {
+      "id": "661b10841280f0000067dd71",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049733,
+      "updated": 1713049733
+    },
+    {
+      "id": "661b10d71280f0000067dd84",
+      "text": "defaultで[Scrapboxのtweet埋め込み]が機能しなくなっている理由もわかった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049815,
+      "updated": 1713049840
+    },
+    {
+      "id": "661b10bf1280f0000067dd74",
+      "text": " code:index.jsから抜粋(js)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049792,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c21280f0000067dd75",
+      "text": "                              var v = Y.default.stringify({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c31280f0000067dd76",
+      "text": "                                  url: i",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c31280f0000067dd77",
+      "text": "                              })",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c31280f0000067dd78",
+      "text": "                                , _ = yield ee.apiClient.post(\"/api/embed-text/twitter?\".concat(v), {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c31280f0000067dd79",
+      "text": "                                  timeout: 3e3",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c31280f0000067dd7a",
+      "text": "                              })",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c31280f0000067dd7b",
+      "text": "                                , {description: j, userName: W, screenName: Z, images: X} = _.data;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c31280f0000067dd7c",
+      "text": "                              if (!(j && W && Z))",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c31280f0000067dd7d",
+      "text": "                                  return closeModal();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c31280f0000067dd7e",
+      "text": "                              ye({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c31280f0000067dd7f",
+      "text": "                                  description: j,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c31280f0000067dd80",
+      "text": "                                  userName: W,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c31280f0000067dd81",
+      "text": "                                  screenName: Z,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c31280f0000067dd82",
+      "text": "                                  images: X",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10c31280f0000067dd83",
+      "text": "                              }),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049795,
+      "updated": 1713049846
+    },
+    {
+      "id": "661b10f81280f0000067dd86",
+      "text": " `description`,`userName`,`screenName`,`images`のどれか一つでもないとmodalが閉じる(`if (!(j && W && Z)) return closeModal();`)ようcodingされている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049848,
+      "updated": 1713049998
+    },
+    {
+      "id": "661b113a1280f0000067dd87",
+      "text": " ところが`userName`が生えなくなってしまったせいで、常にmodalが閉じるようになってしまった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049914,
+      "updated": 1713049949
+    },
+    {
+      "id": "661b11891280f00000e8c3e3",
+      "text": " またメディアのみのtweetで`description`が生えなくなったため、この条件でもmodalが開かなくなる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049994,
+      "updated": 1713050022
+    },
+    {
+      "id": "661b122e1280f00000e8c3ea",
+      "text": " おそらく[shokai.icon]さんは気づいていないか、気づいていても困っていないか修正が後回しになっていて、放置しているのだろう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713050158,
+      "updated": 1713050219
+    },
+    {
+      "id": "661b115d1280f0000067dd88",
+      "text": " ちなみに[イーロン・マスク.icon]のせいで`images`は常に空になる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049949,
+      "updated": 1713049965
+    },
+    {
+      "id": "661b11b31280f00000e8c3e5",
+      "text": "  画像のみのtweetは表示できるものが何もなくなってしまったため、`no description provided`と表示するようdefault formatterを変えた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713050036,
+      "updated": 1713050087
+    },
+    {
+      "id": "661b117e1280f00000e8c3e2",
+      "text": "  > [@shokai https://twitter.com/shokai/status/1477948103877861376]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049982,
+      "updated": 1713050029
+    },
+    {
+      "id": "661b11ad1280f00000e8c3e4",
+      "text": "  > [/ no description provided]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713050029,
+      "updated": 1713050034
+    },
+    {
+      "id": "661b10841280f0000067dd72",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049733,
+      "updated": 1713049733
     },
     {
       "id": "65fffafb5f1e0d0000f2d9b9",
@@ -167,10 +391,10 @@
     },
     {
       "id": "65fffc945f1e0d0000f2d9cd",
-      "text": "   [いまさらtwitter埋め込みが死をどうにかしようとしている#6557403b5e90c000004f458c]",
-      "userId": "616ca537c25a92001e5f1e0d",
+      "text": "    [✅️GM_fetchがない環境でurl-customizerでtweetが展開できない#661b0ff31280f000000020069c]",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1711275156,
-      "updated": 1711275156
+      "updated": 1713049614
     },
     {
       "id": "65fffc945f1e0d0000f2d9ce",
@@ -278,11 +502,158 @@
       "updated": 1711275314
     },
     {
-      "id": "65fffd305f1e0d0000fd2611",
+      "id": "661b10581280f0000067dd6d",
       "text": "",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1711275312,
-      "updated": 1711275312
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049688,
+      "updated": 1713049688
+    },
+    {
+      "id": "661b0ff31280f000000031183e",
+      "text": "(2024-04-14) [いまさらtwitter埋め込みが死をどうにかしようとしている]にあったやりとりを移植",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049632
+    },
+    {
+      "id": "661b10211280f0000067dd6c",
+      "text": "　このやりとりのほうが上記のやりとりより先に行われていた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049634,
+      "updated": 1713049667
+    },
+    {
+      "id": "661b0ff31280f000000020069c",
+      "text": "原因がわかりました。[api/embed-text/twitter]の応答の型変更です[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f000000076944b",
+      "text": " 今までは`userName`が生えていたが、あるタイミングで消えたみたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f00000003907bc",
+      "text": "  [/yuyasurarin/tweetの埋め込みのフォーマットを変更するscript#64e6d6675f1e0d00005b019a][wogikaze.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f0000000b64874",
+      "text": " これを文字列だとみなして処理していたため、`userName.replace()`で`TypeError: Cannot read properties of undefined (reading 'replace')`が発生した",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f0000000a3858b",
+      "text": "対策",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f000000088843a",
+      "text": " PCのみ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f000000096565e",
+      "text": "  [TamperMonkey]で[GM fetch]を入れる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f00000000e41d6",
+      "text": " モバイル含む",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f000000067c2ab",
+      "text": " 　コードに修正を加える必要がある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f00000004ed10d",
+      "text": "　  [api/embed-text/twitter]の型定義の更新",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f0000000c60ef2",
+      "text": "　  変更された型定義に併せて、[scrapbox-url-customizer]のformat処理を書き換える",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f000000054e411",
+      "text": "[takker.icon]が再現できなかったのは、[GM fetch]を入れていたため",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f00000008fa001",
+      "text": " [GM fetch]がない環境でのみ[api/embed-text/twitter]を叩く仕様にしていた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f0000000186178",
+      "text": "なるほどー[inajob.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f000000053aaf1",
+      "text": "\t今は [api/embed-text/twitter] は動いているけどCtrl+Shift+Vが動いていない状況のか・・",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f0000000b42320",
+      "text": "\t[api/embed-text/twitter]もおかしいように見える",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f0000000866ae7",
+      "text": "\t\tdescriptionの先頭1文字が欠けている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f0000000fffa43",
+      "text": "\t\t画像があってもimagesが空",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
+    },
+    {
+      "id": "661b0ff31280f0000000e059ed",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713049587,
+      "updated": 1713049587
     }
   ]
 }
