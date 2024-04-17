@@ -2,7 +2,7 @@
   "id": "63e3360412f24d001baee188",
   "title": "カーソルが行頭になくてもTabでインデントするUserScript",
   "created": 1675834886,
-  "updated": 1675834933,
+  "updated": 1713356921,
   "lines": [
     {
       "id": "63e3360412f24d001baee188",
@@ -17,6 +17,20 @@
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1675834889,
       "updated": 1675834907
+    },
+    {
+      "id": "661f6cf61280f00000a19bb8",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713335543,
+      "updated": 1713335543
+    },
+    {
+      "id": "661f6cf61280f00000a19bb9",
+      "text": "実装 ~2024-04-17",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713335543,
+      "updated": 1713335557
     },
     {
       "id": "63e3362d1280f0000001f9e1",
@@ -34,10 +48,626 @@
     },
     {
       "id": "63e336051280f0000001f9de",
-      "text": "",
+      "text": "[プロジェクトホームを開くとエラーが出る2024/4/14→ページ遷移で#text-inputが消えるせい]が原因で動作しなくなった",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1675834886,
-      "updated": 1675834886
+      "updated": 1713335585
+    },
+    {
+      "id": "661f6d201280f00000deacaa",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713335585,
+      "updated": 1713337452
+    },
+    {
+      "id": "661f6d211280f00000deacab",
+      "text": "バグ修正版",
+      "userId": "5b10baafcc4e900014b759d7",
+      "created": 1713335586,
+      "updated": 1713356921
+    },
+    {
+      "id": "661f747c1280f00000a904ba",
+      "text": " お試し",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337469,
+      "updated": 1713337520
+    },
+    {
+      "id": "661f747f1280f00000a904bb",
+      "text": "  $ import(\"/api/code/villagepump/カーソルが行頭になくてもTabでインデントするUserScript/script.js\").then(({ setup })=>setup())",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337472,
+      "updated": 1713337490
+    },
+    {
+      "id": "661f74751280f00000a904b9",
+      "text": " type check",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337462,
+      "updated": 1713337468
+    },
+    {
+      "id": "661f72b31280f00000dead2d",
+      "text": "  $ deno check --remote -r https://scrapbox.io/api/code/villagepump/カーソルが行頭になくてもTabでインデントするUserScript/script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337013,
+      "updated": 1713337468
+    },
+    {
+      "id": "661f6de31280f00000deacb0",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713335780,
+      "updated": 1713335783
+    },
+    {
+      "id": "661f72711280f00000dead28",
+      "text": " // @ts-check",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336947,
+      "updated": 1713337024
+    },
+    {
+      "id": "661f72c01280f00000dead30",
+      "text": " /// <reference no-default-lib=\"true\" />",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337025,
+      "updated": 1713337034
+    },
+    {
+      "id": "661f72cb1280f00000dead31",
+      "text": " /// <reference lib=\"esnext\" />",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337036,
+      "updated": 1713337040
+    },
+    {
+      "id": "661f72d21280f00000dead32",
+      "text": " /// <reference lib=\"dom\" />",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337043,
+      "updated": 1713337044
+    },
+    {
+      "id": "661f72b81280f00000dead2e",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337017,
+      "updated": 1713337018
+    },
+    {
+      "id": "661f72b91280f00000dead2f",
+      "text": " /** カーソルが行頭になくてもTabでインデントするUserScriptを起動する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337018,
+      "updated": 1713337018
+    },
+    {
+      "id": "661f72791280f00000dead29",
+      "text": "  *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336954,
+      "updated": 1713336956
+    },
+    {
+      "id": "661f727c1280f00000dead2a",
+      "text": "  * @return {() => void} scriptを解除する関数",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336957,
+      "updated": 1713336983
+    },
+    {
+      "id": "661f72861280f00000dead2b",
+      "text": "  */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336967,
+      "updated": 1713336969
+    },
+    {
+      "id": "661f6ea41280f00000deacd9",
+      "text": " export const setup = () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713335973,
+      "updated": 1713335981
+    },
+    {
+      "id": "661f72531280f00000dead24",
+      "text": "   registListener();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336916,
+      "updated": 1713336933
+    },
+    {
+      "id": "661f731f1280f00000dead36",
+      "text": "   // @ts-ignore",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337120,
+      "updated": 1713337124
+    },
+    {
+      "id": "661f72581280f00000dead25",
+      "text": "   scrapbox.on(\"layout:changed\", registListener);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336921,
+      "updated": 1713337114
+    },
+    {
+      "id": "661f726a1280f00000dead27",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336939,
+      "updated": 1713337128
+    },
+    {
+      "id": "661f73271280f00000dead37",
+      "text": "   // @ts-ignore",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337128,
+      "updated": 1713337128
+    },
+    {
+      "id": "661f72661280f00000dead26",
+      "text": "   return () => scrapbox.off(\"layout:changed\", registListener);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336935,
+      "updated": 1713337115
+    },
+    {
+      "id": "661f6de61280f00000deacc0",
+      "text": " };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713335783,
+      "updated": 1713336912
+    },
+    {
+      "id": "661f6ecb1280f00000deacdb",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336012,
+      "updated": 1713336012
+    },
+    {
+      "id": "661f72191280f00000dead1b",
+      "text": " /** `#text-input`があるときのみlistenerを登録する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336858,
+      "updated": 1713336882
+    },
+    {
+      "id": "661f72231280f00000dead1e",
+      "text": "  *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336868,
+      "updated": 1713336869
+    },
+    {
+      "id": "661f721c1280f00000dead1c",
+      "text": "  * @return {void}",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336862,
+      "updated": 1713336865
+    },
+    {
+      "id": "661f72211280f00000dead1d",
+      "text": "  */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336866,
+      "updated": 1713336867
+    },
+    {
+      "id": "661f6ecb1280f00000deacdc",
+      "text": " const registListener = () => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336012,
+      "updated": 1713336021
+    },
+    {
+      "id": "661f6ed51280f00000deacdd",
+      "text": "   const textInput = document.getElementById(\"text-input\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336022,
+      "updated": 1713336614
+    },
+    {
+      "id": "661f6eff1280f00000deace0",
+      "text": "   if (!textInput) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336064,
+      "updated": 1713336616
+    },
+    {
+      "id": "661f711a1280f00000dead0b",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336603,
+      "updated": 1713336603
+    },
+    {
+      "id": "661f712e1280f00000dead0c",
+      "text": "   textInput.addEventListener(\"keydown\", operateIndent);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336624,
+      "updated": 1713336665
+    },
+    {
+      "id": "661f6ed61280f00000deacde",
+      "text": " };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336023,
+      "updated": 1713336026
+    },
+    {
+      "id": "661f713f1280f00000dead0d",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336640,
+      "updated": 1713336640
+    },
+    {
+      "id": "661f71631280f00000dead10",
+      "text": " /** Tabでindent, Shift+Tabでoutdent",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336676,
+      "updated": 1713336813
+    },
+    {
+      "id": "661f71ee1280f00000dead19",
+      "text": "  *",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336815,
+      "updated": 1713336816
+    },
+    {
+      "id": "661f71f01280f00000dead1a",
+      "text": "  * 重複登録を防止するため、不変なobjectとして定義している",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336817,
+      "updated": 1713336849
+    },
+    {
+      "id": "661f71c91280f00000dead15",
+      "text": "  * ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336778,
+      "updated": 1713336780
+    },
+    {
+      "id": "661f71cb1280f00000dead16",
+      "text": "  * @param {KeyboardEvent} e",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336780,
+      "updated": 1713337347
+    },
+    {
+      "id": "661f71cf1280f00000dead18",
+      "text": "  * @return {void}",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336784,
+      "updated": 1713336795
+    },
+    {
+      "id": "661f71ce1280f00000dead17",
+      "text": "  */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336783,
+      "updated": 1713336783
+    },
+    {
+      "id": "661f71401280f00000dead0e",
+      "text": " const operateIndent = (e) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336641,
+      "updated": 1713336655
+    },
+    {
+      "id": "661f71891280f00000dead12",
+      "text": "   if (e.key !== \"Tab\") return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336714,
+      "updated": 1713337449
+    },
+    {
+      "id": "661f72391280f00000dead1f",
+      "text": "   const cursorLine = document.getElementsByClassName(\"cursor-line\")[0];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336890,
+      "updated": 1713336890
+    },
+    {
+      "id": "661f72391280f00000dead20",
+      "text": "   if((cursorLine?.getElementsByClassName?.(\"code-block\")?.length ?? 0) !== 0) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336890,
+      "updated": 1713336890
+    },
+    {
+      "id": "661f72391280f00000dead21",
+      "text": "   if((cursorLine?.getElementsByClassName?.(\"table-block\")?.length ?? 0) !== 0) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336890,
+      "updated": 1713336890
+    },
+    {
+      "id": "661f72391280f00000dead22",
+      "text": "   if(document.getElementsByClassName(\"popup-menu\").length !== 0) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336890,
+      "updated": 1713336890
+    },
+    {
+      "id": "661f723b1280f00000dead23",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336892,
+      "updated": 1713336892
+    },
+    {
+      "id": "661f716c1280f00000dead11",
+      "text": "   const textInput = document.getElementById(\"text-input\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336685,
+      "updated": 1713337354
+    },
+    {
+      "id": "661f74061280f00000dead48",
+      "text": "   if (!textInput) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337351,
+      "updated": 1713337354
+    },
+    {
+      "id": "661f74061280f00000dead49",
+      "text": "   if (!(textInput instanceof HTMLTextAreaElement)) return;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337351,
+      "updated": 1713337354
+    },
+    {
+      "id": "661f740f1280f00000dead51",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337360,
+      "updated": 1713337360
+    },
+    {
+      "id": "661f740d1280f00000dead4f",
+      "text": "   e.preventDefault();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337358,
+      "updated": 1713337358
+    },
+    {
+      "id": "661f740d1280f00000dead50",
+      "text": "   e.stopPropagation();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337358,
+      "updated": 1713337358
+    },
+    {
+      "id": "661f74061280f00000dead4a",
+      "text": "   press(e.shiftKey ? 37 : 39, textInput, { ctrlKey: true });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337351,
+      "updated": 1713337354
+    },
+    {
+      "id": "661f714e1280f00000dead0f",
+      "text": " };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336655,
+      "updated": 1713336657
+    },
+    {
+      "id": "661f6e181280f00000deacc1",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713335834,
+      "updated": 1713335834
+    },
+    {
+      "id": "661f72ab1280f00000dead2c",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337004,
+      "updated": 1713337004
+    },
+    {
+      "id": "661f6e181280f00000deacc2",
+      "text": "from https://github.com/takker99/scrapbox-userscript-std/blob/0.24.3/browser/dom/press.ts#L16-L39",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713335834,
+      "updated": 1713336103
+    },
+    {
+      "id": "661f6e1c1280f00000deacc3",
+      "text": "code:script.js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713335837,
+      "updated": 1713336995
+    },
+    {
+      "id": "661f6f741280f00000deacf1",
+      "text": " /** @typedef {object} PressOptions - the options for `press()`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336181,
+      "updated": 1713336254
+    },
+    {
+      "id": "661f6f7a1280f00000deacf5",
+      "text": "  * @property {boolean=} shiftKey",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336187,
+      "updated": 1713336285
+    },
+    {
+      "id": "661f6fdf1280f00000deacfd",
+      "text": "  * @property {boolean=} ctrlKey",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336288,
+      "updated": 1713336291
+    },
+    {
+      "id": "661f6fe01280f00000deacfe",
+      "text": "  * @property {boolean=} altKey",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336289,
+      "updated": 1713336293
+    },
+    {
+      "id": "661f6fe51280f00000deacff",
+      "text": "  * @property {boolean=} metaKey",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336294,
+      "updated": 1713336297
+    },
+    {
+      "id": "661f6fe91280f00000dead00",
+      "text": "  * @property {boolean=} noModifiedKeys",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336298,
+      "updated": 1713336300
+    },
+    {
+      "id": "661f6fef1280f00000dead01",
+      "text": "  */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336304,
+      "updated": 1713336306
+    },
+    {
+      "id": "661f6ff11280f00000dead02",
+      "text": " ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713336306,
+      "updated": 1713336307
+    },
+    {
+      "id": "661f6e391280f00000deacd1",
+      "text": " /**",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713335866,
+      "updated": 1713337323
+    },
+    {
+      "id": "661f73ea1280f00000dead38",
+      "text": "  * @param {number} keyCode",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337323
+    },
+    {
+      "id": "661f73ea1280f00000dead39",
+      "text": "  * @param {HTMLTextAreaElement} textInput",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337323
+    },
+    {
+      "id": "661f73ea1280f00000dead3a",
+      "text": "  * @param {PressOptions=} pressOptions",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337323
+    },
+    {
+      "id": "661f73ea1280f00000dead3b",
+      "text": "  * @return {void}",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337323
+    },
+    {
+      "id": "661f73ea1280f00000dead3c",
+      "text": "  */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337323
+    },
+    {
+      "id": "661f73ea1280f00000dead3d",
+      "text": " const press = (keyCode, textInput, pressOptions) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337323
+    },
+    {
+      "id": "661f73ea1280f00000dead3e",
+      "text": "   const { noModifiedKeys = false, ...rest } = pressOptions ?? {};",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337325
+    },
+    {
+      "id": "661f73ea1280f00000dead3f",
+      "text": "   const options = {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337325
+    },
+    {
+      "id": "661f73ea1280f00000dead40",
+      "text": "     bubbles: true,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337328
+    },
+    {
+      "id": "661f73ea1280f00000dead41",
+      "text": "     cancelable: true,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337328
+    },
+    {
+      "id": "661f73ea1280f00000dead42",
+      "text": "     keyCode,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337328
+    },
+    {
+      "id": "661f73ea1280f00000dead43",
+      "text": "     ...(noModifiedKeys ? {} : { ...rest }),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337328
+    },
+    {
+      "id": "661f73ea1280f00000dead44",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337325
+    },
+    {
+      "id": "661f73ea1280f00000dead45",
+      "text": "   textInput.dispatchEvent(new KeyboardEvent(\"keydown\", options));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337325
+    },
+    {
+      "id": "661f73ea1280f00000dead46",
+      "text": "   textInput.dispatchEvent(new KeyboardEvent(\"keyup\", options));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337325
+    },
+    {
+      "id": "661f73ea1280f00000dead47",
+      "text": " };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713337323,
+      "updated": 1713337323
+    },
+    {
+      "id": "661f6d091280f00000deaca8",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1713335562,
+      "updated": 1713335562
     },
     {
       "id": "63e3362f1280f0000001f9e2",
