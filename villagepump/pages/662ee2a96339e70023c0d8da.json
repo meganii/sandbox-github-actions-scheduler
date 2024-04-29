@@ -1,0 +1,281 @@
+{
+  "id": "662ee2a96339e70023c0d8da",
+  "title": "ブラウザからタブを排除する",
+  "created": 1714348719,
+  "updated": 1714349566,
+  "lines": [
+    {
+      "id": "662ee2a96339e70023c0d8da",
+      "text": "ブラウザからタブを排除する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348719,
+      "updated": 1714348721
+    },
+    {
+      "id": "662ee2b271b3c20000a681e4",
+      "text": "firefoxの場合の手順です",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348722,
+      "updated": 1714348731
+    },
+    {
+      "id": "662ee2e371b3c20000a681ea",
+      "text": " 1. 事前に固定されているタブがある場合は固定を解除した後閉じてください",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348771,
+      "updated": 1714348775
+    },
+    {
+      "id": "662ee2cb71b3c20000a681e7",
+      "text": " 2. 設定→一般→起動の「前回のウインドウとタブを開く」をオフにしてください",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348747,
+      "updated": 1714348985
+    },
+    {
+      "id": "662ee3c171b3c20000a6820a",
+      "text": " \t設定→一般→タブグループの項目をすべてオフにしてください",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348993,
+      "updated": 1714349025
+    },
+    {
+      "id": "662ee2df71b3c20000a681e8",
+      "text": "\t3. タイトルバーを表示してください",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348767,
+      "updated": 1714348794
+    },
+    {
+      "id": "662ee48d71b3c20000a6820d",
+      "text": "\t\tタブバーにアドオンをおいている場合はアクセスできなくなるので事前にメニューバー/アドレスバーに移動してください",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714349197,
+      "updated": 1714349224
+    },
+    {
+      "id": "662ee32371b3c20000a681eb",
+      "text": "\t4. [userchrome.css]にこれを追記してください",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348835,
+      "updated": 1714348887
+    },
+    {
+      "id": "662ee32e71b3c20000a681ec",
+      "text": "code:userchrome.css",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348846,
+      "updated": 1714348851
+    },
+    {
+      "id": "662ee34571b3c20000a68206",
+      "text": "   /* ボタンを小さくする　*/",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348869,
+      "updated": 1714348869
+    },
+    {
+      "id": "662ee33571b3c20000a681ee",
+      "text": "    toolbar .toolbarbutton-1 > .toolbarbutton-icon:not(#tabs-newtab-button image) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681ef",
+      "text": "     width: 22px !important;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681f0",
+      "text": "     height: 22px!important;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681f1",
+      "text": "   }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681f2",
+      "text": "   toolbar .toolbarbutton-1 > .toolbarbutton-icon, toolbar .toolbarbutton-1 > .toolbarbutton-text, toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681f3",
+      "text": "     padding: 3px!important;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681f4",
+      "text": "     ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681f5",
+      "text": "   }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681f6",
+      "text": " hbox#nav-bar-customization-target :where(toolbarbutton#reload-button, toolbarbutton#stop-button) > image.toolbarbutton-icon {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681f7",
+      "text": " padding:3px!important;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681f8",
+      "text": " margin-top: 1px;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681f9",
+      "text": " } ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681fa",
+      "text": "  /* タブを消す */",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348882
+    },
+    {
+      "id": "662ee33571b3c20000a681fb",
+      "text": "  #main-window[tabsintitlebar=\"true\"]:not([extradragspace=\"true\"]) #TabsToolbar > .toolbar-items {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681fc",
+      "text": "   opacity: 0;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681fd",
+      "text": "   pointer-events: none;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681fe",
+      "text": " } ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a681ff",
+      "text": "  #main-window:not([tabsintitlebar=\"true\"]) #TabsToolbar {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a68200",
+      "text": "   visibility: collapse !important;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee33571b3c20000a68201",
+      "text": " } ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348853,
+      "updated": 1714348853
+    },
+    {
+      "id": "662ee2b471b3c20000a681e5",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348724,
+      "updated": 1714349034
+    },
+    {
+      "id": "662ee3eb71b3c20000a6820b",
+      "text": "\t5. 再起動してください",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714349035,
+      "updated": 1714349042
+    },
+    {
+      "id": "662ee3f971b3c20000a6820c",
+      "text": "\t6. メニューバーを表示させるといいです",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714349049,
+      "updated": 1714349052
+    },
+    {
+      "id": "662ee35b71b3c20000a68207",
+      "text": " 7. [https://addons.mozilla.org/ja/firefox/addon/i-hate-tabs-sdi-for-firefox/?utm_content=addons-manager-reviews-link&utm_medium=firefox-browser&utm_source=firefox-browser I Hate Tabs - SDI for Firefox]をインストールしてください([* 説明文をグーグル翻訳などで読み通してから])",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348891,
+      "updated": 1714349466
+    },
+    {
+      "id": "662ee5c471b3c20000ef4dc8",
+      "text": "ここから先はオプション",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714349508,
+      "updated": 1714349516
+    },
+    {
+      "id": "662ee5ad71b3c20000ef4dc7",
+      "text": " これからはタブの代わりにタスクバーを使用しましょう",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714349485,
+      "updated": 1714349506
+    },
+    {
+      "id": "662ee5e971b3c20000ef4dca",
+      "text": " \tタスクバーなら二段以上も行ける（windows11はできない）",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714349546,
+      "updated": 1714349566
+    },
+    {
+      "id": "662ee5d571b3c20000ef4dc9",
+      "text": " タスクバーボタンを結合するを結合しないにしてください",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714349525,
+      "updated": 1714349538
+    },
+    {
+      "id": "662ee39071b3c20000a68209",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714348944,
+      "updated": 1714348944
+    }
+  ]
+}
