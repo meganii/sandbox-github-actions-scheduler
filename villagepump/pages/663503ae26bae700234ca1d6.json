@@ -1,0 +1,218 @@
+{
+  "id": "663503ae26bae700234ca1d6",
+  "title": "ProjectCSSの実装方法",
+  "created": 1714750385,
+  "updated": 1714754212,
+  "lines": [
+    {
+      "id": "663503ae26bae700234ca1d6",
+      "text": "ProjectCSSの実装方法",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714750385,
+      "updated": 1714750388
+    },
+    {
+      "id": "663503b4a56fda0000b150fb",
+      "text": "[ProjectCSS]の実装方法は何がいいかについて各所で議論が起こってよくわからなくなったので個別にページを作ってみた[seibe.icon]",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714750388,
+      "updated": 1714750493
+    },
+    {
+      "id": "6635041da56fda0000b15104",
+      "text": "　「実装方法」という文言には少し違和感がある。より適切な表現は無いか……？",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714750493,
+      "updated": 1714750593
+    },
+    {
+      "id": "66350460a56fda0000b15105",
+      "text": "　今後実装方法を改良する場合もこのページが参考になったら良いと思う",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714750560,
+      "updated": 1714750560
+    },
+    {
+      "id": "663506bd5e90c00000ff072b",
+      "text": " 　[:igyo:.icon][cFQ2f7LRuLYP.icon][cak.icon]",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1714751165,
+      "updated": 1714752110
+    },
+    {
+      "id": "66350a62c9ec6a0000467c2d",
+      "text": " 　[すばら.icon][cak.icon]",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1714752098,
+      "updated": 1714752106
+    },
+    {
+      "id": "663503daa56fda0000b15102",
+      "text": "",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714750426,
+      "updated": 1714750426
+    },
+    {
+      "id": "663504c0a56fda0000b15112",
+      "text": "各手法とメリデメ",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714750656,
+      "updated": 1714750662
+    },
+    {
+      "id": "663504bfa56fda0000b15111",
+      "text": "　[settingsの手法別のメリット・デメリット]",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714750655,
+      "updated": 1714750655
+    },
+    {
+      "id": "663503e4a56fda0000b15103",
+      "text": "",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714750436,
+      "updated": 1714750436
+    },
+    {
+      "id": "66350685a56fda00004afb7d",
+      "text": "[2024/05/03#6634ff0d6eb4060000c786a5]を用いて考えてみる",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714751110,
+      "updated": 1714752829
+    },
+    {
+      "id": "663504c2a56fda0000b15113",
+      "text": "\t課題が何かを明確にする",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714750659,
+      "updated": 1714751143
+    },
+    {
+      "id": "663506dfa56fda00004afb83",
+      "text": "\t 課題は何？",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714751200,
+      "updated": 1714751202
+    },
+    {
+      "id": "663506e2a56fda00004afb84",
+      "text": "\t  パフォーマンスが悪い：各ページの読み込み開始から完了までの時間が長い",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714751203,
+      "updated": 1714753136
+    },
+    {
+      "id": "66350714a56fda00004afb87",
+      "text": "\t   これがあったから[個々のCSSを直接import]から[CSSをbundle&minifyさせる]に変更したと理解している[seibe.icon]",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714751253,
+      "updated": 1714751400
+    },
+    {
+      "id": "66350702a56fda00004afb85",
+      "text": "\t  メンテナンス性が悪い：ProjectCSSの変更が難しい・大変",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714751235,
+      "updated": 1714753173
+    },
+    {
+      "id": "66350775a56fda00004afb88",
+      "text": "\t  　これがあったから[CSSをbundle&minifyさせる]から[CSSを1ファイルに書き出す]に変更したと理解している[seibe.icon]",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714751349,
+      "updated": 1714753133
+    },
+    {
+      "id": "66350941a56fda00004afb8b",
+      "text": "\t  　[settingsの置換を図るページ#66339ef5ffff3600004a3c4a]を見るとなんか違う気がする[seibe.icon]",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714751809,
+      "updated": 1714751815
+    },
+    {
+      "id": "66350b0ca56fda00004afb8c",
+      "text": "\t  　 いや、合っているのか。[settingsの置換を図るページ#66339f55ffff3600004a3c4f]あたり読むとlintやformatには1ファイルのほうが楽とのこと",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714752269,
+      "updated": 1714752729
+    },
+    {
+      "id": "6635114ca56fda00001aab56",
+      "text": "   [\" パフォーマンスが悪い]＆[\" メンテナンス性が悪い]を課題とするならば、[CSSを1ファイルに書き出す] & [CSSをbundle&minifyさせる]、で課題に対して現時点では最良の策が取られていると[seibe.icon]思うのだけど",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714753869,
+      "updated": 1714754065
+    },
+    {
+      "id": "6635122aa56fda0000466302",
+      "text": "    [settingsの置換を図るページの置換を図るページ#66322e7d71b3c20000f86cf8]で書かれている「メンテナンス性」が[\" ProjectCSSの変更が難しい・大変]以外の何かのことをを指すのだったらそれについての検討が必要なのかな",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714754091,
+      "updated": 1714754212
+    },
+    {
+      "id": "6635114ca56fda00001aab57",
+      "text": "",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714753869,
+      "updated": 1714753869
+    },
+    {
+      "id": "663506a5a56fda00004afb7e",
+      "text": "\t定量的な指標を定義する",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714751142,
+      "updated": 1714751143
+    },
+    {
+      "id": "663506a5a56fda00004afb80",
+      "text": "\t測定し前後の結果を記録する",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714751142,
+      "updated": 1714751143
+    },
+    {
+      "id": "663506aaa56fda00004afb81",
+      "text": "",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714751146,
+      "updated": 1714751146
+    },
+    {
+      "id": "663504bda56fda0000b15106",
+      "text": "関連ページ",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714750653,
+      "updated": 1714751149
+    },
+    {
+      "id": "663506aea56fda00004afb82",
+      "text": " [settings]",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714751151,
+      "updated": 1714751154
+    },
+    {
+      "id": "663504bda56fda0000b15107",
+      "text": "　[settingsの置換を図るページ]",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714750653,
+      "updated": 1714750653
+    },
+    {
+      "id": "663504bda56fda0000b15108",
+      "text": "　[settingsの置換を図るページの置換を図るページ]",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714750653,
+      "updated": 1714750653
+    },
+    {
+      "id": "663504bda56fda0000b15109",
+      "text": "　 [settingsの置換を図るページの置換を図るページに対する感想等]",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714750653,
+      "updated": 1714750653
+    }
+  ]
+}
