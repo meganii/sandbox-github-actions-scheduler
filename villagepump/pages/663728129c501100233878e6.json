@@ -1,0 +1,1149 @@
+{
+  "id": "663728129c501100233878e6",
+  "title": "スマホ操作時、トップを通ると選択範囲が動かない",
+  "created": 1714890772,
+  "updated": 1714891198,
+  "lines": [
+    {
+      "id": "663728129c501100233878e6",
+      "text": "スマホ操作時、トップを通ると選択範囲が動かない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714891050
+    },
+    {
+      "id": "663728cf71b3c20000387146",
+      "text": "要望に飛ばすべき？[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890959,
+      "updated": 1714890988
+    },
+    {
+      "id": "6637290171b3c20000387147",
+      "text": "[/forum-jp/スマホ操作時、選択範囲が動かないことがある]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714891010,
+      "updated": 1714891010
+    },
+    {
+      "id": "6637281371b3c200009efc3e",
+      "text": "from [@基素]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc3f",
+      "text": "Scrapbox mobileでトップページを通るとreloadするまで範囲変更できないバグ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc40",
+      "text": " 発生条件・原因不明",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc41",
+      "text": " [Scrapboxのトップページ]を通ると発生するっぽいですね[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc42",
+      "text": " \treloadで解決します",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc43",
+      "text": " 今回はこっち[基素.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc44",
+      "text": " 今度remote debugして挙動を調べてみます[takker.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc45",
+      "text": " 2024-05-05調査",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc46",
+      "text": "  範囲変更できないケースで指を動かすと、次のエラーが大量に現れる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc47",
+      "text": "   おそらく[touchmove]もしくは[pointermove]が発火するたびに発生している",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc48",
+      "text": "   code:error",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc49",
+      "text": "    index.js:2 Uncaught TypeError: Cannot read properties of null (reading 'lines')",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc4a",
+      "text": "        at PointerEvent.getCursorPoint (index.js:2:557141)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc4b",
+      "text": "        at PointerEvent.nearestCursorPosition (index.js:2:557268)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc4c",
+      "text": "        at PointerEvent.onTouchMove (index.js:2:560751)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc4d",
+      "text": "        at HTMLDivElement.wrapper (index.js:2:2429884)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc4e",
+      "text": "        at HTMLDivElement.dispatch (index.js:2:2040313)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc4f",
+      "text": "        at be.handle (index.js:2:2038121)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc50",
+      "text": "        at HTMLDivElement.sentryWrapped (index.js:2:113900)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc51",
+      "text": "  `PointerEvent`を調べる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc52",
+      "text": "   code:PointerEvent.js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc53",
+      "text": "    class PointerEvent extends j.Component {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc54",
+      "text": "      constructor(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc55",
+      "text": "      getLines() {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc56",
+      "text": "          return this.mobileLines",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc57",
+      "text": "      }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc58",
+      "text": "      getCursorPoint(i) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc59",
+      "text": "          var v = (0,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc5a",
+      "text": "          W.default)(this.getLines().lines()).offset();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc5b",
+      "text": "          return (0,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc5c",
+      "text": "          pe.calcCursorPoint)(i, {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc5d",
+      "text": "              offset: v",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc5e",
+      "text": "          })",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc5f",
+      "text": "      }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc60",
+      "text": "      nearestCursorPosition(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc61",
+      "text": "      focusAndSelectAll(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc62",
+      "text": "      setSelectionRange(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc63",
+      "text": "      componentDidMount();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc64",
+      "text": "      componentDidUpdate();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc65",
+      "text": "      componentWillUnmount();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc66",
+      "text": "      resetSwipeCursor(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc67",
+      "text": "      reset();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc68",
+      "text": "      onTouchStart(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc69",
+      "text": "      onTouchMove(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc6a",
+      "text": "      onTouchMoveLines(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc6b",
+      "text": "      onTouchEnd(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc6c",
+      "text": "      onMouseDown(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc6d",
+      "text": "      onMouseMove(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc6e",
+      "text": "      onMouseUp(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc6f",
+      "text": "      onClick(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc70",
+      "text": "      onDoubleMouseDown(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc71",
+      "text": "      onTrippleMouseDown(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc72",
+      "text": "      onResize();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc73",
+      "text": "      render() {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc74",
+      "text": "          var i = this.props.children;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc75",
+      "text": "          return j.default.createElement(\"div\", {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc76",
+      "text": "              onMouseDown: this.onMouseDown,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc77",
+      "text": "              onMouseMove: this.onMouseMove,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc78",
+      "text": "              onMouseUp: this.onMouseUp,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc79",
+      "text": "              onClick: this.onClick",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc7a",
+      "text": "          }, j.default.createElement(ie.default, _extends({",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc7b",
+      "text": "              ref: i=>{",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc7c",
+      "text": "                  this.mobileLines = i",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc7d",
+      "text": "              }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc7e",
+      "text": "          }, i.props)), j.default.createElement(ae.default, null))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc7f",
+      "text": "      }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc80",
+      "text": "    }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc81",
+      "text": "   (一部のmethods定義は略した)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc82",
+      "text": "   [class component]のようだ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc83",
+      "text": "   `this.mobileLines`が`null`になってしまっているということらしい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc84",
+      "text": "   `mobileLines`がコード中に登場するのは、上記コードにある2箇所のみ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc85",
+      "text": "   とくに代入操作に限れば`ie.default`の`ref`しかない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc86",
+      "text": "    [callback Ref]と推測される",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc87",
+      "text": "   breakpointを仕掛けて調べると、`this.mobileLines`には`Lines | null`が代入されている",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc88",
+      "text": "   `<div>`の`onTouchMove`にlistenerが登録されていないように見えるが、stack traceから推測するに、Reactの内部処理で自動で`touchmove`時に呼び出されるよう設定されているものと思われる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc89",
+      "text": "   　黒魔術の塊だったのですぐには解読できない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc8a",
+      "text": "  `ie.default`を調べる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc8b",
+      "text": "  　コードをたどると、`Lines`というclass componentが`ie.default`だとわかる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc8c",
+      "text": "  　code:Lines.js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc8d",
+      "text": "    class Lines extends j.Component {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc8e",
+      "text": "      static get propTypes();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc8f",
+      "text": "      shouldComponentUpdate(i);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc90",
+      "text": "      lines() {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc91",
+      "text": "          return this.refs.lines",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc92",
+      "text": "      }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc93",
+      "text": "      render() {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc94",
+      "text": "          for (var i = (0,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc95",
+      "text": "          ee.default)(this.props.lines, {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc96",
+      "text": "              cursorLine: this.props.cursorVisible && this.props.cursorPosition.line",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc97",
+      "text": "          }), v = i[this.props.cursorPosition.line] && i[this.props.cursorPosition.line].id, _ = [], W = 0; W < i.length; W++) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc98",
+      "text": "              var Y, le, ce = i[W], de = !ce.codeBlock && (0,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc99",
+      "text": "              ie.isEmptyLine)(ce) || !X.default.PageHistory.isEnable ? !X.default.Page.lastAccessed || ce.updated > X.default.Page.lastAccessed : !!X.default.Page.prevSnapshotCreated && ce.updated > X.default.Page.prevSnapshotCreated;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc9a",
+      "text": "              if (null !== (Y = ce.codeBlock) && void 0 !== Y && Y.end && [\"mermaid\", \"mmd\"].includes(null === (le = ce.codeBlock) || void 0 === le ? void 0 : le.lang)) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc9b",
+      "text": "                  for (var fe = [], pe = W; pe > 0; pe--) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc9c",
+      "text": "                      var be = i[pe];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc9d",
+      "text": "                      if (!be.codeBlock || be.codeBlock.start)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc9e",
+      "text": "                          break;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efc9f",
+      "text": "                      fe.unshift(be.text),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efca0",
+      "text": "                      be.codeBlock.hasCursor || (be.unread && (de = be.unread),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efca1",
+      "text": "                      be.updated > ce.updated && (ce.updated = be.updated))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efca2",
+      "text": "                  }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efca3",
+      "text": "                  ce.codeBlock.mermaid = fe.join(\"\\n\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efca4",
+      "text": "              }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efca5",
+      "text": "              var ye = !(!ce.codeBlock && (0,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efca6",
+      "text": "              ie.isEmptyLine)(ce) || !X.default.PageHistory.isEnable) && (!!X.default.Page.nextSnapshotLineIds && !X.default.Page.nextSnapshotLineIds.includes(ce.id))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efca7",
+      "text": "                , _e = ce.updated > X.default.Page.loaded",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efca8",
+      "text": "                , we = this.props.cursorVisible && v === ce.id",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efca9",
+      "text": "                , xe = this.props.permalinkLine === ce.id;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcaa",
+      "text": "              _.push(j.default.createElement(Z.default, {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcab",
+      "text": "                  key: ce.id,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcac",
+      "text": "                  id: ce.id,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcad",
+      "text": "                  userId: ce.userId,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcae",
+      "text": "                  email: ce.email,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcaf",
+      "text": "                  updated: ce.updated,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcb0",
+      "text": "                  unread: de,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcb1",
+      "text": "                  updatedAfterLoad: _e,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcb2",
+      "text": "                  willDeleteNext: ye,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcb3",
+      "text": "                  isCursorLine: we,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcb4",
+      "text": "                  titleLine: 0 === W,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcb5",
+      "text": "                  permalinkLine: xe,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcb6",
+      "text": "                  cli: ce.cli,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcb7",
+      "text": "                  helpfeel: ce.helpfeel,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcb8",
+      "text": "                  codeBlock: ce.codeBlock,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcb9",
+      "text": "                  tableBlock: ce.tableBlock,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcba",
+      "text": "                  numberList: ce.numberList,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcbb",
+      "text": "                  formulaLine: ce.formulaLine,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcbc",
+      "text": "                  quoteLine: ce.quoteLine,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcbd",
+      "text": "                  section: ce.section,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcbe",
+      "text": "                  numberOfImages: ce.numberOfImages,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcbf",
+      "text": "                  isSnapshot: this.props.isSnapshot,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcc0",
+      "text": "                  displayStyle: this.props.displayStyle,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcc1",
+      "text": "                  rtl: !ce.codeBlock && !ce.tableBlock && (0,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcc2",
+      "text": "                  ae.isRTLText)(ce.text),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcc3",
+      "text": "                  enableTranslation: this.props.enableTranslation",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcc4",
+      "text": "              }, ce.text))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcc5",
+      "text": "          }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcc6",
+      "text": "          return j.default.createElement(\"div\", {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcc7",
+      "text": "              className: \"lines\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcc8",
+      "text": "              ref: \"lines\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcc9",
+      "text": "          }, _)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcca",
+      "text": "      }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efccb",
+      "text": "    }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efccc",
+      "text": "   (一部のmethods定義は略した)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efccd",
+      "text": "   `ref`に文字列`\"lines\"`を入れる記法が不明[takker.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcce",
+      "text": "    どうやら古い[ref]の書き方らしい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efccf",
+      "text": "    [legacy-api-string-refs | Ref と DOM – React https://ja.legacy.reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcd0",
+      "text": "    こう書くと、例えば`Lines`では`this.refs.lines`で`div.lines`を取得できるようになる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714891198
+    },
+    {
+      "id": "6637281371b3c200009efcd1",
+      "text": " ごめんなさい、当方で調べられるのはここまでです[takker.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcd2",
+      "text": "  `Lines`が代入されない条件が不明",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcd3",
+      "text": "   選択範囲操作が有効な状態でも、`Lines`と`null`が交互に高速に代入されている状況を観測した",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcd4",
+      "text": "    re-renderしまくってる？",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcd5",
+      "text": "  PCではトップページを経由しても選択範囲変更が正常に働くのに、mobileだと働かなくなる理由が不明",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcd6",
+      "text": "   cf. `PointerEvent`はPC/mobile双方で使われる共通プログラム",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcd7",
+      "text": " ここまでの情報をまとめて[shokai.icon]さんに報告すれば、なにか進展があるかも……！",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcd8",
+      "text": "  以降はtwitter民に報告任せた",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcd9",
+      "text": "  helpのコミュニティでいいんじゃないかなぁ[基素.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcda",
+      "text": "  [forum-jpよりTwitterに書き込んでshokaiさんのエゴサに引っかかるほうが早い説][takker.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281371b3c200009efcdb",
+      "text": " なんかすごい。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    },
+    {
+      "id": "6637281c71b3c200009efcdd",
+      "text": " お疲れ様です[基素.icon][yuyuko.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890780,
+      "updated": 1714890780
+    },
+    {
+      "id": "6637281371b3c200009efcdc",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714890772,
+      "updated": 1714890772
+    }
+  ]
+}
