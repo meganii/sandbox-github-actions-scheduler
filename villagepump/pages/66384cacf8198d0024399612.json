@@ -1,0 +1,519 @@
+{
+  "id": "66384cacf8198d0024399612",
+  "title": "Vitestのカバレッジ機能を使ってみる",
+  "created": 1714965678,
+  "updated": 1714967467,
+  "lines": [
+    {
+      "id": "66384cacf8198d0024399612",
+      "text": "Vitestのカバレッジ機能を使ってみる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965678,
+      "updated": 1714965684
+    },
+    {
+      "id": "66384d177838e30000e5861d",
+      "text": "[Vitest]の[カバレッジ]機能を使ってみる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965780,
+      "updated": 1714967467
+    },
+    {
+      "id": "66384d1f7838e30000e5861f",
+      "text": "\tカバレッジのエンジンは[v8]か[istanbul]のどちらかから選択できる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965789,
+      "updated": 1714965820
+    },
+    {
+      "id": "66384d3f7838e30000e58620",
+      "text": "\tWebブラウザからGUIで確認することが可能",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965821,
+      "updated": 1714965832
+    },
+    {
+      "id": "66384d177838e30000e5861e",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965780,
+      "updated": 1714965780
+    },
+    {
+      "id": "66384cb77838e30000e58616",
+      "text": "[[使い方]]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965684,
+      "updated": 1714965695
+    },
+    {
+      "id": "66384d7d7838e30000e58624",
+      "text": "\t※今回は[istanbul]を使用する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965883,
+      "updated": 1714965898
+    },
+    {
+      "id": "66384d8c7838e30000e58625",
+      "text": "\t\t[v8]の利用方法はここを参照：",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965898,
+      "updated": 1714965926
+    },
+    {
+      "id": "66384da87838e30000e58626",
+      "text": "\t\t\t[https://vitest.dev/guide/coverage#coverage-providers Coverage | Guide | Vitest]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965926,
+      "updated": 1714965928
+    },
+    {
+      "id": "66384daf7838e30000e58628",
+      "text": "\t1. 依存関係をインストールする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965932,
+      "updated": 1714965941
+    },
+    {
+      "id": "66384d4f7838e30000e58621",
+      "text": " \tnpm",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965837,
+      "updated": 1714965943
+    },
+    {
+      "id": "66384d657838e30000e58623",
+      "text": " \t\t$ npm i -D vitest @vitest/coverage-istanbul",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965859,
+      "updated": 1714965960
+    },
+    {
+      "id": "66384d4f7838e30000e58622",
+      "text": " \tpnpm",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965837,
+      "updated": 1714965943
+    },
+    {
+      "id": "66384dba7838e30000e58629",
+      "text": " \t\t$ pnpm add -D vitest @vitest/coverage-istanbul",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965944,
+      "updated": 1714965970
+    },
+    {
+      "id": "66384dd67838e30000e5862a",
+      "text": " 2. Web UIを使う場合は追加でインストールする（任意）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965971,
+      "updated": 1714965987
+    },
+    {
+      "id": "66384de87838e30000e5862b",
+      "text": " \tnpm",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965990,
+      "updated": 1714965991
+    },
+    {
+      "id": "66384dea7838e30000e5862c",
+      "text": " \t\t$ npm i -D @vitest/ui",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965991,
+      "updated": 1714966046
+    },
+    {
+      "id": "66384e217838e30000e5862d",
+      "text": " \tpnpm",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966047,
+      "updated": 1714966060
+    },
+    {
+      "id": "66384e2d7838e30000e5862e",
+      "text": " \t\t$ pnpm add -D @vitest/ui",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966059,
+      "updated": 1714966065
+    },
+    {
+      "id": "66384e417838e30000e5862f",
+      "text": " 3. [vitest.config.js]（[vitest.config.ts]）を編集する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966079,
+      "updated": 1714966162
+    },
+    {
+      "id": "66384eab7838e30000e58644",
+      "text": " \t`test: {}`の中に以下の記述を追加する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966185,
+      "updated": 1714966273
+    },
+    {
+      "id": "66384ed27838e30000e58645",
+      "text": " \t\tcode:example:vitest.config.ts",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966224,
+      "updated": 1714966240
+    },
+    {
+      "id": "66384ee47838e30000e58646",
+      "text": " \t\t coverage: {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966241,
+      "updated": 1714966251
+    },
+    {
+      "id": "66384eed7838e30000e58647",
+      "text": " \t\t   enabled: true,",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966251,
+      "updated": 1714966259
+    },
+    {
+      "id": "66384ef67838e30000e58649",
+      "text": " \t\t   provider: \"istanbul\",",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966259,
+      "updated": 1714966266
+    },
+    {
+      "id": "66384eed7838e30000e58648",
+      "text": " \t\t }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966251,
+      "updated": 1714966251
+    },
+    {
+      "id": "66384e627838e30000e58631",
+      "text": " \t全体の例)",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966112,
+      "updated": 1714966228
+    },
+    {
+      "id": "66384e4b7838e30000e58630",
+      "text": "  \tcode:vitest.config.ts",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966089,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6d7838e30000e58632",
+      "text": "  \t import { defineConfig, mergeConfig } from \"vitest/config\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e58633",
+      "text": "    import viteConfig from \"./vite.config\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e58634",
+      "text": "    ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e58635",
+      "text": "    export default mergeConfig(",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e58636",
+      "text": "      viteConfig,",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e58637",
+      "text": "      defineConfig({",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e58638",
+      "text": "        test: {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e58639",
+      "text": "          include: [\"test/**/*.test.{js,mjs,cjs,ts,mts,cts,jsx,tsx}\"],",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e5863a",
+      "text": "          environment: \"jsdom\",",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e5863b",
+      "text": "          coverage: {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e5863c",
+      "text": "            enabled: true,",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e5863d",
+      "text": "            provider: \"istanbul\",",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e5863f",
+      "text": "          },",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e58640",
+      "text": "        },",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e58641",
+      "text": "      })",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e58642",
+      "text": "    );",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966226
+    },
+    {
+      "id": "66384e6e7838e30000e58643",
+      "text": " 4. [package.json]にコマンド（[scripts]）を追加する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966123,
+      "updated": 1714966310
+    },
+    {
+      "id": "66384f287838e30000e5864b",
+      "text": " \tシェル上で実行する場合",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966310,
+      "updated": 1714966452
+    },
+    {
+      "id": "66384f367838e30000e5864c",
+      "text": " \t\tcode:example1:package.json",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966324,
+      "updated": 1714966346
+    },
+    {
+      "id": "66384f4d7838e30000e5864d",
+      "text": " \t\t \"scripts\": {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966346,
+      "updated": 1714966368
+    },
+    {
+      "id": "66384f617838e30000e5864e",
+      "text": " \t\t   \"test\": \"vitest\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966368,
+      "updated": 1714966382
+    },
+    {
+      "id": "66384f617838e30000e5864f",
+      "text": " \t\t }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966368,
+      "updated": 1714966368
+    },
+    {
+      "id": "66384f717838e30000e58650",
+      "text": " \tWeb UIから実行する場合",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966383,
+      "updated": 1714966393
+    },
+    {
+      "id": "66384f7b7838e30000e58651",
+      "text": " \t\tcode:example2:package.json",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966393,
+      "updated": 1714966403
+    },
+    {
+      "id": "66384f857838e30000e58652",
+      "text": " \t\t \"scripts\": {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966403,
+      "updated": 1714966407
+    },
+    {
+      "id": "66384f897838e30000e58653",
+      "text": "      \"vitest-ui\": \"vitest --ui\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966407,
+      "updated": 1714966415
+    },
+    {
+      "id": "66384f897838e30000e58654",
+      "text": "    }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966407,
+      "updated": 1714966407
+    },
+    {
+      "id": "66384f957838e30000e58655",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966418,
+      "updated": 1714966418
+    },
+    {
+      "id": "66384cb77838e30000e58618",
+      "text": "[[使ってみた]]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965685,
+      "updated": 1714965701
+    },
+    {
+      "id": "66384f987838e30000e58656",
+      "text": "\tコマンドを実行する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966422,
+      "updated": 1714966429
+    },
+    {
+      "id": "66384fa07838e30000e58658",
+      "text": "\t\tシェル上で実行する場合",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966430,
+      "updated": 1714966459
+    },
+    {
+      "id": "66384fbd7838e30000e58659",
+      "text": "\t\t\t$ npm run test",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966459,
+      "updated": 1714966467
+    },
+    {
+      "id": "66384fc57838e30000e5865a",
+      "text": "\t\t\t$ pnpm test",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966467,
+      "updated": 1714966470
+    },
+    {
+      "id": "66384fc97838e30000e5865b",
+      "text": "\t\tWeb UIから実行する場合",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966470,
+      "updated": 1714966478
+    },
+    {
+      "id": "66384fd07838e30000e5865c",
+      "text": "\t\t\t$ npm run vitest-ui",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966478,
+      "updated": 1714966486
+    },
+    {
+      "id": "66384fd97838e30000e5865d",
+      "text": "\t\t\t$ pnpm vitest-ui",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966486,
+      "updated": 1714966492
+    },
+    {
+      "id": "6638503c7838e30000e58660",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966586,
+      "updated": 1714966587
+    },
+    {
+      "id": "66384f987838e30000e58657",
+      "text": "\tWeb UIから実行した後は、左上のこのボタンを押す",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966422,
+      "updated": 1714966571
+    },
+    {
+      "id": "6638502d7838e30000e5865e",
+      "text": "\t\t[https://gyazo.com/602c383054ea430ec74e571327fa2b4a]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966571,
+      "updated": 1714966573
+    },
+    {
+      "id": "6638502f7838e30000e5865f",
+      "text": "\tこのような画面が表示される",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966573,
+      "updated": 1714966584
+    },
+    {
+      "id": "66384cc37838e30000e58619",
+      "text": "\t\t[https://gyazo.com/c17281ea1842bc352cf76a185d030d3d]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965697,
+      "updated": 1714966584
+    },
+    {
+      "id": "66384cd47838e30000e5861c",
+      "text": "\tどの[単体テスト]でも実行されない行があった場合は、以下のように赤く表示される",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965714,
+      "updated": 1714966713
+    },
+    {
+      "id": "663850bb7838e30000e58661",
+      "text": "\t\t[https://gyazo.com/4601880cc7f6fdc537fc6834b82e395c]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966713,
+      "updated": 1714966714
+    },
+    {
+      "id": "663850bc7838e30000e58662",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714966714,
+      "updated": 1714966714
+    },
+    {
+      "id": "66384cc37838e30000e5861a",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1714965697,
+      "updated": 1714965697
+    }
+  ]
+}

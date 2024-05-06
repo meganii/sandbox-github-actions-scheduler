@@ -2,7 +2,7 @@
   "id": "64887aa321e9ca001c3d0def",
   "title": "TCPの状態遷移図",
   "created": 1686665941,
-  "updated": 1686739220,
+  "updated": 1714954627,
   "lines": [
     {
       "id": "64887aa321e9ca001c3d0def",
@@ -241,6 +241,174 @@
       "userId": "5b5e7121417cf700145b98c2",
       "created": 1686665943,
       "updated": 1686665943
+    },
+    {
+      "id": "6637ffc671b3c20000fa5ac8",
+      "text": "code:tcp.mermaid",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714945988,
+      "updated": 1714945993
+    },
+    {
+      "id": "6637ffca71b3c20000fa5aca",
+      "text": " graph TD",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714945993,
+      "updated": 1714946211
+    },
+    {
+      "id": "6638008a71b3c20000fa5af2",
+      "text": "  CLOSED -->|パッシブオープン（TCB生成）| LISTEN",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5af3",
+      "text": "  CLOSED -->|アクティブオープン（TCB生成とSYNの送信）| SYN_SENT",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5af4",
+      "text": "  LISTEN -->|SYNの受信（SYN/ACKの送信）| SYN_RECEIVED",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5af5",
+      "text": "  LISTEN -->|クローズ（TCB削除）| CLOSED",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5af6",
+      "text": "  LISTEN -->|SENT（SYNの送信）| SYN_SENT",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5af7",
+      "text": "  SYN_RECEIVED -->|ACKの受信| ESTABLISHED",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5af8",
+      "text": "  SYN_RECEIVED -->|クローズ（FINの送信）| FIN_WAIT_1",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5af9",
+      "text": "  SYN_SENT -->|SYN/ACKの受信（ACKの送信）| ESTABLISHED",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5afa",
+      "text": "  SYN_SENT -->|SYNの受信（ACKの送信）| SYN_RECEIVED",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5afb",
+      "text": "  ESTABLISHED -->|クローズ（FINの送信）| FIN_WAIT_1",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5afc",
+      "text": "  FIN_WAIT_1 -->|ACKの受信| FIN_WAIT_2",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5afd",
+      "text": "  FIN_WAIT_1 -->|FINの受信（ACKの送信）| CLOSING",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5afe",
+      "text": "  FIN_WAIT_1 -->|FIN ACKの受信（ACKの送信）| TIME_WAIT",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5aff",
+      "text": "  FIN_WAIT_2 -->|FINの受信（ACKの送信）| TIME_WAIT",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5b00",
+      "text": "  CLOSING -->|FIN ACKの受信| TIME_WAIT",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5b01",
+      "text": "  TIME_WAIT -->|タイムアウト待ち（TCB削除）| CLOSED",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5b02",
+      "text": "  ESTABLISHED -->|FIN ACKの受信| CLOSE_WAIT",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5b03",
+      "text": "  CLOSE_WAIT -->|クローズ（FINの送信）| LAST_ACK",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6638008a71b3c20000fa5b04",
+      "text": "  LAST_ACK -->|FIN ACKの受信| CLOSED",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1714946185,
+      "updated": 1714946185
+    },
+    {
+      "id": "6637ffc771b3c20000fa5ac9",
+      "text": "",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714945990,
+      "updated": 1714954603
+    },
+    {
+      "id": "6638216aa56fda0000e65355",
+      "text": " FIN_WAIT_2の行部分はplantumlの方がレイアウト見やすいな[seibe.icon]",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714954599,
+      "updated": 1714954627
+    },
+    {
+      "id": "66382172a56fda0000e65356",
+      "text": "",
+      "userId": "5eb247ae6474d4001ea56fda",
+      "created": 1714954607,
+      "updated": 1714954607
     }
   ]
 }
