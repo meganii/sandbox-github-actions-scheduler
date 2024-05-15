@@ -1,0 +1,589 @@
+{
+  "id": "6644c183630aaa001dedc74d",
+  "title": "Javaのコード見てると連想配列で複雑な型付きオブジェクトを作成できるTypeScriptに戻りたくなる",
+  "created": 1715782020,
+  "updated": 1715782494,
+  "lines": [
+    {
+      "id": "6644c183630aaa001dedc74d",
+      "text": "Javaのコード見てると連想配列で複雑な型付きオブジェクトを作成できるTypeScriptに戻りたくなる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046a3",
+      "text": "[Mijinko_SD.icon] from [2024/05/15]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782028
+    },
+    {
+      "id": "6644c1847838e300002046a4",
+      "text": "Javaのコード見てると連想配列で複雑な型付きオブジェクトを作成できるTypeScriptに戻りたくなる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046a5",
+      "text": "\tcode:ts",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046a6",
+      "text": "\t /** 車の型 */",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046a7",
+      "text": "\t interface Car {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046a8",
+      "text": "\t   name: string",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046a9",
+      "text": "\t   transmissionType: \"AT\" | \"MT\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046aa",
+      "text": "\t   owner: User",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046ab",
+      "text": "\t }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046ac",
+      "text": "\t ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046ad",
+      "text": "\t /** 人の型 */",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046ae",
+      "text": "\t interface Human {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046af",
+      "text": "\t \tname: string",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046b0",
+      "text": "\t \tage: number",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046b1",
+      "text": "\t }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046b2",
+      "text": "\t ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046b3",
+      "text": "\t // ↓たったこれだけで車の情報を格納できる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046b4",
+      "text": "\t const myCar = {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046b5",
+      "text": "\t   name: \"prius\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046b6",
+      "text": "\t   transmissionType: \"AT\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046b7",
+      "text": "\t   owner: {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046b8",
+      "text": "\t     name: \"GyakSoG\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046b9",
+      "text": "\t     age: 62",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046ba",
+      "text": "\t   }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046bb",
+      "text": "\t }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046bc",
+      "text": "\t知らないだけでJavaでもこういう詳細な型定義ってできるのかな？",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046bd",
+      "text": "\t\tclassたくさん作る以外で",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046be",
+      "text": "\t\tclassたくさん作るのはごちゃつくから嫌い",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046bf",
+      "text": "\t[GitHub Copilot]によると[Kotlin]なら似たような書き方できるっぽい",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046c0",
+      "text": "\t\t>以下のようにKotlinに変換できます。",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046c1",
+      "text": "\t\tcode:fromCopilot.kt",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046c2",
+      "text": "\t\t // 車の型",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046c3",
+      "text": "   interface Car {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046c4",
+      "text": "       var name: String",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046c5",
+      "text": "       var transmissionType: String",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046c6",
+      "text": "       var owner: Human",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046c7",
+      "text": "   }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046c8",
+      "text": "   ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046c9",
+      "text": "   // 人の型",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046ca",
+      "text": "   interface Human {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046cb",
+      "text": "       var name: String",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046cc",
+      "text": "       var age: Int",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046cd",
+      "text": "   }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046ce",
+      "text": "   ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046cf",
+      "text": "   // オブジェクトの作成",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046d0",
+      "text": "   val myCar = object: Car {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046d1",
+      "text": "       override var name = \"prius\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046d2",
+      "text": "       override var transmissionType = \"AT\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046d3",
+      "text": "       override var owner = object: Human {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046d4",
+      "text": "           override var name = \"GyakSoG\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046d5",
+      "text": "           override var age = 62",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046d6",
+      "text": "       }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046d7",
+      "text": "   }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1847838e300002046d8",
+      "text": "  >ただし、Kotlinでは\"AT\" | \"MT\"のような型はサポートされていないため、transmissionTypeはString型としています。これを厳密に制限したい場合は、enumを使用することを検討してみてください。",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    },
+    {
+      "id": "6644c1df7838e300002046fa",
+      "text": "  \tenumを用いた場合、`enum class TransmissionType { AT, MT}`って定義して`TransmissionType.AT`って代入しないといけないのがちょっと長くて嫌だね",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782110,
+      "updated": 1715782208
+    },
+    {
+      "id": "6644c2407838e300002046fe",
+      "text": "  \t[リテラル型]に対応してくれー",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782208,
+      "updated": 1715782304
+    },
+    {
+      "id": "6644c2be7838e30000204712",
+      "text": "  \t\tと思ったけど、リテラル型ってもともと[列挙型]がなかったJavaScriptやPythonのためにあって、列挙型が元からある言語に更にリテラル型を増やすと冗長になるのか",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782334,
+      "updated": 1715782396
+    },
+    {
+      "id": "6644c1937838e300002046dd",
+      "text": " Javaならこうらしい",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782035,
+      "updated": 1715782047
+    },
+    {
+      "id": "6644c19f7838e300002046de",
+      "text": " \tcode:fromCopilot.java",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782047,
+      "updated": 1715782052
+    },
+    {
+      "id": "6644c1a47838e300002046df",
+      "text": " \t // 車の型",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782052,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e300002046ff",
+      "text": "   public class Car {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e30000204700",
+      "text": "       public String name;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e30000204701",
+      "text": "       public String transmissionType;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e30000204702",
+      "text": "       public Human owner;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e30000204703",
+      "text": "   }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e30000204704",
+      "text": "   ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e30000204705",
+      "text": "   // 人の型",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e30000204706",
+      "text": "   public class Human {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e30000204707",
+      "text": "       public String name;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e30000204708",
+      "text": "       public int age;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e30000204709",
+      "text": "   }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e3000020470a",
+      "text": "   ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e3000020470b",
+      "text": "   // オブジェクトの作成",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e3000020470c",
+      "text": "   Car myCar = new Car();",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e3000020470d",
+      "text": "   myCar.name = \"prius\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e3000020470e",
+      "text": "   myCar.transmissionType = \"AT\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e3000020470f",
+      "text": "   myCar.owner = new Human();",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e30000204710",
+      "text": "   myCar.owner.name = \"GyakSoG\";",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c2827838e30000204711",
+      "text": "   myCar.owner.age = 62;",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782274,
+      "updated": 1715782274
+    },
+    {
+      "id": "6644c1a87838e300002046f9",
+      "text": "  `変数.プロパティ名`っていちいち書かなきゃいけないのが冗長に感じる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782056,
+      "updated": 1715782084
+    },
+    {
+      "id": "6644c3397838e30000204713",
+      "text": "  \t[- Kotlinのoverride varより短いから完全に気の所為だけど]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782457,
+      "updated": 1715782483
+    },
+    {
+      "id": "6644c1847838e300002046dc",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1715782020,
+      "updated": 1715782020
+    }
+  ]
+}
