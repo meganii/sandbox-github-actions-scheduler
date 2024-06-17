@@ -1,0 +1,274 @@
+{
+  "id": "6670106761cd1e001dbc1077",
+  "title": "PWAの最小構成",
+  "created": 1718620265,
+  "updated": 1718625211,
+  "lines": [
+    {
+      "id": "6670106761cd1e001dbc1077",
+      "text": "PWAの最小構成",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620265,
+      "updated": 1718620265
+    },
+    {
+      "id": "6670106973e5220000697d71",
+      "text": "とりあえず[PWA]で受けれる恩恵を受けたいのでコピペでPWA対応させろ、という(邪な)欲望",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620265,
+      "updated": 1718625211
+    },
+    {
+      "id": "6670107973e5220000697d73",
+      "text": "",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620282,
+      "updated": 1718620282
+    },
+    {
+      "id": "6670107a73e5220000697d74",
+      "text": "[** 2024-06-17]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620282,
+      "updated": 1718620287
+    },
+    {
+      "id": "6670117e73e5220000697db5",
+      "text": "[多分これで行ける]と思います[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620542,
+      "updated": 1718625069
+    },
+    {
+      "id": "6670107f73e5220000697d75",
+      "text": "code:index.html",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620287,
+      "updated": 1718620294
+    },
+    {
+      "id": "6670108673e5220000697d76",
+      "text": " <head>",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620295,
+      "updated": 1718620317
+    },
+    {
+      "id": "6670109873e5220000697d78",
+      "text": "     <link rel=\"manifest\" href=\"./manifest.webmanifest\">",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620313,
+      "updated": 1718620313
+    },
+    {
+      "id": "6670109173e5220000697d77",
+      "text": " </head>",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620305,
+      "updated": 1718620305
+    },
+    {
+      "id": "667010a173e5220000697d7a",
+      "text": "code:script.js",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620322,
+      "updated": 1718620324
+    },
+    {
+      "id": "667010ad73e5220000697d7e",
+      "text": " if ('serviceWorker' in navigator) {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620334,
+      "updated": 1718620334
+    },
+    {
+      "id": "667010ad73e5220000697d7f",
+      "text": "     const registration = navigator.serviceWorker.register('service-worker.js')",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620334,
+      "updated": 1718620345
+    },
+    {
+      "id": "667010ad73e5220000697d80",
+      "text": " }",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620334,
+      "updated": 1718620334
+    },
+    {
+      "id": "6670106c73e5220000697d72",
+      "text": "code:service-worker.js",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620268,
+      "updated": 1718620355
+    },
+    {
+      "id": "667010c373e5220000697d82",
+      "text": " 'use strict';",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620355,
+      "updated": 1718620355
+    },
+    {
+      "id": "667010c373e5220000697d83",
+      "text": " self.addEventListener('fetch', (event) => { // ファイルの受信が必要になったら",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620355,
+      "updated": 1718620355
+    },
+    {
+      "id": "667010c373e5220000697d84",
+      "text": "     event.respondWith( // 受信結果は以下の通り返すものとする",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620355,
+      "updated": 1718620355
+    },
+    {
+      "id": "667010c373e5220000697d85",
+      "text": "         fetch(event.request) // 必要なファイルをそのまま要求して",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620355,
+      "updated": 1718620355
+    },
+    {
+      "id": "667010c373e5220000697d86",
+      "text": "             .then((response) => { // ファイルを受信したら",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620355,
+      "updated": 1718620355
+    },
+    {
+      "id": "667010c373e5220000697d87",
+      "text": "                 return response; // それをそのまま返す",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620355,
+      "updated": 1718620355
+    },
+    {
+      "id": "667010c373e5220000697d88",
+      "text": "             })",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620355,
+      "updated": 1718620355
+    },
+    {
+      "id": "667010c373e5220000697d89",
+      "text": "     );",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620355,
+      "updated": 1718620355
+    },
+    {
+      "id": "667010c373e5220000697d8a",
+      "text": "code:manifest.webmanifest",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620355,
+      "updated": 1718620371
+    },
+    {
+      "id": "667010d273e5220000697d8b",
+      "text": " {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620371,
+      "updated": 1718620520
+    },
+    {
+      "id": "6670116873e5220000697da8",
+      "text": "     \"name\": \"page-title\",",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620520,
+      "updated": 1718620528
+    },
+    {
+      "id": "6670116873e5220000697da9",
+      "text": "     \"start_url\": \"./\",",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620520,
+      "updated": 1718620520
+    },
+    {
+      "id": "6670116873e5220000697daa",
+      "text": "     \"display\": \"fullscreen\",",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620520,
+      "updated": 1718620520
+    },
+    {
+      "id": "6670116873e5220000697dab",
+      "text": "     \"icons\": [",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620520,
+      "updated": 1718620520
+    },
+    {
+      "id": "6670116873e5220000697dac",
+      "text": "         {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620520,
+      "updated": 1718620520
+    },
+    {
+      "id": "6670116873e5220000697dad",
+      "text": "             \"src\": \"images/icon.png\",",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620520,
+      "updated": 1718620531
+    },
+    {
+      "id": "6670116873e5220000697dae",
+      "text": "             \"sizes\": \"192x192\",",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620520,
+      "updated": 1718620535
+    },
+    {
+      "id": "6670116873e5220000697daf",
+      "text": "             \"type\": \"image/png\"",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620520,
+      "updated": 1718620520
+    },
+    {
+      "id": "6670116873e5220000697db0",
+      "text": "         }",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620520,
+      "updated": 1718620520
+    },
+    {
+      "id": "6670116873e5220000697db1",
+      "text": "     ]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620520,
+      "updated": 1718620520
+    },
+    {
+      "id": "6670116873e5220000697db2",
+      "text": " }",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620520,
+      "updated": 1718620520
+    },
+    {
+      "id": "6670116873e5220000697db3",
+      "text": "",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620520,
+      "updated": 1718620538
+    },
+    {
+      "id": "6670117b73e5220000697db4",
+      "text": "",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620539,
+      "updated": 1718620539
+    },
+    {
+      "id": "667010d473e5220000697d9b",
+      "text": "",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1718620372,
+      "updated": 1718620372
+    }
+  ]
+}
