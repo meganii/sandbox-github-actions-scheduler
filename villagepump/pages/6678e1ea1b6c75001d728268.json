@@ -1,0 +1,428 @@
+{
+  "id": "6678e1ea1b6c75001d728268",
+  "title": "innerHTMLから逃げたい(JavaScript)",
+  "created": 1719198192,
+  "updated": 1719233531,
+  "lines": [
+    {
+      "id": "6678e1ea1b6c75001d728268",
+      "text": "innerHTMLから逃げたい(JavaScript)",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198192,
+      "updated": 1719198192
+    },
+    {
+      "id": "6678e1f073e522000054c61d",
+      "text": "[Element.innerHTML https://developer.mozilla.org/ja/docs/Web/API/Element/innerHTML]に[HTML]文字列を代入してページ要素を操作するのをやめたい [綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198192,
+      "updated": 1719198337
+    },
+    {
+      "id": "6678e24f73e522000054c621",
+      "text": "……が、うまい書き方がわからない",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198287,
+      "updated": 1719198303
+    },
+    {
+      "id": "6678f5f573e522000054c66d",
+      "text": "",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203317,
+      "updated": 1719203317
+    },
+    {
+      "id": "6678e27b73e522000054c624",
+      "text": "とりあえず思いついた方法",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198331,
+      "updated": 1719198344
+    },
+    {
+      "id": "6678e28773e522000054c625",
+      "text": "code:script.js",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198344,
+      "updated": 1719198347
+    },
+    {
+      "id": "6678e28b73e522000054c626",
+      "text": " const parent = document.querySelector(\"div.example\");",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198347,
+      "updated": 1719198385
+    },
+    {
+      "id": "6678e2b073e522000054c627",
+      "text": " {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198385,
+      "updated": 1719198396
+    },
+    {
+      "id": "6678e30873e522000054c62d",
+      "text": "     // あとでまとめて挿入するために配列をつくっておく",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198473,
+      "updated": 1719198492
+    },
+    {
+      "id": "6678e2bd73e522000054c629",
+      "text": "     const children = [];",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198398,
+      "updated": 1719198404
+    },
+    {
+      "id": "6678e31d73e522000054c62e",
+      "text": "     // 1要素ずつpushしながら編集していく",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198493,
+      "updated": 1719198504
+    },
+    {
+      "id": "6678e32a73e522000054c62f",
+      "text": "     children.push(document.createElement(\"h1\"));",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198506,
+      "updated": 1719198506
+    },
+    {
+      "id": "6678e32a73e522000054c630",
+      "text": "     children.at(-1).classList.add(\"sample\");",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198506,
+      "updated": 1719198506
+    },
+    {
+      "id": "6678e32a73e522000054c631",
+      "text": "     children.at(-1).textContent = \"タイトル\";",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198506,
+      "updated": 1719198506
+    },
+    {
+      "id": "6678e32a73e522000054c632",
+      "text": "     children.push(document.createElement(\"p\"));",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198506,
+      "updated": 1719198508
+    },
+    {
+      "id": "6678e32a73e522000054c634",
+      "text": "     children.at(-1).textContent = \"本文\";",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198506,
+      "updated": 1719198511
+    },
+    {
+      "id": "6678e33273e522000054c635",
+      "text": "     // まとめて挿入",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198514,
+      "updated": 1719198521
+    },
+    {
+      "id": "6678e33873e522000054c636",
+      "text": "     parent.append(...children);",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198521,
+      "updated": 1719198531
+    },
+    {
+      "id": "6678e2bb73e522000054c628",
+      "text": " }",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198396,
+      "updated": 1719198530
+    },
+    {
+      "id": "6678e37873e522000054c63a",
+      "text": "",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198584,
+      "updated": 1719198584
+    },
+    {
+      "id": "6678e34a73e522000054c637",
+      "text": "要素の中に要素を入れたい場合、どうする……？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198539,
+      "updated": 1719198584
+    },
+    {
+      "id": "6678e36c73e522000054c639",
+      "text": "\t`div.example > p > b`とかやりたいときにどうしようってなる",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719198572,
+      "updated": 1719198603
+    },
+    {
+      "id": "6678f35973e522000054c63c",
+      "text": " もしかして：これでいい",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202650,
+      "updated": 1719202656
+    },
+    {
+      "id": "6678f36073e522000054c63d",
+      "text": " 　code:scrip2.js",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202656,
+      "updated": 1719202924
+    },
+    {
+      "id": "6678f36673e522000054c63e",
+      "text": " 　 const parent = document.querySelector(\"div.example\");",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202662,
+      "updated": 1719202924
+    },
+    {
+      "id": "6678f36673e522000054c63f",
+      "text": " 　 {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202663,
+      "updated": 1719202925
+    },
+    {
+      "id": "6678f36673e522000054c641",
+      "text": " 　     const children = [];",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202663,
+      "updated": 1719202926
+    },
+    {
+      "id": "6678f36673e522000054c643",
+      "text": " 　     children.push(document.createElement(\"h1\"));",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202663,
+      "updated": 1719202927
+    },
+    {
+      "id": "6678f36673e522000054c644",
+      "text": " 　     children.at(-1).classList.add(\"sample\");",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202663,
+      "updated": 1719202928
+    },
+    {
+      "id": "6678f36673e522000054c645",
+      "text": " 　     children.at(-1).textContent = \"タイトル\";",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202663,
+      "updated": 1719202931
+    },
+    {
+      "id": "6678f36673e522000054c646",
+      "text": " 　     children.push(document.createElement(\"p\"));",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202663,
+      "updated": 1719202931
+    },
+    {
+      "id": "6678f36e73e522000054c64b",
+      "text": " 　     {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202671,
+      "updated": 1719202931
+    },
+    {
+      "id": "6678f37273e522000054c64d",
+      "text": " 　         const children = [];",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202675,
+      "updated": 1719202931
+    },
+    {
+      "id": "6678f37c73e522000054c64e",
+      "text": " 　         children.push(\"ここは通常の文字 \");",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202684,
+      "updated": 1719202931
+    },
+    {
+      "id": "6678f38773e522000054c64f",
+      "text": " 　         children.push(document.createElement(\"b\"));",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202696,
+      "updated": 1719202931
+    },
+    {
+      "id": "6678f39673e522000054c650",
+      "text": " 　         children.at(-1).textContent = \"ここは太字\";",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202710,
+      "updated": 1719202931
+    },
+    {
+      "id": "6678f3a373e522000054c651",
+      "text": " 　         parent.append(...children);",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202724,
+      "updated": 1719202931
+    },
+    {
+      "id": "6678f37073e522000054c64c",
+      "text": " 　     }",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202673,
+      "updated": 1719202931
+    },
+    {
+      "id": "6678f36673e522000054c648",
+      "text": " 　     // まとめて挿入",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202663,
+      "updated": 1719202931
+    },
+    {
+      "id": "6678f36673e522000054c649",
+      "text": " 　     parent.append(...children);",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202663,
+      "updated": 1719202931
+    },
+    {
+      "id": "6678f36673e522000054c64a",
+      "text": " 　 }",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202663,
+      "updated": 1719202931
+    },
+    {
+      "id": "6678f46873e522000054c653",
+      "text": " 　だめだった",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202921,
+      "updated": 1719202938
+    },
+    {
+      "id": "6678f47b73e522000054c654",
+      "text": " ブロック文じゃなくて[即時実行関数式]にすればいけるか？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202939,
+      "updated": 1719202989
+    },
+    {
+      "id": "6678f4ac73e522000054c655",
+      "text": " \tcode:script3.js",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202989,
+      "updated": 1719202992
+    },
+    {
+      "id": "6678f4b073e522000054c656",
+      "text": " \t (parent => {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719202992,
+      "updated": 1719203255
+    },
+    {
+      "id": "6678f4c573e522000054c659",
+      "text": " \t     const children = [];",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203014,
+      "updated": 1719203072
+    },
+    {
+      "id": "6678f4fe73e522000054c65a",
+      "text": " \t     children.push(document.createElement(\"h1\"));",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203070,
+      "updated": 1719203113
+    },
+    {
+      "id": "6678f53b73e522000054c65b",
+      "text": " \t     children.at(-1).classList.add(\"sample\");",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203132,
+      "updated": 1719203132
+    },
+    {
+      "id": "6678f53d73e522000054c65c",
+      "text": " \t     children.at(-1).textContent = \"タイトル\";",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203133,
+      "updated": 1719203136
+    },
+    {
+      "id": "6678f54073e522000054c65d",
+      "text": " \t     children.push(document.createElement(\"p\"));",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203137,
+      "updated": 1719203140
+    },
+    {
+      "id": "6678f54473e522000054c65e",
+      "text": " \t     (parent => {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203140,
+      "updated": 1719203162
+    },
+    {
+      "id": "6678f55a73e522000054c660",
+      "text": " \t         const children = [];",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203163,
+      "updated": 1719203174
+    },
+    {
+      "id": "6678f56873e522000054c661",
+      "text": " \t         children.push(\"通常\");",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203177,
+      "updated": 1719203186
+    },
+    {
+      "id": "6678f57473e522000054c662",
+      "text": " \t         children.push(document.createElement(\"b\"));",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203191,
+      "updated": 1719203198
+    },
+    {
+      "id": "6678f57e73e522000054c663",
+      "text": " \t         children.at(-1).textContent = \"注目\";",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203199,
+      "updated": 1719203208
+    },
+    {
+      "id": "6678f59573e522000054c664",
+      "text": " \t         parent.append(...children);",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203222,
+      "updated": 1719203222
+    },
+    {
+      "id": "6678f55973e522000054c65f",
+      "text": " \t     })(children.at(-1));",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203162,
+      "updated": 1719203167
+    },
+    {
+      "id": "6678f59c73e522000054c665",
+      "text": " \t     parent.append(...children);",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203228,
+      "updated": 1719203228
+    },
+    {
+      "id": "6678f4c473e522000054c658",
+      "text": " \t })(document.querySelector(\"div.example\"));",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203012,
+      "updated": 1719203250
+    },
+    {
+      "id": "6678f5c773e522000054c666",
+      "text": " \tいけそう！！",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1719203271,
+      "updated": 1719203274
+    }
+  ]
+}
