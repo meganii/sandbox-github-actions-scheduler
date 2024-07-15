@@ -1,0 +1,246 @@
+{
+  "id": "6694cd2a406ffe001ed584e4",
+  "title": "コース定数",
+  "created": 1721027885,
+  "updated": 1721029154,
+  "lines": [
+    {
+      "id": "6694cd2a406ffe001ed584e4",
+      "text": "コース定数",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1721027885,
+      "updated": 1721027885
+    },
+    {
+      "id": "6694cd2d5e90c00000bf9806",
+      "text": "[https://www.yamakei-online.com/yama-ya/detail.php?id=363 「歩行時間」「総距離」「累積標高差」から算出される指標『コース定数』で、登山コースの体力的難度を把握しよう　YAMAYA - ヤマケイオンライン / 山と渓谷社]",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1721027885,
+      "updated": 1721027885
+    },
+    {
+      "id": "6694cd4a5e90c00000bf9809",
+      "text": ">「コース定数」とは、「[歩行時間]（参考コースタイム）」「[総距離]」「[累積標高差]」の3つの要素から算出され、1～100前後の数値でコースの体力的難度を示す。参考コースタイムだけでなく、総距離や累積標高差を組み合わせることで、従来よりも[体力的なキツさ]を客観的に示すことができる。なお、「コース定数」は[鹿屋体育大学]・[山本正嘉]教授によって定義づけられたものだ。",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1721027914,
+      "updated": 1721027940
+    },
+    {
+      "id": "6694cd4a5e90c00000bf980a",
+      "text": "",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1721027914,
+      "updated": 1721027914
+    },
+    {
+      "id": "6694cd2d5e90c00000bf9807",
+      "text": " コース定数 = 1.8 × 行動時間 (h) + 0.3 × 歩行距離 (km) + 10.0 × 登りの累積標高差 (km) + 0.6 × 下りの累積標高差 (km)",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1721027885,
+      "updated": 1721027969
+    },
+    {
+      "id": "6694cf7671b3c20000eaeb11",
+      "text": "code:course.py",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721028407,
+      "updated": 1721028421
+    },
+    {
+      "id": "6694cf8571b3c20000eaeb12",
+      "text": " def cource_constant(action_h,walk_km,up_evelation_km,down_elevation_km):",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721028421,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb20",
+      "text": "     \"\"\"コース定数を計算します。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d25c71b3c20000eaeb3b",
+      "text": "     ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029150,
+      "updated": 1721029150
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb22",
+      "text": "         コース定数 = 1.8 * 行動時間(h) + 0.3 * 歩行距離(km) + 10.0 * 登りの累積標高差(km) + 0.6 * 下りの累積標高差(km)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029148
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb23",
+      "text": "     ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb24",
+      "text": "     Parameters",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb25",
+      "text": "     ------",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb26",
+      "text": "     action_h:float",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb27",
+      "text": "         行動した時間(h)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb28",
+      "text": "     walk_km:float",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb29",
+      "text": "         歩いた距離(km)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb2a",
+      "text": "     up_elevation_km:float",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb2b",
+      "text": "         登りの累積標高差(km)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb2c",
+      "text": "     down_elevation_km:float",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb2d",
+      "text": "         下りの累積標高差(km)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d25e71b3c20000eaeb3c",
+      "text": "         ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029154,
+      "updated": 1721029154
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb2f",
+      "text": "     Returns",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb30",
+      "text": "     ------",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb31",
+      "text": "     course_constant:float",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb32",
+      "text": "         計算されたコース定数",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb33",
+      "text": "     \"\"\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb34",
+      "text": "     cource_constant = 0",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb35",
+      "text": "     cource_constant += 1.8*action_h",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb36",
+      "text": "     cource_constant += 0.3*walk_km",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb37",
+      "text": "     cource_constant += 10*up_evelation_km",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb38",
+      "text": "     cource_constant += 0.6*down_elevation_km",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694d24c71b3c20000eaeb39",
+      "text": "     return cource_constant",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1721029132,
+      "updated": 1721029141
+    },
+    {
+      "id": "6694cd2e5e90c00000bf9808",
+      "text": "",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1721027887,
+      "updated": 1721027889
+    }
+  ]
+}
