@@ -1,0 +1,218 @@
+{
+  "id": "66adc415ed2967001d19c1fd",
+  "title": "井戸端の底をPythonで取得する",
+  "created": 1722663969,
+  "updated": 1722668529,
+  "lines": [
+    {
+      "id": "66adc415ed2967001d19c1fd",
+      "text": "井戸端の底をPythonで取得する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722663969,
+      "updated": 1722663969
+    },
+    {
+      "id": "66adc42071b3c20000916a36",
+      "text": "[井戸端の底500件リスト]で使用する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722663969,
+      "updated": 1722668485
+    },
+    {
+      "id": "66adc44a71b3c20000916a38",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722664010,
+      "updated": 1722668466
+    },
+    {
+      "id": "66adc45471b3c20000916a39",
+      "text": "code:井戸端の底500件リストを取得.py",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722664021,
+      "updated": 1722668458
+    },
+    {
+      "id": "66add5ab71b3c20000916a5a",
+      "text": " import requests, json, os",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a5b",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a5c",
+      "text": " pgcountjsonr = requests.get(\"https://scrapbox.io/api/pages/villagepump/?limit=1\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a5d",
+      "text": " pgcountjsont = pgcountjsonr.text",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a5e",
+      "text": " pgcountjson = json.loads(pgcountjsont)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a5f",
+      "text": " pgcount = int(pgcountjson[\"count\"])",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a60",
+      "text": " pglist = []",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a61",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a62",
+      "text": " pglisttempjsonr = requests.get(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a63",
+      "text": "     f\"https://scrapbox.io/api/pages/villagepump/?limit=500&skip={pgcount-500}\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a64",
+      "text": " )",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a65",
+      "text": " pglisttempjsont = pglisttempjsonr.text",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a66",
+      "text": " pglisttempjson = json.loads(pglisttempjsont)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a67",
+      "text": " for a, b in enumerate(pglisttempjson[\"pages\"]):",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a68",
+      "text": "     pglist.append(b[\"title\"])",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a69",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a6a",
+      "text": " with open(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a6b",
+      "text": "     os.path.join(os.path.dirname(__file__), \"villagepump-list.txt\"),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a6c",
+      "text": "     \"w\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a6d",
+      "text": "     encoding=\"utf-8\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a6e",
+      "text": "     newline=\"\\n\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a6f",
+      "text": " ) as f:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a70",
+      "text": "     for a in pglist:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668459
+    },
+    {
+      "id": "66add5ab71b3c20000916a71",
+      "text": "         f.write(f\" [{a}]\\n\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722668459,
+      "updated": 1722668529
+    },
+    {
+      "id": "66adc4c971b3c20000916a3a",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722664138,
+      "updated": 1722668464
+    },
+    {
+      "id": "66adc4da71b3c20000916a41",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1722664154,
+      "updated": 1722664154
+    }
+  ]
+}
