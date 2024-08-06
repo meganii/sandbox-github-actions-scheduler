@@ -1,0 +1,260 @@
+{
+  "id": "66b21b0ff98a66001dcecba9",
+  "title": "謎のスクロール位置調整テクノロジー：制作者による解説",
+  "created": 1722948368,
+  "updated": 1722949193,
+  "lines": [
+    {
+      "id": "66b21b0ff98a66001dcecba9",
+      "text": "謎のスクロール位置調整テクノロジー：制作者による解説",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948368,
+      "updated": 1722948368
+    },
+    {
+      "id": "66b21b10e5172d00001a5c2c",
+      "text": "from [謎のスクロール位置調整テクノロジー]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948368,
+      "updated": 1722948368
+    },
+    {
+      "id": "66b21b10e5172d00001a5c2e",
+      "text": "制作者(@[teramotodaiki])による解説",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948368,
+      "updated": 1722948373
+    },
+    {
+      "id": "66b21b10e5172d00001a5c2f",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948368,
+      "updated": 1722948398
+    },
+    {
+      "id": "66b21b10e5172d00001a5c30",
+      "text": "> [@teramotodaiki https://twitter.com/teramotodaiki/status/1607745576988463105]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948368,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c3d",
+      "text": "> 需要があるらしいので解説します。fav見た感じWebのことはよくご存知と思われる方々ばかりだったので、要所だけ。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c3e",
+      "text": "> ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c3f",
+      "text": "> まずは解決したい問題の確認です。今回直したいガタガタとはこのようなものです。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c40",
+      "text": "> 右の人が編集すると、左の人の画面が動いてしまうのが問題です。 ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c41",
+      "text": "> [https://gyazo.com/f01fe46d24dfcfaa9bfd240168a828eb]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c42",
+      "text": "> ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c43",
+      "text": "> [@teramotodaiki https://twitter.com/teramotodaiki/status/1607745581233098753]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c44",
+      "text": "> 原因。ドキュメント上の自分の見えている部分よりも上に何かを突っ込まれると、相対的に画面が下がったように見えます。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c45",
+      "text": "> HTMLでは基本的に上から下に要素が配置されていくため、押し出されてしまう訳です。（CSSで下から上に配置していくと逆向きのことがおきます） ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c46",
+      "text": "> [https://gyazo.com/cdc0324de643fa8f9560628e71be2b7c]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c47",
+      "text": "> ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c48",
+      "text": "> [@teramotodaiki https://twitter.com/teramotodaiki/status/1607745583632232449]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c49",
+      "text": "> 解決策。押し出された事を検知して、追いかけるようにスクロールします。100px増えたら window.scrollby(0, 100) 、減ったらマイナスします。そうすればユーザーの見える画面は変わりません。仕組みの解説は以上。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c4a",
+      "text": "> ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c4b",
+      "text": "> 実装上のポイントは２つあります↓ ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c4c",
+      "text": "> [https://gyazo.com/73658c89e06dfadc2c622eb48b4bcfc3]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c4d",
+      "text": "> ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c4e",
+      "text": "> [@teramotodaiki https://twitter.com/teramotodaiki/status/1607745586127855618]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c4f",
+      "text": "> ①要素のリサイズを監視する",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c50",
+      "text": "> これは[ResizeObserver]を使います。要素がDOMツリーにappendされた直後（Reactでいうとマウントされた時）にobserveする必要があります。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722949163
+    },
+    {
+      "id": "66b21b32e5172d00001a5c51",
+      "text": "> ROではリサイズ後の高さしか分からないので、リサイズ前の高さを保持しておくのがポイントです。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c52",
+      "text": "> https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c53",
+      "text": "> [@teramotodaiki https://twitter.com/teramotodaiki/status/1607745588023660544]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c54",
+      "text": "> ②見えている領域よりも上にあるものにだけ反応する",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c55",
+      "text": "> これは[getBoundingClientRect]を使います。単に top < 0 とするだけでよいです。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722949193
+    },
+    {
+      "id": "66b21b32e5172d00001a5c56",
+      "text": "> https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c57",
+      "text": "> [@teramotodaiki https://twitter.com/teramotodaiki/status/1607745589722353664]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c58",
+      "text": "> 以上です。他に試してみたけどダメだったボツ案もあるのですが、それはまた別の機会に…",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c59",
+      "text": "> ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c5a",
+      "text": "> ちなみにご覧の通りclient jsで完結しているため、実はScrapboxのUserScriptでPoCを書いて２ヶ月ほど実際に使い続けていましたが、とても快適でした。この快適さを皆さんにもお届けできて心底嬉しいです。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    },
+    {
+      "id": "66b21b32e5172d00001a5c5b",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1722948402,
+      "updated": 1722948402
+    }
+  ]
+}
