@@ -1,0 +1,1303 @@
+{
+  "id": "66b3404220a1ba001d7bf1c4",
+  "title": "pdfをscrapboxに変換する",
+  "created": 1723023433,
+  "updated": 1723036629,
+  "lines": [
+    {
+      "id": "66b3404220a1ba001d7bf1c4",
+      "text": "pdfをscrapboxに変換する",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723023433,
+      "updated": 1723023433
+    },
+    {
+      "id": "66b340485f1e0d000008644f",
+      "text": "[アクティブ読書]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723023434,
+      "updated": 1723023436
+    },
+    {
+      "id": "66b340485f1e0d0000086450",
+      "text": "[wogikaze.icon]が[MN-Core]のドキュメントをアクティブ読書したくなった",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723023434,
+      "updated": 1723030208
+    },
+    {
+      "id": "66b35abe5f1e0d0000086504",
+      "text": " https://pdf2md.morethan.io でpdf to markdown (previewがhtml)ができたので、そのページで[/takker/GTDを噛み砕くをScrapbox書籍に変換する]をいじったコードをコンソールで実行して変換した",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1723030208,
+      "updated": 1723036574
+    },
+    {
+      "id": "66b373c8e5172d000008b7a9",
+      "text": "  [PDFをMarkdownに変換]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1723036617,
+      "updated": 1723036629
+    },
+    {
+      "id": "66b35a1e5f1e0d0000086458",
+      "text": " Claudeさん[いつもありがとう.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030048,
+      "updated": 1723030133
+    },
+    {
+      "id": "66b35b5a5f1e0d0000086506",
+      "text": "  h6もあったんだけど普通のテキストも入ってしまったのでh6は消した",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030363,
+      "updated": 1723030374
+    },
+    {
+      "id": "66b35a6b5f1e0d0000086503",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030125,
+      "updated": 1723030125
+    },
+    {
+      "id": "66b35bc85f1e0d0000086508",
+      "text": "読みながら[/takker/改行を消すPopupMenu]と[/takker/句点で箇条書きにばらすPopup Menu]...いや[/takker/一旦改行を消して句点で改行し直すPopupMenu]で整形していく",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030474,
+      "updated": 1723030504
+    },
+    {
+      "id": "66b35bc75f1e0d0000086507",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030473,
+      "updated": 1723030473
+    },
+    {
+      "id": "66b35a1f5f1e0d0000086459",
+      "text": "code:js",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030049,
+      "updated": 1723030051
+    },
+    {
+      "id": "66b35a215f1e0d000008645a",
+      "text": " (() => {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030051,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008645b",
+      "text": "   main();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008645c",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008645d",
+      "text": "   function main() {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008645e",
+      "text": "     // Remove site-specific check",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008645f",
+      "text": "     const body = document.body; // Use the entire body instead of a specific div",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086460",
+      "text": "     const sections = makeHierarchy(body);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086461",
+      "text": "     const pages = [];",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086462",
+      "text": "     for (const section of sections) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086463",
+      "text": "       const pages_ = [...toPages(section)];",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086464",
+      "text": "       if (pages_.length === 0) continue;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086465",
+      "text": "       pages.push(pages_.pop());",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086466",
+      "text": "       pages.push(...pages_);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086467",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086468",
+      "text": "     ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086469",
+      "text": "     const index = generateIndex(pages);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008646a",
+      "text": "     const json = {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008646b",
+      "text": "       pages: [index, ...pages.map(({id, lines}) => ({ title: id, lines: [id, ...lines] }))],",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008646c",
+      "text": "     };",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008646d",
+      "text": "     ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008646e",
+      "text": "     downloadJSON(json);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008646f",
+      "text": "   }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086470",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086471",
+      "text": "   function generateIndex(pages) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086472",
+      "text": "     return {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086473",
+      "text": "       title: \"Table of Contents\",",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086474",
+      "text": "       lines: [",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086475",
+      "text": "         \"Table of Contents\",",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086476",
+      "text": "         ...pages.map(({ id, level }) => `${\" \".repeat(level - 1)}[${id}]`),",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086477",
+      "text": "       ],",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086478",
+      "text": "     };",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086479",
+      "text": "   }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008647a",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008647b",
+      "text": "   function* toPages(section) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008647c",
+      "text": "     const data = section[0];",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008647d",
+      "text": "     const lines = [];",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008647e",
+      "text": "     for (const node of section.slice(1)) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008647f",
+      "text": "       if (Array.isArray(node)) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086480",
+      "text": "         const pages = [...toPages(node)];",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086481",
+      "text": "         if (pages.length === 0) continue;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086482",
+      "text": "         const link = pages[pages.length - 1].id;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086483",
+      "text": "         lines.push(`[${link}]`, \"\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086484",
+      "text": "         yield pages.pop();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086485",
+      "text": "         for (const page of pages) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086486",
+      "text": "           yield page;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086487",
+      "text": "         }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086488",
+      "text": "         continue;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086489",
+      "text": "       }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008648a",
+      "text": "       lines.push(...convertNode(node), \"\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008648b",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008648c",
+      "text": "     yield { ...data, lines };",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008648d",
+      "text": "   }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008648e",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008648f",
+      "text": "   function convertNode(node) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086490",
+      "text": "     switch (node.nodeName) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086491",
+      "text": "       case \"P\":",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086492",
+      "text": "         return convertP(node).split(\"\\n\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086493",
+      "text": "       case \"TABLE\":",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086494",
+      "text": "         return [\"table:table\", ...node.innerText.split(\"\\n\").map((text) => ` ${text}`)];",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086495",
+      "text": "       case \"UL\":",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086496",
+      "text": "       case \"OL\":",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086497",
+      "text": "         return convertList(node);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086498",
+      "text": "       case \"PRE\":",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086499",
+      "text": "         return [\"code:txt\", ...node.innerText.split(\"\\n\").map((text) => ` ${text}`)];",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008649a",
+      "text": "       case \"FIGURE\":",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008649b",
+      "text": "         return convertFigure(node);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008649c",
+      "text": "       default: ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008649d",
+      "text": "         return node.innerText.split(\"\\n\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008649e",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d000008649f",
+      "text": "   }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864a0",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864a1",
+      "text": "   function convertP(p) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864a2",
+      "text": "     return Array.from(p.childNodes).map((node) => {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864a3",
+      "text": "       switch (node.nodeName) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864a4",
+      "text": "         case \"STRONG\":",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864a5",
+      "text": "         case \"B\":",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864a6",
+      "text": "           return node.textContent.split(\"\\n\").map((text) => `[* ${text}]`).join(\"\\n\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864a7",
+      "text": "         case \"EM\":",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864a8",
+      "text": "         case \"I\":",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864a9",
+      "text": "           return node.textContent.split(\"\\n\").map((text) => `[_ ${text}]`).join(\"\\n\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864aa",
+      "text": "         case \"CODE\":",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864ab",
+      "text": "           return node.textContent.split(\"\\n\").map((text) => `\\`${text}\\``).join(\"\\n\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864ac",
+      "text": "         case \"A\":",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864ad",
+      "text": "           return convertLink(node);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864ae",
+      "text": "         case \"UL\":",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864af",
+      "text": "         case \"OL\":",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864b0",
+      "text": "           return convertList(node).join(\"\\n\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864b1",
+      "text": "         default:",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864b2",
+      "text": "           return node.textContent;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864b3",
+      "text": "       }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864b4",
+      "text": "     }).join(\"\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864b5",
+      "text": "   }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864b6",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864b7",
+      "text": "   function convertLink(node) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864b8",
+      "text": "     if (node.id) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864b9",
+      "text": "       const n = node.textContent.trim();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864ba",
+      "text": "       return `([Footnote ${n}])`;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864bb",
+      "text": "     }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864bc",
+      "text": "     const url = node.href.trim();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864bd",
+      "text": "     const text = node.textContent.trim();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864be",
+      "text": "     return url === text ? ` ${url} ` : `[${url} ${text}]`;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864bf",
+      "text": "   }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864c0",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864c1",
+      "text": "   function convertList(ul) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864c2",
+      "text": "     const list = Array.from(ul.children).filter((li) => li.tagName === \"LI\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864c3",
+      "text": "     return list.flatMap(",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864c4",
+      "text": "       (li) => convertP(li).split(\"\\n\").map((text, i) => i === 0 ? ` ${text}` : `  ${text}`)",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864c5",
+      "text": "     );",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864c6",
+      "text": "   }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864c7",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864c8",
+      "text": "   function convertFigure(figure) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864c9",
+      "text": "     const img = figure.querySelector(\"img\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864ca",
+      "text": "     if (!img) return [];",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864cb",
+      "text": "     const src = img.src.trim();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864cc",
+      "text": "     const text = img.alt.trim() || \"Image\";",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864cd",
+      "text": "     return [text, ` [${src}]`];",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864ce",
+      "text": "   }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864cf",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864d0",
+      "text": "   function makeHierarchy(body) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864d1",
+      "text": "     const headings = body.querySelectorAll(\"h1, h2, h3, h4, h5\");",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864d2",
+      "text": "     const sections = [];",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864d3",
+      "text": "     let currentSection = null;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864d4",
+      "text": "     let currentLevel = 0;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864d5",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864d6",
+      "text": "     headings.forEach((heading) => {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864d7",
+      "text": "       const level = parseInt(heading.tagName.slice(1));",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864d8",
+      "text": "       ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864d9",
+      "text": "       if (level <= currentLevel) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864da",
+      "text": "         while (currentSection && currentSection[0].level >= level) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864db",
+      "text": "           currentSection = currentSection[0].parent;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864dc",
+      "text": "         }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864dd",
+      "text": "       }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864de",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864df",
+      "text": "       const newSection = [{",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864e0",
+      "text": "         // id: heading.id || heading.textContent.trim().replace(/\\s+/g, '-').toLowerCase(),",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723031530
+    },
+    {
+      "id": "66b35d355f1e0d000008650b",
+      "text": "ここ`-`に置き換えるのはやりすぎ[wogikaze.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030839,
+      "updated": 1723031524
+    },
+    {
+      "id": "66b35d315f1e0d000008650a",
+      "text": "code:js",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030834,
+      "updated": 1723030836
+    },
+    {
+      "id": "66b35fd95f1e0d000008650c",
+      "text": " \t\tid: heading.id || heading.textContent.trim().replace(/\\s+/, ''),",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723031515,
+      "updated": 1723031516
+    },
+    {
+      "id": "66b35a625f1e0d00000864e1",
+      "text": "         text: heading.textContent,",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864e2",
+      "text": "         level: level,",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864e3",
+      "text": "         parent: currentSection",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864e4",
+      "text": "       }];",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864e5",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864e6",
+      "text": "       if (currentSection) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864e7",
+      "text": "         currentSection.push(newSection);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864e8",
+      "text": "       } else {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864e9",
+      "text": "         sections.push(newSection);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864ea",
+      "text": "       }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864eb",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864ec",
+      "text": "       currentSection = newSection;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864ed",
+      "text": "       currentLevel = level;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864ee",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864ef",
+      "text": "       let sibling = heading.nextElementSibling;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864f0",
+      "text": "       while (sibling && !sibling.matches(\"h1, h2, h3, h4, h5\")) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864f1",
+      "text": "         currentSection.push(sibling);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864f2",
+      "text": "         sibling = sibling.nextElementSibling;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864f3",
+      "text": "       }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864f4",
+      "text": "     });",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864f5",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864f6",
+      "text": "     return sections;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864f7",
+      "text": "   }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864f8",
+      "text": " ",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864f9",
+      "text": "   function downloadJSON(json) {",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864fa",
+      "text": "     const blob = new Blob([JSON.stringify(json)], {type: 'application/json'});",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864fb",
+      "text": "     const url = URL.createObjectURL(blob);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864fc",
+      "text": "     const a = document.createElement('a');",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864fd",
+      "text": "     a.href = url;",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864fe",
+      "text": "     a.download = 'extracted_content.json';",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d00000864ff",
+      "text": "     a.click();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086500",
+      "text": "     URL.revokeObjectURL(url);",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086501",
+      "text": "   }",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a625f1e0d0000086502",
+      "text": " })();",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030116,
+      "updated": 1723030116
+    },
+    {
+      "id": "66b35a1b5f1e0d0000086457",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723030044,
+      "updated": 1723030044
+    },
+    {
+      "id": "66b359dd5f1e0d0000086456",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1723029982,
+      "updated": 1723029982
+    }
+  ]
+}
