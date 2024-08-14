@@ -2,7 +2,7 @@
   "id": "66b8735b7c0823001d2f0e71",
   "title": "Fractal Multilingal Wiki",
   "created": 1723364192,
-  "updated": 1723461575,
+  "updated": 1723627569,
   "lines": [
     {
       "id": "66b8735b7c0823001d2f0e71",
@@ -108,20 +108,6 @@
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1723368947,
       "updated": 1723369180
-    },
-    {
-      "id": "66b8872b71b3c20000172881",
-      "text": " \t特定の言語にしかない表現の翻訳をどうするか",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1723369259,
-      "updated": 1723369274
-    },
-    {
-      "id": "66b8884a71b3c20000172886",
-      "text": " \t\t例:[稟議]",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1723369546,
-      "updated": 1723369552
     },
     {
       "id": "66b8735e71b3c20000aef142",
@@ -285,6 +271,34 @@
       "updated": 1723364192
     },
     {
+      "id": "66bc777d71b3c200004b9541",
+      "text": " リンクの表記ゆれを回避する機能",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723627392,
+      "updated": 1723627416
+    },
+    {
+      "id": "66bc77c771b3c2000058808e",
+      "text": " \tページ転送機能？",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723627464,
+      "updated": 1723627484
+    },
+    {
+      "id": "66bc77db71b3c2000058808f",
+      "text": " \t\tupdate linksしても、文章が崩れない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723627484,
+      "updated": 1723627507
+    },
+    {
+      "id": "66bc77f771b3c20000588090",
+      "text": " \t\t入力補完時もリンク先が転送される",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723627512,
+      "updated": 1723627528
+    },
+    {
       "id": "66b8735e71b3c20000aef152",
       "text": "\tテンプレート",
       "userId": "661b6e882a96e9002371b3c2",
@@ -327,18 +341,109 @@
       "updated": 1723364192
     },
     {
-      "id": "66b8735e71b3c20000aef158",
-      "text": "\t\t\tDBつきカテゴリに所属させると、ページにDBの表示が現れる",
+      "id": "66bc41e871b3c20000ba6ef4",
+      "text": " \t\t例:`日付:XXXX/XX/XX`を取得し、infobox上に`Date`クラスとして格納するには",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1723364192,
-      "updated": 1723364192
+      "created": 1723613673,
+      "updated": 1723613718
     },
     {
-      "id": "66b8735e71b3c20000aef159",
-      "text": "\t\t\t\t手動[infobox]的なイメージ",
+      "id": "66bc421671b3c20000ba6ef5",
+      "text": " \t\t\tcode:get.py",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1723364192,
-      "updated": 1723364192
+      "created": 1723613725,
+      "updated": 1723613806
+    },
+    {
+      "id": "66bc762c71b3c200004b953b",
+      "text": " \t\t\t\timport re",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723627053,
+      "updated": 1723627053
+    },
+    {
+      "id": "66bc430e71b3c20000ba6ef9",
+      "text": " \t\t\t\tfrom datetime import datetime",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723613968,
+      "updated": 1723613968
+    },
+    {
+      "id": "66bc765271b3c200004b953e",
+      "text": " \t\t\t DBCol = [{'colname':'日付','format':'日付:YYYY/MM/DD'}]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723627091,
+      "updated": 1723627134
+    },
+    {
+      "id": "66bc435a71b3c20000ba6eff",
+      "text": " \t\t\t\tdef pagedb(page):",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723614044,
+      "updated": 1723614063
+    },
+    {
+      "id": "66bc427071b3c20000ba6ef7",
+      "text": "  \t\t\t\tm = re.match(r'日付:(\\d\\d\\d\\d/\\d\\d/\\d\\d)',page.text)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723613809,
+      "updated": 1723614065
+    },
+    {
+      "id": "66bc434171b3c20000ba6efb",
+      "text": "  \t\t\t\tif m == None:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723614018,
+      "updated": 1723614065
+    },
+    {
+      "id": "66bc434871b3c20000ba6efc",
+      "text": "  \t\t\t\t\treturn (None)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723614025,
+      "updated": 1723614115
+    },
+    {
+      "id": "66bc434a71b3c20000ba6efd",
+      "text": "  \t\t\t\telse:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723614027,
+      "updated": 1723614065
+    },
+    {
+      "id": "66bc431c71b3c20000ba6efa",
+      "text": "  \t\t\t\t\tdate = datetime.strptime(m[1], \"%Y%m%d\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723613992,
+      "updated": 1723614065
+    },
+    {
+      "id": "66bc435171b3c20000ba6efe",
+      "text": " \t\t\t\t\t\treturn (date)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723614034,
+      "updated": 1723614111
+    },
+    {
+      "id": "66bc42bb71b3c20000ba6ef8",
+      "text": " \t\t\tスクリプトはサンドボックスで実行される",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723613884,
+      "updated": 1723613893
+    },
+    {
+      "id": "66bc43f671b3c20000ba6f00",
+      "text": " \t\tプログラマブル[infobox]みたいなイメージ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723614199,
+      "updated": 1723614223
+    },
+    {
+      "id": "66bc443871b3c20000ba6f01",
+      "text": " \t\tデータベースはCSVで取得できる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1723614265,
+      "updated": 1723614281
     },
     {
       "id": "66b8739c71b3c20000aef15d",
@@ -376,18 +481,11 @@
       "updated": 1723373920
     },
     {
-      "id": "66b9ef2771b3c200004cdb49",
-      "text": "　gth or qt based",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1723461415,
-      "updated": 1723461423
-    },
-    {
       "id": "66b9ef3071b3c200004cdb4a",
-      "text": "　\tクロスプラットフォームでoss",
+      "text": "\tクロスプラットフォームでネイティブ",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1723461424,
-      "updated": 1723461432
+      "updated": 1723613636
     },
     {
       "id": "66b9ef9271b3c200004cdb4c",
