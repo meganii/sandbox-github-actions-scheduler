@@ -1,5 +1,6 @@
 import { readableStreamFromIterable } from "https://deno.land/std@0.166.0/streams/mod.ts";
 import { JsonStringifyStream } from "https://deno.land/std@0.166.0/encoding/json/stream.ts";
+import { delay } from "https://deno.land/std/async/mod.ts";
 
 interface TitlePage {
   id: string,
@@ -17,15 +18,57 @@ const pageNum = (await pagesResponse.json()).count;
 const limitParam = 1000;
 const maxIndex = Math.floor(pageNum / 1000) + 1;
 
-const pages: any[] = [];
-const promises = [...Array(maxIndex)]
-  .map(async (_, index) => {
-    const json = await fetch(`https://scrapbox.io/api/pages/${project}/?limit=${limitParam}&skip=${index * 1000}`)
-      .then(res => res.json());
-    pages.push(...json.pages);
-  });
-await Promise.all(promises);
+// リクエストを送信する関数
+async function fetchWithRetry(url: string, retryCount = 3, delayMs = 1000): Promise<any> {
+  for (let i = 0; i < retryCount; i++) {
+    try {
+      const response = await fetch(url);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new Error(`Expected JSON, got ${contentType}`);
+      }
+      
+      return await response.json();
+    } catch (error) {
+      console.error(`Attempt ${i + 1} failed:`, error);
+      if (i < retryCount - 1) {
+        console.log(`Retrying in ${delayMs}ms...`);
+        await delay(delayMs);
+      } else {
+        throw error;
+      }
+    }
+  }
+  throw new Error("Max retry count reached");
+}
 
+// メイン処理
+async function fetchAllPages(project: string, limitParam: number, maxIndex: number): Promise<any[]> {
+  const pages: any[] = [];
+  for (let index = 0; index < maxIndex; index++) {
+    try {
+      console.log(`Fetching data for index ${index}...`);
+      const json = await fetchWithRetry(`https://scrapbox.io/api/pages/${project}/?limit=${limitParam}&skip=${index * 1000}`);
+      pages.push(...json.pages);
+      
+      // 各リクエスト後に遅延を追加
+      if (index < maxIndex - 1) {
+        console.log("Waiting before next request...");
+        await delay(2000); // 2秒の遅延を追加
+      }
+    } catch (error) {
+      console.error(`Error fetching data for index ${index}:`, error);
+    }
+  }
+  return pages;
+}
+
+const pages = await fetchAllPages(project, limitParam, maxIndex);
 const titles = pages.map((page) => {
   return {
     "id": page.id,
