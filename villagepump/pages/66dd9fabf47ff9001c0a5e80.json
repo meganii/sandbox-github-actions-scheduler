@@ -1,0 +1,547 @@
+{
+  "id": "66dd9fabf47ff9001c0a5e80",
+  "title": "React Native・Expoをさわってみる",
+  "created": 1725800366,
+  "updated": 1725805131,
+  "lines": [
+    {
+      "id": "66dd9fabf47ff9001c0a5e80",
+      "text": "React Native・Expoをさわってみる",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800366,
+      "updated": 1725800413
+    },
+    {
+      "id": "66dd9fae73e5220000824ee1",
+      "text": "from [2024/09/08]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800366,
+      "updated": 1725800370
+    },
+    {
+      "id": "66dd9fe373e5220000824eed",
+      "text": "[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800420,
+      "updated": 1725800420
+    },
+    {
+      "id": "66dd9fb373e5220000824ee3",
+      "text": " [React Native・Expoをさわってみる]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800371,
+      "updated": 1725800377
+    },
+    {
+      "id": "66dd9fb873e5220000824ee4",
+      "text": " \t理由 : [holorhysm]をアプリストアに投げたいけど、他言語を学ぶのはちょっと……",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800377,
+      "updated": 1725800377
+    },
+    {
+      "id": "66dd9fb873e5220000824ee5",
+      "text": " \t環境構築をやってみよう",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800377,
+      "updated": 1725800377
+    },
+    {
+      "id": "66dd9fb873e5220000824ee6",
+      "text": "\t \tまず[React]がわからない",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800377,
+      "updated": 1725800377
+    },
+    {
+      "id": "66dd9fb873e5220000824ee7",
+      "text": " \t\tなんなら[Node.js]も触ったことない",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800377,
+      "updated": 1725800377
+    },
+    {
+      "id": "66dd9fb873e5220000824ee8",
+      "text": " \t\t\tえっと、とりあえず入れればいい？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800377,
+      "updated": 1725800377
+    },
+    {
+      "id": "66dda0ed73e5220000824ef2",
+      "text": " \t\t\t検索したら[この記事 https://zenn.dev/izuchy/articles/6d6f7970a77aa203396c]が出てきたので従おうの気持ち",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800685,
+      "updated": 1725800759
+    },
+    {
+      "id": "66dd9fc473e5220000824eeb",
+      "text": " \t\t\tnvmってのを使ってインストールすればいいんですかね",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800388,
+      "updated": 1725800397
+    },
+    {
+      "id": "66dda06871b3c20000eaa5ef",
+      "text": " \t\t\t[https://nodejs.org/en/download/package-manager][bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1725800553,
+      "updated": 1725800559
+    },
+    {
+      "id": "66dda07e71b3c20000eaa5f0",
+      "text": " \t\t\t\tインストーラーかポータブルか選ぶ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1725800575,
+      "updated": 1725800582
+    },
+    {
+      "id": "66dda09071b3c20000eaa5f2",
+      "text": " \t\t\t\tnvmは知らない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1725800593,
+      "updated": 1725800608
+    },
+    {
+      "id": "66dda0cb71b3c20000eaa5f4",
+      "text": " \t\t\t\tpipはインタプリタごとにインストールされるが、",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1725800652,
+      "updated": 1725800667
+    },
+    {
+      "id": "66dda0ad71b3c20000eaa5f3",
+      "text": " \t\t\t\tnpmはpackage.jsonのある場所のnode_modulesにインストールされる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1725800621,
+      "updated": 1725800906
+    },
+    {
+      "id": "66dda0ef71b3c20000eaa5f5",
+      "text": " \t\t\t\t\tインストール前にnpm initが必須かも",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1725800687,
+      "updated": 1725800704
+    },
+    {
+      "id": "66dda19f71b3c20000eaa5f8",
+      "text": " \t\t\t\t\t実はインストール先はまだ理解していない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1725800864,
+      "updated": 1725800872
+    },
+    {
+      "id": "66dda14f71b3c20000eaa5f7",
+      "text": " \t\t\t\t\tグローバルインストールはおすすめしない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1725800783,
+      "updated": 1725800788
+    },
+    {
+      "id": "66dda15a73e5220000824ef5",
+      "text": " \t\t\t\t\t\tおっと、まずいか？[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800795,
+      "updated": 1725800913
+    },
+    {
+      "id": "66dda23473e5220000824ef8",
+      "text": " \t\t\t\t\t\t\tあーなんか怒られてる臭い",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801012,
+      "updated": 1725801018
+    },
+    {
+      "id": "66dda23973e5220000824ef9",
+      "text": " \t\t\t\t\t\t\tcode:terminal",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801018,
+      "updated": 1725801024
+    },
+    {
+      "id": "66dda24073e5220000824efa",
+      "text": " \t\t\t\t\t\t\t ┌───────────────────────────────────────────────────────────────────────────┐",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801024,
+      "updated": 1725801024
+    },
+    {
+      "id": "66dda24073e5220000824efb",
+      "text": "         │                                                                           │",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801024,
+      "updated": 1725801024
+    },
+    {
+      "id": "66dda24073e5220000824efc",
+      "text": "         │   The global expo-cli package has been deprecated.                        │",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801024,
+      "updated": 1725801024
+    },
+    {
+      "id": "66dda24073e5220000824efd",
+      "text": "         │                                                                           │",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801024,
+      "updated": 1725801024
+    },
+    {
+      "id": "66dda24073e5220000824efe",
+      "text": "         │   The new Expo CLI is now bundled in your project in the expo package.    │",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801024,
+      "updated": 1725801024
+    },
+    {
+      "id": "66dda24073e5220000824eff",
+      "text": "         │   Learn more: https://blog.expo.dev/the-new-expo-cli-f4250d8e3421.        │",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801024,
+      "updated": 1725801024
+    },
+    {
+      "id": "66dda24073e5220000824f00",
+      "text": "         │                                                                           │",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801024,
+      "updated": 1725801024
+    },
+    {
+      "id": "66dda24073e5220000824f01",
+      "text": "         │   To use the local CLI instead (recommended in SDK 46 and higher), run:   │",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801024,
+      "updated": 1725801024
+    },
+    {
+      "id": "66dda24073e5220000824f02",
+      "text": "         │   › npx expo <command>                                                    │",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801024,
+      "updated": 1725801024
+    },
+    {
+      "id": "66dda24073e5220000824f03",
+      "text": "         │                                                                           │",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801024,
+      "updated": 1725801024
+    },
+    {
+      "id": "66dda24073e5220000824f04",
+      "text": "         └───────────────────────────────────────────────────────────────────────────┘",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801024,
+      "updated": 1725801024
+    },
+    {
+      "id": "66dda08871b3c20000eaa5f1",
+      "text": " \t\t\t\t神がいる、ありがとうございます！！[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800584,
+      "updated": 1725800699
+    },
+    {
+      "id": "66dd9fcc73e5220000824eec",
+      "text": " \t\tExpoのアカウントを登録しろ ←はい",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800397,
+      "updated": 1725800452
+    },
+    {
+      "id": "66dda07273e5220000824eee",
+      "text": " \t\t\tした",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800563,
+      "updated": 1725800565
+    },
+    {
+      "id": "66dda07473e5220000824eef",
+      "text": " \t\tExpo Goを検証端末に入れろ ←はい",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800565,
+      "updated": 1725800623
+    },
+    {
+      "id": "66dda0e173e5220000824ef0",
+      "text": " \t\t\t入れた",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800674,
+      "updated": 1725800675
+    },
+    {
+      "id": "66dda0e273e5220000824ef1",
+      "text": " \t\tExpo CLIを入れろ ←はい",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800675,
+      "updated": 1725800775
+    },
+    {
+      "id": "66dda14773e5220000824ef3",
+      "text": " \t\t\tなんか点字つかってぐるぐるやっててすごい",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800775,
+      "updated": 1725800791
+    },
+    {
+      "id": "66dda15973e5220000824ef4",
+      "text": " \t\t\tなんか入ったっぽい(おい)",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800793,
+      "updated": 1725800853
+    },
+    {
+      "id": "66dda19473e5220000824ef7",
+      "text": " \t\t雛形を作れ ←はい(従順)",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800853,
+      "updated": 1725801098
+    },
+    {
+      "id": "66dda28a73e5220000824f05",
+      "text": " \t\t\tなんかできてる",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801098,
+      "updated": 1725801161
+    },
+    {
+      "id": "66dda2c873e5220000824f06",
+      "text": " \t\t> `yarn start`をすると、 `package.json`に記述されている、`expo start`コマンドが実行されます。",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801161,
+      "updated": 1725801182
+    },
+    {
+      "id": "66dda2df73e5220000824f07",
+      "text": " \t\t\tyarn……？？？？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801184,
+      "updated": 1725801187
+    },
+    {
+      "id": "66dda2e273e5220000824f08",
+      "text": " \t\t\t[調べた https://qiita.com/akitaaa/items/c97ff951ca31298f3f24]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801187,
+      "updated": 1725801215
+    },
+    {
+      "id": "66dda2ff73e5220000824f09",
+      "text": " \t\t\t\t> npmと互換性がある = 同じpackage.jsonが使える",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801216,
+      "updated": 1725801233
+    },
+    {
+      "id": "66dda31273e5220000824f0b",
+      "text": " \t\t\t\t……`npm start`……？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801234,
+      "updated": 1725801260
+    },
+    {
+      "id": "66dda32b73e5220000824f0c",
+      "text": " \t\t\t\tなんか出た！！",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801260,
+      "updated": 1725801262
+    },
+    {
+      "id": "66dda36473e5220000824f0d",
+      "text": " \t\t\t\tcode:terminal",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801316,
+      "updated": 1725801319
+    },
+    {
+      "id": "66dda36673e5220000824f0e",
+      "text": " \t\t\t\t Error: EMFILE: too many open files, watch",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801319,
+      "updated": 1725801420
+    },
+    {
+      "id": "66dda3cc73e5220000824f1c",
+      "text": "          at FSEvent.FSWatcher._handle.onchange (node:internal/fs/watchers:207:21)",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801420,
+      "updated": 1725801420
+    },
+    {
+      "id": "66dda36773e5220000824f19",
+      "text": "     なんて？？？？？？？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801319,
+      "updated": 1725801324
+    },
+    {
+      "id": "66dda38173e5220000824f1a",
+      "text": "  \tさっき無視したエラーを読むか……",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801346,
+      "updated": 1725801579
+    },
+    {
+      "id": "66dda46b73e5220000824f1d",
+      "text": "  \t\t[これ https://blog.expo.dev/the-new-expo-cli-f4250d8e3421]を読めと",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801579,
+      "updated": 1725801587
+    },
+    {
+      "id": "66dda4d173e5220000824f1e",
+      "text": "  \t\tうーんわからん",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801681,
+      "updated": 1725801683
+    },
+    {
+      "id": "66dda4d273e5220000824f1f",
+      "text": "  \tyarnを入れたほうがいいんじゃないか？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801683,
+      "updated": 1725801934
+    },
+    {
+      "id": "66dda5ce73e5220000824f20",
+      "text": "  \tなんかエラーは消えた",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725801934,
+      "updated": 1725802396
+    },
+    {
+      "id": "66dda79b73e5220000824f21",
+      "text": "  \t`Open up App.js to start working on your app!`って出てる",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725802396,
+      "updated": 1725802580
+    },
+    {
+      "id": "66dda85473e5220000824f22",
+      "text": "  \tこれ[VSCode]のターミナルでやっていいな？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725802580,
+      "updated": 1725802788
+    },
+    {
+      "id": "66dda9e273e522000085b32b",
+      "text": "  \t\tあ！！これ変更できるのか！！(App.jsを開いた)",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725802978,
+      "updated": 1725802982
+    },
+    {
+      "id": "66dda8f273e522000085b327",
+      "text": " [GitHub]のリポジトリと連携させたい",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725802738,
+      "updated": 1725802790
+    },
+    {
+      "id": "66dda97f73e522000085b328",
+      "text": " \tこれはやるだけ",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725802880,
+      "updated": 1725802882
+    },
+    {
+      "id": "66ddabad73e522000085b32c",
+      "text": " [Google Pixel 6a]・[無印iPad]・[M2 Macbook Air]で開けた！",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725803438,
+      "updated": 1725803473
+    },
+    {
+      "id": "66ddabd173e522000085b32d",
+      "text": " \tこれはすごい",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725803474,
+      "updated": 1725803476
+    },
+    {
+      "id": "66ddabd373e522000085b32e",
+      "text": " で、ここからどうするんや",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725803476,
+      "updated": 1725803491
+    },
+    {
+      "id": "66ddabe373e522000085b32f",
+      "text": " \tApp.jsでなんかすればいいのはわかるが、記法がわからん",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725803491,
+      "updated": 1725803838
+    },
+    {
+      "id": "66ddac2f73e522000085b330",
+      "text": " \tこの[- [HTML]][XML]っぽいものにはなにが使えるんですか？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725803568,
+      "updated": 1725803861
+    },
+    {
+      "id": "66ddae6973e522000085b333",
+      "text": " \t\t[Reactのドキュメント https://react.dev/learn]を読みます",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725804137,
+      "updated": 1725804143
+    },
+    {
+      "id": "66ddad5473e522000085b331",
+      "text": " \t\tなんかこのXMLっぽいものを返す関数の名前を、そのままタグの名前に使えるってこと？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725803861,
+      "updated": 1725804131
+    },
+    {
+      "id": "66ddae6373e522000085b332",
+      "text": " \t\tあ、普通のHTMLタグも使えるんですか？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725804132,
+      "updated": 1725804186
+    },
+    {
+      "id": "66ddaeca73e522000085b334",
+      "text": " 画面遷移を実装したい",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725804234,
+      "updated": 1725804241
+    },
+    {
+      "id": "66ddaece73e522000085b335",
+      "text": " \t[holorhysm] ver0.5.1のコードからタグもスタイルもほぼ移植すれば良さそう(直感)",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725804239,
+      "updated": 1725804386
+    },
+    {
+      "id": "66ddaf8273e522000085b336",
+      "text": " \t\tだめだった",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725804418,
+      "updated": 1725804420
+    },
+    {
+      "id": "66ddaf8d73e522000085b337",
+      "text": " \t\t\t`Render Error : Text strings must be rendered within a <Text> component.`",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725804430,
+      "updated": 1725805131
+    },
+    {
+      "id": "66ddafa073e522000085b338",
+      "text": " \t\t\tほえ〜",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725804449,
+      "updated": 1725804450
+    },
+    {
+      "id": "66dd9fc273e5220000824eea",
+      "text": "",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1725800387,
+      "updated": 1725800387
+    }
+  ]
+}
