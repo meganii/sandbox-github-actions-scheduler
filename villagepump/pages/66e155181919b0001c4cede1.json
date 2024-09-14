@@ -2,7 +2,7 @@
   "id": "66e155181919b0001c4cede1",
   "title": "井戸端の底500件をnode.jsで取得",
   "created": 1726043526,
-  "updated": 1726049611,
+  "updated": 1726318480,
   "lines": [
     {
       "id": "66e155181919b0001c4cede1",
@@ -30,112 +30,147 @@
       "text": " //@ts-check",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1726043529,
-      "updated": 1726043529
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce93a",
-      "text": " const fs = require('fs').promises;",
+      "id": "66e5879071b3c200008da3e6",
+      "text": " const fs = require(\"fs\").promises;",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce93b",
+      "id": "66e5879071b3c200008da3e7",
       "text": " ",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce93c",
+      "id": "66e5879071b3c200008da3e8",
       "text": " const main = async () => {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce93d",
-      "text": "     const pgcountjsonr = await fetch(\"https://scrapbox.io/api/pages/villagepump/?limit=1\")",
+      "id": "66e5879071b3c200008da3e9",
+      "text": "   const pgcountjsonr = await fetch(",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce93e",
-      "text": "     const pgcountjson = await pgcountjsonr.json()",
+      "id": "66e5879071b3c200008da3ea",
+      "text": "     \"https://scrapbox.io/api/pages/villagepump/?limit=1\"",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce93f",
-      "text": "     const pgcount  = pgcountjson[\"count\"]",
+      "id": "66e5879071b3c200008da3eb",
+      "text": "   );",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce940",
-      "text": "     let pglist = []",
+      "id": "66e5879071b3c200008da3ec",
+      "text": "   const pgcountjson = await pgcountjsonr.json();",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce941",
-      "text": "     const pglisttempjsonr = await fetch(`https://scrapbox.io/api/pages/villagepump/?limit=500&skip=${pgcount-500}`)",
+      "id": "66e5879071b3c200008da3ed",
+      "text": "   const pgcount = pgcountjson[\"count\"];",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce942",
-      "text": "     const pglisttempjson = await pglisttempjsonr.json()",
+      "id": "66e5879071b3c200008da3ee",
+      "text": "   let pglist = [];",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce943",
-      "text": "     pglisttempjson['pages'].forEach(e => {",
+      "id": "66e5879071b3c200008da3ef",
+      "text": "   const pglisttempjsonr = await fetch(",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce944",
-      "text": "         pglist.push(' ['+e['title']+']')",
+      "id": "66e5879071b3c200008da3f0",
+      "text": "     `https://scrapbox.io/api/pages/villagepump/?limit=500&skip=${pgcount - 500}`",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce945",
-      "text": "     });",
+      "id": "66e5879071b3c200008da3f1",
+      "text": "   );",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce946",
-      "text": "     await fs.writeFile('villagepump.txt', pglist.join('\\n'))",
+      "id": "66e5879071b3c200008da3f2",
+      "text": "   const pglisttempjson = await pglisttempjsonr.json();",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce947",
-      "text": " }",
+      "id": "66e5879071b3c200008da3f3",
+      "text": "   pglisttempjson[\"pages\"].forEach((e) => {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
-      "id": "66e1558771b3c20000cce948",
-      "text": " main()",
+      "id": "66e5879071b3c200008da3f4",
+      "text": "     pglist.push(\" [\" + e[\"title\"] + \"]\");",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726043529,
-      "updated": 1726043529
+      "created": 1726318480,
+      "updated": 1726318480
+    },
+    {
+      "id": "66e5879071b3c200008da3f5",
+      "text": "   });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726318480,
+      "updated": 1726318480
+    },
+    {
+      "id": "66e5879071b3c200008da3f6",
+      "text": "   await fs.writeFile(\"villagepump.txt\", pglist.join(\"\\n\"));",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726318480,
+      "updated": 1726318480
+    },
+    {
+      "id": "66e5879071b3c200008da3f7",
+      "text": " };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726318480,
+      "updated": 1726318480
+    },
+    {
+      "id": "66e5879071b3c200008da3f8",
+      "text": " main();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726318480,
+      "updated": 1726318480
+    },
+    {
+      "id": "66e5879071b3c200008da3f9",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726318480,
+      "updated": 1726318480
     },
     {
       "id": "66e1558571b3c20000cce938",
