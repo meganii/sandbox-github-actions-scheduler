@@ -1,0 +1,631 @@
+{
+  "id": "66e80e80fdb608001dda1411",
+  "title": "classとmodule、どちらを使うべき？(TypeScript)",
+  "created": 1726484099,
+  "updated": 1726506618,
+  "lines": [
+    {
+      "id": "66e80e80fdb608001dda1411",
+      "text": "classとmodule、どちらを使うべき？(TypeScript)",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726484099,
+      "updated": 1726484120
+    },
+    {
+      "id": "66e80ea17838e30000c446f7",
+      "text": "[TypeScript]で[class]と[module]どちらを使うべきか迷う場面があったので、双方の利点を踏まえた上でclassとmoduleの有用な場面を考える[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726484121,
+      "updated": 1726484227
+    },
+    {
+      "id": "66e80eca7838e30000c446f9",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726484161,
+      "updated": 1726484161
+    },
+    {
+      "id": "66e80ead7838e30000c446f8",
+      "text": "[** 前提]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726484133,
+      "updated": 1726484230
+    },
+    {
+      "id": "66e835007838e30000b2fb8f",
+      "text": "\tclassかmoduleかに関わらず、常に合理的な記法を選択するものとする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726493944,
+      "updated": 1726493971
+    },
+    {
+      "id": "66e8351b7838e30000b2fb90",
+      "text": "\t\t日常生活でまず使わないような回りくどい書き方は避ける",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726493971,
+      "updated": 1726493999
+    },
+    {
+      "id": "66e80f107838e30000c446fb",
+      "text": "\tJavaScriptのclassはスコープ周りの機能が貧弱なので、TypeScriptを基準として考える",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726484232,
+      "updated": 1726484266
+    },
+    {
+      "id": "66e80f327838e30000c446fc",
+      "text": "\tここでのmoduleとは、ファイル単位で分割されたコードのことを指す",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726484266,
+      "updated": 1726491682
+    },
+    {
+      "id": "66e82eb87838e30000b2fb7c",
+      "text": "\t関数の中に入れ子で関数を入れることや、[prototype]に何かしらを代入するのは今回禁止とする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726492336,
+      "updated": 1726493703
+    },
+    {
+      "id": "66e82ec87838e30000b2fb7d",
+      "text": "\t\tアクセス修飾子の無い劣化版classのようなものなので、それをするならclassを選択すべきと考えるから",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726492352,
+      "updated": 1726492522
+    },
+    {
+      "id": "66e82c2a7838e30000c446fd",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726491682,
+      "updated": 1726491682
+    },
+    {
+      "id": "66e82c2a7838e30000c446fe",
+      "text": "[** 双方の特徴]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726491682,
+      "updated": 1726491809
+    },
+    {
+      "id": "66e82cc67838e30000b2fb6d",
+      "text": "\t1. 複数の関数を実装する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726491838,
+      "updated": 1726495114
+    },
+    {
+      "id": "66e82cfd7838e30000b2fb6e",
+      "text": "\t\tmodule: できる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726491893,
+      "updated": 1726491896
+    },
+    {
+      "id": "66e82cfd7838e30000b2fb6f",
+      "text": "\t\tclass: できる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726491893,
+      "updated": 1726491897
+    },
+    {
+      "id": "66e82d6d7838e30000b2fb73",
+      "text": "\t2. 関数や変数を外部から参照できるようにしたりできなくしたりする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726492005,
+      "updated": 1726495115
+    },
+    {
+      "id": "66e82dab7838e30000b2fb75",
+      "text": "\t\tmodule: できる（参照可能なものにはexportをつける）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726492067,
+      "updated": 1726492082
+    },
+    {
+      "id": "66e82dab7838e30000b2fb76",
+      "text": "\t\tclass: できる（参照不可なものにはprotectedかprivateをつける）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726492067,
+      "updated": 1726492094
+    },
+    {
+      "id": "66e82d017838e30000b2fb70",
+      "text": "\t3. １つの変数（letかconst）をclass/module内の複数の関数から参照する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726491897,
+      "updated": 1726495117
+    },
+    {
+      "id": "66e82d647838e30000b2fb71",
+      "text": "\t\tmodule: できる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726491995,
+      "updated": 1726492143
+    },
+    {
+      "id": "66e82d647838e30000b2fb72",
+      "text": "\t\tclass: できる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726491995,
+      "updated": 1726492001
+    },
+    {
+      "id": "66e82dfb7838e30000b2fb78",
+      "text": "\t4. 上記の変数の中に、呼び出し元ごとに別々の値を格納する（インスタンス化）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726492146,
+      "updated": 1726495118
+    },
+    {
+      "id": "66e82e6a7838e30000b2fb7b",
+      "text": "\t\tmodule: できない",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726492258,
+      "updated": 1726492334
+    },
+    {
+      "id": "66e83f747838e30000b2fbb4",
+      "text": "\t\t\tどうしても値（状態）を持たせたい場合は、呼び出し元でその値を保持しておいて、呼び出し時に引数に渡すという手もある",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496620,
+      "updated": 1726496676
+    },
+    {
+      "id": "66e83fac7838e30000b2fbb5",
+      "text": "\t\t\t\t[関数型プログラミング]的なアプローチ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496676,
+      "updated": 1726496804
+    },
+    {
+      "id": "66e840387838e30000b2fbb6",
+      "text": " \t\t\tこの手法で呼び出し元のコードが煩雑にならないのであれば実用上は問題ない",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496816,
+      "updated": 1726496854
+    },
+    {
+      "id": "66e82e697838e30000b2fb79",
+      "text": "\t\tclass: できる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726492256,
+      "updated": 1726492266
+    },
+    {
+      "id": "66e830867838e30000b2fb85",
+      "text": "\t5. 既存のmodule/classを元にして、一部の処理を書き換えた別のmodule/classを実装する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726492798,
+      "updated": 1726495120
+    },
+    {
+      "id": "66e831957838e30000b2fb86",
+      "text": "\t\tmodule: できる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726493069,
+      "updated": 1726493073
+    },
+    {
+      "id": "66e831a87838e30000b2fb88",
+      "text": "\t\t\tただし元のmoduleが必要な関数・変数をすべてexportしている必要がある",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726493088,
+      "updated": 1726493114
+    },
+    {
+      "id": "66e831997838e30000b2fb87",
+      "text": "\t\tclass: できる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726493073,
+      "updated": 1726493077
+    },
+    {
+      "id": "66e832187838e30000b2fb8a",
+      "text": "\t\t\t元のclassを継承して実装する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726493200,
+      "updated": 1726493218
+    },
+    {
+      "id": "66e831c47838e30000b2fb89",
+      "text": "\t\t\tただし元のclassが継承先に必要な関数・フィールドにprivateがつけられていないことが条件",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726493116,
+      "updated": 1726493485
+    },
+    {
+      "id": "66e833357838e30000b2fb8b",
+      "text": "\t6. [メソッドチェーン]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726493485,
+      "updated": 1726495122
+    },
+    {
+      "id": "66e833577838e30000b2fb8e",
+      "text": "\t\tこういうの：`foo.bar().baz().qux()`",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726493520,
+      "updated": 1726493573
+    },
+    {
+      "id": "66e833567838e30000b2fb8c",
+      "text": "\t\tmodule: できない（多分）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726493518,
+      "updated": 1726493614
+    },
+    {
+      "id": "66e834f51280f0000026817a",
+      "text": "\t\t できない[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726493944,
+      "updated": 1726493947
+    },
+    {
+      "id": "66e833567838e30000b2fb8d",
+      "text": "\t\tclass: できる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726493518,
+      "updated": 1726493620
+    },
+    {
+      "id": "66e835777838e30000b2fb94",
+      "text": "\t7. class/module内部の関数を外部から直接importする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494064,
+      "updated": 1726495125
+    },
+    {
+      "id": "66e838237838e30000b2fb95",
+      "text": "\t\tmodule: できる（exportされている関数のみ）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494747,
+      "updated": 1726494761
+    },
+    {
+      "id": "66e8382a7838e30000b2fb96",
+      "text": "\t\tclass: 直接は無理",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494754,
+      "updated": 1726494788
+    },
+    {
+      "id": "66e8384c7838e30000b2fb97",
+      "text": "\t\t\t[static]がついている関数であっても大本のclassのimportを介す必要がある",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494788,
+      "updated": 1726494827
+    },
+    {
+      "id": "66e838737838e30000b2fb98",
+      "text": "\t\t\t\tcode:ts",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494827,
+      "updated": 1726494830
+    },
+    {
+      "id": "66e838767838e30000b2fb99",
+      "text": "\t\t\t\t import FooClass from \"./foo.js\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494830,
+      "updated": 1726494846
+    },
+    {
+      "id": "66e8389c7838e30000b2fb9a",
+      "text": "\t\t\t\t FooClass.foo()",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494868,
+      "updated": 1726494878
+    },
+    {
+      "id": "66e838b97838e30000b2fb9b",
+      "text": "\t\t\t\tcode:ts",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494897,
+      "updated": 1726494900
+    },
+    {
+      "id": "66e838bc7838e30000b2fb9c",
+      "text": "\t\t\t\t import FooClass from \"./foo.js\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494900,
+      "updated": 1726494907
+    },
+    {
+      "id": "66e838c47838e30000b2fb9d",
+      "text": "\t\t\t\t const foo = FooClass.foo",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494907,
+      "updated": 1726494915
+    },
+    {
+      "id": "66e838cb7838e30000b2fb9e",
+      "text": "\t\t\t\t foo()",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494915,
+      "updated": 1726494917
+    },
+    {
+      "id": "66e839027838e30000b2fb9f",
+      "text": "\t\t\tstaticがついていない関数はさらにインスタンスも介す必要がある",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494970,
+      "updated": 1726494992
+    },
+    {
+      "id": "66e839187838e30000b2fba0",
+      "text": "\t\t\t\tcode:ts",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494992,
+      "updated": 1726494994
+    },
+    {
+      "id": "66e8391b7838e30000b2fba1",
+      "text": "\t\t\t\t import FooClass from \"./foo.js\"",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494994,
+      "updated": 1726495003
+    },
+    {
+      "id": "66e839247838e30000b2fba2",
+      "text": "\t\t\t\t const foo = new FooClass()",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726495004,
+      "updated": 1726495016
+    },
+    {
+      "id": "66e839367838e30000b2fba3",
+      "text": "\t\t\t\t foo.bar()",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726495022,
+      "updated": 1726495027
+    },
+    {
+      "id": "66e82caa7838e30000b2fb6a",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726491810,
+      "updated": 1726491810
+    },
+    {
+      "id": "66e8355c7838e30000b2fb91",
+      "text": "[** コメント]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494036,
+      "updated": 1726494038
+    },
+    {
+      "id": "66e8355f7838e30000b2fb92",
+      "text": "[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494039,
+      "updated": 1726494040
+    },
+    {
+      "id": "66e835607838e30000b2fb93",
+      "text": "\tまとめてみて、機能面ではclassはmoduleより色々できるということがわかった気がする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726494040,
+      "updated": 1726495080
+    },
+    {
+      "id": "66e839727838e30000b2fba4",
+      "text": "\t\tけれど、普段からそんないろんな機能を使うことが無い上、7番みたいにclassを使うとむしろ長くなったり、classがあることによってインデントが深くなったりする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726495082,
+      "updated": 1726495180
+    },
+    {
+      "id": "66e839d47838e30000b2fba5",
+      "text": "\t\tなので、コードの簡潔さという面ではやはりclassよりmoduleの方が優れていそう",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726495180,
+      "updated": 1726495200
+    },
+    {
+      "id": "66e83a0c7838e30000b2fba6",
+      "text": "\tclassを使う場面というのは",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726495236,
+      "updated": 1726495243
+    },
+    {
+      "id": "66e83a137838e30000b2fba7",
+      "text": "\t\t上記の比較に倣って考えるなら",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726495243,
+      "updated": 1726495430
+    },
+    {
+      "id": "66e83ace7838e30000b2fba8",
+      "text": "\t\t\tインスタンスが必要な場面",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726495430,
+      "updated": 1726495434
+    },
+    {
+      "id": "66e844195f1e0d0000ca4524",
+      "text": "\t\t\t ここが一番大きいと感じた[wogikaze.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1726497817,
+      "updated": 1726497821
+    },
+    {
+      "id": "66e865daaff09e000061134a",
+      "text": "\t\t\t もう少し言葉を補うと「複数のインスタンスが異なる状態になることが必要な場面」[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1726506458,
+      "updated": 1726506614
+    },
+    {
+      "id": "66e865f0aff09e000061134b",
+      "text": "\t\t\t \tなので複数箇所から呼ばれるとしても内部状態を持たないならインスタンスである必要がない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1726506480,
+      "updated": 1726506618
+    },
+    {
+      "id": "66e83ad27838e30000b2fba9",
+      "text": "\t\t\tメソッドチェーンを使用したい場面",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726495434,
+      "updated": 1726495448
+    },
+    {
+      "id": "66e83b277838e30000b2fbaa",
+      "text": "\t\t状況で考えると",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726495519,
+      "updated": 1726495547
+    },
+    {
+      "id": "66e83b437838e30000b2fbab",
+      "text": "\t\t\t同じ処理を複数箇所から（もしくは一箇所から何度も）呼び出して、なおかつそれぞれに異なった状態をもたせる必要がある場合",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726495547,
+      "updated": 1726495635
+    },
+    {
+      "id": "66e83d8b7838e30000b2fbae",
+      "text": "\t\t\t一言で言えないほど複雑で多岐に渡る機能を１つにまとめたい場合",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496131,
+      "updated": 1726496195
+    },
+    {
+      "id": "66e83d307838e30000b2fbad",
+      "text": "\t一方でmoduleを使う場面というのは",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496040,
+      "updated": 1726496218
+    },
+    {
+      "id": "66e83de27838e30000b2fbaf",
+      "text": "\t\tclassを使用する必要がない場面全て",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496218,
+      "updated": 1726496253
+    },
+    {
+      "id": "66e83ecc7838e30000b2fbb3",
+      "text": "\t\t\tclassを使用するだけで（7番目の理由で）コードが複雑化するから",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496452,
+      "updated": 1726496506
+    },
+    {
+      "id": "66e841ba7838e30000b2fbbd",
+      "text": "\t\t\tむやみに状態をもたせるような構造にすることはデバッグやテストの難易度を上げるから",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726497202,
+      "updated": 1726497229
+    },
+    {
+      "id": "66e841dd7838e30000b2fbbe",
+      "text": "\t\t\t\t※状態を持たないclassも作れるけれど、あまりメリットがない",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726497237,
+      "updated": 1726497276
+    },
+    {
+      "id": "66e83e057838e30000b2fbb0",
+      "text": "\t\t状態を持たない関数しかない場合",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496253,
+      "updated": 1726496297
+    },
+    {
+      "id": "66e83e317838e30000b2fbb1",
+      "text": "\t\t関数外に状態を持っていたとしても呼び出し元全てから同じ状態を参照していても問題のない場合",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496297,
+      "updated": 1726496394
+    },
+    {
+      "id": "66e83e7b7838e30000b2fbb2",
+      "text": "\t\t\t他の言語で言うクラス変数のみで事足りる場合",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496371,
+      "updated": 1726496380
+    },
+    {
+      "id": "66e80f0d7838e30000c446fa",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726484229,
+      "updated": 1726484229
+    },
+    {
+      "id": "66e810ca71b3c20000571dd8",
+      "text": "関連性の高いclassをまとめてmoduleにすべきかな[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726484682,
+      "updated": 1726484701
+    },
+    {
+      "id": "66e810dd71b3c20000571dda",
+      "text": "\tあまりストイックにやると分類問題になる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726484701,
+      "updated": 1726484723
+    },
+    {
+      "id": "66e810ca71b3c20000571dd9",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726484683,
+      "updated": 1726484683
+    },
+    {
+      "id": "66e840c17838e30000b2fbb7",
+      "text": "[** 関連してそうなページ]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496952,
+      "updated": 1726496958
+    },
+    {
+      "id": "66e840c77838e30000b2fbb9",
+      "text": "\t中立派",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496959,
+      "updated": 1726496963
+    },
+    {
+      "id": "66e840cc7838e30000b2fbba",
+      "text": "\tmodule派（もしくは非class派）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496963,
+      "updated": 1726496982
+    },
+    {
+      "id": "66e840de7838e30000b2fbbb",
+      "text": " \t[/mrsekut-p/TypeScriptでは基本的にclassを使わない]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496982,
+      "updated": 1726496986
+    },
+    {
+      "id": "66e8426b7838e30000b2fbbf",
+      "text": " \t[不要なクラス宣言、やめちゃおっか？ - タオルケット体操 https://hachibeechan.hateblo.jp/entry/you-might-not-want-to-declare-classes]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726497379,
+      "updated": 1726497379
+    },
+    {
+      "id": "66e840e57838e30000b2fbbc",
+      "text": "\tclass派（もしくは非module派）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496989,
+      "updated": 1726497005
+    },
+    {
+      "id": "66e840c17838e30000b2fbb8",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726496953,
+      "updated": 1726496953
+    }
+  ]
+}
