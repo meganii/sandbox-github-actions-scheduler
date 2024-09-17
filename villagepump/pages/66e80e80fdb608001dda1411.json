@@ -2,7 +2,7 @@
   "id": "66e80e80fdb608001dda1411",
   "title": "classとmodule、どちらを使うべき？(TypeScript)",
   "created": 1726484099,
-  "updated": 1726506618,
+  "updated": 1726563750,
   "lines": [
     {
       "id": "66e80e80fdb608001dda1411",
@@ -73,6 +73,27 @@
       "userId": "60fb0a79f3364000237838e3",
       "created": 1726492352,
       "updated": 1726492522
+    },
+    {
+      "id": "66e892c871b3c200006a8e9f",
+      "text": "\t\tごめんなさいやっちゃってます[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726517960,
+      "updated": 1726517968
+    },
+    {
+      "id": "66e8f0331280f00000ea30b5",
+      "text": "\t\tアクセス修飾子はclassでなくても[Object.defineProperty()](現代は[Reflect.defineProperty()]ほうがいいかも)で設定できます[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726541876,
+      "updated": 1726541987
+    },
+    {
+      "id": "66e8f0991280f00000ea30b6",
+      "text": "\t\t 推奨はし難いですが……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726541977,
+      "updated": 1726542015
     },
     {
       "id": "66e82c2a7838e30000c446fd",
@@ -178,6 +199,13 @@
       "userId": "60fb0a79f3364000237838e3",
       "created": 1726496676,
       "updated": 1726496804
+    },
+    {
+      "id": "66e8f0c51280f00000ea30b7",
+      "text": "\t\t\t\t\t[関数プログラミング]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726542021,
+      "updated": 1726563750
     },
     {
       "id": "66e840387838e30000b2fbb6",
@@ -454,10 +482,10 @@
     },
     {
       "id": "66e865daaff09e000061134a",
-      "text": "\t\t\t もう少し言葉を補うと「複数のインスタンスが異なる状態になることが必要な場面」[nishio.icon]",
-      "userId": "582e63d27c56960011aff09e",
+      "text": "\t\t\t もう少し言葉を補うと「複数のインスタンスが異なる状態になることが必要な場面」[nishio.icon][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1726506458,
-      "updated": 1726506614
+      "updated": 1726542079
     },
     {
       "id": "66e865f0aff09e000061134b",
@@ -467,11 +495,81 @@
       "updated": 1726506618
     },
     {
+      "id": "66e8f1011280f00000ea30b8",
+      "text": "\t\t\t \t内部状態が1つだけの場合も[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542080,
+      "updated": 1726542103
+    },
+    {
+      "id": "66e8f1181280f00000ea30b9",
+      "text": "\t\t\t \t このときは",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542104,
+      "updated": 1726542108
+    },
+    {
+      "id": "66e8f11b1280f00000ea30ba",
+      "text": "\t\t\t \t  code:lib.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542108,
+      "updated": 1726542120
+    },
+    {
+      "id": "66e8f1281280f00000ea30bb",
+      "text": "\t\t\t \t   const stack: string[] = [];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542120,
+      "updated": 1726542248
+    },
+    {
+      "id": "66e8f1301280f00000ea30bc",
+      "text": "\t\t\t \t   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542127,
+      "updated": 1726542127
+    },
+    {
+      "id": "66e8f1301280f00000ea30bd",
+      "text": "\t\t\t \t   export const pop = (): string | undefined => stack.pop();",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542128,
+      "updated": 1726542162
+    },
+    {
+      "id": "66e8f1351280f00000ea30be",
+      "text": "\t\t\t \t   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542133,
+      "updated": 1726542133
+    },
+    {
+      "id": "66e8f1361280f00000ea30bf",
+      "text": "\t\t\t \t   export const push = (item: string): void => stack.push(item);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542135,
+      "updated": 1726542176
+    },
+    {
+      "id": "66e8f1601280f00000ea30c0",
+      "text": "\t\t\t \t のようにmoduleで[singleton]を作るのが便利",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542176,
+      "updated": 1726542207
+    },
+    {
       "id": "66e83ad27838e30000b2fba9",
-      "text": "\t\t\tメソッドチェーンを使用したい場面",
-      "userId": "60fb0a79f3364000237838e3",
+      "text": "\t\t\t[メソッドチェーン]を使用したい場面",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1726495434,
-      "updated": 1726495448
+      "updated": 1726542253
+    },
+    {
+      "id": "66e8f1ae1280f00000ea30c1",
+      "text": "\t\t\t JSだとこれがかなりでかい[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542254,
+      "updated": 1726542260
     },
     {
       "id": "66e83b277838e30000b2fbaa",
@@ -551,25 +649,242 @@
       "updated": 1726496380
     },
     {
-      "id": "66e80f0d7838e30000c446fa",
+      "id": "66e8bc0879d3a900007d3ba9",
       "text": "",
-      "userId": "60fb0a79f3364000237838e3",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1726528520,
+      "updated": 1726528520
+    },
+    {
+      "id": "66e8baa179d3a900007d3b98",
+      "text": "[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1726528162,
+      "updated": 1726528163
+    },
+    {
+      "id": "66e8baa279d3a900007d3b99",
+      "text": "\ttypescriptのclassとmoduleは覚えてないけど、一般論としてクラスとモジュールのどっちを使うか、で議論しても良さそう",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1726528163,
+      "updated": 1726528371
+    },
+    {
+      "id": "66e8bab779d3a900007d3b9b",
+      "text": "\t\ttypescriptも要は双方にできることとできないことが多少あるという程度",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1726528183,
+      "updated": 1726528200
+    },
+    {
+      "id": "66e8bac779d3a900007d3b9c",
+      "text": "\t\t限度はあるが、工夫すればどうとでもなる",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1726528200,
+      "updated": 1726528217
+    },
+    {
+      "id": "66e8f1bb1280f00000ea30c2",
+      "text": "\t\tいや、これは一般論にしないほうがいいと思います[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542267,
+      "updated": 1726542289
+    },
+    {
+      "id": "66e8f1d11280f00000ea30c3",
+      "text": "\t\t `class`/`struct`/`module`はいろんな言語で採用されているが、言語ごとに仕様が若干異なり、大きな差を生むことがある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542289,
+      "updated": 1726542335
+    },
+    {
+      "id": "66e8f2381280f00000ea30c5",
+      "text": "\t\tいや、やっぱ一般論でもいいかも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542391,
+      "updated": 1726542405
+    },
+    {
+      "id": "66e8f2451280f00000ea30c6",
+      "text": "\t\t いろんな言語にわたって使われているパターンを抽出して、そのパターンを議論すればいい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542405,
+      "updated": 1726542448
+    },
+    {
+      "id": "66e93ed5aff09e0000933319",
+      "text": "\t\t 　大体パターンPで呼んだ瞬間に言語Xのユーザが考えるPと言語Yのユーザが考えるPが食い違って不毛な論争が始まる[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1726562006,
+      "updated": 1726562061
+    },
+    {
+      "id": "66e93f0daff09e000093331a",
+      "text": "\t\t 　 両方同じPって言葉で違うものを指してて、相手のことを自分よりPのことをわかってないやつだと思ってるから水掛け論になる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1726562062,
+      "updated": 1726562117
+    },
+    {
+      "id": "66e8f2701280f00000ea30c7",
+      "text": "\t\t 各言語でそれをどんな機能で実装するかは、各言語によって変わる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542448,
+      "updated": 1726542476
+    },
+    {
+      "id": "66e8f28b1280f00000ea30c8",
+      "text": "\t\t 　例えば",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542476,
+      "updated": 1726542591
+    },
+    {
+      "id": "66e8f2ff1280f00000ea30cb",
+      "text": "\t\t 　 Rustでは[enum]で定数の集まりをよく定義するが、TypeScriptはただの定数値を使うほうが簡潔",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542591,
+      "updated": 1726542591
+    },
+    {
+      "id": "66e8f2c11280f00000ea30c9",
+      "text": " \t\t 　 [TypeScriptのenum]はJSへtranspileしたとき、不要なコードが結構生じる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542529,
+      "updated": 1726542592
+    },
+    {
+      "id": "66e8f2da1280f00000ea30ca",
+      "text": " \t\t 　TypeScriptでは[tree shaking]されやすいよう、なるべく関数ベースで書くことがある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542554,
+      "updated": 1726542617
+    },
+    {
+      "id": "66e8f3191280f00000ea30cc",
+      "text": " \t\t 　 classにすると、たとえコード中で一切使われないメソッドだったとしても、bundleで削除されず残ってしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542617,
+      "updated": 1726542669
+    },
+    {
+      "id": "66e8f3571280f00000ea30ce",
+      "text": " \t\t 　  TypeScriptにおけるclass不要の主張は[tree shaking]の問題が大きいと思っている[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542678,
+      "updated": 1726542728
+    },
+    {
+      "id": "66e8f33f1280f00000ea30cd",
+      "text": " \t\t 　 一方Rust/C++は(最適化オプションを使っている場合)ランタイムで使われないコードはすべて削除される(はず)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542655,
+      "updated": 1726542805
+    },
+    {
+      "id": "66e8f3c21280f00000ea30cf",
+      "text": " \t\t 　 　class/structを使っても、(仮想関数テーブルなどランタイムに影響するものを除けば)関数ベースで書くのと比べてオーバーヘッドはほとんどないはず",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542786,
+      "updated": 1726542893
+    },
+    {
+      "id": "66e8f4341280f00000ea30d0",
+      "text": "\t\t(これを踏まえると、このページはTypeScriptで具体的な実装に落とし込むときの機能選定の話題に絞っていそうだから、ここのツリーは切り出すとよさそう)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726542901,
+      "updated": 1726543007
+    },
+    {
+      "id": "66e8bad479d3a900007d3b9d",
+      "text": "\t僕はclass派だなぁ",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1726528213,
+      "updated": 1726528224
+    },
+    {
+      "id": "66e8bae079d3a900007d3b9e",
+      "text": "\t\t[OOP]に親しんでいるので",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726528224,
+      "updated": 1726542376
+    },
+    {
+      "id": "66e8bae379d3a900007d3b9f",
+      "text": "\t\tでも昨今は（[Golang]くらいからか？）OOPよりも構造体とそれくくるモジュール的な単位くらいでいいよね、の流れも感じる",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1726528228,
+      "updated": 1726542979
+    },
+    {
+      "id": "66e8bb1379d3a900007d3ba0",
+      "text": "\t\t\t[チームプレイ]ならこっちがいいのかもしれないなー",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1726528276,
+      "updated": 1726542984
+    },
+    {
+      "id": "66e8bb1979d3a900007d3ba1",
+      "text": "\t\t\tOOPだと[クラスのつくりかた]で宗教論争になるイメージ、まあ言葉や概念を設計するに等しいからなぁ",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1726528281,
+      "updated": 1726542991
+    },
+    {
+      "id": "66e8bb4879d3a900007d3ba2",
+      "text": "\t\t\t一方、昨今のやり方だともうちょっと雑に組める",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1726528329,
+      "updated": 1726528339
+    },
+    {
+      "id": "66e8bb7f79d3a900007d3ba4",
+      "text": "\t\t単に僕が[静的型付け]を知らないかもしれない",
+      "userId": "60508ed36a7abc00235e90c0",
+      "created": 1726528384,
+      "updated": 1726543000
+    },
+    {
+      "id": "66e8bb8879d3a900007d3ba5",
+      "text": "\t\t\tpythonみたいなLLばっか使ってる僕",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1726528392,
+      "updated": 1726528398
+    },
+    {
+      "id": "66e8bb8d79d3a900007d3ba6",
+      "text": "\t\t\t静的みたいにコンパイルしたらわかる、とかないから品質を担保するための仕組みをコードに入れる必要がある、煩雑になりがち……",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1726528398,
+      "updated": 1726528450
+    },
+    {
+      "id": "66e8bbdd79d3a900007d3ba8",
+      "text": "\t\t\t\t特にテストコード絡めると実装量は少なくとも二倍くらいにはなる",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1726528478,
+      "updated": 1726528485
+    },
+    {
+      "id": "66e8bba179d3a900007d3ba7",
+      "text": "\t\t\tでも静的だとそこまでやらなくていいから、仕組みつくるための複雑な機構（class）が要らないのでは説",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1726528418,
+      "updated": 1726528509
+    },
+    {
+      "id": "66e8baa279d3a900007d3b9a",
+      "text": "",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1726528163,
+      "updated": 1726528163
+    },
+    {
+      "id": "66e80f0d7838e30000c446fa",
+      "text": "基本クラスに倒した上で「1クラス1モジュール」かな[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
       "created": 1726484229,
-      "updated": 1726484229
-    },
-    {
-      "id": "66e810ca71b3c20000571dd8",
-      "text": "関連性の高いclassをまとめてmoduleにすべきかな[bsahd.icon]",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726484682,
-      "updated": 1726484701
-    },
-    {
-      "id": "66e810dd71b3c20000571dda",
-      "text": "\tあまりストイックにやると分類問題になる",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1726484701,
-      "updated": 1726484723
+      "updated": 1726518273
     },
     {
       "id": "66e810ca71b3c20000571dd9",
