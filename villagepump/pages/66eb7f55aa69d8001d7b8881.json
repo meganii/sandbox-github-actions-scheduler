@@ -1,0 +1,1443 @@
+{
+  "id": "66eb7f55aa69d8001d7b8881",
+  "title": "JSDocでよくね？",
+  "created": 1726709591,
+  "updated": 1726730561,
+  "lines": [
+    {
+      "id": "66eb7f55aa69d8001d7b8881",
+      "text": "JSDocでよくね？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709591,
+      "updated": 1726709591
+    },
+    {
+      "id": "66eb7f5e73e52200008982b4",
+      "text": "from : [2024/09/19]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709598,
+      "updated": 1726709602
+    },
+    {
+      "id": "66eb7f6373e52200008982b5",
+      "text": "",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709603,
+      "updated": 1726709603
+    },
+    {
+      "id": "66eb7f6573e52200008982b6",
+      "text": "[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709606,
+      "updated": 1726709606
+    },
+    {
+      "id": "66eb7f5773e52200008982b2",
+      "text": "[TypeScript]書かなくても、[JavaScript]に[JSDoc]書くだけで十分じゃないかと思ってしまう自分がいる",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709591,
+      "updated": 1726709792
+    },
+    {
+      "id": "66eb7fc473e52200008982b8",
+      "text": " あと[@ts-check]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709701,
+      "updated": 1726709736
+    },
+    {
+      "id": "66eb8a8771b3c200002e7fe9",
+      "text": " \t`// @ts-check`が通用するのはVSCodeのみ[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726712456,
+      "updated": 1726712510
+    },
+    {
+      "id": "66eb8ac373e52200008982e2",
+      "text": " \t\tそうなんだ…… [-~ 現代でJavaScriptをVSCode以外で書く人間いるのか……？][綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726712515,
+      "updated": 1726712591
+    },
+    {
+      "id": "66eb8ba81280f000007f73b6",
+      "text": "  \t\t2021年くらいまではscrapboxでJavaScript書いてました[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712744,
+      "updated": 1726712771
+    },
+    {
+      "id": "66eb8befa8598400005e2c2e",
+      "text": "  \t\t1年前くらいから今までずっとdevelopertoolでしか書いてない[ik.icon]",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1726712816,
+      "updated": 1726712852
+    },
+    {
+      "id": "66eb7ff673e52200008982b9",
+      "text": " コードの途中に型情報を書くなという気持ちになる[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709750,
+      "updated": 1726710236
+    },
+    {
+      "id": "66eb918d71b3c200002e7ff6",
+      "text": " \tわからない[bsahd.icon][Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726714253,
+      "updated": 1726714688
+    },
+    {
+      "id": "66eb98517838e3000029cd71",
+      "text": " \t\t[トランスパイル]したらどの道型情報外れるよ（暴論）[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715985,
+      "updated": 1726716020
+    },
+    {
+      "id": "66ebb9cf1280f00000e28b0d",
+      "text": " \t\tやはり[Deno.icon]君しか勝たん[takker.icon][bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726724559,
+      "updated": 1726725137
+    },
+    {
+      "id": "66eb805a73e52200008982ba",
+      "text": " \tcode:example.ts",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709851,
+      "updated": 1726709905
+    },
+    {
+      "id": "66eb809173e52200008982bb",
+      "text": " \t function add(left: number, right: number): number {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709905,
+      "updated": 1726710036
+    },
+    {
+      "id": "66eb809173e52200008982bc",
+      "text": "   \treturn left + right;",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709905,
+      "updated": 1726709905
+    },
+    {
+      "id": "66eb809173e52200008982bd",
+      "text": "   }",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709905,
+      "updated": 1726709930
+    },
+    {
+      "id": "66eb80aa73e52200008982be",
+      "text": "  code:example.js",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709930,
+      "updated": 1726709935
+    },
+    {
+      "id": "66eb80c073e52200008982c2",
+      "text": "   /**",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709952,
+      "updated": 1726709953
+    },
+    {
+      "id": "66eb80c673e52200008982c5",
+      "text": "    * 「型についての情報が書かれている部分」と「ロジックが書かれている部分」は分離されてたほうがわかりやすいと思う",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709959,
+      "updated": 1726714838
+    },
+    {
+      "id": "66eb80da73e52200008982c9",
+      "text": "    * @param {number} left - 左項",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709979,
+      "updated": 1726712480
+    },
+    {
+      "id": "66eb80da73e52200008982ca",
+      "text": "    * @param {number} right - 右項",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709979,
+      "updated": 1726712481
+    },
+    {
+      "id": "66eb80c673e52200008982c6",
+      "text": "    * @returns {number} - 和",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709959,
+      "updated": 1726712482
+    },
+    {
+      "id": "66eb80c273e52200008982c4",
+      "text": "    */",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709955,
+      "updated": 1726709956
+    },
+    {
+      "id": "66eb80af73e52200008982bf",
+      "text": "   function add(left, right) {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709935,
+      "updated": 1726709942
+    },
+    {
+      "id": "66eb80b973e52200008982c1",
+      "text": "       return left + right;",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709946,
+      "updated": 1726709951
+    },
+    {
+      "id": "66eb80b573e52200008982c0",
+      "text": "   }",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709942,
+      "updated": 1726709944
+    },
+    {
+      "id": "66eb942273e522000010bcb1",
+      "text": "  「この関数は数値leftと数値rightを取ってleft+rightを返します。」より「leftは数値、rightは数値です。この関数はleft+rightを返します。」になってたほうが嬉しいな〜と個人的に思っている[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726714914,
+      "updated": 1726715025
+    },
+    {
+      "id": "66eb9d6a7838e3000029cdb4",
+      "text": "  \t個人の好みだとは思うけれどやっぱりよくわからない[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726717291,
+      "updated": 1726717300
+    },
+    {
+      "id": "66eb9d747838e3000029cdb5",
+      "text": "  \t一番最初に見たものから離れられてないだけじゃないかな",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726717300,
+      "updated": 1726717310
+    },
+    {
+      "id": "66ebab661280f00000e39652",
+      "text": "  \t[\" 「型についての情報が書かれている部分」と「ロジックが書かれている部分」は分離されてたほうがわかりやす]くなっているとは感じないので興味深い[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726720870,
+      "updated": 1726720935
+    },
+    {
+      "id": "66ebabfa1280f00000e39657",
+      "text": "  \t　考えたことなかったので面白い",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726721018,
+      "updated": 1726721033
+    },
+    {
+      "id": "66ebaba71280f00000e39654",
+      "text": "  \t　どういうところがわかりやすくなったと感じているのか知りたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726720935,
+      "updated": 1726720956
+    },
+    {
+      "id": "66eba4b91982700000db0c68",
+      "text": "  おもしろい、一理あるかもしれない[mrsekut.icon]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719162,
+      "updated": 1726719173
+    },
+    {
+      "id": "66eba4c41982700000db0c69",
+      "text": "  \tただ、タイトルの「JSDocでよくね？」はsyntaxの話と、型の有用性の話が混じっている気もする",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719173,
+      "updated": 1726719198
+    },
+    {
+      "id": "66eba5b91982700000db0c72",
+      "text": "  \tやりたければ、TypeScriptでも型だけ定義して、あとから実装に紐づけることもできる",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719417,
+      "updated": 1726719438
+    },
+    {
+      "id": "66eba5ce1982700000db0c73",
+      "text": "  \t\tcode:ts",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719439,
+      "updated": 1726719440
+    },
+    {
+      "id": "66eba5d01982700000db0c74",
+      "text": "  \t\t type Add = (left: number, right: number) => number;",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719440,
+      "updated": 1726719503
+    },
+    {
+      "id": "66eba5e31982700000db0c75",
+      "text": "  \t\t const add: Add = (left, right) => left + right;",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719459,
+      "updated": 1726719479
+    },
+    {
+      "id": "66eba7471982700000db0c7d",
+      "text": "  \t\tこうすれば、コードの途中に型情報は書いていない(?)",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719816,
+      "updated": 1726726470
+    },
+    {
+      "id": "66eba7481982700000db0c7e",
+      "text": "  \t\t\t(コードってどこ？というのはある)",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719816,
+      "updated": 1726719816
+    },
+    {
+      "id": "66eba7481982700000db0c7f",
+      "text": "  \t\t\t少なくとも[JSDocでよくね？#66eb805a73e52200008982ba]よりは離れた場所にある",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719816,
+      "updated": 1726719843
+    },
+    {
+      "id": "66eba6241982700000db0c76",
+      "text": "  \t\t(こう書いたときに[綾坂こと.icon]の要求を満たせているのかわからない)",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719524,
+      "updated": 1726719853
+    },
+    {
+      "id": "66ebbf5573e522000010bcb4",
+      "text": "  \t\t\tこれいいかも[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726725977,
+      "updated": 1726725981
+    },
+    {
+      "id": "66ebbf5a73e522000010bcb5",
+      "text": "  \t\t\t\t関数名を型名にも使わなきゃいけないのがちょっと気になるが、これは私にとって読みやすい",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726725979,
+      "updated": 1726726012
+    },
+    {
+      "id": "66ebc4b073e522000010bcd0",
+      "text": "  \t\t\t\tただ、結局leftとrightと返り値が何を表すのかをコメントで書くだろうと思うと[JSDocでよくね？]に戻ってくる",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726727344,
+      "updated": 1726728322
+    },
+    {
+      "id": "66ebaccd198270000028b8c9",
+      "text": "  \t更にわかり易い例で言えば、型定義ファイル`.d.ts`もある",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721230,
+      "updated": 1726721242
+    },
+    {
+      "id": "66ebacd9198270000028b8ca",
+      "text": "  \t\tあれは実装と型を完全に別ファイルに書いているので、コードの途中に型が書かれない",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721242,
+      "updated": 1726721270
+    },
+    {
+      "id": "66ebbfa073e522000010bcb6",
+      "text": "  \t\t\t別ファイルに書かれると困るかも[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726049,
+      "updated": 1726726055
+    },
+    {
+      "id": "66ebbfa773e522000010bcb7",
+      "text": "  \t\t\t\t近く(できれば隣)に書いてあって欲しいけど、完全に一緒に書かれていてほしくない",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726055,
+      "updated": 1726726120
+    },
+    {
+      "id": "66ebacf5198270000028b8cb",
+      "text": "  \t\t果たしてあれが本当にわかりやすいと言えるだろうか",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721270,
+      "updated": 1726721295
+    },
+    {
+      "id": "66eba65b1982700000db0c77",
+      "text": "  TypeScriptユーザがJSDocよりもTypeScriptを好むのは",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719579,
+      "updated": 1726719594
+    },
+    {
+      "id": "66eba6691982700000db0c78",
+      "text": "   \tそちらの方が記述量が少ない (syntax関連)",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719594,
+      "updated": 1726719744
+    },
+    {
+      "id": "66eba6721982700000db0c79",
+      "text": "   \tそちらの方が表現できる幅が広い (型の有用性)",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719603,
+      "updated": 1726719875
+    },
+    {
+      "id": "66ebabd51280f00000e39656",
+      "text": "   \t　→[JSDocでよくね？#66eb7f7d73e52200008982b7][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726720981,
+      "updated": 1726720991
+    },
+    {
+      "id": "66eba6841982700000db0c7a",
+      "text": "  \tとかそういうのが大きいと思う",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719620,
+      "updated": 1726719630
+    },
+    {
+      "id": "66eba6b81982700000db0c7b",
+      "text": "  \t要求しているモノが同じなら、コメント内に書くかどうかはそこまで重要ではない[mrsekut.icon]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719672,
+      "updated": 1726719958
+    },
+    {
+      "id": "66eba7991982700000db0c80",
+      "text": "  \t\tsyntaxの方は慣れとか好みの影響が大きい思う",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719897,
+      "updated": 1726719973
+    },
+    {
+      "id": "66eba870198270000069fb19",
+      "text": "  \tTypeScriptをバリバリ好んで使う人にとっては、JSDocの表現力が自分の要求に全く届いていないから使っていないだけ",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726720112,
+      "updated": 1726720182
+    },
+    {
+      "id": "66ebadd81982700000e29eac",
+      "text": "  \t\tJSDocで十分ならそれで良い",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721497,
+      "updated": 1726721505
+    },
+    {
+      "id": "66ebade61982700000e29ead",
+      "text": "  \t\tTSユーザが小さいプログラムにも(JSDocではなく)TSを使うのは、",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721511,
+      "updated": 1726721596
+    },
+    {
+      "id": "66ebae041982700000e29eaf",
+      "text": "   \t\t\t単にJSDocの記法を別途覚えるのが面倒、",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721540,
+      "updated": 1726721574
+    },
+    {
+      "id": "66ebae0d1982700000e29eb0",
+      "text": "   \t\t\tプログラムが大きくなったときにTSに切り替えるのが面倒",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721550,
+      "updated": 1726721585
+    },
+    {
+      "id": "66ebae191982700000e29eb1",
+      "text": "  \t\t\tとかそんな感じではないだろうか",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721561,
+      "updated": 1726721571
+    },
+    {
+      "id": "66ebac07198270000028b8c3",
+      "text": "  更に、他の言語にまで話を展開するなら、型は実行時にも読まれる言語のほうが多い[mrsekut.icon]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721032,
+      "updated": 1726721063
+    },
+    {
+      "id": "66ebac27198270000028b8c4",
+      "text": "  \t\tその場合、コメントみたいに離れた世界にあるよりも、",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721064,
+      "updated": 1726721179
+    },
+    {
+      "id": "66ebac37198270000028b8c5",
+      "text": "  \t\t同一のコードとして存在していたほうが処理系視点で扱いやすい",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721080,
+      "updated": 1726721179
+    },
+    {
+      "id": "66ebac4e198270000028b8c6",
+      "text": "  \tとかもありそう",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721102,
+      "updated": 1726721107
+    },
+    {
+      "id": "66ebac78198270000028b8c7",
+      "text": "  \tJSにおいてもclass定義は型のようなもので、",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721145,
+      "updated": 1726721204
+    },
+    {
+      "id": "66ebaca2198270000028b8c8",
+      "text": "  \t\tではこれを「コードから分離して書く」ならどうなるのか？というのは気になる",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721187,
+      "updated": 1726721193
+    },
+    {
+      "id": "66eba7111982700000db0c7c",
+      "text": "",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726719761,
+      "updated": 1726719762
+    },
+    {
+      "id": "66eb935e7838e3000029cd3c",
+      "text": " TypeScriptの機能性を知らないのか、ただ単に型定義の恩恵を知らないのか、どっちなんだ[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726714718,
+      "updated": 1726714771
+    },
+    {
+      "id": "66eb93a07838e3000029cd3d",
+      "text": " \tちなみに[Mijinko_SD.icon]は最初は型定義いらないやんって思ってた（今は違う）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726714784,
+      "updated": 1726714814
+    },
+    {
+      "id": "66eb97f97838e3000029cd70",
+      "text": " \t\t型定義が無いと、そもそもその関数が入力に何を求めていて何を出力するのかさっぱりわからないよね…？",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715897,
+      "updated": 1726715941
+    },
+    {
+      "id": "66ebc2ff73e522000010bccc",
+      "text": " \t\t\t[\" そもそもその関数が入力に何を求めていて何を出力するのかさっぱりわからない]←同意 [綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726911,
+      "updated": 1726726935
+    },
+    {
+      "id": "66ebc31773e522000010bcce",
+      "text": " \t\t\t\tそもそも[JSDoc]を使い始めた理由がこれ",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726936,
+      "updated": 1726726952
+    },
+    {
+      "id": "66eb93b87838e3000029cd3e",
+      "text": " \tTypeScriptは結構厳密に型チェックしてくれるし、連想配列の型（interface, type, 他の言語で言う構造型）を[Utility型]を使うとかして部分的に変更して使い回すこともできる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726714808,
+      "updated": 1726714938
+    },
+    {
+      "id": "66eb94447838e3000029cd3f",
+      "text": "  \t厳密に型定義されると何が良いかと言うと、ぬるぽ（JSで言う[TypeError]）のような実行時エラーをコード実装時に気づくことができるため、開発効率が格段に上がること",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726714948,
+      "updated": 1726715784
+    },
+    {
+      "id": "66eb978d7838e3000029cd6f",
+      "text": "  \t部分的に変更できて何が良いかと言うと、型の柔軟性が高いからより厳密な型もより簡単に（回りくどいことをせずに）組めるということ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715790,
+      "updated": 1726715853
+    },
+    {
+      "id": "66eb94e77838e3000029cd40",
+      "text": " \t逆にJSDocを読み取るタイプの型チェッカーがどこまでできるのか知らないけれど、こういうことはできるのかな",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715111,
+      "updated": 1726715141
+    },
+    {
+      "id": "66eb95057838e3000029cd41",
+      "text": " \t\tcode:possibleNull.ts",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715141,
+      "updated": 1726715695
+    },
+    {
+      "id": "66eb95077838e3000029cd42",
+      "text": " \t\t const foo = () => {",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715144,
+      "updated": 1726715665
+    },
+    {
+      "id": "66eb97117838e3000029cd5d",
+      "text": "      interface aryType {id: number, value?: unknown}",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715665,
+      "updated": 1726715665
+    },
+    {
+      "id": "66eb97117838e3000029cd5e",
+      "text": "      const ary: aryType[] = [{id: 1, value: \"値1\"}]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715665,
+      "updated": 1726715665
+    },
+    {
+      "id": "66eb97117838e3000029cd5f",
+      "text": "      ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715665,
+      "updated": 1726715665
+    },
+    {
+      "id": "66eb97117838e3000029cd60",
+      "text": "      const possibleNull: aryType | undefined = ary.find(e => e.id === 1)",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715665,
+      "updated": 1726715665
+    },
+    {
+      "id": "66eb97117838e3000029cd61",
+      "text": "      // この時点ではpossibleNullは`aryType | undefined`型扱い",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715665,
+      "updated": 1726715665
+    },
+    {
+      "id": "66eb97117838e3000029cd62",
+      "text": "      ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715665,
+      "updated": 1726715665
+    },
+    {
+      "id": "66eb97117838e3000029cd63",
+      "text": "      if (!possibleNull) return",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715665,
+      "updated": 1726715665
+    },
+    {
+      "id": "66eb97117838e3000029cd64",
+      "text": "      // このif文より下は、possibleNullは`aryType`扱いとなる（undefinedが消える）",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715665,
+      "updated": 1726715665
+    },
+    {
+      "id": "66eb97117838e3000029cd65",
+      "text": "      ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715665,
+      "updated": 1726715665
+    },
+    {
+      "id": "66eb97117838e3000029cd66",
+      "text": "      // undefinedの可能性は消えたため、そのまま呼び出してもエラーにならない",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715665,
+      "updated": 1726715665
+    },
+    {
+      "id": "66eb97117838e3000029cd67",
+      "text": "      console.log(possibleNull.id ** 10)",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715665,
+      "updated": 1726715665
+    },
+    {
+      "id": "66eb97117838e3000029cd68",
+      "text": "    }",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715665,
+      "updated": 1726715665
+    },
+    {
+      "id": "66eb97117838e3000029cd6a",
+      "text": "    foo()",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715665,
+      "updated": 1726715665
+    },
+    {
+      "id": "66eb97167838e3000029cd6c",
+      "text": "   ↓実行コマンド",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715670,
+      "updated": 1726715731
+    },
+    {
+      "id": "66eb974b7838e3000029cd6e",
+      "text": "\t   $ deno run https://scrapbox.io/api/code/villagepump/JSDoc%E3%81%A7%E3%82%88%E3%81%8F%E3%81%AD%EF%BC%9F/possibleNull.ts",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715723,
+      "updated": 1726715731
+    },
+    {
+      "id": "66eb97487838e3000029cd6d",
+      "text": "   型チェッカーの厳密度によると思うけれど、これができないなら厳密さの面でTypeScriptの方が勝るということになる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726715720,
+      "updated": 1726715765
+    },
+    {
+      "id": "66ebc17573e522000010bcba",
+      "text": "   こういうことか……？[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726518,
+      "updated": 1726726526
+    },
+    {
+      "id": "66ebc17073e522000010bcb8",
+      "text": "\t   [https://gyazo.com/f271de560904803aac565bfd7a764558]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726513,
+      "updated": 1726726527
+    },
+    {
+      "id": "66ebc19873e522000010bcbb",
+      "text": "\t   左の赤波線部分は「'possibleNull' は 'undefined' の可能性があります。」",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726553,
+      "updated": 1726726896
+    },
+    {
+      "id": "66ebc1b273e522000010bcbc",
+      "text": "\t   code:possibleNull.js",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726578,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bcbd",
+      "text": "\t    // @ts-check",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bcbe",
+      "text": "     /**",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bcbf",
+      "text": "      * @typedef {Object} AryType",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bcc0",
+      "text": "      * @prop {number} id",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bcc1",
+      "text": "      * @prop {unknown} value",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bcc2",
+      "text": "      */",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bcc3",
+      "text": "     const foo = () => {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bcc4",
+      "text": "         /** @type {AryType[]} */",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bcc5",
+      "text": "         const ary = [{id: 1, value: \"値1\"}];",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bcc6",
+      "text": "         /** @type {AryType|undefined} */",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bcc7",
+      "text": "         const possibleNull = ary.find(a => a.id === 1);",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bcc8",
+      "text": "         if (!possibleNull) return;",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bcc9",
+      "text": "         console.log(possibleNull.id ** 10);",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bcca",
+      "text": "     };",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66ebc1bb73e522000010bccb",
+      "text": "     foo();",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726726587,
+      "updated": 1726726587
+    },
+    {
+      "id": "66eba8151982700000db0c82",
+      "text": "",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726720022,
+      "updated": 1726720022
+    },
+    {
+      "id": "66eb7f7d73e52200008982b7",
+      "text": "JSDocで表現できない型がいくつかある[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726709629,
+      "updated": 1726712291
+    },
+    {
+      "id": "66eb89e61280f000007f73a4",
+      "text": "　[declare]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712294,
+      "updated": 1726712299
+    },
+    {
+      "id": "66eb89eb1280f000007f73a5",
+      "text": "　[Symbol]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712299,
+      "updated": 1726712299
+    },
+    {
+      "id": "66eb89f81280f000007f73ae",
+      "text": "　 [pdf.js]で出くわした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712312,
+      "updated": 1726712319
+    },
+    {
+      "id": "66eb8a051280f000007f73af",
+      "text": "　 無視していいエッジケース",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712325,
+      "updated": 1726712359
+    },
+    {
+      "id": "66eb88de1280f000007f73a1",
+      "text": " readonlyとか[as const]とか`as Type`などの表現もできなかったはず",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712029,
+      "updated": 1726712054
+    },
+    {
+      "id": "66eb88f81280f000007f73a2",
+      "text": " 　これは方法を知らないだけかもしれない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712056,
+      "updated": 1726712075
+    },
+    {
+      "id": "66eb7f5873e52200008982b3",
+      "text": "  できない気がする、TypeScriptってそんなことできたんだ[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726709592,
+      "updated": 1726712090
+    },
+    {
+      "id": "66eb891a73e52200008982d6",
+      "text": "  \t強いてあげるなら`Object.freeze()`で凍結してミスってたらエラー吐かせるくらい？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726712091,
+      "updated": 1726712137
+    },
+    {
+      "id": "66eb890a73e52200008982d5",
+      "text": "  [コンパイル時]に済ませたいのとbundle sizeを大きくしたくないのとで、なるべく型で制約をかけたい[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712074,
+      "updated": 1726712155
+    },
+    {
+      "id": "66eb89b973e52200008982d8",
+      "text": "  JSDocはオブジェクトのプロパティの型もかけるので、まあいいか……となる[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726712249,
+      "updated": 1726712329
+    },
+    {
+      "id": "66eb8a0873e52200008982d9",
+      "text": "  \tcode:example.js",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726712329,
+      "updated": 1726712334
+    },
+    {
+      "id": "66eb8a0e73e52200008982da",
+      "text": "  \t /** @type {{ name: string, age: number }} */",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726712334,
+      "updated": 1726712371
+    },
+    {
+      "id": "66eb8a3273e52200008982dc",
+      "text": "  \t const userInfo = {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726712371,
+      "updated": 1726712390
+    },
+    {
+      "id": "66eb8a4873e52200008982de",
+      "text": "  \t     \"name\": \"山田太郎\",",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726712393,
+      "updated": 1726712436
+    },
+    {
+      "id": "66eb8a4f73e52200008982df",
+      "text": "  \t     \"age\": 18,",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726712399,
+      "updated": 1726712405
+    },
+    {
+      "id": "66eb8a4673e52200008982dd",
+      "text": "  \t };",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726712390,
+      "updated": 1726712390
+    },
+    {
+      "id": "66eb89ee1280f000007f73ad",
+      "text": "   これでreadonlyできるかも[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712302,
+      "updated": 1726712378
+    },
+    {
+      "id": "66eb8a3b1280f000007f73b1",
+      "text": "   　`/** @type {Readonly<{ name: string, age: number }>} */`は通るはずだし",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712378,
+      "updated": 1726712396
+    },
+    {
+      "id": "66eb8a5271b3c20000bf2788",
+      "text": "   　[https://jsdoc.app/tags-readonly @readonly]でできます[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726712402,
+      "updated": 1726712410
+    },
+    {
+      "id": "66eb8a661280f000007f73b2",
+      "text": "   　知見[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712422,
+      "updated": 1726712424
+    },
+    {
+      "id": "66eb8a7b73e52200008982e1",
+      "text": "   　いやできるんか〜い[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726712443,
+      "updated": 1726712677
+    },
+    {
+      "id": "66ebad9e1982700000062faa",
+      "text": " この辺の記事も詳しい[mrsekut.icon]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721439,
+      "updated": 1726721450
+    },
+    {
+      "id": "66ebada91982700000062fab",
+      "text": " \t[https://zenn.dev/qnighy/articles/56917d9bf9077b TypeScriptのJSDocサポートでできること、できないこと]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1726721450,
+      "updated": 1726721452
+    },
+    {
+      "id": "66ebadab1982700000062fac",
+      "text": "  見覚えある記事だ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726721452,
+      "updated": 1726721589
+    },
+    {
+      "id": "66eb8a301280f000007f73b0",
+      "text": " 逆にこれらのトリッキーな型パズルさえ使わなければJSDocで十分",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726712368,
+      "updated": 1726712442
+    },
+    {
+      "id": "66eb89451280f000007f73a3",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712133,
+      "updated": 1726712133
+    },
+    {
+      "id": "66eb801171b3c20000bf277e",
+      "text": "非nullアサーションが使えないので[@ts-ignore]するしかなくなる[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726709777,
+      "updated": 1726709837
+    },
+    {
+      "id": "66eb801271b3c20000bf277f",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726709779,
+      "updated": 1726709779
+    },
+    {
+      "id": "66eb8553aff09e00003e40a4",
+      "text": "関数の出入りのタイミングでしか型の情報を表明できないのがなー[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1726711123,
+      "updated": 1726711182
+    },
+    {
+      "id": "66eb8567aff09e00003e40a6",
+      "text": " 名前が定義されるタイミングでそれの型も定義されてて欲しくない？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1726711143,
+      "updated": 1726711167
+    },
+    {
+      "id": "66eb884f73e52200008982d1",
+      "text": "  @typeのこと……？[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726711887,
+      "updated": 1726711927
+    },
+    {
+      "id": "66eb887673e52200008982d2",
+      "text": "  \tcode:example.js",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726711927,
+      "updated": 1726711931
+    },
+    {
+      "id": "66eb887a73e52200008982d3",
+      "text": "  \t /** @type {string} ユーザーの入力 */",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726711931,
+      "updated": 1726712487
+    },
+    {
+      "id": "66eb889873e52200008982d4",
+      "text": "  \t const userInput = window.prompt();",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726711960,
+      "updated": 1726712005
+    },
+    {
+      "id": "66eb8555aff09e00003e40a5",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1726711125,
+      "updated": 1726711125
+    },
+    {
+      "id": "66eb87efa8598400005e7f8b",
+      "text": "Javaから入った身としては型宣言が無いのが怖くて仕方ない[ik.icon]",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1726711793,
+      "updated": 1726711909
+    },
+    {
+      "id": "66eb8813a8598400005e7f8d",
+      "text": "\t拡張機能いくつか作ったから大分慣れたけどそれでも少し大きな拡張機能作るときは型宣言が無いと心配になる",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1726711829,
+      "updated": 1726711872
+    },
+    {
+      "id": "66eb8844a8598400005e7f8e",
+      "text": "\t\tまあ無い分の融通も受けてはいるんだけれども…",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1726711877,
+      "updated": 1726711903
+    },
+    {
+      "id": "66eb888f1280f000007f739b",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726711950,
+      "updated": 1726711957
+    },
+    {
+      "id": "66eb88941280f000007f739d",
+      "text": "classベースで書かれた型無しJS libraryを読むとき苦労した[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726711957,
+      "updated": 1726712194
+    },
+    {
+      "id": "66eb88c51280f000007f73a0",
+      "text": "　[pdf.js]とか[web2js]とか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712004,
+      "updated": 1726712011
+    },
+    {
+      "id": "66eb88ad1280f000007f739e",
+      "text": "　引数に何が入ってくるのか特定が非常に困難",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726711981,
+      "updated": 1726711999
+    },
+    {
+      "id": "66eb888f1280f000007f739c",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726711951,
+      "updated": 1726711951
+    },
+    {
+      "id": "66eb88d871b3c20000bf2781",
+      "text": "deno非対応のライブラリだと妥協でjsdocにすることはあるが...[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726712024,
+      "updated": 1726712651
+    },
+    {
+      "id": "66eb892571b3c20000bf2785",
+      "text": " 今日deno+tsを使い始める => 井戸端にはts否定記事が書かれている",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726712101,
+      "updated": 1726712101
+    },
+    {
+      "id": "66eb89cc71b3c20000bf2786",
+      "text": " Pythonから入った身としてはコード内に型情報が入ることに特に違和感はない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726712268,
+      "updated": 1726712314
+    },
+    {
+      "id": "66eb8adc71b3c200002e7fea",
+      "text": " \t(PythonではTSと同様の記法で型注釈をいれる)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726712540,
+      "updated": 1726712559
+    },
+    {
+      "id": "66eb8b9571b3c200002e7fed",
+      "text": " \t表記的にすごく似ている",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726712726,
+      "updated": 1726712732
+    },
+    {
+      "id": "66eb8c7971b3c200002e7fee",
+      "text": "\t[TSDoc]もあるよ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726712954,
+      "updated": 1726712966
+    },
+    {
+      "id": "66eb88d971b3c20000bf2782",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726712026,
+      "updated": 1726712026
+    },
+    {
+      "id": "66eb8f5f71b3c200002e7ff3",
+      "text": "[deno.icon][{ TypeScript使って]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726713695,
+      "updated": 1726713714
+    },
+    {
+      "id": "66eb9ed57838e3000029cdba",
+      "text": "これに対抗して[TypeScriptでよくね？]というページを作れないだろうか[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726717653,
+      "updated": 1726717668
+    },
+    {
+      "id": "66ebc52173e522000010bcd1",
+      "text": " これ見たい [綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726727457,
+      "updated": 1726728688
+    },
+    {
+      "id": "66ebccac7838e30000bd0f86",
+      "text": " 実際はTypeScriptがいい理由よりJavaScriptがダメな理由を挙げる方が楽な気がする[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726729386,
+      "updated": 1726729422
+    },
+    {
+      "id": "66eb8f5f71b3c200002e7ff4",
+      "text": "  知りたいのは\"JSDocがダメな理由\"かも [綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726713695,
+      "updated": 1726729571
+    },
+    {
+      "id": "66ebccf373e5220000794cfb",
+      "text": "  \tJavaScriptのダメなところを解消するためにはJSDocでは不十分だが、TypeScriptは十分であるとする理由",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726729460,
+      "updated": 1726729596
+    },
+    {
+      "id": "66ebcd8173e5220000794cfd",
+      "text": "  \t(素の)JavaScriptがダメなのはわかる",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726729601,
+      "updated": 1726729629
+    },
+    {
+      "id": "66ebcdab73e5220000794d00",
+      "text": "  \t\tじゃなきゃ[JSDoc]に手を出さない",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726729643,
+      "updated": 1726729648
+    },
+    {
+      "id": "66ebcfc61280f00000bf9c21",
+      "text": "  [JSDocでよくね？#66eb7f7d73e52200008982b7][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726730182,
+      "updated": 1726730258
+    },
+    {
+      "id": "66ebd0121280f00000bf9c23",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726730258,
+      "updated": 1726730258
+    },
+    {
+      "id": "66eb890b71b3c20000bf2784",
+      "text": "[jsr]だとentry pointsのJSファイルには必ず[.d.ts]が必要で、JSDocが認識されない[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712075,
+      "updated": 1726712693
+    },
+    {
+      "id": "66eb8b781280f000007f73b5",
+      "text": " JSDocを認識させるissueは立っているが、活動していない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712696,
+      "updated": 1726712730
+    },
+    {
+      "id": "66eb8b761280f000007f73b4",
+      "text": "　https://github.com/jsr-io/jsr/issues/494",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726712694,
+      "updated": 1726712695
+    },
+    {
+      "id": "66ebaaab1280f00000e3964b",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726720683,
+      "updated": 1726720683
+    },
+    {
+      "id": "66ebaaab1280f00000e3964c",
+      "text": "JSで書くと、transpileせずにそのままbrowserで読み込める利点はある[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726720683,
+      "updated": 1726720748
+    },
+    {
+      "id": "66ebaac31280f00000e3964e",
+      "text": " githubにあるコードの直リンクをimportできる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726720707,
+      "updated": 1726720723
+    },
+    {
+      "id": "66ebaaf01280f00000e39650",
+      "text": "とはいえ、transpile不要という特徴が生かされる場面はあまり思いつかない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726720751,
+      "updated": 1726720798
+    },
+    {
+      "id": "66ebab201280f00000e39651",
+      "text": " scrapbox内でコードを書く場合は重宝するかも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726720800,
+      "updated": 1726720800
+    },
+    {
+      "id": "66eb8afc1280f000007f73b3",
+      "text": "\t\tScrapbox国会[{ Scrapbox内でコードを書くのは今日から禁止です][who.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726712572,
+      "updated": 1726725159
+    },
+    {
+      "id": "66ebc52d73e522000010bcd2",
+      "text": "\tそのまま読み込めると外への公開が楽だな〜とは思っているかも[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726727469,
+      "updated": 1726727562
+    },
+    {
+      "id": "66ebc58b73e522000010bcd4",
+      "text": "\t\tGitHub Pagesとかは自動でtranspileやってくれると認識しているので、それが強い理由かと言われると微妙",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726727564,
+      "updated": 1726727596
+    },
+    {
+      "id": "66ebcb8e1280f000001c7ef5",
+      "text": "\t\t [GitHub Pages]単体だとやってくれません。おそらくそれらは[GitHub Actions]を間に噛まして、その中でtranspileしています[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726729102,
+      "updated": 1726729136
+    },
+    {
+      "id": "66ebcb1a7838e30000bd0f82",
+      "text": "\t現状トランスパイル不要の利点はまあまあ活かせるけれど[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726728984,
+      "updated": 1726729143
+    },
+    {
+      "id": "66ebcb7c7838e30000bd0f84",
+      "text": "\t　TypeScriptを直接実行できるツール（[Deno.icon], ts-node, tsx, bun等）も出回ってるし",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726729082,
+      "updated": 1726730561
+    },
+    {
+      "id": "66ebcb767838e30000bd0f83",
+      "text": "\t　最近だと[Node.js]がTypeScriptにネイティブ対応しようとしてるという話もあるし",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726729077,
+      "updated": 1726729119
+    },
+    {
+      "id": "66ebcba07838e30000bd0f85",
+      "text": "\t　そのうちブラウザ内で直接TypeScriptが実行できるようになる気もする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726729119,
+      "updated": 1726729140
+    },
+    {
+      "id": "66ebcbbd1280f000001c7ef6",
+      "text": "\t　 https://github.com/tc39/proposal-type-annotations だ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726729149,
+      "updated": 1726729182
+    },
+    {
+      "id": "66ebcbc21280f000001c7ef7",
+      "text": "\t　 (2024-09-19)ただ進展はそんなにない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726729154,
+      "updated": 1726729193
+    },
+    {
+      "id": "66ebcca21280f000001c7ef8",
+      "text": "\t　  https://github.com/tc39/notes/blob/main/meetings/2023-03/mar-22.md#type-annotations-proposal-update",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726729378,
+      "updated": 1726729378
+    },
+    {
+      "id": "66ebcca31280f000001c7ef9",
+      "text": "\t　  難航してるっぽい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726729379,
+      "updated": 1726729382
+    },
+    {
+      "id": "66ebcd587838e30000a6aaf3",
+      "text": "\t　  もしかして実行前だけでなく実行時もチェックしようとしてる？？[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726729558,
+      "updated": 1726729577
+    },
+    {
+      "id": "66ebcd6b7838e30000a6aaf4",
+      "text": "\t　  　そうであれば難航するのも頷ける",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1726729577,
+      "updated": 1726729586
+    },
+    {
+      "id": "66ebce2073e5220000794d01",
+      "text": "\t　 \t\t型注釈部分を無視してよければそんなにむずくなさそう[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726729761,
+      "updated": 1726729805
+    },
+    {
+      "id": "66ebce4d73e5220000794d03",
+      "text": "\t　 \t\t\t[HTML-like comments] とか [hashbang for JS] に近い扱いを受ければいい",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726729805,
+      "updated": 1726729870
+    },
+    {
+      "id": "66ebb68a71b3c2000009f9e7",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726723722,
+      "updated": 1726723722
+    }
+  ]
+}

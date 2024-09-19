@@ -1,0 +1,281 @@
+{
+  "id": "66ebebfaa62389001c525039",
+  "title": "denoのキャッシュを消す",
+  "created": 1726737404,
+  "updated": 1726739123,
+  "lines": [
+    {
+      "id": "66ebebfaa62389001c525039",
+      "text": "denoのキャッシュを消す",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726737404,
+      "updated": 1726737404
+    },
+    {
+      "id": "66ebebfc71b3c20000769510",
+      "text": "[deno]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726737404,
+      "updated": 1726737407
+    },
+    {
+      "id": "66ebee8471b3c20000769517",
+      "text": "https://zenn.dev/kawarimidoll/articles/3f06083cb03b25 が参考になる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726738052,
+      "updated": 1726738056
+    },
+    {
+      "id": "66ebeef471b3c2000076952f",
+      "text": "$ deno run -A https://scrapbox.io/api/code/villagepump/denoのキャッシュを消す/removecache.ts",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726738165,
+      "updated": 1726739123
+    },
+    {
+      "id": "66ebeea171b3c20000769518",
+      "text": "code:removecache.ts",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726738082,
+      "updated": 1726738127
+    },
+    {
+      "id": "66ebeecf71b3c20000769529",
+      "text": " // `--allow-run` permission is required",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726738127,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769530",
+      "text": " async function getDenoDir() {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769531",
+      "text": "   // deno-lint-ignore no-deprecated-deno-api",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769532",
+      "text": "   const p = Deno.run({",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769533",
+      "text": "     cmd: [\"deno\", \"info\", \"--json\"],",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769534",
+      "text": "     stdout: \"piped\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769535",
+      "text": "     stderr: \"piped\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769536",
+      "text": "   });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769537",
+      "text": "   const output = await p.output();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769538",
+      "text": "   p.close();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769539",
+      "text": "   const resu = new TextDecoder().decode(output);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c2000076953a",
+      "text": "   const resu2 = JSON.parse(resu);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c2000076953b",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c2000076953c",
+      "text": "   return [",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c2000076953d",
+      "text": "     resu2.modulesCache,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c2000076953e",
+      "text": "     resu2.npmCache,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c2000076953f",
+      "text": "     resu2.typescriptCache,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769540",
+      "text": "     resu2.registryCache,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769541",
+      "text": "   ];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769542",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769543",
+      "text": " for (const id of await getDenoDir()) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769544",
+      "text": "     try {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769545",
+      "text": "         await Deno.remove(id, { recursive: true });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769546",
+      "text": "     } catch {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769547",
+      "text": "         console.log(\"already removed\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769548",
+      "text": "     }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebf23d71b3c20000769549",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739006,
+      "updated": 1726739006
+    },
+    {
+      "id": "66ebeea271b3c20000769519",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726738082,
+      "updated": 1726738082
+    },
+    {
+      "id": "66ebf28f71b3c2000076954b",
+      "text": "手動",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726739088,
+      "updated": 1726739090
+    },
+    {
+      "id": "66ebebff71b3c20000769512",
+      "text": " Windowsの場合",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726737408,
+      "updated": 1726739092
+    },
+    {
+      "id": "66ebebfd71b3c20000769511",
+      "text": " \t$ rd /s /q %localappdata%\\deno",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726737405,
+      "updated": 1726739092
+    },
+    {
+      "id": "66ebedd171b3c20000769514",
+      "text": " Linuxの場合",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726737873,
+      "updated": 1726739092
+    },
+    {
+      "id": "66ebee4371b3c20000769516",
+      "text": " \t$ rm -rf $XDG_CACHE_HOME/deno",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726737987,
+      "updated": 1726739092
+    },
+    {
+      "id": "66ebee2071b3c20000769515",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726737953,
+      "updated": 1726737953
+    }
+  ]
+}

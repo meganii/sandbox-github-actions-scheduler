@@ -1,0 +1,2556 @@
+{
+  "id": "66ebcf416f260e001efee0ca",
+  "title": "日記からアクティブユーザーを生成する/source",
+  "created": 1726730050,
+  "updated": 1726730175,
+  "lines": [
+    {
+      "id": "66ebcf416f260e001efee0ca",
+      "text": "日記からアクティブユーザーを生成する/source",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1a6",
+      "text": "from [日記からアクティブユーザーを生成する]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1a7",
+      "text": "日記からアクティブユーザーを生成する/source",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1a8",
+      "text": "code:main.ts",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1a9",
+      "text": " function formatDate(date: Date, sep: string): string {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1aa",
+      "text": "   const yyyy = date.getFullYear();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1ab",
+      "text": "   const mm = (\"00\" + (date.getMonth() + 1)).slice(-2);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1ac",
+      "text": "   const dd = (\"00\" + date.getDate()).slice(-2);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1ad",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1ae",
+      "text": "   return `${yyyy}${sep}${mm}${sep}${dd}`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1af",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1b0",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1b1",
+      "text": " const fetch_retry = async (url: string, n: number): Promise<Response> => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1b2",
+      "text": "   try {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1b3",
+      "text": "     return await fetch(url);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1b4",
+      "text": "   } catch (err) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1b5",
+      "text": "     if (n === 1) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1b6",
+      "text": "       throw err;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1b7",
+      "text": "     }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1b8",
+      "text": "     return await fetch_retry(url, n - 1);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1b9",
+      "text": "   }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1ba",
+      "text": " };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1bb",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1bc",
+      "text": " const sub1 = async (",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1bd",
+      "text": "   index: number",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1be",
+      "text": " ): Promise<{ date: string; res: RegExpExecArray[] }> => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1bf",
+      "text": "   const date = new Date(Date.now());",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1c0",
+      "text": "   date.setDate(date.getDate() + index);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1c1",
+      "text": "   const datetext = formatDate(date, \"/\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1c2",
+      "text": "   const pglisttempreq = await fetch_retry(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1c3",
+      "text": "     `https://scrapbox.io/api/pages/villagepump/${encodeURIComponent(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1c4",
+      "text": "       datetext",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1c5",
+      "text": "     )}/text`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1c6",
+      "text": "     15",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1c7",
+      "text": "   );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1c8",
+      "text": "   console.log(datetext);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1c9",
+      "text": "   const pglisttemptxt = await pglisttempreq.text();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1ca",
+      "text": "   if (pglisttempreq.status == 200) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1cb",
+      "text": "     const ma = pglisttemptxt.matchAll(/\\[([^\\[\\]]*)\\.icon\\*?[0-9]*\\]/g);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1cc",
+      "text": "     return { date: datetext, res: Array.from(ma) };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1cd",
+      "text": "   } else {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1ce",
+      "text": "     console.error(datetext, \"not found\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1cf",
+      "text": "     return { date: datetext, res: [] };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1d0",
+      "text": "   }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1d1",
+      "text": " };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1d2",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1d3",
+      "text": " const main = async () => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1d4",
+      "text": "   const userlist: readonly string[] = [",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1d5",
+      "text": "     \"45Nuyagawa\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1d6",
+      "text": "     \"ChatGPT\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1d7",
+      "text": "     \"Gorira Tatsu\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1d8",
+      "text": "     \"Gorira_Tatsu\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1d9",
+      "text": "     \"Hiro Aki\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1da",
+      "text": "     \"Hyou\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1db",
+      "text": "     \"MS\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1dc",
+      "text": "     \"Mijinko_SD\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1dd",
+      "text": "     \"RR\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1de",
+      "text": "     \"Summer498\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1df",
+      "text": "     \"Taisei117\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1e0",
+      "text": "     \"TakamiChie\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1e1",
+      "text": "     \"air34n\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1e2",
+      "text": "     \"amemy\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1e3",
+      "text": "     \"applessk\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1e4",
+      "text": "     \"biwa\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1e5",
+      "text": "     \"blu3mo\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1e6",
+      "text": "     \"bsahd\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1e7",
+      "text": "     \"cFQ2f7LRuLYP\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1e8",
+      "text": "     \"cak\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1e9",
+      "text": "     \"claude\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1ea",
+      "text": "     \"cman\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1eb",
+      "text": "     \"conpota\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1ec",
+      "text": "     \"dai\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1ed",
+      "text": "     \"dnin\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1ee",
+      "text": "     \"erniogi\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1ef",
+      "text": "     \"fumito\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1f0",
+      "text": "     \"hata6502\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1f1",
+      "text": "     \"hatori\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1f2",
+      "text": "     \"hoshio\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1f3",
+      "text": "     \"imo\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1f4",
+      "text": "     \"inajob\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1f5",
+      "text": "     \"inoue2002\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1f6",
+      "text": "     \"kaito5373\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1f7",
+      "text": "     \"kana\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1f8",
+      "text": "     \"kendea\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1f9",
+      "text": "     \"kentnkmr\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1fa",
+      "text": "     \"kidooom\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1fb",
+      "text": "     \"koyoshi\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1fc",
+      "text": "     \"kumatako\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1fd",
+      "text": "     \"kuroma6666\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1fe",
+      "text": "     \"kutsumofu\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe1ff",
+      "text": "     \"kuuote\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe200",
+      "text": "     \"kyamad9\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe201",
+      "text": "     \"kzmi\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe202",
+      "text": "     \"lsajfk\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe203",
+      "text": "     \"maichan\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe204",
+      "text": "     \"marimocchi\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe205",
+      "text": "     \"matobaa\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe206",
+      "text": "     \"meganii\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe207",
+      "text": "     \"mgn901\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe208",
+      "text": "     \"miura\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe209",
+      "text": "     \"mizdra\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe20a",
+      "text": "     \"mizz\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe20b",
+      "text": "     \"moeki\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe20c",
+      "text": "     \"momeemt\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe20d",
+      "text": "     \"mtane0412\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe20e",
+      "text": "     \"mushy\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe20f",
+      "text": "     \"nejimaki\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe210",
+      "text": "     \"nishio\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe211",
+      "text": "     \"nomadoor\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe212",
+      "text": "     \"opz\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe213",
+      "text": "     \"rickshinmi\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe214",
+      "text": "     \"seibe\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe215",
+      "text": "     \"shiganana\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe216",
+      "text": "     \"shotato\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe217",
+      "text": "     \"shoya140\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe218",
+      "text": "     \"sizumita\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe219",
+      "text": "     \"sta\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe21a",
+      "text": "     \"star_field\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe21b",
+      "text": "     \"sume\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe21c",
+      "text": "     \"suto3\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe21d",
+      "text": "     \"swawa_yu\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe21e",
+      "text": "     \"takker\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe21f",
+      "text": "     \"takkii\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe220",
+      "text": "     \"tetsuya-k\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe221",
+      "text": "     \"teyoda7\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe222",
+      "text": "     \"thinceller\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe223",
+      "text": "     \"tkgshn\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe224",
+      "text": "     \"torish14\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe225",
+      "text": "     \"tosiiu\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe226",
+      "text": "     \"uchan\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe227",
+      "text": "     \"udonn\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe228",
+      "text": "     \"utanaka\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe229",
+      "text": "     \"wing\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe22a",
+      "text": "     \"wogikaze\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe22b",
+      "text": "     \"yanma\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe22c",
+      "text": "     \"yosider\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe22d",
+      "text": "     \"yuki_minoh\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe22e",
+      "text": "     \"yuta0801.old\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe22f",
+      "text": "     \"yutaro\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe230",
+      "text": "     \"yuyuko\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe231",
+      "text": "     \"あとにいく\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe232",
+      "text": "     \"えむおー\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe233",
+      "text": "     \"ししかわ\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe234",
+      "text": "     \"つばくろ\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe235",
+      "text": "     \"はるひ\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe236",
+      "text": "     \"イタロー\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe237",
+      "text": "     \"クオリアさん\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe238",
+      "text": "     \"ロボカス\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe239",
+      "text": "     \"久住哲\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe23a",
+      "text": "     \"基素\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe23b",
+      "text": "     \"増井俊之\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe23c",
+      "text": "     \"情報うさぎ\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe23d",
+      "text": "     \"綾坂こと\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe23e",
+      "text": "   ];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe23f",
+      "text": "   const promises: Promise<{ date: string; res: RegExpExecArray[] }>[] = [];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe240",
+      "text": "   for (let index = -30; index < 0; index++) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe241",
+      "text": "     promises.push(sub1(index));",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe242",
+      "text": "   }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe243",
+      "text": "   const res = await Promise.all(promises);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe244",
+      "text": "   const ress: string[] = [];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe245",
+      "text": "   res.forEach((r) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe246",
+      "text": "     const res2: string[] = [];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe247",
+      "text": "     r.res.forEach((e) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe248",
+      "text": "       res2.push(e[1]);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe249",
+      "text": "     });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe24a",
+      "text": "     const sete = Array.from(new Set(res2));",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe24b",
+      "text": "     const sete2: string[] = [];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe24c",
+      "text": "     sete.forEach((e) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe24d",
+      "text": "       if (userlist.includes(e)) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe24e",
+      "text": "         sete2.push(e);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe24f",
+      "text": "       }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe250",
+      "text": "     });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe251",
+      "text": "     ress.push(`${r.date} [${sete2.join(\".icon][\")}.icon]`);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe252",
+      "text": "   });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe253",
+      "text": "   await Deno.writeTextFile(\"villagepump.txt\", ress.join(\"\\n\"));",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe254",
+      "text": "   console.log(\"output is in villagepump.txt\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe255",
+      "text": " };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe256",
+      "text": " main();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe257",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe258",
+      "text": "コンソール出力版",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe259",
+      "text": "code:console.ts",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe25a",
+      "text": "  function formatDate(date: Date, sep: string): string {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe25b",
+      "text": "    const yyyy = date.getFullYear();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe25c",
+      "text": "    const mm = (\"00\" + (date.getMonth() + 1)).slice(-2);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe25d",
+      "text": "    const dd = (\"00\" + date.getDate()).slice(-2);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe25e",
+      "text": "  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe25f",
+      "text": "    return `${yyyy}${sep}${mm}${sep}${dd}`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe260",
+      "text": "  }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe261",
+      "text": "  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe262",
+      "text": "  const fetch_retry = async (url: string, n: number): Promise<Response> => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe263",
+      "text": "    try {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe264",
+      "text": "      return await fetch(url);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe265",
+      "text": "    } catch (err) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe266",
+      "text": "      if (n === 1) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe267",
+      "text": "        throw err;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe268",
+      "text": "      }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe269",
+      "text": "      return await fetch_retry(url, n - 1);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe26a",
+      "text": "    }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe26b",
+      "text": "  };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4171b3c200001fe26c",
+      "text": "  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe26d",
+      "text": "  const sub1 = async (",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe26e",
+      "text": "    index: number",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe26f",
+      "text": "  ): Promise<{ date: string; res: RegExpExecArray[] }> => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe270",
+      "text": "    const date = new Date(Date.now());",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe271",
+      "text": "    date.setDate(date.getDate() + index);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe272",
+      "text": "    const datetext = formatDate(date, \"/\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe273",
+      "text": "    const pglisttempreq = await fetch_retry(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe274",
+      "text": "      `https://scrapbox.io/api/pages/villagepump/${encodeURIComponent(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe275",
+      "text": "        datetext",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe276",
+      "text": "      )}/text`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe277",
+      "text": "      15",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe278",
+      "text": "    );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe279",
+      "text": "    console.log(datetext);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe27a",
+      "text": "    const pglisttemptxt = await pglisttempreq.text();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe27b",
+      "text": "    if (pglisttempreq.status == 200) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe27c",
+      "text": "      const ma = pglisttemptxt.matchAll(/\\[([^\\[\\]]*)\\.icon\\*?[0-9]*\\]/g);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe27d",
+      "text": "      return { date: datetext, res: Array.from(ma) };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe27e",
+      "text": "    } else {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe27f",
+      "text": "      console.error(datetext, \"not found\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe280",
+      "text": "      return { date: datetext, res: [] };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe281",
+      "text": "    }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe282",
+      "text": "  };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe283",
+      "text": "  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe284",
+      "text": "  const main = async () => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe285",
+      "text": "    const userlist: readonly string[] = [",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe286",
+      "text": "      \"45Nuyagawa\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe287",
+      "text": "      \"ChatGPT\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe288",
+      "text": "      \"Gorira Tatsu\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe289",
+      "text": "      \"Gorira_Tatsu\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe28a",
+      "text": "      \"Hiro Aki\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe28b",
+      "text": "      \"Hyou\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe28c",
+      "text": "      \"MS\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe28d",
+      "text": "      \"Mijinko_SD\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe28e",
+      "text": "      \"RR\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe28f",
+      "text": "      \"Summer498\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe290",
+      "text": "      \"Taisei117\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe291",
+      "text": "      \"TakamiChie\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe292",
+      "text": "      \"air34n\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe293",
+      "text": "      \"amemy\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe294",
+      "text": "      \"applessk\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe295",
+      "text": "      \"biwa\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe296",
+      "text": "      \"blu3mo\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe297",
+      "text": "      \"bsahd\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe298",
+      "text": "      \"cFQ2f7LRuLYP\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe299",
+      "text": "      \"cak\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe29a",
+      "text": "      \"claude\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe29b",
+      "text": "      \"cman\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe29c",
+      "text": "      \"conpota\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe29d",
+      "text": "      \"dai\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe29e",
+      "text": "      \"dnin\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe29f",
+      "text": "      \"erniogi\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2a0",
+      "text": "      \"fumito\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2a1",
+      "text": "      \"hata6502\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2a2",
+      "text": "      \"hatori\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2a3",
+      "text": "      \"hoshio\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2a4",
+      "text": "      \"imo\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2a5",
+      "text": "      \"inajob\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2a6",
+      "text": "      \"inoue2002\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2a7",
+      "text": "      \"kaito5373\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2a8",
+      "text": "      \"kana\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2a9",
+      "text": "      \"kendea\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2aa",
+      "text": "      \"kentnkmr\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2ab",
+      "text": "      \"kidooom\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2ac",
+      "text": "      \"koyoshi\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2ad",
+      "text": "      \"kumatako\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2ae",
+      "text": "      \"kuroma6666\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2af",
+      "text": "      \"kutsumofu\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2b0",
+      "text": "      \"kuuote\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2b1",
+      "text": "      \"kyamad9\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2b2",
+      "text": "      \"kzmi\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2b3",
+      "text": "      \"lsajfk\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2b4",
+      "text": "      \"maichan\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2b5",
+      "text": "      \"marimocchi\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2b6",
+      "text": "      \"matobaa\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2b7",
+      "text": "      \"meganii\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2b8",
+      "text": "      \"mgn901\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2b9",
+      "text": "      \"miura\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2ba",
+      "text": "      \"mizdra\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2bb",
+      "text": "      \"mizz\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2bc",
+      "text": "      \"moeki\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2bd",
+      "text": "      \"momeemt\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2be",
+      "text": "      \"mtane0412\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2bf",
+      "text": "      \"mushy\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2c0",
+      "text": "      \"nejimaki\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2c1",
+      "text": "      \"nishio\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2c2",
+      "text": "      \"nomadoor\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2c3",
+      "text": "      \"opz\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2c4",
+      "text": "      \"rickshinmi\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2c5",
+      "text": "      \"seibe\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2c6",
+      "text": "      \"shiganana\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2c7",
+      "text": "      \"shotato\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2c8",
+      "text": "      \"shoya140\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2c9",
+      "text": "      \"sizumita\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2ca",
+      "text": "      \"sta\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2cb",
+      "text": "      \"star_field\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2cc",
+      "text": "      \"sume\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2cd",
+      "text": "      \"suto3\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2ce",
+      "text": "      \"swawa_yu\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2cf",
+      "text": "      \"takker\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2d0",
+      "text": "      \"takkii\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2d1",
+      "text": "      \"tetsuya-k\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2d2",
+      "text": "      \"teyoda7\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2d3",
+      "text": "      \"thinceller\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2d4",
+      "text": "      \"tkgshn\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2d5",
+      "text": "      \"torish14\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2d6",
+      "text": "      \"tosiiu\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2d7",
+      "text": "      \"uchan\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2d8",
+      "text": "      \"udonn\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2d9",
+      "text": "      \"utanaka\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2da",
+      "text": "      \"wing\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2db",
+      "text": "      \"wogikaze\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2dc",
+      "text": "      \"yanma\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2dd",
+      "text": "      \"yosider\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2de",
+      "text": "      \"yuki_minoh\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2df",
+      "text": "      \"yuta0801.old\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2e0",
+      "text": "      \"yutaro\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2e1",
+      "text": "      \"yuyuko\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2e2",
+      "text": "      \"あとにいく\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2e3",
+      "text": "      \"えむおー\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2e4",
+      "text": "      \"ししかわ\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2e5",
+      "text": "      \"つばくろ\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2e6",
+      "text": "      \"はるひ\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2e7",
+      "text": "      \"イタロー\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2e8",
+      "text": "      \"クオリアさん\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2e9",
+      "text": "      \"ロボカス\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2ea",
+      "text": "      \"久住哲\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2eb",
+      "text": "      \"基素\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2ec",
+      "text": "      \"増井俊之\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2ed",
+      "text": "      \"情報うさぎ\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2ee",
+      "text": "      \"綾坂こと\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2ef",
+      "text": "    ];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2f0",
+      "text": "    const promises: Promise<{ date: string; res: RegExpExecArray[] }>[] = [];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2f1",
+      "text": "    for (let index = -30; index < 0; index++) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2f2",
+      "text": "      promises.push(sub1(index));",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2f3",
+      "text": "    }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2f4",
+      "text": "    const res = await Promise.all(promises);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2f5",
+      "text": "    const ress: string[] = [];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2f6",
+      "text": "    res.forEach((r) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2f7",
+      "text": "      const res2: string[] = [];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2f8",
+      "text": "      r.res.forEach((e) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2f9",
+      "text": "        res2.push(e[1]);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2fa",
+      "text": "      });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2fb",
+      "text": "      const sete = Array.from(new Set(res2));",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2fc",
+      "text": "      const sete2: string[] = [];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2fd",
+      "text": "      sete.forEach((e) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2fe",
+      "text": "        if (userlist.includes(e)) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe2ff",
+      "text": "          sete2.push(e);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe300",
+      "text": "        }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe301",
+      "text": "      });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe302",
+      "text": "      ress.push(`${r.date} [${sete2.join(\".icon][\")}.icon]`);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe303",
+      "text": "    });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf5c71b3c200001fe30b",
+      "text": "    console.log(\"\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730076,
+      "updated": 1726730080
+    },
+    {
+      "id": "66ebcf6371b3c200001fe30c",
+      "text": "    console.log(\"\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730084,
+      "updated": 1726730084
+    },
+    {
+      "id": "66ebcf6671b3c200001fe30f",
+      "text": "    console.log(\"====================\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730087,
+      "updated": 1726730097
+    },
+    {
+      "id": "66ebcf4271b3c200001fe304",
+      "text": "    console.log(\"below is output\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf6971b3c200001fe310",
+      "text": "    console.log(\"====================\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730089,
+      "updated": 1726730094
+    },
+    {
+      "id": "66ebcf6471b3c200001fe30d",
+      "text": "    console.log(\"\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730085,
+      "updated": 1726730085
+    },
+    {
+      "id": "66ebcf6571b3c200001fe30e",
+      "text": "    console.log(\"\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730085,
+      "updated": 1726730085
+    },
+    {
+      "id": "66ebcf4271b3c200001fe305",
+      "text": "    console.log(ress.join(\"\\n\"));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1726730050,
+      "updated": 1726730175
+    },
+    {
+      "id": "66ebcf4271b3c200001fe306",
+      "text": "  };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe307",
+      "text": "  main();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe308",
+      "text": "  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe309",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    },
+    {
+      "id": "66ebcf4271b3c200001fe30a",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726730050,
+      "updated": 1726730050
+    }
+  ]
+}
