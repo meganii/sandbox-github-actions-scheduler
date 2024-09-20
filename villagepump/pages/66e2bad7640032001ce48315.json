@@ -2,7 +2,7 @@
   "id": "66e2bad7640032001ce48315",
   "title": "JS Is Weird",
   "created": 1726135001,
-  "updated": 1726145688,
+  "updated": 1726813756,
   "lines": [
     {
       "id": "66e2bad7640032001ce48315",
@@ -75,6 +75,13 @@
       "updated": 1726135826
     },
     {
+      "id": "66ece26971b3c200001ee042",
+      "text": "  typeofはクソ[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726800489,
+      "updated": 1726800493
+    },
+    {
       "id": "66e2be1173e5220000c6c78a",
       "text": "",
       "userId": "62919f6444e78d001d73e522",
@@ -108,6 +115,111 @@
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1726144683,
       "updated": 1726144716
+    },
+    {
+      "id": "66ecf75273e5220000a269d1",
+      "text": "\t[~ 「Number, Boolean, null, undefined(, BigInt)は加算、それ以外は文字列結合」。うん、簡単だね！！()] [綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726805843,
+      "updated": 1726811163
+    },
+    {
+      "id": "66ecdc4b71b3c200008dd8e4",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726798924,
+      "updated": 1726798924
+    },
+    {
+      "id": "66ecdc4b71b3c200008dd8e5",
+      "text": "`btoa(\"takkerを崇めてください\")`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726798924,
+      "updated": 1726798931
+    },
+    {
+      "id": "66ecdc5e71b3c200008dd8e9",
+      "text": "\tbtoaは、文字列([~ Latin1 only])をBase64に変換する関数です",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726798942,
+      "updated": 1726798968
+    },
+    {
+      "id": "66ecdd1b71b3c200008dd8ea",
+      "text": "\t\t[~ Latin1 onlyになった理由:レガシー実装]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726799131,
+      "updated": 1726799144
+    },
+    {
+      "id": "66ecdc4f71b3c200008dd8e8",
+      "text": "\t実行結果:[~ エラーになります]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726798928,
+      "updated": 1726798979
+    },
+    {
+      "id": "66ecf82673e5220000a269d2",
+      "text": "\t[~ 回避手段は自力実装しよう → [/AyaExpTech/任意のデータとBase64の相互変換.js]] [綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726806057,
+      "updated": 1726811202
+    },
+    {
+      "id": "66ed153271b3c20000f8d550",
+      "text": "\t\tMDNのほうが短い[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726813490,
+      "updated": 1726813545
+    },
+    {
+      "id": "66ed156971b3c20000f8d551",
+      "text": "\t\t\thttps://developer.mozilla.org/ja/docs/Glossary/Base64#%E3%80%8Cunicode_問題%E3%80%8D",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726813545,
+      "updated": 1726813546
+    },
+    {
+      "id": "66ed157071b3c20000f8d552",
+      "text": "\t\t\tcode:mdn.js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726813552,
+      "updated": 1726813555
+    },
+    {
+      "id": "66ed157471b3c20000f8d553",
+      "text": "\t\t\t function base64ToBytes(b64){const bS = atob(b64);return Uint8Array.from(bS, (m) => m.codePointAt(0));}    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726813556,
+      "updated": 1726813756
+    },
+    {
+      "id": "66ed157471b3c20000f8d558",
+      "text": "    function bytesToBase64(bs){const bS = Array.from(bs, (bt) => String.fromCodePoint(bt),).join(\"\"); return btoa(bS);}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726813556,
+      "updated": 1726813755
+    },
+    {
+      "id": "66ed157471b3c20000f8d55f",
+      "text": "    // 使用方法",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726813556,
+      "updated": 1726813556
+    },
+    {
+      "id": "66ed157471b3c20000f8d560",
+      "text": "    bytesToBase64(new TextEncoder().encode(\"a Ā 𐀀 文 🦄\")); // \"YSDEgCDwkICAIOaWhyDwn6aE\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726813556,
+      "updated": 1726813556
+    },
+    {
+      "id": "66ed157471b3c20000f8d561",
+      "text": "    new TextDecoder().decode(base64ToBytes(\"YSDEgCDwkICAIOaWhyDwn6aE\")); // \"a Ā 𐀀 文 🦄\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1726813556,
+      "updated": 1726813556
     },
     {
       "id": "66e2e09071b3c200002cc519",
@@ -157,6 +269,20 @@
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1726145429,
       "updated": 1726145471
+    },
+    {
+      "id": "66ecf8b773e5220000a269d3",
+      "text": "\t一応、やばい機能には代替が開発されている印象[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726806200,
+      "updated": 1726806256
+    },
+    {
+      "id": "66ecf8f073e5220000a269d5",
+      "text": "\t　今やってるやつだとTemporal(Dateの代替)とか",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1726806257,
+      "updated": 1726806278
     },
     {
       "id": "66e2e486b8bbfc00005a9d7b",
