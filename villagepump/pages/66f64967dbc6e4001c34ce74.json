@@ -1,0 +1,421 @@
+{
+  "id": "66f64967dbc6e4001c34ce74",
+  "title": "チェックでページを束ねるUserScript",
+  "created": 1727416683,
+  "updated": 1727436376,
+  "lines": [
+    {
+      "id": "66f64967dbc6e4001c34ce74",
+      "text": "チェックでページを束ねるUserScript",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416683,
+      "updated": 1727417094
+    },
+    {
+      "id": "66f649762812e70000475a60",
+      "text": "[Tekenote]的に使う[UserScript]",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416694,
+      "updated": 1727417112
+    },
+    {
+      "id": "66f6497a2812e70000475a62",
+      "text": "制作者 [moeki.icon]",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416699,
+      "updated": 1727416768
+    },
+    {
+      "id": "66f649c02812e70000475a95",
+      "text": "",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416769,
+      "updated": 1727416769
+    },
+    {
+      "id": "66f649c12812e70000475a97",
+      "text": "[https://i.gyazo.com/54c0fa3c8ae81447fa95960e2ada36a0.gif]",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416769,
+      "updated": 1727416918
+    },
+    {
+      "id": "66f64a552812e70000982685",
+      "text": "",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416918,
+      "updated": 1727416918
+    },
+    {
+      "id": "66f649c12812e70000475a96",
+      "text": "",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416769,
+      "updated": 1727416769
+    },
+    {
+      "id": "66f6497f2812e70000475a93",
+      "text": "code:script.js",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416703,
+      "updated": 1727416721
+    },
+    {
+      "id": "66f6497b2812e70000475a63",
+      "text": " window.selectedPages = [];",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416699,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a64",
+      "text": " const newButton = document.querySelector(\".new-button\")",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a65",
+      "text": " const newButtonHref = newButton.href;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a66",
+      "text": " const stock = document.createElement(\"div\");",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a67",
+      "text": " stock.classList.add(\"stock\");",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a68",
+      "text": " document.body.append(stock)",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a69",
+      "text": " const setCheckBox = () => {",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a6a",
+      "text": "   document.querySelectorAll(\".page-list-item\").forEach((item) => {",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a6b",
+      "text": "   \tif (item.querySelector(\".item-select\")) return;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a6c",
+      "text": "   \tconst title = item.dataset.pageTitle",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a6d",
+      "text": "   \tconst checkbox = document.createElement(\"div\")",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a6e",
+      "text": "     \tcheckbox.innerHTML = `<input type=\"checkbox\" value=\"${title}\" class=\"item-select\" />`",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a6f",
+      "text": "       item.append(checkbox)",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a70",
+      "text": "       checkbox.addEventListener(\"click\", (e) => {",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a71",
+      "text": "         if (e.target.checked) {",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a72",
+      "text": "         \twindow.selectedPages.push(`[${e.target.value}]`)",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a73",
+      "text": "         } else {",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a74",
+      "text": "         \twindow.selectedPages = window.selectedPages.filter((v) => v !== `[${e.target.value}]`);",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727424422
+    },
+    {
+      "id": "66f6497b2812e70000475a75",
+      "text": "         }",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a76",
+      "text": "         newButton.href = `${newButtonHref}?body=${window.selectedPages.join(\"%0A\")}`",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a77",
+      "text": "         stock.innerHTML = `${window.selectedPages.map((p) => `<div>${p}</div>`).join(\"\")}`",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a78",
+      "text": "        stock.style.display = \"block\";",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a79",
+      "text": "       })",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a7a",
+      "text": "   })",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a7b",
+      "text": " }",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a7c",
+      "text": " window.addEventListener(\"load\", setCheckBox);",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a7d",
+      "text": " scrapbox.on(\"layout:changed\", setCheckBox);",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a7e",
+      "text": " window.addEventListener(\"scroll\", setCheckBox);",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a7f",
+      "text": "",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a80",
+      "text": "code:style.css",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a81",
+      "text": " .item-select {",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a82",
+      "text": "   position: absolute;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a83",
+      "text": "   top: 10px;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a84",
+      "text": "   right: 10px;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a85",
+      "text": "   z-index: 40;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a86",
+      "text": "   width: 16px;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a87",
+      "text": "   height: 16px;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a88",
+      "text": " }",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a89",
+      "text": " ",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a8a",
+      "text": " .stock {",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a8b",
+      "text": "   position: fixed;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a8c",
+      "text": "   bottom: 30px;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a8d",
+      "text": "   right: 10px;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a8e",
+      "text": "   z-index: 50;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a8f",
+      "text": "   background: white;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a90",
+      "text": "   border: 1px solid #333;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a91",
+      "text": "   display: none;",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f6497b2812e70000475a92",
+      "text": " }",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416700,
+      "updated": 1727416700
+    },
+    {
+      "id": "66f649772812e70000475a61",
+      "text": "",
+      "userId": "6619476365154e00252812e7",
+      "created": 1727416695,
+      "updated": 1727416695
+    },
+    {
+      "id": "66f696545b98c20000b7854b",
+      "text": "[UserScript.icon]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1727436373,
+      "updated": 1727436376
+    },
+    {
+      "id": "66f696555b98c20000b7854c",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1727436374,
+      "updated": 1727436374
+    }
+  ]
+}

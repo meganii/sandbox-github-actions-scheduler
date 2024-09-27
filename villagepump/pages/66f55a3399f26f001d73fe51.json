@@ -2,7 +2,7 @@
   "id": "66f55a3399f26f001d73fe51",
   "title": "TypeScriptのGenericな関数型の型推論の挙動が、直打ちとtype alias経由とで異なる",
   "created": 1727355444,
-  "updated": 1727358706,
+  "updated": 1727449148,
   "lines": [
     {
       "id": "66f55a3399f26f001d73fe51",
@@ -461,10 +461,10 @@
     },
     {
       "id": "66f55c461280f00000e00594",
-      "text": " その仮定で冒頭の問題が生じた",
+      "text": " その過程で冒頭の問題が生じた",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1727355975,
-      "updated": 1727355996
+      "updated": 1727395444
     },
     {
       "id": "66f55c5a1280f00000e00595",
@@ -489,108 +489,10 @@
     },
     {
       "id": "66f55c7a1280f00000e00598",
-      "text": "  interface ParserInput {",
+      "text": "  type ParserInput = string;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1727356027,
-      "updated": 1727356044
-    },
-    {
-      "id": "66f55c8c1280f00000e0059b",
-      "text": "    input: string;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356045,
-      "updated": 1727356050
-    },
-    {
-      "id": "66f55c911280f00000e0059c",
-      "text": "    offset: number;",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356050,
-      "updated": 1727356053
-    },
-    {
-      "id": "66f55c861280f00000e0059a",
-      "text": "  }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356040,
-      "updated": 1727356040
-    },
-    {
-      "id": "66f55d2f1280f00000e005b2",
-      "text": "  ",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356208,
-      "updated": 1727356208
-    },
-    {
-      "id": "66f55d2f1280f00000e005b3",
-      "text": "  const shift = (input: ParserInput, len: number): [string, ParserInput] => {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356208,
-      "updated": 1727356295
-    },
-    {
-      "id": "66f55d461280f00000e005b4",
-      "text": "    const shifted = input.input.slice(offset, offset + len);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356232,
-      "updated": 1727356279
-    },
-    {
-      "id": "66f55d771280f00000e005b6",
-      "text": "    return [",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356280,
-      "updated": 1727356354
-    },
-    {
-      "id": "66f55dc11280f00000e005b7",
-      "text": "      shifted,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356354,
-      "updated": 1727356358
-    },
-    {
-      "id": "66f55dc51280f00000e005b8",
-      "text": "      {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356358,
-      "updated": 1727356360
-    },
-    {
-      "id": "66f55dc71280f00000e005b9",
-      "text": "        input: input.input,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356360,
-      "updated": 1727356364
-    },
-    {
-      "id": "66f55dcb1280f00000e005ba",
-      "text": "        offset: input.offset + len,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356364,
-      "updated": 1727356367
-    },
-    {
-      "id": "66f55dce1280f00000e005bb",
-      "text": "      }",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356368,
-      "updated": 1727356369
-    },
-    {
-      "id": "66f55dd01280f00000e005bc",
-      "text": "    ];",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356369,
-      "updated": 1727356373
-    },
-    {
-      "id": "66f55d471280f00000e005b5",
-      "text": "  };",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356233,
-      "updated": 1727356376
+      "updated": 1727391486
     },
     {
       "id": "66f55c801280f00000e00599",
@@ -713,52 +615,31 @@
     },
     {
       "id": "66f55cff1280f00000e005ac",
-      "text": "  export const text = <S extends string>(string: S): Parser<S> =>",
+      "text": "  export const text = <S extends string>(value: S): Parser<S> =>",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1727356160,
-      "updated": 1727356875
+      "updated": 1727391521
     },
     {
       "id": "66f55d181280f00000e005af",
-      "text": "    (input) => {",
+      "text": "    (input) => input.startsWith(value)",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1727356185,
-      "updated": 1727356435
-    },
-    {
-      "id": "66f55d121280f00000e005ad",
-      "text": "      const [shifted, rest] = shift(input, string.length);",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356179,
-      "updated": 1727356447
-    },
-    {
-      "id": "66f55e011280f00000e005bd",
-      "text": "      return shifted === string",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356418,
-      "updated": 1727356460
+      "updated": 1727391548
     },
     {
       "id": "66f55e2b1280f00000e005be",
-      "text": "        ? { ok: true, value: string, rest }",
+      "text": "      ? { ok: true, value, rest: input.slice(value.length) }",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1727356460,
-      "updated": 1727356463
+      "updated": 1727391550
     },
     {
       "id": "66f55e2f1280f00000e005bf",
-      "text": "        : { ok: false, expected: string, rest: input };",
+      "text": "      : { ok: false, expected: value, rest: input };",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1727356464,
-      "updated": 1727356485
-    },
-    {
-      "id": "66f55e451280f00000e005c0",
-      "text": "    };",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727356488,
-      "updated": 1727356500
+      "updated": 1727391550
     },
     {
       "id": "66f55e701280f00000e005c2",
@@ -902,10 +783,10 @@
     },
     {
       "id": "66f55fcd1280f00000ece902",
-      "text": " code:ex1.ts",
+      "text": " code:eg-only.ts",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1727356878,
-      "updated": 1727356878
+      "updated": 1727394473
     },
     {
       "id": "66f55fb91280f00000ece901",
@@ -985,11 +866,46 @@
       "updated": 1727356987
     },
     {
+      "id": "66f5f7a31280f000001b32f0",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395748,
+      "updated": 1727395748
+    },
+    {
+      "id": "66f5f7a31280f000001b32f1",
+      "text": "  // 実行",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395748,
+      "updated": 1727395751
+    },
+    {
+      "id": "66f5f7a31280f000001b32f2",
+      "text": "  console.log(parse(\"hogebar\"));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395748,
+      "updated": 1727395753
+    },
+    {
+      "id": "66f601141280f000001b335d",
+      "text": " TODO: 単体テスト書く",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727398165,
+      "updated": 1727398170
+    },
+    {
       "id": "66f5606e1280f00000ece90e",
       "text": " このように小さなparserを組み合わせて、複雑なparserを作り上げる方法を[Parser combinator]と呼ぶ",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1727357039,
       "updated": 1727357069
+    },
+    {
+      "id": "66f5e6491280f000001b325c",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391306,
+      "updated": 1727391306
     },
     {
       "id": "66f55f9f1280f00000ece900",
@@ -1027,67 +943,1033 @@
       "updated": 1727357238
     },
     {
+      "id": "66f5f6881280f000001b32e1",
+      "text": " 必要なもの",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395466,
+      "updated": 1727395470
+    },
+    {
+      "id": "66f5f68c1280f000001b32e2",
+      "text": "  任意の型`Input`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395470,
+      "updated": 1727395477
+    },
+    {
+      "id": "66f5f6941280f000001b32e3",
+      "text": "  `Input`から任意の長さのデータを読み取る関数`shift`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395478,
+      "updated": 1727395507
+    },
+    {
+      "id": "66f5f72c1280f000001b32eb",
+      "text": "   `string-only.ts`で`String.slice()`で行っていた処理を抽象化したもの",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395629,
+      "updated": 1727395652
+    },
+    {
+      "id": "66f5f6b31280f000001b32e4",
+      "text": "   読み出したデータが`Input`と同じであるとは限らないので、`Chunk`という別の型を用意する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395508,
+      "updated": 1727395536
+    },
+    {
+      "id": "66f5f6d01280f000001b32e5",
+      "text": "    例えば、`string[]`から呼び出すとき、結果をjoinして`string`として返すなど",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395537,
+      "updated": 1727395595
+    },
+    {
+      "id": "66f5f70b1280f000001b32e7",
+      "text": "   併せて、残りの解析対象データを`Input`として返す",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395597,
+      "updated": 1727395615
+    },
+    {
+      "id": "66f5e68d1280f000001b325e",
+      "text": " 色々実装法がある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391374,
+      "updated": 1727391583
+    },
+    {
+      "id": "66f5f74b1280f000001b32ec",
+      "text": "  `shift`の型から`Input`, `Chunk`を取り出す & `Parser`の定義時にすべての型を確定させる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395661,
+      "updated": 1727395702
+    },
+    {
+      "id": "66f630fa1280f00000fb5c9f",
+      "text": "  2024-09-27 13:13:48 これ動きません。型をミスってます[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727410426,
+      "updated": 1727410438
+    },
+    {
+      "id": "66f631061280f00000fb5ca0",
+      "text": "   後ほど直します",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727410438,
+      "updated": 1727410442
+    },
+    {
+      "id": "66f5e75e1280f000001b325f",
+      "text": "  code:generic-types-1.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391583,
+      "updated": 1727395992
+    },
+    {
+      "id": "66f5f1461280f000001b32bd",
+      "text": "   export interface Reader {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394119,
+      "updated": 1727394971
+    },
+    {
+      "id": "66f5f1461280f000001b32be",
+      "text": "     shift: (input: unknown, length: number) => [unknown, unknown];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394119,
+      "updated": 1727394990
+    },
+    {
+      "id": "66f5f1461280f000001b32bf",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394119,
+      "updated": 1727394119
+    },
+    {
+      "id": "66f5f4e11280f000001b32db",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395044,
+      "updated": 1727395044
+    },
+    {
+      "id": "66f5f4e11280f000001b32dc",
+      "text": "   export type Input<R extends Reader> = R[\"shift\"] extends (input: infer I, length: number) => [infer _, I] ? I :never;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395044,
+      "updated": 1727395143
+    },
+    {
+      "id": "66f5f5161280f000001b32dd",
+      "text": "   export type Chunk<R extends Reader> = R[\"shift\"] extends (input: infer _, length: number) => [infer C, _] ? C :never;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395096,
+      "updated": 1727395155
+    },
+    {
+      "id": "66f5f0851280f000001b32b7",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727393926,
+      "updated": 1727393926
+    },
+    {
+      "id": "66f5e7721280f000001b3262",
+      "text": "   interface ParserOk<A, R extends Reader> {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727395220
+    },
+    {
+      "id": "66f5e7721280f000001b3263",
+      "text": "     ok: true;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b3264",
+      "text": "     parsed: A;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b3265",
+      "text": "     rest: Input<R>;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727395236
+    },
+    {
+      "id": "66f5e7721280f000001b3266",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b3267",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b3268",
+      "text": "   interface ParserErr<I, R extends Reader> {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727395225
+    },
+    {
+      "id": "66f5e7721280f000001b3269",
+      "text": "     ok: false;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b326a",
+      "text": "     expected: string;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b326b",
+      "text": "     rest: Input<R>;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727395242
+    },
+    {
+      "id": "66f5e7721280f000001b326c",
+      "text": "   }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b326d",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b326e",
+      "text": "   export type ParserResult<A, R extends Reader> = ParserOk<A, R> | ParserErr<R>;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727396040
+    },
+    {
+      "id": "66f5f1321280f000001b32bb",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394099,
+      "updated": 1727394099
+    },
+    {
+      "id": "66f5e7721280f000001b326f",
+      "text": "  code:generic-1.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727396002
+    },
+    {
+      "id": "66f5f8ad1280f000001b332b",
+      "text": "   import type { Input, ParseResult, Reader } from \"./generic-types-1.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396014,
+      "updated": 1727396050
+    },
+    {
+      "id": "66f5f8d11280f000001b332c",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396050,
+      "updated": 1727396050
+    },
+    {
+      "id": "66f5e7721280f000001b3270",
+      "text": "   type Parser<A, R extends Reader> = (input: Input<R>, reader: R) => ParserResult<A, R>;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727395276
+    },
+    {
+      "id": "66f5e7721280f000001b3271",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b3272",
+      "text": "   export const text = <S extends string, R extends Reader>(value: S): Parser<S, R> =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727395290
+    },
+    {
+      "id": "66f5e7721280f000001b3273",
+      "text": "     (prev, { shift }) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727394394
+    },
+    {
+      "id": "66f5f2251280f000001b32c3",
+      "text": "       const [shifted, next] = shift(prev, value.length);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394342,
+      "updated": 1727394399
+    },
+    {
+      "id": "66f5f2311280f000001b32c4",
+      "text": "       return shifted === value",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394354,
+      "updated": 1727394360
+    },
+    {
+      "id": "66f5e7721280f000001b3274",
+      "text": "       ? { ok: true, value, rest: next }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727394391
+    },
+    {
+      "id": "66f5e7721280f000001b3275",
+      "text": "       : { ok: false, expected: value, rest: prev };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727394400
+    },
+    {
+      "id": "66f5e7721280f000001b3276",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b3277",
+      "text": "   export const and = <A, B, R extends Reader>(parseA: Parser<A, R>, parseB: Parser<B, R>): Parser<[A, B], R> =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727395310
+    },
+    {
+      "id": "66f5e7721280f000001b3278",
+      "text": "     (prev, reader) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727394409
+    },
+    {
+      "id": "66f5e7721280f000001b3279",
+      "text": "       const result = parseA(prev, reader);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727394414
+    },
+    {
+      "id": "66f5e7721280f000001b327a",
+      "text": "       if (!result.ok) return result;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b327b",
+      "text": "       const result2 = parseB(prev, reader);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727394421
+    },
+    {
+      "id": "66f5e7721280f000001b327c",
+      "text": "       if (!result2.ok) return result2;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b327d",
+      "text": "       return {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b327e",
+      "text": "         ok: true,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b327f",
+      "text": "         value: [result.value, result2.value],",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b3280",
+      "text": "         rest: result2.rest,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b3281",
+      "text": "       };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b3282",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b3283",
+      "text": "   export const or = <A, B, R extends Reader>(parseA: Parser<A, R>, parseB: Parser<B, R>): Parser<A | B, R> =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727395322
+    },
+    {
+      "id": "66f5e7721280f000001b3284",
+      "text": "     (prev, reader) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727394439
+    },
+    {
+      "id": "66f5e7721280f000001b3285",
+      "text": "       const result = parseA(prev);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727394441
+    },
+    {
+      "id": "66f5e7721280f000001b3286",
+      "text": "       if (result.ok) return result;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e7721280f000001b3287",
+      "text": "       return parseB(prev);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727394446
+    },
+    {
+      "id": "66f5e7721280f000001b3288",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391603,
+      "updated": 1727391603
+    },
+    {
+      "id": "66f5e64c1280f000001b325d",
+      "text": "  code:eg-1.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727391309,
+      "updated": 1727394482
+    },
+    {
+      "id": "66f5f2b11280f000001b32c5",
+      "text": "   import { text, and, or } from \"./generic-1.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394483,
+      "updated": 1727394490
+    },
+    {
+      "id": "66f5f2b21280f000001b32c6",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394483,
+      "updated": 1727394483
+    },
+    {
+      "id": "66f5f2d91280f000001b32d1",
+      "text": "   const textReader = {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394525,
+      "updated": 1727395333
+    },
+    {
+      "id": "66f5f3071280f000001b32d6",
+      "text": "     shift: (input: string, length: number): [string, string] => [",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394568,
+      "updated": 1727395364
+    },
+    {
+      "id": "66f5f32a1280f000001b32d8",
+      "text": "       input.slice(0, length),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394603,
+      "updated": 1727394627
+    },
+    {
+      "id": "66f5f3421280f000001b32da",
+      "text": "       input.slice(length),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394627,
+      "updated": 1727395346
+    },
+    {
+      "id": "66f5f6111280f000001b32df",
+      "text": "     ];",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395346,
+      "updated": 1727395348
+    },
+    {
+      "id": "66f5f3081280f000001b32d7",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394570,
+      "updated": 1727394588
+    },
+    {
+      "id": "66f5f6311280f000001b32e0",
+      "text": "   type TextReader = typeof textReader;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395378,
+      "updated": 1727395385
+    },
+    {
+      "id": "66f5f2d71280f000001b32d0",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394520,
+      "updated": 1727394520
+    },
+    {
+      "id": "66f5f2b21280f000001b32c7",
+      "text": "   const hoge = text<\"hoge\", TextReader>(\"hoge\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394483,
+      "updated": 1727395402
+    },
+    {
+      "id": "66f5f2b21280f000001b32c8",
+      "text": "   const huga = text<\"huga\", TextReader>(\"huga\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394483,
+      "updated": 1727395408
+    },
+    {
+      "id": "66f5f2b21280f000001b32c9",
+      "text": "   const foo = text<\"foo\", TextReader>(\"foo\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394483,
+      "updated": 1727395419
+    },
+    {
+      "id": "66f5f2b21280f000001b32ca",
+      "text": "   const bar = text<\"bar\", TextReader>(\"bar\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394483,
+      "updated": 1727395421
+    },
+    {
+      "id": "66f5f2b21280f000001b32cb",
+      "text": "   /** /(hoge|hoo)(huga|bar)/にマッチする文字列をparseする */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394483,
+      "updated": 1727394483
+    },
+    {
+      "id": "66f5f2b21280f000001b32cc",
+      "text": "   const parse = and(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394483,
+      "updated": 1727394483
+    },
+    {
+      "id": "66f5f2b21280f000001b32cd",
+      "text": "     or(hoge, foo),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394483,
+      "updated": 1727394483
+    },
+    {
+      "id": "66f5f2b21280f000001b32ce",
+      "text": "     or(huga, bar),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394483,
+      "updated": 1727394483
+    },
+    {
+      "id": "66f5f2b21280f000001b32cf",
+      "text": "   );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727394483,
+      "updated": 1727394483
+    },
+    {
+      "id": "66f5f7811280f000001b32ed",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395714,
+      "updated": 1727395714
+    },
+    {
+      "id": "66f5f7811280f000001b32ee",
+      "text": "   // 実行",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395714,
+      "updated": 1727395716
+    },
+    {
+      "id": "66f5f7831280f000001b32ef",
+      "text": "   console.log(parse(\"hogebar\", textReader));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395716,
+      "updated": 1727395762
+    },
+    {
+      "id": "66f5f7c21280f000001b32f3",
+      "text": "  任意の型を受け取れるようになったが、`Parser`を作るときに`Reader`を明示しなければならなくなった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395779,
+      "updated": 1727395815
+    },
+    {
+      "id": "66f5f7ed1280f000001b32f4",
+      "text": "   `text<\"hoge\", TextReader>(\"hoge\")`のような記法",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395823,
+      "updated": 1727395830
+    },
+    {
+      "id": "66f5f7f41280f000001b32f5",
+      "text": "   書きづらい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395830,
+      "updated": 1727395836
+    },
+    {
+      "id": "66f5f7fe1280f000001b32f6",
+      "text": "   引数から推論できるはずの`\"hoge\"`まで明示しなければならないのがつらい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395840,
+      "updated": 1727395860
+    },
+    {
+      "id": "66f5f8181280f000001b32f7",
+      "text": " そこで、`R extends Reader`を関数型に埋め込み、型推論をparser利用時まで遅延させる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395865,
+      "updated": 1727396371
+    },
+    {
+      "id": "66f5f8611280f000001b32f8",
+      "text": "  code:generic-2.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395938,
+      "updated": 1727395952
+    },
+    {
+      "id": "66f5f8a51280f000001b332a",
+      "text": "   import type { Input, ParseResult, Reader } from \"./generic-types-1.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396006,
+      "updated": 1727396057
+    },
+    {
+      "id": "66f5f8d81280f000001b332d",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396058,
+      "updated": 1727396058
+    },
+    {
+      "id": "66f5f8781280f000001b330f",
+      "text": "   type Parser<A> = <R extends Reader>(input: Input<R>, reader: R) => ParserResult<A, R>;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395981
+    },
+    {
+      "id": "66f5f8781280f000001b3310",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3311",
+      "text": "   export const text = <S extends string>(value: S): Parser<S> =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727396078
+    },
+    {
+      "id": "66f5f8781280f000001b3312",
+      "text": "     (prev, { shift }) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3313",
+      "text": "       const [shifted, next] = shift(prev, value.length);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3314",
+      "text": "       return shifted === value",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3315",
+      "text": "       ? { ok: true, value, rest: next }",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3316",
+      "text": "       : { ok: false, expected: value, rest: prev };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3317",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3318",
+      "text": "   export const and = <A, B>(parseA: Parser<A>, parseB: Parser<B>): Parser<[A, B]> =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727396094
+    },
+    {
+      "id": "66f5f8781280f000001b3319",
+      "text": "     (prev, reader) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b331a",
+      "text": "       const result = parseA(prev, reader);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b331b",
+      "text": "       if (!result.ok) return result;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b331c",
+      "text": "       const result2 = parseB(prev, reader);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b331d",
+      "text": "       if (!result2.ok) return result2;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b331e",
+      "text": "       return {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b331f",
+      "text": "         ok: true,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3320",
+      "text": "         value: [result.value, result2.value],",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3321",
+      "text": "         rest: result2.rest,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3322",
+      "text": "       };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3323",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3324",
+      "text": "   export const or = <A, B>(parseA: Parser<A>, parseB: Parser<B>): Parser<A | B> =>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727396107
+    },
+    {
+      "id": "66f5f8781280f000001b3325",
+      "text": "     (prev, reader) => {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3326",
+      "text": "       const result = parseA(prev);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3327",
+      "text": "       if (result.ok) return result;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3328",
+      "text": "       return parseB(prev);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
+      "id": "66f5f8781280f000001b3329",
+      "text": "     };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727395966,
+      "updated": 1727395966
+    },
+    {
       "id": "66f561361280f00000ece916",
-      "text": "",
+      "text": "  code:eg-2.ts",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1727357239,
-      "updated": 1727357239
+      "updated": 1727396117
     },
     {
-      "id": "66f5613e1280f00000ece919",
-      "text": "型推論を遅延させたかったのは、次のようなコードを動かしたかったから",
+      "id": "66f5f9141280f000001b332f",
+      "text": "   import { text, and, or } from \"./generic-2.ts\";",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727357247,
-      "updated": 1727357288
+      "created": 1727396117,
+      "updated": 1727396176
     },
     {
-      "id": "66f561381280f00000ece917",
-      "text": " code:ts",
+      "id": "66f5f9151280f000001b3330",
+      "text": "   ",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727357241,
-      "updated": 1727357291
+      "created": 1727396118,
+      "updated": 1727396118
     },
     {
-      "id": "66f5613b1280f00000ece918",
-      "text": "  const hello = text(\"hello\");",
+      "id": "66f5f9151280f000001b3331",
+      "text": "   const textReader = {",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727357244,
-      "updated": 1727357331
+      "created": 1727396118,
+      "updated": 1727396118
     },
     {
-      "id": "66f561881280f00000ece91d",
-      "text": "  const num = text(\"365\");",
+      "id": "66f5f9151280f000001b3332",
+      "text": "     shift: (input: string, length: number): [string, string] => [",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727357321,
-      "updated": 1727357344
+      "created": 1727396118,
+      "updated": 1727396118
     },
     {
-      "id": "66f561a01280f00000ece91e",
-      "text": "  const parse = (input: string) => and(hello, num)(textReader, { input, offset: 0 });",
+      "id": "66f5f9151280f000001b3333",
+      "text": "       input.slice(0, length),",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727357345,
-      "updated": 1727357432
+      "created": 1727396118,
+      "updated": 1727396118
     },
     {
-      "id": "66f561fc1280f00000ece91f",
-      "text": " `hello`, `num`の時点では使う`Reader`を確定させず、`parse`の定義で`textReader`を渡したときに初めて型推論を確定させたかった",
+      "id": "66f5f9151280f000001b3334",
+      "text": "       input.slice(length),",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727357437,
-      "updated": 1727357485
+      "created": 1727396118,
+      "updated": 1727396118
     },
     {
-      "id": "66f562321280f00000ece920",
-      "text": "これだけなら`<R>(reader: R, input: Input<R>) => A`でもいいのだが、`R`に型制約をかけたいときがあった",
+      "id": "66f5f9151280f000001b3335",
+      "text": "     ];",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1727357491,
-      "updated": 1727357531
+      "created": 1727396118,
+      "updated": 1727396118
+    },
+    {
+      "id": "66f5f9151280f000001b3336",
+      "text": "   };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396118,
+      "updated": 1727396118
+    },
+    {
+      "id": "66f5f9151280f000001b3338",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396118,
+      "updated": 1727396118
+    },
+    {
+      "id": "66f5f9151280f000001b3339",
+      "text": "   const hoge = text(\"hoge\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396118,
+      "updated": 1727396188
+    },
+    {
+      "id": "66f5f9151280f000001b333a",
+      "text": "   const huga = text(\"huga\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396118,
+      "updated": 1727396191
+    },
+    {
+      "id": "66f5f9151280f000001b333b",
+      "text": "   const foo = text(\"foo\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396118,
+      "updated": 1727396196
+    },
+    {
+      "id": "66f5f9151280f000001b333c",
+      "text": "   const bar = text(\"bar\");",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396118,
+      "updated": 1727396207
+    },
+    {
+      "id": "66f5f9151280f000001b333d",
+      "text": "   /** /(hoge|hoo)(huga|bar)/にマッチする文字列をparseする */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396118,
+      "updated": 1727396118
+    },
+    {
+      "id": "66f5f9151280f000001b333e",
+      "text": "   const parse = and(",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396118,
+      "updated": 1727396118
+    },
+    {
+      "id": "66f5f9151280f000001b333f",
+      "text": "     or(hoge, foo),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396118,
+      "updated": 1727396118
+    },
+    {
+      "id": "66f5f9151280f000001b3340",
+      "text": "     or(huga, bar),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396118,
+      "updated": 1727396118
+    },
+    {
+      "id": "66f5f9151280f000001b3341",
+      "text": "   );",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396118,
+      "updated": 1727396118
+    },
+    {
+      "id": "66f5f9151280f000001b3342",
+      "text": "   ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396118,
+      "updated": 1727396118
+    },
+    {
+      "id": "66f5f9151280f000001b3343",
+      "text": "   // 実行",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396118,
+      "updated": 1727396118
+    },
+    {
+      "id": "66f5f9721280f000001b3345",
+      "text": "   // ここで`R`が`typeof textReader`確定する",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396211,
+      "updated": 1727399262
+    },
+    {
+      "id": "66f5f9151280f000001b3344",
+      "text": "   console.log(parse(\"hogebar\", textReader));",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396118,
+      "updated": 1727396118
+    },
+    {
+      "id": "66f5f9861280f000001b3346",
+      "text": " `eg-2.ts`のようなコードなら`type Parser<A> = <R extends Reader>(input: Input<R>, reader: R) => ParserResult<A, R>;`で十分",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396231,
+      "updated": 1727396277
+    },
+    {
+      "id": "66f5f9b41280f000001b3347",
+      "text": " しかし、`R`にさらに型制約をかけたい状況があった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396277,
+      "updated": 1727399277
     },
     {
       "id": "66f561791280f00000ece91c",
-      "text": " 眠いので続きはまた今度[takker.icon]",
+      "text": " 続きはまた今度[takker.icon]",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1727357306,
-      "updated": 1727357306
+      "updated": 1727396348
     },
     {
       "id": "66f5606b1280f00000ece90d",
@@ -1182,17 +2064,31 @@
     },
     {
       "id": "66f56149aff09e000037811a",
-      "text": " type Gen<R extends TypeBase> = <R2 extends R>(reader: R2) => 2;",
+      "text": " type Gen<R extends TypeBase> = <R2 extends R>(x: R2) => x;",
       "userId": "582e63d27c56960011aff09e",
       "created": 1727357261,
-      "updated": 1727357261
+      "updated": 1727390391
     },
     {
       "id": "66f56149aff09e000037811b",
-      "text": " type Gen2<R2 extends TypeBase> = (reader: R2) => 2;",
+      "text": " type Gen2<R2 extends TypeBase> = (x: R2) => x;",
       "userId": "582e63d27c56960011aff09e",
       "created": 1727357261,
-      "updated": 1727357261
+      "updated": 1727390392
+    },
+    {
+      "id": "66f5e4861280f000001b3259",
+      "text": "↑`=> x`は`=> 2`？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390855,
+      "updated": 1727390869
+    },
+    {
+      "id": "66f5e4841280f000001b3258",
+      "text": "code:ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390853,
+      "updated": 1727390854
     },
     {
       "id": "66f56149aff09e000037811c",
@@ -1203,10 +2099,10 @@
     },
     {
       "id": "66f56149aff09e000037811d",
-      "text": " const oA: Gen<TypeA> = () => 2;",
+      "text": " const oA: Gen<TypeA> = (x) => x;",
       "userId": "582e63d27c56960011aff09e",
       "created": 1727357261,
-      "updated": 1727357261
+      "updated": 1727390395
     },
     {
       "id": "66f56149aff09e000037811e",
@@ -1238,10 +2134,10 @@
     },
     {
       "id": "66f56149aff09e0000378122",
-      "text": " const test3: <R2 extends TypeB>(reader: R2) => 2 = oA;",
+      "text": " const test3: <R2 extends TypeB>(x: R2) => x = oA;",
       "userId": "582e63d27c56960011aff09e",
       "created": 1727357261,
-      "updated": 1727357261
+      "updated": 1727390401
     },
     {
       "id": "66f56149aff09e0000378123",
@@ -1321,6 +2217,874 @@
       "updated": 1727358500
     },
     {
+      "id": "66f5e08b1280f000001b3239",
+      "text": "\t\t\t\t\tはーんそういうことか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727389836,
+      "updated": 1727390038
+    },
+    {
+      "id": "66f5e0931280f000001b323a",
+      "text": " \t  しかし、そうすると`test3`がエラーになるのはなぜだろう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727389844,
+      "updated": 1727390041
+    },
+    {
+      "id": "66f5e0bb1280f000001b323b",
+      "text": " \t   `Gen<TypeB>`と`<R2 extends TypeB>(reader: R2) => 2`は同じ型のはずだけど",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727389884,
+      "updated": 1727389909
+    },
+    {
+      "id": "66f5e0de1280f000001b323c",
+      "text": " \t   これが下の記事に書いてあることかな([- まだ読んでない]関係なかった)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727389919,
+      "updated": 1727390581
+    },
+    {
+      "id": "66f5e1e7aff09e0000a832df",
+      "text": " \t   同じ型ではないのでは？[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727390184,
+      "updated": 1727390190
+    },
+    {
+      "id": "66f5e1eeaff09e0000a832e0",
+      "text": " \t   \t`<R2 extends TypeB>(reader: R2) => 2`は`Gen2<TypeB>`と同じ型だと思ってて、なのでtest4を作って期待通りエラーになった",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727390190,
+      "updated": 1727390519
+    },
+    {
+      "id": "66f5e2f6aff09e0000a832e1",
+      "text": " \t   [https://gyazo.com/849a98032d820dac210f3f0eedcda7c7]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727390454,
+      "updated": 1727390456
+    },
+    {
+      "id": "66f5e2f8aff09e0000a832e2",
+      "text": "     えっ同じじゃない？まじですか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390456,
+      "updated": 1727390565
+    },
+    {
+      "id": "66f5e3501280f000001b3244",
+      "text": "     　初歩的な誤認だったのか",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390545,
+      "updated": 1727390606
+    },
+    {
+      "id": "66f5e3671280f000001b3245",
+      "text": "     確認",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390568,
+      "updated": 1727390600
+    },
+    {
+      "id": "66f5e3c41280f000001b324a",
+      "text": "      `Gen<TypeB>`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390661,
+      "updated": 1727390667
+    },
+    {
+      "id": "66f5e3871280f000001b3246",
+      "text": "       `type Gen<R extends TypeBase> = <R2 extends R>(x: R2) => 2;`だから、`R`に`TypeB`を代入して`<R2 extends TypeB>(reader: R2) => 2`になる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390600,
+      "updated": 1727390873
+    },
+    {
+      "id": "66f5e3cf1280f000001b324b",
+      "text": "      `Gen2<TypeB>`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390673,
+      "updated": 1727390675
+    },
+    {
+      "id": "66f5e3ad1280f000001b3249",
+      "text": "       `type Gen2<R2 extends TypeBase> = (x: R2) => 2;`だから、`R2`に`TypeB`を代入して`(x: TypeB) => 2`になる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390638,
+      "updated": 1727390876
+    },
+    {
+      "id": "66f5fb871982700000650106",
+      "text": "\t↑は↓こう書いたほうがもっとシンプルに確認できるのでは[mrsekut.icon]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396743,
+      "updated": 1727396763
+    },
+    {
+      "id": "66f5fb9b1982700000650108",
+      "text": "\t\tcode:ts",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396763,
+      "updated": 1727396766
+    },
+    {
+      "id": "66f5fba3198270000065010e",
+      "text": "   interface TypeB {",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396772,
+      "updated": 1727396772
+    },
+    {
+      "id": "66f5fba3198270000065010f",
+      "text": "     chunk: 'B';",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396772,
+      "updated": 1727396772
+    },
+    {
+      "id": "66f5fba31982700000650110",
+      "text": "   }",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396772,
+      "updated": 1727396772
+    },
+    {
+      "id": "66f5fba31982700000650111",
+      "text": "   ",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396772,
+      "updated": 1727396772
+    },
+    {
+      "id": "66f5fbbb198270000065011b",
+      "text": "   // 要はこの2つの挙動に差異があることを確認したいように見える",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396795,
+      "updated": 1727396811
+    },
+    {
+      "id": "66f5fba31982700000650112",
+      "text": "   type Gen = <R2>(x: R2) => 2;",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396772,
+      "updated": 1727397434
+    },
+    {
+      "id": "66f5fba31982700000650113",
+      "text": "   type Gen2<R2> = (x: R2) => 2;",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396772,
+      "updated": 1727397440
+    },
+    {
+      "id": "66f5fba31982700000650114",
+      "text": "   ",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396772,
+      "updated": 1727396772
+    },
+    {
+      "id": "66f5fba31982700000650115",
+      "text": "   const oA: Gen = x => 2;",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396772,
+      "updated": 1727396772
+    },
+    {
+      "id": "66f5fba31982700000650116",
+      "text": "   ",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396772,
+      "updated": 1727396772
+    },
+    {
+      "id": "66f5fba31982700000650117",
+      "text": "   const test1: Gen = oA;",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396772,
+      "updated": 1727396772
+    },
+    {
+      "id": "66f5fda61982700000650125",
+      "text": "   ",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727397287,
+      "updated": 1727397287
+    },
+    {
+      "id": "66f5fda61982700000650126",
+      "text": "   // test3とtest4は同じなので省略",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727397287,
+      "updated": 1727397296
+    },
+    {
+      "id": "66f5fba31982700000650119",
+      "text": "   // @ts-expect-error",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396772,
+      "updated": 1727396772
+    },
+    {
+      "id": "66f5fba3198270000065011a",
+      "text": "   const test4: Gen2<TypeB> = oA; ",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396772,
+      "updated": 1727396788
+    },
+    {
+      "id": "66f5fbe71982700000650120",
+      "text": "  要はこの2つの挙動に差異があることを確認したい(で合っている？)",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396840,
+      "updated": 1727396873
+    },
+    {
+      "id": "66f5fb871982700000650107",
+      "text": " \t\tcode:ts",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396744,
+      "updated": 1727396870
+    },
+    {
+      "id": "66f5fbe5198270000065011e",
+      "text": "    type Gen = <R2>(x: R2) => 2;",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396837,
+      "updated": 1727397488
+    },
+    {
+      "id": "66f5fbe5198270000065011f",
+      "text": "    type Gen2<R2> = (x: R2) => 2;",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396837,
+      "updated": 1727397492
+    },
+    {
+      "id": "66f600d61280f000001b335c",
+      "text": "  この2つの挙動が違うのは理解できます(たぶん)[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727398103,
+      "updated": 1727398146
+    },
+    {
+      "id": "66f5ffaf1280f000001b3348",
+      "text": " [nishio.icon]さんはそのように認識しているみたいです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727397809,
+      "updated": 1727397837
+    },
+    {
+      "id": "66f5fc5d1982700000650123",
+      "text": "　ただ[takker.icon]はそうではなくて、↓の`test1`が通るのに`test3`がエラーになる原因を知りたいです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727396957,
+      "updated": 1727398088
+    },
+    {
+      "id": "66f608ce1280f000001b33a4",
+      "text": "　 [TS playground https://www.typescriptlang.org/play/?#code/C4TwDgpgBA4hB2BmAPAJQHxQLxTQJiggA9gEATAZygwAoiAuavASm0zwG4BYAKFEigAVcBACC2KAG8oAYwAWAV3gBrRgCJRaqAF9ufEUJEAhCdPlLVUNUa27eMgPbwKwKA9GM4SZMMijMODQA+qxY7HqOzq6kLgCMnggovhBGAW6iegD0mVAAAsAUALTEkDLAxQBOFQ4V9k4uUDHAiIz4hCTkVMmpdIyoLGxQBDjuHEA]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400144,
+      "updated": 1727400152
+    },
+    {
+      "id": "66f5ffd21280f000001b3349",
+      "text": "　 code:ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727397843,
+      "updated": 1727397867
+    },
+    {
+      "id": "66f5ffe91280f000001b334b",
+      "text": "　  type Gen3<R> = <R2 extends R>(x: R2) => 2;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727397867,
+      "updated": 1727398045
+    },
+    {
+      "id": "66f6009c1280f000001b3355",
+      "text": "   type TypeA = { chunk: \"A\" };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727398045,
+      "updated": 1727398045
+    },
+    {
+      "id": "66f6009c1280f000001b3356",
+      "text": "   type TypeB = { chunk: \"B\" };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727398045,
+      "updated": 1727398045
+    },
+    {
+      "id": "66f6009c1280f000001b3357",
+      "text": "   const oA: Gen3<TypeA> = (_) => 2;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727398045,
+      "updated": 1727398045
+    },
+    {
+      "id": "66f6009c1280f000001b3358",
+      "text": "   const test1: Gen3<TypeB> = oA;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727398045,
+      "updated": 1727398045
+    },
+    {
+      "id": "66f6009c1280f000001b3359",
+      "text": "   // @ts-expect-error",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727398045,
+      "updated": 1727398045
+    },
+    {
+      "id": "66f6009c1280f000001b335a",
+      "text": "   const test3: <R2 extends TypeB>(x: R2) => 2 = oA;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727398045,
+      "updated": 1727398045
+    },
+    {
+      "id": "66f6029f1982700000650127",
+      "text": "  たしかに、だいぶ謎だ。展開するかどうかで挙動が変わっているように見える[mrsekut.icon]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727398560,
+      "updated": 1727398579
+    },
+    {
+      "id": "66f605311982700000650129",
+      "text": "  2点確認ポイントがありそう、順番に潰したい",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399217,
+      "updated": 1727399302
+    },
+    {
+      "id": "66f6053b198270000065012a",
+      "text": "  \t健全な型システムの場合、あるべき(?)挙動は〇〇である",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399227,
+      "updated": 1727399252
+    },
+    {
+      "id": "66f60553198270000065012b",
+      "text": "  \t\t↑test1 or test3",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399252,
+      "updated": 1727399261
+    },
+    {
+      "id": "66f6059c1982700000650130",
+      "text": "  \t\tここは関数のvariantの話だ[mrsekut.icon]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399324,
+      "updated": 1727399337
+    },
+    {
+      "id": "66f605a91982700000650131",
+      "text": "  \t\t`Gen3<TypeA>`と`Gen3<TypeB>`のサブタイプの関係を確認する必要がある",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399338,
+      "updated": 1727399386
+    },
+    {
+      "id": "66f606101982700000650133",
+      "text": "  \t\tただ、今回の場合、`TypeA`と`TypeB`にはサブタイプの関係はない",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399441,
+      "updated": 1727399461
+    },
+    {
+      "id": "66f6071d1280f000001b339e",
+      "text": "  \t\tなので`test3`があるべき挙動、のはずだけど……[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399710,
+      "updated": 1727399722
+    },
+    {
+      "id": "66f607371982700000650136",
+      "text": "  \t\t\tですよね[mrsekut.icon]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399735,
+      "updated": 1727399738
+    },
+    {
+      "id": "66f6055e198270000065012d",
+      "text": "  \t本来はtest3があっているはずなのに、test1がそうならないのはなぜか",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399263,
+      "updated": 1727399747
+    },
+    {
+      "id": "66f6091e1280f000001b33a9",
+      "text": "  \t [TS playground https://www.typescriptlang.org/play/?#code/PQKhFgCgAIWhBQMgwCFB2DIVoZBrDIfoZAlDIdYZBpBkEsGQMQZDAkhkBIlQLO1BNBkGiGKWaAUwDoBzd6ASQGcAygFcARgBUAngAdWAHgDkACwD2nVgoA00fgBcATgEsAdpwB8AbmjBg0ZWo3Q5ALh0GTnaICsGVIHMGaAbCrMwgwFC6Mqx8QmJSsnLw2shm0AC8CGwAHrqsxgAm-NDI0AD8AfpB0K4AZgCGADb8rBZQ4ZHQAOK5cgBKKem9AExZOfmFfQAUma49gwCUaSmDLZARstBxrPBp0ADe0ADGSsLGANauAETwF9AAvitrUZvF6ftHJ+fQF8g3962r7QA8tt0l1jHJNvBLG11uJWHoAIw7AQiCSROTA7RgiGRZKWay2QIcbyAHQZAPj-MKe8N0AGZkTE0fFMU5ZiNcgUNrizFMZvNFtBBvibNA6o1iYBdBlIgAMGQC2DEA]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400223,
+      "updated": 1727400229
+    },
+    {
+      "id": "66f60579198270000065012e",
+      "text": "  \t\tcode:ts",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399290,
+      "updated": 1727399825
+    },
+    {
+      "id": "66f607901982700000650137",
+      "text": "  \t\t /**",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399825,
+      "updated": 1727399825
+    },
+    {
+      "id": "66f607901982700000650138",
+      "text": "      * AがBのサブタイプかどうかを判定する",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399825,
+      "updated": 1727399825
+    },
+    {
+      "id": "66f607901982700000650139",
+      "text": "      * e.g. IsSubType<'hoge', string>; // 'hoge' <: string なので true",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399825,
+      "updated": 1727399825
+    },
+    {
+      "id": "66f60790198270000065013a",
+      "text": "      */",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399825,
+      "updated": 1727399825
+    },
+    {
+      "id": "66f60790198270000065013b",
+      "text": "     type IsSubType<A, B> = A extends B ? true : false;",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399825,
+      "updated": 1727399825
+    },
+    {
+      "id": "66f608eb1280f000001b33a7",
+      "text": "     ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400173,
+      "updated": 1727400173
+    },
+    {
+      "id": "66f608f91280f000001b33a8",
+      "text": "     type Gen<R> = <R2 extends R>(x: R2) => 2;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400187,
+      "updated": 1727400190
+    },
+    {
+      "id": "66f608e51280f000001b33a5",
+      "text": "     type TypeA = { chunk: \"A\" };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400166,
+      "updated": 1727400170
+    },
+    {
+      "id": "66f608e51280f000001b33a6",
+      "text": "     type TypeB = { chunk: \"B\" };",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400166,
+      "updated": 1727400170
+    },
+    {
+      "id": "66f60790198270000065013c",
+      "text": "     ",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399825,
+      "updated": 1727399825
+    },
+    {
+      "id": "66f60790198270000065013d",
+      "text": "     type OA = Gen<TypeA>;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399825,
+      "updated": 1727400192
+    },
+    {
+      "id": "66f60790198270000065013e",
+      "text": "     type Test1 = IsSubType<OA, Gen<TypeB>>; // true. なぜ？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399825,
+      "updated": 1727400195
+    },
+    {
+      "id": "66f60790198270000065013f",
+      "text": "     type Test3 = IsSubType<OA, <R2 extends TypeB>(x: R2) => 2>; // false. そうだね",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727399825,
+      "updated": 1727399832
+    },
+    {
+      "id": "66f60d1baff09e00002c0379",
+      "text": "    typescriptってそういう一貫性のない挙動をすることがよくあるから、それの一例なのかもしれない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727401244,
+      "updated": 1727401244
+    },
+    {
+      "id": "66f6088a1982700000650141",
+      "text": "    \t[/mrsekut-p/T がneverの時の、T extends .. は、問答無用でneverになる#61d676dd1982700000c07d49]とか",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727400075,
+      "updated": 1727400076
+    },
+    {
+      "id": "66f60edd1280f000001b33b0",
+      "text": "    \tなにこの挙動[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727401695,
+      "updated": 1727401702
+    },
+    {
+      "id": "66f60f421280f000001b33b3",
+      "text": "     \tTypeScriptこわい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727401795,
+      "updated": 1727401801
+    },
+    {
+      "id": "66f60ef41280f000001b33b1",
+      "text": "   \t type aliasにするかどうかで変わる点が本件と一緒",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727401718,
+      "updated": 1727401794
+    },
+    {
+      "id": "66f60b3a1280f000001b33ac",
+      "text": "    もしかしたらtypescriptのrepoでissueが立っているかもしれません[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400764,
+      "updated": 1727400786
+    },
+    {
+      "id": "66f60b501280f000001b33ad",
+      "text": "    　ただ検索キーワードがわからない……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400786,
+      "updated": 1727400791
+    },
+    {
+      "id": "66f60e4b1982700000cbe0af",
+      "text": "    　僕もそう思ってちょっと探してみましたが、issueが多すぎて(?)見つけられなかった[mrsekut.icon]",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727401547,
+      "updated": 1727401639
+    },
+    {
+      "id": "66f60e96aff09e00002c037f",
+      "text": "     wontfixでcloseされてるかもしれない[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727401623,
+      "updated": 1727401662
+    },
+    {
+      "id": "66f6126a1280f000001b33b5",
+      "text": "     [https://github.com/microsoft/TypeScript/issues?q=label%3A\"Won't+Fix\"+is%3Aclosed++never+extends label:\"Won't Fix\" is:closed never extends]だとなさそうです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727402604,
+      "updated": 1727402636
+    },
+    {
+      "id": "66f60d25aff09e00002c037a",
+      "text": "    IsSubType便利！[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727401254,
+      "updated": 1727401269
+    },
+    {
+      "id": "66f60d35aff09e00002c037b",
+      "text": "     そしてだいぶ問題がシンプルになった",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727401269,
+      "updated": 1727401358
+    },
+    {
+      "id": "66f60f581280f000001b33b4",
+      "text": "      [mrsekut.icon]さんありがとう[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727401818,
+      "updated": 1727401822
+    },
+    {
+      "id": "66f60d92aff09e00002c037c",
+      "text": "     TypeAとTypeBに互換性がないのに、それぞれをGenで包むと互換性が出るのはなぜか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727401362,
+      "updated": 1727401406
+    },
+    {
+      "id": "66f60dbeaff09e00002c037d",
+      "text": "     R2が共通のサブタイプneverになりうるからじゃない？というのが仮説",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727401406,
+      "updated": 1727401447
+    },
+    {
+      "id": "66f60e6baff09e00002c037e",
+      "text": "     それを検証する手段がわからない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727401580,
+      "updated": 1727401586
+    },
+    {
+      "id": "66f60ee5aff09e00002c0380",
+      "text": "     それと別にGenをtypeで名付けた場合と、名付けないで直接同じ内容を書いた場合に振る舞いが違うという問題がある",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727401701,
+      "updated": 1727401756
+    },
+    {
+      "id": "66f60f1caff09e00002c0381",
+      "text": "     　こちらはまったく謎",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727401757,
+      "updated": 1727401763
+    },
+    {
+      "id": "66f610c8aff09e00002c0382",
+      "text": "     　いや？これTypeBで実体化されたやつではなく、まだジェネリクスの状態なのか？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727402185,
+      "updated": 1727402502
+    },
+    {
+      "id": "66f611ecaff09e00002c0384",
+      "text": "     　いや、それは元のでも同じか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727402478,
+      "updated": 1727402487
+    },
+    {
+      "id": "66f606321280f000001b335e",
+      "text": "  Github Copilot Chatに聞いてみた[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399476,
+      "updated": 1727399525
+    },
+    {
+      "id": "66f6065a1280f000001b3391",
+      "text": "  [Github Copilot Chat.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399515,
+      "updated": 1727399528
+    },
+    {
+      "id": "66f606411280f000001b335f",
+      "text": "   `test1`が通り、`test3`で型エラーが発生する理由は、TypeScriptの型推論と型の互換性に関する違いによるものです。具体的には、ジェネリック型の制約と型推論の違いが影響しています。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399490,
+      "updated": 1727399529
+    },
+    {
+      "id": "66f606461280f000001b3379",
+      "text": "    (略上記と同じコード)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399495,
+      "updated": 1727399540
+    },
+    {
+      "id": "66f606461280f000001b3385",
+      "text": "   詳細な説明",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399495,
+      "updated": 1727399559
+    },
+    {
+      "id": "66f606881280f000001b3393",
+      "text": "    `test1`について",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399561,
+      "updated": 1727399561
+    },
+    {
+      "id": "66f606891280f000001b3394",
+      "text": "     `Gen3<TypeB>`は型引数`R`に`TypeB`を渡したジェネリック型です。そのため、`<R2 extends TypeB>(x: R2) => 2`という関数のシグネチャになります。`oA`は型引数`R`に`TypeA`を渡したジェネリック型です。`Gen3<TypeA>`は`<R2 extends TypeA>(x: R2) => 2`というシグネチャを持っています。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399563,
+      "updated": 1727399563
+    },
+    {
+      "id": "66f6068c1280f000001b3398",
+      "text": "     TypeScriptでは、ジェネリック型の互換性は「[構造的部分型]」に基づいて評価されます。`TypeA`は`TypeB`の部分型であるため、`Gen3<TypeA>`は`Gen3<TypeB>`と互換性があります。よって、`test1`は型エラーになりません。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399566,
+      "updated": 1727399583
+    },
+    {
+      "id": "66f6068c1280f000001b3399",
+      "text": "     \t>`TypeA`は`TypeB`の部分型である",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399566,
+      "updated": 1727399566
+    },
+    {
+      "id": "66f6068c1280f000001b339a",
+      "text": "     \t\tこれ違いそう[mrsekut.icon][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399566,
+      "updated": 1727399581
+    },
+    {
+      "id": "66f606f41280f000001b339b",
+      "text": "     \t[/mrsekut-p/構造的部分型]は[ダックタイピング]のことか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399670,
+      "updated": 1727399690
+    },
+    {
+      "id": "66f607091280f000001b339d",
+      "text": "     \t　そしたらなおさら違うじゃん",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399690,
+      "updated": 1727399694
+    },
+    {
+      "id": "66f6085e1280f000001b339f",
+      "text": "     \t2回くらいおかしいと指摘したら[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400031,
+      "updated": 1727400039
+    },
+    {
+      "id": "66f6086f1280f000001b33a0",
+      "text": "       >おっしゃる通りです。TypeAとTypeBは互いに代入可能な関係にはありません。以前の説明は誤りでした。正しい説明は以下の通りです。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400048,
+      "updated": 1727400051
+    },
+    {
+      "id": "66f608721280f000001b33a1",
+      "text": "       (略)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400052,
+      "updated": 1727400054
+    },
+    {
+      "id": "66f608761280f000001b33a2",
+      "text": "       >`test1`が通るのはおかしいです。正しくは、`test1`も`test3`も型エラーが発生するべきです。おそらく、TypeScriptのバージョンや設定に起因するバグや特殊な挙動があるかもしれません。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400056,
+      "updated": 1727400072
+    },
+    {
+      "id": "66f608881280f000001b33a3",
+      "text": "      と説明を撤回した",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400074,
+      "updated": 1727400085
+    },
+    {
+      "id": "66f606461280f000001b3386",
+      "text": "    `test3`について",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399495,
+      "updated": 1727399570
+    },
+    {
+      "id": "66f606461280f000001b338d",
+      "text": "     `test3`の宣言では、具体的な型シグネチャ`<R2 extends TypeB>(x: R2) => 2`を使用しています。このシグネチャと`Gen3<TypeA>`のシグネチャを直接比較すると、`TypeB`は`TypeA`の部分型ではないため、互換性がないと見なされます。したがって、型エラーが発生します。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399495,
+      "updated": 1727399572
+    },
+    {
+      "id": "66f606461280f000001b338e",
+      "text": "   まとめ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399495,
+      "updated": 1727399553
+    },
+    {
+      "id": "66f606461280f000001b3390",
+      "text": "    `Gen3<TypeB>`は`Gen3<TypeA>`と互換性がありますが、具体的な型シグネチャを直接比較する場合は、互換性がないと判断されます。これが`test1`が通り、`test3`が型エラーになる理由です。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399495,
+      "updated": 1727399555
+    },
+    {
+      "id": "66f606771280f000001b3392",
+      "text": "    そんなことある？？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727399545,
+      "updated": 1727399550
+    },
+    {
+      "id": "66f6094a1280f000001b33aa",
+      "text": "  手に終えそうになくなってきた[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400268,
+      "updated": 1727400286
+    },
+    {
+      "id": "66f6095d1280f000001b33ab",
+      "text": "   [vim-jp]でも聞こう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400286,
+      "updated": 1727400296
+    },
+    {
+      "id": "66f60ba91280f000001b33ae",
+      "text": "   [TS playground https://www.typescriptlang.org/play/?#code/C4TwDgpgBAYgdgHgCoD4oF4oIKpQgD2AjgBMBnKVACnwC4psBKDNANwHsBLEgbgFgAUKEiVwEAIIYoAbyjCI9AETjFUAL78hY0ZABCU2fKW7VGwQGN2cMsCgAzOPXjIx4tJioB9ZujTSzApbWtkQ2AIxOiEhiuu72cJoA9IlQAALAZAC0BJDmwNkATgXsBRZWNnIQNgBM9Dh4hMTkOhCxNPRMLFAc3FIOPEA]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400875,
+      "updated": 1727400883
+    },
+    {
+      "id": "66f60bb21280f000001b33af",
+      "text": "    名前を簡潔にしたver.",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727400883,
+      "updated": 1727400895
+    },
+    {
+      "id": "66f61a051280f00000ab80ed",
+      "text": "  [type alias]にするかどうかで挙動が変わる報告を見つけた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727404551,
+      "updated": 1727404584
+    },
+    {
+      "id": "66f61a1a1280f00000ab80ee",
+      "text": "  　[typescript - Type aliases with generics exhibit different behavior from non-generic type - Stack Overflow https://stackoverflow.com/questions/64922800/type-aliases-with-generics-exhibit-different-behavior-from-non-generic-type]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727404572,
+      "updated": 1727404572
+    },
+    {
+      "id": "66f61a281280f00000ab80ef",
+      "text": "  　この件はbug fixされたようだ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727404585,
+      "updated": 1727404607
+    },
+    {
+      "id": "66f600781280f000001b3354",
+      "text": "　(途中で[nishio.icon]さんと認識ずれてそうだと気づいた。早めに聞けばよかったか)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727398009,
+      "updated": 1727398193
+    },
+    {
+      "id": "66f5fbde198270000065011c",
+      "text": "",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396830,
+      "updated": 1727396830
+    },
+    {
+      "id": "66f5fbde198270000065011d",
+      "text": "",
+      "userId": "5b4ea932de544f0014198270",
+      "created": 1727396830,
+      "updated": 1727396830
+    },
+    {
       "id": "66f56636aff09e0000378131",
       "text": "",
       "userId": "582e63d27c56960011aff09e",
@@ -1391,11 +3155,536 @@
       "updated": 1727358706
     },
     {
+      "id": "66f5e4221280f000001b324c",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390755,
+      "updated": 1727390755
+    },
+    {
+      "id": "66f5e4221280f000001b324d",
+      "text": "[/mrsekut-p/関数なのかmethodなのかで変性が変わる]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390755,
+      "updated": 1727390756
+    },
+    {
       "id": "66f566d1aff09e0000378133",
+      "text": " [【TypeScript】関数の型とメソッドの型の違いと bivarianceHack について #型システム - Qiita https://qiita.com/wataru86/items/faa278130e3d0d59e89c]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727358678,
+      "updated": 1727390756
+    },
+    {
+      "id": "66f5e2801280f000001b323f",
+      "text": " [bivarianceHack とは何か、なぜ必要なのか https://zenn.dev/pixiv/articles/what-is-bivariance-hack]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390337,
+      "updated": 1727390758
+    },
+    {
+      "id": "66f5e4281280f000001b3252",
+      "text": " [strictFunctionTypes]([/mrsekut-p/strictFunctionTypes])で挙動が変わる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390761,
+      "updated": 1727390780
+    },
+    {
+      "id": "66f5e4441280f000001b3256",
+      "text": "  今回は無関係だった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390790,
+      "updated": 1727390790
+    },
+    {
+      "id": "66f5e4461280f000001b3257",
+      "text": "   `true`でも`false`でも同じ結果になった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390791,
+      "updated": 1727390791
+    },
+    {
+      "id": "66f5e4371280f000001b3253",
+      "text": " なにこれこわい[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390776,
+      "updated": 1727390778
+    },
+    {
+      "id": "66f5e2921280f000001b3241",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1727390355,
+      "updated": 1727390782
+    },
+    {
+      "id": "66f6435eaff09e00004a953c",
+      "text": "[ts https://www.typescriptlang.org/play/?ssl=28&ssc=2&pln=1&pc=1#code/JYOwLgpgTgZghgYwgAgILIN4FgBQzlwBcyIArgLYBG0A3LgL66iSyIoBCmu+RyAzmCigA5nRyMcYAJ4AHFAEk+AZVKUAKrIgAeVABpk7AHzIAvGmQQAHpBAATPgeQB+ZINIpi8ADZ8IY3NJyaJxm6ABkBmKBKHCUcKbIiirqmjrs+qjGyAD02a5Q7gGaBJSUCUmqGnJpGVm5+YU4uNh4rsUA4hAgWgBKxma9AEwW1l32yH0AFJbEPYMAlKbGg2L40chqEAIAjOXKlamd3Zn6R1pGxvVuENxtQZsCw2YVKdVnRqddOoaXede36weYAAzHtklVtGcTsghiMbOMjNNZgslshBr9kN5fADikCACxgg7VWFWeEOTJIiYokzLT7dC45PJYm6tQFbMAAVkJr20JNGdnJhkpc0WNLR+j5ZIMQpmVNFywxzIY+BVzRxQTOfQSkrGDim8qpqzuKCBu2e+x5Wihhjp5x+jIaLLWuPZT0SFohVq+H2Q1ox-1ZLoEoPN4MOX2hOoF0smBrmirgPidxo27IJoaJvLmcN1aCFccGtoZ9SVgfu7K5GctUfGFILEuzpNziILCaTDFwarLKE1-Rhjf54ymcwA2gBdeZGtk7bme61F+1XArJ6dgN0vOfem2+iOLv7L5Uq5Cd1oq9a97UDqVTWUi1ErW5n3GadBmDDIBAAC1IIAA1sQACJUAA5B6CNJ97k0EJMA-b8-0A9gQLAx98BQlMAHlXx3boIUycDnXLGcq09TDbQhC4aAda4ADpkEAKwZAB0GQB8f5PBAAHsQAEZBZS0NQc2jCkiDUeYaT4gY+KbaNEUoQhhJpSgaCAA]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415135,
+      "updated": 1727415142
+    },
+    {
+      "id": "66f5e27c1280f000001b323e",
+      "text": "code:ts",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727390333,
+      "updated": 1727415126
+    },
+    {
+      "id": "66f64356aff09e00004a9520",
+      "text": " interface A {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415126,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9521",
+      "text": "   a: number;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9522",
+      "text": " }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9523",
+      "text": " interface B {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9524",
+      "text": "   a: string;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9525",
+      "text": " }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9526",
+      "text": " type IsSubType<A, B> = A extends B ? true : false;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9527",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9528",
+      "text": " type AB = A & B;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9529",
+      "text": " type aba = IsSubType<AB, A>  // true",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a952a",
+      "text": " type abb = IsSubType<AB, B>  // true",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727415127,
+      "updated": 1727445899
+    },
+    {
+      "id": "66f64356aff09e00004a952b",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a952c",
+      "text": " {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a952d",
+      "text": "   type Gen<R> = <R2 extends R>(x: R2) => 2;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a952e",
+      "text": "   type Test1 = IsSubType<Gen<A>, Gen<B>> // true",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a952f",
+      "text": "   type Test2 = IsSubType<Gen<B>, Gen<A>> // true",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9530",
+      "text": "   type Test3 = IsSubType<Gen<A>, <R2 extends B>(x: R2) => 2> // false",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9531",
+      "text": "   type Test4 = IsSubType<<R2 extends A>(x: R2) => 2, Gen<B>> // false",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9532",
+      "text": "   type Test5 = IsSubType<<R2 extends A>(x: R2) => 2, <R2 extends B>(x: R2) => 2> // false",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9533",
+      "text": " }     ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9534",
+      "text": " {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9535",
+      "text": "   type Gen<R> = <R2 extends R>() => R2;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9536",
+      "text": "   type Test1 = IsSubType<Gen<A>, Gen<B>> // true",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9537",
+      "text": "   type Test2 = IsSubType<Gen<B>, Gen<A>> // true",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9538",
+      "text": "   type Test3 = IsSubType<Gen<A>, <R2 extends B>() => R2> // false",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a9539",
+      "text": "   type Test4 = IsSubType<<R2 extends A>() => R2, Gen<B>> // false",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a953a",
+      "text": "   type Test5 = IsSubType<<R2 extends A>() => R2, <R2 extends B>() => R2> // false",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64356aff09e00004a953b",
+      "text": " }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415127,
+      "updated": 1727415127
+    },
+    {
+      "id": "66f64355aff09e00004a951f",
+      "text": "うーん[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415125,
+      "updated": 1727415148
+    },
+    {
+      "id": "66f6436baff09e00004a953e",
+      "text": "\t返り値の型にしても関係ない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415148,
+      "updated": 1727415168
+    },
+    {
+      "id": "66f6437baff09e00004a953f",
+      "text": "\tGenericsを展開すると挙動が変わる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415163,
+      "updated": 1727415212
+    },
+    {
+      "id": "66f643abaff09e00004a9540",
+      "text": "\t\t両方展開してもfalse",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415212,
+      "updated": 1727415221
+    },
+    {
+      "id": "66f643b4aff09e00004a9541",
+      "text": "\tなにもわからない...",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1727415221,
+      "updated": 1727415227
+    },
+    {
+      "id": "66f64368aff09e00004a953d",
       "text": "",
       "userId": "582e63d27c56960011aff09e",
-      "created": 1727358678,
-      "updated": 1727358678
+      "created": 1727415145,
+      "updated": 1727415145
+    },
+    {
+      "id": "66f6c5d5385a9200004e9f84",
+      "text": "",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448534,
+      "updated": 1727448534
+    },
+    {
+      "id": "66f6c5d5385a9200004e9f85",
+      "text": "これだな[miyamonz.icon]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448534,
+      "updated": 1727448536
+    },
+    {
+      "id": "66f6c5d8385a9200004e9f87",
+      "text": "　[https://basarat.gitbook.io/typescript/type-system/type-compatibility#:~:text=In%20cases%20where,before%20checking%20compatibility%3A Type Compatibility | TypeScript Deep Dive]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448536,
+      "updated": 1727448541
+    },
+    {
+      "id": "66f6c5dc385a9200004e9f88",
+      "text": "  >In cases where generic arguments haven't been instantiated they are substituted by any before checking compatibility:",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448541,
+      "updated": 1727448573
+    },
+    {
+      "id": "66f6c813385a9200004e9f9c",
+      "text": "  code:ts",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727449108,
+      "updated": 1727449110
+    },
+    {
+      "id": "66f6c815385a9200004e9f9d",
+      "text": "   let identity = function<T>(x: T): T {",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727449110,
+      "updated": 1727449110
+    },
+    {
+      "id": "66f6c815385a9200004e9f9e",
+      "text": "       // ...",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727449110,
+      "updated": 1727449110
+    },
+    {
+      "id": "66f6c815385a9200004e9f9f",
+      "text": "   }",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727449110,
+      "updated": 1727449110
+    },
+    {
+      "id": "66f6c815385a9200004e9fa0",
+      "text": "   let reverse = function<U>(y: U): U {",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727449110,
+      "updated": 1727449115
+    },
+    {
+      "id": "66f6c815385a9200004e9fa2",
+      "text": "       // ...",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727449110,
+      "updated": 1727449110
+    },
+    {
+      "id": "66f6c815385a9200004e9fa3",
+      "text": "   }",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727449110,
+      "updated": 1727449110
+    },
+    {
+      "id": "66f6c815385a9200004e9fa4",
+      "text": "   identity = reverse;  // Okay because (x: any)=>any matches (y: any)=>any",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727449110,
+      "updated": 1727449117
+    },
+    {
+      "id": "66f6c5fd385a9200004e9f89",
+      "text": "　　この主張の根拠がどこにあるか（公式docかgithub上での記載など）は調べてないです。分からん[miyamonz.icon]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448573,
+      "updated": 1727449063
+    },
+    {
+      "id": "66f6c7e8385a9200004e9f9b",
+      "text": "　　　でもたぶん合ってるんでしょう[miyamonz.icon]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727449064,
+      "updated": 1727449136
+    },
+    {
+      "id": "66f6c7df385a9200004e9f9a",
+      "text": "",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727449055,
+      "updated": 1727449056
+    },
+    {
+      "id": "66f6c72c385a9200004e9f99",
+      "text": "　たぶんこういうことです[miyamonz.icon]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448877,
+      "updated": 1727448880
+    },
+    {
+      "id": "66f6c725385a9200004e9f98",
+      "text": "  Genを経由すると、この挙動によってanyを経由するのでエラーが起きない",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448870,
+      "updated": 1727448912
+    },
+    {
+      "id": "66f6c6f8385a9200004e9f97",
+      "text": "  Genを経由しないと、型推論が素直に動き、高階型でインスタンス化されてない型の代入可能性をチェックしてエラーで落ちる",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448824,
+      "updated": 1727449148
+    },
+    {
+      "id": "66f6c6e2385a9200004e9f96",
+      "text": "",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448802,
+      "updated": 1727448802
+    },
+    {
+      "id": "66f6c624385a9200004e9f8a",
+      "text": " ちなみに、IsSubTypeでtrue or falseにするとエラーの原因が追いづらいので、素直に代入するとよいですよ",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448613,
+      "updated": 1727448640
+    },
+    {
+      "id": "66f6c63f385a9200004e9f8b",
+      "text": " [https://gyazo.com/39ab7e8a4d77c3e06b79b125698de457]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448640,
+      "updated": 1727448641
+    },
+    {
+      "id": "66f6c641385a9200004e9f8c",
+      "text": "　　これはエラー文のそのままそのとおりで、R2はgenericなtypeでインスタンス化できないからそもそも判定しようがない",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448641,
+      "updated": 1727448669
+    },
+    {
+      "id": "66f6c65d385a9200004e9f8d",
+      "text": "",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448669,
+      "updated": 1727448669
+    },
+    {
+      "id": "66f6c65d385a9200004e9f8e",
+      "text": "　あと、ここまで上記は素朴に置換可能な記述で結果が異なることに対する調査ですが、",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448669,
+      "updated": 1727448889
+    },
+    {
+      "id": "66f6c674385a9200004e9f90",
+      "text": "　　対して、そもそもじゃあどう書くべきだったか、という視点では、",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448693,
+      "updated": 1727448708
+    },
+    {
+      "id": "66f6c686385a9200004e9f91",
+      "text": "　　　TSで型レベルの高階関数はむずい",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448710,
+      "updated": 1727448737
+    },
+    {
+      "id": "66f6c6a1385a9200004e9f94",
+      "text": "　　　 `type Gen<T> = <T2 extends T>()=>T2` これは、Tを受けて、T2を受けたら()=>T2を返す型　なので高階型になってる",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448738,
+      "updated": 1727448775
+    },
+    {
+      "id": "66f6c6c6385a9200004e9f95",
+      "text": "　　　 そもそも、typeの記述だと無理なやつ",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448775,
+      "updated": 1727448782
+    },
+    {
+      "id": "66f6c692385a9200004e9f92",
+      "text": "　　　どうしてもやりたいなら、interfaceを駆使しよう",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448722,
+      "updated": 1727448731
+    },
+    {
+      "id": "66f6c69a385a9200004e9f93",
+      "text": "　　　という話があります[miyamonz.icon]",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448731,
+      "updated": 1727448799
+    },
+    {
+      "id": "66f6c5d7385a9200004e9f86",
+      "text": "",
+      "userId": "5953adab7aa58a0011385a92",
+      "created": 1727448536,
+      "updated": 1727448536
     }
   ]
 }
