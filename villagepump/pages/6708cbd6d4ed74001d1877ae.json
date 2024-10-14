@@ -2,7 +2,7 @@
   "id": "6708cbd6d4ed74001d1877ae",
   "title": "動画圧縮",
   "created": 1728629721,
-  "updated": 1728720413,
+  "updated": 1728869720,
   "lines": [
     {
       "id": "6708cbd6d4ed74001d1877ae",
@@ -107,35 +107,56 @@
       "text": "解像度",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1728631333,
-      "updated": 1728631335
+      "updated": 1728864939
+    },
+    {
+      "id": "670c62ac71b3c200007e1bf7",
+      "text": "\t4:3",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728864939,
+      "updated": 1728864940
     },
     {
       "id": "6708d25071b3c20000de1c9d",
-      "text": " 240p `-s 320x240`",
+      "text": "  240p `-s 320x240`",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1728631373,
-      "updated": 1728720362
+      "updated": 1728864941
     },
     {
       "id": "6708d23371b3c20000de1c9a",
-      "text": " 360p `-s 480x360`",
+      "text": "  360p `-s 480x360`",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1728631344,
-      "updated": 1728720369
+      "updated": 1728864941
     },
     {
       "id": "6708d22c71b3c20000de1c98",
-      "text": " 480p `-s 640x480`",
+      "text": "  480p `-s 640x480`",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1728631337,
-      "updated": 1728720396
+      "updated": 1728864941
     },
     {
       "id": "6708d25171b3c20000de1c9e",
-      "text": " 720p `-s 960x720`",
+      "text": "  720p `-s 960x720`",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1728631374,
-      "updated": 1728720413
+      "updated": 1728865396
+    },
+    {
+      "id": "670c647471b3c200007e1bf8",
+      "text": " 16:9の映像の上下余白をつけるとき",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728865396,
+      "updated": 1728865498
+    },
+    {
+      "id": "670c647c71b3c200007e1bf9",
+      "text": " \t`-vf setsar=1,pad=y=-1:aspect=4/3`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728865403,
+      "updated": 1728865469
     },
     {
       "id": "6708d22771b3c20000de1c96",
@@ -156,7 +177,21 @@
       "text": "\t`-c:v libopenh264 -c:a aac -aac_coder twoloop`の場合、[x264]ではなく[openh264]が使われる",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1728635469,
-      "updated": 1728635644
+      "updated": 1728868930
+    },
+    {
+      "id": "670c6df471b3c200007e1c07",
+      "text": "\tVP8(webm)  `-c:v libvpx -c:a libopus`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728867827,
+      "updated": 1728868632
+    },
+    {
+      "id": "670c6e7f71b3c200007e1c08",
+      "text": "\t\t遅い場合は`-cpu-used <0-5 大きいほど早く、低画質>`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728867966,
+      "updated": 1728867981
     },
     {
       "id": "6708d26f71b3c20000de1caa",
@@ -205,14 +240,14 @@
       "text": "低画質(240p)",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1728631059,
-      "updated": 1728631221
+      "updated": 1728868369
     },
     {
       "id": "6708cd7671b3c20000de1c8b",
-      "text": " 合計96kbps `-b:v 64k -b:a 32k -r 10`",
+      "text": " 合計96kbps `-b:v 64k -b:a 32k -r 15`",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1728630131,
-      "updated": 1728720308
+      "updated": 1728866930
     },
     {
       "id": "670a278c71b3c200000532a5",
@@ -373,7 +408,91 @@
       "text": "",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1728718215,
-      "updated": 1728718215
+      "updated": 1728867264
+    },
+    {
+      "id": "670c6bc171b3c200007e1bfa",
+      "text": "チューニング(x264)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728867264,
+      "updated": 1728867337
+    },
+    {
+      "id": "670c6c0a71b3c200007e1c05",
+      "text": "\tsource:https://trac.ffmpeg.org/wiki/Encode/H.264",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728867337,
+      "updated": 1728867448
+    },
+    {
+      "id": "670c6c7971b3c200007e1c06",
+      "text": "\t`-tune <type>`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728867448,
+      "updated": 1728867454
+    },
+    {
+      "id": "670c6bc471b3c200007e1bfc",
+      "text": "\t`film` – 高画質の実写動画用;少ないデブロッキング",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728867267,
+      "updated": 1728867501
+    },
+    {
+      "id": "670c6be171b3c200007e1bfd",
+      "text": " `animation` – アニメーション用; 多くでブロッキングを使いさらに追加の参照フレームを使う",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728867296,
+      "updated": 1728867386
+    },
+    {
+      "id": "670c6be171b3c200007e1bfe",
+      "text": " `grain` – ざらざらの残るフィルム",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728867296,
+      "updated": 1728867401
+    },
+    {
+      "id": "670c6be171b3c200007e1bff",
+      "text": " `stillimage` – スライドショーなど",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728867296,
+      "updated": 1728867411
+    },
+    {
+      "id": "670c6be171b3c200007e1c00",
+      "text": " `fastdecode` – 携帯電話など低スペックの再生機器向け。画質は悪くなる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728867296,
+      "updated": 1728867426
+    },
+    {
+      "id": "670c6be171b3c200007e1c01",
+      "text": " `zerolatency` – 高速エンコードと低遅延ライブ用",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728867296,
+      "updated": 1728867439
+    },
+    {
+      "id": "670c6be171b3c200007e1c02",
+      "text": " `psnr` – 開発用",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728867296,
+      "updated": 1728867785
+    },
+    {
+      "id": "670c6be171b3c200007e1c03",
+      "text": " `ssim` – 開発用",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728867296,
+      "updated": 1728867789
+    },
+    {
+      "id": "670c6bc171b3c200007e1bfb",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1728867264,
+      "updated": 1728867264
     },
     {
       "id": "6708ccb071b3c20000de1c84",
