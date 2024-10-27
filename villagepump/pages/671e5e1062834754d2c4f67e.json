@@ -1,0 +1,414 @@
+{
+  "id": "671e5e1062834754d2c4f67e",
+  "title": "SVGをCanvasに書いてPNGでダウンロードする機能まで作ったんだが政党アイコンの画像だけ描画されなくて困ってる",
+  "created": 1730043410,
+  "updated": 1730043448,
+  "lines": [
+    {
+      "id": "671e5e1062834754d2c4f67e",
+      "text": "SVGをCanvasに書いてPNGでダウンロードする機能まで作ったんだが政党アイコンの画像だけ描画されなくて困ってる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043410,
+      "updated": 1730043410
+    },
+    {
+      "id": "671e5e12aff09e00005febce",
+      "text": "code:ts",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043410,
+      "updated": 1730043412
+    },
+    {
+      "id": "671e5e14aff09e00005febd0",
+      "text": " export const exportSVG = ({ title, conversation_name, date, n }: Props) => {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043412,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febd1",
+      "text": "   function downloadSVGAsPNG(svgElement: SVGSVGElement, fileName: string) {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febd2",
+      "text": "     const serializer = new XMLSerializer();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febd3",
+      "text": "     const svgString = serializer.serializeToString(svgElement);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febd4",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febd5",
+      "text": "     const canvas = document.createElement(\"canvas\");",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febd6",
+      "text": "     const context = canvas.getContext(\"2d\")!;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febd7",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febd8",
+      "text": "     const img = new Image();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febd9",
+      "text": "     const svgBlob = new Blob([svgString], {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febda",
+      "text": "       type: \"image/svg+xml;charset=utf-8\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febdb",
+      "text": "     });",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febdc",
+      "text": "     const url = URL.createObjectURL(svgBlob);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febdd",
+      "text": "     img.crossOrigin = \"anonymous\"; // クロスオリジン対応",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febde",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febdf",
+      "text": "     img.onload = () => {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febe0",
+      "text": "       const scale = 4;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febe1",
+      "text": "       const width = sideWithPadding * scale;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febe2",
+      "text": "       const height = svgHeightWithPadding * scale;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febe3",
+      "text": "       canvas.width = width;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febe4",
+      "text": "       canvas.height = height;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febe5",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febe6",
+      "text": "       // 背景を白で塗りつぶす",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febe7",
+      "text": "       context.fillStyle = \"white\";",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febe8",
+      "text": "       context.fillRect(0, 0, width, height);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febe9",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febea",
+      "text": "       // スケーリングしてSVGを描画",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febeb",
+      "text": "       context.drawImage(img, 0, 0, width, height);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febec",
+      "text": "       URL.revokeObjectURL(url);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febed",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febee",
+      "text": "       // 右下にテキストを描画",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febef",
+      "text": "       const text = `JAPAN CHOICE 世論地図: 「${title}」についての可視化(${date}時点 N=${n})`;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febf0",
+      "text": "       if (text) {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febf1",
+      "text": "         context!.font = `${12 * scale}px Arial`; // フォントサイズやスタイルを指定",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febf2",
+      "text": "         context!.fillStyle = \"gray\"; // テキストカラー",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febf3",
+      "text": "         const textWidth = context!.measureText(text).width;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febf4",
+      "text": "         context!.fillText(text, width - textWidth - 10, height - 10); // 右下に配置",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febf5",
+      "text": "       }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febf6",
+      "text": "       // PNGとしてダウンロード",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febf7",
+      "text": "       const imgURI = canvas.toDataURL(\"image/png\");",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febf8",
+      "text": "       const a = document.createElement(\"a\");",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febf9",
+      "text": "       a.href = imgURI;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febfa",
+      "text": "       a.download = fileName;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febfb",
+      "text": "       document.body.appendChild(a);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febfc",
+      "text": "       a.click();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febfd",
+      "text": "       document.body.removeChild(a);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febfe",
+      "text": "     };",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005febff",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005fec00",
+      "text": "     img.src = url;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005fec01",
+      "text": "   }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005fec02",
+      "text": " ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005fec03",
+      "text": "   const svgElement = document.getElementById(\"svg\") as unknown as SVGSVGElement;",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005fec04",
+      "text": "   downloadSVGAsPNG(svgElement, `${conversation_name}.png`);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005fec05",
+      "text": " };",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043447
+    },
+    {
+      "id": "671e5e36aff09e00005fec06",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043447,
+      "updated": 1730043448
+    },
+    {
+      "id": "671e5e13aff09e00005febcf",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1730043412,
+      "updated": 1730043412
+    }
+  ]
+}
