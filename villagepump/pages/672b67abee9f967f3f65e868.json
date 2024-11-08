@@ -2,7 +2,7 @@
   "id": "672b67abee9f967f3f65e868",
   "title": "ネットワークにつながっていないページを洗い出したい",
   "created": 1730897839,
-  "updated": 1730986153,
+  "updated": 1731042647,
   "lines": [
     {
       "id": "672b67abee9f967f3f65e868",
@@ -369,6 +369,27 @@
       "updated": 1730899780
     },
     {
+      "id": "672d3e4f71b3c20000ca8c75",
+      "text": "\t\t別スクリプトに分離しよう",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731018320,
+      "updated": 1731018327
+    },
+    {
+      "id": "672d40a771b3c20000ca8c76",
+      "text": "\t\t\tsource code:[全ページリスト(ネットワークにつながっていないページを洗い出したい)]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731018920,
+      "updated": 1731018938
+    },
+    {
+      "id": "672d425071b3c20000ca8c77",
+      "text": "\t\t\t[モジュール経由での実行かどうかを確認]するには、`Deno.mainModule`と`import.meta.url`が一致していれば直接実行",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731019345,
+      "updated": 1731019376
+    },
+    {
       "id": "672b6f1671b3c20000b0762a",
       "text": " 全ページリストからマークリストを引く",
       "userId": "661b6e882a96e9002371b3c2",
@@ -488,62 +509,6 @@
       "updated": 1730982920
     },
     {
-      "id": "672cab0d71b3c2000042a118",
-      "text": "",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730980623,
-      "updated": 1730980623
-    },
-    {
-      "id": "672cae6c71b3c2000042a11f",
-      "text": "非並列版",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730981484,
-      "updated": 1730981491
-    },
-    {
-      "id": "672cae7571b3c2000042a121",
-      "text": "\tバグ少ないけど、遅い",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730981493,
-      "updated": 1730981497
-    },
-    {
-      "id": "672caed571b3c2000042a12c",
-      "text": "\tソースコード:[b1c6765e-e467-41bf-b501-2b919f823e33]",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730981589,
-      "updated": 1730981596
-    },
-    {
-      "id": "672caee871b3c2000042a12e",
-      "text": "\t実行方法",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730981608,
-      "updated": 1730981612
-    },
-    {
-      "id": "672caeed71b3c2000042a12f",
-      "text": "\t\t$ deno run --reload https://scrapbox.io/api/code/villagepump/b1c6765e-e467-41bf-b501-2b919f823e33/scrapCrawler.ts プロジェクト名 ページ名(スペースは_にする)",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730981613,
-      "updated": 1730984575
-    },
-    {
-      "id": "672caee571b3c2000042a12d",
-      "text": "\t CTRL+Cで終了させる or 調査が終了するととカレントディレクトリにresult.jsonができます",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730981605,
-      "updated": 1730986153
-    },
-    {
-      "id": "672cae6f71b3c2000042a120",
-      "text": "",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730981491,
-      "updated": 1730981491
-    },
-    {
       "id": "672cb3e771b3c200008c5f67",
       "text": "2024/11/7 21:34 重複しまくってるので、",
       "userId": "661b6e882a96e9002371b3c2",
@@ -573,24 +538,31 @@
     },
     {
       "id": "672cbbe671b3c20000c0d271",
-      "text": "\t[f06ba846-bb44-45eb-ae5e-b44dfba19844]",
+      "text": "\t[並列版(ネットワークにつながっていないページを洗い出したい)]",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1730984935,
       "updated": 1730985160
     },
     {
       "id": "672cbcca71b3c20000c0d273",
-      "text": "\t$ deno run --reload https://scrapbox.io/api/code/villagepump/f06ba846-bb44-45eb-ae5e-b44dfba19844/scrapCrawler.ts プロジェクト名 ページ名(スペースは_にする)",
+      "text": "\t$ deno run --reload https://scrapbox.io/api/code/villagepump/並列版(ネットワークにつながっていないページを洗い出したい)/scrapCrawler.ts プロジェクト名 ページ名(スペースは_にする)",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1730985162,
-      "updated": 1730985178
+      "updated": 1731042647
     },
     {
-      "id": "672cbcc871b3c20000c0d272",
+      "id": "672d9b5d71b3c20000461072",
+      "text": "\t比較的高速で安定した回線が必要",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731042141,
+      "updated": 1731042149
+    },
+    {
+      "id": "672d9c7c71b3c20000461074",
       "text": "",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730985160,
-      "updated": 1730985160
+      "created": 1731042428,
+      "updated": 1731042428
     }
   ]
 }

@@ -1,15 +1,15 @@
 {
   "id": "672cbc654a03d6434f9b6599",
-  "title": "f06ba846-bb44-45eb-ae5e-b44dfba19844",
+  "title": "並列版(ネットワークにつながっていないページを洗い出したい)",
   "created": 1730985062,
-  "updated": 1730986130,
+  "updated": 1731046851,
   "lines": [
     {
       "id": "672cbc654a03d6434f9b6599",
-      "text": "f06ba846-bb44-45eb-ae5e-b44dfba19844",
+      "text": "並列版(ネットワークにつながっていないページを洗い出したい)",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1730985062,
-      "updated": 1730985062
+      "updated": 1731038883
     },
     {
       "id": "672cbc6671b3c20000151dc3",
@@ -20,647 +20,444 @@
     },
     {
       "id": "672cbc7071b3c20000151dc5",
-      "text": " const projectName: string = Deno.args[0];",
+      "text": " import * as pagelist from \"../全ページリスト(ネットワークにつながっていないページを洗い出したい)/allPages.ts\"",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1730985072,
-      "updated": 1730986130
+      "updated": 1731041919
     },
     {
-      "id": "672cc09271b3c200003b4397",
+      "id": "672d9a4971b3c2000046100e",
+      "text": " import { Logger, ILogObj } from \"npm:tslog\";",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731041866,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb34",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb35",
+      "text": " const logger: Logger<ILogObj> = new Logger();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb36",
+      "text": " logger.settings.hideLogPositionForProduction = true;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb37",
+      "text": " const projectName: string = Deno.args[0];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb38",
       "text": " let queue: string[] = [Deno.args[1]];",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b4398",
+      "id": "672dad8f71b3c20000a7fb39",
       "text": " const marked: string[] = [];",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b4399",
-      "text": " const getting: string[] = [];",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b439a",
+      "id": "672dad8f71b3c20000a7fb3a",
       "text": " interface ScrapboxPage {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b439b",
+      "id": "672dad8f71b3c20000a7fb3b",
       "text": "   title: string;",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b439c",
+      "id": "672dad8f71b3c20000a7fb3c",
       "text": "   links: string[];",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b439d",
+      "id": "672dad8f71b3c20000a7fb3d",
       "text": "   relatedPages: { links1hop: Array<{ title: string }> };",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b439e",
+      "id": "672dad8f71b3c20000a7fb3e",
       "text": " }",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b439f",
+      "id": "672dad8f71b3c20000a7fb3f",
       "text": " ",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43a0",
+      "id": "672dad8f71b3c20000a7fb40",
       "text": " const getPage = async (pageName: string) => {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43a1",
-      "text": "   getting.push(pageName);",
+      "id": "672dad8f71b3c20000a7fb41",
+      "text": "   logger.info(\"fetch started\",pageName)",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43a2",
-      "text": "   const pageRes = await fetch(",
+      "id": "672dad8f71b3c20000a7fb42",
+      "text": "   try {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43a3",
-      "text": "     \"https://scrapbox.io/api/pages/\" +",
+      "id": "672dad8f71b3c20000a7fb43",
+      "text": "     const pageRes = await fetch(",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43a4",
+      "id": "672dad8f71b3c20000a7fb44",
+      "text": "       \"https://scrapbox.io/api/pages/\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb45",
       "text": "       projectName +",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43a5",
+      "id": "672dad8f71b3c20000a7fb46",
       "text": "       \"/\" +",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43a6",
+      "id": "672dad8f71b3c20000a7fb47",
       "text": "       encodeURIComponent(pageName)",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43a7",
-      "text": "   );",
+      "id": "672dad8f71b3c20000a7fb48",
+      "text": "     );",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43a8",
-      "text": "   if (pageRes.ok) {",
+      "id": "672dad8f71b3c20000a7fb49",
+      "text": "     if (pageRes.ok) {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43a9",
-      "text": "     const pageJson: Readonly<ScrapboxPage> = await pageRes.json();",
+      "id": "672dad8f71b3c20000a7fb4a",
+      "text": "       const pageJson: Readonly<ScrapboxPage> = await pageRes.json();",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43aa",
-      "text": "     getting.splice(getting.indexOf(pageName));",
+      "id": "672dad8f71b3c20000a7fb4b",
+      "text": "       logger.info(\"fetch end\", pageName);",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43ab",
-      "text": "     marked.push(pageJson.title);",
+      "id": "672dad8f71b3c20000a7fb4c",
+      "text": "       marked.push(pageJson.title);",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43ac",
-      "text": "     for (const element of pageJson.relatedPages.links1hop) {",
+      "id": "672dad8f71b3c20000a7fb4d",
+      "text": "       for (const element of pageJson.relatedPages.links1hop) {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43ad",
-      "text": "       if (!marked.includes(element.title)) {",
+      "id": "672dad8f71b3c20000a7fb4e",
+      "text": "         if (!marked.includes(element.title)) {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43ae",
-      "text": "         queue.push(element.title);",
+      "id": "672dad8f71b3c20000a7fb4f",
+      "text": "           queue.push(element.title);",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43af",
+      "id": "672dad8f71b3c20000a7fb50",
+      "text": "         }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb51",
       "text": "       }",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43b0",
+      "id": "672dad8f71b3c20000a7fb52",
+      "text": "     } else {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb53",
+      "text": "       logger.error(pageRes.status,await pageRes.text);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb54",
+      "text": "       ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb55",
       "text": "     }",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43b1",
-      "text": "   } else {",
+      "id": "672dad8f71b3c20000a7fb56",
+      "text": "   } catch(e) {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43b2",
-      "text": "     getting.splice(getting.indexOf(pageName));",
+      "id": "672dad8f71b3c20000a7fb57",
+      "text": "     logger.error(e);",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43b3",
+      "id": "672dad8f71b3c20000a7fb58",
       "text": "   }",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43b4",
+      "id": "672dad8f71b3c20000a7fb59",
       "text": " };",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43b5",
+      "id": "672dad8f71b3c20000a7fb5a",
       "text": " ",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43b6",
-      "text": " const sleep = (time: number) => {",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43b7",
-      "text": "   return new Promise((resolve) => {",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43b8",
-      "text": "     setTimeout(resolve, time);",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43b9",
-      "text": "   });",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43ba",
-      "text": " };",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43bb",
-      "text": " ",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43bc",
-      "text": " const elemview = (",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43bd",
-      "text": "   argarr: string[],",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43be",
-      "text": "   headortail?: \"head\" | \"tail\" | undefined",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43bf",
-      "text": " ) => {",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43c0",
-      "text": "   if (argarr.length > 7) {",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43c1",
-      "text": "     if (headortail == \"head\") {",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43c2",
-      "text": "       for (const elem of argarr.slice(0, 7)) {",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43c3",
-      "text": "         console.log(\"  \" + elem);",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43c4",
-      "text": "       }",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43c5",
-      "text": "     }",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43c6",
-      "text": "   } else {",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43c7",
-      "text": "     for (const elem of argarr) {",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43c8",
-      "text": "       console.log(\"  \" + elem);",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43c9",
-      "text": "     }",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43ca",
-      "text": "     for (const _ of Array(7 - argarr.length)) {",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43cb",
-      "text": "       console.log(\"\");",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43cc",
-      "text": "     }",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43cd",
-      "text": "   }",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43ce",
-      "text": " };",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43cf",
-      "text": " ",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43d0",
-      "text": " const consoleview = () => {",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43d1",
-      "text": "   console.clear();",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43d2",
-      "text": "   console.log(\"marked(\" + marked.length + \")\");",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43d3",
-      "text": "   // elemview(marked, \"tail\");",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43d4",
-      "text": "   console.log(\"getting(\" + getting.length + \")\");",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43d5",
-      "text": "   elemview(getting, \"head\");",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43d6",
-      "text": "   console.log(\"queue(\" + queue.length + \")\");",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43d7",
-      "text": "   // elemview(queue, \"head\");",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43d8",
-      "text": "   // marked = marked.filter(",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43d9",
-      "text": "   //   (element, index, self) =>",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43da",
-      "text": "   //     self.findIndex((e) => e.name === element.name) === index",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43db",
-      "text": "   // );",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43dc",
-      "text": " ",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43dd",
-      "text": "   // queue = queue.filter(",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43de",
-      "text": "   //   (element, index, self) =>",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43df",
-      "text": "   //     self.findIndex((e) => e.name === element.name) === index",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43e0",
-      "text": "   // );",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43e1",
-      "text": " };",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43e2",
-      "text": " ",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43e3",
-      "text": " consoleview();",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43e4",
+      "id": "672dad8f71b3c20000a7fb5b",
       "text": " while (queue.length > 0) {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43e5",
+      "id": "672dad8f71b3c20000a7fb5c",
       "text": "   const promiseList: Promise<void>[] = [];",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43e6",
-      "text": "   for (const element of queue.splice(0, 200)) {",
+      "id": "672dad8f71b3c20000a7fb5d",
+      "text": "   for (const element of queue.splice(0, 64)) {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43e7",
+      "id": "672dad8f71b3c20000a7fb5e",
       "text": "     promiseList.push(getPage(element));",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43e8",
+      "id": "672dad8f71b3c20000a7fb5f",
       "text": "   }",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43e9",
-      "text": "   consoleview();",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
-    },
-    {
-      "id": "672cc09271b3c200003b43ea",
+      "id": "672dad8f71b3c20000a7fb60",
       "text": "   await Promise.all(promiseList);",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43eb",
+      "id": "672dad8f71b3c20000a7fb61",
       "text": "   queue = queue.filter((element, index) => {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43ec",
-      "text": "     return queue.indexOf(element) == index;",
+      "id": "672dad8f71b3c20000a7fb62",
+      "text": "     return queue.indexOf(element) == index && !marked.includes(element);",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43ed",
+      "id": "672dad8f71b3c20000a7fb63",
       "text": "   });",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43ee",
+      "id": "672dad8f71b3c20000a7fb64",
       "text": " }",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43ef",
+      "id": "672dad8f71b3c20000a7fb65",
       "text": " ",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43f0",
-      "text": " await Deno.writeTextFile(\"result.json\", JSON.stringify(marked));",
+      "id": "672dad8f71b3c20000a7fb66",
+      "text": " const allpagelist = await pagelist.allpagelist(projectName);",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
     },
     {
-      "id": "672cc09271b3c200003b43f1",
+      "id": "672dad8f71b3c20000a7fb67",
       "text": " ",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1730986130,
-      "updated": 1730986130
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb68",
+      "text": " const garbagelist = allpagelist.filter((value) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb69",
+      "text": "   !marked.includes(value);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb6a",
+      "text": " });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb6b",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb6c",
+      "text": " await Deno.writeTextFile(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb6d",
+      "text": "   \"result.json\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb6e",
+      "text": "   JSON.stringify({ marked: marked, garbagelist: garbagelist })",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb6f",
+      "text": " );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
+    },
+    {
+      "id": "672dad8f71b3c20000a7fb70",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731046851,
+      "updated": 1731046851
     }
   ]
 }
