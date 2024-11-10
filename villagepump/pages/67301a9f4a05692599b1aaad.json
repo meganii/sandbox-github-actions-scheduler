@@ -1,0 +1,477 @@
+{
+  "id": "67301a9f4a05692599b1aaad",
+  "title": "longPageRankingInDeno.ts",
+  "created": 1731205794,
+  "updated": 1731211700,
+  "lines": [
+    {
+      "id": "67301a9f4a05692599b1aaad",
+      "text": "longPageRankingInDeno.ts",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731205794,
+      "updated": 1731205794
+    },
+    {
+      "id": "67301aa171b3c200003b7fca",
+      "text": "code:rank.ts",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731205794,
+      "updated": 1731205803
+    },
+    {
+      "id": "67301aab71b3c200003b7fcc",
+      "text": " import Spinner from \"https://deno.land/x/cli_spinners@v0.0.2/mod.ts\";",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731205803,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23c2",
+      "text": " interface ScrapboxPagesJson {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23c3",
+      "text": "   count: number;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23c4",
+      "text": "   pages: { title: string; charsCount: number }[];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23c5",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23c6",
+      "text": " const getPage = async (projectName: string, offset: number) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23c7",
+      "text": "   const pageRes = await fetch(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23c8",
+      "text": "     \"https://scrapbox.io/api/pages/\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23c9",
+      "text": "       projectName +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23ca",
+      "text": "       \"/?limit=1000&skip=\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23cb",
+      "text": "       encodeURIComponent(offset)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23cc",
+      "text": "   );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23cd",
+      "text": "   if (pageRes.ok) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23ce",
+      "text": "     const pageJson: Readonly<ScrapboxPagesJson> = await pageRes.json();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23cf",
+      "text": "     return pageJson.pages;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23d0",
+      "text": "   } else {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23d1",
+      "text": "     return [];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23d2",
+      "text": "   }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23d3",
+      "text": " };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23d4",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23d5",
+      "text": " const allpagelist = async (pjname: string) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23d6",
+      "text": "   const spinner = Spinner.getInstance();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23d7",
+      "text": "   spinner.start(\"Fetching All Page List...\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23d8",
+      "text": "   const projectName: string = pjname;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23d9",
+      "text": "   const marked: { title: string; charsCount: number }[] = [];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23da",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23db",
+      "text": "   const pageRes = await fetch(\"https://scrapbox.io/api/pages/\" + projectName);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23dc",
+      "text": "   if (!pageRes.ok) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23dd",
+      "text": "     throw Error;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23de",
+      "text": "   }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23df",
+      "text": "   const pageJson: Readonly<ScrapboxPagesJson> = await pageRes.json();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23e0",
+      "text": "   const arrayRange = (start: number, stop: number, step: number) =>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23e1",
+      "text": "     Array.from(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23e2",
+      "text": "       { length: (stop - start) / step + 1 },",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23e3",
+      "text": "       (_, index) => start + index * step",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23e4",
+      "text": "     );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23e5",
+      "text": "   for (const element of arrayRange(0, pageJson.count, 1000)) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23e6",
+      "text": "     spinner.setText(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23e7",
+      "text": "       \"Fetching All Page List...[\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23e8",
+      "text": "         element.toString().padStart(pageJson.count.toString().length) +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23e9",
+      "text": "         \"/\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23ea",
+      "text": "         pageJson.count +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23eb",
+      "text": "         \"]\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23ec",
+      "text": "     );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23ed",
+      "text": "     for (const element2 of await getPage(projectName, element)) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23ee",
+      "text": "       marked.push(element2);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23ef",
+      "text": "     }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23f0",
+      "text": "   }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23f1",
+      "text": "   spinner.succeed(\"Fetched All Page List\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23f2",
+      "text": "   spinner.stop();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23f3",
+      "text": "   marked.sort((a, b) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23f4",
+      "text": "     return b.charsCount - a.charsCount;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23f5",
+      "text": "   });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23f6",
+      "text": "   let scrapchar = \"\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23f7",
+      "text": "   for (const element2 of marked) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23f8",
+      "text": "     scrapchar += \" [\"+element2.title+\"] (\"+element2.charsCount+\"文字)\\n\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23f9",
+      "text": "   }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23fa",
+      "text": "   return scrapchar;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23fb",
+      "text": " };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23fc",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23fd",
+      "text": " await Deno.writeTextFile(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23fe",
+      "text": "   \"villagepumpsoko.txt\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb23ff",
+      "text": "   await allpagelist(\"villagepump\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb2400",
+      "text": " );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    },
+    {
+      "id": "673031b371b3c20000bb2401",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731211700,
+      "updated": 1731211700
+    }
+  ]
+}
