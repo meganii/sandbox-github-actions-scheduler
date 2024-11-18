@@ -2,7 +2,7 @@
   "id": "652f6d81c165b1001c496439",
   "title": "minify≠難読化",
   "created": 1697607042,
-  "updated": 1705878394,
+  "updated": 1731917585,
   "lines": [
     {
       "id": "652f6d81c165b1001c496439",
@@ -250,333 +250,60 @@
       "updated": 1698498198
     },
     {
-      "id": "652f6d815f1e0d0000a94d68",
-      "text": " [開いているWebページを自分のprojectに引用するbookmark]を例にとると",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d69",
-      "text": "　　code:元のコード.js",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d6a",
-      "text": "　　  (()=>{",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d6b",
-      "text": "    \tconst my_project = \"Summer498\";",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d6c",
-      "text": "    \tconst LF='\\n'",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d6d",
-      "text": "    \tconst _window = window;",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d6e",
-      "text": "    \tconst _encodeURIComponent = encodeURIComponent;",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d6f",
-      "text": "    \tconst _scrapbox=_window.scrapbox;",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d70",
-      "text": "    \tconst getTitle = title => prompt(`Scrap \"${title}\" to /${my_project}/.`, title);",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d71",
-      "text": "    \tlet title, first_line, lines, quote;",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d72",
-      "text": "   \tif(_scrapbox){",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d73",
-      "text": "   \t\tconst project_name = _scrapbox.Project.name;",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d74",
-      "text": "   \t\tconst page = _scrapbox.Page;",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d75",
-      "text": "   \t\tconst page_title = page.title;",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d76",
-      "text": "   \t\tconst page_path = project_name + \"/\" + page_title;",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d77",
-      "text": "   \t\ttitle = getTitle(page_title);",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d78",
-      "text": "   \t\tif(title){",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d79",
-      "text": "   \t\t\tfirst_line = `from [/${page_path}]`;",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d7a",
-      "text": "   \t\t\tquote = page.lines.map(e=>e.text).slice(1);",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d7b",
-      "text": "   \t\t}",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d7c",
-      "text": "   \t}",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d7d",
-      "text": "   \telse {",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d7e",
-      "text": "       \tconst document_title = document.title;",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d7f",
-      "text": "   \t\ttitle = getTitle(document_title);",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d80",
-      "text": "   \t\tif(title){",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d81",
-      "text": "   \t\t\tfirst_line = `from [${location.href} ${document_title}]`;",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d82",
-      "text": "   \t\t\tconst selection = getSelection().toString();",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d83",
-      "text": "   \t\t\tquote = selection.trim() ? selection.split(LF).map(e=>'> '+e) : [\"\"];",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d84",
-      "text": "   \t\t}",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d85",
-      "text": "   \t}",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d86",
-      "text": "   \tif(title){",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d87",
-      "text": "   \t\tlines = [first_line, \"\"].concat(quote);",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d88",
-      "text": "   \t\tconst body = _encodeURIComponent(lines.join(LF));",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d89",
-      "text": "   \t\topen(`https://scrapbox.io/${my_project}/${_encodeURIComponent(title.trim())}?body=` + body);",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d8a",
-      "text": "   \t}",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d8b",
-      "text": "   })();",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d8c",
-      "text": "  code:minified.js",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d8d",
-      "text": "   (()=>{const p=\"Summer498\",m=`",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d8e",
-      "text": "   `,_=window,r=encodeURIComponent,c=_.scrapbox,a=t=>prompt(`Scrap \"${t}\" to /${p}/.`,t);let o,i,l,s;if(c){const t=c.Project.name,e=c.Page,n=e.title,d=t+\"/\"+n;o=a(n),o&&(i=`from [/${d}]`,s=e.lines.map(f=>f.text).slice(1))}else{const t=document.title;if(o=a(t),o){i=`from [${location.href} ${t}]`;const e=getSelection().toString();s=e.trim()?e.split(m).map(n=>\"> \"+n):[\"\"]}}if(o){l=[i,\"\"].concat(s);const t=r(l.join(m));open(`https://scrapbox.io/${p}/${r(o.trim())}?body=`+t)}})();",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d8f",
-      "text": "  code:obfuscated-and-minified.js",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d90",
-      "text": "   (function(x,a){const e=_0x2180,t=x();for(;[];)try{if(-parseInt(e(493))/1+parseInt(e(495))/2+-parseInt(e(516))/3*(parseInt(e(510))/4)+-parseInt(e(500))/5*(-parseInt(e(515))/6)+parseInt(e(509))/7+parseInt(e(512))/8*(parseInt(e(498))/9)+parseInt(e(514))/10*(parseInt(e(491))/11)===a)break;t.push(t.shift())}catch{t.push(t.shift())}})(_0x3708,934611),(()=>{const x=_0x2180,a=\"Summer498\",e=`",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d91",
-      "text": "   `,t=window,f=encodeURIComponent,s=t[x(494)],i=n=>prompt(x(502)+n+x(511)+a+\"/.\",n);let c,_,p,b;if(s){const n=s[x(496)][x(503)],o=s[x(508)],r=o[x(501)],u=n+\"/\"+r;c=i(r),c&&(_=x(497)+u+\"]\",b=o.lines[x(492)](I=>I[x(490)])[x(506)](1))}else{const n=document[x(501)];if(c=i(n),c){_=\"from [\"+location[x(505)]+\" \"+n+\"]\";const o=getSelection()[x(499)]();b=o[x(507)]()?o[x(504)](e).map(r=>\"> \"+r):[\"\"]}}if(c){p=[_,\"\"].concat(b);const n=f(p[x(489)](e));open(\"https://scrapbox.io/\"+a+\"/\"+f(c[x(507)]())+x(513)+n)}})();function _0x2180(x,a){const e=_0x3708();return _0x2180=function(t,f){return t=t-489,e[t]},_0x2180(x,a)}function _0x3708(){const x=[\"1842188RTJZDf\",\"scrapbox\",\"2603104vhushc\",\"Project\",\"from [/\",\"1562103gzWYWg\",\"toString\",\"11995STFYzi\",\"title\",'Scrap \"',\"name\",\"split\",\"href\",\"slice\",\"trim\",\"Page\",\"6212346qamlIv\",\"6454732vZzwVN\",'\" to /',\"80xDPKKK\",\"?body=\",\"504730Xkwxxa\",\"660IYgnZW\",\"3TKlMKs\",\"join\",\"text\",\"44XhhgQi\",\"map\"];return _0x3708=function(){return x},_0x3708()}",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d92",
-      "text": "   ",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d93",
-      "text": "  簡単に追跡されないよう、複数のobjectを介して函数等を実行している",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d94",
-      "text": "  さすがにこれを読むのはしんどい",
-      "userId": "616ca537c25a92001e5f1e0d",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d95",
-      "text": "  \t読めちゃマズいのでシンドいのは当然やね[Summer498.icon]",
-      "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1697607042,
-      "updated": 1697607042
-    },
-    {
-      "id": "652f6d815f1e0d0000a94d96",
+      "id": "673af6d971b3c2000043b2e2",
       "text": "",
-      "userId": "616ca537c25a92001e5f1e0d",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731917531,
+      "updated": 1731917531
+    },
+    {
+      "id": "673af6da71b3c2000043b2e3",
+      "text": "難読化はminifyの逆で余計長くなる印象が強い[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731917531,
+      "updated": 1731917543
+    },
+    {
+      "id": "673af6e971b3c2000043b2e4",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731917546,
+      "updated": 1731917546
+    },
+    {
+      "id": "652f6d815f1e0d0000a94d68",
+      "text": "✂ to [開いているWebページを自分のprojectに引用するbookmarkを例にとると(minify≠難読化)]",
+      "userId": "661b6e882a96e9002371b3c2",
       "created": 1697607042,
-      "updated": 1697607042
+      "updated": 1731917559
+    },
+    {
+      "id": "673af70971b3c2000043b2e5",
+      "text": "  (難読化は)簡単に追跡されないよう、複数のobjectを介して函数等を実行している",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731917578,
+      "updated": 1731917585
+    },
+    {
+      "id": "673af70971b3c2000043b2e6",
+      "text": "  さすがにこれを読むのはしんどい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731917578,
+      "updated": 1731917578
+    },
+    {
+      "id": "673af70971b3c2000043b2e7",
+      "text": "  \t読めちゃマズいのでシンドいのは当然やね[Summer498.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731917578,
+      "updated": 1731917578
+    },
+    {
+      "id": "673af70a71b3c2000043b2e8",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1731917579,
+      "updated": 1731917581
     }
   ]
 }
