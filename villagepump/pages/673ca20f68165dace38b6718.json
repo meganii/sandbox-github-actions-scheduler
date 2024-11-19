@@ -1,0 +1,225 @@
+{
+  "id": "673ca20f68165dace38b6718",
+  "title": "async functionの中のイベントリスナーの中からasync functionをreturnさせる方法ってありませんか",
+  "created": 1732026897,
+  "updated": 1732039273,
+  "lines": [
+    {
+      "id": "673ca20f68165dace38b6718",
+      "text": "async functionの中のイベントリスナーの中からasync functionをreturnさせる方法ってありませんか",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732026897,
+      "updated": 1732026897
+    },
+    {
+      "id": "673ca21073e5220000d0da9c",
+      "text": "[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732026897,
+      "updated": 1732026935
+    },
+    {
+      "id": "673ca23773e5220000d0daa3",
+      "text": "そこそこの頻度でこれを引いて[Promise]で書き直してるんだが、なんか回避方法があるんじゃないか……？と思って",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732026935,
+      "updated": 1732026940
+    },
+    {
+      "id": "673ca23c73e5220000d0daa4",
+      "text": " 例",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732026941,
+      "updated": 1732027070
+    },
+    {
+      "id": "673ca2bf73e5220000d0daa5",
+      "text": " \tcode:test.js",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027071,
+      "updated": 1732027075
+    },
+    {
+      "id": "673ca2c373e5220000d0daa6",
+      "text": " \t const test_promise = () => {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0daa7",
+      "text": "       return new Promise((resolve) => {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0daa8",
+      "text": "           document.body.addEventListener(\"click\", event => {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0daa9",
+      "text": "               resolve(new Date().toISOString());",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0daaa",
+      "text": "           }, { \"once\": true });",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0daab",
+      "text": "       });",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0daac",
+      "text": "   }",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0daad",
+      "text": "   const test_async = async () => {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0daae",
+      "text": "       document.body.addEventListener(\"click\", event => {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0daaf",
+      "text": "           return new Date().toISOString();",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0dab0",
+      "text": "       }, { \"once\": true });",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0dab1",
+      "text": "   }",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0dab2",
+      "text": "   const return_promise = await test_promise();",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0dab3",
+      "text": "   const return_async = await test_async();",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0dab4",
+      "text": "   document.body.addEventListener(\"click\", event => {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0dab5",
+      "text": "       console.log(return_promise, return_async);",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c373e5220000d0dab6",
+      "text": "   }, { \"once\": true });",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027076,
+      "updated": 1732027076
+    },
+    {
+      "id": "673ca2c673e5220000d0dab7",
+      "text": "  ↑をコンソールで実行したあとに<body>を2回クリックする",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027078,
+      "updated": 1732027095
+    },
+    {
+      "id": "673ca2d773e5220000d0dab8",
+      "text": "  本当は`return_promise`も`return_async`も時間になってほしいんだけど、`return_async`は`undefined`になる",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732027095,
+      "updated": 1732027120
+    },
+    {
+      "id": "673ca21173e5220000d0da9d",
+      "text": "",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732026897,
+      "updated": 1732026897
+    },
+    {
+      "id": "673cc30eaff09e000026f249",
+      "text": "[XY問題]感がある[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732035344,
+      "updated": 1732035359
+    },
+    {
+      "id": "673cc31faff09e000026f24b",
+      "text": " イベントリスナーからの返り値はvoidであり、通常無視されるってGPTさんが言ってたから返り値で情報を受け渡ししようとする「手段の選択」がそもそもおかしいのでは",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732035359,
+      "updated": 1732035716
+    },
+    {
+      "id": "673cc478aff09e000026f24c",
+      "text": " 達成したい「目的」はなんなのだろう",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732035704,
+      "updated": 1732035730
+    },
+    {
+      "id": "673cd1c673e52200003684b0",
+      "text": " 　`event.target`の中身を返すAsync Functionをつくりたい[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732039108,
+      "updated": 1732039208
+    },
+    {
+      "id": "673cd22c73e52200003684b1",
+      "text": " 　　IndexedDBはイベントベースだが、これをPromiseベースで扱えるようなラッパーを作ろうとしていた",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1732039210,
+      "updated": 1732039273
+    },
+    {
+      "id": "673cc310aff09e000026f24a",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732035344,
+      "updated": 1732035344
+    }
+  ]
+}
