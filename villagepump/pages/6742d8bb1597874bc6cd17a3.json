@@ -1,0 +1,428 @@
+{
+  "id": "6742d8bb1597874bc6cd17a3",
+  "title": "denoでファイルをロックする",
+  "created": 1732434108,
+  "updated": 1732446259,
+  "lines": [
+    {
+      "id": "6742d8bb1597874bc6cd17a3",
+      "text": "denoでファイルをロックする",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732434108,
+      "updated": 1732434108
+    },
+    {
+      "id": "6742d8bcaff09e0000e53e4d",
+      "text": "from [2024/11/24]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732434108,
+      "updated": 1732434108
+    },
+    {
+      "id": "6742d8bcaff09e0000e53e4f",
+      "text": "denoで[編集ロック]する[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732434108,
+      "updated": 1732443533
+    },
+    {
+      "id": "6742fd8f71b3c20000a4cac0",
+      "text": "\t[https://docs.deno.com/api/deno/~/Deno.FsFile#method_lock_0 FsFile.lock lock(exclusive?: boolean): Promise<void>]でできる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732443536,
+      "updated": 1732443606
+    },
+    {
+      "id": "6742fdc471b3c20000a4cac1",
+      "text": "\t\texclusiveがtrueだと読み込みも禁止になる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732443588,
+      "updated": 1732446008
+    },
+    {
+      "id": "6742ff5471b3c20000a4cac2",
+      "text": "\tAIに聞こう",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732443989,
+      "updated": 1732444859
+    },
+    {
+      "id": "674302ba71b3c20000a4cad3",
+      "text": "\t\t「ES6で」と指示したのにasync/awaitを使ってきた",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732444859,
+      "updated": 1732444871
+    },
+    {
+      "id": "6742ff5f71b3c20000a4cac4",
+      "text": "\t\tcode:read.js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732443999,
+      "updated": 1732444004
+    },
+    {
+      "id": "6742ff6471b3c20000a4cac5",
+      "text": "\t\t  function convertStreamToString(readableStream) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732444004,
+      "updated": 1732445011
+    },
+    {
+      "id": "6743035271b3c20000a4cadf",
+      "text": "     const reader = readableStream.getReader()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732445011,
+      "updated": 1732445011
+    },
+    {
+      "id": "6743035271b3c20000a4cae0",
+      "text": "     let result = ''",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732445011,
+      "updated": 1732445011
+    },
+    {
+      "id": "6743035271b3c20000a4cae1",
+      "text": "     function processResult(chunk) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732445011,
+      "updated": 1732445011
+    },
+    {
+      "id": "6743035271b3c20000a4cae2",
+      "text": "      if (chunk.done) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732445011,
+      "updated": 1732445011
+    },
+    {
+      "id": "6743035271b3c20000a4cae3",
+      "text": "       return Promise.resolve(result)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732445011,
+      "updated": 1732445011
+    },
+    {
+      "id": "6743035271b3c20000a4cae4",
+      "text": "      }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732445011,
+      "updated": 1732445011
+    },
+    {
+      "id": "6743035271b3c20000a4cae5",
+      "text": "      result += new TextDecoder().decode(chunk.value)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732445011,
+      "updated": 1732445011
+    },
+    {
+      "id": "6743035271b3c20000a4cae6",
+      "text": "      return reader.read().then(processResult)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732445011,
+      "updated": 1732445011
+    },
+    {
+      "id": "6743035271b3c20000a4cae7",
+      "text": "     }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732445011,
+      "updated": 1732445011
+    },
+    {
+      "id": "6743035271b3c20000a4cae8",
+      "text": "     return reader.read().then(processResult)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732445011,
+      "updated": 1732445011
+    },
+    {
+      "id": "6743035271b3c20000a4cae9",
+      "text": "    }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732445011,
+      "updated": 1732445011
+    },
+    {
+      "id": "6743079671b3c20000a4caeb",
+      "text": "  code:write.js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446103,
+      "updated": 1732446108
+    },
+    {
+      "id": "6743079c71b3c20000a4caec",
+      "text": "       function writeString(writer:WritableStreamDefaultWriter<Uint8Array>,str: string) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446108,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb07",
+      "text": "         const encoder = new TextEncoder();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb08",
+      "text": "         const data = encoder.encode(str);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb09",
+      "text": "         let offset = 0;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb0a",
+      "text": "         ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb0b",
+      "text": "         function writeChunk(): Promise<void> {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb0c",
+      "text": "           if (offset >= data.length) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb0d",
+      "text": "             return Promise.resolve();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb0e",
+      "text": "           }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb0f",
+      "text": "   ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb10",
+      "text": "           const chunk = data.slice(offset, offset + 1024);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb11",
+      "text": "           offset += 1024;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb12",
+      "text": "   ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb13",
+      "text": "           return writer.ready",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb14",
+      "text": "           .then(() => writer.write(chunk))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb15",
+      "text": "           .then(() => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb16",
+      "text": "             if (writer.desiredSize && writer.desiredSize < 0) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb17",
+      "text": "               return writer.ready;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb18",
+      "text": "             }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb19",
+      "text": "           })",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb1a",
+      "text": "           .then(writeChunk);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb1b",
+      "text": "         }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb1c",
+      "text": "         ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb1d",
+      "text": "         return writeChunk();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "674307f071b3c20000a4cb1e",
+      "text": "       }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732446193,
+      "updated": 1732446193
+    },
+    {
+      "id": "6742d8bcaff09e0000e53e50",
+      "text": "\t開始処理と終了処理は同期でもよくね?",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732434108,
+      "updated": 1732434108
+    },
+    {
+      "id": "6742d8bcaff09e0000e53e51",
+      "text": " \tどうせ後続の処理をブロックするんだし",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732434108,
+      "updated": 1732434108
+    },
+    {
+      "id": "6742d8bcaff09e0000e53e52",
+      "text": " \t起動が非同期だと全体のインデントが一つ下がっちゃう(promiseでも)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732434108,
+      "updated": 1732434108
+    },
+    {
+      "id": "6742d8bcaff09e0000e53e53",
+      "text": " \t\t[コールバック]: 入れ子が深くなる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732434108,
+      "updated": 1732434108
+    },
+    {
+      "id": "6742d8bcaff09e0000e53e54",
+      "text": " \t\tPromise: 結果データの取り回し",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732434108,
+      "updated": 1732434108
+    },
+    {
+      "id": "6742fd3d71b3c2000055ed1c",
+      "text": "   \t[https://gyazo.com/3d865ef8e9eed6fe4bc6fa7c6c2e4841]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732443454,
+      "updated": 1732446257
+    },
+    {
+      "id": "6742d8bcaff09e0000e53e55",
+      "text": " \t\tasync/await: 一見同期的に見えて問題が多いので嫌い",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732434108,
+      "updated": 1732434108
+    },
+    {
+      "id": "6742d8bcaff09e0000e53e56",
+      "text": " \t\t\t例えば、非同期関数に処理を渡してるときに他の関数が動いてグローバル変数が書き換えられるなど",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732434108,
+      "updated": 1732434108
+    },
+    {
+      "id": "6742d8bcaff09e0000e53e57",
+      "text": " \t\t\tグローバル変数をスレッドセーフにしなきゃいけない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732434108,
+      "updated": 1732434108
+    },
+    {
+      "id": "6742fd4771b3c2000055ed1e",
+      "text": " 切り出しthanks",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732443463,
+      "updated": 1732443466
+    },
+    {
+      "id": "6742d8bcaff09e0000e53e59",
+      "text": "\tタスクマネージャーの「関係の設定」という機能を試してみる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732434108,
+      "updated": 1732434108
+    },
+    {
+      "id": "6742d8bcaff09e0000e53e5a",
+      "text": "\t\t[https://gyazo.com/ce6f4ce5699845f8b709ea04cae1cef0]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732434108,
+      "updated": 1732434108
+    },
+    {
+      "id": "6742d8bcaff09e0000e53e5b",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732434108,
+      "updated": 1732434108
+    },
+    {
+      "id": "6742d8bcaff09e0000e53e5c",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732434108,
+      "updated": 1732434108
+    }
+  ]
+}
