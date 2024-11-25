@@ -1,0 +1,820 @@
+{
+  "id": "6743ed973d481debedd9f06b",
+  "title": "Cosenseへのimportが謎にこける問題",
+  "created": 1732504984,
+  "updated": 1732505261,
+  "lines": [
+    {
+      "id": "6743ed973d481debedd9f06b",
+      "text": "Cosenseへのimportが謎にこける問題",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732505017
+    },
+    {
+      "id": "6743ed97aff09e0000bef352",
+      "text": "from [作業室2024-11-24]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef353",
+      "text": "Cosenseへのimportが謎に転ける問題",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef354",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef355",
+      "text": "のりしろ[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef356",
+      "text": "　いまScrapbox(Cosense)からの自動英訳がGitHub Actionで動いてる",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef357",
+      "text": "　しかし翻訳後のScrapboxへのインポートでこけている",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef358",
+      "text": "　　時々この現象が起きるんだけど不可解だし、もうなんだかめんどくさいなー、Scrapboxにインポートするのはやめようかなー、という気持ち",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef359",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef35a",
+      "text": "議論",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef35b",
+      "text": "　[scrapbox json data]が大きすぎると失敗することがある[takker.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef35c",
+      "text": "　　あと、response.okがfalseでも、import自体は成功してることもある",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef35d",
+      "text": "　　とはいえこのあたりはもう調べてそうだから、別の現象かな",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef35e",
+      "text": "　　 そうなると自分もわからないな",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef35f",
+      "text": "　　差分にするとこまでやってる[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef360",
+      "text": "　　\thttps://github.com/nishio/etude-github-actions/actions/runs/11990367204",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef361",
+      "text": "　　\t大体理解[takker.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef362",
+      "text": " 　　\t[https://code2svg.vercel.app/svg/L20-34/https://raw.githubusercontent.com/nishio/etude-github-actions/e21e07e934496351ffb5780b1782bc52424874eb/import_to_scrapbox.ts#.svg https://github.com/nishio/etude-github-actions/blob/e21e07e934496351ffb5780b1782bc52424874eb/import_to_scrapbox.ts#L20-L34]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef363",
+      "text": " 　　\tscrapbox-userscript-stdのv0.14.0の`importPages`がエラーを吐いている",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef364",
+      "text": " 　　\t`error.name === undefined`となっている",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef365",
+      "text": " 　　\t　当時[api/page-data/import/:projectname.json]はまだあんまり詳しく解析してなかったはずだから、想定外のエラー情報が返ってきていそう",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef366",
+      "text": " 　　この状況だと、HTTP Errorは4xxか5xxではあるけど、import自体は成功している可能性もありますね[takker.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef367",
+      "text": "  　　88 pagesしかimportしていないから、ファイルサイズ超過によるerrorは起きてなさそう",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef368",
+      "text": " 　　\tstatus codeを見れればいいんだけどな……",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef369",
+      "text": " 　　\t `Response`を内部で潰してしまっているから、情報を得られない",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef36a",
+      "text": " 　　急場しのぎですが、これで`import_to_scrapbox.ts`を差し替えてみてください",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef36b",
+      "text": " 　　 (Quartzでの公開に方針を切り替えているようなので、差し替えは必要になったときで構いません)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef36c",
+      "text": "  　　$ deno check --remote -r=https://scrapbox.io https://scrapbox.io/api/code/villagepump/Cosenseへのimportが謎にこける問題/import_to_scrapbox.ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1732504984,
+      "updated": 1732505261
+    },
+    {
+      "id": "6743ed97aff09e0000bef36d",
+      "text": "  　　code:import_to_scrapbox.ts",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef36e",
+      "text": "     import { cookie, getCSRFToken } from \"jsr:@cosense/std@0.29/rest\";",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef36f",
+      "text": "     import { isErr, unwrapOk } from \"npm:option-t@50/plain_result\";",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef370",
+      "text": "     import { assert } from \"jsr:@core/unknownutil@4/assert\";",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef371",
+      "text": "     import { isString } from \"jsr:@core/unknownutil@4/is/string\";",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef372",
+      "text": "     import data from \"./data_en_diff.json\" with { type: \"json\" };",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef373",
+      "text": "     ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef374",
+      "text": "     const sid = Deno.env.get(\"SID\");",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef375",
+      "text": "     assert(sid, isString);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef376",
+      "text": "     const importingProjectName = \"nishio-en\";",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef377",
+      "text": "     ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef378",
+      "text": "     if (data.pages.length === 0) {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef379",
+      "text": "       console.log(\"No page to be imported found.\");",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef37a",
+      "text": "     } else {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef37b",
+      "text": "       console.log(",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef37c",
+      "text": "         `Importing ${data.pages.length} pages to \"/${importingProjectName}\"...`",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef37d",
+      "text": "       );",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef37e",
+      "text": "       ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef37f",
+      "text": "       // workaround: 生のResponseのstatusを見る機能が@cosense/std@0.29に無いので、直接REST APIを叩く",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef380",
+      "text": "       ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef381",
+      "text": "       // TODO: エラー処理を握りつぶさずもうちょっとちゃんとする",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef382",
+      "text": "       const csrf = unwrapOk(await getCSRFToken({ sid }));",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef383",
+      "text": "       ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef384",
+      "text": "       const formData = new FormData();",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef385",
+      "text": "       formData.append(",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef386",
+      "text": "         \"import-file\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef387",
+      "text": "         new Blob([JSON.stringify(data)], {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef388",
+      "text": "           type: \"application/octet-stream\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef389",
+      "text": "         }),",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef38a",
+      "text": "       );",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef38b",
+      "text": "       formData.append(\"name\", \"undefined\");",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef38c",
+      "text": "       ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef38d",
+      "text": "       const res = await fetch(",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef38e",
+      "text": "         `https://scrapbox.io/api/page-data/import/${importingProjectName}.json`,",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef38f",
+      "text": "         {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef390",
+      "text": "           method: \"POST\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef391",
+      "text": "           headers: {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef392",
+      "text": "             Cookie: cookie(sid),",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef393",
+      "text": "             Accept: \"application/json, text/plain, */*\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef394",
+      "text": "             \"X-CSRF-TOKEN\": csrf,",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef395",
+      "text": "           },",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef396",
+      "text": "           body: formData,",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef397",
+      "text": "         },",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef398",
+      "text": "       );",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef399",
+      "text": "    どういうエラーが返ってきているのかわからないので、一旦全部成功扱いにし、HTTP Errorが来たらその内容も表示するように変えました",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef39a",
+      "text": "    　とりあえずこれで、import時に何が起きているかはわかるはずです",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef39b",
+      "text": "    　時間が取れれば、[takker.icon]側でもimport errorの詳細を調べてみます[takker.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef39c",
+      "text": "    code:import_to_scrapbox.ts",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef39d",
+      "text": "       // 最近のimport pages APIの応答をちゃんと調べてないので、",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef39e",
+      "text": "       // 本当にimportに失敗したときのresponseを判別する方法がわからない。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef39f",
+      "text": "       // とりあえずResponseが返ってきさえすれば成功したことにする。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3a0",
+      "text": "       if (!res.ok) {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3a1",
+      "text": "         console.warn(`Importing may be failed. Please check \"/${importingProjectName}\".`);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3a2",
+      "text": "         console.warn(`Status code: ${res.status} ${res.statusText}`);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3a3",
+      "text": "       }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3a4",
+      "text": "       console.log(`Import result: ${await res.text()}`);",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3a5",
+      "text": "     }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3a6",
+      "text": "  　　(type check用のダミーjson)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3a7",
+      "text": "   　　code:data_en_diff.json",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3a8",
+      "text": "   　　 {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3a9",
+      "text": "   　　   \"pages\": [",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3aa",
+      "text": "   　　     {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3ab",
+      "text": "   　　       \"title\": \"For visiter of /nishio-en\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3ac",
+      "text": "   　　       \"lines\": [",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3ad",
+      "text": "   　　         \"For visiter of /nishio-en\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3ae",
+      "text": "              \"This site is [NISHIO Hirokazu]'s [Scrapbox].\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3af",
+      "text": "              \"For more detail: read [What is this?].\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3b0",
+      "text": "              \"This project [/nishio-en] is auto-translated from [/nishio] written in Japanese. I reviewed some pages but not all, due to there're 10000+ pages.\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3b1",
+      "text": "              \"If you find something interesting, feel free to tell me on [@nishio_en https://twitter.com/nishio_en] or [Bluesky https://bsky.app/profile/nishio.bsky.social]\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3b2",
+      "text": "              \"I'm very happy to spread my thought to non-Japanese readers.\"",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3b3",
+      "text": "            ]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3b4",
+      "text": "   　　     },",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3b5",
+      "text": "   　　     {",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3b6",
+      "text": "            \"title\": \"small stature\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3b7",
+      "text": "            \"lines\": [",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3b8",
+      "text": "              \"B8 size [piece of paper] introduced by [Tadao Umesao] in [The Art of Intellectual Production].\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3b9",
+      "text": "              \"\\u003EThere is a paper that I call \\\"Kozane\\\". The size is B8, and the paper is of any quality. (p.76)\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3ba",
+      "text": "              \"The term \\\"kozane\\\" is also used to refer to the kozane connected by \\\"[knee-swing (gymnastics)]\\\".\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3bb",
+      "text": "              \"\\u003EI call the resulting series of pieces of paper \\\"kozane\\\"... I call each piece of paper \\\"kozane\\\" and this method \\\"kozane-ho\\\" (p.203)\",",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3bc",
+      "text": "              \"[https://gyazo.com/3f79670a7f18423e3c645f0effa41bcd] [The Art of Intellectual Production] p.204\"",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3bd",
+      "text": "            ]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3be",
+      "text": "   　　     }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3bf",
+      "text": "   　　   ]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3c0",
+      "text": "   　　 }",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3c1",
+      "text": "   [- (ここにコードブロック置くの邪魔かも……どこかで切り出そう][takker.icon][- )]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1732504984,
+      "updated": 1732505251
+    },
+    {
+      "id": "6743ee951280f0000072475c",
+      "text": "   切り出しありがとうございます！[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1732505237,
+      "updated": 1732505243
+    },
+    {
+      "id": "6743ed97aff09e0000bef3c2",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    },
+    {
+      "id": "6743ed97aff09e0000bef3c3",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1732504984,
+      "updated": 1732504984
+    }
+  ]
+}
