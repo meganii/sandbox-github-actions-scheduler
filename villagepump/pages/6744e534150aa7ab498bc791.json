@@ -1,0 +1,288 @@
+{
+  "id": "6744e534150aa7ab498bc791",
+  "title": "井戸端の底500件をnode.jsで取得",
+  "created": 1732568375,
+  "updated": 1732568375,
+  "lines": [
+    {
+      "id": "6744e534150aa7ab498bc791",
+      "text": "井戸端の底500件をnode.jsで取得",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29414",
+      "text": "code:index.js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29415",
+      "text": " //@ts-check",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29416",
+      "text": " const fs = require(\"fs\").promises;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29417",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29418",
+      "text": " const main = async () => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29419",
+      "text": "   const pgcountjsonr = await fetch(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d2941a",
+      "text": "     \"https://scrapbox.io/api/pages/villagepump/?limit=1\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d2941b",
+      "text": "   );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d2941c",
+      "text": "   const pgcountjson = await pgcountjsonr.json();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d2941d",
+      "text": "   const pgcount = pgcountjson[\"count\"];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d2941e",
+      "text": "   let pglist = [];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d2941f",
+      "text": "   const pglisttempjsonr = await fetch(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29420",
+      "text": "     `https://scrapbox.io/api/pages/villagepump/?limit=500&skip=${pgcount - 500}`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29421",
+      "text": "   );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29422",
+      "text": "   const pglisttempjson = await pglisttempjsonr.json();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29423",
+      "text": "   pglisttempjson[\"pages\"].forEach((e) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29424",
+      "text": "     pglist.push(\" [\" + e[\"title\"] + \"]\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29425",
+      "text": "   });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29426",
+      "text": "   await fs.writeFile(\"villagepump.txt\", pglist.join(\"\\n\"));",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29427",
+      "text": " };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29428",
+      "text": " main();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29429",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d2942a",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d2942b",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d2942c",
+      "text": "code:package.json",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d2942d",
+      "text": " {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d2942e",
+      "text": "   \"name\": \"villagepumpsoko\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d2942f",
+      "text": "   \"version\": \"1.0.0\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29430",
+      "text": "   \"main\": \"index.js\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29431",
+      "text": "   \"scripts\": {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29432",
+      "text": "     \"start\": \"node .\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29433",
+      "text": "   },",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29434",
+      "text": "   \"keywords\": [],",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29435",
+      "text": "   \"author\": \"bsahd\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29436",
+      "text": "   \"license\": \"MIT\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29437",
+      "text": "   \"description\": \"get a **soko of pages** of villagepump.\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29438",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d29439",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    },
+    {
+      "id": "6744e53671b3c20000d2943a",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732568375,
+      "updated": 1732568375
+    }
+  ]
+}
