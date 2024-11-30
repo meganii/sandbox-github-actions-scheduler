@@ -1,0 +1,764 @@
+{
+  "id": "674acaba060b0fb7e98192c1",
+  "title": "Model Context Protocolを試す 2024/11/30",
+  "created": 1732954811,
+  "updated": 1732983302,
+  "lines": [
+    {
+      "id": "674acaba060b0fb7e98192c1",
+      "text": "Model Context Protocolを試す 2024/11/30",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732954811,
+      "updated": 1732954811
+    },
+    {
+      "id": "674acabce5172d00003f4a22",
+      "text": "from [2024/11/30]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732954811,
+      "updated": 1732954811
+    },
+    {
+      "id": "674acac9e5172d00003f4a27",
+      "text": "[Model Context Protocol]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732954823,
+      "updated": 1732954826
+    },
+    {
+      "id": "674acabce5172d00003f4a23",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732954811,
+      "updated": 1732954816
+    },
+    {
+      "id": "674acb23e5172d00003f4a30",
+      "text": "[Quickstart - Model Context Protocol https://modelcontextprotocol.io/quickstart]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732954913,
+      "updated": 1732954913
+    },
+    {
+      "id": "674acabce5172d00003f4a24",
+      "text": "[【Model Context Protocol】Claudeが全てのアプリと繋がる！？SlackやGitHubと連携してみた | WEEL https://weel.co.jp/media/tech/model-context-protocol/]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732954811,
+      "updated": 1732954811
+    },
+    {
+      "id": "674acabce5172d00003f4a26",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732954811,
+      "updated": 1732954811
+    },
+    {
+      "id": "674acbfae5172d00003f4a33",
+      "text": "[https://gyazo.com/2149ff8447339eeb886d537d3cbc10cd]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732955128,
+      "updated": 1732955130
+    },
+    {
+      "id": "674acbfbe5172d00003f4a34",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732955130,
+      "updated": 1732955130
+    },
+    {
+      "id": "674acc54e5172d00003f4a35",
+      "text": "クイックスタート：SQLiteと連携",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732955219,
+      "updated": 1732957489
+    },
+    {
+      "id": "674acc5ae5172d00003f4a36",
+      "text": "[https://gyazo.com/831ae51a1a733db742105ef5496ff0bb]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732955224,
+      "updated": 1732955225
+    },
+    {
+      "id": "674acfbde5172d00003f4a67",
+      "text": " Set up a local SQLite database",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732956091,
+      "updated": 1732956091
+    },
+    {
+      "id": "674acfbde5172d00003f4a68",
+      "text": " Connect Claude Desktop to it through MCP",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732956091,
+      "updated": 1732956091
+    },
+    {
+      "id": "674acfbde5172d00003f4a69",
+      "text": " Query and analyze your data securely",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732956091,
+      "updated": 1732956091
+    },
+    {
+      "id": "674acfbee5172d00003f4a6a",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732956093,
+      "updated": 1732956096
+    },
+    {
+      "id": "674acadde5172d00003f4a29",
+      "text": " [Claude Desktop]を入れる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732954844,
+      "updated": 1732954889
+    },
+    {
+      "id": "674accdce5172d00003f4a38",
+      "text": " Prerequisites",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732955355,
+      "updated": 1732956073
+    },
+    {
+      "id": "674acd13e5172d00003f4a45",
+      "text": "  macOSとWindowsがある",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732955410,
+      "updated": 1732955442
+    },
+    {
+      "id": "674acd33e5172d00003f4a46",
+      "text": "  \tWSLは使えない？[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732955442,
+      "updated": 1732955636
+    },
+    {
+      "id": "674acd4ae5172d00003f4a47",
+      "text": "    まあ一旦Windowsでやるか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732955465,
+      "updated": 1732955642
+    },
+    {
+      "id": "674acdeae5172d00003f4a48",
+      "text": "  [uv]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732955625,
+      "updated": 1732955628
+    },
+    {
+      "id": "674ace86e5172d00003f4a4a",
+      "text": "  git",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732955780,
+      "updated": 1732955781
+    },
+    {
+      "id": "674acea6e5172d00003f4a4b",
+      "text": "   もう入ってたのでスルー",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732955813,
+      "updated": 1732955819
+    },
+    {
+      "id": "674acdfde5172d00003f4a49",
+      "text": "  [sqlite]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732955644,
+      "updated": 1732955648
+    },
+    {
+      "id": "674acfcae5172d00003f4a6b",
+      "text": " Installation",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732956105,
+      "updated": 1732956106
+    },
+    {
+      "id": "674acfd0e5172d00003f4a6c",
+      "text": "  Create a sample database",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732956111,
+      "updated": 1732956112
+    },
+    {
+      "id": "674acfb5e5172d00003f4a4e",
+      "text": "   なぜかホームディレクトリに.dbを作るコマンドになっている、気持ち悪いので別ディレクトリにする",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732956084,
+      "updated": 1732956122
+    },
+    {
+      "id": "674acff2e5172d00003f4a6d",
+      "text": "  Configure Claude Desktop",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732956145,
+      "updated": 1732956146
+    },
+    {
+      "id": "674ad03ae5172d00003f4a6e",
+      "text": "   code:%APPDATA%\\Claude\\claude_desktop_config.json",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732956217,
+      "updated": 1732957930
+    },
+    {
+      "id": "674ad6ede5172d00003f4a7f",
+      "text": "    {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957932,
+      "updated": 1732957932
+    },
+    {
+      "id": "674ad6ede5172d00003f4a80",
+      "text": "      \"mcpServers\": {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957932,
+      "updated": 1732957932
+    },
+    {
+      "id": "674ad6ede5172d00003f4a81",
+      "text": "        \"sqlite\": {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957932,
+      "updated": 1732957932
+    },
+    {
+      "id": "674ad6ede5172d00003f4a82",
+      "text": "          \"command\": \"uvx\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957932,
+      "updated": 1732957932
+    },
+    {
+      "id": "674ad6ede5172d00003f4a83",
+      "text": "          \"args\": [",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957932,
+      "updated": 1732957932
+    },
+    {
+      "id": "674ad6ede5172d00003f4a84",
+      "text": "            \"mcp-server-sqlite\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957932,
+      "updated": 1732957932
+    },
+    {
+      "id": "674ad6ede5172d00003f4a85",
+      "text": "            \"--db-path\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957932,
+      "updated": 1732957932
+    },
+    {
+      "id": "674ad6ede5172d00003f4a86",
+      "text": "            \"C:\\\\Users\\\\YOUR_USERNAME\\\\test.db\"",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957932,
+      "updated": 1732957932
+    },
+    {
+      "id": "674ad6ede5172d00003f4a87",
+      "text": "          ]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957932,
+      "updated": 1732957932
+    },
+    {
+      "id": "674ad6ede5172d00003f4a88",
+      "text": "        }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957932,
+      "updated": 1732957932
+    },
+    {
+      "id": "674ad6ede5172d00003f4a89",
+      "text": "      }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957932,
+      "updated": 1732957932
+    },
+    {
+      "id": "674ad6ede5172d00003f4a8a",
+      "text": "    }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957932,
+      "updated": 1732957932
+    },
+    {
+      "id": "674ad6ede5172d00003f4a8b",
+      "text": "    ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957932,
+      "updated": 1732957932
+    },
+    {
+      "id": "674ad12de5172d00003f4a71",
+      "text": "   dbのパスを上で作ったものにする",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732956459,
+      "updated": 1732956469
+    },
+    {
+      "id": "674ad115e5172d00003f4a6f",
+      "text": " Test it out",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732956436,
+      "updated": 1732956444
+    },
+    {
+      "id": "674ad43ae5172d00003f4a73",
+      "text": "  Claude Desktopを再起動してデータベースの中身を聞いてみる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957240,
+      "updated": 1732957260
+    },
+    {
+      "id": "674ad11ee5172d00003f4a70",
+      "text": "  繋がらない…[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732956445,
+      "updated": 1732956451
+    },
+    {
+      "id": "674ad42ae5172d00003f4a72",
+      "text": "  バツボタン押してもタスクバーに常駐していた！再起動するにはそっちをQuitする必要がある",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957225,
+      "updated": 1732957290
+    },
+    {
+      "id": "674ad470e5172d00003f4a74",
+      "text": "  いけた",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957295,
+      "updated": 1732957297
+    },
+    {
+      "id": "674ad47ce5172d00003f4a75",
+      "text": "  クエリなどのたびにいちいち許可を求めてくる、うーん",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957307,
+      "updated": 1732957343
+    },
+    {
+      "id": "674acadde5172d00003f4a2a",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732954844,
+      "updated": 1732954844
+    },
+    {
+      "id": "674ad529e5172d00003f4a76",
+      "text": "GitHubと連携",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957480,
+      "updated": 1732957485
+    },
+    {
+      "id": "674ad52be5172d00003f4a77",
+      "text": " トークンを準備",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957482,
+      "updated": 1732957583
+    },
+    {
+      "id": "674ad60de5172d00003f4a79",
+      "text": "  [個人用アクセス トークンを管理する - GitHub Docs https://docs.github.com/ja/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957708,
+      "updated": 1732957710
+    },
+    {
+      "id": "674ad622e5172d00003f4a7b",
+      "text": "  [fine-grained personal access token]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957728,
+      "updated": 1732957733
+    },
+    {
+      "id": "674ad628e5172d00003f4a7c",
+      "text": "   GitHub推奨",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957735,
+      "updated": 1732958009
+    },
+    {
+      "id": "674ad62be5172d00003f4a7d",
+      "text": "   リポジトリごと",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957738,
+      "updated": 1732957771
+    },
+    {
+      "id": "674ad61be5172d00003f4a7a",
+      "text": "  [personal access token (classic)]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957722,
+      "updated": 1732957734
+    },
+    {
+      "id": "674ad63ce5172d00003f4a7e",
+      "text": "   全リポジトリ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732957755,
+      "updated": 1732957761
+    },
+    {
+      "id": "674ad731e5172d00003f4a8c",
+      "text": "   こっちが必要なようだ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732958000,
+      "updated": 1732958611
+    },
+    {
+      "id": "674ad747e5172d00003f4a8d",
+      "text": "    [setup | servers/src/github at main · modelcontextprotocol/servers https://github.com/modelcontextprotocol/servers/tree/main/src/github#setup]でこっちにリンクされている",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732958022,
+      "updated": 1732958030
+    },
+    {
+      "id": "674ad81ce5172d00003f4a8f",
+      "text": "    その下の説明",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732958234,
+      "updated": 1732958717
+    },
+    {
+      "id": "674ada00e5172d00003f4a91",
+      "text": "     Select which repositories you'd like this token to have access to (Public, All, or Select)",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732958719,
+      "updated": 1732958720
+    },
+    {
+      "id": "674ada13e5172d00003f4a94",
+      "text": "      これはfine-grained？？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732958737,
+      "updated": 1732958758
+    },
+    {
+      "id": "674ada02e5172d00003f4a92",
+      "text": "     Create a token with the repo scope (\"Full control of private repositories\")",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732958721,
+      "updated": 1732958729
+    },
+    {
+      "id": "674ada0ae5172d00003f4a93",
+      "text": "      これはclassicにしかない",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732958729,
+      "updated": 1732958737
+    },
+    {
+      "id": "674adb84e5172d00003f4a95",
+      "text": "    repo権限を与える",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732959107,
+      "updated": 1732959115
+    },
+    {
+      "id": "674adbb9e5172d00003f4a96",
+      "text": " Node.jsをインストール",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732959160,
+      "updated": 1732959164
+    },
+    {
+      "id": "674ade4de5172d00003f4a97",
+      "text": "  公式サイトによると[fnm]というのを使う？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732959820,
+      "updated": 1732959834
+    },
+    {
+      "id": "674ade84e5172d00003f4a98",
+      "text": "  [chocolatey]を使う版もある",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732959875,
+      "updated": 1732959886
+    },
+    {
+      "id": "674adf2be5172d00003f4a99",
+      "text": "   こっちにした",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732960042,
+      "updated": 1732960045
+    },
+    {
+      "id": "674ad7bee5172d00003f4a8e",
+      "text": " 設定",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732958142,
+      "updated": 1732982237
+    },
+    {
+      "id": "674b35dee5172d00003f4a9b",
+      "text": "  code:claude_desktop_config.json",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982237,
+      "updated": 1732982246
+    },
+    {
+      "id": "674b35e7e5172d00003f4a9c",
+      "text": "   {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982246,
+      "updated": 1732982247
+    },
+    {
+      "id": "674b35e8e5172d00003f4a9d",
+      "text": "     \"mcpServers\": {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982247,
+      "updated": 1732982247
+    },
+    {
+      "id": "674b35e8e5172d00003f4a9e",
+      "text": "       \"github\": {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982247,
+      "updated": 1732982247
+    },
+    {
+      "id": "674b35e8e5172d00003f4a9f",
+      "text": "         \"command\": \"npx\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982247,
+      "updated": 1732982247
+    },
+    {
+      "id": "674b35e8e5172d00003f4aa0",
+      "text": "         \"args\": [",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982247,
+      "updated": 1732982247
+    },
+    {
+      "id": "674b35e8e5172d00003f4aa1",
+      "text": "           \"-y\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982247,
+      "updated": 1732982247
+    },
+    {
+      "id": "674b35e8e5172d00003f4aa2",
+      "text": "           \"@modelcontextprotocol/server-github\"",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982247,
+      "updated": 1732982247
+    },
+    {
+      "id": "674b35e8e5172d00003f4aa3",
+      "text": "         ],",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982247,
+      "updated": 1732982247
+    },
+    {
+      "id": "674b35e8e5172d00003f4aa4",
+      "text": "         \"env\": {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982247,
+      "updated": 1732982247
+    },
+    {
+      "id": "674b35e8e5172d00003f4aa5",
+      "text": "           \"GITHUB_PERSONAL_ACCESS_TOKEN\": \"<YOUR_TOKEN>\"",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982247,
+      "updated": 1732982247
+    },
+    {
+      "id": "674b35e8e5172d00003f4aa6",
+      "text": "         }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982247,
+      "updated": 1732982247
+    },
+    {
+      "id": "674b35e8e5172d00003f4aa7",
+      "text": "       }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982247,
+      "updated": 1732982247
+    },
+    {
+      "id": "674b35e8e5172d00003f4aa8",
+      "text": "     }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982247,
+      "updated": 1732982247
+    },
+    {
+      "id": "674b35e8e5172d00003f4aa9",
+      "text": "   }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982247,
+      "updated": 1732982247
+    },
+    {
+      "id": "674b35eae5172d00003f4aaa",
+      "text": "  Windowsでは[npx]がうまくいかない？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982249,
+      "updated": 1732982341
+    },
+    {
+      "id": "674b3638e5172d00003f4aab",
+      "text": "  [MCP servers fail to connect with npx on Windows · Issue #40 · modelcontextprotocol/servers https://github.com/modelcontextprotocol/servers/issues/40]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982327,
+      "updated": 1732982336
+    },
+    {
+      "id": "674b369ee5172d00003f4abb",
+      "text": "  $ npm install -g @modelcontextprotocol/server-github",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982429,
+      "updated": 1732982444
+    },
+    {
+      "id": "674b3647e5172d00003f4aac",
+      "text": "  code:json",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982342,
+      "updated": 1732982370
+    },
+    {
+      "id": "674b3664e5172d00003f4aad",
+      "text": "   {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982370,
+      "updated": 1732982371
+    },
+    {
+      "id": "674b3664e5172d00003f4aae",
+      "text": "     \"mcpServers\": {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982371,
+      "updated": 1732982371
+    },
+    {
+      "id": "674b3664e5172d00003f4aaf",
+      "text": "       \"filesystem\": {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982371,
+      "updated": 1732982371
+    },
+    {
+      "id": "674b3664e5172d00003f4ab0",
+      "text": "         \"command\": \"node\",",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982371,
+      "updated": 1732982371
+    },
+    {
+      "id": "674b3664e5172d00003f4ab1",
+      "text": "         \"args\": [",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982371,
+      "updated": 1732982371
+    },
+    {
+      "id": "674b3664e5172d00003f4ab2",
+      "text": "           \"C:\\\\Users\\\\username\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\\\\@modelcontextprotocol\\\\server-github\\\\dist\\\\index.js\"",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982371,
+      "updated": 1732982389
+    },
+    {
+      "id": "674b3664e5172d00003f4ab4",
+      "text": "         ],",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982371,
+      "updated": 1732982399
+    },
+    {
+      "id": "674b3680e5172d00003f4ab8",
+      "text": "         \"env\": {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982399,
+      "updated": 1732982399
+    },
+    {
+      "id": "674b3682e5172d00003f4ab9",
+      "text": "             \"GITHUB_PERSONAL_ACCESS_TOKEN\": \"...\"",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982401,
+      "updated": 1732982415
+    },
+    {
+      "id": "674b3691e5172d00003f4aba",
+      "text": "         }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982416,
+      "updated": 1732982419
+    },
+    {
+      "id": "674b3664e5172d00003f4ab5",
+      "text": "       }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982371,
+      "updated": 1732982371
+    },
+    {
+      "id": "674b3664e5172d00003f4ab6",
+      "text": "     }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982371,
+      "updated": 1732982371
+    },
+    {
+      "id": "674b3664e5172d00003f4ab7",
+      "text": "   }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982371,
+      "updated": 1732982371
+    },
+    {
+      "id": "674b35dae5172d00003f4a9a",
+      "text": "  これでいけた",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982233,
+      "updated": 1732982471
+    },
+    {
+      "id": "674b36c5e5172d00003f4abc",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732982468,
+      "updated": 1732982468
+    },
+    {
+      "id": "674b39f8e5172d00003f4abd",
+      "text": "なにをしよう…",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732983287,
+      "updated": 1732983290
+    },
+    {
+      "id": "674b39fce5172d00003f4abf",
+      "text": " Cosenseのserverをつくる？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732983290,
+      "updated": 1732983302
+    },
+    {
+      "id": "674b39fbe5172d00003f4abe",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1732983290,
+      "updated": 1732983290
+    }
+  ]
+}

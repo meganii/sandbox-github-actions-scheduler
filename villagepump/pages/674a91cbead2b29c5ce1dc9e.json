@@ -1,0 +1,1401 @@
+{
+  "id": "674a91cbead2b29c5ce1dc9e",
+  "title": "scrapmerge.js",
+  "created": 1732940236,
+  "updated": 1732948335,
+  "lines": [
+    {
+      "id": "674a91cbead2b29c5ce1dc9e",
+      "text": "scrapmerge.js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1e7",
+      "text": "✂ from [Wikiのバージョン管理はまだ原始的]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1e8",
+      "text": "scrapmerge.js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1e9",
+      "text": "code:scrapmerge.js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1ea",
+      "text": " import * as Diff3 from \"npm:node-diff3\";",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1eb",
+      "text": " import { Command } from \"https://deno.land/x/cliffy@v0.19.2/command/mod.ts\";",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1ec",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1ed",
+      "text": " function getPage(projectName, pageName) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1ee",
+      "text": "     return fetch(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1ef",
+      "text": "         \"https://scrapbox.io/api/pages/\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1f0",
+      "text": "             projectName +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1f1",
+      "text": "             \"/\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1f2",
+      "text": "             encodeURIComponent(pageName) + \"/text\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1f3",
+      "text": "     ).then((pageRes) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1f4",
+      "text": "         if (pageRes.ok) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1f5",
+      "text": "             return pageRes.text();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1f6",
+      "text": "         } else {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1f7",
+      "text": "             return pageRes.text().then((text) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1f8",
+      "text": "                 console.error(pageRes.status, text);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1f9",
+      "text": "             });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1fa",
+      "text": "         }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1fb",
+      "text": "     });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1fc",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1fd",
+      "text": " new Command()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1fe",
+      "text": "     .name(\"scrapMerge\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b1ff",
+      "text": "     .arguments(\"<projectName> <mine> <older> <your>\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b200",
+      "text": "     .parse(Deno.args).then(({ args: [projectName, mine, older, your] }) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b201",
+      "text": "         return getPage(projectName, mine).then((",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b202",
+      "text": "             mineData,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b203",
+      "text": "         ) => [mineData, mine, older, your, projectName]);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b204",
+      "text": "     }).then(([mineData, mine, older, your, projectName]) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b205",
+      "text": "         return getPage(projectName, older).then((",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b206",
+      "text": "             olderData,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b207",
+      "text": "         ) => [mineData, olderData, mine, older, your, projectName]);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b208",
+      "text": "     })",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b209",
+      "text": "     .then(([mineData, olderData, mine, older, your, projectName]) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b20a",
+      "text": "         return getPage(projectName, your).then((",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b20b",
+      "text": "             yourData,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b20c",
+      "text": "         ) => [mineData, olderData, yourData, mine, older, your, projectName]);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b20d",
+      "text": "     }).then(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b20e",
+      "text": "         ([mineData, olderData, yourData, mine, older, your, projectName]) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b20f",
+      "text": "             const diff3dat = Diff3.mergeDiff3(mineData, olderData, yourData, {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b210",
+      "text": "                 label: { a: mine, o: older, b: your },",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b211",
+      "text": "                 excludeFalseConflicts: true,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b212",
+      "text": "                 stringSeparator: /\\n/,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b213",
+      "text": "             });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b214",
+      "text": "             console.log(diff3dat.result.join(\"\\n\"));",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b215",
+      "text": "         },",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b216",
+      "text": "     );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b217",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732940236
+    },
+    {
+      "id": "674a91cc71b3c20000a8b218",
+      "text": "[https://gyazo.com/5587d1731c863ec1fdb2d46f706d8a08]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732942321
+    },
+    {
+      "id": "674a99fa71b3c20000ede5f6",
+      "text": "<a href=\"https://www.flaticon.com/free-icons/commit-git \" title=\"commit git icons\">Commit git icons created by Ferdinand - Flaticon</a>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732942330,
+      "updated": 1732942335
+    },
+    {
+      "id": "674a99f171b3c20000ede5f5",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732942321,
+      "updated": 1732942321
+    },
+    {
+      "id": "674a91cc71b3c20000a8b219",
+      "text": "code:userscript.js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732940236,
+      "updated": 1732948335
+    },
+    {
+      "id": "674aa45d71b3c200008e7bab",
+      "text": " import * as Diff3 from \"npm:node-diff3\";",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bac",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bad",
+      "text": " function getPage(projectName, pageName) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bae",
+      "text": "     return fetch(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7baf",
+      "text": "         \"https://scrapbox.io/api/pages/\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bb0",
+      "text": "             projectName +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bb1",
+      "text": "             \"/\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bb2",
+      "text": "             encodeURIComponent(pageName) + \"/text\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bb3",
+      "text": "     ).then((pageRes) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bb4",
+      "text": "         if (pageRes.ok) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bb5",
+      "text": "             return pageRes.text();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bb6",
+      "text": "         } else {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bb7",
+      "text": "             return pageRes.text().then((text) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bb8",
+      "text": "                 console.error(pageRes.status, text);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bb9",
+      "text": "                 alert(`${pageName}:${pageRes.status}:${text}`);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bba",
+      "text": "             });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bbb",
+      "text": "         }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bbc",
+      "text": "     }).then((text) => text.split(\"\\n\").slice(1).join(\"\\n\"));",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bbd",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bbe",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bbf",
+      "text": " function getAvailability(projectName, pageName) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bc0",
+      "text": "     return fetch(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bc1",
+      "text": "         \"https://scrapbox.io/api/pages/\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bc2",
+      "text": "             projectName +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bc3",
+      "text": "             \"/\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bc4",
+      "text": "             encodeURIComponent(pageName),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bc5",
+      "text": "     ).then((pageRes) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bc6",
+      "text": "         if (pageRes.ok) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bc7",
+      "text": "             return pageRes.json();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bc8",
+      "text": "         } else {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bc9",
+      "text": "             return pageRes.text().then((text) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bca",
+      "text": "                 console.error(pageRes.status, text);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bcb",
+      "text": "                 alert(`${pageName}:${pageRes.status}:${text}`);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bcc",
+      "text": "             });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bcd",
+      "text": "         }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bce",
+      "text": "     }).then((json) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bcf",
+      "text": "         return json.persistent;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bd0",
+      "text": "     });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bd1",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bd2",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bd3",
+      "text": " const userName =",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bd4",
+      "text": "     document.querySelector(\"ul.user-menu li.list-header\").innerText;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bd5",
+      "text": " const projectName = scrapbox.Project.name;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bd6",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bd7",
+      "text": " scrapbox.PageMenu.addMenu({",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bd8",
+      "text": "     title: \"branchTool\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bd9",
+      "text": "     image: \"https://i.gyazo.com/5587d1731c863ec1fdb2d46f706d8a08.png\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bda",
+      "text": "     // <a href=\"https://www.flaticon.com/free-icons/commit-git\" title=\"commit git icons\">Commit git icons created by Ferdinand - Flaticon</a>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bdb",
+      "text": " });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bdc",
+      "text": " scrapbox.PageMenu(\"branchTool\").addItem({",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bdd",
+      "text": "     title: \"branch\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bde",
+      "text": "     onClick: () => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bdf",
+      "text": "         const your = `${scrapbox.Page.title} (${userName})`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7be0",
+      "text": "         const older = `${scrapbox.Page.title} (${userName} backup)`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7be1",
+      "text": "         getAvailability(projectName, your).then((branchalreadyexits) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7be2",
+      "text": "             if (branchalreadyexits) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7be3",
+      "text": "                 window.open(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7be4",
+      "text": "                     encodeURIComponent(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7be5",
+      "text": "                         your,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7be6",
+      "text": "                     ),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7be7",
+      "text": "                 );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7be8",
+      "text": "             } else {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7be9",
+      "text": "                 let b = \"\";",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bea",
+      "text": "                 const lines = scrapbox.Page.lines.slice(1);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7beb",
+      "text": "                 lines.unshift({ text: `from ${scrapbox.Page.title}` });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bec",
+      "text": "                 for (const a of lines) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bed",
+      "text": "                     b += a.text + \"\\n\";",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bee",
+      "text": "                 }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bef",
+      "text": "                 console.log(b);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bf0",
+      "text": "                 scrapbox.Page.insertLine(`${userName} branch:[${your}]`, 1);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bf1",
+      "text": "                 scrapbox.Page.insertLine(` backup:[${older}]`, 2);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bf2",
+      "text": "                 window.open(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bf3",
+      "text": "                     encodeURIComponent(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bf4",
+      "text": "                         older,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bf5",
+      "text": "                     ) + \"?body=\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bf6",
+      "text": "                         encodeURIComponent(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bf7",
+      "text": "                             b,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bf8",
+      "text": "                         ),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bf9",
+      "text": "                 );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bfa",
+      "text": "                 window.open(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bfb",
+      "text": "                     encodeURIComponent(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bfc",
+      "text": "                         your,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bfd",
+      "text": "                     ) + \"?body=\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bfe",
+      "text": "                         encodeURIComponent(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7bff",
+      "text": "                             b,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c00",
+      "text": "                         ),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c01",
+      "text": "                 );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c02",
+      "text": "             }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c03",
+      "text": "         });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c04",
+      "text": "     },",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c05",
+      "text": " });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c06",
+      "text": " scrapbox.PageMenu(\"branchTool\").addItem({",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c07",
+      "text": "     title: \"merge\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c08",
+      "text": "     onClick: () => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c09",
+      "text": "         const mine = scrapbox.Page.title;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c0a",
+      "text": "         const your = `${scrapbox.Page.title} (${userName})`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c0b",
+      "text": "         const older = `${scrapbox.Page.title} (${userName} backup)`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c0c",
+      "text": "         getPage(projectName, mine).then((",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c0d",
+      "text": "             mineData,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c0e",
+      "text": "         ) => [mineData]).then(([mineData]) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c0f",
+      "text": "             return getPage(projectName, older).then((",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c10",
+      "text": "                 olderData,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c11",
+      "text": "             ) => [mineData, olderData]);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c12",
+      "text": "         })",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c13",
+      "text": "             .then(([mineData, olderData]) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c14",
+      "text": "                 return getPage(projectName, your).then((",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c15",
+      "text": "                     yourData,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c16",
+      "text": "                 ) => [mineData, olderData, yourData]);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c17",
+      "text": "             }).then(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c18",
+      "text": "                 ([mineData, olderData, yourData]) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c19",
+      "text": "                     const diff3dat = Diff3.mergeDiff3(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c1a",
+      "text": "                         mineData,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c1b",
+      "text": "                         olderData,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c1c",
+      "text": "                         yourData,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c1d",
+      "text": "                         {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c1e",
+      "text": "                             excludeFalseConflicts: true,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c1f",
+      "text": "                             stringSeparator: /\\n/,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c20",
+      "text": "                             label: { a: \"main\", o: \"backup\", b: userName },",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c21",
+      "text": "                         },",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c22",
+      "text": "                     );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c23",
+      "text": "                     console.log(diff3dat);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c24",
+      "text": "                     const joined = `${scrapbox.Page.title}(${userName} merged)`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c25",
+      "text": "                     window.open(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c26",
+      "text": "                         encodeURIComponent(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c27",
+      "text": "                             older,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c28",
+      "text": "                         ),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c29",
+      "text": "                     );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c2a",
+      "text": "                     window.open(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c2b",
+      "text": "                         encodeURIComponent(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c2c",
+      "text": "                             your,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c2d",
+      "text": "                         ),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c2e",
+      "text": "                     );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c2f",
+      "text": "                     window.open(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c30",
+      "text": "                         encodeURIComponent(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c31",
+      "text": "                             joined,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c32",
+      "text": "                         ) + \"?body=\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c33",
+      "text": "                             encodeURIComponent(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c34",
+      "text": "                                 diff3dat.result.join(\"\\n\"),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c35",
+      "text": "                             ),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c36",
+      "text": "                     );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c37",
+      "text": "                 },",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c38",
+      "text": "             );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c39",
+      "text": "     },",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c3a",
+      "text": " });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    },
+    {
+      "id": "674aa45d71b3c200008e7c3b",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1732945036,
+      "updated": 1732945036
+    }
+  ]
+}
