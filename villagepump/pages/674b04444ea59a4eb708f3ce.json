@@ -2,7 +2,7 @@
   "id": "674b04444ea59a4eb708f3ce",
   "title": "井戸端ブックマーク",
   "created": 1732969550,
-  "updated": 1732975858,
+  "updated": 1733019659,
   "lines": [
     {
       "id": "674b04444ea59a4eb708f3ce",
@@ -80,6 +80,20 @@
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1732973600,
       "updated": 1732974580
+    },
+    {
+      "id": "674bc42d71b3c200005e1270",
+      "text": " \tcode:atodeyomu.js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733018669,
+      "updated": 1733018676
+    },
+    {
+      "id": "674bc42e71b3c200005e1271",
+      "text": "   javascript:import('https://scrapbox.io/api/code/villagepump/井戸端ブックマーク/min.js').then(m => m.atodeyomu(\"bsahd\"),()=>alert(\"error\"));undefined; ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733018670,
+      "updated": 1733018712
     },
     {
       "id": "674b0e0671b3c2000035d1ce",
@@ -222,6 +236,13 @@
       "updated": 1732974930
     },
     {
+      "id": "674bc7f571b3c200005e12c0",
+      "text": "\t後で読むのサンプル:[win2k.org/blog/2024/11/11/post-15748/]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019637,
+      "updated": 1733019646
+    },
+    {
       "id": "674b194b71b3c20000a27234",
       "text": "",
       "userId": "661b6e882a96e9002371b3c2",
@@ -244,10 +265,10 @@
     },
     {
       "id": "674b17d571b3c20000a27034",
-      "text": "\t export default o=>{const n=encodeURIComponent,p=location;var a=decodeURI(p.host+p.pathname);fetch(\"https://scrapbox.io/api/pages/villagepump/\"+n(a)).then(e=>e.ok?e.json():{persitent:!1}).then(e=>e.persistent).then(e=>{t=e?[]:[\"[\"+p.href+\" \"+document.title+\"]\",\"[\"+p.hostname+\"]\",\"[\"+o+\".icon]\"];var t,e=getSelection()+\"\";e.trim()&&e.split(\"\\n\").map(e=>{t.push(\" > \"+e)}),open(\"https://scrapbox.io/villagepump/\"+n(a)+\"?body=\"+n(t.join(\"\\n\")))})};",
+      "text": "\t function lib(){const e=encodeURIComponent,t=location;return[e,t,t=>fetch(\"https://scrapbox.io/api/pages/villagepump/\"+e(t)).then((e=>e.ok?e.json():{persitent:!1})).then((e=>e.persistent))]}export default function bookmark(e){var[t,o,n]=lib(),i=decodeURI(o.host+o.pathname);n(i).then((n=>{if(n)var p=[];else p=[\"[\"+o.href+\" \"+document.title+\"]\",\"[\"+o.hostname+\"]\"];p.push(\"[\"+e+\".icon]\");var a=getSelection()+\"\";a.trim()&&a.split(\"\\n\").map((e=>{p.push(\" > \"+e)})),open(\"https://scrapbox.io/villagepump/\"+t(i)+\"?body=\"+t(p.join(\"\\n\")))}))}export function atodeyomu(e){var[t,o,n]=lib(),i=decodeURI(o.host+o.pathname);n(i).then((n=>{if(n)var p=[];else p=[\"[\"+o.href+\" \"+document.title+\"]\",\"[\"+o.hostname+\"]\"];p.push(\"[\"+e+\".icon]\"),p.push(\"[\"+e+\":あとで読む]\");var a=getSelection()+\"\";a.trim()&&a.split(\"\\n\").map((e=>{p.push(\" > \"+e)})),location.href=\"https://scrapbox.io/villagepump/\"+t(i)+\"?body=\"+t(p.join(\"\\n\"))}))}",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1732974550,
-      "updated": 1732975366
+      "updated": 1733019603
     },
     {
       "id": "674b18ec71b3c20000a2704c",
@@ -265,304 +286,556 @@
     },
     {
       "id": "674b176b71b3c20000a27009",
-      "text": "  export default (username) => {",
+      "text": "  // deno-lint-ignore-file no-var no-inner-declarations no-redeclare prefer-const no-unused-vars",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1732974443,
-      "updated": 1732974443
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2700a",
-      "text": "    const myEncodeURIComponent = encodeURIComponent;",
+      "id": "674bc80b71b3c200005e12c1",
+      "text": "  function lib() {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974762
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b189a71b3c20000a2704a",
-      "text": "    const myLocation = location;",
+      "id": "674bc80b71b3c200005e12c2",
+      "text": "  \tconst myEncodeURIComponent = encodeURIComponent;",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974747,
-      "updated": 1732974763
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b18b571b3c20000a2704b",
-      "text": "    // エイリアスを作るとminifyの対象になる",
+      "id": "674bc80b71b3c200005e12c3",
+      "text": "  \tconst myLocation = location;",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974774,
-      "updated": 1732974779
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2700b",
-      "text": "    const getAvailability = (pageName) => {",
+      "id": "674bc80b71b3c200005e12c4",
+      "text": "  \tconst checkAlreadyExits = (pageName) => {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2700c",
-      "text": "      return fetch(",
+      "id": "674bc80b71b3c200005e12c5",
+      "text": "  \t\treturn fetch(",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2700d",
-      "text": "        \"https://scrapbox.io/api/pages/villagepump/\" + myEncodeURIComponent(pageName),",
+      "id": "674bc80b71b3c200005e12c6",
+      "text": "  \t\t\t\"https://scrapbox.io/api/pages/villagepump/\" +",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974766
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2700e",
-      "text": "      )",
+      "id": "674bc80b71b3c200005e12c7",
+      "text": "  \t\t\t\tmyEncodeURIComponent(pageName),",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2700f",
-      "text": "        .then((pageRes) => {",
+      "id": "674bc80b71b3c200005e12c8",
+      "text": "  \t\t)",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27010",
-      "text": "          if (pageRes.ok) {",
+      "id": "674bc80b71b3c200005e12c9",
+      "text": "  \t\t\t.then((pageRes) => {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27011",
-      "text": "            return pageRes.json();",
+      "id": "674bc80b71b3c200005e12ca",
+      "text": "  \t\t\t\tif (pageRes.ok) {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27012",
-      "text": "          } else {",
+      "id": "674bc80b71b3c200005e12cb",
+      "text": "  \t\t\t\t\treturn pageRes.json();",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27013",
-      "text": "            return { persitent: false };",
+      "id": "674bc80b71b3c200005e12cc",
+      "text": "  \t\t\t\t} else {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27014",
-      "text": "          }",
+      "id": "674bc80b71b3c200005e12cd",
+      "text": "  \t\t\t\t\treturn { persitent: false };",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27015",
-      "text": "        })",
+      "id": "674bc80b71b3c200005e12ce",
+      "text": "  \t\t\t\t}",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27016",
-      "text": "        .then((json) => {",
+      "id": "674bc80b71b3c200005e12cf",
+      "text": "  \t\t\t})",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27017",
-      "text": "          return json.persistent;",
+      "id": "674bc80b71b3c200005e12d0",
+      "text": "  \t\t\t.then((json) => {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27018",
-      "text": "        });",
+      "id": "674bc80b71b3c200005e12d1",
+      "text": "  \t\t\t\treturn json.persistent;",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27019",
-      "text": "    };",
+      "id": "674bc80b71b3c200005e12d2",
+      "text": "  \t\t\t});",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2701a",
-      "text": "  ",
+      "id": "674bc80b71b3c200005e12d3",
+      "text": "  \t};",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2701b",
-      "text": "    var pageName = decodeURI(myLocation.host + myLocation.pathname);",
+      "id": "674bc80b71b3c200005e12d4",
+      "text": "  \treturn [myEncodeURIComponent, myLocation, checkAlreadyExits];",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974784
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2701c",
-      "text": "    getAvailability(pageName).then((b) => {",
+      "id": "674bc80b71b3c200005e12d5",
+      "text": "  }",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2701d",
-      "text": "      if (b) {",
+      "id": "674bc80b71b3c200005e12d6",
+      "text": "  export default function bookmark(username) {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2701e",
-      "text": "        var lines = [];",
+      "id": "674bc80b71b3c200005e12d7",
+      "text": "  \tvar [myEncodeURIComponent, myLocation, checkAlreadyExits] = lib();",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2701f",
-      "text": "      } else {",
+      "id": "674bc80b71b3c200005e12d8",
+      "text": "  \tvar pageName = decodeURI(myLocation.host + myLocation.pathname);",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27020",
-      "text": "        var lines = [\"[\" + myLocation.href + \" \" + document.title + \"]\",\"[\"+myLocation.hostname+\"]\",\"[\" + username + \".icon]\"];",
+      "id": "674bc80b71b3c200005e12d9",
+      "text": "  \tcheckAlreadyExits(pageName).then((alreadyExits) => {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732975346
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27021",
-      "text": "      }",
+      "id": "674bc80b71b3c200005e12da",
+      "text": "  \t\tif (alreadyExits) {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732975348
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27023",
-      "text": "      var quote = getSelection() + \"\";",
+      "id": "674bc80b71b3c200005e12db",
+      "text": "  \t\t\tvar lines = [];",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974718
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27024",
-      "text": "      if (quote.trim()) {",
+      "id": "674bc80b71b3c200005e12dc",
+      "text": "  \t\t} else {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27025",
-      "text": "        quote.split(\"\\n\").map((line) => {",
+      "id": "674bc80b71b3c200005e12dd",
+      "text": "  \t\t\tvar lines = [",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27026",
-      "text": "          lines.push(\" > \" + line);",
+      "id": "674bc80b71b3c200005e12de",
+      "text": "  \t\t\t\t\"[\" + myLocation.href + \" \" + document.title + \"]\",",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b185771b3c20000a27049",
-      "text": "          // 本当はmapをこういう用途で使うのはNGだが、ゴルフのために仕方なく",
+      "id": "674bc80b71b3c200005e12df",
+      "text": "  \t\t\t\t\"[\" + myLocation.hostname + \"]\",",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974680,
-      "updated": 1732974693
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27027",
-      "text": "        });",
+      "id": "674bc80b71b3c200005e12e0",
+      "text": "  \t\t\t];",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27028",
-      "text": "      }",
+      "id": "674bc80b71b3c200005e12e1",
+      "text": "  \t\t}",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27029",
-      "text": "      open(",
+      "id": "674bc80b71b3c200005e12e2",
+      "text": "  \t\tlines.push(\"[\" + username + \".icon]\");",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974716
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2702a",
-      "text": "        \"https://scrapbox.io/villagepump/\" +",
+      "id": "674bc80b71b3c200005e12e3",
+      "text": "  \t\tvar quote = getSelection() + \"\";",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2702b",
-      "text": "          myEncodeURIComponent(pageName) +",
+      "id": "674bc80b71b3c200005e12e4",
+      "text": "  \t\tif (quote.trim()) {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974768
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2702c",
-      "text": "          \"?body=\" +",
+      "id": "674bc80b71b3c200005e12e5",
+      "text": "  \t\t\tquote.split(\"\\n\").map((line) => {",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2702d",
-      "text": "          myEncodeURIComponent(lines.join(\"\\n\")),",
+      "id": "674bc80b71b3c200005e12e6",
+      "text": "  \t\t\t\tlines.push(\" > \" + line);",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974769
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2702e",
-      "text": "      );",
+      "id": "674bc80b71b3c200005e12e7",
+      "text": "  \t\t\t\t// 本当はmapをこういう用途で使うのはNGだが、ゴルフのために仕方なく",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a2702f",
-      "text": "    });",
+      "id": "674bc80b71b3c200005e12e8",
+      "text": "  \t\t\t});",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27030",
-      "text": "  };",
+      "id": "674bc80b71b3c200005e12e9",
+      "text": "  \t\t}",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
-      "id": "674b176b71b3c20000a27031",
+      "id": "674bc80b71b3c200005e12ea",
+      "text": "  \t\topen(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12eb",
+      "text": "  \t\t\t\"https://scrapbox.io/villagepump/\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12ec",
+      "text": "  \t\t\t\tmyEncodeURIComponent(pageName) +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12ed",
+      "text": "  \t\t\t\t\"?body=\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12ee",
+      "text": "  \t\t\t\tmyEncodeURIComponent(lines.join(\"\\n\")),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12ef",
+      "text": "  \t\t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12f0",
+      "text": "  \t});",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12f1",
+      "text": "  }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12f2",
+      "text": "  export function atodeyomu(username) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12f3",
+      "text": "  \tvar [myEncodeURIComponent, myLocation, checkAlreadyExits] = lib();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12f4",
+      "text": "  \tvar pageName = decodeURI(myLocation.host + myLocation.pathname);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12f5",
+      "text": "  \tcheckAlreadyExits(pageName).then((alreadyExits) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12f6",
+      "text": "  \t\tif (alreadyExits) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12f7",
+      "text": "  \t\t\tvar lines = [];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12f8",
+      "text": "  \t\t} else {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12f9",
+      "text": "  \t\t\tvar lines = [",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12fa",
+      "text": "  \t\t\t\t\"[\" + myLocation.href + \" \" + document.title + \"]\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12fb",
+      "text": "  \t\t\t\t\"[\" + myLocation.hostname + \"]\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12fc",
+      "text": "  \t\t\t];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12fd",
+      "text": "  \t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12fe",
+      "text": "  \t\tlines.push(\"[\" + username + \".icon]\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e12ff",
+      "text": "  \t\tlines.push(\"[\" + username + \":あとで読む]\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e1300",
+      "text": "  \t\tvar quote = getSelection() + \"\";",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e1301",
+      "text": "  \t\tif (quote.trim()) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e1302",
+      "text": "  \t\t\tquote.split(\"\\n\").map((line) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e1303",
+      "text": "  \t\t\t\tlines.push(\" > \" + line);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e1304",
+      "text": "  \t\t\t\t// 本当はmapをこういう用途で使うのはNGだが、ゴルフのために仕方なく",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e1305",
+      "text": "  \t\t\t});",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e1306",
+      "text": "  \t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e1307",
+      "text": "  \t\tlocation.href = \"https://scrapbox.io/villagepump/\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e1308",
+      "text": "  \t\t\tmyEncodeURIComponent(pageName) +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e1309",
+      "text": "  \t\t\t\"?body=\" +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e130a",
+      "text": "  \t\t\tmyEncodeURIComponent(lines.join(\"\\n\"));",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e130b",
+      "text": "  \t});",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e130c",
+      "text": "  }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e130d",
       "text": "  // 引用機能は公式ブックマークレットをパクりました",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1732974443,
-      "updated": 1732974443
+      "created": 1733019659,
+      "updated": 1733019659
+    },
+    {
+      "id": "674bc80b71b3c200005e130e",
+      "text": "  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733019659,
+      "updated": 1733019659
     },
     {
       "id": "674b109c71b3c20000a26fda",
