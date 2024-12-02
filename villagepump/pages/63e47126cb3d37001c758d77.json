@@ -2,7 +2,7 @@
   "id": "63e47126cb3d37001c758d77",
   "title": "JavaScriptのSandboxing技術",
   "created": 1675915558,
-  "updated": 1675915579,
+  "updated": 1733124525,
   "lines": [
     {
       "id": "63e47126cb3d37001c758d77",
@@ -82,11 +82,116 @@
       "updated": 1675915558
     },
     {
+      "id": "674d5ada71b3c2000096767f",
+      "text": " \t\t速度は(wasmの仕様上JIT化ができないので)あまり期待できないかも[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733122778,
+      "updated": 1733123081
+    },
+    {
+      "id": "674d5b4271b3c20000967680",
+      "text": " \t\t\t現状ほぼ確実なのは「別のサブドメインにしたiframe内にコードを配置する」",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733122882,
+      "updated": 1733123081
+    },
+    {
+      "id": "674d5df271b3c20000967686",
+      "text": " \t\t\tブラウザ側のJITが無効なら...",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733123569,
+      "updated": 1733123579
+    },
+    {
+      "id": "674d5dfc71b3c20000967687",
+      "text": " \t\t\t\t二重にインタプリタするのですごく遅くなる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733123580,
+      "updated": 1733123589
+    },
+    {
+      "id": "674d5c3871b3c20000967681",
+      "text": " \t\t\tquickjsはemscriptenでjsで動く?",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733123127,
+      "updated": 1733123152
+    },
+    {
+      "id": "674d61a671b3c2000096768c",
+      "text": " \t\t\twasm非対応環境を考慮する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733124518,
+      "updated": 1733124525
+    },
+    {
+      "id": "674d5d5471b3c20000967682",
+      "text": " \t\t\tpartytown...",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733123412,
+      "updated": 1733123447
+    },
+    {
+      "id": "674d5d7771b3c20000967684",
+      "text": " \t\t\t\txhrかぁ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733123447,
+      "updated": 1733123450
+    },
+    {
+      "id": "674d5d7a71b3c20000967685",
+      "text": " \t\t\t\tパケット組み立てとかオーバーヘッドありそう",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733123450,
+      "updated": 1733123460
+    },
+    {
       "id": "63e471256eb406000028f02e",
-      "text": "",
-      "userId": "58442db3ee4a2400116eb406",
+      "text": "　　>モダンなJavaScriptに慣れ親しんだ我々にとってはとても「レガシー」でかつ積極的な活用は忌避すべきとされている 「同期的なXMLHttpRequest呼び出し」 と、Workerよりはまだ環境制約は多いが同じくモダンなWeb標準である 「Service Worker」 を使って解決したところが大変おもしろい",
+      "userId": "582e63d27c56960011aff09e",
       "created": 1675915558,
-      "updated": 1675915558
+      "updated": 1733123599
+    },
+    {
+      "id": "674d5e08aff09e00003ce5d4",
+      "text": "   ヤバいのがきたなw[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1733123599,
+      "updated": 1733123609
+    },
+    {
+      "id": "674d5e5571b3c20000967688",
+      "text": "   ただ、OS内のパケットキュー、(OS内の)ネットワークデバイスを経由したりするのがネックかな[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733123670,
+      "updated": 1733123712
+    },
+    {
+      "id": "674d5eeb71b3c20000967689",
+      "text": "   \t[https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest_API/Synchronous_and_Asynchronous_Requests 同期と非同期のリクエスト - Web API | MDN]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733123819,
+      "updated": 1733124135
+    },
+    {
+      "id": "674d602771b3c2000096768a",
+      "text": "    >XMLHttpRequest は同期と非同期通信の両方に対応しています。しかし、一般的には性能上の理由により、同期リクエストより非同期リクエストを選択すべきです。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733124135,
+      "updated": 1733124145
+    },
+    {
+      "id": "674d603e71b3c2000096768b",
+      "text": "    >同期リクエストが通常、実行をブロックしない稀な例として、 Worker 内での XMLHttpRequest の利用があります。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733124158,
+      "updated": 1733124159
+    },
+    {
+      "id": "674d5e0faff09e00003ce5d5",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1733123599,
+      "updated": 1733123599
     }
   ]
 }
