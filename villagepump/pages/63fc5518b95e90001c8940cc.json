@@ -2,7 +2,7 @@
   "id": "63fc5518b95e90001c8940cc",
   "title": "ES2015",
   "created": 1677481243,
-  "updated": 1732407917,
+  "updated": 1733550418,
   "lines": [
     {
       "id": "63fc5518b95e90001c8940cc",
@@ -402,6 +402,209 @@
       "userId": "60fb0a79f3364000237838e3",
       "created": 1677481719,
       "updated": 1677481739
+    },
+    {
+      "id": "6753df4f71b3c2000056a3c9",
+      "text": "\t\t[generator]を使って擬似的に代替することもできる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549903,
+      "updated": 1733549914
+    },
+    {
+      "id": "6753e01f71b3c2000056a3e2",
+      "text": "\t\t\tasync/awaitに慣れた人はこの形式で我慢できる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733550111,
+      "updated": 1733550125
+    },
+    {
+      "id": "6753df5a71b3c2000056a3ca",
+      "text": "\t\t\tcode:async_generator.js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549914,
+      "updated": 1733549929
+    },
+    {
+      "id": "6753df6a71b3c2000056a3cb",
+      "text": "\t\t\t function* generatorFunction() {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3cc",
+      "text": "      const result1 = yield Promise.resolve(1);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3cd",
+      "text": "      console.log(result1);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3ce",
+      "text": "      const result2 = yield Promise.resolve(2);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3cf",
+      "text": "      console.log(result2);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3d0",
+      "text": "      return 'Done';",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3d1",
+      "text": "    }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3d2",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3d3",
+      "text": "    function runGenerator(generator) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3d4",
+      "text": "      const gen = generator();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733550214
+    },
+    {
+      "id": "6753df6b71b3c2000056a3d5",
+      "text": "      ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3d6",
+      "text": "      function handle(result) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3d7",
+      "text": "        if (result.done) return Promise.resolve(result.value);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3d8",
+      "text": "        return Promise.resolve(result.value).then(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3d9",
+      "text": "          res => handle(gen.next(res)),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3da",
+      "text": "          err => handle(gen.throw(err))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3db",
+      "text": "        );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3dc",
+      "text": "      }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3dd",
+      "text": "      ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3de",
+      "text": "      return handle(gen.next());",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3df",
+      "text": "    }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753e03a71b3c2000056a3e3",
+      "text": "    // minifyed",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733550137,
+      "updated": 1733550142
+    },
+    {
+      "id": "6753e03e71b3c2000056a3e4",
+      "text": "    // function runGenerator(e){const r=e();return function n(e){return e.done?Promise.resolve(e.value):Promise.resolve(e.value).then(e=>n(r.next(e)),e=>n(r.throw(e)))}(r.next())}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733550142,
+      "updated": 1733550237
+    },
+    {
+      "id": "6753df6b71b3c2000056a3e0",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753df6b71b3c2000056a3e1",
+      "text": "    runGenerator(generatorFunction).then(result => console.log(result));",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1733549930,
+      "updated": 1733549930
+    },
+    {
+      "id": "6753e11f1280f000009274dc",
+      "text": "   [asyncToGenerator]だ[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1733550367,
+      "updated": 1733550418
     },
     {
       "id": "63fc566f7838e3000083c52d",
