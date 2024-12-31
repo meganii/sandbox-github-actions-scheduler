@@ -1,0 +1,393 @@
+{
+  "id": "67740224659805666f6f1e1a",
+  "title": "DevinにUserScriptを改善させた(2024/12/31)",
+  "created": 1735655973,
+  "updated": 1735657134,
+  "lines": [
+    {
+      "id": "67740224659805666f6f1e1a",
+      "text": "DevinにUserScriptを改善させた(2024/12/31)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "6774022caff09e000086d4fd",
+      "text": "[Devin.ai]にUserScriptを改善させてて、更新されたものを手でCosenseに貼るのがめんどくさいなと思い、GitHubにDevinが直接書いて、CosenseがGitHubから読むようにできないかな〜と考えた。Tampermonkeyを使えばできるよということだったのでそれを作ってもらった[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655981,
+      "updated": 1735656119
+    },
+    {
+      "id": "6774022caff09e000086d4fe",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655981,
+      "updated": 1735655981
+    },
+    {
+      "id": "67740225aff09e000086d4cc",
+      "text": "from [2024/12/31]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4cd",
+      "text": "DevinにUserScriptを改善させた(2024/12/31)",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "677402c3aff09e000086d4ff",
+      "text": "[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735656131,
+      "updated": 1735656132
+    },
+    {
+      "id": "67740225aff09e000086d4ce",
+      "text": "https://github.com/nishio/concatPages READMEもいつの間にか更新されてた",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4cf",
+      "text": "\thttps://github.com/nishio/concatPages/pull/1/commits/e9cf4d6ae4cdda01b55629f22e15f90f4e55e1a2 ここか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4d0",
+      "text": "バグ修正",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4d1",
+      "text": "\thttps://github.com/nishio/concatPages/pull/2",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4d2",
+      "text": "GitHubのファイルをそのままUserScriptにできないんだっけ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4d3",
+      "text": "\tRefused to load the script 'https://raw.githubusercontent.com/nishio/concatPages/refs/heads/main/main.js' because it violates the following Content Security Policy directive: \"script-src 'self' cdnjs.cloudflare.com maps.googleapis.com 'unsafe-eval' helpfeel-tweaks.helpfeel.com js.stripe.com www.google.com www.gstatic.com\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback.",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4d4",
+      "text": "\tできないのか〜",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4d5",
+      "text": "　o1 proにどうするといいか案出ししてもらったらTampermonkeyで読めばいいよというのでそうすることにしよう",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4d6",
+      "text": "　DevinがGitHubを更新したのを僕がScrapboxに貼る作業はめんどくさいからね",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4d7",
+      "text": "　connect.sid持ち出してimport api叩けば自動でscrapbox更新できたはず[bsahd.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4d8",
+      "text": "　[UserScript Page Edit API]を使いたい[yosider.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4d9",
+      "text": "　\tTamperMonkey経由でGithubから読み込み、スクリプト配置ページを開くと自動で更新する？[bsahd.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4da",
+      "text": "　\tDevinはAPI叩けないのかな[yosider.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4db",
+      "text": "　\t\tCookie取れるならimport apiが使える[bsahd.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4dc",
+      "text": "　立ったらついでに他のユーザスクリプトもまとめてモノレポにするか？",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4dd",
+      "text": "https://github.com/nishio/my-cosense-scripts/pull/1",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4de",
+      "text": "\tとりあえず作ってくれたのをマージしたけど、ちょっとよくわからないな",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4df",
+      "text": "\tREADMEにユーザー向けの導入手順と使用方法を追加してくれるそうなのでしばらく放置",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4e0",
+      "text": "[fix: use GM_addElement to avoid CSP inline script violation by devin-ai-integrationbot · Pull Request #5 · nishio/my-cosense-scripts https://github.com/nishio/my-cosense-scripts/pull/5]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4e1",
+      "text": "\tGM_addElementで読むってよ",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4e2",
+      "text": "\tCSPエラーは出ないが、メニューも出ないな、タイミングの問題かな",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4e3",
+      "text": "\tCORSはscriptタグで通過できたけど、CSPは無理では[bsahd.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4e4",
+      "text": "問題なくGMから各スクリプトのロードができて、読まれるスクリプトの側のconsole.logがちゃんと出てるのでロード周りに関しては問題ないんだけど、ロードされるタイミングでScrapboxの側がメニューの追加をできる状態になってないみたい",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4e5",
+      "text": "　本物のユーザスクリプトの実行タイミングよらだいぶ早く実行されてるね",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4e6",
+      "text": "　ユーザスクリプトの側からGMで読んだコードを呼ぶようにすればいいか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4e7",
+      "text": "　[/takker/TamperMonkeyでScrapBubbleを使う]のコードを参考にしてみては[bsahd.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4e8",
+      "text": "\t\t`#editor`が現れるまで待つのね[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4e9",
+      "text": "\t今回は関係なさそうだけど、UserScriptは[scrapboxの編集画面]にアクセスしないと読み込まれない点に注意[takker.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4ea",
+      "text": "\t TamperMonkeyから注入してるなら関係ないか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4eb",
+      "text": "\t \tたぶん早すぎるタイミングで読んでるのでメニューに追加されない[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4ec",
+      "text": "\t\t 今コード読んでみました(おい)[takker.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4ed",
+      "text": "\t\t  `scrapbox.PageMenu.addItem`がglobal scopeにあるのがやはり原因だと思います",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4ee",
+      "text": "\t\t 　タイミングが早いというのも同意",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4ef",
+      "text": "\t\t `#editor`を待つ他に、`scrapbox`が生えるのを待つ方法もあります",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4f0",
+      "text": "\t\t  `#editor`に依存したコードはなさそうだから、これでもいい",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4f1",
+      "text": "\t\t  Tampermonkeyからの呼び出し時点では既に`scrapbox.PageMenu.addItem`があってエラーにならない、多分その後で初期化されてしまうのだと思う[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4f2",
+      "text": "\t\t  　Cosense自体もWorkerとか使って非同期に色々してるからonLoadでGMが動くとCosenseの想定外のタイミングに割り込んでしまうのだろう",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "677406971280f0000096988f",
+      "text": "\t\t  　おっとそうだったんですね[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1735657112,
+      "updated": 1735657129
+    },
+    {
+      "id": "677406a91280f00000969890",
+      "text": "\t\t  　 確認不足でした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1735657129,
+      "updated": 1735657134
+    },
+    {
+      "id": "67740225aff09e000086d4f3",
+      "text": "\t自分が編集権限があるプロジェクトならUserScriptからGMが用意したentrypointを呼んでやればいいだけだなと思ったが、\"TamperMonkeyでScrapBubbleを使う\"は他人のプロジェクトでも使えるわけか",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4f4",
+      "text": "\t\tまあ上記の議論も含めて考えると`#editor`を待つのは妥当な気がするな",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4f5",
+      "text": "[https://gyazo.com/5f4975687cc9f60984635afe2dbff635]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4f6",
+      "text": "\thttps://github.com/nishio/my-cosense-scripts/pull/7",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4f7",
+      "text": "\tばっちり動くようになった",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4f8",
+      "text": "最後にノウハウをドキュメント化してもらうことにしよう",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4f9",
+      "text": "\t✅https://github.com/nishio/my-cosense-scripts?tab=readme-ov-file#同様のシステムの実装方法",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4fa",
+      "text": "GitHubにおいた読めるコードをGitHub Actionでminifyするところまでやろうかと思ってたけど飽きた",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4fb",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    },
+    {
+      "id": "67740225aff09e000086d4fc",
+      "text": "",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1735655973,
+      "updated": 1735655973
+    }
+  ]
+}
