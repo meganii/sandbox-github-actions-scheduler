@@ -1,0 +1,652 @@
+{
+  "id": "6777bb80d24066c6c95786fe",
+  "title": "ページ内のLuaをリアルタイムで実行する",
+  "created": 1735900037,
+  "updated": 1735927014,
+  "lines": [
+    {
+      "id": "6777bb80d24066c6c95786fe",
+      "text": "ページ内のLuaをリアルタイムで実行する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735900037,
+      "updated": 1735913750
+    },
+    {
+      "id": "6777bb8271b3c2000030100f",
+      "text": "✂ from [2025/01/03]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735900037,
+      "updated": 1735900037
+    },
+    {
+      "id": "6778234a71b3c200008472c6",
+      "text": "[https://gyazo.com/ea77af029b7534bb0e13b45cc9874fdc]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735926603,
+      "updated": 1735926702
+    },
+    {
+      "id": "6777dbc171b3c200007bf268",
+      "text": "#UserScript",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735908290,
+      "updated": 1735908290
+    },
+    {
+      "id": "6777f3dc71b3c200006cb026",
+      "text": "[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914461,
+      "updated": 1735914461
+    },
+    {
+      "id": "6777f22e71b3c200006cb01b",
+      "text": "機能のまとめ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914031,
+      "updated": 1735914637
+    },
+    {
+      "id": "6777f48c71b3c200006cb029",
+      "text": "[Lua版ScrapCalc]。リアルタイムで実行される。コードブロックも実行できる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914637,
+      "updated": 1735926687
+    },
+    {
+      "id": "6777f48e71b3c200006cb02a",
+      "text": "機能のまとめ 終わり",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914639,
+      "updated": 1735914900
+    },
+    {
+      "id": "6777f5ab71b3c200006cb044",
+      "text": "['_ 以下infoboxは読まないでください]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914923,
+      "updated": 1735914953
+    },
+    {
+      "id": "6777bb8271b3c20000301012",
+      "text": "ソース:[/bsahd-public/ScrapLua]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735900037,
+      "updated": 1735908585
+    },
+    {
+      "id": "6777dc6271b3c200007bf26b",
+      "text": "\t[* [https://scrapbox-bundler.vercel.app/?url=https://scrapbox.io/api/code/bsahd-public/ScrapLua/script.js&bundle&minify&reload Scrapbox Bundlerでバンドルする]]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735908451,
+      "updated": 1735914024
+    },
+    {
+      "id": "6777dc6f71b3c200007bf26c",
+      "text": "\t\t容量が大きいので分割して貼り付ける必要があります",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735908463,
+      "updated": 1735908556
+    },
+    {
+      "id": "6777dccb71b3c200007bf26d",
+      "text": "\t[https://scrapbox-bundler.vercel.app/?url=https://scrapbox.io/api/code/bsahd-public/ScrapLua/script.js&bundle&minify&reload&template=https://scrapbox.io/api/code/bsahd-public/ScrapLua/template Cosense JSONとしてバンドル]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735908556,
+      "updated": 1735908567
+    },
+    {
+      "id": "6777dd0571b3c200007bf26f",
+      "text": "\t\t出力結果を[https://gyazo.com/88cf08a8cafa41454c22cf0cfb43776e]ダウンロードし、個人プロジェクトにimportしてください",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735908614,
+      "updated": 1735908642
+    },
+    {
+      "id": "6777dcd771b3c200007bf26e",
+      "text": "\t\tその後、UserScript欄に`import \"/api/code/{インポートしたプロジェクト名}/ScrapLua/script.js\"`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735908567,
+      "updated": 1735909088
+    },
+    {
+      "id": "6777dc2571b3c200007bf26a",
+      "text": "\t容量が大きい？ほとんどは[fengari]の容量です",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735909038,
+      "updated": 1735915018
+    },
+    {
+      "id": "6778049871b3c20000461d4b",
+      "text": "\tコードは現在(2025/1/4 00:39)リアルタイムで更新されます",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735918745,
+      "updated": 1735918764
+    },
+    {
+      "id": "6777ff5a71b3c20000461d44",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917403,
+      "updated": 1735917403
+    },
+    {
+      "id": "6777ff0471b3c20000461d3d",
+      "text": "使い方",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917316,
+      "updated": 1735917328
+    },
+    {
+      "id": "6777ff1071b3c20000461d3e",
+      "text": "\tLuaコードを`[%* `と`]`で囲む or ファイル名が`scrap.lua`で終わるcodeblockに置いてください",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917328,
+      "updated": 1735917370
+    },
+    {
+      "id": "6777ffac71b3c20000461d46",
+      "text": "\t\t`%*`部分の順序は問いません",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917485,
+      "updated": 1735917499
+    },
+    {
+      "id": "6777ffa571b3c20000461d45",
+      "text": "\t\tこれ以降、`[%* ... ]`で囲まれたコードとファイル名が`scrap.lua`で終わるcodeblockをセルと呼びます",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917477,
+      "updated": 1735917547
+    },
+    {
+      "id": "6778002b71b3c20000461d47",
+      "text": "\t\t複数の行をセルに書きたいときは`;`で1行にできますが、codeblockにするのをお勧めします",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917612,
+      "updated": 1735917640
+    },
+    {
+      "id": "6777ff4071b3c20000461d40",
+      "text": "\tリアルタイムに計算結果が出ます",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917376,
+      "updated": 1735917382
+    },
+    {
+      "id": "6778084471b3c20000270dc2",
+      "text": "\tLuaの書き方は[https://qiita.com/aike@github/items/2023bbeb21094af6795e しぶしぶ覚えるLua言語 #REAPER - Qiita]でも読んでください",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735919684,
+      "updated": 1735919697
+    },
+    {
+      "id": "6777ff4b71b3c20000461d41",
+      "text": "\t[- 計算に1秒以上かかるコードは推奨しません]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917388,
+      "updated": 1735919408
+    },
+    {
+      "id": "67781e9e71b3c20000eac00d",
+      "text": "\t\t2秒未満がベストです",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735925406,
+      "updated": 1735926348
+    },
+    {
+      "id": "6778073071b3c200008abc06",
+      "text": "\t\tデバウンスするようにしました",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735919408,
+      "updated": 1735919416
+    },
+    {
+      "id": "6778019771b3c20000461d49",
+      "text": "\t\t[https://qiita.com/itinerant_programmer/items/5900b3ea0e6823223ee7 一瞬で理解！JavaScriptの debounce テクニックとその実装方法 #React - Qiita]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917976,
+      "updated": 1735918035
+    },
+    {
+      "id": "6778019971b3c20000461d4a",
+      "text": "  \tいれちゃえ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917978,
+      "updated": 1735918038
+    },
+    {
+      "id": "6777ff5571b3c20000461d42",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917397,
+      "updated": 1735917398
+    },
+    {
+      "id": "6777f60a71b3c200006cb047",
+      "text": "注意事項",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735915018,
+      "updated": 1735915021
+    },
+    {
+      "id": "6777d60271b3c20000326f3f",
+      "text": " 本家[ScrapCalc]のCSSが必要です",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735906819,
+      "updated": 1735915023
+    },
+    {
+      "id": "6777bb8271b3c20000301013",
+      "text": " Luaのローカル変数にすると変数が共有されません(セル内に閉じた変数として使えます)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735900037,
+      "updated": 1735917555
+    },
+    {
+      "id": "6777f0d771b3c200006cb01a",
+      "text": " 変数名に日本語は使えません",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735913687,
+      "updated": 1735915023
+    },
+    {
+      "id": "6777ff5771b3c20000461d43",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917399,
+      "updated": 1735917399
+    },
+    {
+      "id": "6777f67571b3c200006cb049",
+      "text": "他機能",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735915126,
+      "updated": 1735917399
+    },
+    {
+      "id": "6777d43871b3c20000d80975",
+      "text": " [ScrapJupyter]的にも使えます",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735906361,
+      "updated": 1735915029
+    },
+    {
+      "id": "6777dada71b3c20000108b18",
+      "text": " \tファイル名が`scrap.lua`で終わる場合に反応する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735908058,
+      "updated": 1735915023
+    },
+    {
+      "id": "6777fe3771b3c20000461d3c",
+      "text": "  同じ名前のcodeblockでもインタプリタ的には別で実行されます",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917111,
+      "updated": 1735917111
+    },
+    {
+      "id": "6777fe2871b3c20000461d37",
+      "text": " \tアウトプットは各codeblockの下にまとめてでます",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917097,
+      "updated": 1735917136
+    },
+    {
+      "id": "6777bb8271b3c2000030101a",
+      "text": " 通常版ScrapCalcの記法の置いてあるページでは使わないほうがいいです",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735902793,
+      "updated": 1735915023
+    },
+    {
+      "id": "6777f5f671b3c200006cb045",
+      "text": " \t通常版ScrapCalc側がLuaコードをJSとしてevalする",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914998,
+      "updated": 1735915023
+    },
+    {
+      "id": "6777f67c71b3c200006cb04a",
+      "text": " 下部のStatus barに計算時間を表示しています",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735915132,
+      "updated": 1735915132
+    },
+    {
+      "id": "6777f67c71b3c200006cb04b",
+      "text": "  クリックすると強制再計算されます",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735915132,
+      "updated": 1735915132
+    },
+    {
+      "id": "6777f6e471b3c200006cb04d",
+      "text": "  計算時間はインタプリタの準備込みです",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735915237,
+      "updated": 1735915250
+    },
+    {
+      "id": "67781c5471b3c20000a0a354",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924821,
+      "updated": 1735924823
+    },
+    {
+      "id": "67781c5771b3c20000a0a355",
+      "text": "コミットログ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924823,
+      "updated": 1735924825
+    },
+    {
+      "id": "67781c2371b3c20000a0a353",
+      "text": " 2025/1/4 02:20:出力結果がコードの一部として解釈されるバグを修正",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924772,
+      "updated": 1735924819
+    },
+    {
+      "id": "67781e3e71b3c20000eac00c",
+      "text": " 2025/1/4 02:28: 計算中にカーソルを砂時計にするようにした",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735925310,
+      "updated": 1735925319
+    },
+    {
+      "id": "67781f9671b3c20000c0bbb1",
+      "text": " \tスマホ勢のためにステータスバーにも表示する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735925655,
+      "updated": 1735925666
+    },
+    {
+      "id": "6777f40471b3c200006cb027",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914501,
+      "updated": 1735914685
+    },
+    {
+      "id": "6777f4c271b3c200006cb02e",
+      "text": "[リアルタイム版ScrapCalc]との違い",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914691,
+      "updated": 1735914845
+    },
+    {
+      "id": "6777f55c71b3c200006cb040",
+      "text": "\t高セキュリティ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914845,
+      "updated": 1735915606
+    },
+    {
+      "id": "6777f56c71b3c200006cb041",
+      "text": "\tコードブロック対応:複数行のコードを書ける",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914861,
+      "updated": 1735914882
+    },
+    {
+      "id": "6777f65271b3c200006cb048",
+      "text": "\t結果は通常のScrapCalcに近い形式で出る",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735915090,
+      "updated": 1735917589
+    },
+    {
+      "id": "6777fe0171b3c20000461d34",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917058,
+      "updated": 1735917058
+    },
+    {
+      "id": "6777fe0171b3c20000461d35",
+      "text": "[https://gyazo.com/7c518bb1d78b891bb45ee07695c12284]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917058,
+      "updated": 1735917059
+    },
+    {
+      "id": "6777fe0271b3c20000461d36",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735917059,
+      "updated": 1735917059
+    },
+    {
+      "id": "6777f4c371b3c200006cb02f",
+      "text": "現在時刻を出す",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914691,
+      "updated": 1735915012
+    },
+    {
+      "id": "6777f4cb71b3c200006cb030",
+      "text": " [%* print(os.date(\"%Y-%m-%d %H:%M:%S\"))]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914700,
+      "updated": 1735917244
+    },
+    {
+      "id": "6777f4cb71b3c200006cb032",
+      "text": " [%* print(os.time())]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914700,
+      "updated": 1735919620
+    },
+    {
+      "id": "6777f4d571b3c200006cb03e",
+      "text": "フィボナッチベンチマーク",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914709,
+      "updated": 1735916881
+    },
+    {
+      "id": "6777f4cb71b3c200006cb033",
+      "text": " code:bsahd.scrap.lua",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914700,
+      "updated": 1735926470
+    },
+    {
+      "id": "677808c071b3c20000270dcb",
+      "text": "  -- フィボナッチ数列",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735919808,
+      "updated": 1735923611
+    },
+    {
+      "id": "6777f4cb71b3c200006cb035",
+      "text": "  function fib(n)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735914700,
+      "updated": 1735924936
+    },
+    {
+      "id": "67781cc771b3c20000eadb1b",
+      "text": "    if n < 2 then ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735924946
+    },
+    {
+      "id": "67781cc771b3c20000eadb1c",
+      "text": "    \treturn n ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735924946
+    },
+    {
+      "id": "67781cc771b3c20000eadb1d",
+      "text": "    else ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735924946
+    },
+    {
+      "id": "67781cc771b3c20000eadb1e",
+      "text": "    \treturn fib(n-1)+fib(n-2)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735924946
+    },
+    {
+      "id": "67781cc771b3c20000eadb1f",
+      "text": "    end",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735924946
+    },
+    {
+      "id": "67781cc771b3c20000eadb20",
+      "text": "   end",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735924946
+    },
+    {
+      "id": "67781cc771b3c20000eadb21",
+      "text": "   function fib_array(num)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735924946
+    },
+    {
+      "id": "67781cc771b3c20000eadb22",
+      "text": "   \tlocal result = {}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735924946
+    },
+    {
+      "id": "67781cc771b3c20000eadb23",
+      "text": "   \tfor i = 0, num do",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735924946
+    },
+    {
+      "id": "67781cc771b3c20000eadb24",
+      "text": "   \t\tresult[i] = fib(i)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735924946
+    },
+    {
+      "id": "67781cc771b3c20000eadb25",
+      "text": "    \tend",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735924946
+    },
+    {
+      "id": "67781cc771b3c20000eadb26",
+      "text": "    \treturn result",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735924946
+    },
+    {
+      "id": "67781cc771b3c20000eadb27",
+      "text": "   end",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735924946
+    },
+    {
+      "id": "67781cc771b3c20000eadb28",
+      "text": "   fa = \"\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735924946
+    },
+    {
+      "id": "67781fbc71b3c20000c0bbb3",
+      "text": "   fat = fib_array(25)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735925693,
+      "updated": 1735925799
+    },
+    {
+      "id": "67781cc771b3c20000eadb29",
+      "text": "   for i,v in pairs(fat) do",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735925692
+    },
+    {
+      "id": "67781fa971b3c20000c0bbb2",
+      "text": " \t\tif #fat == i then ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735925674,
+      "updated": 1735925781
+    },
+    {
+      "id": "67781fe871b3c20000c0bbb7",
+      "text": "    \t\tfa = fa..v",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735925736,
+      "updated": 1735925748
+    },
+    {
+      "id": "67781fe371b3c20000c0bbb5",
+      "text": "  \telse",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735925731,
+      "updated": 1735925789
+    },
+    {
+      "id": "67781fe471b3c20000c0bbb6",
+      "text": "    \t\tfa = fa..v..\", \"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735925732,
+      "updated": 1735925745
+    },
+    {
+      "id": "67781fcf71b3c20000c0bbb4",
+      "text": "  \tend",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735925711,
+      "updated": 1735925792
+    },
+    {
+      "id": "67781cc771b3c20000eadb2b",
+      "text": "   end",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735925649
+    },
+    {
+      "id": "67781cc771b3c20000eadb2c",
+      "text": "   print(fa)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924936,
+      "updated": 1735925909
+    },
+    {
+      "id": "6777f75571b3c200006cb050",
+      "text": "ScrapLua:1500ms[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735915350,
+      "updated": 1735926743
+    },
+    {
+      "id": "67781b6171b3c20000a0a351",
+      "text": "\t普通のLua:187ms",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735924577,
+      "updated": 1735927014
+    },
+    {
+      "id": "677824d371b3c200008472cb",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735926995,
+      "updated": 1735926995
+    }
+  ]
+}
