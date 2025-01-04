@@ -1,0 +1,3102 @@
+{
+  "id": "677846a68b1df8ec3d4aa70f",
+  "title": "Cosense Code Clone",
+  "created": 1735935657,
+  "updated": 1735983792,
+  "lines": [
+    {
+      "id": "677846a68b1df8ec3d4aa70f",
+      "text": "Cosense Code Clone",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735935657,
+      "updated": 1735935657
+    },
+    {
+      "id": "677846a971b3c200002cdf80",
+      "text": "Cosense上の[コードブロック]をクローンする",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735935657,
+      "updated": 1735935679
+    },
+    {
+      "id": "677846c471b3c200002cdf8b",
+      "text": "[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735935685,
+      "updated": 1735935685
+    },
+    {
+      "id": "677878b671b3c2000099808f",
+      "text": "[* 公開projectの場合]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948471,
+      "updated": 1735948489
+    },
+    {
+      "id": "677878e271b3c200009980ed",
+      "text": "最初はclone",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948514,
+      "updated": 1735948514
+    },
+    {
+      "id": "677878e271b3c200009980ee",
+      "text": " $ deno run --allow-net=scrapbox.io:443 --allow-write=./scrapbox_temp --allow-read=./scrapbox_temp https://scrapbox.io/api/code/villagepump/Cosense_Code_Clone/clone.ts clone プロジェクト名",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948514,
+      "updated": 1735948514
+    },
+    {
+      "id": "677878e271b3c200009980ef",
+      "text": "  `./scrapbox_temp`にクローンされる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948514,
+      "updated": 1735948514
+    },
+    {
+      "id": "677878e271b3c200009980f0",
+      "text": " \t必ずアクセスは`./scrapbox_temp`のみの許可にしてください。そうでないとインジェクションによって重要なファイルが書き換えられることがあります。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948514,
+      "updated": 1735948514
+    },
+    {
+      "id": "677878e271b3c200009980f1",
+      "text": "pull",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948514,
+      "updated": 1735954745
+    },
+    {
+      "id": "677878e271b3c200009980f2",
+      "text": "\t変更のあるページのみ再作成する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948514,
+      "updated": 1735948514
+    },
+    {
+      "id": "677878e271b3c200009980f3",
+      "text": " $ deno run --allow-net=scrapbox.io:443 --allow-write=./scrapbox_temp --allow-read=./scrapbox_temp https://scrapbox.io/api/code/villagepump/Cosense_Code_Clone/clone.ts pull プロジェクト名",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948514,
+      "updated": 1735948514
+    },
+    {
+      "id": "677878e271b3c200009980f4",
+      "text": " 更新が近い順ソート(標準)なので、modifiedが消えたら少し待って終了していいのかな",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948514,
+      "updated": 1735953657
+    },
+    {
+      "id": "677878e271b3c200009980f6",
+      "text": " Cosenseから消えたページはファイル上には残る",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948514,
+      "updated": 1735948514
+    },
+    {
+      "id": "6778913b71b3c20000998436",
+      "text": "[-  また、Cosense上から消えたcodeblockも残る]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735954747,
+      "updated": 1735971725
+    },
+    {
+      "id": "677878b671b3c20000998090",
+      "text": "[* 非公開projectの場合]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948471,
+      "updated": 1735953925
+    },
+    {
+      "id": "67788e0571b3c20000998324",
+      "text": "\t準備中です",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735953926,
+      "updated": 1735953930
+    },
+    {
+      "id": "67788e0a71b3c20000998325",
+      "text": "\texport json dataをもとに生成できるようにしたい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735953930,
+      "updated": 1735953941
+    },
+    {
+      "id": "677878b671b3c20000998091",
+      "text": "[* 構造]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948471,
+      "updated": 1735948569
+    },
+    {
+      "id": "677846b871b3c200002cdf85",
+      "text": "ページ名に`/`が入る場合、ファイルシステム上では階層構造になる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735935672,
+      "updated": 1735935776
+    },
+    {
+      "id": "67788b2971b3c20000998320",
+      "text": "\t日記ページがちゃんと階層化される",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735953194,
+      "updated": 1735953200
+    },
+    {
+      "id": "6778563f71b3c200002ce293",
+      "text": "\tコードブロック名ではされない(エスケープされる)ので注意",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735939648,
+      "updated": 1735943916
+    },
+    {
+      "id": "677846b871b3c200002cdf86",
+      "text": "後は中で普通に`#include \"../ページ名/コードブロック名\"`すればいい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735935672,
+      "updated": 1735935776
+    },
+    {
+      "id": "677866bc71b3c200008472d3",
+      "text": "`./scrapbox_temp/ページ名/コードブロック名`形式になる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735943868,
+      "updated": 1735943890
+    },
+    {
+      "id": "677866b971b3c200008472d2",
+      "text": "ページテキストは`./scrapbox_temp/ページ名/text.txt`にクローンされる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735943866,
+      "updated": 1735948565
+    },
+    {
+      "id": "6778ef6571b3c2000096df91",
+      "text": "\tページJSONは`./scrapbox_temp/ページ名/json.json`にクローンされる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735978854,
+      "updated": 1735978862
+    },
+    {
+      "id": "6778ef7471b3c2000096df92",
+      "text": "\tページHTMLは`./scrapbox_temp/ページ名/text.html`にクローンされる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735978870,
+      "updated": 1735978879
+    },
+    {
+      "id": "6778ef6171b3c2000096df8c",
+      "text": "Windows環境の場合、ページ名から`: * ? \" < > ? |`はパーセントエンコードされる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735978850,
+      "updated": 1735978851
+    },
+    {
+      "id": "6778ef6171b3c2000096df8d",
+      "text": "\tパーセントエンコードの為`%`もエンコードされる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735978850,
+      "updated": 1735978851
+    },
+    {
+      "id": "6778ef6171b3c2000096df8e",
+      "text": "\t`\\ /`は自動的に階層にする",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735978850,
+      "updated": 1735978851
+    },
+    {
+      "id": "6778ef6171b3c2000096df8f",
+      "text": "\tファイル名の場合は`/`と",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735978850,
+      "updated": 1735978851
+    },
+    {
+      "id": "6778ef6171b3c2000096df90",
+      "text": "書き込み失敗しても続きのページはしっかりとやる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735978850,
+      "updated": 1735978851
+    },
+    {
+      "id": "6778efc471b3c2000096df94",
+      "text": "\t`/`or`\\`の前後に空白があると失敗する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735978949,
+      "updated": 1735978968
+    },
+    {
+      "id": "6778db6271b3c20000b91356",
+      "text": "複数のページからリンクされてても本文がなければ(薄くなっているなら)HTMLは生成されません",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735973731,
+      "updated": 1735978954
+    },
+    {
+      "id": "6778dc6b71b3c20000b91357",
+      "text": "\t空ページの一覧のAPIあるのかな",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735973996,
+      "updated": 1735978954
+    },
+    {
+      "id": "6778e09a71b3c20000b91481",
+      "text": "だめだ。完全に静的サイトジェネレーターを目指してる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735975067,
+      "updated": 1735978954
+    },
+    {
+      "id": "6778e45f71b3c20000b91482",
+      "text": "\t目次作る",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735976032,
+      "updated": 1735978954
+    },
+    {
+      "id": "6778e51071b3c20000b91483",
+      "text": "\t頭文字ごとにアクセスできるようにする",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735976209,
+      "updated": 1735978954
+    },
+    {
+      "id": "6778eeee71b3c2000096df85",
+      "text": "\t1/2 hop linksだす",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735978735,
+      "updated": 1735978954
+    },
+    {
+      "id": "6778eef971b3c2000096df86",
+      "text": "\t\t2 hopの重複が気になる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735978746,
+      "updated": 1735978954
+    },
+    {
+      "id": "6778791a71b3c20000998100",
+      "text": "[* メリット]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948571,
+      "updated": 1735948573
+    },
+    {
+      "id": "6778791d71b3c20000998101",
+      "text": "\tHTTP importに対応していない言語でも使える",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948574,
+      "updated": 1735948605
+    },
+    {
+      "id": "6778f16871b3c2000096df96",
+      "text": "\tお気に入りのpublic projectがローカルで読めるようになる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735979369,
+      "updated": 1735979382
+    },
+    {
+      "id": "6778f16971b3c2000096df97",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735979370,
+      "updated": 1735979370
+    },
+    {
+      "id": "6778f40171b3c2000096df99",
+      "text": "新バージョンで井戸端をcloneする",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735980033,
+      "updated": 1735980042
+    },
+    {
+      "id": "6778f40971b3c2000096df9b",
+      "text": "\t9.2GB",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735980042,
+      "updated": 1735981186
+    },
+    {
+      "id": "6778f9e171b3c2000096dfa2",
+      "text": "\t7-zipの最速で圧縮すると1.3GBになる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735981539,
+      "updated": 1735981574
+    },
+    {
+      "id": "6778f4cf71b3c2000096dfa1",
+      "text": "\t容量の大半が重複した複数フォーマットとクソデカ2 hop linksでは...",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735980239,
+      "updated": 1735980239
+    },
+    {
+      "id": "6778f40171b3c2000096df9a",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735980034,
+      "updated": 1735980034
+    },
+    {
+      "id": "6778e7d971b3c20000b91749",
+      "text": "インデックス",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735976922,
+      "updated": 1735976924
+    },
+    {
+      "id": "6778e7da71b3c20000b9174a",
+      "text": "\t[https://gyazo.com/00237f540afa7fc175475d098d30f8d2]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735976924,
+      "updated": 1735976924
+    },
+    {
+      "id": "6778e7da71b3c20000b9174b",
+      "text": "\t\t上部の文字の塊:それぞれの文字ごとに索引になっていて、頭文字から引ける",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735976924,
+      "updated": 1735976924
+    },
+    {
+      "id": "6778e7da71b3c20000b9174c",
+      "text": "ページ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735976924,
+      "updated": 1735976924
+    },
+    {
+      "id": "6778e7da71b3c20000b9174d",
+      "text": "\t[https://gyazo.com/c1cc6c47475dbf224dedf9310447a928]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735976924,
+      "updated": 1735976924
+    },
+    {
+      "id": "6778e7da71b3c20000b9174e",
+      "text": "\t\t画像類は基本的に読み込まれない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735976924,
+      "updated": 1735976924
+    },
+    {
+      "id": "677848da71b3c200002ce0c1",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735936218,
+      "updated": 1735936218
+    },
+    {
+      "id": "677887a371b3c20000998104",
+      "text": "table:test",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735952291,
+      "updated": 1735952294
+    },
+    {
+      "id": "677887a571b3c20000998105",
+      "text": "\tA1\tB1\tC1",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735952294,
+      "updated": 1735952301
+    },
+    {
+      "id": "677887ac71b3c20000998107",
+      "text": "\tA2\tB2\tC2",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735952301,
+      "updated": 1735952306
+    },
+    {
+      "id": "677887b271b3c20000998108",
+      "text": "\tA3\tB3\tC3",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735952306,
+      "updated": 1735952311
+    },
+    {
+      "id": "677887a571b3c20000998106",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735952294,
+      "updated": 1735952294
+    },
+    {
+      "id": "67788ed171b3c20000998326",
+      "text": "[scrapbox-external-backup]との違い",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735954130,
+      "updated": 1735954143
+    },
+    {
+      "id": "67788edd71b3c20000998328",
+      "text": "\tわかりやすい形式で保存する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735954143,
+      "updated": 1735954154
+    },
+    {
+      "id": "67788eef71b3c20000998329",
+      "text": "\tHTMLを生成する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735954159,
+      "updated": 1735954163
+    },
+    {
+      "id": "67788ef271b3c2000099832a",
+      "text": "\tリンク用にディレクトリ化されたコードブロックのファイルができる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735954163,
+      "updated": 1735954176
+    },
+    {
+      "id": "67788ed171b3c20000998327",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735954130,
+      "updated": 1735954130
+    },
+    {
+      "id": "6779025b71b3c20000996f1d",
+      "text": "名前の由来",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735983709,
+      "updated": 1735983712
+    },
+    {
+      "id": "6779025f71b3c20000996f1f",
+      "text": "\tCosense Code: Cosense内のコードブロック",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735983712,
+      "updated": 1735983724
+    },
+    {
+      "id": "6779026c71b3c20000996f20",
+      "text": "\tClone: `git clone`を意識してる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735983724,
+      "updated": 1735983736
+    },
+    {
+      "id": "677902a771b3c20000996f21",
+      "text": "\t\tCosenseをコードリポジトリとして使ってみたかった",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735983784,
+      "updated": 1735983792
+    },
+    {
+      "id": "6779025c71b3c20000996f1e",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735983709,
+      "updated": 1735983709
+    },
+    {
+      "id": "6778790c71b3c200009980ff",
+      "text": "[scrapbox-parser]使おう",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948557,
+      "updated": 1735948557
+    },
+    {
+      "id": "6778f3f671b3c2000096df98",
+      "text": "旧バージョン:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735980023,
+      "updated": 1735980027
+    },
+    {
+      "id": "677856fd71b3c200002ce294",
+      "text": "井戸端全体をcloneしてみる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735939838,
+      "updated": 1735939845
+    },
+    {
+      "id": "6778570571b3c200002ce296",
+      "text": "\tぽつぽつエラーが出る",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735939845,
+      "updated": 1735939850
+    },
+    {
+      "id": "6778587f71b3c200002ce309",
+      "text": "\t64.7MB,30833フォルダ(32692 pages)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735940223,
+      "updated": 1735954024
+    },
+    {
+      "id": "67788f3f71b3c2000099832b",
+      "text": "\tHTMLあり:187MB 33025フォルダ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735954240,
+      "updated": 1735954264
+    },
+    {
+      "id": "67785ac671b3c200002ce30c",
+      "text": "\t21,566,666文字(1文字3バイト)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735940806,
+      "updated": 1735940843
+    },
+    {
+      "id": "67785b0c71b3c200002ce30d",
+      "text": "\t\t2100万文字ｗ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735940877,
+      "updated": 1735948056
+    },
+    {
+      "id": "6778771771b3c2000099808c",
+      "text": "\t[https://gyazo.com/4e82603c8c5ec8c2b68835445a586d3e]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948056,
+      "updated": 1735948058
+    },
+    {
+      "id": "6778771a71b3c2000099808d",
+      "text": "\t\t普段はできないタイトル順にバーッと並べてみる体験",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948058,
+      "updated": 1735948073
+    },
+    {
+      "id": "6778787a71b3c2000099808e",
+      "text": "\t\tディレクトリ表示が重いので頭文字ごとのディレクトリを置いとくべきだった",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948411,
+      "updated": 1735948424
+    },
+    {
+      "id": "67787a4871b3c20000998102",
+      "text": "scrapbox-reader風に使えるようにHTMLを生成したい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735948873,
+      "updated": 1735948885
+    },
+    {
+      "id": "6778894871b3c20000998211",
+      "text": "\t大体できた",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735952713,
+      "updated": 1735952717
+    },
+    {
+      "id": "6778e6f871b3c20000b91742",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735976697,
+      "updated": 1735976917
+    },
+    {
+      "id": "677856fd71b3c200002ce295",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735939838,
+      "updated": 1735939838
+    },
+    {
+      "id": "6778471571b3c200002cdfd8",
+      "text": "code:clone.ts",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735935765,
+      "updated": 1735935765
+    },
+    {
+      "id": "6778471571b3c200002cdfd9",
+      "text": " import * as parser from \"jsr:@progfay/scrapbox-parser\";",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735935765,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918b2",
+      "text": " import * as cosenseTypes from \"jsr:@cosense/types/rest\";",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918b3",
+      "text": " if (Deno.args[0] != \"clone\" && Deno.args[0] != \"pull\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918b4",
+      "text": " \tconsole.error(\"エラー:1つ目の引数はcloneかpullにしてください\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918b5",
+      "text": " \tDeno.exit();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918b6",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918b7",
+      "text": " const MODE: \"clone\" | \"pull\" = Deno.args[0];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918b8",
+      "text": " const PROJECT_NAME = Deno.args[1];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918b9",
+      "text": " function hsc(unsafeText: string) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918ba",
+      "text": " \tif (typeof unsafeText !== \"string\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918bb",
+      "text": " \t\treturn unsafeText;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918bc",
+      "text": " \t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918bd",
+      "text": " \treturn unsafeText.replace(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918be",
+      "text": " \t\t/[&'`\"<>]/g,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918bf",
+      "text": " \t\tfunction (match) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918c0",
+      "text": " \t\t\treturn {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918c1",
+      "text": " \t\t\t\t\"&\": \"&amp;\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918c2",
+      "text": " \t\t\t\t\"'\": \"&#x27;\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918c3",
+      "text": " \t\t\t\t\"`\": \"&#x60;\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918c4",
+      "text": " \t\t\t\t'\"': \"&quot;\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918c5",
+      "text": " \t\t\t\t\"<\": \"&lt;\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918c6",
+      "text": " \t\t\t\t\">\": \"&gt;\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918c7",
+      "text": " \t\t\t}[match as \"&\" | \"'\" | \"`\" | '\"' | \"<\" | \">\"];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918c8",
+      "text": " \t\t},",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918c9",
+      "text": " \t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918ca",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918cb",
+      "text": " function arrayRange(start: number, stop: number, step: number) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918cc",
+      "text": " \treturn Array.from(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918cd",
+      "text": " \t\t{ length: (stop - start) / step + 1 },",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918ce",
+      "text": " \t\t(_, index) => start + index * step,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918cf",
+      "text": " \t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918d0",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918d1",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918d2",
+      "text": " function genereteHTML_Node(node: parser.Node, slashcount: number): string {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918d3",
+      "text": " \tswitch (node.type) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918d4",
+      "text": " \t\tcase \"quote\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918d5",
+      "text": " \t\t\treturn `<q>${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918d6",
+      "text": " \t\t\t\tnode.nodes.map((a) => genereteHTML_Node(a, slashcount)).join(\"\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918d7",
+      "text": " \t\t\t}</q>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918d8",
+      "text": " \t\tcase \"helpfeel\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918d9",
+      "text": " \t\t\treturn node.text;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918da",
+      "text": " \t\tcase \"strong\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918db",
+      "text": " \t\t\treturn `<strong>${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918dc",
+      "text": " \t\t\t\tnode.nodes.map((a) => genereteHTML_Node(a, slashcount)).join(\"\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918dd",
+      "text": " \t\t\t}</strong>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918de",
+      "text": " \t\tcase \"formula\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918df",
+      "text": " \t\t\treturn `<code>math:${hsc(node.formula)}</code>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918e0",
+      "text": " \t\tcase \"decoration\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918e1",
+      "text": " \t\t\treturn node.nodes.map((a) => genereteHTML_Node(a, slashcount))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918e2",
+      "text": " \t\t\t\t.join(\"\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918e3",
+      "text": " \t\tcase \"code\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918e4",
+      "text": " \t\t\treturn `<code>${hsc(node.text)}</code>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918e5",
+      "text": " \t\tcase \"commandLine\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918e6",
+      "text": " \t\t\treturn `<code>${hsc(node.text)}</code>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918e7",
+      "text": " \t\tcase \"blank\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918e8",
+      "text": " \t\t\treturn \"\";",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918e9",
+      "text": " \t\tcase \"strongImage\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918ea",
+      "text": " \t\tcase \"image\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918eb",
+      "text": " \t\t\treturn `<a href=\"${hsc(encodeURI(node.src))}\">[image]</a>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918ec",
+      "text": " \t\tcase \"link\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918ed",
+      "text": " \t\t\tif (node.pathType == \"absolute\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918ee",
+      "text": " \t\t\t\treturn `<a href=\"${hsc(encodeURI(node.href))}\">${hsc(node.content)}</a>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918ef",
+      "text": " \t\t\t} else if (node.pathType == \"root\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918f0",
+      "text": " \t\t\t\treturn `<a href=\"https://scrapbox.io${hsc(node.href)}\">${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918f1",
+      "text": " \t\t\t\t\thsc(node.href)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918f2",
+      "text": " \t\t\t\t}</a>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918f3",
+      "text": " \t\t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918f4",
+      "text": " \t\t\treturn `<a href=\"${\"../\".repeat(slashcount)}${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918f5",
+      "text": " \t\t\t\thsc(sanitizeDirName(node.href))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918f6",
+      "text": " \t\t\t}/text.html\">${hsc(node.href)}</a>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918f7",
+      "text": " \t\tcase \"googleMap\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918f8",
+      "text": " \t\t\treturn `<a href=\"${hsc(encodeURI(node.url))}\">[map]</a>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918f9",
+      "text": " \t\tcase \"strongIcon\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918fa",
+      "text": " \t\tcase \"icon\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918fb",
+      "text": " \t\t\tif (node.pathType == \"root\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918fc",
+      "text": " \t\t\t\treturn `<a href=\"https://scrapbox.io${hsc(node.path)}\">[${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918fd",
+      "text": " \t\t\t\t\thsc(node.path)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918fe",
+      "text": " \t\t\t\t}.icon]</a>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b918ff",
+      "text": " \t\t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91900",
+      "text": " \t\t\treturn `<a href=\"${\"../\".repeat(slashcount)}${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91901",
+      "text": " \t\t\t\thsc(sanitizeDirName(node.path))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91902",
+      "text": " \t\t\t}/text.html\">[${hsc(node.path)}.icon]</a>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91903",
+      "text": " \t\tcase \"hashTag\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91904",
+      "text": " \t\t\treturn `<a href=\"${\"../\".repeat(slashcount)}${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91905",
+      "text": " \t\t\t\thsc(sanitizeDirName(node.href))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91906",
+      "text": " \t\t\t}/text.html\">#${hsc(node.href)}</a>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91907",
+      "text": " \t\tcase \"numberList\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91908",
+      "text": " \t\t\treturn `${node.number}. ${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91909",
+      "text": " \t\t\t\tnode.nodes.map((a) => genereteHTML_Node(a, slashcount))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9190a",
+      "text": " \t\t\t\t\t.join(\"\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9190b",
+      "text": " \t\t\t}`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9190c",
+      "text": " \t\tcase \"plain\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9190d",
+      "text": " \t\t\treturn node.text;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9190e",
+      "text": " \t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9190f",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91910",
+      "text": " function generateHTML(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91911",
+      "text": " \tpage: parser.Page,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91912",
+      "text": " \tslashcount: number,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91913",
+      "text": " \trelated: cosenseTypes.RelatedPages,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91914",
+      "text": " ) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91915",
+      "text": " \tlet html = `",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91916",
+      "text": " \t<!DOCTYPE HTML><html><head><title>${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91917",
+      "text": " \t\tpage[0].type == \"title\" ? page[0].text : \"unknown\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91918",
+      "text": " \t}</title></head><body>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91919",
+      "text": " \t<a href=\"${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9191a",
+      "text": " \t\t\"../\".repeat(slashcount)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9191b",
+      "text": " \t}index.html\">top</a>, <a href=\"https://scrapbox.io/${PROJECT_NAME}/${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9191c",
+      "text": " \t\tpage[0].type == \"title\" ? page[0].text : \"\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9191d",
+      "text": " \t}\">online</a>, <a href=\"./\">source</a>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9191e",
+      "text": " \tfor (const block of page) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9191f",
+      "text": " \t\tif (block.type == \"title\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91920",
+      "text": " \t\t\thtml += `<h1>${hsc(block.text)}</h1>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91921",
+      "text": " \t\t} else if (block.type == \"line\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91922",
+      "text": " \t\t\thtml += `<p style=\"margin-left:${block.indent}em;\">${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91923",
+      "text": " \t\t\t\tblock.nodes.map((a) => genereteHTML_Node(a, slashcount)).join(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91924",
+      "text": " \t\t\t\t\t\"\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91925",
+      "text": " \t\t\t\t)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91926",
+      "text": " \t\t\t}</p>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91927",
+      "text": " \t\t} else if (block.type == \"table\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91928",
+      "text": " \t\t\thtml += `<table style=\"margin-left:${block.indent}em;\">`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91929",
+      "text": " \t\t\thtml += `table:${hsc(block.fileName)}`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9192a",
+      "text": " \t\t\tfor (const rows of block.cells) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9192b",
+      "text": " \t\t\t\thtml += `<tr>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9192c",
+      "text": " \t\t\t\tfor (const cols of rows) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9192d",
+      "text": " \t\t\t\t\thtml += `<td>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9192e",
+      "text": " \t\t\t\t\thtml += cols.map((a) => genereteHTML_Node(a, slashcount))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9192f",
+      "text": " \t\t\t\t\t\t.join(\"\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91930",
+      "text": " \t\t\t\t\thtml += `</td>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91931",
+      "text": " \t\t\t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91932",
+      "text": " \t\t\t\thtml += `</tr>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91933",
+      "text": " \t\t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91934",
+      "text": " \t\t\thtml += `</table>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91935",
+      "text": " \t\t} else if (block.type == \"codeBlock\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91936",
+      "text": " \t\t\thtml += `<p><a href=\"${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91937",
+      "text": " \t\t\t\thsc(sanitizeFileName(block.fileName))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91938",
+      "text": " \t\t\t}\">code:${hsc(block.fileName)}</a></p>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91939",
+      "text": " \t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9193a",
+      "text": " \t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9193b",
+      "text": " \thtml += `<h1>1 hop links</h1><ul>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9193c",
+      "text": " \tfor (const element of related.links1hop) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9193d",
+      "text": " \t\thtml += `<li><a href=\"${\"../\".repeat(slashcount)}${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9193e",
+      "text": " \t\t\thsc(sanitizeDirName(element.titleLc))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9193f",
+      "text": " \t\t}/text.html\">${hsc(element.titleLc)}</a></li>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91940",
+      "text": " \t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91941",
+      "text": " \thtml += `</ul>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91942",
+      "text": " \thtml += `<h1>2 hop links</h1><ul>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91943",
+      "text": " \tconst twohopgenre: cosenseTypes.StringLc[] = [];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91944",
+      "text": " \tfor (const element of related.links2hop) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91945",
+      "text": " \t\tfor (const l of element.linksLc) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91946",
+      "text": " \t\t\tif (!twohopgenre.includes(l)) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91947",
+      "text": " \t\t\t\ttwohopgenre.push(l);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91948",
+      "text": " \t\t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91949",
+      "text": " \t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9194a",
+      "text": " \t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9194b",
+      "text": " \tfor (const genre of twohopgenre) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9194c",
+      "text": " \t\thtml += `<li><a href=\"${\"../\".repeat(slashcount)}${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9194d",
+      "text": " \t\t\thsc(sanitizeDirName(genre))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9194e",
+      "text": " \t\t}/text.html\">${hsc(genre)}</a><ul>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9194f",
+      "text": " \t\tfor (const element of related.links2hop) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91950",
+      "text": " \t\t\tif (element.linksLc.includes(genre)) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91951",
+      "text": " \t\t\t\thtml += `<li><a href=\"${\"../\".repeat(slashcount)}${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91952",
+      "text": " \t\t\t\t\thsc(sanitizeDirName(element.titleLc))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91953",
+      "text": " \t\t\t\t}/text.html\">${hsc(element.titleLc)}</a></li>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91954",
+      "text": " \t\t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91955",
+      "text": " \t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91956",
+      "text": " \t\thtml += `</ul></li>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91957",
+      "text": " \t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91958",
+      "text": " \thtml += `</ul>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91959",
+      "text": " \thtml += `</body></html>`;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9195a",
+      "text": " \treturn html;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9195b",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9195c",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9195d",
+      "text": " function sanitizeDirName(name: string) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9195e",
+      "text": " \tif (Deno.build.os == \"windows\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9195f",
+      "text": " \t\treturn name.replaceAll(\"%\", \"%25\").replaceAll(\":\", \"%3A\").replaceAll(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91960",
+      "text": " \t\t\t\"*\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91961",
+      "text": " \t\t\t\"%2A\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91962",
+      "text": " \t\t).replaceAll(\"?\", \"%3F\").replaceAll('\"', \"%22\").replaceAll(\"<\", \"%3C\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91963",
+      "text": " \t\t\t.replaceAll(\">\", \"%3E\").replaceAll(\"?\", \"%3F\").replaceAll(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91964",
+      "text": " \t\t\t\t\"|\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91965",
+      "text": " \t\t\t\t\"%7C\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91966",
+      "text": " \t\t\t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91967",
+      "text": " \t} else {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91968",
+      "text": " \t\treturn name;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91969",
+      "text": " \t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9196a",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9196b",
+      "text": " function sanitizeFileName(name: string) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9196c",
+      "text": " \tif (Deno.build.os == \"windows\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9196d",
+      "text": " \t\treturn name.replaceAll(\"%\", \"%25\").replaceAll(\":\", \"%3A\").replaceAll(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9196e",
+      "text": " \t\t\t\"*\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9196f",
+      "text": " \t\t\t\"%2A\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91970",
+      "text": " \t\t).replaceAll(\"?\", \"%3F\").replaceAll('\"', \"%22\").replaceAll(\"<\", \"%3C\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91971",
+      "text": " \t\t\t.replaceAll(\">\", \"%3E\").replaceAll(\"?\", \"%3F\").replaceAll(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91972",
+      "text": " \t\t\t\t\"|\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91973",
+      "text": " \t\t\t\t\"%7C\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91974",
+      "text": " \t\t\t).replaceAll(\"/\", \"%2F\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91975",
+      "text": " \t} else {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91976",
+      "text": " \t\treturn name.replaceAll(\"/\", \"%2F\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91977",
+      "text": " \t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91978",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91979",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9197a",
+      "text": " const pageCount = (await (await fetch(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9197b",
+      "text": " \t`https://scrapbox.io/api/pages/${PROJECT_NAME}/?limit=10`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9197c",
+      "text": " )).json() as cosenseTypes.PageList).count;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9197d",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9197e",
+      "text": " async function fileExists(filepath: string | URL): Promise<boolean> {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9197f",
+      "text": " \ttry {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91980",
+      "text": " \t\tawait Deno.stat(filepath);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91981",
+      "text": " \t\treturn true;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91982",
+      "text": " \t} catch {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91983",
+      "text": " \t\treturn false;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91984",
+      "text": " \t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91985",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91986",
+      "text": " if (await fileExists(`./scrapbox_temp`) && MODE == \"clone\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91987",
+      "text": " \tawait Deno.remove(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91988",
+      "text": " \t\t`./scrapbox_temp`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91989",
+      "text": " \t\t{ recursive: true },",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9198a",
+      "text": " \t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9198b",
+      "text": " \tconsole.log(\"deleted\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9198c",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9198d",
+      "text": " if (!(await fileExists(`./scrapbox_temp`))) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9198e",
+      "text": " \tawait Deno.mkdir(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9198f",
+      "text": " \t\t`./scrapbox_temp`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91990",
+      "text": " \t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91991",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91992",
+      "text": " await Deno.writeTextFile(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91993",
+      "text": " \t`./scrapbox_temp/index.html`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91994",
+      "text": " \t\"\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91995",
+      "text": " );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91996",
+      "text": " async function generateIndexHTML(indexPages: string[]) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91997",
+      "text": " \tindexPages.sort();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91998",
+      "text": " \tconst indexGrouped = Object.groupBy(indexPages, (a) => a[0]);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91999",
+      "text": " \tawait Deno.writeTextFile(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9199a",
+      "text": " \t\t`./scrapbox_temp/index.html`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9199b",
+      "text": " \t\t`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9199c",
+      "text": " \t<!DOCTYPE HTML>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9199d",
+      "text": " \t<html>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9199e",
+      "text": " \t\t<head>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b9199f",
+      "text": " \t\t\t<title>pages of ${hsc(PROJECT_NAME)}</title>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919a0",
+      "text": " \t\t</head>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919a1",
+      "text": " \t\t<body>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919a2",
+      "text": " \t\t\t<h1>pages of ${hsc(PROJECT_NAME)}</h1>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919a3",
+      "text": " \t\t\t${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919a4",
+      "text": " \t\t\tObject.entries(indexGrouped).map(([k, _]) =>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919a5",
+      "text": " \t\t\t\t`<a href=\"#${hsc(k)}\" style=\"padding-inline-end:4px;\">${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919a6",
+      "text": " \t\t\t\t\thsc(k)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919a7",
+      "text": " \t\t\t\t}</a>`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919a8",
+      "text": " \t\t\t).join(\"\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919a9",
+      "text": " \t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919aa",
+      "text": " \t\t\t<ul>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919ab",
+      "text": " \t\t\t${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919ac",
+      "text": " \t\t\tObject.entries(indexGrouped).map(([k, v]) =>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919ad",
+      "text": " \t\t\t\t`<li id=\"${hsc(k)}\">${hsc(k)}<ul>${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919ae",
+      "text": " \t\t\t\t\tv?.map((v) =>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919af",
+      "text": " \t\t\t\t\t\t`<li><a href=\"${hsc(encodeURI(sanitizeDirName(v)))}/text.html\">${hsc(v)}</a></li>`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919b0",
+      "text": " \t\t\t\t\t).join(\"\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919b1",
+      "text": " \t\t\t\t}</ul></li>`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919b2",
+      "text": " \t\t\t).join(\"\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919b3",
+      "text": " \t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919b4",
+      "text": " \t\t\t</ul>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919b5",
+      "text": " \t\t</body>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919b6",
+      "text": " \t</html>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919b7",
+      "text": " \t`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919b8",
+      "text": " \t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919b9",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919ba",
+      "text": " const indexPages: string[] = [];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919bb",
+      "text": " for (const skipnum of arrayRange(0, pageCount, 16)) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778f01d71b3c2000096df95",
+      "text": " // 標準は16並列です。回線が高速な場合は並列数を増やしてください(fetch url側の変更も忘れずに)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735979039,
+      "updated": 1735979062
+    },
+    {
+      "id": "6778eb4f71b3c20000b919bc",
+      "text": " \tconst pglist: cosenseTypes.PageList = await (await fetch(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919bd",
+      "text": " \t\t`https://scrapbox.io/api/pages/${PROJECT_NAME}/?limit=16&skip=${skipnum}`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919be",
+      "text": " \t)).json();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919bf",
+      "text": " \tindexPages.push(...pglist.pages.map((a) => a.title));",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919c0",
+      "text": " \tawait generateIndexHTML(indexPages);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919c1",
+      "text": " \tconsole.log(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919c2",
+      "text": " \t\t`${skipnum}/${pageCount}`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919c3",
+      "text": " \t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919c4",
+      "text": " \tawait Promise.all(pglist.pages.map(async (pagei) => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919c5",
+      "text": " \t\tconst pagename = pagei.title;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919c6",
+      "text": " \t\ttry {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919c7",
+      "text": " \t\t\ttry {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919c8",
+      "text": " \t\t\t\tif (MODE == \"pull\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919c9",
+      "text": " \t\t\t\t\tconst filestat = (await Deno.stat(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919ca",
+      "text": " \t\t\t\t\t\t`./scrapbox_temp/${sanitizeDirName(pagename)}/text.txt`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919cb",
+      "text": " \t\t\t\t\t)).mtime?.getTime();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919cc",
+      "text": " \t\t\t\t\tif (",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919cd",
+      "text": " \t\t\t\t\t\tfilestat &&",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919ce",
+      "text": " \t\t\t\t\t\tfilestat / 1000 > pagei.updated",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919cf",
+      "text": " \t\t\t\t\t) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919d0",
+      "text": " \t\t\t\t\t\tthrow new Error(\"\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919d1",
+      "text": " \t\t\t\t\t} else {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919d2",
+      "text": " \t\t\t\t\t\tconsole.log(\"updated\", pagename);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919d3",
+      "text": " \t\t\t\t\t\tfor await (",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919d4",
+      "text": " \t\t\t\t\t\t\tconst entry of Deno.readDir(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919d5",
+      "text": " \t\t\t\t\t\t\t\t`./scrapbox_temp/${sanitizeDirName(pagename)}/`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919d6",
+      "text": " \t\t\t\t\t\t\t)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919d7",
+      "text": " \t\t\t\t\t\t) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919d8",
+      "text": " \t\t\t\t\t\t\tif (entry.isFile) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919d9",
+      "text": " \t\t\t\t\t\t\t\tDeno.remove(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919da",
+      "text": " \t\t\t\t\t\t\t\t\t`./scrapbox_temp/${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919db",
+      "text": " \t\t\t\t\t\t\t\t\t\tsanitizeDirName(pagename)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919dc",
+      "text": " \t\t\t\t\t\t\t\t\t}/${entry.name}`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919dd",
+      "text": " \t\t\t\t\t\t\t\t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919de",
+      "text": " \t\t\t\t\t\t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919df",
+      "text": " \t\t\t\t\t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919e0",
+      "text": " \t\t\t\t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919e1",
+      "text": " \t\t\t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919e2",
+      "text": " \t\t\t} catch { /**/ }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919e3",
+      "text": " \t\t\tawait Deno.mkdir(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919e4",
+      "text": " \t\t\t\t`./scrapbox_temp/${sanitizeDirName(pagename)}`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919e5",
+      "text": " \t\t\t\t{ recursive: true },",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919e6",
+      "text": " \t\t\t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919e7",
+      "text": " \t\t\tconst page: cosenseTypes.Page = await (await fetch(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919e8",
+      "text": " \t\t\t\t`https://scrapbox.io/api/pages/${PROJECT_NAME}/${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919e9",
+      "text": " \t\t\t\t\tencodeURIComponent(pagename)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919ea",
+      "text": " \t\t\t\t}`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919eb",
+      "text": " \t\t\t)).json();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919ec",
+      "text": " \t\t\tconst pagetext = page.lines.map((a) => a.text).join(\"\\n\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919ed",
+      "text": " \t\t\tconst pageparse = parser.parse(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919ee",
+      "text": " \t\t\t\tpagetext,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919ef",
+      "text": " \t\t\t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919f0",
+      "text": " \t\t\tawait Deno.writeTextFile(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919f1",
+      "text": " \t\t\t\t`./scrapbox_temp/${sanitizeDirName(pagename)}/text.txt`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919f2",
+      "text": " \t\t\t\tpagetext,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919f3",
+      "text": " \t\t\t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919f4",
+      "text": " \t\t\tawait Deno.writeTextFile(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919f5",
+      "text": " \t\t\t\t`./scrapbox_temp/${sanitizeDirName(pagename)}/text.html`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919f6",
+      "text": " \t\t\t\tgenerateHTML(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919f7",
+      "text": " \t\t\t\t\tpageparse,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919f8",
+      "text": " \t\t\t\t\tpagename.split(\"/\").length,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919f9",
+      "text": " \t\t\t\t\tpage.relatedPages,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919fa",
+      "text": " \t\t\t\t),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919fb",
+      "text": " \t\t\t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919fc",
+      "text": " \t\t\tawait Deno.writeTextFile(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919fd",
+      "text": " \t\t\t\t`./scrapbox_temp/${sanitizeDirName(pagename)}/json.json`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919fe",
+      "text": " \t\t\t\tJSON.stringify(page),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b919ff",
+      "text": " \t\t\t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a00",
+      "text": " \t\t\tfor (const element of pageparse) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a01",
+      "text": " \t\t\t\tif (element.type == \"codeBlock\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a02",
+      "text": " \t\t\t\t\ttry {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a03",
+      "text": " \t\t\t\t\t\tawait Deno.writeTextFile(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a04",
+      "text": " \t\t\t\t\t\t\t`./scrapbox_temp/${sanitizeDirName(pagename)}/${",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a05",
+      "text": " \t\t\t\t\t\t\t\tsanitizeFileName(element.fileName)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a06",
+      "text": " \t\t\t\t\t\t\t}`,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a07",
+      "text": " \t\t\t\t\t\t\telement.content,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a08",
+      "text": " \t\t\t\t\t\t);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a09",
+      "text": " \t\t\t\t\t} catch (e) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a0a",
+      "text": " \t\t\t\t\t\tconsole.error(e);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a0b",
+      "text": " \t\t\t\t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a0c",
+      "text": " \t\t\t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a0d",
+      "text": " \t\t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a0e",
+      "text": " \t\t} catch (e) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a0f",
+      "text": " \t\t\tconsole.error(e);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a10",
+      "text": " \t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a11",
+      "text": " \t}));",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a12",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    },
+    {
+      "id": "6778eb4f71b3c20000b91a13",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1735977810,
+      "updated": 1735977810
+    }
+  ]
+}
