@@ -1,0 +1,925 @@
+{
+  "id": "677fbf07ca26347c451e7d47",
+  "title": "bsahd/cosense_ollama_connector",
+  "created": 1736425228,
+  "updated": 1736426880,
+  "lines": [
+    {
+      "id": "677fbf07ca26347c451e7d47",
+      "text": "bsahd/cosense_ollama_connector",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736426139
+    },
+    {
+      "id": "677fbf0871b3c2000024bae1",
+      "text": "✂ from [Scrapbox ChatGPT Connector]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bae2",
+      "text": "[https://github.com/bsahd/cosense_ollama_connector GitHub - bsahd/cosense_ollama_connector: Ollama reads Cosense]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736426879
+    },
+    {
+      "id": "677fbf0871b3c2000024bae3",
+      "text": "[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bae4",
+      "text": "\tollama ローカルLLMで動かしたい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bae5",
+      "text": "\t\tcloneしたので",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bae6",
+      "text": "\t\tollamaはエンドポイントをいじるだけ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bae7",
+      "text": "\t\tcode:py",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bae8",
+      "text": "\t\t     print(\"\\nTHINKING...\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bae9",
+      "text": "       response = openai.ChatCompletion.create(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baea",
+      "text": "           model=\"gpt-3.5-turbo\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baeb",
+      "text": "           messages=[",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baec",
+      "text": "               {\"role\": \"user\", \"content\": prompt}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baed",
+      "text": "  を",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baee",
+      "text": "  \tmodel書き換える",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baef",
+      "text": "  \tAPIの使い方が変わってるので修正する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baf0",
+      "text": "  いってる？",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baf1",
+      "text": "  \tOllamaが動いてる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baf2",
+      "text": "  \tあまりに遅いので、embedのログを出すようにした",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baf3",
+      "text": "  \taskの結果をストリームで出せば",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baf4",
+      "text": "  \tcode:term",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baf5",
+      "text": "  \t embed Scrapbox ChatGPT Connectorって何？",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baf6",
+      "text": "    100%|█████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 3507.36it/s]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baf7",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baf8",
+      "text": "    THINKING... ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baf9",
+      "text": "    ANSWER:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bafa",
+      "text": "    >>>> Scrapbox ChatGPT Connectorって何？",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bafb",
+      "text": "    Scrapbox ChatGPT Connectorは、ScrapboxとChatGPTを接続するためのシンプルなスクリプトです。このスクリ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bafc",
+      "text": "    プトを使用することで、Scrapboxで作成された記事や投稿に対してChatGPTから情報を取得し、その情報をScrapboxに反映することができます。これにより、ユーザーがScrapbox上でより幅広い情報や知識を得られるよう ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bafd",
+      "text": "    になります。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bafe",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024baff",
+      "text": "    例えば、ユーザーが特定のテーマについての記事を書く際に、ChatGPTからその分野に関する最新の情報を得て",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb00",
+      "text": "    それを記事に反映させることができます。また、ユーザーが既存の記事に対して質問をする際も、ChatGPTから",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb01",
+      "text": "    回答を得てその情報を記事に反映させることが可能です。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb02",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb03",
+      "text": "    このスクリプトは非常に便利で効率的なツールであり、ScrapboxとChatGPTを組み合わせることで、より幅広い",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb04",
+      "text": "    情報や知識を得るための手段が増えるでしょう。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb05",
+      "text": "    embed クオリアさん、日本語で自己紹介して",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb06",
+      "text": "    100%|█████████████████████████████████████████████████████████████| 7/7 [00:00<00:00, 7256.58it/s]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb07",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb08",
+      "text": "    THINKING... ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb09",
+      "text": "    ## Input",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb0a",
+      "text": "    クオリアさん、日本語で自己紹介して",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb0b",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb0c",
+      "text": "    ANSWER:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb0d",
+      "text": "    >>>> クオリアさん、日本語で自己紹介して",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb0e",
+      "text": "    まず、あなたが質問している内容を確認します。その後、その情報を日本語で整理し、適切に翻訳します。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb0f",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb10",
+      "text": "    ---",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb11",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb12",
+      "text": "    管理人が日本人なのでまずは日本語の情報を先にまとめます。いずれ英語もまとめます。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb13",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb14",
+      "text": "    まずはこの情報を読むことをお勧めします：",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb15",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb16",
+      "text": "    [100フォロワー] Read this first: [100 followers]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb17",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb18",
+      "text": "    Scrapbox上では機械翻訳が使えないので、違う言語で読みたい人はTwitter上で読むのがおすすめです。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb19",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb1a",
+      "text": "    ルール：",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb1b",
+      "text": "    - ルールの部分はQualia-sanのお言葉のアーカイブなので書き換えてはいけません。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb1c",
+      "text": "    - 其他部分はファンの交流のためのスペースなので好きに書いてかまいません。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb1d",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb1e",
+      "text": "    [CC-BY] は投稿や顔画像はCC-BY 4.0ライセンスです。クオリアのTwitterアカウントにリンクしていただけれ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb1f",
+      "text": "    ば、転載、再投稿、翻訳、リミックスも可能です。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb20",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb21",
+      "text": "    [- 質問箱 https://peing.net/ja/qualia_san] [クオリアさん.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb22",
+      "text": "    ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb23",
+      "text": "    質問するホモサピエンス",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb24",
+      "text": "   個人プロジェクトでやってみる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb25",
+      "text": "    個人プロジェクトの内容がゴミだった...",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb26",
+      "text": "    クオリアにしよう",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb27",
+      "text": "    クオリアさんのほうは結構動く",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb28",
+      "text": "   embeddingのモデルをもっと軽いものにする？",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb29",
+      "text": "   \t[https://ollama.com/kun432/cl-nagoya-ruri-large kun432/cl-nagoya-ruri-large]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb2a",
+      "text": "    (テキスト生成用のQwen 2.5 1.5Bを埋め込みにも使ってたので、埋め込み専用モデルにする)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb2b",
+      "text": "    BERTベースか～",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb2c",
+      "text": "    500文字を5秒で埋め込む",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb2d",
+      "text": "    クエリと文章をちゃんと分けろって書いてある",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb2e",
+      "text": "    ダウンロードが戻る",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb2f",
+      "text": "    \t表示の取得済み容量が減る",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb30",
+      "text": "    \tリトライ処理でレジュームせずに最初から取得しなおしてる?",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb31",
+      "text": "    トークン数で区切ってるとこがあるが、モデルごとにtokenizerは違って意味なさそうなので文字数での計算にした",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb32",
+      "text": "    [tqdm],多段ループで使いにくい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb33",
+      "text": "    \t(ページ内の進捗も出したい)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb34",
+      "text": "     処理中のアイテム名を出したいなら、自力でコンソールに書いたほうが楽",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb35",
+      "text": "    \t進捗にページ名も出したい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb36",
+      "text": "    \t\tcode:py",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb37",
+      "text": "      \t    records:list[tuple[str,str]] = []",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb38",
+      "text": "           for p in data[\"pages\"]:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb39",
+      "text": "               buf = []",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb3a",
+      "text": "               title = p[\"title\"]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb3b",
+      "text": "               for line in p[\"lines\"]:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb3c",
+      "text": "                   buf.append(line)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb3d",
+      "text": "                   body = \" \".join(buf)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb3e",
+      "text": "                   if len(body) > BLOCK_SIZE:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb3f",
+      "text": "                       records.append((body,title))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb40",
+      "text": "                       buf = buf[len(buf) // 2 :]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb41",
+      "text": "               body = \" \".join(buf).strip()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb42",
+      "text": "               if body:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb43",
+      "text": "                   records.append((body, title))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb44",
+      "text": "           for body in tqdm(records,\"records\"):",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb45",
+      "text": "               vs.add_record(*body, cache)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb46",
+      "text": "       ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb47",
+      "text": "    \tさすがに1時間ぐらいかかる生成をもう一度やる気にはならないのでサンプルを作る",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb48",
+      "text": "    \tcode:py",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb49",
+      "text": "    \t for a in tqdm(range(100),\"pages\"): # 最上段はleaveする",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb4a",
+      "text": "          lc = 0",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb4b",
+      "text": "          for b in tqdm(range(50),\"lines\",leave=False):",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb4c",
+      "text": "              lc += 1",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb4d",
+      "text": "     これで行ける",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb4e",
+      "text": "     やっぱりもう一度生成することになった",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb4f",
+      "text": "     \t別モデルで生成したときのpickleが残ってて次元数の違いでエラーになった",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb50",
+      "text": "     \t\t`ValueError: shapes (1024,) and (1536,) not aligned: 1024 (dim 0) != 1536 (dim 0)`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb51",
+      "text": "   インデックス作成が永久リトライされてる、CPUが～",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb52",
+      "text": "   \tリトライしないようにした",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb53",
+      "text": "  ollamaのライブラリを使うようにする",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb54",
+      "text": "  \t1600文字のプロンプトを55秒で読んでる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb55",
+      "text": " [- 分割単位はもっと大きいほうがいいのでは]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb56",
+      "text": " \tプロンプトに与える都合か",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb57",
+      "text": " コンテキストを維持して会話を続けたい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb58",
+      "text": " 結果に含まれるページのノイズが大きい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb59",
+      "text": " \t生成時に小さい分割単位にしてしまったので1ページから複数の部分を読み込めない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb5a",
+      "text": " 内積ではなくコサイン類似度を使うべきでは",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb5b",
+      "text": " プロンプト作り上手いなー",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb5c",
+      "text": " ChatGPTにConnectするわけじゃないなこれ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb5d",
+      "text": " \tscrapboxのベクトル検索結果を元にGPTに質問する？",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb5e",
+      "text": " コードはすぐ理解できたので、自分のもののように書き換えられる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb5f",
+      "text": " しっかり型付けしてないことによるバグがあった",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb60",
+      "text": " python3.13で依存関係のインストールがうまくいかない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb61",
+      "text": " \trequirements.txtを最新版にする",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    },
+    {
+      "id": "677fbf0871b3c2000024bb62",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1736425228,
+      "updated": 1736425228
+    }
+  ]
+}
