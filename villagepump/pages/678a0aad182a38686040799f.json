@@ -1,0 +1,127 @@
+{
+  "id": "678a0aad182a38686040799f",
+  "title": "LinuxでFile内にFilesystemを作る",
+  "created": 1737099951,
+  "updated": 1737113976,
+  "lines": [
+    {
+      "id": "678a0aad182a38686040799f",
+      "text": "LinuxでFile内にFilesystemを作る",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737099951,
+      "updated": 1737099951
+    },
+    {
+      "id": "678a0aaf71b3c20000cbf730",
+      "text": "[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737099951,
+      "updated": 1737099951
+    },
+    {
+      "id": "678a416f71b3c200007f0938",
+      "text": "[仮想]ハードディスク",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737113968,
+      "updated": 1737113976
+    },
+    {
+      "id": "678a0aaf71b3c20000cbf732",
+      "text": "% dd if=/dev/zero of=vhd count=4GiB bs=1M",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737099952,
+      "updated": 1737101642
+    },
+    {
+      "id": "678a0b1371b3c20000cbf734",
+      "text": "\t4GiBの空ファイルを作る",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737100052,
+      "updated": 1737100063
+    },
+    {
+      "id": "678a0aaf71b3c20000cbf731",
+      "text": " 5分ほどかかる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737099951,
+      "updated": 1737100049
+    },
+    {
+      "id": "678a0b8371b3c20000cbf735",
+      "text": "% mkfs -t ext4 vhd",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737100163,
+      "updated": 1737100166
+    },
+    {
+      "id": "678a0b0d71b3c20000cbf733",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737100046,
+      "updated": 1737100046
+    },
+    {
+      "id": "678a0bac71b3c20000cbf736",
+      "text": "% mkdir mnt_vhd",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737100205,
+      "updated": 1737100212
+    },
+    {
+      "id": "678a0d6f71b3c20000cbf73b",
+      "text": "% udisksctl loop-setup -f vhd",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737100655,
+      "updated": 1737100660
+    },
+    {
+      "id": "678a0dc071b3c20000cbf73d",
+      "text": "\tループデバイスの名前が出る",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737100736,
+      "updated": 1737100742
+    },
+    {
+      "id": "678a0bad71b3c20000cbf738",
+      "text": "% udisksctl mount -b <ループデバイス>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737100205,
+      "updated": 1737100735
+    },
+    {
+      "id": "678a0c6e71b3c20000cbf73a",
+      "text": "% sudo chown -R <自分のユーザー名> mnt_vhd",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737100399,
+      "updated": 1737100422
+    },
+    {
+      "id": "678a0bad71b3c20000cbf739",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737100206,
+      "updated": 1737100206
+    },
+    {
+      "id": "678a0bac71b3c20000cbf737",
+      "text": "% udisksctl unmount -b <ループデバイス>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737100205,
+      "updated": 1737100804
+    },
+    {
+      "id": "678a0ed071b3c20000cbf73f",
+      "text": "% udisksctl loop-delete -b <ループデバイス>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737101008,
+      "updated": 1737101014
+    },
+    {
+      "id": "678a0dff71b3c20000cbf73e",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737100800,
+      "updated": 1737100800
+    }
+  ]
+}
