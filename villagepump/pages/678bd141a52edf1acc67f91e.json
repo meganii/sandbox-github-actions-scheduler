@@ -1,0 +1,386 @@
+{
+  "id": "678bd141a52edf1acc67f91e",
+  "title": "server-sideからwebsocketを通じてscrapboxへ書き込む",
+  "created": 1737216321,
+  "updated": 1737216487,
+  "lines": [
+    {
+      "id": "678bd141a52edf1acc67f91e",
+      "text": "server-sideからwebsocketを通じてscrapboxへ書き込む",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd54",
+      "text": "from [2025/01/12] [takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216353
+    },
+    {
+      "id": "678bd143e5172d0000d4bd56",
+      "text": " もしかしたらいけるかも",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216377
+    },
+    {
+      "id": "678bd143e5172d0000d4bd57",
+      "text": " この文が書き込めているとしたら、server-sideからwebsocketを通じてscrapboxへ書き込むことに成功したことになる。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216377
+    },
+    {
+      "id": "678bd143e5172d0000d4bd58",
+      "text": " 　もしこの文が書き込めてるとしたら、私はもうこの世にいないでしょう[Mijinko_SD.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216377
+    },
+    {
+      "id": "678bd143e5172d0000d4bd59",
+      "text": " 　おおおー[nishio.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216377
+    },
+    {
+      "id": "678bd143e5172d0000d4bd5a",
+      "text": " もちろん、serverからの書き込みはpuppeteerを使って行うこともできるので、仮にこれが成功したとしても、それがどれだけ価値のあることなのかはわからない。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216377
+    },
+    {
+      "id": "678bd143e5172d0000d4bd5b",
+      "text": " \tリソース消費が抑えられる[bsahd.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216377
+    },
+    {
+      "id": "678bd143e5172d0000d4bd5c",
+      "text": " あとdropped malformed message waiting for idというDNSまわりの警告が出ているのも気になる。あんまり安定した方法ではなさそう。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216377
+    },
+    {
+      "id": "678bd182e5172d0000d4bd85",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216383,
+      "updated": 1737216383
+    },
+    {
+      "id": "678bd143e5172d0000d4bd5d",
+      "text": "[[https://i.gyazo.com/1d47ce2b05e76af4c1a32f8d3480fb8d.gif]]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd5e",
+      "text": "成功した。まじか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd187e5172d0000d4bd86",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216389,
+      "updated": 1737216389
+    },
+    {
+      "id": "678bd143e5172d0000d4bd5f",
+      "text": "手法",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd60",
+      "text": " client側の[WebSocket]をnode.jsで動かす実装である[npm:ws]がある",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd61",
+      "text": " このpackageが提供する`WebSocket`は、Web APIのものとは違ってCookieやRefererを渡せる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd62",
+      "text": " これを使って[connect.sid]をなどを渡せば、理論上はserver sideから[ScrapboxのWebSocket]に接続できる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd189e5172d0000d4bd88",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216391,
+      "updated": 1737216391
+    },
+    {
+      "id": "678bd143e5172d0000d4bd63",
+      "text": "実装",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd64",
+      "text": " 実は[socket.io-client]にこの機能が組み込まれていたようだ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd65",
+      "text": "  [socket.io-clientでcookieを設定する方法。 - from scratch https://yosuke-furukawa.hatenablog.com/entry/2013/05/13/004701]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd66",
+      "text": "  この記事が書かれた当時はまだなかったが、今は[extraHeaders https://socket.io/docs/v4/client-options/#extraheaders]からsocket.ioにcookieなどを渡せるようになった",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd67",
+      "text": " [scrapbox-userscript-std/browser/websocket]には外部からsocket.ioのinstanceを注入できる機能があるので、それを使ってheaderを指定したinstanceを注入すればいい",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd68",
+      "text": " ただ、書き込み処理に必要なREST APIの実行処理に[connect.sid]を渡すコードを書いていなかったので、そこだけ修正が必要",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd1e4e5172d0000d4bd8c",
+      "text": " よかったら公開してほしい[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216482,
+      "updated": 1737216487
+    },
+    {
+      "id": "678bd18ce5172d0000d4bd89",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216394,
+      "updated": 1737216395
+    },
+    {
+      "id": "678bd143e5172d0000d4bd69",
+      "text": "できるようになったこと",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd6a",
+      "text": "　[headless chrome]を使わずに、terminalやserverからscrapboxに書き込める様になった",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd6b",
+      "text": "　LLMとの協調に使えそう",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd6c",
+      "text": "　 寝てる間にLLMにscrapboxを読ませてコメントさせるとか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd6d",
+      "text": "　 AIエージェントと一緒に議論したりしたい[mtane0412.icon][yosider.icon][bsahd.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd6e",
+      "text": "　 いいですね〜[はるひ.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd6f",
+      "text": "　[Scrapboxの書き込みAPI]がほしいという話はたびたび上がっていたし、そういう需要に応えられるかもしれない",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd70",
+      "text": "　　Scrapbox書き込み用ライブラリ作れば誰か使いそう[Mijinko_SD.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd71",
+      "text": "　　[Cosense耐久試験部]が立ち上がるかもしれないけど",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd72",
+      "text": "　　軽量化した[サードパーティクライアント]作るとかはできるかも",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd73",
+      "text": "　　　クライアントだけ任意のものにして、バックエンドをscrapbox.ioにする",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd74",
+      "text": "　　　あんまりやり過ぎると[利用規約改訂]されて締め出されるので、ほどほどに",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd75",
+      "text": "　　　　[モラル]は意外と大事",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd76",
+      "text": "　　　　サーバー負荷かけないとかサポートに負担かけないとかは必須なので、そういうのを作るのであれば早い話が身内向けにした方が良い",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd77",
+      "text": "　　　　[scrapbox-external-backup]とかあるけど並列受信じゃなかったはず[bsahd.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd78",
+      "text": "　　[UserScript Page Edit API]でできるようになったと勘違いしていたけど、あれはブラウザでCosenseのページにいないとアクセスできないのか[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd79",
+      "text": "　　 だからUserScriptとついている",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd7a",
+      "text": "　　 なるほど[はるひ.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd7b",
+      "text": "　とはいえ[違う、そうじゃない]と言われそうな気もする",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd7c",
+      "text": "　 かなりhackyだしなあ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd190e5172d0000d4bd8b",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216398,
+      "updated": 1737216398
+    },
+    {
+      "id": "678bd143e5172d0000d4bd7d",
+      "text": "課題",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd7e",
+      "text": " [DNS]まわりでエラーがでてるのが気持ち悪い",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd7f",
+      "text": " 　毎回出るわけでもなさそう",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd80",
+      "text": " 　[DNS]とか[SSL/TLS]は未学習でなんもわからん",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd81",
+      "text": " Denoのinstanceが終了しないのも気になる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd82",
+      "text": "  なんらかの終了処理がうまくいっていない",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    },
+    {
+      "id": "678bd143e5172d0000d4bd83",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1737216321,
+      "updated": 1737216321
+    }
+  ]
+}

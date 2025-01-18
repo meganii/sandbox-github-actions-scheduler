@@ -1,0 +1,57 @@
+{
+  "id": "678b522a32a500675f093c5f",
+  "title": "井戸端の底500件.shell",
+  "created": 1737183798,
+  "updated": 1737184148,
+  "lines": [
+    {
+      "id": "678b522a32a500675f093c5f",
+      "text": "井戸端の底500件.shell",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737183798,
+      "updated": 1737183798
+    },
+    {
+      "id": "678b523571b3c2000002e284",
+      "text": "code:soko.shell",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737183798,
+      "updated": 1737183801
+    },
+    {
+      "id": "678b524771b3c2000002e287",
+      "text": " curl \"https://scrapbox.io/api/pages/villagepump/?limit=500&skip=$(( $(curl -s \"https://scrapbox.io/api/pages/villagepump/?limit=1\" | jq -c '.count') - 500))\" | jq -c '.pages[]' | jq -r '.title' | \\",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737183816,
+      "updated": 1737184123
+    },
+    {
+      "id": "678b537a71b3c2000002e289",
+      "text": " while read LINE;do",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737184123,
+      "updated": 1737184135
+    },
+    {
+      "id": "678b538771b3c2000002e28b",
+      "text": " \techo \" [$LINE]\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737184135,
+      "updated": 1737184148
+    },
+    {
+      "id": "678b538971b3c2000002e28c",
+      "text": " done",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737184137,
+      "updated": 1737184137
+    },
+    {
+      "id": "678b523671b3c2000002e285",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737183799,
+      "updated": 1737183799
+    }
+  ]
+}

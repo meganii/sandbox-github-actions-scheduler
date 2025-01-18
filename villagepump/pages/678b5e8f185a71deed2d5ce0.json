@@ -1,0 +1,64 @@
+{
+  "id": "678b5e8f185a71deed2d5ce0",
+  "title": "rsyncを使わずtarとzstdでバックアップ",
+  "created": 1737186962,
+  "updated": 1737189071,
+  "lines": [
+    {
+      "id": "678b5e8f185a71deed2d5ce0",
+      "text": "rsyncを使わずtarとzstdでバックアップ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737186962,
+      "updated": 1737187754
+    },
+    {
+      "id": "678b5e9271b3c20000db5870",
+      "text": "[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737186962,
+      "updated": 1737186963
+    },
+    {
+      "id": "678b5e9371b3c20000db5872",
+      "text": "#rsync #tar #zstd",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737186963,
+      "updated": 1737186969
+    },
+    {
+      "id": "678b61a271b3c20000a1e710",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737187746,
+      "updated": 1737187746
+    },
+    {
+      "id": "678b623371b3c20000a1e711",
+      "text": "$ tar -c ~/code | zstd --ultra -22 -T0 -o \"$HOME/codebu/$(date -Iminutes -u).tar.zst\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737187892,
+      "updated": 1737189033
+    },
+    {
+      "id": "678b623371b3c20000a1e712",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737187892,
+      "updated": 1737187892
+    },
+    {
+      "id": "678b61a271b3c20000a1e70f",
+      "text": "$ tar -c code -N \"$(stat \"$HOME/codebu/$(ls ~/codebu --time=birth | tail -n 1)\" -c %w)\" | zstd --ultra -22 -T0 -o \"$HOME/codebu/$(date -Iminutes -u).tar.zst\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737187746,
+      "updated": 1737189071
+    },
+    {
+      "id": "678b645971b3c20000a1e713",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1737188441,
+      "updated": 1737188441
+    }
+  ]
+}
