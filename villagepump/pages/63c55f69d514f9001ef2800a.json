@@ -2,7 +2,7 @@
   "id": "63c55f69d514f9001ef2800a",
   "title": "特定のリンクにアイコンをつけるUserCSSを自動生成したい",
   "created": 1673879402,
-  "updated": 1724923764,
+  "updated": 1738108209,
   "lines": [
     {
       "id": "63c55f69d514f9001ef2800a",
@@ -1329,45 +1329,24 @@
     },
     {
       "id": "63c596ce7838e30000608171",
-      "text": "      \".line span:not(.modal-image):not(.pointing-device-map) > a.link:not(.icon):not(:is(\" +",
-      "userId": "60fb0a79f3364000237838e3",
+      "text": "      `.line span:not(.modal-image):not(.pointing-device-map) > a.link:not(.icon):not(:is(${",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1673893582,
-      "updated": 1673895682
+      "updated": 1738108091
     },
     {
       "id": "63c596ce7838e30000608172",
-      "text": "      urls.reduce(",
-      "userId": "60fb0a79f3364000237838e3",
+      "text": "        urls.map((crt) => `[href${crt.selectorSyntax}\"${crt.url}\"]`).join(\",\")",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1673893582,
-      "updated": 1673893636
-    },
-    {
-      "id": "63c596ce7838e30000608173",
-      "text": "        (pre, crt) => `${pre}[href${crt.selectorSyntax}\"${crt.url}\"],`,",
-      "userId": "60fb0a79f3364000237838e3",
-      "created": 1673893582,
-      "updated": 1673893636
-    },
-    {
-      "id": "63c596ce7838e30000608174",
-      "text": "        \"\",",
-      "userId": "60fb0a79f3364000237838e3",
-      "created": 1673893582,
-      "updated": 1673893636
-    },
-    {
-      "id": "63c596ce7838e30000608175",
-      "text": "      ) +",
-      "userId": "60fb0a79f3364000237838e3",
-      "created": 1673893582,
-      "updated": 1673893636
+      "updated": 1738108094
     },
     {
       "id": "63c596ce7838e30000608176",
-      "text": "      \"))::after\";",
-      "userId": "60fb0a79f3364000237838e3",
+      "text": "      }))::after`;",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1673893582,
-      "updated": 1673893636
+      "updated": 1738108097
     },
     {
       "id": "63c596ce7838e30000608177",
@@ -1497,45 +1476,24 @@
     },
     {
       "id": "63c596ce7838e30000608188",
-      "text": "    const baseSelector = \".line span:not(.deco-\\\\.) > span > a.link:is(\" +",
-      "userId": "60fb0a79f3364000237838e3",
+      "text": "    const baseSelector = `.line span:not(.deco-\\\\.) > span > a.link:is(${",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1673893582,
-      "updated": 1673893636
+      "updated": 1738108106
     },
     {
       "id": "63c596ce7838e30000608189",
-      "text": "      allURLs.reduce(",
-      "userId": "60fb0a79f3364000237838e3",
+      "text": "      allURLs.map((crt) => `[href${crt.selectorSyntax}\"${crt.url}\"]`).join(\",\")",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1673893582,
-      "updated": 1673893636
-    },
-    {
-      "id": "63c596ce7838e3000060818a",
-      "text": "        (pre, crt) => `${pre}[href${crt.selectorSyntax}\"${crt.url}\"],`,",
-      "userId": "60fb0a79f3364000237838e3",
-      "created": 1673893582,
-      "updated": 1673893636
-    },
-    {
-      "id": "63c596ce7838e3000060818b",
-      "text": "        \"\",",
-      "userId": "60fb0a79f3364000237838e3",
-      "created": 1673893582,
-      "updated": 1673893636
-    },
-    {
-      "id": "63c596ce7838e3000060818c",
-      "text": "      ) +",
-      "userId": "60fb0a79f3364000237838e3",
-      "created": 1673893582,
-      "updated": 1673893636
+      "updated": 1738108142
     },
     {
       "id": "63c596ce7838e3000060818d",
-      "text": "      \")::before\";",
-      "userId": "60fb0a79f3364000237838e3",
+      "text": "    })::before`;",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1673893582,
-      "updated": 1673893636
+      "updated": 1738108134
     },
     {
       "id": "63c596ce7838e3000060818e",
@@ -1665,45 +1623,24 @@
     },
     {
       "id": "63c596ce7838e3000060819f",
-      "text": "      const selector = \":is(.line, .line .deco) a.link:is(\" +",
-      "userId": "60fb0a79f3364000237838e3",
+      "text": "      const selector = `:is(.line, .line .deco) a.link:is(${",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1673893582,
-      "updated": 1673893636
+      "updated": 1738108152
     },
     {
       "id": "63c596ce7838e300006081a0",
-      "text": "        urls.reduce(",
-      "userId": "60fb0a79f3364000237838e3",
+      "text": "        urls.map((crt) => `[href${crt.selectorSyntax}\"${crt.url}\"]`).join(\",\")",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1673893582,
-      "updated": 1673893636
-    },
-    {
-      "id": "63c596ce7838e300006081a1",
-      "text": "          (pre, crt) => `${pre}[href${crt.selectorSyntax}\"${crt.url}\"],`,",
-      "userId": "60fb0a79f3364000237838e3",
-      "created": 1673893582,
-      "updated": 1673893636
-    },
-    {
-      "id": "63c596ce7838e300006081a2",
-      "text": "          \"\",",
-      "userId": "60fb0a79f3364000237838e3",
-      "created": 1673893582,
-      "updated": 1673893636
-    },
-    {
-      "id": "63c596ce7838e300006081a3",
-      "text": "        ) +",
-      "userId": "60fb0a79f3364000237838e3",
-      "created": 1673893582,
-      "updated": 1673893636
+      "updated": 1738108173
     },
     {
       "id": "63c596ce7838e300006081a4",
-      "text": "        \")::before\";",
-      "userId": "60fb0a79f3364000237838e3",
+      "text": "      })::before`;",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1673893582,
-      "updated": 1673893636
+      "updated": 1738108178
     },
     {
       "id": "63c596ce7838e300006081a5",
@@ -2092,10 +2029,10 @@
     },
     {
       "id": "63c565087838e30000d10cc3",
-      "text": "  .line span:not(.modal-image):not(.pointing-device-map)>a.link:not(.icon):not(:is([href$=\".pdf\"], [href^=\"https://github.com\"], [href^=\"https://raw.githubusercontent.com\"], [href^=\"https://gist.github.com\"], [href^=\"https://ja.wikipedia.org\"], [href^=\"https://en.wikipedia.org\"], [href^=\"https://www.amazon.co.jp\"], [href^=\"https://amazon.co.jp\"], [href^=\"https://twitter.com\"], ))::after {",
-      "userId": "661b6e882a96e9002371b3c2",
+      "text": "  .line span:not(.modal-image):not(.pointing-device-map)>a.link:not(.icon):not(:is([href$=\".pdf\"], [href^=\"https://github.com\"], [href^=\"https://raw.githubusercontent.com\"], [href^=\"https://gist.github.com\"], [href^=\"https://ja.wikipedia.org\"], [href^=\"https://en.wikipedia.org\"], [href^=\"https://www.amazon.co.jp\"], [href^=\"https://amazon.co.jp\"], [href^=\"https://twitter.com\"] ))::after {",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1673880840,
-      "updated": 1724923228
+      "updated": 1738107995
     },
     {
       "id": "66d03d5c71b3c200001eb54c",
@@ -2155,10 +2092,10 @@
     },
     {
       "id": "66d03d5c71b3c200001eb554",
-      "text": "  .line span:not(.deco-\\.)>span>a.link:is([href$=\".pdf\"], [href^=\"https://github.com\"], [href^=\"https://raw.githubusercontent.com\"], [href^=\"https://gist.github.com\"], [href^=\"https://ja.wikipedia.org\"], [href^=\"https://en.wikipedia.org\"], [href^=\"https://www.amazon.co.jp\"], [href^=\"https://amazon.co.jp\"], [href^=\"https://twitter.com\"], )::before {",
-      "userId": "661b6e882a96e9002371b3c2",
+      "text": "  .line span:not(.deco-\\.)>span>a.link:is([href$=\".pdf\"], [href^=\"https://github.com\"], [href^=\"https://raw.githubusercontent.com\"], [href^=\"https://gist.github.com\"], [href^=\"https://ja.wikipedia.org\"], [href^=\"https://en.wikipedia.org\"], [href^=\"https://www.amazon.co.jp\"], [href^=\"https://amazon.co.jp\"], [href^=\"https://twitter.com\"] )::before {",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1724923228,
-      "updated": 1724923228
+      "updated": 1738108001
     },
     {
       "id": "66d03d5c71b3c200001eb555",
@@ -2232,10 +2169,10 @@
     },
     {
       "id": "66d03d5c71b3c200001eb55f",
-      "text": "  :is(.line, .line .deco) a.link:is([href$=\".pdf\"], )::before {",
-      "userId": "661b6e882a96e9002371b3c2",
+      "text": "  :is(.line, .line .deco) a.link:is([href$=\".pdf\"])::before {",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1724923228,
-      "updated": 1724923228
+      "updated": 1738108209
     },
     {
       "id": "66d03d5c71b3c200001eb560",
@@ -2274,10 +2211,10 @@
     },
     {
       "id": "66d03d5c71b3c200001eb565",
-      "text": "  :is(.line, .line .deco) a.link:is([href^=\"https://github.com\"], [href^=\"https://raw.githubusercontent.com\"], [href^=\"https://gist.github.com\"], )::before {",
-      "userId": "661b6e882a96e9002371b3c2",
+      "text": "  :is(.line, .line .deco) a.link:is([href^=\"https://github.com\"], [href^=\"https://raw.githubusercontent.com\"], [href^=\"https://gist.github.com\"] )::before {",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1724923228,
-      "updated": 1724923228
+      "updated": 1738108004
     },
     {
       "id": "66d03d5c71b3c200001eb566",
@@ -2316,10 +2253,10 @@
     },
     {
       "id": "66d03d5c71b3c200001eb56b",
-      "text": "  :is(.line, .line .deco) a.link:is([href^=\"https://ja.wikipedia.org\"], [href^=\"https://en.wikipedia.org\"], )::before {",
-      "userId": "661b6e882a96e9002371b3c2",
+      "text": "  :is(.line, .line .deco) a.link:is([href^=\"https://ja.wikipedia.org\"], [href^=\"https://en.wikipedia.org\"] )::before {",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1724923228,
-      "updated": 1724923228
+      "updated": 1738108006
     },
     {
       "id": "66d03d5c71b3c200001eb56c",
@@ -2358,10 +2295,10 @@
     },
     {
       "id": "66d03d5c71b3c200001eb571",
-      "text": "  :is(.line, .line .deco) a.link:is([href^=\"https://www.amazon.co.jp\"], [href^=\"https://amazon.co.jp\"], )::before {",
-      "userId": "661b6e882a96e9002371b3c2",
+      "text": "  :is(.line, .line .deco) a.link:is([href^=\"https://www.amazon.co.jp\"], [href^=\"https://amazon.co.jp\"] )::before {",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1724923228,
-      "updated": 1724923228
+      "updated": 1738108008
     },
     {
       "id": "66d03d5c71b3c200001eb572",
@@ -6754,10 +6691,10 @@
     },
     {
       "id": "66d03d5c71b3c200001eb57d",
-      "text": "  .line .deco-\\. a.link:is([href^=\"https://ja.wikipedia.org\"], [href^=\"https://en.wikipedia.org\"], ) span.char-index:nth-of-type(30)~span.char-index {",
-      "userId": "661b6e882a96e9002371b3c2",
+      "text": "  .line .deco-\\. a.link:is([href^=\"https://ja.wikipedia.org\"], [href^=\"https://en.wikipedia.org\"] ) span.char-index:nth-of-type(30)~span.char-index {",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1724923228,
-      "updated": 1724923228
+      "updated": 1738108026
     },
     {
       "id": "66d03d5c71b3c200001eb57e",
