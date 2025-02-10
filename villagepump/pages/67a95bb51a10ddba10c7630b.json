@@ -1,0 +1,281 @@
+{
+  "id": "67a95bb51a10ddba10c7630b",
+  "title": "アイコンのあとに名前を表示するUserScript",
+  "created": 1739152316,
+  "updated": 1739173026,
+  "lines": [
+    {
+      "id": "67a95bb51a10ddba10c7630b",
+      "text": "アイコンのあとに名前を表示するUserScript",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739152316,
+      "updated": 1739152316
+    },
+    {
+      "id": "67a95bbec9ec6a00004898fb",
+      "text": "ゲーム用メモを書いていてこう表示したいので作った[cak.icon]",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739152318,
+      "updated": 1739167418
+    },
+    {
+      "id": "67a95c10c9ec6a000048990f",
+      "text": "[https://gyazo.com/90dc157bf73d600d84caa2a6722ffb36]",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739152401,
+      "updated": 1739152406
+    },
+    {
+      "id": "67a95bc5c9ec6a000048990e",
+      "text": "",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739152325,
+      "updated": 1739152325
+    },
+    {
+      "id": "67a95bbec9ec6a00004898fc",
+      "text": "code:style.css",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739152318,
+      "updated": 1739167386
+    },
+    {
+      "id": "67a95bbec9ec6a00004898fd",
+      "text": " .title_display {",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167386,
+      "updated": 1739167386
+    },
+    {
+      "id": "67a95bbec9ec6a00004898fe",
+      "text": "    margin-left: 8px;",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167386,
+      "updated": 1739167386
+    },
+    {
+      "id": "67a95bbec9ec6a00004898ff",
+      "text": "    font-size: 14px;",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167386,
+      "updated": 1739167386
+    },
+    {
+      "id": "67a95bbec9ec6a0000489900",
+      "text": "    color: #333;",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167386,
+      "updated": 1739167386
+    },
+    {
+      "id": "67a95bbec9ec6a0000489901",
+      "text": "    font-style: italic;",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167386,
+      "updated": 1739167386
+    },
+    {
+      "id": "67a95bbec9ec6a0000489902",
+      "text": " }",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167386,
+      "updated": 1739167386
+    },
+    {
+      "id": "67a95bbec9ec6a0000489903",
+      "text": "",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167386,
+      "updated": 1739167386
+    },
+    {
+      "id": "67a95bbec9ec6a0000489904",
+      "text": "code:script.js",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167386,
+      "updated": 1739167386
+    },
+    {
+      "id": "67a95bbec9ec6a0000489905",
+      "text": " function addTitleAfterIcons() {",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167386,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e52",
+      "text": "     for (let img of document.querySelectorAll('img.icon')) {",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e53",
+      "text": "         if (!img.nextElementSibling || !img.nextElementSibling.classList.contains(\"title_display\")) {",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e54",
+      "text": "             let titleText = img.getAttribute(\"title\");",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e55",
+      "text": "             if (titleText) {",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e56",
+      "text": "                 let span = document.createElement('span');",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e57",
+      "text": "                 span.classList.add(\"title_display\");",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e58",
+      "text": "                 span.innerText = titleText;",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e59",
+      "text": "                 img.after(span);",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e5a",
+      "text": "             }",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e5b",
+      "text": "         }",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e5c",
+      "text": "     }",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e5d",
+      "text": " }",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e5e",
+      "text": " ",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e5f",
+      "text": " // Scrapboxのイベントを使う",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e60",
+      "text": " window.scrapbox.on(\"lines:changed\", addTitleAfterIcons);",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e61",
+      "text": " ",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e62",
+      "text": " // 初回実行",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a996aec9ec6a0000078e63",
+      "text": " addTitleAfterIcons();",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739167407,
+      "updated": 1739167407
+    },
+    {
+      "id": "67a99baf5f1e0d0000255355",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1739168688,
+      "updated": 1739168689
+    },
+    {
+      "id": "67a99e2371b3c20000d7afe7",
+      "text": "この実装だとアイコンを消したときに、名前表示が残されないか？[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739169316,
+      "updated": 1739169330
+    },
+    {
+      "id": "67a9ac58c9ec6a0000bb3573",
+      "text": " 自分の環境だとアイコンを消したときには残らないが、編集時に表示されっぱなしにはなるようだ[cak.icon]",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739172952,
+      "updated": 1739172987
+    },
+    {
+      "id": "67a9ac8ec9ec6a0000bb3574",
+      "text": "  編集時に表示されているとジャマなので消したい気持ちもある",
+      "userId": "65b91ba0863c690027c9ec6a",
+      "created": 1739173007,
+      "updated": 1739173026
+    },
+    {
+      "id": "67a99e2371b3c20000d7afe8",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739169316,
+      "updated": 1739169316
+    },
+    {
+      "id": "67a99bb05f1e0d0000255356",
+      "text": "[UserScript.icon]",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1739168689,
+      "updated": 1739168693
+    },
+    {
+      "id": "67a99bb15f1e0d0000255357",
+      "text": "",
+      "userId": "616ca537c25a92001e5f1e0d",
+      "created": 1739168690,
+      "updated": 1739168690
+    }
+  ]
+}
