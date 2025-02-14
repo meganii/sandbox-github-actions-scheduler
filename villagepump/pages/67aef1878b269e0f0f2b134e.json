@@ -1,0 +1,204 @@
+{
+  "id": "67aef1878b269e0f0f2b134e",
+  "title": "動画視聴のパケット量を計算する",
+  "created": 1739518346,
+  "updated": 1739519805,
+  "lines": [
+    {
+      "id": "67aef1878b269e0f0f2b134e",
+      "text": "動画視聴のパケット量を計算する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518346,
+      "updated": 1739518346
+    },
+    {
+      "id": "67aef18a71b3c200004005cc",
+      "text": "こういう情報が載ってるサイトは多いけど、計算ツールのあるサイトはほとんどないので作る",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518346,
+      "updated": 1739518364
+    },
+    {
+      "id": "67aef5f271b3c200004005e8",
+      "text": "#計算ツール using [Cosenseページ内のLuaをリアルタイムで実行する]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739519474,
+      "updated": 1739519482
+    },
+    {
+      "id": "67aef19271b3c200004005cd",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518355,
+      "updated": 1739518355
+    },
+    {
+      "id": "67aef19e71b3c200004005ce",
+      "text": "[%* bitrate = 451 -- 動画のビットレートkbps]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518366,
+      "updated": 1739519544
+    },
+    {
+      "id": "67aef4bd71b3c200004005df",
+      "text": "Youtubeの場合(すべてvp9、yt-dlpのフォーマット一覧から確認)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739519166,
+      "updated": 1739519365
+    },
+    {
+      "id": "67aef4c271b3c200004005e0",
+      "text": "\t144p ... 約126kbps",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739519171,
+      "updated": 1739519239
+    },
+    {
+      "id": "67aef4e171b3c200004005e1",
+      "text": "\t240p ... 約214kbps",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739519202,
+      "updated": 1739519263
+    },
+    {
+      "id": "67aef55371b3c200004005e4",
+      "text": "\t360p ... 約451kbps",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739519316,
+      "updated": 1739519346
+    },
+    {
+      "id": "67aef51571b3c200004005e2",
+      "text": "\t480p ... 約619kbps",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739519254,
+      "updated": 1739519314
+    },
+    {
+      "id": "67aef54b71b3c200004005e3",
+      "text": "\t720p ... 約1317kbps",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739519307,
+      "updated": 1739519380
+    },
+    {
+      "id": "67aef5a671b3c200004005e6",
+      "text": "\t1080p ... 約1879kbps",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739519398,
+      "updated": 1739519418
+    },
+    {
+      "id": "67aef5cb71b3c200004005e7",
+      "text": "\tavc1の場合は2~3倍になる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739519435,
+      "updated": 1739519443
+    },
+    {
+      "id": "67aef6c971b3c200004005eb",
+      "text": "\t(動きが少ないシーンでは、その数値以下のビットレートになることが多いです)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739519690,
+      "updated": 1739519706
+    },
+    {
+      "id": "67aef1a071b3c200004005cf",
+      "text": "code:cal.scrap.lua",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518369,
+      "updated": 1739519805
+    },
+    {
+      "id": "67aef30671b3c200004005da",
+      "text": " KBPerSec = bitrate/8",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518727,
+      "updated": 1739518727
+    },
+    {
+      "id": "67aef30f71b3c200004005db",
+      "text": " MBPerMin = KBPerSec*60/1000",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518736,
+      "updated": 1739518754
+    },
+    {
+      "id": "67aef33371b3c200004005dc",
+      "text": " MBPerHour = MBPerMin*60",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518772,
+      "updated": 1739519669
+    },
+    {
+      "id": "67aef73971b3c200004005ee",
+      "text": " print(\"KB per seconds:\",KBPerSec)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739519802,
+      "updated": 1739519802
+    },
+    {
+      "id": "67aef73871b3c200004005ec",
+      "text": " print(\"MB per minitue:\",MBPerMin)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739519801,
+      "updated": 1739519801
+    },
+    {
+      "id": "67aef24a71b3c200004005d3",
+      "text": " print(\"MB per hour:\",MBPerHour)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518544,
+      "updated": 1739518782
+    },
+    {
+      "id": "67aef2cc71b3c200004005d8",
+      "text": " print(\"hour per 1GB:\",1000/MBPerHour)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518669,
+      "updated": 1739518788
+    },
+    {
+      "id": "67aef62171b3c200004005e9",
+      "text": " print(\"MB per 24h:\",MBPerHour*24)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739519522,
+      "updated": 1739519526
+    },
+    {
+      "id": "67aef1e071b3c200004005d0",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518433,
+      "updated": 1739518433
+    },
+    {
+      "id": "67aef27771b3c200004005d4",
+      "text": "注意",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518584,
+      "updated": 1739518585
+    },
+    {
+      "id": "67aef27871b3c200004005d6",
+      "text": "\t実際には通信に必要なヘッダー情報などを含むため1%程度多く通信することがあります。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518585,
+      "updated": 1739518622
+    },
+    {
+      "id": "67aef2a071b3c200004005d7",
+      "text": "\t実際には多少余分にバッファリングされる場合があります。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518625,
+      "updated": 1739518635
+    },
+    {
+      "id": "67aef27871b3c200004005d5",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739518585,
+      "updated": 1739518585
+    }
+  ]
+}
