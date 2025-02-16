@@ -2,7 +2,7 @@
   "id": "677a07d7a664b67a35e5ba32",
   "title": "未然にバグを防ぐ方法",
   "created": 1736050652,
-  "updated": 1739237948,
+  "updated": 1739700899,
   "lines": [
     {
       "id": "677a07d7a664b67a35e5ba32",
@@ -27,17 +27,17 @@
     },
     {
       "id": "677a0a2871b3c20000c35a6d",
-      "text": " \tもしくは、*Docベースの型チェッカーを導入する",
-      "userId": "60fb0a79f3364000237838e3",
+      "text": " \tもしくは、型チェッカーを導入する",
+      "userId": "661b6e882a96e9002371b3c2",
       "created": 1736051241,
-      "updated": 1736065475
+      "updated": 1739697020
     },
     {
       "id": "677a07df71b3c20000c35a69",
-      "text": " *Docを用いてドキュメンテーションする",
-      "userId": "60fb0a79f3364000237838e3",
+      "text": " 関数ごとにドキュメンテーションする",
+      "userId": "661b6e882a96e9002371b3c2",
       "created": 1736050656,
-      "updated": 1736065475
+      "updated": 1739697046
     },
     {
       "id": "677a0af771b3c20000c35a76",
@@ -73,6 +73,13 @@
       "userId": "60fb0a79f3364000237838e3",
       "created": 1736065497,
       "updated": 1736065497
+    },
+    {
+      "id": "67b1a43f71b3c2000097efaf",
+      "text": " 　IDEを使わない場合は、編集後にlintを確認する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739695167,
+      "updated": 1739695177
     },
     {
       "id": "677a3fde7838e30000a6875e",
@@ -118,17 +125,24 @@
     },
     {
       "id": "677a09dd71b3c20000c35a6a",
-      "text": "(Java)[null安全]な言語を使う",
+      "text": "Java",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1736051166,
-      "updated": 1736051236
+      "updated": 1739687849
     },
     {
-      "id": "677a0a0d71b3c20000c35a6c",
-      "text": "\tもしくは、静的チェックによりnull安全性を確保する",
+      "id": "67b187a671b3c200000e2564",
+      "text": "\tlintによるnullチェックを徹底するか、[Scala]に移行する",
       "userId": "661b6e882a96e9002371b3c2",
-      "created": 1736051214,
-      "updated": 1736051232
+      "created": 1739687847,
+      "updated": 1739687875
+    },
+    {
+      "id": "67b187f371b3c200000e2565",
+      "text": "\tAndroidなら[Kotlin]でもいい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1739687923,
+      "updated": 1739687933
     },
     {
       "id": "677a0a6471b3c20000c35a6e",
@@ -215,11 +229,74 @@
       "updated": 1736065196
     },
     {
+      "id": "67b19a8d7838e3000065f020",
+      "text": "　　　\t[https://azukiazusa.dev/blog/typescript-no-unchecked-indexed-access/ おまえら禁じられたインデックスアクセスを平気で使ってんじゃねえか！わかってんのか？『ランタイムエラー』が生まれたのは人間がコンパイラオプションに甘えたせいだろうがよ！]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1739692685,
+      "updated": 1739692685
+    },
+    {
       "id": "677a43f77838e30000a6877c",
       "text": "\t　他にも必要なのあるかも",
       "userId": "60fb0a79f3364000237838e3",
       "created": 1736066037,
       "updated": 1736066037
+    },
+    {
+      "id": "67b1b8ec7838e3000065f021",
+      "text": "\t[ESLint]導入後、適切な設定を行う",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1739700460,
+      "updated": 1739700471
+    },
+    {
+      "id": "67b1b8f77838e3000065f022",
+      "text": "\t\tawaitし忘れやPromise非対応の引数に非同期コールバックを渡してしまうことはよくあるので、対策する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1739700471,
+      "updated": 1739700517
+    },
+    {
+      "id": "67b1b9257838e3000065f023",
+      "text": "\t\t[https://typescript-eslint.io/rules/no-floating-promises/ no-floating-promises | typescript-eslint]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1739700517,
+      "updated": 1739700517
+    },
+    {
+      "id": "67b1b9377838e3000065f025",
+      "text": "\t\t\tawaitし忘れを防止するルール",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1739700535,
+      "updated": 1739700870
+    },
+    {
+      "id": "67b1b93e7838e3000065f026",
+      "text": "\t\t\t意図的にawaitしていない場合は[eslint-disable-next-line]を使用してマークする",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1739700542,
+      "updated": 1739700593
+    },
+    {
+      "id": "67b1b9777838e3000065f027",
+      "text": "\t\t\t\t一手間あるけれどコメントがあった方が意図的なのかがわかって良い",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1739700599,
+      "updated": 1739700879
+    },
+    {
+      "id": "67b1b9277838e3000065f024",
+      "text": "\t\t[https://typescript-eslint.io/rules/no-misused-promises/ no-misused-promises | typescript-eslint]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1739700519,
+      "updated": 1739700534
+    },
+    {
+      "id": "67b1ba6f7838e3000065f028",
+      "text": "\t\t\tPromiseに対応していない引数に非同期関数を渡すことを防止するルール",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1739700847,
+      "updated": 1739700866
     },
     {
       "id": "677a40e57838e30000a68762",
@@ -230,10 +307,17 @@
     },
     {
       "id": "677a40f17838e30000a68763",
-      "text": "　　試したことないからほんとに効果あるかはわからないけど[Mijinko_SD.icon]",
+      "text": "　　[- 試したことないからほんとに効果あるかはわからないけど][Mijinko_SD.icon]",
       "userId": "60fb0a79f3364000237838e3",
       "created": 1736065263,
-      "updated": 1736065275
+      "updated": 1739700890
+    },
+    {
+      "id": "67b1ba9c7838e3000065f029",
+      "text": "　　\t結構簡単に導入できて効果もありました",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1739700892,
+      "updated": 1739700899
     },
     {
       "id": "677a43307838e30000a68771",
