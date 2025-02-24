@@ -1,0 +1,239 @@
+{
+  "id": "67bba6e980f47570e6d4a08f",
+  "title": "CMYK RGB",
+  "created": 1740351214,
+  "updated": 1740363289,
+  "lines": [
+    {
+      "id": "67bba6e980f47570e6d4a08f",
+      "text": "CMYK RGB",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740351214,
+      "updated": 1740351214
+    },
+    {
+      "id": "67bba8fced60e60000206eed",
+      "text": "c.f. https://color.sakuraweb.com/cmyk_rgb.html",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740351740,
+      "updated": 1740351746
+    },
+    {
+      "id": "67bba6eeed60e60000206ee0",
+      "text": "[RGB]→[CMYK]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1740351214,
+      "updated": 1740362707
+    },
+    {
+      "id": "67bba700ed60e60000206ee3",
+      "text": " [$ R,G,B]は[$ \\lbrack0,1\\rbrack]の範囲を取る",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740351232,
+      "updated": 1740352196
+    },
+    {
+      "id": "67bba8e7ed60e60000206eec",
+      "text": " [$ \\begin{pmatrix}C'\\\\M'\\\\Y'\\end{pmatrix}=\\begin{pmatrix}1-R\\\\1-G\\\\1-B\\end{pmatrix}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740351720,
+      "updated": 1740351789
+    },
+    {
+      "id": "67bba73ded60e60000206ee8",
+      "text": " [$ K=\\min\\left(\\begin{matrix}C',\\\\M',\\\\Y'\\end{matrix}\\right)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740351293,
+      "updated": 1740352779
+    },
+    {
+      "id": "67bba815ed60e60000206eea",
+      "text": " [$ \\begin{pmatrix}C\\\\M\\\\Y\\end{pmatrix}=\\frac1{1-K}\\begin{pmatrix}C'-K\\\\M'-K\\\\Y'-K\\end{pmatrix}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740351509,
+      "updated": 1740354248
+    },
+    {
+      "id": "67bbaadded60e60000206ef1",
+      "text": "  [$ K=0]のときは[$ (0\\ 0\\ 0)^\\top]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740352222,
+      "updated": 1740352285
+    },
+    {
+      "id": "67bbd51371b3c200008ec592",
+      "text": "  code:js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1740363028,
+      "updated": 1740363031
+    },
+    {
+      "id": "67bbd51671b3c200008ec593",
+      "text": "   function RGB2CMYK(R,G,B){",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1740363031,
+      "updated": 1740363060
+    },
+    {
+      "id": "67bbd53371b3c200008ec595",
+      "text": "   \tvar C = 1 - R;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1740363060,
+      "updated": 1740363200
+    },
+    {
+      "id": "67bbd54171b3c200008ec597",
+      "text": "   \tvar M = 1 - G;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1740363074,
+      "updated": 1740363198
+    },
+    {
+      "id": "67bbd54471b3c200008ec598",
+      "text": "   \tvar Y = 1 - B;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1740363077,
+      "updated": 1740363196
+    },
+    {
+      "id": "67bbd55171b3c200008ec599",
+      "text": "   \tvar K = Math.min(C,M,Y);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1740363090,
+      "updated": 1740363287
+    },
+    {
+      "id": "67bbd58271b3c200008ec59a",
+      "text": "   \tvar CMYMultiplier = 1/1-K;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1740363139,
+      "updated": 1740363288
+    },
+    {
+      "id": "67bbd5c871b3c200008ec59b",
+      "text": "   \tC = CMYMultiplier*(C-K);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1740363208,
+      "updated": 1740363288
+    },
+    {
+      "id": "67bbd5e571b3c200008ec59c",
+      "text": "   \tM = CMYMultiplier*(M-K);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1740363238,
+      "updated": 1740363288
+    },
+    {
+      "id": "67bbd5e571b3c200008ec59d",
+      "text": "   \tY = CMYMultiplier*(Y-K);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1740363244,
+      "updated": 1740363289
+    },
+    {
+      "id": "67bbd53471b3c200008ec596",
+      "text": "   }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1740363060,
+      "updated": 1740363060
+    },
+    {
+      "id": "67bbad13ed60e60000206ef6",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740352788,
+      "updated": 1740352788
+    },
+    {
+      "id": "67bbb49ded60e60000206f08",
+      "text": "逆にたどりたい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740354718,
+      "updated": 1740354722
+    },
+    {
+      "id": "67bbb6d3ed60e60000206f11",
+      "text": " [$ \\begin{pmatrix}R'\\\\G'\\\\B'\\end{pmatrix}=\\begin{pmatrix}1-C\\\\1-M\\\\1-Y\\end{pmatrix}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740355692,
+      "updated": 1740355979
+    },
+    {
+      "id": "67bbb4daed60e60000206f0b",
+      "text": " [$ \\begin{pmatrix}R\\\\G\\\\B\\end{pmatrix}=V\\begin{pmatrix}R'\\\\G'\\\\B'\\end{pmatrix}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740354778,
+      "updated": 1740356665
+    },
+    {
+      "id": "67bbbc3bed60e60000206f1c",
+      "text": " \t[$ V=1-K]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740356667,
+      "updated": 1740356673
+    },
+    {
+      "id": "67bbbaf8ed60e60000206f1a",
+      "text": " \t[$ K]の計算どないしよう[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740356344,
+      "updated": 1740356359
+    },
+    {
+      "id": "67bbb95ced60e60000206f17",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740355932,
+      "updated": 1740355932
+    },
+    {
+      "id": "67bbaa0ded60e60000206eee",
+      "text": "K の式で遊ぶ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740352014,
+      "updated": 1740356076
+    },
+    {
+      "id": "67bbad36ed60e60000206efb",
+      "text": " [$ K=\\min\\left(\\begin{matrix}1-R,\\\\1-G,\\\\1-B\\end{matrix}\\right)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740352823,
+      "updated": 1740352823
+    },
+    {
+      "id": "67bbad16ed60e60000206ef8",
+      "text": " [$ K=1-\\max\\left(\\begin{matrix}R,\\\\G,\\\\B\\end{matrix}\\right)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740352791,
+      "updated": 1740353435
+    },
+    {
+      "id": "67bbaf66ed60e60000206eff",
+      "text": " [$ V=\\max\\left(\\begin{matrix}R,\\\\G,\\\\B\\end{matrix}\\right)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740353383,
+      "updated": 1740356703
+    },
+    {
+      "id": "67bbaf79ed60e60000206f00",
+      "text": " \t[$ K=1-W]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740353401,
+      "updated": 1740353407
+    },
+    {
+      "id": "67bbb07fed60e60000206f02",
+      "text": " \t[$ V=1-K]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740353664,
+      "updated": 1740356705
+    },
+    {
+      "id": "67bbad62ed60e60000206efd",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1740352866,
+      "updated": 1740352866
+    }
+  ]
+}
