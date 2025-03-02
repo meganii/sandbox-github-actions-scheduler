@@ -1,0 +1,295 @@
+{
+  "id": "67c3c5de552048d2990def73",
+  "title": "チャットのログからLLMでWikiのようなデータを作る",
+  "created": 1740883423,
+  "updated": 1740883518,
+  "lines": [
+    {
+      "id": "67c3c5de552048d2990def73",
+      "text": "チャットのログからLLMでWikiのようなデータを作る",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f8c",
+      "text": "from [2025/02/27]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f8d",
+      "text": "チャットのログから[LLM]でWikiのようなデータを作る[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883439
+    },
+    {
+      "id": "67c3c5df6eb4060000069f8e",
+      "text": "\t[https://inajob.github.io/inajob-river-peeker/wiki.html Discordサーバー「inajob川」の情報をストック化する]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f8f",
+      "text": " \tベクトル検索の結果を付け足した（付け足しただけ）",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f90",
+      "text": " \tバッチ処理でベクトル検索で類似ページを見つけて末尾に書き足すだけ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f91",
+      "text": " \tLLMに一応ブラケティングしてもらっているけど全部にはついていない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f92",
+      "text": " \t\tでも別にベクトル検索あるからそこまで頑張ってブラケティングしなくても良いかな？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f93",
+      "text": "　　なるほどなー[nishio.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f94",
+      "text": "　　 AIの考えた類似ページに追加して、それが不満ならそれが入るページを作ればいいのか",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f95",
+      "text": "　　 \t類似度が高すぎるページをマージするなども便利でした[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f96",
+      "text": "　　 \t\t同じChatログから何度もページを作らせると、似たようなページが作られるのです",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f97",
+      "text": "　　 \t\tというか、とにかく一回LLMにページを作ってもらって、そのあとベクトル検索して、関連度の高いページをマージするというのが考えることが少なくて良さそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f98",
+      "text": "　　 特定のページにたくさん入りすぎたときも切り出したりすれば良いし",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f99",
+      "text": "　　 なんか植物的にCosenseページが成長する感じ",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f9a",
+      "text": "　　 \tLLMと議論していて出てきた言葉 「個人の成長と創造性を刺激し、多様な価値観が共存する、有機的で進化し続ける「知的生態系」」[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f9b",
+      "text": "　　Chat to Wikiはある程度わかってきたので、次はWiki to Chatを考えたい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f9c",
+      "text": "　　\t[Wiki to Chat]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f9d",
+      "text": "　　\t\tWikiを人間に編集させる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f9e",
+      "text": "　　\t\t\t考えることが多そうで難しそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069f9f",
+      "text": "　　\t\t\t人間が書いた内容がLLMによって消されたり編集されたりすることになるが、なんか嫌な気がする",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069fa0",
+      "text": "　　\t\t\tそもそもChatでコミュニケーションしたい人が集まっているのでWiki側をいじる人も少なそう",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069fa1",
+      "text": "　　\t\t\tしかし、これができるとChatでもWikiでも好きな方でコミュニティに参加できる仕組みが作れる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069fa2",
+      "text": "　　\t\tWikiの知識をもとにLLMがChatに発言する",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069fa3",
+      "text": "　　\t\t\tこっちを試したい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069fa4",
+      "text": "　　\t\t\tその後Chat側で話題が続いたらその結果をまたWikiに還元したい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069fa5",
+      "text": "　　\t\t\tそのChat由来ではないデータを持ったWikiを使うこともできる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069fa6",
+      "text": "　　\t\t\t\tまぁそれはよくあるやつか",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069fa7",
+      "text": "　　\t\twikiに直接LLMが書き込む実例は、例えば[/mrsekut-p/Cosense上のメモに適度に批判してくれるbot]とか？[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069fa8",
+      "text": "\t\t\t\t\tこれは[Wiki to Wiki]と言えそう[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069fa9",
+      "text": "\t\t\t\t\t\tLLM to Wikiか、この文脈だとWikiの知識で書き込むLLMという話だったからWiki to Wikiでもまぁ合ってるかな",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069faa",
+      "text": "\t\t\t\t\tあーなるほど[takker.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069fab",
+      "text": "\t\tリンクがクリックできるようにした",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069fac",
+      "text": "\t\t\t何となくページをサーフィンできるはず",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c5df6eb4060000069fad",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883423,
+      "updated": 1740883423
+    },
+    {
+      "id": "67c3c62e6eb40600000e4f17",
+      "text": "from [2025/02/26]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883501,
+      "updated": 1740883504
+    },
+    {
+      "id": "67c3c6316eb40600000e4f19",
+      "text": "\t[https://inajob.github.io/inajob-river-peeker/wiki.html Discordサーバー「inajob川」の情報をストック化する]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883505,
+      "updated": 1740883518
+    },
+    {
+      "id": "67c3c63f6eb40600000e4f1a",
+      "text": " \tチャットのログからWikiっぽい情報を抜き出す実験",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883518,
+      "updated": 1740883518
+    },
+    {
+      "id": "67c3c63f6eb40600000e4f1b",
+      "text": " \tこれをまたチャットの流れに戻していけると良いのだろうか？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883518,
+      "updated": 1740883518
+    },
+    {
+      "id": "67c3c63f6eb40600000e4f1c",
+      "text": " \tこちらはこちらでScrapboxとかにページを作って盛り上がるようにする？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883518,
+      "updated": 1740883518
+    },
+    {
+      "id": "67c3c6306eb40600000e4f18",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1740883504,
+      "updated": 1740883504
+    }
+  ]
+}
