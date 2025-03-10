@@ -1,0 +1,848 @@
+{
+  "id": "67ce8c47701d5a04c36d82e6",
+  "title": "テキスト検索ランダム応答.py",
+  "created": 1741589593,
+  "updated": 1741607754,
+  "lines": [
+    {
+      "id": "67ce8c47701d5a04c36d82e6",
+      "text": "テキスト検索ランダム応答.py",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589593,
+      "updated": 1741589593
+    },
+    {
+      "id": "67ce8c5771b3c20000719bc3",
+      "text": "[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589593,
+      "updated": 1741589593
+    },
+    {
+      "id": "67ce8c5271b3c20000719bc1",
+      "text": "主な動作",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589593,
+      "updated": 1741589593
+    },
+    {
+      "id": "67ce8c5671b3c20000719bc2",
+      "text": "\t1. テキストをプロンプトで検索する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589593,
+      "updated": 1741589715
+    },
+    {
+      "id": "67ce8c5f71b3c20000719bc5",
+      "text": "\t2. 検索結果をランダムに選ぶ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589600,
+      "updated": 1741589700
+    },
+    {
+      "id": "67ce8cc371b3c20000719bc6",
+      "text": "\t3. ランダムに選んだものの次の文字をプロンプトに追加する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589700,
+      "updated": 1741589713
+    },
+    {
+      "id": "67ce8c5b71b3c20000719bc4",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589597,
+      "updated": 1741589597
+    },
+    {
+      "id": "67ce8ceb71b3c20000719be2",
+      "text": "使い方",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589739,
+      "updated": 1741589741
+    },
+    {
+      "id": "67ce8ced71b3c20000719be3",
+      "text": "\t1. コーパスを準備する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589741,
+      "updated": 1741589745
+    },
+    {
+      "id": "67ce8cf771b3c20000719be4",
+      "text": "\t\t1. [Cosense Code Clone]を用いて公開プロジェクトをクローンする",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589751,
+      "updated": 1741589875
+    },
+    {
+      "id": "67ce8d0d71b3c20000719be5",
+      "text": "\t 2. クローンしたテキストをcorpus.txtに結合する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589773,
+      "updated": 1741589922
+    },
+    {
+      "id": "67ce8d2a71b3c20000719be8",
+      "text": "\t\t\t$ find /path/to/クローン先ディレクトリ -name text.txt -exec echo \"<EOF>\" \\; -exec cat {} \\; > corpus.txt",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589802,
+      "updated": 1741589871
+    },
+    {
+      "id": "67ce8d7771b3c20000719bec",
+      "text": "\t2. 実行する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589879,
+      "updated": 1741589888
+    },
+    {
+      "id": "67ce8d7c71b3c20000719bed",
+      "text": "\t\t1. 下に書かれてるpythonコードをコピペしてcorpus.txtとtextgen.pyという名前で保存する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589884,
+      "updated": 1741589952
+    },
+    {
+      "id": "67ce8d8d71b3c20000719bee",
+      "text": "\t\t2. 実行する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589901,
+      "updated": 1741589933
+    },
+    {
+      "id": "67ce8dad71b3c20000719bef",
+      "text": "\t\t\t$ python3 textgen.py \"プロンプト\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589933,
+      "updated": 1741602880
+    },
+    {
+      "id": "67ce8d4e71b3c20000719beb",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589866,
+      "updated": 1741589866
+    },
+    {
+      "id": "67ceb41671b3c200009cbe9e",
+      "text": "多分コーパスファイルの大きさの2倍くらいメモリ食う",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741599767,
+      "updated": 1741600531
+    },
+    {
+      "id": "67ceb45e71b3c200009cbea0",
+      "text": "高速に動くように設計している(検索部分がライブラリ内のネイティブコード)だが、PythonがPythonなので遅いかも",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741599839,
+      "updated": 1741599866
+    },
+    {
+      "id": "67ceb6f671b3c200009cbec8",
+      "text": "238MBのコーパスで482MBメモリ使用",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741600502,
+      "updated": 1741605415
+    },
+    {
+      "id": "67ceb76571b3c200009cbed5",
+      "text": "\tfab-wiki, forum-jp, help-jp, masui, nishio, plurality-japanese, shiology, shokai, stao, suto3, takker, tanehouse, villagepump, work4ai, arpla をクローンして結合した",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741600613,
+      "updated": 1741605177
+    },
+    {
+      "id": "67cec3e771b3c200009cbf2e",
+      "text": "\tプロンプトが1文字など極端に短い場合は一時的に大食いします",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603816,
+      "updated": 1741603840
+    },
+    {
+      "id": "67ceb76b71b3c200009cbef4",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741600620,
+      "updated": 1741600620
+    },
+    {
+      "id": "67ceb76571b3c200009cbed6",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741600614,
+      "updated": 1741600614
+    },
+    {
+      "id": "67ce990971b3c20000719bf0",
+      "text": "スライディング曖昧検索を実装したい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741592841,
+      "updated": 1741592848
+    },
+    {
+      "id": "67ceafb571b3c200009cbe9d",
+      "text": "\t速度的に遅すぎた",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741598646,
+      "updated": 1741598650
+    },
+    {
+      "id": "67ce990971b3c20000719bf1",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741592841,
+      "updated": 1741592841
+    },
+    {
+      "id": "67cec1cf71b3c200009cbf1d",
+      "text": "機能詳細",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603280,
+      "updated": 1741603283
+    },
+    {
+      "id": "67cec1d271b3c200009cbf1f",
+      "text": "\t`--maxchar バイト数`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603283,
+      "updated": 1741603293
+    },
+    {
+      "id": "67cec1d571b3c200009cbf20",
+      "text": "\t\t指定したバイト数生成して終了する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603286,
+      "updated": 1741603300
+    },
+    {
+      "id": "67cec71f71b3c200009cbf35",
+      "text": "\t\t標準では無制限",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741604640,
+      "updated": 1741604643
+    },
+    {
+      "id": "67cec1e371b3c200009cbf21",
+      "text": "\t`--ctx バイト数`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603300,
+      "updated": 1741603307
+    },
+    {
+      "id": "67cec1e871b3c200009cbf22",
+      "text": "\t\t最大のコンテキスト長",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603304,
+      "updated": 1741604359
+    },
+    {
+      "id": "67cec71871b3c200009cbf34",
+      "text": "\t\t指定しない場合無制限",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741604632,
+      "updated": 1741604637
+    },
+    {
+      "id": "67cec1fb71b3c200009cbf23",
+      "text": "\t`--bpi バイト数`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603324,
+      "updated": 1741603335
+    },
+    {
+      "id": "67cec20771b3c200009cbf24",
+      "text": "\t\t1回の検索で指定したバイト数応答する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603335,
+      "updated": 1741603342
+    },
+    {
+      "id": "67cec71571b3c200009cbf33",
+      "text": "\t\t標準で1",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741604629,
+      "updated": 1741604631
+    },
+    {
+      "id": "67cec20f71b3c200009cbf25",
+      "text": "\t`--randomness X`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603343,
+      "updated": 1741603364
+    },
+    {
+      "id": "67cec23071b3c200009cbf27",
+      "text": "\t\tX=1だと既存の文章をなぞることが多い",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603376,
+      "updated": 1741603383
+    },
+    {
+      "id": "67cec52f71b3c200009cbf2f",
+      "text": "\t\t\tそのためソースを明示できる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741604143,
+      "updated": 1741604148
+    },
+    {
+      "id": "67cec21b71b3c200009cbf26",
+      "text": "\t\tX=2以上の場合、既存の文章をなぞりにくくなる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603355,
+      "updated": 1741603376
+    },
+    {
+      "id": "67cec30571b3c200009cbf29",
+      "text": "\t\t\t支離滅裂な文章が相当増える",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603589,
+      "updated": 1741604134
+    },
+    {
+      "id": "67cec6a071b3c200009cbf30",
+      "text": "\t\t\tソースの絞り込みが困難",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741604512,
+      "updated": 1741604517
+    },
+    {
+      "id": "67cec7cc71b3c200009cbf37",
+      "text": "\t\t\tbpi 2以上との併用は推奨しない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741604813,
+      "updated": 1741604815
+    },
+    {
+      "id": "67cec71071b3c200009cbf32",
+      "text": "\t\t標準では1",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741604625,
+      "updated": 1741604628
+    },
+    {
+      "id": "67cec32571b3c200009cbf2a",
+      "text": "\t`--stop 文字列`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603622,
+      "updated": 1741603626
+    },
+    {
+      "id": "67cec32a71b3c200009cbf2b",
+      "text": "\t\t指定した文字列が出現したときに終了",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603626,
+      "updated": 1741603634
+    },
+    {
+      "id": "67cec33171b3c200009cbf2c",
+      "text": "\t\t空文字列で永久動作",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603634,
+      "updated": 1741603653
+    },
+    {
+      "id": "67cec34471b3c200009cbf2d",
+      "text": "\t\tmaxcharも指定している場合、どちらかの条件に達したときに終了される",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603653,
+      "updated": 1741603662
+    },
+    {
+      "id": "67cec70871b3c200009cbf31",
+      "text": "\t\t標準で`<EOF>`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741604616,
+      "updated": 1741604622
+    },
+    {
+      "id": "67cec1d071b3c200009cbf1e",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741603280,
+      "updated": 1741603280
+    },
+    {
+      "id": "67ce8ce471b3c20000719bc7",
+      "text": "code:textgen.py",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741589734,
+      "updated": 1741599717
+    },
+    {
+      "id": "67ceb49071b3c200009cbea1",
+      "text": " import time",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741599889,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf6e",
+      "text": " bootstart=time.perf_counter()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf6f",
+      "text": " import re,random,sys,argparse,json",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf70",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf71",
+      "text": " parser = argparse.ArgumentParser()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf72",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf73",
+      "text": " parser.add_argument('prompt', type=str, help='prompt to start generating')",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf74",
+      "text": " parser.add_argument('--maxchar', type=int, help='max generate bytes')",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf75",
+      "text": " parser.add_argument('--ctx', type=int, help='ctx bytes length')",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf76",
+      "text": " parser.add_argument('--bpi', type=int, help='bytes per iteration',default=1)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf77",
+      "text": " parser.add_argument('--randomness', type=int, help='minimum pplx',default=1)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf78",
+      "text": " parser.add_argument('--stop', type=str, help='Stop string', default=\"<EOF>\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf79",
+      "text": " parser.add_argument('--verbose', action='store_true')",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf7a",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf7b",
+      "text": " args = parser.parse_args()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf7c",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf7d",
+      "text": " prompt=str(args.prompt).encode()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf7e",
+      "text": " stop = str(args.stop).encode()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf7f",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf80",
+      "text": " with open(\"corpus.txt\",\"rb\") as f:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf81",
+      "text": " \ts = f.read()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf82",
+      "text": " \tstext = s.lower()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf83",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf84",
+      "text": " charcount = 0",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf85",
+      "text": " if args.verbose:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf86",
+      "text": " \tprint(\"起動時間:\",time.perf_counter() - bootstart,\"秒\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf87",
+      "text": " \tprint(\"byte\\tpplx\\tctx\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf88",
+      "text": " else:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf89",
+      "text": "     print(prompt.decode(),end=\"\",flush=True)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf8a",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf8b",
+      "text": " def trydecode(baito):",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf8c",
+      "text": " \tdecodepattern = [",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf8d",
+      "text": " \t\t\t\t(0,-1),(0,-2),(0,-3),(0,-4),(0,-5),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf8e",
+      "text": " \t\t\t\t(1,-1),(1,-2),(1,-3),(1,-4),(1,-5),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf8f",
+      "text": " \t\t\t\t(2,-1),(2,-2),(2,-3),(2,-4),(2,-5),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf90",
+      "text": " \t\t\t\t(3,-1),(3,-2),(3,-3),(3,-4),(3,-5),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf91",
+      "text": " \t\t\t\t(4,-1),(4,-2),(4,-3),(4,-4),(4,-5),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf92",
+      "text": " \t\t\t\t]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf93",
+      "text": " \tfor a in decodepattern:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf94",
+      "text": " \t\ttry:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf95",
+      "text": " \t\t\treturn (\"?\"*a[0])+baito[a[0]:a[1]].decode()+(\"?\"*(-1-a[1]))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf96",
+      "text": " \t\texcept UnicodeDecodeError:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf97",
+      "text": " \t\t\tcontinue",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf98",
+      "text": " \treturn \"ERROR\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf99",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf9a",
+      "text": " while True:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf9b",
+      "text": " \tif prompt==b\"\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf9c",
+      "text": " \t\tprompt=b\"\\n\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf9d",
+      "text": " \tresult = [m.span() for m in re.finditer(re.escape(prompt.lower()), stext)]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf9e",
+      "text": " \tif len(result) < args.randomness:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbf9f",
+      "text": " \t\tprompt=prompt[1:]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfa0",
+      "text": " \t\tif args.verbose:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfa1",
+      "text": " \t\t\tprint(\"\\t\"+str(len(result))+\"\\t\"+json.dumps(trydecode(prompt),ensure_ascii=False))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfa2",
+      "text": " \t\tcontinue",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfa3",
+      "text": " \tncpos = random.choice(result)[1]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfa4",
+      "text": " \tnextchar = s[ncpos:ncpos+args.bpi]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfa5",
+      "text": " \tprompt=prompt + nextchar",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfa6",
+      "text": " \tcharcount += 1",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfa7",
+      "text": " \tif args.ctx:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfa8",
+      "text": " \t\tprompt=prompt[-args.ctx:]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfa9",
+      "text": " \tif args.verbose:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfaa",
+      "text": " \t\tprint(nextchar.hex()+\"\\t\"+str(len(result))+\"\\t\"+json.dumps(trydecode(prompt),ensure_ascii=False))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfab",
+      "text": " \telse:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfac",
+      "text": " \t\tsys.stdout.buffer.write(nextchar)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfad",
+      "text": " \t\tsys.stdout.buffer.flush()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfae",
+      "text": " \tif (stop != \"\" and stop in prompt) or (args.maxchar and args.maxchar < charcount):",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfaf",
+      "text": " \t\tbreak",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    },
+    {
+      "id": "67ced34971b3c200009cbfb0",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741607754,
+      "updated": 1741607754
+    }
+  ]
+}
