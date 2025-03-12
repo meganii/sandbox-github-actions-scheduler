@@ -1,0 +1,505 @@
+{
+  "id": "67d02e3deed0d90762be6bc5",
+  "title": "@bsahd/libcosense",
+  "created": 1741696583,
+  "updated": 1741778849,
+  "lines": [
+    {
+      "id": "67d02e3deed0d90762be6bc5",
+      "text": "@bsahd/libcosense",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741696583,
+      "updated": 1741697043
+    },
+    {
+      "id": "67d02e4771b3c20000a25bac",
+      "text": "目標",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741696583,
+      "updated": 1741747636
+    },
+    {
+      "id": "67d0f4ec71b3c20000154860",
+      "text": "\t100%クラス指向のcosense rest/websocket wrapper",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741747436,
+      "updated": 1741748580
+    },
+    {
+      "id": "67d0f58271b3c20000154865",
+      "text": "\tブラウザ/deno/node/bunの全てで動作",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741747587,
+      "updated": 1741747602
+    },
+    {
+      "id": "67d0f5db71b3c20000154866",
+      "text": "\t数々の便利機能",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741747675,
+      "updated": 1741747681
+    },
+    {
+      "id": "67d0f5e071b3c20000154867",
+      "text": "\t\t全ページ一覧の非同期イテレーターとか",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741747681,
+      "updated": 1741747700
+    },
+    {
+      "id": "67d0f52371b3c20000154861",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741747491,
+      "updated": 1741770113
+    },
+    {
+      "id": "67d13c5071b3c2000056d82f",
+      "text": "そうか...非同期constructorないのか...",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765712,
+      "updated": 1741765721
+    },
+    {
+      "id": "67d13c5971b3c2000056d831",
+      "text": "\tでもconstructorをprivateにして別のnew静的メソッドを作ればいい!",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765722,
+      "updated": 1741765741
+    },
+    {
+      "id": "67d14d8971b3c2000056d838",
+      "text": "\t`Project.new()`みたいにね",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741770122,
+      "updated": 1741770131
+    },
+    {
+      "id": "67d13c5071b3c2000056d830",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765712,
+      "updated": 1741765712
+    },
+    {
+      "id": "67d145ba71b3c2000056d832",
+      "text": "[@cosense/types]とは微妙に型の互換性がない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741768123,
+      "updated": 1741768136
+    },
+    {
+      "id": "67d145c971b3c2000056d834",
+      "text": "\tこっちはscrapboxlab側の定義を元にしてるので",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741768137,
+      "updated": 1741768147
+    },
+    {
+      "id": "67d145bb71b3c2000056d833",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741768123,
+      "updated": 1741768123
+    },
+    {
+      "id": "67d0f52371b3c20000154862",
+      "text": "[@cosense/std]の問題点",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741747491,
+      "updated": 1741756105
+    },
+    {
+      "id": "67d0f53271b3c20000154863",
+      "text": "\t認証情報の取り回しがめんどくさい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741747506,
+      "updated": 1741747527
+    },
+    {
+      "id": "67d153191280f00000ac0e81",
+      "text": "\t どこが面倒かよくわからなかった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1741771545,
+      "updated": 1741771569
+    },
+    {
+      "id": "67d15a5471b3c2000056d839",
+      "text": "\t APIを呼ぶたびにオプションを設定する必要がある[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773396,
+      "updated": 1741773412
+    },
+    {
+      "id": "67d15a6471b3c2000056d83a",
+      "text": "\t \tクラス指向なら一度認証を設定したProjectから短いコードでPageを読み書きできる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773413,
+      "updated": 1741773429
+    },
+    {
+      "id": "67d15a7971b3c2000056d83b",
+      "text": "\t \t[- 内部実装はバケツリレーだが]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773433,
+      "updated": 1741773440
+    },
+    {
+      "id": "67d0f57071b3c20000154864",
+      "text": "\tpage listからpageを取得するのがめんどい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741747568,
+      "updated": 1741747729
+    },
+    {
+      "id": "67d153331280f00000ac0e83",
+      "text": "\t 追加予定[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1741771571,
+      "updated": 1741771577
+    },
+    {
+      "id": "67d15a8971b3c2000056d83c",
+      "text": "\t 現状libcosenseだと`PageListItem`クラスに`getDetail()`が生えててそれを呼ぶと`Page`クラスが帰ってくる[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773449,
+      "updated": 1741773488
+    },
+    {
+      "id": "67d15b8971b3c2000056d853",
+      "text": "\t全ページ一覧の取得がむずい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773706,
+      "updated": 1741773717
+    },
+    {
+      "id": "67d0f4e971b3c2000015485f",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741747433,
+      "updated": 1741748721
+    },
+    {
+      "id": "67d15abf71b3c2000056d83d",
+      "text": "サンプル",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773503,
+      "updated": 1741773505
+    },
+    {
+      "id": "67d15ac171b3c2000056d83e",
+      "text": "\t[Cosense Code Clone]で使ってる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773505,
+      "updated": 1741773514
+    },
+    {
+      "id": "67d15b2671b3c2000056d84e",
+      "text": "\tminimum example",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773606,
+      "updated": 1741773610
+    },
+    {
+      "id": "67d15af971b3c2000056d83f",
+      "text": " \tcode:ts",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773562,
+      "updated": 1741773611
+    },
+    {
+      "id": "67d1638971b3c2000056d854",
+      "text": " \t import * as libcosense from \"jsr:@bsahd/libcosense\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741775753,
+      "updated": 1741775770
+    },
+    {
+      "id": "67d15b3071b3c2000056d850",
+      "text": " \t const pj = libcosense.Project.new(\"villagepump\",{sessionid:\"SESSION_ID\"})",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773616,
+      "updated": 1741778228
+    },
+    {
+      "id": "67d15afa71b3c2000056d840",
+      "text": " \t for await (const item of pj.pageList()) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773562,
+      "updated": 1741773611
+    },
+    {
+      "id": "67d15b1271b3c2000056d84c",
+      "text": "     const page = await item.getDetail();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773586,
+      "updated": 1741773635
+    },
+    {
+      "id": "67d15b4671b3c2000056d851",
+      "text": "     console.log(page)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773638,
+      "updated": 1741773644
+    },
+    {
+      "id": "67d15afa71b3c2000056d84a",
+      "text": "   }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773563,
+      "updated": 1741773611
+    },
+    {
+      "id": "67d15b2c71b3c2000056d84f",
+      "text": "  これだけで全ページの内容を処理できる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741773613,
+      "updated": 1741776081
+    },
+    {
+      "id": "67d164d171b3c2000056d855",
+      "text": "  ちなみに@cosense/stdでやろうとすると",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776081,
+      "updated": 1741776088
+    },
+    {
+      "id": "67d164d871b3c2000056d857",
+      "text": "  \tcode:ts",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776088,
+      "updated": 1741776544
+    },
+    {
+      "id": "67d1659971b3c2000056d87e",
+      "text": "    SESSIONID=\"SESSION_ID\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776281,
+      "updated": 1741776402
+    },
+    {
+      "id": "67d1667c71b3c2000056d88f",
+      "text": "    const pagecount = await cosenseStd.listPages(\"villagepump\", {sid:SESSIONID}).count;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776508,
+      "updated": 1741776550
+    },
+    {
+      "id": "67d1659971b3c2000056d87f",
+      "text": "    for (const skipnum=0;skipnum < pagecount;skipnum += 100) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776281,
+      "updated": 1741776537
+    },
+    {
+      "id": "67d1659971b3c2000056d880",
+      "text": "      const pglistw = await cosenseStd.listPages(\"villagepump\", {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776281,
+      "updated": 1741776281
+    },
+    {
+      "id": "67d1659971b3c2000056d881",
+      "text": "        skip: skipnum,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776281,
+      "updated": 1741776281
+    },
+    {
+      "id": "67d1659971b3c2000056d882",
+      "text": "        sort: \"updated\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776281,
+      "updated": 1741776281
+    },
+    {
+      "id": "67d1660571b3c2000056d88e",
+      "text": "        sid:SESSIONID",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776390,
+      "updated": 1741776395
+    },
+    {
+      "id": "67d1659971b3c2000056d883",
+      "text": "      });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776281,
+      "updated": 1741776281
+    },
+    {
+      "id": "67d1659971b3c2000056d884",
+      "text": "      if (!pglistw.ok) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776281,
+      "updated": 1741776281
+    },
+    {
+      "id": "67d1659971b3c2000056d885",
+      "text": "        continue;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776281,
+      "updated": 1741776281
+    },
+    {
+      "id": "67d1659971b3c2000056d886",
+      "text": "      }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776281,
+      "updated": 1741776281
+    },
+    {
+      "id": "67d1659971b3c2000056d887",
+      "text": "      for (const item of pglistw.pages) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776281,
+      "updated": 1741776281
+    },
+    {
+      "id": "67d1659971b3c2000056d888",
+      "text": "        const page = await cosenseStd.getPage(\"villagepump\", item,{sid:SESSIONID});",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776281,
+      "updated": 1741776358
+    },
+    {
+      "id": "67d1659971b3c2000056d889",
+      "text": "        console.log(page);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776281,
+      "updated": 1741776281
+    },
+    {
+      "id": "67d1659971b3c2000056d88a",
+      "text": "      }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776281,
+      "updated": 1741776281
+    },
+    {
+      "id": "67d1659971b3c2000056d88b",
+      "text": "    }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741776281,
+      "updated": 1741776542
+    },
+    {
+      "id": "67d10a8371b3c20000e6f76f",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741752963,
+      "updated": 1741770136
+    },
+    {
+      "id": "67d10a8371b3c20000e6f770",
+      "text": "https://jsr.io/@bsahd/libcosense",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741752964,
+      "updated": 1741770333
+    },
+    {
+      "id": "67d0fa2571b3c20000e6f76e",
+      "text": "https://github.com/bsahd/libcosense",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741748773,
+      "updated": 1741748773
+    },
+    {
+      "id": "67d0f96571b3c20000e6f76a",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741748582,
+      "updated": 1741748582
+    },
+    {
+      "id": "67d02e7671b3c20000a25baf",
+      "text": "前提",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741696631,
+      "updated": 1741696632
+    },
+    {
+      "id": "67d02f9371b3c20000a25bb6",
+      "text": "\t例外のタイプはダックタイピングでどうにかする",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741696915,
+      "updated": 1741696924
+    },
+    {
+      "id": "67d02f551280f00000ac7025",
+      "text": "\t\tcf. [https://zenn.dev/luma/articles/2e891a24fe099c Deno(Nodeでも)で外部モジュールのクラスやSymbolを使用するときは少し慎重になる必要がある]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1741696831,
+      "updated": 1741696835
+    },
+    {
+      "id": "67d02e7771b3c20000a25bb0",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741696632,
+      "updated": 1741696632
+    },
+    {
+      "id": "67d02e901280f00000ac701e",
+      "text": "例外ベースに変えようかちょうど検討してたとこだった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1741696634,
+      "updated": 1741696645
+    },
+    {
+      "id": "67d02e9c1280f00000ac7020",
+      "text": " 単独のREST APIで構成されているものは例外ベースにする予定",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1741696646,
+      "updated": 1741696671
+    },
+    {
+      "id": "67d02ec71280f00000ac7023",
+      "text": "  https://github.com/takker99/scrapbox-userscript-std/pull/226",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1741696689,
+      "updated": 1741696713
+    },
+    {
+      "id": "67d02ee41280f00000ac7024",
+      "text": "  例外ベースにしたいというより、`Response`を加工する処理を削って軽量化&Responseを直に使えるようにすることが目的",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1741696718,
+      "updated": 1741696758
+    },
+    {
+      "id": "67d02eb51280f00000ac7022",
+      "text": " `uploadToGCS`など、複数のAPIの組み合わせはResult typeかなー",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1741696671,
+      "updated": 1741696687
+    },
+    {
+      "id": "67d02ea471b3c20000a25bb3",
+      "text": " @cosense/std側はそのままでこちら側を例外ベースにしたいかな[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741696677,
+      "updated": 1741696692
+    },
+    {
+      "id": "67d02e931280f00000ac701f",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1741696637,
+      "updated": 1741696637
+    },
+    {
+      "id": "67d0422271b3c200005f7d7c",
+      "text": "目についた時にやりたいのでピン留め　3/11",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741701667,
+      "updated": 1741701726
+    },
+    {
+      "id": "67d0422971b3c200005f7d7d",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741701674,
+      "updated": 1741701674
+    }
+  ]
+}

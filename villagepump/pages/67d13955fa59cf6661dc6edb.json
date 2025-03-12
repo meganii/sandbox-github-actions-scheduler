@@ -1,0 +1,1856 @@
+{
+  "id": "67d13955fa59cf6661dc6edb",
+  "title": "Modern UI for Cosense",
+  "created": 1741764980,
+  "updated": 1741787008,
+  "lines": [
+    {
+      "id": "67d13955fa59cf6661dc6edb",
+      "text": "Modern UI for Cosense",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764980,
+      "updated": 1741764980
+    },
+    {
+      "id": "67d18f7971b3c200001e5d76",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741787002,
+      "updated": 1741787002
+    },
+    {
+      "id": "67d18f7e71b3c200001e5d79",
+      "text": "表示例",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741787007,
+      "updated": 1741787008
+    },
+    {
+      "id": "67d18f7971b3c200001e5d77",
+      "text": "[https://gyazo.com/94949e15f2edcbce126cd0a6f40ea477]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741787002,
+      "updated": 1741787003
+    },
+    {
+      "id": "67d18f7b71b3c200001e5d78",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741787003,
+      "updated": 1741787003
+    },
+    {
+      "id": "67d1399371b3c20000e5a9a1",
+      "text": "#UserCSS",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765012,
+      "updated": 1741765014
+    },
+    {
+      "id": "67d1397371b3c20000e5a85a",
+      "text": "code:script.js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764980,
+      "updated": 1741765032
+    },
+    {
+      "id": "67d1397d71b3c20000e5a88c",
+      "text": "\t\t setInterval(()=>{",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a88d",
+      "text": "\t\t async function sha256(message) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a88e",
+      "text": "        return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(message)))).map((b) => b.toString(16).padStart(2, '0')).join('');",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a88f",
+      "text": "      }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a890",
+      "text": "      function luminance(rgba) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a891",
+      "text": "        return Math.floor(0.298 * rgba[0] + 0.586 * rgba[1] + 0.114 * rgba[2]);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a892",
+      "text": "      }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a893",
+      "text": "      function hexToRgb(hex) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a894",
+      "text": "        var result = /^#?([a-f\\d]{2})([a-f\\d]{2})([a-f\\d]{2})$/i.exec(hex);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a895",
+      "text": "        return [parseInt(result[1], 16),parseInt(result[2], 16),parseInt(result[3], 16)];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a896",
+      "text": "      }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a897",
+      "text": "   \t\t document.querySelectorAll(\".page-list-item\").forEach(async a=>{",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a898",
+      "text": "   \t\t   let color = (await sha256(a.getAttribute(\"data-page-title\"))).slice(0,6)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a899",
+      "text": "        a.setAttribute(\"style\",\"--user-card-bg:#\"+color)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741765203
+    },
+    {
+      "id": "67d1397d71b3c20000e5a89a",
+      "text": "        let lum = luminance(hexToRgb(\"#\"+color))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a89b",
+      "text": "        if(lum<120){",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a89c",
+      "text": "          a.classList.add(\"dark\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a89d",
+      "text": "        }else{",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a89e",
+      "text": "          a.classList.remove(\"dark\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a89f",
+      "text": "        }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a8a0",
+      "text": "      }) ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741764989
+    },
+    {
+      "id": "67d1397d71b3c20000e5a8a1",
+      "text": "\t\t },200)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764989,
+      "updated": 1741765011
+    },
+    {
+      "id": "67d139a271b3c20000e5a9a2",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765026,
+      "updated": 1741765028
+    },
+    {
+      "id": "67d1397371b3c20000e5a85b",
+      "text": "code:style.css",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764980,
+      "updated": 1741765164
+    },
+    {
+      "id": "67d13a2b71b3c20000e5a9a3",
+      "text": " body {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765164,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9a4",
+      "text": "   --A: #002;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9a5",
+      "text": "   --B: #002;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9a6",
+      "text": "   --body-bg: #002;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9a7",
+      "text": "   --navbar-title-color: #4a4a4a;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9a8",
+      "text": "   --navbar-icon-color: #4a4a4a;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9a9",
+      "text": "   --search-form-icon-color: #4a4a4a;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9aa",
+      "text": "   --tool-color: #fff;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9ab",
+      "text": "   --tool-text-color: #fff;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9ac",
+      "text": "   background-color: #002;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9ad",
+      "text": "   background-image: none;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9ae",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9af",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9b0",
+      "text": " .page, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9b1",
+      "text": " .grid li.page-list-item a, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9b2",
+      "text": " [data-hover-visible] .grid li.page-list-item a:hover, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9b3",
+      "text": " .page-sidebar {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9b4",
+      "text": "   box-shadow: none;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9b5",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d188c171b3c20000377a41",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785282,
+      "updated": 1741785282
+    },
+    {
+      "id": "67d188be71b3c20000377a3e",
+      "text": " .page, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785279,
+      "updated": 1741785375
+    },
+    {
+      "id": "67d1891f71b3c20000377a42",
+      "text": " .grid li.relation-label a, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785375,
+      "updated": 1741785377
+    },
+    {
+      "id": "67d1892171b3c20000377a43",
+      "text": " .related-page-list .toolbar .related-page-list-search, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785377,
+      "updated": 1741785392
+    },
+    {
+      "id": "67d1893071b3c20000377a44",
+      "text": " .search-form .form-group input{",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785392,
+      "updated": 1741785392
+    },
+    {
+      "id": "67d188c071b3c20000377a40",
+      "text": "   border-radius: 0;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785281,
+      "updated": 1741785283
+    },
+    {
+      "id": "67d188bf71b3c20000377a3f",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785279,
+      "updated": 1741785279
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9b6",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9b7",
+      "text": " .navbar {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9b8",
+      "text": "   background-color: #fff;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9b9",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9ba",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9bb",
+      "text": " .search-form .form-group input {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9bc",
+      "text": "   --search-form-bg: rgba(255, 255, 255, 0);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9bd",
+      "text": "   border: 1px solid #0004;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9be",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9bf",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9c0",
+      "text": " .brand-icon, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9c1",
+      "text": " .navbar .row .project-home::after {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9c2",
+      "text": "   display: none;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9c3",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9c4",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9c5",
+      "text": " .new-button {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9c6",
+      "text": "   background-color: transparent;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9c7",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9c8",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9c9",
+      "text": " .new-button .horizontal-line, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9ca",
+      "text": " .new-button .vertical-line {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9cb",
+      "text": "   background-color: #888;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9cc",
+      "text": "   border-radius: 0;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9cd",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9ce",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9cf",
+      "text": " [data-hover-visible] .new-button:hover {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9d0",
+      "text": "   background-color: #0002;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9d1",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9d2",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9d3",
+      "text": " [data-hover-visible] .new-button:active {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9d4",
+      "text": "   background-color: #0003;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9d5",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9d6",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9d7",
+      "text": " .new-button .horizontal-line {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9d8",
+      "text": "   height: 2px;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9d9",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9da",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9db",
+      "text": " .new-button .vertical-line {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9dc",
+      "text": "   width: 2px;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9dd",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9de",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9df",
+      "text": " .status-bar > div, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9e0",
+      "text": " .status-bar > div.page-title {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9e1",
+      "text": "   background-color: transparent;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9e2",
+      "text": "   border-top-right-radius: 0;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9e3",
+      "text": "   border-top: none;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9e4",
+      "text": "   color: #444;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9e5",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9e6",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9e7",
+      "text": " .status-bar > div.page-title {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9e8",
+      "text": "   border-left: 1px solid var(--tool-light-color, #a9aaaf);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9e9",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9ea",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9eb",
+      "text": " .status-bar > div:first-child, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9ec",
+      "text": " .status-bar > div.page-title:first-child {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9ed",
+      "text": "   border-left: none;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9ee",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9ef",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9f0",
+      "text": " .status-bar button {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9f1",
+      "text": "   background-color: transparent;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9f2",
+      "text": "   border: none;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9f3",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9f4",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9f5",
+      "text": " .footer {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9f6",
+      "text": "   background-color: #fff;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9f7",
+      "text": "   width: unset;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9f8",
+      "text": "   right: 4px;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9f9",
+      "text": "   bottom: 4px;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9fa",
+      "text": "   box-shadow: none;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9fb",
+      "text": "   border-radius: 0;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9fc",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5a9fd",
+      "text": "  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741786180
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa02",
+      "text": " .grid li.expand-stack a, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa03",
+      "text": " .grid li.start-2hop-search a,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa04",
+      "text": " .grid li.relation-label a, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa05",
+      "text": " .grid li.relation-label.links a, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa06",
+      "text": " .grid li.relation-label.project-links a, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa07",
+      "text": " .related-page-list div.links-2-hop ul.grid:hover .relation-label a {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa08",
+      "text": "   background-color: transparent;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa09",
+      "text": "   color: #fff;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa0a",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa0b",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa0c",
+      "text": " .grid li.relation-label .arrow {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa0d",
+      "text": "   display: none;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa0e",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa0f",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa10",
+      "text": " .grid li.page-list-item a .title {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa11",
+      "text": "   font-weight: normal;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa12",
+      "text": "   color: #4a4a4a;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa13",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa14",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa15",
+      "text": " .infobox:not(:first-child) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa16",
+      "text": "   border-top: none;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa17",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa18",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa19",
+      "text": " .related-page-list .toolbar .related-page-list-search {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa1a",
+      "text": "   border: 1px solid #0004;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa1b",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa1c",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa1d",
+      "text": " .expandable-menu, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa1e",
+      "text": " .search-form .form-group input:focus, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa1f",
+      "text": " .search-form .form-group input.for-mobile, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa20",
+      "text": " .infobox .definition-list-item:nth-child(2n+1) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa21",
+      "text": "   background-color: transparent;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa22",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa23",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa24",
+      "text": " .expandable-menu .page-menu .tool-btn, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa25",
+      "text": " .expandable-menu .toggle-button {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa26",
+      "text": "   color: #0008;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa27",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa28",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa29",
+      "text": " .navbar .row .project-home {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa2a",
+      "text": "   font-weight: normal;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa2b",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa2c",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa2d",
+      "text": " .dropdown-menu {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa2e",
+      "text": "   background-color: #fff;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa2f",
+      "text": "   box-shadow: none;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa30",
+      "text": "   border-radius: 0;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa31",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa32",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa33",
+      "text": " .dropdown-menu > li > a:active, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa34",
+      "text": " [data-hover-visible] .dropdown-menu > li > a:hover, ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa35",
+      "text": " [data-focus-visible] .dropdown-menu > li > a:focus {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa36",
+      "text": "   background-color: #0002;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa37",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa38",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa39",
+      "text": " .app {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa3a",
+      "text": "   padding-top: 29px;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa3b",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa3c",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa3d",
+      "text": " .grid li.page-list-item a .pin {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa3e",
+      "text": "   border-radius: 0;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa3f",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa40",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa41",
+      "text": " .grid li.page-list-item a .icon img {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa42",
+      "text": "   width: 100%;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa43",
+      "text": "   border-radius: 0;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa44",
+      "text": "   translate: -50% -50%;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa45",
+      "text": "   z-index: 0;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa46",
+      "text": "   position: absolute;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa47",
+      "text": "   left: 50%;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa48",
+      "text": "   top: 50%;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa49",
+      "text": "   min-height: 100%;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa4a",
+      "text": "   min-width: 100%;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa4b",
+      "text": "   object-fit: cover;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa4c",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa4d",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa4e",
+      "text": " .grid li.page-list-item a .header {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d18c4671b3c20000377a4f",
+      "text": "   border-top-color: transparent;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741786183,
+      "updated": 1741786184
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa4f",
+      "text": "   position: absolute;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa50",
+      "text": "   background: transparent;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741786473
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa51",
+      "text": "   padding: 0 4px;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa52",
+      "text": "   width: unset;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa53",
+      "text": "   margin: 4px 0 0 8px;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa54",
+      "text": "   bottom: 2px;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741786850
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa55",
+      "text": "   left: 2px;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741786853
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa56",
+      "text": "   z-index: 1;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741786269
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa58",
+      "text": "   border-top: none;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa59",
+      "text": "   font-weight: normal;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d18d6371b3c20000377a53",
+      "text": "   margin:0;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741786469,
+      "updated": 1741786469
+    },
+    {
+      "id": "67d18f3e71b3c200001e5d75",
+      "text": "   max-width: calc(100% - 4px);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741786942,
+      "updated": 1741786942
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa5a",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d18d0d71b3c20000377a50",
+      "text": " .grid li.page-list-item.image a .header{",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741786381,
+      "updated": 1741786797
+    },
+    {
+      "id": "67d18d1371b3c20000377a52",
+      "text": "   background: #000;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741786387,
+      "updated": 1741786400
+    },
+    {
+      "id": "67d18d0e71b3c20000377a51",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741786383,
+      "updated": 1741786686
+    },
+    {
+      "id": "67d18e3e71b3c200001e5d65",
+      "text": "   ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741786686,
+      "updated": 1741786686
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa60",
+      "text": " .grid li.page-list-item a .title {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa61",
+      "text": "   color: #fff;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741786267
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa62",
+      "text": "   font-weight: inherit;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa63",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa64",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa65",
+      "text": " .grid li.page-list-item.unread .content .header {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa66",
+      "text": "   font-weight: bold;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa67",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa68",
+      "text": " .grid li.page-list-item:not(.image) a .title {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741786800
+    },
+    {
+      "id": "67d18d7d71b3c20000377a54",
+      "text": "    color: #000;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741786494,
+      "updated": 1741786498
+    },
+    {
+      "id": "67d18d7d71b3c20000377a55",
+      "text": "  }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741786494,
+      "updated": 1741786494
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa69",
+      "text": " .grid li.page-list-item.dark:not(.image) a .title {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741786803
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa6a",
+      "text": "   color: #fff;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741786345
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa6b",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa6c",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa6d",
+      "text": " .grid li {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa6e",
+      "text": "   aspect-ratio: 1;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa6f",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa70",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa71",
+      "text": " .grid li.page-list-item a {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa72",
+      "text": "   border-radius: 0;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa73",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa74",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa75",
+      "text": " .grid li.page-list-item a .description {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa76",
+      "text": "   display: none;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa77",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765165
+    },
+    {
+      "id": "67d1895c71b3c20000377a47",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785436,
+      "updated": 1741785436
+    },
+    {
+      "id": "67d13a2c71b3c20000e5aa78",
+      "text": " .grid li.page-list-item{",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765165,
+      "updated": 1741765189
+    },
+    {
+      "id": "67d13a4871b3c20000e5aa7a",
+      "text": " --card-bg: var(--user-card-bg);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765193,
+      "updated": 1741765680
+    },
+    {
+      "id": "67d13a4571b3c20000e5aa79",
+      "text": "\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741765189,
+      "updated": 1741765191
+    },
+    {
+      "id": "67d1895d71b3c20000377a48",
+      "text": "\t",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785437,
+      "updated": 1741785437
+    },
+    {
+      "id": "67d1895871b3c20000377a45",
+      "text": "\t.grid li.page-list-item a .hover{",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785432,
+      "updated": 1741785433
+    },
+    {
+      "id": "67d1895e71b3c20000377a49",
+      "text": "   display:none;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785438,
+      "updated": 1741785443
+    },
+    {
+      "id": "67d1895971b3c20000377a46",
+      "text": "\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785433,
+      "updated": 1741785434
+    },
+    {
+      "id": "67d1896371b3c20000377a4a",
+      "text": "\t",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785444,
+      "updated": 1741785444
+    },
+    {
+      "id": "67d189ed71b3c20000377a4b",
+      "text": "\t.page-list-item.grid-style-item:hover {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785582,
+      "updated": 1741785582
+    },
+    {
+      "id": "67d189ed71b3c20000377a4c",
+      "text": "   outline: 2px solid #fff;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785582,
+      "updated": 1741785582
+    },
+    {
+      "id": "67d189ed71b3c20000377a4d",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785582,
+      "updated": 1741785582
+    },
+    {
+      "id": "67d189ee71b3c20000377a4e",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741785583,
+      "updated": 1741785583
+    },
+    {
+      "id": "67d1397371b3c20000e5a88b",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741764980,
+      "updated": 1741764980
+    }
+  ]
+}

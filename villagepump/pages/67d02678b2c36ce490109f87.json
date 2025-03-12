@@ -1,0 +1,848 @@
+{
+  "id": "67d02678b2c36ce490109f87",
+  "title": "ページ内の情報を元にAIチャットに聞きたい",
+  "created": 1741694587,
+  "updated": 1741700202,
+  "lines": [
+    {
+      "id": "67d02a4f71b3c20000eef96d",
+      "text": "ページ内の情報を元にAIチャットに聞きたい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741695568,
+      "updated": 1741695568
+    },
+    {
+      "id": "67d02678b2c36ce490109f87",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741694587,
+      "updated": 1741695570
+    },
+    {
+      "id": "67d02685cd19a0000017d66f",
+      "text": "code:なにもしないボタン.js",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694598,
+      "updated": 1741694626
+    },
+    {
+      "id": "67d02695cd19a0000017d671",
+      "text": " scrapbox.PageMenu.addMenu({",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694614,
+      "updated": 1741694620
+    },
+    {
+      "id": "67d0269bcd19a0000017d672",
+      "text": "   title: 'MyButton',",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694620,
+      "updated": 1741694620
+    },
+    {
+      "id": "67d0269bcd19a0000017d673",
+      "text": "   image: 'https://i.gyazo.com/7057219f5b20ca8afd122945b72453d3.png',",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694620,
+      "updated": 1741694620
+    },
+    {
+      "id": "67d0269bcd19a0000017d674",
+      "text": "   onClick: () => {} // 何もしない",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694620,
+      "updated": 1741694620
+    },
+    {
+      "id": "67d0269bcd19a0000017d675",
+      "text": " }); ",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694620,
+      "updated": 1741694717
+    },
+    {
+      "id": "67d02688cd19a0000017d670",
+      "text": "",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694602,
+      "updated": 1741694602
+    },
+    {
+      "id": "67d026afcd19a0000017d679",
+      "text": "code:page内のテキストをコピーボタン.js",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694641,
+      "updated": 1741694653
+    },
+    {
+      "id": "67d026bccd19a0000017d67a",
+      "text": " /* ScrapboxのPage Menuに「コピー」ボタンを追加 */",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694653,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d67b",
+      "text": " scrapbox.PageMenu.addMenu({",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d67c",
+      "text": "   title: 'コピー',",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d67d",
+      "text": "   image: 'https://cdn-icons-png.flaticon.com/512/126/126497.png', // コピーアイコン",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d67e",
+      "text": "   onClick: () => {",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d67f",
+      "text": "     const text = [...document.querySelectorAll('.line .text')]",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d680",
+      "text": "       .map(el => el.innerText)",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d681",
+      "text": "       .join('\\n');",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d682",
+      "text": "       ",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d683",
+      "text": "     if (navigator.clipboard) {",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d684",
+      "text": "       navigator.clipboard.writeText(text)",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d685",
+      "text": "         .then(() => alert('ページの内容をコピーしました！'))",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d686",
+      "text": "         .catch(err => alert('コピーに失敗しました: ' + err));",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d687",
+      "text": "     } else {",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d688",
+      "text": "       alert('クリップボードAPIが利用できません');",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d689",
+      "text": "     }",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d68a",
+      "text": "   }",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d68b",
+      "text": " });",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694654
+    },
+    {
+      "id": "67d026bdcd19a0000017d68c",
+      "text": "",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694654,
+      "updated": 1741694787
+    },
+    {
+      "id": "67d02742cd19a0000017d6bc",
+      "text": " GPTに投げるのに便利",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694787,
+      "updated": 1741694798
+    },
+    {
+      "id": "67d0273ecd19a0000017d6ba",
+      "text": "",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694783,
+      "updated": 1741694783
+    },
+    {
+      "id": "67d026d9cd19a0000017d68e",
+      "text": "code:page内の全リンク先ページの内容をコピーするボタン.js",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694682,
+      "updated": 1741694730
+    },
+    {
+      "id": "67d026decd19a0000017d68f",
+      "text": " /* Scrapboxのリンク先ページの内容をコピーするボタン */",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694687,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d690",
+      "text": " scrapbox.PageMenu.addMenu({",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d691",
+      "text": "   title: 'リンク先コピー',",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d692",
+      "text": "   image: 'https://cdn-icons-png.flaticon.com/512/1828/1828778.png', // コピーアイコン",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d693",
+      "text": "   onClick: async () => {",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d694",
+      "text": "     const links = [...document.querySelectorAll('.line a')]",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d695",
+      "text": "       .map(a => a.href)",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d696",
+      "text": "       .filter(url => url.includes('scrapbox.io')); // Scrapbox内のリンクのみ対象",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d697",
+      "text": " ",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d698",
+      "text": "     if (links.length === 0) {",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d699",
+      "text": "       alert('Scrapbox内のリンクがありません');",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d69a",
+      "text": "       return;",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d69b",
+      "text": "     }",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d69c",
+      "text": " ",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d69d",
+      "text": "     let allText = '';",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d69e",
+      "text": "     for (const link of links) {",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d69f",
+      "text": "       try {",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6a0",
+      "text": "         const pageTitle = decodeURIComponent(link.split('/').pop()); // ページタイトル取得",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6a1",
+      "text": "         const projectName = link.split('/')[3]; // プロジェクト名取得",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6a2",
+      "text": "         const apiUrl = `https://scrapbox.io/api/pages/${projectName}/${pageTitle}`;",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6a3",
+      "text": " ",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6a4",
+      "text": "         const response = await fetch(apiUrl);",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6a5",
+      "text": "         if (!response.ok) throw new Error('ページを取得できません');",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6a6",
+      "text": " ",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6a7",
+      "text": "         const data = await response.json();",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6a8",
+      "text": "         const pageText = data.lines.map(line => line.text).join('\\n');",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6a9",
+      "text": "         allText += `\\n\\n--- ${pageTitle} ---\\n${pageText}`;",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6aa",
+      "text": "       } catch (error) {",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6ab",
+      "text": "         console.error(`エラー: ${link}`, error);",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6ac",
+      "text": "       }",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6ad",
+      "text": "     }",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6ae",
+      "text": " ",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6af",
+      "text": "     if (navigator.clipboard) {",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6b0",
+      "text": "       navigator.clipboard.writeText(allText)",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6b1",
+      "text": "         .then(() => alert('リンク先の内容をコピーしました！'))",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6b2",
+      "text": "         .catch(err => alert('コピーに失敗しました: ' + err));",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6b3",
+      "text": "     } else {",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6b4",
+      "text": "       alert('クリップボードAPIが利用できません');",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6b5",
+      "text": "     }",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6b6",
+      "text": "   }",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6b7",
+      "text": " });",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026e5cd19a0000017d6b8",
+      "text": " ",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694694,
+      "updated": 1741694694
+    },
+    {
+      "id": "67d026c4cd19a0000017d68d",
+      "text": "",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694661,
+      "updated": 1741694661
+    },
+    {
+      "id": "67d026f5cd19a0000017d6b9",
+      "text": "　page内にあるリンク先をすべて開かずにコピーしてくれるのでGPTに投げるのに便利",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694710,
+      "updated": 1741695561
+    },
+    {
+      "id": "67d02756cd19a0000017d6be",
+      "text": "",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694807,
+      "updated": 1741694807
+    },
+    {
+      "id": "67d02756cd19a0000017d6bf",
+      "text": "　page内の特定のリンク先を選択して開かずにコピーしたいのだけどどうすればいいか分からない[1ge.icon]",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694807,
+      "updated": 1741694944
+    },
+    {
+      "id": "67d027dfcd19a0000017d6c0",
+      "text": "　　これがあればGPTに投げるときにクソ便利そう",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694944,
+      "updated": 1741694962
+    },
+    {
+      "id": "67d028fccd19a0000017d6c7",
+      "text": "　　GPTくんのアイデアが↓だけどどれもしっくりこない",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741695229,
+      "updated": 1741695244
+    },
+    {
+      "id": "67d028c9cd19a0000017d6c2",
+      "text": "table:table",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741695178,
+      "updated": 1741695178
+    },
+    {
+      "id": "67d028c9cd19a0000017d6c3",
+      "text": " 方法\t操作方法\t特徴",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741695178,
+      "updated": 1741695178
+    },
+    {
+      "id": "67d028c9cd19a0000017d6c4",
+      "text": " ① 右クリック+Page Menu\tリンクを右クリック→Page Menuのボタンを押す\t直感的に選択しやすい",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741695178,
+      "updated": 1741695209
+    },
+    {
+      "id": "67d028c9cd19a0000017d6c5",
+      "text": "  ② Popup Menuのボタン\t リンクを選択するとボタンが出る\tScrapbox標準のUIに馴染む",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741695178,
+      "updated": 1741695213
+    },
+    {
+      "id": "67d028c9cd19a0000017d6c6",
+      "text": "  ③ アイコンを追加\tリンクの横に📄を追加してクリック\t 1クリックでコピー！",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741695178,
+      "updated": 1741695223
+    },
+    {
+      "id": "67d0274fcd19a0000017d6bd",
+      "text": "",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741694801,
+      "updated": 1741694801
+    },
+    {
+      "id": "67d0290e71b3c20000eef963",
+      "text": "[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741695246,
+      "updated": 1741695247
+    },
+    {
+      "id": "67d0291d71b3c20000eef967",
+      "text": "\t全リンク先をコピーする形式の[Ask to LLM UserScript]というものを作ってた",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741695261,
+      "updated": 1741695868
+    },
+    {
+      "id": "67d02b7b71b3c200000affd8",
+      "text": "\t\t[/icons/感謝.icon][1ge.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741695868,
+      "updated": 1741695872
+    },
+    {
+      "id": "67d02b8371b3c200000affd9",
+      "text": "\t\t現在は私も使ってないし不必要に複雑化してるので推奨しません[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741695875,
+      "updated": 1741695974
+    },
+    {
+      "id": "67d029f771b3c20000eef96a",
+      "text": "\t選択的にリンク先情報をLLMに提供するというアイデアが斬新だと考えている",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741695479,
+      "updated": 1741695530
+    },
+    {
+      "id": "67d02a6571b3c20000eef96e",
+      "text": "\tページメニューを押してチェックボックスでプロンプトに含めるページを選択するのはどうかな",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741695589,
+      "updated": 1741695904
+    },
+    {
+      "id": "67d02ba271b3c200000affda",
+      "text": "\t\t一旦モーダルを開いた後選択s...",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741695906,
+      "updated": 1741695919
+    },
+    {
+      "id": "67d02bae71b3c200000affdb",
+      "text": "\t\t違う話では",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741695919,
+      "updated": 1741695922
+    },
+    {
+      "id": "67d02bb171b3c200000affdc",
+      "text": "\t\t\tおそらく1geさんがしたい話は「AIにページ内容を追加で聞かれたときにリンク先を開くことなくコピーしたい」では",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741695922,
+      "updated": 1741696195
+    },
+    {
+      "id": "67d02cea71b3c200000affdf",
+      "text": "\t\t追加で質問をしてターンエンドとする",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741696235,
+      "updated": 1741696241
+    },
+    {
+      "id": "67d02cf271b3c200000affe0",
+      "text": "\t\t\t1. 人間が読むことなくページテキストをAIに投げていいのか",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741696242,
+      "updated": 1741696326
+    },
+    {
+      "id": "67d02d4a71b3c200000affe2",
+      "text": "\t\t\t\tプライバシー関連の情報をAIに投げたくないとか",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741696331,
+      "updated": 1741696415
+    },
+    {
+      "id": "67d02d0f71b3c200000affe1",
+      "text": "\t\t\t2. AIが半自動的にページを取得しても構わないか",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741696272,
+      "updated": 1741696344
+    },
+    {
+      "id": "67d02d5971b3c200000affe3",
+      "text": "\t\t\t\tページ名が出て、Approveを押すようなスタイル",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741696346,
+      "updated": 1741696375
+    },
+    {
+      "id": "67d02d7771b3c200000affe4",
+      "text": "\t\t\t\tこれでいいなら[cosense-mcp-server]がある",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741696376,
+      "updated": 1741696385
+    },
+    {
+      "id": "67d02d8971b3c200000affe5",
+      "text": "\t\t\t\t2025/3/11 21:33 ターンエンド",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741696394,
+      "updated": 1741696427
+    },
+    {
+      "id": "67d03081cd19a0000017d6c9",
+      "text": "　目的としては以下です[1ge.icon]",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741697154,
+      "updated": 1741697171
+    },
+    {
+      "id": "67d03092cd19a0000017d6ca",
+      "text": "　スクボpageを眺めている際に、page内の特定のリンク先の情報をGPTに渡して考えさせたい時がある",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741697171,
+      "updated": 1741697217
+    },
+    {
+      "id": "67d030c0cd19a0000017d6cb",
+      "text": "　　リンク先の情報を基に、今眺めているpageをgptと一緒に深めたいとき",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741697218,
+      "updated": 1741697256
+    },
+    {
+      "id": "67d030e7cd19a0000017d6cc",
+      "text": "　現在の方法だと",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741697256,
+      "updated": 1741697261
+    },
+    {
+      "id": "67d030eccd19a0000017d6cd",
+      "text": "　　リンクを開いて手動コピーする",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741697261,
+      "updated": 1741697269
+    },
+    {
+      "id": "67d030f5cd19a0000017d6ce",
+      "text": "　　　これを楽にするのがpage内のテキストをコピーボタン.js",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741697271,
+      "updated": 1741697295
+    },
+    {
+      "id": "67d0290e71b3c20000eef964",
+      "text": "　　　テキストを選択してコピーしなくていいぶんらくだが、リンクを開かないといけない",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741695247,
+      "updated": 1741697439
+    },
+    {
+      "id": "67d0311dcd19a0000017d6d0",
+      "text": "　　Page内の全リンク先の内容をコピーして渡す",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741697310,
+      "updated": 1741697318
+    },
+    {
+      "id": "67d03127cd19a0000017d6d1",
+      "text": "　　　これがpage内の全リンク先ページの内容をコピーするボタン.js",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741697320,
+      "updated": 1741697336
+    },
+    {
+      "id": "67d03139cd19a0000017d6d2",
+      "text": "　　　リンクを開かなくていいけど、gptに渡す情報量が多くなりすぎる",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741697338,
+      "updated": 1741697362
+    },
+    {
+      "id": "67d03151cd19a0000017d6d3",
+      "text": "　理想",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741697362,
+      "updated": 1741697367
+    },
+    {
+      "id": "67d03156cd19a0000017d6d4",
+      "text": "　　page内の特定のリンクを選択し、リンクを開かずにクリップボードにコピーしたい",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741697367,
+      "updated": 1741697395
+    },
+    {
+      "id": "67d03173cd19a0000017d6d5",
+      "text": "　　　んでgptにペーストする",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741697396,
+      "updated": 1741697409
+    },
+    {
+      "id": "67d0329771b3c200004618ad",
+      "text": "　ありがとうございます[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741697689,
+      "updated": 1741697699
+    },
+    {
+      "id": "67d032a571b3c200004618ae",
+      "text": "　\tチェックボックス選択式がいいかな〜",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1741697704,
+      "updated": 1741697714
+    },
+    {
+      "id": "67d03810cd19a00000247c42",
+      "text": "　　　ありがとうございます。その線でgptに聞きながらやってみます[1ge.icon]",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741699089,
+      "updated": 1741699103
+    },
+    {
+      "id": "67d0381ecd19a00000247c43",
+      "text": "",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741699104,
+      "updated": 1741699107
+    },
+    {
+      "id": "67d0310ecd19a0000017d6cf",
+      "text": "",
+      "userId": "67734e25a4ef8efb90cd19a0",
+      "created": 1741697296,
+      "updated": 1741697296
+    }
+  ]
+}
