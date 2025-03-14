@@ -1,0 +1,169 @@
+{
+  "id": "67d4480af3c49abd55b43676",
+  "title": "開いてるページタイトルで論文検索リンク付きページを作成するスクリプト",
+  "created": 1741965327,
+  "updated": 1741965454,
+  "lines": [
+    {
+      "id": "67d4480af3c49abd55b43676",
+      "text": "開いてるページタイトルで論文検索リンク付きページを作成するスクリプト",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965327,
+      "updated": 1741965375
+    },
+    {
+      "id": "67d4483e59337100005e9a76",
+      "text": "",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965375,
+      "updated": 1741965375
+    },
+    {
+      "id": "67d4483f59337100005e9a77",
+      "text": "[/itanote/開いているページの論文リンク作成]",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965375,
+      "updated": 1741965376
+    },
+    {
+      "id": "67d4483f59337100005e9a78",
+      "text": "",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965376,
+      "updated": 1741965376
+    },
+    {
+      "id": "67d4488759337100005e9a7b",
+      "text": "code:script.js",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965448,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a7e",
+      "text": " scrapbox.PageMenu.addMenu({",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a7f",
+      "text": "     title: '開いているページの論文リンク作成', ",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a80",
+      "text": "     image: 'https://gyazo.com/95977102d5b4ce823e59dcd5fbc3f156.png', ",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a81",
+      "text": "     onClick: () => {",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a82",
+      "text": "         const search = scrapbox.Page.title;",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a83",
+      "text": "         if(!search) return;",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a84",
+      "text": "         let str = ` [https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=${search} ${search}をjstageで検索]\\n [https://cir.nii.ac.jp/all?q=${search}&hasLinkToFullText=true ${search}をciniiで検索]\\n #${search}`; ",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a85",
+      "text": "         scrapbox.Project.pages.forEach(data=>{",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a86",
+      "text": "         if(!data.exists) return; // 空リンクはスキップ//",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a87",
+      "text": "         if(!data.title.includes(search)) return;",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a88",
+      "text": "       })",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a89",
+      "text": "         const write = window.open(`https://scrapbox.io/${scrapbox.Project.name}/${search}についての論文?body=${encodeURIComponent(str)}`);",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a8a",
+      "text": "     },",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a8b",
+      "text": " })",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488959337100005e9a8c",
+      "text": "",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965450,
+      "updated": 1741965450
+    },
+    {
+      "id": "67d4488859337100005e9a7d",
+      "text": "",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965448,
+      "updated": 1741965448
+    },
+    {
+      "id": "67d4484859337100005e9a79",
+      "text": "捗るか不明（たまに便利）[イタロー.icon]",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965384,
+      "updated": 1741965398
+    },
+    {
+      "id": "67d4484859337100005e9a7a",
+      "text": "",
+      "userId": "6079235a757fde001c593371",
+      "created": 1741965384,
+      "updated": 1741965384
+    }
+  ]
+}
