@@ -1,0 +1,274 @@
+{
+  "id": "67d657aa578f2db29018480a",
+  "title": "fs trouble: /swapfile",
+  "created": 1742100397,
+  "updated": 1742104009,
+  "lines": [
+    {
+      "id": "67d657aa578f2db29018480a",
+      "text": "fs trouble: /swapfile",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100655
+    },
+    {
+      "id": "67d657ac71b3c2000065d06b",
+      "text": "✂ from [2025/03/15]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d06c",
+      "text": "[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100403
+    },
+    {
+      "id": "67d657ac71b3c2000065d06d",
+      "text": "\t`sudo mkswap -Fs 16G /swapfile`でスワップファイルを作った後再起動すると`'/swapfile': structure needs cleaning`になる件",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657b571b3c20000b575d4",
+      "text": "\t\tctx",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100406,
+      "updated": 1742100408
+    },
+    {
+      "id": "67d657b871b3c20000b575d5",
+      "text": "\t\t\t過去に`/swapfile`をスワップとして使用していて、`'/swapfile': structure needs cleaning`が起きたことがある",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100409,
+      "updated": 1742100441
+    },
+    {
+      "id": "67d657db71b3c20000b575d6",
+      "text": "\t\t\tfsckして修復したことはあるが、`/`のディレクトリインデックス内の`/swapfile`を消したことはない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100443,
+      "updated": 1742100520
+    },
+    {
+      "id": "67d657ac71b3c2000065d06e",
+      "text": "\t\tddでスワップファイルを作るのが主流らしい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d06f",
+      "text": "\t\tgptはfallocateを推奨してた",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d070",
+      "text": "\t\tddでスワップファイルを作りfstabに設定し、再起動",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d071",
+      "text": "\t\t✖️同様の現象",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d073",
+      "text": "\t\t[https://qiita.com/rarul/items/1cdd5e7dc5b436dc2b3c ext4のjournalモードの確認 #Linux - Qiita]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d074",
+      "text": "\t\t\tdata=journalにしてみた",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d075",
+      "text": "\t\t\t停電してもデータが安全に守られる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d076",
+      "text": "\t\tちなみにbad blocks(異常セクタ)はない",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d077",
+      "text": "\t\tもしかして`/swapfile`という名前のせい？",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d078",
+      "text": "\t\tcode:sh",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d079",
+      "text": "\t\t % sudo debugfs /dev/nvme0n1p4",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d07a",
+      "text": "   debugfs:  ls -l /",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d07b",
+      "text": "   (略)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d07c",
+      "text": "         0       0 (1)      0      0       0                   swapfile",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d07d",
+      "text": "  やっぱり",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d07e",
+      "text": "  % sudo touch /swapfile",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d07f",
+      "text": "  % sudo debugfs /dev/nvme0n1p4",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d080",
+      "text": "  debugfs: unlink /swapfile",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d081",
+      "text": "  % sudo reboot",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d082",
+      "text": "  問題なし!!!",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d083",
+      "text": "  /etc/fstab変更",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d084",
+      "text": "  再起動",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d085",
+      "text": "  問題なし",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d657ac71b3c2000065d086",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100397,
+      "updated": 1742100397
+    },
+    {
+      "id": "67d6589671b3c20000b575d8",
+      "text": "old title:`/swapfile`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100631,
+      "updated": 1742100635
+    },
+    {
+      "id": "67d657d96eb4060000ef4b23",
+      "text": " これはリンクできないページかな？[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1742100446,
+      "updated": 1742100461
+    },
+    {
+      "id": "67d657dc6eb4060000ef4b24",
+      "text": "  ああああああ!!![bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100446,
+      "updated": 1742100636
+    },
+    {
+      "id": "67d6589c71b3c20000b575d9",
+      "text": "  \t仕方ないので名前を`fs trouble:/swapfile`にした",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100637,
+      "updated": 1742100652
+    },
+    {
+      "id": "67d658b771b3c20000b575da",
+      "text": "  \tリンクできないページ罠だろ!!!",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100664,
+      "updated": 1742100673
+    },
+    {
+      "id": "67d658ca71b3c20000b575db",
+      "text": "  \t`/etc/fstab`がリンクできないとか詰みじゃん",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100682,
+      "updated": 1742100706
+    },
+    {
+      "id": "67d6587071b3c20000b575d7",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742100593,
+      "updated": 1742100593
+    }
+  ]
+}
