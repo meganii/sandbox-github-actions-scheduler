@@ -2,7 +2,7 @@
   "id": "678a0698e81f3d60f6c30af1",
   "title": "ストレージの速度を過信してはいけない",
   "created": 1737098905,
-  "updated": 1737961983,
+  "updated": 1742466355,
   "lines": [
     {
       "id": "678a0698e81f3d60f6c30af1",
@@ -26,25 +26,18 @@
       "updated": 1737961983
     },
     {
+      "id": "67db32fa71b3c20000805d03",
+      "text": "\tUSBメモリ:[https://gyazo.com/e1db2f00b3ab02a69471c52bbc68f76f]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742418682,
+      "updated": 1742418688
+    },
+    {
       "id": "678a06c271b3c20000cbf724",
       "text": "",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1737098947,
-      "updated": 1737098955
-    },
-    {
-      "id": "678a06ca71b3c20000cbf727",
-      "text": "キャッシュを活用すべき",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1737098955,
-      "updated": 1737961960
-    },
-    {
-      "id": "678a06e171b3c20000cbf729",
-      "text": "\t基本的なキャッシュはOS側が持ってる",
-      "userId": "661b6e882a96e9002371b3c2",
-      "created": 1737098978,
-      "updated": 1737098986
+      "updated": 1742418694
     },
     {
       "id": "678a06ee71b3c20000cbf72a",
@@ -83,17 +76,220 @@
     },
     {
       "id": "678a09a871b3c20000cbf72e",
-      "text": "(Node.JS,Deno)ファイルの書き込みは絶対に非同期でやる",
+      "text": "(Node.js)ファイルの書き込みは絶対に非同期でやる",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1737099688,
-      "updated": 1737099701
+      "updated": 1742418705
     },
     {
       "id": "678a09a971b3c20000cbf72f",
-      "text": "",
+      "text": "\t`fs/promises`を使えばコールバック地獄を回避できる",
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1737099690,
-      "updated": 1737099690
+      "updated": 1742418794
+    },
+    {
+      "id": "67dbebcc71b3c20000bd846a",
+      "text": "\t\t複数ファイルを読み込む場合のアンチパターン",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742465996,
+      "updated": 1742465996
+    },
+    {
+      "id": "67dbebcc71b3c20000bd846b",
+      "text": "\t\t\tcode:ts",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742465996,
+      "updated": 1742466000
+    },
+    {
+      "id": "67dbebd071b3c20000bd846c",
+      "text": "\t\t\t import * as fs from \"node:fs/promises\";",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466000,
+      "updated": 1742466265
+    },
+    {
+      "id": "67dbec3471b3c20000bd846e",
+      "text": "\t\t\t const files = [/* file list */];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466100,
+      "updated": 1742466111
+    },
+    {
+      "id": "67dbed1e71b3c20000bd8477",
+      "text": "\t\t\t async function main(){",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466334,
+      "updated": 1742466342
+    },
+    {
+      "id": "67dbec2671b3c20000bd846d",
+      "text": "\t\t\t for( item of files ) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466087,
+      "updated": 1742466122
+    },
+    {
+      "id": "67dbec4b71b3c20000bd8472",
+      "text": "\t\t\t     const content = await fs.readFile(item, 'utf8');",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466123,
+      "updated": 1742466298
+    },
+    {
+      "id": "67dbec5f71b3c20000bd8474",
+      "text": "\t\t\t     // use content",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466144,
+      "updated": 1742466153
+    },
+    {
+      "id": "67dbec4a71b3c20000bd8471",
+      "text": "\t\t\t }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466122,
+      "updated": 1742466207
+    },
+    {
+      "id": "67dbed2771b3c20000bd8478",
+      "text": "\t\t\t }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466343,
+      "updated": 1742466343
+    },
+    {
+      "id": "67dbed2771b3c20000bd8479",
+      "text": "\t\t\t main()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466343,
+      "updated": 1742466344
+    },
+    {
+      "id": "67dbec9e71b3c20000bd8475",
+      "text": "\t\t\tこの場合、複数ファイルを同時に読み込まないため速度が低下する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466207,
+      "updated": 1742466218
+    },
+    {
+      "id": "67dbecaa71b3c20000bd8476",
+      "text": "\t\t\t\tcode:ts",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466218,
+      "updated": 1742466347
+    },
+    {
+      "id": "67dbed2b71b3c20000bd847a",
+      "text": "\t\t\t\t import * as fs from \"node:fs/promises\";",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466348,
+      "updated": 1742466348
+    },
+    {
+      "id": "67dbed2b71b3c20000bd847b",
+      "text": "     ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466348,
+      "updated": 1742466348
+    },
+    {
+      "id": "67dbed2b71b3c20000bd847c",
+      "text": "     const files = [/* file list */];",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466348,
+      "updated": 1742466348
+    },
+    {
+      "id": "67dbed2b71b3c20000bd847d",
+      "text": "     ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466348,
+      "updated": 1742466348
+    },
+    {
+      "id": "67dbed2b71b3c20000bd847e",
+      "text": "     async function readFiles() {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466348,
+      "updated": 1742466348
+    },
+    {
+      "id": "67dbed2b71b3c20000bd847f",
+      "text": "         const readPromises = files.map((item) => fs.readFile(item, 'utf8'));",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466348,
+      "updated": 1742466348
+    },
+    {
+      "id": "67dbed2b71b3c20000bd8480",
+      "text": "         const contents = await Promise.all(readPromises); // Read all files concurrently",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466348,
+      "updated": 1742466348
+    },
+    {
+      "id": "67dbed2b71b3c20000bd8481",
+      "text": "         contents.forEach(content => {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466348,
+      "updated": 1742466348
+    },
+    {
+      "id": "67dbed2b71b3c20000bd8482",
+      "text": "             // use content",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466348,
+      "updated": 1742466348
+    },
+    {
+      "id": "67dbed2b71b3c20000bd8483",
+      "text": "         });",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466348,
+      "updated": 1742466348
+    },
+    {
+      "id": "67dbed2b71b3c20000bd8484",
+      "text": "     }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466348,
+      "updated": 1742466348
+    },
+    {
+      "id": "67dbed2b71b3c20000bd8485",
+      "text": "     ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466348,
+      "updated": 1742466348
+    },
+    {
+      "id": "67dbed2b71b3c20000bd8486",
+      "text": "     readFiles().catch(console.error);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466348,
+      "updated": 1742466348
+    },
+    {
+      "id": "67dbed2b71b3c20000bd8487",
+      "text": "    この場合並列的に読み込める",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742466348,
+      "updated": 1742466355
+    },
+    {
+      "id": "67dbea46ed60e600007bc989",
+      "text": "\t\tほほう[Summer498.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742465608,
+      "updated": 1742466347
+    },
+    {
+      "id": "67db333271b3c20000805d04",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742418738,
+      "updated": 1742418738
     }
   ]
 }
