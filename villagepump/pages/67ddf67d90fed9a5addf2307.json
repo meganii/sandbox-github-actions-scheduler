@@ -1,0 +1,365 @@
+{
+  "id": "67ddf67d90fed9a5addf2307",
+  "title": "Settings最適化計画 2025/03/22",
+  "created": 1742599810,
+  "updated": 1742603444,
+  "lines": [
+    {
+      "id": "67ddf67d90fed9a5addf2307",
+      "text": "Settings最適化計画 2025/03/22",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742599810,
+      "updated": 1742602120
+    },
+    {
+      "id": "67ddf68371b3c200005459dc",
+      "text": "[Settings]を最適化する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742599812,
+      "updated": 1742599818
+    },
+    {
+      "id": "67ddf68b71b3c200005459de",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742599819,
+      "updated": 1742599827
+    },
+    {
+      "id": "67ddf69271b3c200005459e2",
+      "text": "主に最適化するところ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742599827,
+      "updated": 1742599833
+    },
+    {
+      "id": "67ddf69871b3c200005459e4",
+      "text": "\t計算量",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742599833,
+      "updated": 1742599835
+    },
+    {
+      "id": "67ddf69d71b3c200005459e5",
+      "text": "\tバンドルサイズ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742599838,
+      "updated": 1742599841
+    },
+    {
+      "id": "67ddf6a471b3c200005459e6",
+      "text": "\t今回は、主に計算量の最適化を優先する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742599845,
+      "updated": 1742599852
+    },
+    {
+      "id": "67ddf6ae71b3c200005459e7",
+      "text": "\t\t[:has()]の最適化",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742599854,
+      "updated": 1742599865
+    },
+    {
+      "id": "67ddf6dd71b3c200005459ea",
+      "text": "\t\t\tやり方",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742599902,
+      "updated": 1742600033
+    },
+    {
+      "id": "67ddf76271b3c20000545a7c",
+      "text": "\t\t\t\t`:has`の左側を詳細化する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600034,
+      "updated": 1742600044
+    },
+    {
+      "id": "67ddf76c71b3c20000545a7d",
+      "text": "\t\t\t\t直下セレクタを活用する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600044,
+      "updated": 1742600077
+    },
+    {
+      "id": "67ddf78c71b3c20000545a7e",
+      "text": "\t\t\t\t多少の記述の冗長化は許容する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600077,
+      "updated": 1742600115
+    },
+    {
+      "id": "67ddf6b971b3c200005459e8",
+      "text": "\t\t曖昧なセレクタをできるだけ詳細化する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742599866,
+      "updated": 1742599884
+    },
+    {
+      "id": "67ddf6d071b3c200005459e9",
+      "text": "\t\t\tこれによりDOM探索範囲が減る",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742599888,
+      "updated": 1742599901
+    },
+    {
+      "id": "67ddf7d971b3c20000545a7f",
+      "text": "\t\t\t仕様変更に弱くなるというデメリットがある",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600154,
+      "updated": 1742600162
+    },
+    {
+      "id": "67ddf6e671b3c200005459eb",
+      "text": "\t使用率が低いCSSを無効化",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742599910,
+      "updated": 1742600084
+    },
+    {
+      "id": "67ddf68f71b3c200005459df",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742599823,
+      "updated": 1742599823
+    },
+    {
+      "id": "67ddf81671b3c20000545a80",
+      "text": "一旦、minifyなしでbundleして:hasの使用状況を調べる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600215,
+      "updated": 1742600232
+    },
+    {
+      "id": "67ddf85d71b3c20000545a82",
+      "text": "\t[だん.icon][hr.iconをCSSで描画するUserCSS]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600285,
+      "updated": 1742601119
+    },
+    {
+      "id": "67ddf86e71b3c20000545a83",
+      "text": "\t\t`.line .text > span:has(a.link.icon:is([href$=\"/icons/hr\"], [href$=\"/icons/hrd\"])) `",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600302,
+      "updated": 1742600358
+    },
+    {
+      "id": "67ddf87171b3c20000545a87",
+      "text": " \t`.line .text > span span:has(a.link.icon:is([href$=\"/icons/hr\"], [href$=\"/icons/hrd\"]))`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600305,
+      "updated": 1742600358
+    },
+    {
+      "id": "67ddf87171b3c20000545a88",
+      "text": " [だん.icon][文法エラー・警告をIDE風に表示するUserCSS]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600305,
+      "updated": 1742600746
+    },
+    {
+      "id": "67ddf89971b3c20000545a89",
+      "text": " \t`span:has(> span.deco-\\+.deco-_)`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600346,
+      "updated": 1742600356
+    },
+    {
+      "id": "67ddf8a271b3c20000545a8d",
+      "text": " \tこのCSSあまり使われてないので消すか",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600355,
+      "updated": 1742600370
+    },
+    {
+      "id": "67ddf8eb71b3c20000545a8e",
+      "text": " [だん.icon][セパレーター記法]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600427,
+      "updated": 1742602022
+    },
+    {
+      "id": "67ddf8f371b3c20000545a8f",
+      "text": "  `.line:not(.cursor-line) .deco:has(.deco-\\'):has(.deco-_)`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600435,
+      "updated": 1742600482
+    },
+    {
+      "id": "67ddf90471b3c20000545a90",
+      "text": "  \t`&:has(.deco--)`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600453,
+      "updated": 1742600482
+    },
+    {
+      "id": "67ddf91571b3c20000545a91",
+      "text": "  \t`:has(.deco-_)`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600470,
+      "updated": 1742600482
+    },
+    {
+      "id": "67ddf91e71b3c20000545a92",
+      "text": " [だん.icon][白黒記法]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600479,
+      "updated": 1742602423
+    },
+    {
+      "id": "67ddf92471b3c20000545a93",
+      "text": " \t`.line:not(.cursor-line) .deco-\\#:not(:hover):not(:has(a))`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600484,
+      "updated": 1742600510
+    },
+    {
+      "id": "67ddf92f71b3c20000545a96",
+      "text": "  `.line:not(.cursor-line) .deco-\\#:not(:hover):has(img)`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600495,
+      "updated": 1742600505
+    },
+    {
+      "id": "67ddf92f71b3c20000545a99",
+      "text": " [だん.icon][ﾈｺと和解せよ記法]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600495,
+      "updated": 1742602527
+    },
+    {
+      "id": "67ddf95171b3c20000545a9a",
+      "text": " \t`.line:not(.cursor-line) .deco-\\#:not(.deco-\\#.deco-\\+):has(a:not(.icon)) `",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600529,
+      "updated": 1742600530
+    },
+    {
+      "id": "67ddf95371b3c20000545a9b",
+      "text": " [だん.icon][はんこ記法]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600531,
+      "updated": 1742602676
+    },
+    {
+      "id": "67ddf95971b3c20000545a9c",
+      "text": " \t`.line:not(.cursor-line) [class=\"deco-( deco-)\"]:not(:has(img.icon))`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600537,
+      "updated": 1742600547
+    },
+    {
+      "id": "67ddf96371b3c20000545a9d",
+      "text": " \t`.line:not(.cursor-line) [class=\"deco-( deco-)\"]:not(:has(img.icon)) a `",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600547,
+      "updated": 1742600555
+    },
+    {
+      "id": "67ddf97871b3c20000545a9e",
+      "text": " [グリッチUserCSS]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600569,
+      "updated": 1742600715
+    },
+    {
+      "id": "67ddf97971b3c20000545a9f",
+      "text": " \t`.line:not(.cursor-line) .deco-\\+.deco-\\# `",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600569,
+      "updated": 1742600575
+    },
+    {
+      "id": "67ddf97f71b3c20000545aa0",
+      "text": " \t\t`&:not(.hover):has(img) `",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600575,
+      "updated": 1742600584
+    },
+    {
+      "id": "67de021c71b3c20000dc01bf",
+      "text": " \t削除",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742602781,
+      "updated": 1742602813
+    },
+    {
+      "id": "67ddf99471b3c20000545aa1",
+      "text": "\t[都合の悪いサムネイルを非表示にするUserCSS]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600597,
+      "updated": 1742600723
+    },
+    {
+      "id": "67ddf99671b3c20000545aa2",
+      "text": "\t\t`.stream .page:is([data-title=\"\\3082\\307a\\3082\\307a\\7e3a\\ff6e\\8373\\ff78\\7e3a?\\ff44\\7e3a\\ff64\"]) .line a:has(img) `",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600598,
+      "updated": 1742600610
+    },
+    {
+      "id": "67ddf9ad71b3c20000545aa3",
+      "text": "\t[だん.icon][quicksearch候補を見やすくする]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600621,
+      "updated": 1742603068
+    },
+    {
+      "id": "67ddf9b471b3c20000545aa4",
+      "text": "\t\t`ul.dropdown-menu > li.dropdown-item:has(a:focus)`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600629,
+      "updated": 1742600630
+    },
+    {
+      "id": "67ddf9c171b3c20000545aa5",
+      "text": "\t[引用記法中で箇条書きするときに行が長いとバレットが独立してしまうのを防ぐCSS]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600642,
+      "updated": 1742600736
+    },
+    {
+      "id": "67ddf9c871b3c20000545aa6",
+      "text": "\t\t`.line .quote:has(.indent-mark)`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600649,
+      "updated": 1742600649
+    },
+    {
+      "id": "67de02c071b3c20000dc01c0",
+      "text": "\t\t消しても良さそう",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742602944,
+      "updated": 1742602946
+    },
+    {
+      "id": "67ddf81871b3c20000545a81",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742600217,
+      "updated": 1742603430
+    },
+    {
+      "id": "67de04a671b3c2000099b161",
+      "text": "% curl https://scrapbox.io/api/code/villagepump/settings/dist.css | wc",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742603430,
+      "updated": 1742603432
+    },
+    {
+      "id": "67de04a571b3c2000099b160",
+      "text": "\tSettings 21881 bytes",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742603430,
+      "updated": 1742603444
+    },
+    {
+      "id": "67de04b071b3c2000099b162",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1742603440,
+      "updated": 1742603440
+    }
+  ]
+}
