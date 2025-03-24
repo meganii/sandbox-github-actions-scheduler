@@ -1,0 +1,211 @@
+{
+  "id": "67e0bda6c5b6873a37ef4285",
+  "title": "メンバ変数をまとめて扱いたいときにクラスを使うか？",
+  "created": 1742781863,
+  "updated": 1742817027,
+  "lines": [
+    {
+      "id": "67e0bda6c5b6873a37ef4285",
+      "text": "メンバ変数をまとめて扱いたいときにクラスを使うか？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781863,
+      "updated": 1742781863
+    },
+    {
+      "id": "67e0bdb6ed60e60000984387",
+      "text": "\t[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781885
+    },
+    {
+      "id": "67e0bdb8ed60e6000098439c",
+      "text": " from [classとmodule、どちらを使うべき？(TypeScript)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781881,
+      "updated": 1742781881
+    },
+    {
+      "id": "67e0bdb6ed60e60000984389",
+      "text": "\tコンストラクタ使いたい時がクラス使いたいときだろうな",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781902
+    },
+    {
+      "id": "67e0bdcded60e6000098439d",
+      "text": "\t`new Class(memebr1,member2,member3)`",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781902,
+      "updated": 1742781903
+    },
+    {
+      "id": "67e0bdb6ed60e6000098438a",
+      "text": "\tメンバ変数をまとめて扱いたいとか",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    },
+    {
+      "id": "67e0bdb6ed60e6000098438b",
+      "text": "\t\tそれならコレでもいいか→ `const structure = {member1,member2,member3}`",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    },
+    {
+      "id": "67e0bdb6ed60e6000098438c",
+      "text": "\t\t\tこれは immutable に型定義するのがめんどい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    },
+    {
+      "id": "67e0bdb6ed60e6000098438d",
+      "text": " \t\t\t`const structure = {member1,member2,member3} as {readonly member1, readonly member2, readonly member3}`",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1742781879,
+      "updated": 1742783021
+    },
+    {
+      "id": "67e0c1a41280f00000bdfe90",
+      "text": " \t\t\t`const structure = {member1,member2,member3} as const`でいい[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1742782883,
+      "updated": 1742782892
+    },
+    {
+      "id": "67e0d48ded60e6000098439e",
+      "text": " \t\t\t\tうわそんな書き方もあるのかw[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742787726,
+      "updated": 1742787733
+    },
+    {
+      "id": "67e13f537838e30000f863e7",
+      "text": "     右辺の型チェックまで同時にやりたいなら[as const satisfies]を使う手もある[Mijinko_SD.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1742815058,
+      "updated": 1742815100
+    },
+    {
+      "id": "67e146ff1280f000004aaa56",
+      "text": "     そんなのもあった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1742817023,
+      "updated": 1742817027
+    },
+    {
+      "id": "67e0bdb6ed60e6000098438e",
+      "text": " \t\tclass なら",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1742781879,
+      "updated": 1742815058
+    },
+    {
+      "id": "67e0bdb6ed60e6000098438f",
+      "text": " \t\t\tcode:ts",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    },
+    {
+      "id": "67e0bdb6ed60e60000984390",
+      "text": " \t\t\t class Class {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    },
+    {
+      "id": "67e0bdb6ed60e60000984391",
+      "text": " \t\t\t \tconstructor(",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    },
+    {
+      "id": "67e0bdb6ed60e60000984392",
+      "text": " \t\t\t \t\treadonly member1,",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    },
+    {
+      "id": "67e0bdb6ed60e60000984393",
+      "text": " \t\t\t \t\treadonly member2,",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    },
+    {
+      "id": "67e0bdb6ed60e60000984394",
+      "text": " \t\t\t \t\treadonly member3,",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    },
+    {
+      "id": "67e0bdb6ed60e60000984395",
+      "text": " \t\t\t \t)",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    },
+    {
+      "id": "67e0bdb6ed60e60000984396",
+      "text": " \t\t\t }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    },
+    {
+      "id": "67e0bdb6ed60e60000984397",
+      "text": " \t\t\t一緒か（記述量的にはむしろ増えてる）",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    },
+    {
+      "id": "67e0c1ba1280f00000bdfe91",
+      "text": " \t\t\t記述はさらに増えるが`class Class { #member1; #member2; #member3; constructor(member1, member2, member3) { this.#member1 = member1; this.#member2 = member2; this.#member3 = member3; } }`というのもある[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1742782906,
+      "updated": 1742783033
+    },
+    {
+      "id": "67e0d4b8ed60e6000098439f",
+      "text": " \t\t\t\tうん？ `#` は `readonly` というより `private` では？[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742787769,
+      "updated": 1742787810
+    },
+    {
+      "id": "67e120021280f0000095044d",
+      "text": " \t\t\t\tあ、そうだった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1742807041,
+      "updated": 1742807045
+    },
+    {
+      "id": "67e0bdb6ed60e60000984398",
+      "text": " \t\tあとこの目的だけなら interface も type もあるから class である必要はない",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    },
+    {
+      "id": "67e0bdb6ed60e60000984399",
+      "text": " うん。思い返せばとりあえず type で型を宣言して、必要にかられて interface 化, abstract class 化, class 化しているな",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    },
+    {
+      "id": "67e0bdb6ed60e6000098439a",
+      "text": " \tえらいぞ。たぶん。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1742781879,
+      "updated": 1742781879
+    }
+  ]
+}
