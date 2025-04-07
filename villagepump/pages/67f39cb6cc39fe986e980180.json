@@ -1,0 +1,246 @@
+{
+  "id": "67f39cb6cc39fe986e980180",
+  "title": "JSでHTTPリクエストを発行する",
+  "created": 1744018616,
+  "updated": 1744019583,
+  "lines": [
+    {
+      "id": "67f39cb6cc39fe986e980180",
+      "text": "JSでHTTPリクエストを発行する",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018616,
+      "updated": 1744018616
+    },
+    {
+      "id": "67f39cb800000000004a6ef6",
+      "text": "#JavaScript",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018616,
+      "updated": 1744018619
+    },
+    {
+      "id": "67f39cbb00000000004a6ef8",
+      "text": "ブラウザ:[XMLHttpRequest]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018619,
+      "updated": 1744018737
+    },
+    {
+      "id": "67f39cbe00000000004a6ef9",
+      "text": "\tcode:js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018623,
+      "updated": 1744018629
+    },
+    {
+      "id": "67f39cc500000000004a6efa",
+      "text": "\t var xhr = new XMLHttpRequest();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018629,
+      "updated": 1744018640
+    },
+    {
+      "id": "67f39cce00000000004a6efe",
+      "text": "  xhr.onreadystatechange = function() {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6eff",
+      "text": "      switch ( xhr.readyState ) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f00",
+      "text": "          case 0:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f01",
+      "text": "              // 未初期化状態.",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f03",
+      "text": "              break;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f04",
+      "text": "          case 1: // データ送信中.",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f06",
+      "text": "              break;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f07",
+      "text": "          case 2: // 応答待ち.",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f09",
+      "text": "              break;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f0a",
+      "text": "          case 3: // データ受信中.",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f0c",
+      "text": "              break;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f0d",
+      "text": "          case 4: // データ受信完了.",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f0e",
+      "text": "              if( xhr.status == 200 || xhr.status == 304 ) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f0f",
+      "text": "                  var data = xhr.responseText;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018701
+    },
+    {
+      "id": "67f39cce00000000004a6f11",
+      "text": "              } else {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f12",
+      "text": "                  console.log( 'Failed. HttpStatus: '+xhr.statusText );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f13",
+      "text": "              }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018705
+    },
+    {
+      "id": "67f39cce00000000004a6f15",
+      "text": "      }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f16",
+      "text": "  };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018639
+    },
+    {
+      "id": "67f39cce00000000004a6f17",
+      "text": "  xhr.open('GET','URL');",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018639,
+      "updated": 1744018690
+    },
+    {
+      "id": "67f39cd600000000004a6f1b",
+      "text": "  xhr.send();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018646,
+      "updated": 1744018663
+    },
+    {
+      "id": "67f39d3700000000004a6f1e",
+      "text": " 正直クソめんどいので、Axiosとかラッパーを使ったほうがいい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018744,
+      "updated": 1744018946
+    },
+    {
+      "id": "67f39e0200000000004a6f53",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744018946,
+      "updated": 1744018946
+    },
+    {
+      "id": "67f39f4200000000004a6f55",
+      "text": "Node: `http.request`(標準)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744019266,
+      "updated": 1744019276
+    },
+    {
+      "id": "67f39f5e00000000004a6f57",
+      "text": "\thttps://nodejs.org/docs/v22.14.0/api/http.html#httprequestoptions-callback",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744019295,
+      "updated": 1744019295
+    },
+    {
+      "id": "67f39f4200000000004a6f56",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744019266,
+      "updated": 1744019514
+    },
+    {
+      "id": "67f3a02e00000000004a6f58",
+      "text": "[fetch]は最近のブラウザとNodeで使えて、ネイティブでPromiseに対応してる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744019503,
+      "updated": 1744019583
+    },
+    {
+      "id": "67f3a02f00000000004a6f59",
+      "text": "\tそれ最初に紹介しろよ[who.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744019503,
+      "updated": 1744019557
+    },
+    {
+      "id": "67f3a06400000000004a6f5a",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744019557,
+      "updated": 1744019557
+    }
+  ]
+}
