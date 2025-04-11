@@ -1,0 +1,197 @@
+{
+  "id": "67f8e267905e9ccba5c3bad4",
+  "title": "JavaScriptで関数型プログラミング",
+  "created": 1744364138,
+  "updated": 1744365500,
+  "lines": [
+    {
+      "id": "67f8e267905e9ccba5c3bad4",
+      "text": "JavaScriptで関数型プログラミング",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744364138,
+      "updated": 1744364138
+    },
+    {
+      "id": "67f8e367000000000093dc84",
+      "text": "[JavaScript]で[関数型プログラミング]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744364391,
+      "updated": 1744364395
+    },
+    {
+      "id": "67f8e36d000000000093dc85",
+      "text": "from [nested if, else if, switch文を全て禁止するコーディング規約]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744364397,
+      "updated": 1744364422
+    },
+    {
+      "id": "67f8e269000000000093dc6b",
+      "text": "[** クラスの代わり(高階関数)]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744364138,
+      "updated": 1744364379
+    },
+    {
+      "id": "67f8e26a000000000093dc6c",
+      "text": "まず、メソッド群を定義しましょう。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744364138,
+      "updated": 1744364154
+    },
+    {
+      "id": "67f8e279000000000093dc6e",
+      "text": "code:js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744364154,
+      "updated": 1744364157
+    },
+    {
+      "id": "67f8e27d000000000093dc6f",
+      "text": " const CatMethods = {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744364157,
+      "updated": 1744365481
+    },
+    {
+      "id": "67f8e7a900000000001f01ad",
+      "text": "   speak: function () {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744365481,
+      "updated": 1744365481
+    },
+    {
+      "id": "67f8e7a900000000001f01ae",
+      "text": "     const newState = { ...this }; // 既存のプロパティ及びメソッドを受け継ぐ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744365481,
+      "updated": 1744365481
+    },
+    {
+      "id": "67f8e7a900000000001f01af",
+      "text": "     newState.speakCount += 1;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744365481,
+      "updated": 1744365481
+    },
+    {
+      "id": "67f8e7a900000000001f01b0",
+      "text": "     return [Object.freeze(newState), `${this.name}「にゃーにゃー」`]; // 新しい状態を凍結させる",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744365481,
+      "updated": 1744365481
+    },
+    {
+      "id": "67f8e7a900000000001f01b1",
+      "text": "   },",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744365481,
+      "updated": 1744365481
+    },
+    {
+      "id": "67f8e7a900000000001f01b2",
+      "text": " };",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744365481,
+      "updated": 1744365481
+    },
+    {
+      "id": "67f8e270000000000093dc6d",
+      "text": "そして、コンストラクターを作ります。",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744364145,
+      "updated": 1744364214
+    },
+    {
+      "id": "67f8e2b6000000000093dc76",
+      "text": "code:js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744364214,
+      "updated": 1744364216
+    },
+    {
+      "id": "67f8e2b8000000000093dc77",
+      "text": " function Cat(name = \"まだない\") {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744364217,
+      "updated": 1744365489
+    },
+    {
+      "id": "67f8e7b000000000001f01b4",
+      "text": "   return Object.freeze(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744365489,
+      "updated": 1744365489
+    },
+    {
+      "id": "67f8e7b000000000001f01b5",
+      "text": "     Object.assign(Object.create(CatMethods), {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744365489,
+      "updated": 1744365489
+    },
+    {
+      "id": "67f8e7b000000000001f01b6",
+      "text": "       name,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744365489,
+      "updated": 1744365489
+    },
+    {
+      "id": "67f8e7b000000000001f01b7",
+      "text": "       speakCount: 0,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744365489,
+      "updated": 1744365489
+    },
+    {
+      "id": "67f8e7b000000000001f01b8",
+      "text": "     }),",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744365489,
+      "updated": 1744365489
+    },
+    {
+      "id": "67f8e7b000000000001f01b9",
+      "text": "   );",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744365489,
+      "updated": 1744365489
+    },
+    {
+      "id": "67f8e7b000000000001f01ba",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744365489,
+      "updated": 1744365489
+    },
+    {
+      "id": "67f8e2b6000000000093dc74",
+      "text": "code:js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744364214,
+      "updated": 1744364548
+    },
+    {
+      "id": "67f8e403000000000093dc9e",
+      "text": " a = Cat();",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744364548,
+      "updated": 1744365499
+    },
+    {
+      "id": "67f8e7ba00000000001f01bc",
+      "text": " const [a2, meow] = a.speak(); // 新しいインスタンスを返す",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744365499,
+      "updated": 1744365499
+    },
+    {
+      "id": "67f8e403000000000093dca0",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1744364548,
+      "updated": 1744364837
+    }
+  ]
+}
