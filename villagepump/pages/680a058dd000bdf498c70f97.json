@@ -1,0 +1,148 @@
+{
+  "id": "680a058dd000bdf498c70f97",
+  "title": "DOM生成ツール with イベント",
+  "created": 1745487247,
+  "updated": 1745498395,
+  "lines": [
+    {
+      "id": "680a06ba000000000069bcdb",
+      "text": "DOM生成ツール with イベント",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745487546,
+      "updated": 1745487546
+    },
+    {
+      "id": "680a226b0000000000ac8aa6",
+      "text": "[web component]を書いてるとき、`document.createElement`や`element.setAttribute`、`element.addEventListener`がだるくなった覚えありませんか?",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745494636,
+      "updated": 1745497296
+    },
+    {
+      "id": "680a058f000000000069bcc5",
+      "text": "[DOM生成用便利ツール]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745487247,
+      "updated": 1745487250
+    },
+    {
+      "id": "680a0594000000000069bcc7",
+      "text": "code:js",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745487252,
+      "updated": 1745487254
+    },
+    {
+      "id": "680a0596000000000069bcc8",
+      "text": " function h(tagName, attributes = {}, ...childrens) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745487254,
+      "updated": 1745498395
+    },
+    {
+      "id": "680a311a0000000000e28390",
+      "text": " \tvar element = document.createElement(tagName);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745498395,
+      "updated": 1745498395
+    },
+    {
+      "id": "680a311a0000000000e28391",
+      "text": " \tfor (const [attributeName, attributeData] of Object.entries(attributes)) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745498395,
+      "updated": 1745498395
+    },
+    {
+      "id": "680a311a0000000000e28392",
+      "text": " \t\tif (\"listeners\" == attributeName) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745498395,
+      "updated": 1745498395
+    },
+    {
+      "id": "680a311a0000000000e28393",
+      "text": " \t\t\tfor (const [eventName, eventListener] of Object.entries(attributeData)) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745498395,
+      "updated": 1745498395
+    },
+    {
+      "id": "680a311a0000000000e28394",
+      "text": " \t\t\t\telement.addEventListener(eventName, eventListener);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745498395,
+      "updated": 1745498395
+    },
+    {
+      "id": "680a311a0000000000e28395",
+      "text": " \t\t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745498395,
+      "updated": 1745498395
+    },
+    {
+      "id": "680a311a0000000000e28396",
+      "text": " \t\t} else {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745498395,
+      "updated": 1745498395
+    },
+    {
+      "id": "680a311a0000000000e28397",
+      "text": " \t\t\telement.setAttribute(attributeName, attributeData);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745498395,
+      "updated": 1745498395
+    },
+    {
+      "id": "680a311a0000000000e28398",
+      "text": " \t\t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745498395,
+      "updated": 1745498395
+    },
+    {
+      "id": "680a311a0000000000e28399",
+      "text": " \t}",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745498395,
+      "updated": 1745498395
+    },
+    {
+      "id": "680a311a0000000000e2839a",
+      "text": " \telement.append(...childrens);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745498395,
+      "updated": 1745498395
+    },
+    {
+      "id": "680a311a0000000000e2839b",
+      "text": " \treturn element;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745498395,
+      "updated": 1745498395
+    },
+    {
+      "id": "680a311a0000000000e2839c",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745498395,
+      "updated": 1745498395
+    },
+    {
+      "id": "680a2ef80000000000e2838e",
+      "text": "`let h=(e,t={},...r)=>{var n=Object.entries,c=document.createElement(e);n(t).map(([e,t])=>{\"listeners\"==e?n(t).map(([e,t])=>c.addEventListener(e,t)):c.setAttribute(e,t)});c.append(...r);return c}`",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745497849,
+      "updated": 1745498173
+    },
+    {
+      "id": "680a301c0000000000e2838f",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1745498141,
+      "updated": 1745498141
+    }
+  ]
+}
