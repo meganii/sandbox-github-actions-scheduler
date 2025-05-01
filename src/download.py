@@ -1,5 +1,6 @@
 import requests
 import sys
+import os
 
 OWNER = "meganii"
 REPO = "sandbox-github-actions-scheduler"
@@ -24,6 +25,7 @@ if not asset_url:
     sys.exit(1)
 
 # ダウンロード処理
+os.makedirs(DIST, exist_ok=True)
 download_response = requests.get(asset_url)
 with open(f"{DIST}/{FILENAME}", "wb") as f:
     f.write(download_response.content)
