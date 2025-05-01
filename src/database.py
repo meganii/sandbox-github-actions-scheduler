@@ -308,15 +308,6 @@ class DataHandler:
             # except Exception as rb_e:
             #     logger.error(f"Failed to rollback transaction: {rb_e}")
             raise # エラーを呼び出し元に伝える
-        finally:
-            # 一時ファイルを削除 (成功・失敗に関わらず)
-            for fpath in [config.UPDATE_TEMP_FILE, config.INSERT_TEMP_FILE]:
-               if os.path.exists(fpath):
-                   try:
-                       os.remove(fpath)
-                       logger.debug(f"Removed temporary file: {fpath}")
-                   except OSError as e:
-                        logger.warning(f"Could not remove temporary file {fpath}: {e}")
 
     def export_to_parquet(self, output_path):
         """現在の 'pages' テーブルの内容をParquetファイルにエクスポートします。"""
