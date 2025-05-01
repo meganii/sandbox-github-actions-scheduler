@@ -60,7 +60,7 @@ class DataHandler:
 
     def _create_table_from_parquet(self, table_name, file_path):
         """Parquetファイルからテーブルを作成または置換します。"""
-        sql = f'CREATE OR REPLACE TABLE {table_name} AS SELECT * FROM read_parquet($1)'
+        sql = f'CREATE OR REPLACE TABLE {table_name} AS SELECT id, title, created, updated, lines FROM read_parquet($1)'
         self._execute(sql, [file_path], description=f"Creating table '{table_name}' from Parquet")
         # Parquetから読み込んだデータに主キーを設定
         try:
@@ -219,10 +219,10 @@ class DataHandler:
         # 0. 一時JSONLファイルに結果を保存
         df_inserts = pd.DataFrame(insert_results)
         if not df_inserts.empty:
-            df_inserts.to_parquet(config.INSERT_TEMP_FILE)
+            df_inserts[["id", "title", "created", "updated", "lines"]].to_parquet(config.INSERT_TEMP_FILE)
         df_updates = pd.DataFrame(update_results)
         if not df_updates.empty:
-            df_updates.to_parquet(config.UPDATE_TEMP_FILE)
+            df_updates[["id", "title", "created", "updated", "lines"]].to_parquet(config.UPDATE_TEMP_FILE)
 
 
         # JSONLから読み込むためのカラム定義 (lines の構造はAPIレスポンスに依存)
