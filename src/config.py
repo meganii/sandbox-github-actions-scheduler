@@ -34,8 +34,8 @@ PROJECT = "meganii"
 # DATA_DIR を基準に各ファイルのパスを定義
 PAGE_LIST_FILE = os.path.join(DATA_DIR, "pagelist.jsonl")  # 入力: 最新ページリスト (JSONL形式)
 PAGES_DATA_FILE = os.path.join(DATA_DIR, 'pages.parquet') # 出力/DB代わり: 既存ページデータ (Parquet形式)
-UPDATE_TEMP_FILE = os.path.join(DATA_DIR, 'update.jsonl')  # 一時: 更新対象ページの取得結果
-INSERT_TEMP_FILE = os.path.join(DATA_DIR, 'insert.jsonl')  # 一時: 新規ページの取得結果
+UPDATE_TEMP_FILE = os.path.join(DATA_DIR, 'update.parquet')  # 一時: 更新対象ページの取得結果
+INSERT_TEMP_FILE = os.path.join(DATA_DIR, 'insert.parquet')  # 一時: 新規ページの取得結果
 # STATS_FILE = os.path.join(DATA_DIR, "pages_stats.jsonl") # ページ統計情報ファイル (必要ならコメント解除)
 
 # --- API クライアント設定 ---

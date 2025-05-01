@@ -217,8 +217,13 @@ class DataHandler:
         logger.info("--- Starting to apply changes to the database ---")
 
         # 0. 一時JSONLファイルに結果を保存
-        has_updates = self._save_results_to_jsonl(update_results, config.UPDATE_TEMP_FILE)
-        has_inserts = self._save_results_to_jsonl(insert_results, config.INSERT_TEMP_FILE)
+        df_inserts = pd.DataFrame(insert_results)
+        if not df_inserts.empty:
+            df_inserts.to_parquet(config.INSERT_TEMP_FILE)
+        df_updates = pd.DataFrame(update_results)
+        if not df_updates.empty:
+            df_updates.to_parquet(config.UPDATE_TEMP_FILE)
+
 
         # JSONLから読み込むためのカラム定義 (lines の構造はAPIレスポンスに依存)
         columns_def = """{
@@ -247,9 +252,9 @@ class DataHandler:
                 logger.info("No records found to delete.")
 
             # 2. 挿入処理
-            if has_inserts and os.path.exists(config.INSERT_TEMP_FILE):
+            if (not df_inserts.empty) and os.path.exists(config.INSERT_TEMP_FILE):
                 try:
-                    self._create_table_from_jsonl('inserts', config.INSERT_TEMP_FILE, columns_def)
+                    self._create_table_from_parquet('inserts', config.INSERT_TEMP_FILE)
                     insert_sql = """
                         INSERT INTO pages (id, title, created, updated, lines)
                         SELECT id, title, created, updated, lines FROM inserts;
@@ -263,16 +268,17 @@ class DataHandler:
                      # 挿入に失敗した場合、ロールバックするかどうか
                      # self.con.sql('ROLLBACK')
                      # raise
-            elif has_inserts:
+            elif not df_inserts.empty:
                  logger.warning(f"Insertion skipped because temporary file does not exist: {config.INSERT_TEMP_FILE}")
             else:
                  logger.info("No new records to insert.")
 
 
             # 3. 更新処理
-            if has_updates and os.path.exists(config.UPDATE_TEMP_FILE):
+            if (not df_updates.empty) and os.path.exists(config.UPDATE_TEMP_FILE):
                 try:
-                    self._create_table_from_jsonl('updates', config.UPDATE_TEMP_FILE, columns_def)
+                    self._create_table_from_parquet('updates', config.UPDATE_TEMP_FILE)
+
                     # DuckDBの UPDATE ... FROM 構文を使用
                     update_sql = """
                         UPDATE pages
@@ -292,7 +298,7 @@ class DataHandler:
                      # 更新に失敗した場合
                      # self.con.sql('ROLLBACK')
                      # raise
-            elif has_updates:
+            elif not df_updates.empty:
                  logger.warning(f"Update skipped because temporary file does not exist: {config.UPDATE_TEMP_FILE}")
             else:
                  logger.info("No records found to update.")
