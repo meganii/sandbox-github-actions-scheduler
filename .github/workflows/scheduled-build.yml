@@ -15,11 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10.4'
-          cache: 'pip' # caching pip dependencies
-      - run: pip install -r requirements.txt
+          python-version-file: ".python-version"
 
       - id: 'auth'
         name: 'Authenticate to Google Cloud'
@@ -29,38 +31,34 @@ jobs:
           workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
           service_account: ${{ secrets.SERVICE_ACCOUNT }}
 
-      - uses: denoland/setup-deno@v1
-        with:
-          deno-version: "1.45.5"
-
-      - name: Backup data
-        run: >
-          deno run
-          --allow-read
-          --allow-net
-          --allow-write
-          --no-check
-          index.ts
-
-      - name: shape json file
-        run: sh shapeJsonLines.sh data.json
-
-      - name: Zip
-        run: zip data data.json
-
-      - name: Update Google Drive file
-        run: python3 upload.py
+      - name: Install the project
+        run: uv sync --locked --all-extras --dev
+      
+      - name: Download pages parquet file
+        run: uv run src/download.py
+    
+      - name: Backup cosense project
+        run: uv run src/main.py
 
       - name: Remove json pages
         run: rm villagepump/pages/*.json
 
-      - name: Split pages
-        run: >
-          deno run
-          --allow-read
-          --allow-write
-          --no-check
-          split.ts
+      - name: Dump pages to JSONL and JSON files from Parquet
+        run: uv run src/dump_parquet_to_json.py
+
+      - name: JSONL to JSON
+        run: |
+          {
+            echo '{"pages": ['
+            sed '$!s/$/,/' data/data.jsonl
+            echo ']}'
+          } > data/data.json
+
+      - name: Zip
+        run: zip data/data data/data.json
+
+      - name: Update Google Drive file
+        run: python3 src/upload.py
 
       - name: Diff
         id: diff
@@ -87,6 +85,6 @@ jobs:
       - name: Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "data.zip"
+          artifacts: "data/data.zip, data/pages.parquet"
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ env.CURRENT_DATETIME }}

@@ -28,7 +28,7 @@ except OSError as e:
 
 # --- CoSense プロジェクト設定 ---
 # バックアップ対象の CoSense (旧 Scrapbox) プロジェクト名を指定
-PROJECT = "meganii"
+PROJECT = "villagepump"
 
 # --- ファイルパス定義 ---
 # DATA_DIR を基準に各ファイルのパスを定義
