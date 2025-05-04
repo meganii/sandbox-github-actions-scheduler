@@ -1,0 +1,204 @@
+{
+  "id": "68174585744f79a785b09e96",
+  "title": "typesize.c",
+  "created": 1746355595,
+  "updated": 1746355607,
+  "lines": [
+    {
+      "id": "68174585744f79a785b09e96",
+      "text": "typesize.c",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355595,
+      "updated": 1746355595
+    },
+    {
+      "id": "6817458b0000000000d0d48c",
+      "text": "code:typesize.c",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355595,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d48e",
+      "text": " #include <stdio.h>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d48f",
+      "text": " #include <limits.h>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d490",
+      "text": " #include <string.h>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d491",
+      "text": " #include <stdlib.h>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d492",
+      "text": " #include <stdbool.h>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d493",
+      "text": " #include <unistd.h>",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d494",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d495",
+      "text": " int main()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d496",
+      "text": " {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d497",
+      "text": "         printf(\"%-20sbits%22s%22s\\n\", \"type\", \"max\", \"min\");",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d498",
+      "text": "         printf(\"%-20s%4llu%22d%22d\\n\", \"char\", sizeof(char) * 8, CHAR_MAX, CHAR_MIN);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d499",
+      "text": "         printf(\"%-20s%4llu%22d%22d\\n\", \"unsigned char\", sizeof(unsigned char) * 8, UCHAR_MAX, 0);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d49a",
+      "text": "         printf(\"%-20s%4llu%22d%22d\\n\", \"short\", sizeof(short) * 8, SHRT_MAX, SHRT_MIN);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d49b",
+      "text": "         printf(\"%-20s%4llu%22d%22d\\n\", \"unsigned short\", sizeof(unsigned short) * 8, USHRT_MAX, 0);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d49c",
+      "text": "         printf(\"%-20s%4llu%22d%22d\\n\", \"int\", sizeof(int) * 8, INT_MAX, INT_MIN);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d49d",
+      "text": "         printf(\"%-20s%4llu%22u%22d\\n\", \"unsigned int\", sizeof(unsigned int) * 8, UINT_MAX, 0);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d49e",
+      "text": "         printf(\"%-20s%4llu%22ld%22ld\\n\", \"long\", sizeof(long) * 8, LONG_MAX, LONG_MIN);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d49f",
+      "text": "         printf(\"%-20s%4llu%22lu%22d\\n\", \"unsigned long\", sizeof(unsigned long) * 8, ULONG_MAX, 0);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d4a0",
+      "text": "         printf(\"%-20s%4llu%22lld%22lld\\n\", \"long long\", sizeof(long long) * 8, LLONG_MAX, LLONG_MIN);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d4a1",
+      "text": "         printf(\"%-20s%4llu%22llu%22d\\n\", \"unsigned long long\", sizeof(unsigned long long) * 8, ULLONG_MAX, 0);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d4a2",
+      "text": "         printf(\"%-20s%4llu\\n\", \"float\", sizeof(float) * 8);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d4a3",
+      "text": "         printf(\"%-20s%4llu\\n\", \"double\", sizeof(double) * 8);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d4a4",
+      "text": "         printf(\"%-20s%4llu\\n\", \"long double\", sizeof(long double) * 8);",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d4a5",
+      "text": "         return 0;",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355600
+    },
+    {
+      "id": "681745900000000000d0d4a6",
+      "text": " }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355600,
+      "updated": 1746355607
+    },
+    {
+      "id": "6817458c0000000000d0d48d",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1746355597,
+      "updated": 1746355597
+    }
+  ]
+}

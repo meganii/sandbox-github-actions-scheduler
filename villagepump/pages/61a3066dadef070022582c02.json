@@ -2,7 +2,7 @@
   "id": "61a3066dadef070022582c02",
   "title": "esbuild",
   "created": 1638073967,
-  "updated": 1744508518,
+  "updated": 1746380094,
   "lines": [
     {
       "id": "61a3066dadef070022582c02",
@@ -143,6 +143,167 @@
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1674371021,
       "updated": 1674371021
+    },
+    {
+      "id": "6817a4ff000000000095bd63",
+      "text": "[ES Modules]にバンドルする際は`banner`オプションを設定する必要がある",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380029,
+      "updated": 1746380065
+    },
+    {
+      "id": "6817a524000000000095bd65",
+      "text": "\tcode:build.ts",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380066,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a537000000000095bd67",
+      "text": "\t import esbuild from 'esbuild';",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd68",
+      "text": "  ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd69",
+      "text": "  await esbuild.build({",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd6a",
+      "text": "    // logLevel: 'info', // ビルド時のログを出したいときは設定する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd6b",
+      "text": "    entryPoints: ['./src/main.ts'], // トランスパイル対象のコード。今回はbundleするのでimportしているライブラリと自作モジュールも自動で含まれる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd6c",
+      "text": "    outdir: './dist', // トランスパイル結果のファイルの格納先",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd6d",
+      "text": "    outExtension: { // 必須では無いが、ESM形式で出力されることを明示的にするため拡張子を.mjsにしている",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd6e",
+      "text": "      '.js': '.mjs'",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd6f",
+      "text": "    },",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd70",
+      "text": "    minify: true, // 必須では無いが、ファイルサイズ削減のため",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd71",
+      "text": "    bundle: true,",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd72",
+      "text": "    platform: 'node', // ブラウザ上などではなく、サーバーサイドのnodejsで実行するため",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd73",
+      "text": "    // tsconfig: './tsconfig.json', // デフォルトでtsconfig.jsonを使うが、ビルド時に設定を変える場合は指定する",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd74",
+      "text": "  ",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd75",
+      "text": "    format: 'esm', // ESMプロジェクトなので、出力フォーマットを'esm'に設定する必要",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd76",
+      "text": "    banner: { // commonjs用ライブラリをESMプロジェクトでbundleする際に生じることのある問題への対策",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd77",
+      "text": "      js: 'import { createRequire as topLevelCreateRequire } from \"module\"; import url from \"url\"; const require = topLevelCreateRequire(import.meta.url); const __filename = url.fileURLToPath(import.meta.url); const __dirname = url.fileURLToPath(new URL(\".\", import.meta.url));',",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd78",
+      "text": "    },",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a538000000000095bd79",
+      "text": "  })",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380086,
+      "updated": 1746380086
+    },
+    {
+      "id": "6817a526000000000095bd66",
+      "text": "\t引用元：https://zenn.dev/link/comments/39ca988797f39f",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380069,
+      "updated": 1746380094
+    },
+    {
+      "id": "6817a4ff000000000095bd64",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1746380029,
+      "updated": 1746380029
     }
   ]
 }
