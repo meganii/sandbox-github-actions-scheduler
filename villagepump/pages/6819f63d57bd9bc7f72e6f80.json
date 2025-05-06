@@ -1,0 +1,267 @@
+{
+  "id": "6819f63d57bd9bc7f72e6f80",
+  "title": "chroot",
+  "created": 1746531902,
+  "updated": 1746532553,
+  "lines": [
+    {
+      "id": "6819f63d57bd9bc7f72e6f80",
+      "text": "chroot",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531902,
+      "updated": 1746531902
+    },
+    {
+      "id": "6819f63e0000000000bd854c",
+      "text": "from [bashの$PS1]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531902,
+      "updated": 1746531902
+    },
+    {
+      "id": "6819f63e0000000000bd854d",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531902,
+      "updated": 1746531907
+    },
+    {
+      "id": "6819f63e0000000000bd854e",
+      "text": "“change root” の略",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531902,
+      "updated": 1746531925
+    },
+    {
+      "id": "6819f6470000000000bd8554",
+      "text": "あるプロセスの[ルートディレクトリ] (/)を指定したディレクトリに切り替えて実行する仕組み",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531912,
+      "updated": 1746532553
+    },
+    {
+      "id": "6819f64f0000000000bd8555",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531920,
+      "updated": 1746531920
+    },
+    {
+      "id": "6819f63e0000000000bd854f",
+      "text": "目的",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531902,
+      "updated": 1746531921
+    },
+    {
+      "id": "6819f63e0000000000bd8550",
+      "text": " ファイルシステムを隔離し、テストやビルド環境をホストから独立させる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531902,
+      "updated": 1746531918
+    },
+    {
+      "id": "6819f6e70000000000bd856c",
+      "text": "  ビルド環境の汚染を防ぎ、ホストをクリーンに保つ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532071,
+      "updated": 1746532072
+    },
+    {
+      "id": "6819f63e0000000000bd8551",
+      "text": "\tセキュリティの観点で、限られたディレクトリツリー内でのみプログラムを動かす",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531902,
+      "updated": 1746531940
+    },
+    {
+      "id": "6819f6660000000000bd855a",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531943,
+      "updated": 1746531943
+    },
+    {
+      "id": "6819f6670000000000bd855b",
+      "text": "例",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531943,
+      "updated": 1746531945
+    },
+    {
+      "id": "6819f6680000000000bd855c",
+      "text": " code:bash",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531945,
+      "updated": 1746531951
+    },
+    {
+      "id": "6819f66f0000000000bd855d",
+      "text": "  # 例：/srv/chroot/debian10 をルートとしてシェルを起動",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531951,
+      "updated": 1746531951
+    },
+    {
+      "id": "6819f66f0000000000bd855e",
+      "text": "  sudo chroot /srv/chroot/debian10 /bin/bash",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531951,
+      "updated": 1746531951
+    },
+    {
+      "id": "6819f66f0000000000bd855f",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531951,
+      "updated": 1746531953
+    },
+    {
+      "id": "6819f6900000000000bd8560",
+      "text": "[Debian] での利用",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531984,
+      "updated": 1746532468
+    },
+    {
+      "id": "6819f6910000000000bd8561",
+      "text": " [debootstrap]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531986,
+      "updated": 1746531999
+    },
+    {
+      "id": "6819f6ba0000000000bd8565",
+      "text": "  新しい Debian 環境をホスト上に “bootstrap” するツール",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532026,
+      "updated": 1746532029
+    },
+    {
+      "id": "6819f6bb0000000000bd8567",
+      "text": "  たとえば /srv/chroot/stretch 配下に最小限のファイル群を配置し、chroot で起動できるようにする",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532027,
+      "updated": 1746532027
+    },
+    {
+      "id": "6819f6990000000000bd8563",
+      "text": " [schroot]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531994,
+      "updated": 1746532000
+    },
+    {
+      "id": "6819f6ce0000000000bd8568",
+      "text": "  複数の chroot 環境を管理しやすくするラッパー",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532047,
+      "updated": 1746532048
+    },
+    {
+      "id": "6819f69c0000000000bd8564",
+      "text": " [pbuilder]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531996,
+      "updated": 1746532024
+    },
+    {
+      "id": "6819f6d60000000000bd856b",
+      "text": "  Debian パッケージのビルド時に、安全な chroot 内でコンパイル／テストを行う",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532054,
+      "updated": 1746532055
+    },
+    {
+      "id": "6819f6910000000000bd8562",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531986,
+      "updated": 1746531986
+    },
+    {
+      "id": "6819f63e0000000000bd8552",
+      "text": "[debian_chroot]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531902,
+      "updated": 1746531902
+    },
+    {
+      "id": "6819f63e0000000000bd8553",
+      "text": " chroot 環境の「名前」を Bash プロンプトに表示するための仕組み",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746531902,
+      "updated": 1746532151
+    },
+    {
+      "id": "6819f7360000000000bd856d",
+      "text": " chroot を構築した際に、環境を識別する名前を[ /etc/debian_chroot] に書く",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532151,
+      "updated": 1746532191
+    },
+    {
+      "id": "6819f7470000000000bd856e",
+      "text": " [ /etc/bash.bashrc] で読み込まれる",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532167,
+      "updated": 1746532229
+    },
+    {
+      "id": "6819f7850000000000bd8570",
+      "text": "  code:/etc/bash.bashrc(bash)",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532229,
+      "updated": 1746532246
+    },
+    {
+      "id": "6819f78e0000000000bd8571",
+      "text": "   if [ -r /etc/debian_chroot ]; then",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532239,
+      "updated": 1746532239
+    },
+    {
+      "id": "6819f78e0000000000bd8572",
+      "text": "     debian_chroot=$(cat /etc/debian_chroot)",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532239,
+      "updated": 1746532239
+    },
+    {
+      "id": "6819f78e0000000000bd8573",
+      "text": "   fi",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532239,
+      "updated": 1746532239
+    },
+    {
+      "id": "6819f77a0000000000bd856f",
+      "text": " さらに[bashの$PS1]でdebian_chroot環境変数が読み込まれ、プロンプトに表示される",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532219,
+      "updated": 1746532369
+    },
+    {
+      "id": "6819f7ac0000000000bd8575",
+      "text": "  `(stretch) root@myhost:/etc$`",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532269,
+      "updated": 1746532424
+    },
+    {
+      "id": "6819f8090000000000bd8576",
+      "text": "   [stretch]: Debian 9 のコードネーム",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532361,
+      "updated": 1746532454
+    },
+    {
+      "id": "6819f85a0000000000bd8577",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1746532443,
+      "updated": 1746532443
+    }
+  ]
+}
