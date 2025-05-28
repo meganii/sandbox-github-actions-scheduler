@@ -2,7 +2,7 @@
   "id": "66eb7f55aa69d8001d7b8881",
   "title": "JSDocでよくね？",
   "created": 1726709591,
-  "updated": 1748297795,
+  "updated": 1748420744,
   "lines": [
     {
       "id": "66eb7f55aa69d8001d7b8881",
@@ -1319,6 +1319,573 @@
       "userId": "62919f6444e78d001d73e522",
       "created": 1726712368,
       "updated": 1726712442
+    },
+    {
+      "id": "6836a63b0000000000280bff",
+      "text": " declareもSymbolも使ったことないな……[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748411963,
+      "updated": 1748412064
+    },
+    {
+      "id": "6836a6a00000000000280c01",
+      "text": " \tdeclare …… 調べてみたけどこれが使えそうなときはインポート後に適宜@typeしてあげればいいか〜と思っている",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748412064,
+      "updated": 1748412198
+    },
+    {
+      "id": "6836ab9b0000000000eb454c",
+      "text": " \t @typeだと無理です[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413340,
+      "updated": 1748413417
+    },
+    {
+      "id": "6836abeb0000000000eb4551",
+      "text": " \t 例えばこれはJSと@ts-checkで書けません",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413419,
+      "updated": 1748413449
+    },
+    {
+      "id": "6836ab950000000000eb4541",
+      "text": "  \t code:ts",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413333,
+      "updated": 1748413454
+    },
+    {
+      "id": "6836abaf0000000000eb454e",
+      "text": "  \t  import type { Scrapbox } from \"https://jsr.io/@cosense/types/0.10.8/scrapbox.ts\";",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413359,
+      "updated": 1748413453
+    },
+    {
+      "id": "6836abde0000000000eb454f",
+      "text": "  \t  declare const scrapbox: Scrapbox;",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413406,
+      "updated": 1748413453
+    },
+    {
+      "id": "6836abe60000000000eb4550",
+      "text": "  \t  ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413414,
+      "updated": 1748413453
+    },
+    {
+      "id": "6836ab970000000000eb4542",
+      "text": "  \t  scrapbox.PopupMenu.addButton({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413335,
+      "updated": 1748413453
+    },
+    {
+      "id": "6836ab980000000000eb4543",
+      "text": "       title: \"全→半\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413336,
+      "updated": 1748413453
+    },
+    {
+      "id": "6836ab980000000000eb4544",
+      "text": "       onClick: (text) => text",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413336,
+      "updated": 1748413453
+    },
+    {
+      "id": "6836ab980000000000eb4545",
+      "text": "         .replace(/[Ａ-Ｚａ-ｚ０-９]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413336,
+      "updated": 1748413453
+    },
+    {
+      "id": "6836ab980000000000eb4546",
+      "text": "         .replaceAll(\"．\", \". \")",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413336,
+      "updated": 1748413453
+    },
+    {
+      "id": "6836ab980000000000eb4547",
+      "text": "         .replaceAll(\"，\", \", \")",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413336,
+      "updated": 1748413453
+    },
+    {
+      "id": "6836ab980000000000eb4548",
+      "text": "         .replaceAll(\"（\", \" (\")",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413336,
+      "updated": 1748413453
+    },
+    {
+      "id": "6836ab980000000000eb4549",
+      "text": "         .replaceAll(\"）\", \") \")",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413336,
+      "updated": 1748413453
+    },
+    {
+      "id": "6836ab980000000000eb454a",
+      "text": "         .replaceAll(\"　\", \" \"),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413336,
+      "updated": 1748413453
+    },
+    {
+      "id": "6836ab980000000000eb454b",
+      "text": "     });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413336,
+      "updated": 1748413453
+    },
+    {
+      "id": "6836ac130000000000eb4552",
+      "text": "  \t code:js",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413459,
+      "updated": 1748413464
+    },
+    {
+      "id": "6836ac180000000000eb4560",
+      "text": "  \t  // @ts-check",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748413464,
+      "updated": 1748420744
+    },
+    {
+      "id": "6836ac1b0000000000eb4561",
+      "text": "  \t  /** @typedef {import(\"jsr:@cosense/types@0.10.8/userscript\").Scrapbox} Scrapbox */",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413467,
+      "updated": 1748413650
+    },
+    {
+      "id": "6836ac130000000000eb4555",
+      "text": "  \t  ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413459,
+      "updated": 1748413459
+    },
+    {
+      "id": "6836acd70000000000eb4563",
+      "text": "  \t  // ↓型付けできない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413655,
+      "updated": 1748413668
+    },
+    {
+      "id": "6836ac130000000000eb4556",
+      "text": "  \t  scrapbox.PopupMenu.addButton({",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413459,
+      "updated": 1748413459
+    },
+    {
+      "id": "6836ac130000000000eb4557",
+      "text": "       title: \"全→半\",",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413459,
+      "updated": 1748413459
+    },
+    {
+      "id": "6836ac130000000000eb4558",
+      "text": "       onClick: (text) => text",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413459,
+      "updated": 1748413459
+    },
+    {
+      "id": "6836ac130000000000eb4559",
+      "text": "         .replace(/[Ａ-Ｚａ-ｚ０-９]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413459,
+      "updated": 1748413459
+    },
+    {
+      "id": "6836ac130000000000eb455a",
+      "text": "         .replaceAll(\"．\", \". \")",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413459,
+      "updated": 1748413459
+    },
+    {
+      "id": "6836ac130000000000eb455b",
+      "text": "         .replaceAll(\"，\", \", \")",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413459,
+      "updated": 1748413459
+    },
+    {
+      "id": "6836ac130000000000eb455c",
+      "text": "         .replaceAll(\"（\", \" (\")",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413459,
+      "updated": 1748413459
+    },
+    {
+      "id": "6836ac130000000000eb455d",
+      "text": "         .replaceAll(\"）\", \") \")",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413459,
+      "updated": 1748413459
+    },
+    {
+      "id": "6836ac130000000000eb455e",
+      "text": "         .replaceAll(\"　\", \" \"),",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413459,
+      "updated": 1748413459
+    },
+    {
+      "id": "6836ac130000000000eb455f",
+      "text": "     });",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413459,
+      "updated": 1748413459
+    },
+    {
+      "id": "6836acb60000000000eb4562",
+      "text": "    (Node.js環境なら`/** @typedef {import(\"https://jsr.io/@cosense/types/0.10.8/scrapbox.ts\").Scrapbox} Scrapbox */`に置き換える)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748413623,
+      "updated": 1748413634
+    },
+    {
+      "id": "6836ad430000000000a76bfa",
+      "text": "    \tNode.jsってURLインポートできなかった気がする[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748413763,
+      "updated": 1748413773
+    },
+    {
+      "id": "6836ad4f0000000000a76bfb",
+      "text": "    \t\tpnpm/yarnならjsr入るけど(\"pnpm add jsr:@cosense/types\"で)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748413775,
+      "updated": 1748413798
+    },
+    {
+      "id": "6836be52000000000023ecd3",
+      "text": "    \tだめなのか[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1748418130,
+      "updated": 1748418134
+    },
+    {
+      "id": "6836be56000000000023ecd4",
+      "text": "    \t Node.jsに詳しい人修正しといて～",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748418134,
+      "updated": 1748420591
+    },
+    {
+      "id": "6836c7ef00000000008b9736",
+      "text": "    \t パッケージ側でだめだった[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420592,
+      "updated": 1748420598
+    },
+    {
+      "id": "6836c86200000000008b9760",
+      "text": "    \t \tパッケージ側でnpmベースシステムに対応する必要があるっぽい",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420707,
+      "updated": 1748420725
+    },
+    {
+      "id": "6836c7f600000000008b9737",
+      "text": "    \t \tcode:txt",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420599,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84100000000008b9738",
+      "text": "    \t \t bsahd@bsahdarch ~ 0",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9739",
+      "text": "        $ mktemp -d",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b973a",
+      "text": "        /tmp/tmp.jssQtROtLr",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b973b",
+      "text": "        bsahd@bsahdarch ~ 0",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b973c",
+      "text": "        $ cd /tmp/tmp.jssQtROtLr",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b973d",
+      "text": "        bsahd@bsahdarch /tmp/tmp.jssQtROtLr 0",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b973e",
+      "text": "        $ pnpm i jsr:@cosense/types",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b973f",
+      "text": "        Packages: +1",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9740",
+      "text": "        +",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9741",
+      "text": "        Progress: resolved 1, reused 0, downloaded 1, added 1, done",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9742",
+      "text": "        ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9743",
+      "text": "        dependencies:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9744",
+      "text": "        + @cosense/types <- @jsr/cosense__types 0.10.8",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9745",
+      "text": "        ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9746",
+      "text": "        Done in 1.3s using pnpm v10.11.0",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9747",
+      "text": "        bsahd@bsahdarch /tmp/tmp.jssQtROtLr 0",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9748",
+      "text": "        $ node",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9749",
+      "text": "        Welcome to Node.js v23.11.1.",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b974a",
+      "text": "        Type \".help\" for more information.",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b974b",
+      "text": "        > import(\"@cosense/types\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b974c",
+      "text": "        Promise {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b974d",
+      "text": "          <pending>,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b974e",
+      "text": "          [Symbol(async_id_symbol)]: 71,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b974f",
+      "text": "          [Symbol(trigger_async_id_symbol)]: 6",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9750",
+      "text": "        }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9751",
+      "text": "        > Uncaught:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9752",
+      "text": "        Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: No \"exports\" main defined in /tmp/tmp.jssQtROtLr/node_modules/@cosense/types/package.json imported from /tmp/tmp.jssQtROtLr/repl",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9753",
+      "text": "            at exportsNotFound (node:internal/modules/esm/resolve:314:10)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9754",
+      "text": "            at packageExportsResolve (node:internal/modules/esm/resolve:661:9)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9755",
+      "text": "            at packageResolve (node:internal/modules/esm/resolve:774:12)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9756",
+      "text": "            at moduleResolve (node:internal/modules/esm/resolve:854:18)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9757",
+      "text": "            at defaultResolve (node:internal/modules/esm/resolve:984:11)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9758",
+      "text": "            at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b9759",
+      "text": "            at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b975a",
+      "text": "            at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b975b",
+      "text": "            at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38) {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b975c",
+      "text": "          code: 'ERR_PACKAGE_PATH_NOT_EXPORTED'",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b975d",
+      "text": "        }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836c84200000000008b975e",
+      "text": "        > ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1748420674,
+      "updated": 1748420674
+    },
+    {
+      "id": "6836a7040000000000280c03",
+      "text": " \tSymbol …… `/** @type {symbol} */`はできるけどできないのは何だ……？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748412164,
+      "updated": 1748412209
     },
     {
       "id": "66eb89451280f000007f73a3",
