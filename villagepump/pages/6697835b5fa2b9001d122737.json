@@ -2,7 +2,7 @@
   "id": "6697835b5fa2b9001d122737",
   "title": "eval()を使わないでください！",
   "created": 1721205598,
-  "updated": 1748424404,
+  "updated": 1748531510,
   "lines": [
     {
       "id": "6697835b5fa2b9001d122737",
@@ -48,24 +48,164 @@
     },
     {
       "id": "6697835d73e5220000517777",
-      "text": "\tコードを評価したいときはあるんですよね……",
+      "text": "\tIndirect Eval",
       "userId": "62919f6444e78d001d73e522",
       "created": 1721205598,
-      "updated": 1721205614
+      "updated": 1748531404
+    },
+    {
+      "id": "683878cc0000000000b25c3d",
+      "text": "\t\tcode:script.js",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531405,
+      "updated": 1748531410
+    },
+    {
+      "id": "683878d10000000000b25c3e",
+      "text": "\t\t const a = 1;",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531410,
+      "updated": 1748531410
+    },
+    {
+      "id": "683878d20000000000b25c3f",
+      "text": "   (() => {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531410,
+      "updated": 1748531410
+    },
+    {
+      "id": "683878d20000000000b25c40",
+      "text": "       const a = 2;",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531410,
+      "updated": 1748531410
+    },
+    {
+      "id": "683878d20000000000b25c41",
+      "text": "       eval(\"console.log('Direct Eval   : ' + a)\");",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531410,
+      "updated": 1748531410
+    },
+    {
+      "id": "683878d20000000000b25c42",
+      "text": "       eval?.(\"console.log('Indirect Eval : ' + a)\");",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531410,
+      "updated": 1748531414
+    },
+    {
+      "id": "683878d20000000000b25c44",
+      "text": "   })();",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531410,
+      "updated": 1748531410
+    },
+    {
+      "id": "683878d20000000000b25c45",
+      "text": "   // Expected Log Output :",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531410,
+      "updated": 1748531410
+    },
+    {
+      "id": "683878d20000000000b25c46",
+      "text": "   // <string> \"Direct Eval   : 2\"",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531410,
+      "updated": 1748531410
+    },
+    {
+      "id": "683878d20000000000b25c47",
+      "text": "   // <string> \"Indirect Eval : 1\"",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531410,
+      "updated": 1748531412
+    },
+    {
+      "id": "683879130000000000b25c49",
+      "text": " [Function() コンストラクター https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Function/Function]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531476,
+      "updated": 1748531508
+    },
+    {
+      "id": "6838791f0000000000b25c4a",
+      "text": " \tcode:script.js",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531488,
+      "updated": 1748531492
+    },
+    {
+      "id": "683879230000000000b25c4b",
+      "text": " \t const a = 1;",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531492,
+      "updated": 1748531492
+    },
+    {
+      "id": "683879230000000000b25c4c",
+      "text": "   (() => {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531492,
+      "updated": 1748531492
+    },
+    {
+      "id": "683879230000000000b25c4d",
+      "text": "       const a = 2;",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531492,
+      "updated": 1748531492
+    },
+    {
+      "id": "683879230000000000b25c4e",
+      "text": "       eval(\"console.log('Direct Eval   : ' + a)\");",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531492,
+      "updated": 1748531492
+    },
+    {
+      "id": "683879230000000000b25c50",
+      "text": "       new Function(\"console.log('Function()    : ' + a)\")();",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531492,
+      "updated": 1748531492
+    },
+    {
+      "id": "683879230000000000b25c51",
+      "text": "   })();",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531492,
+      "updated": 1748531492
+    },
+    {
+      "id": "683879230000000000b25c52",
+      "text": "   // Expected Log Output :",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531492,
+      "updated": 1748531492
+    },
+    {
+      "id": "683879230000000000b25c53",
+      "text": "   // <string> \"Direct Eval   : 2\"",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531492,
+      "updated": 1748531492
+    },
+    {
+      "id": "683879230000000000b25c55",
+      "text": "   // <string> \"Function()    : 1\"",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531492,
+      "updated": 1748531492
     },
     {
       "id": "6697835d73e5220000517778",
-      "text": "\t[Function()コンストラクター https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Function/Function]を使うとマシらしい",
+      "text": "",
       "userId": "62919f6444e78d001d73e522",
       "created": 1721205598,
-      "updated": 1721205619
-    },
-    {
-      "id": "6697835d73e5220000517779",
-      "text": "\t`Function(\"return 0;\")()` ←これが0になる",
-      "userId": "62919f6444e78d001d73e522",
-      "created": 1721205598,
-      "updated": 1721205617
+      "updated": 1748531510
     },
     {
       "id": "6697837573e522000051777d",
@@ -157,6 +297,13 @@
       "userId": "661b6e882a96e9002371b3c2",
       "created": 1748424398,
       "updated": 1748424404
+    },
+    {
+      "id": "683878b20000000000b25c3c",
+      "text": "\t\t\t\tそれはそう[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1748531379,
+      "updated": 1748531389
     },
     {
       "id": "6819dc88000000000057181c",
