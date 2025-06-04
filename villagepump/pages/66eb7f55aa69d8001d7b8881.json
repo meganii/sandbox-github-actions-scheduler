@@ -2,7 +2,7 @@
   "id": "66eb7f55aa69d8001d7b8881",
   "title": "JSDocでよくね？",
   "created": 1726709591,
-  "updated": 1748420744,
+  "updated": 1749024248,
   "lines": [
     {
       "id": "66eb7f55aa69d8001d7b8881",
@@ -1882,10 +1882,171 @@
     },
     {
       "id": "6836a7040000000000280c03",
-      "text": " \tSymbol …… `/** @type {symbol} */`はできるけどできないのは何だ……？",
+      "text": " \t 2025-06-04 今まさにdeclareの出番がきました これはさすがに必要です[綾坂こと.icon]",
       "userId": "62919f6444e78d001d73e522",
       "created": 1748412164,
-      "updated": 1748412209
+      "updated": 1749023250
+    },
+    {
+      "id": "683ff5520000000000b04a79",
+      "text": " \t \tCDN経由でclassをimportしたいとき、JSDocではどうしようもない",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749022035,
+      "updated": 1749022145
+    },
+    {
+      "id": "683ff6340000000000b04a7a",
+      "text": " \t \t\t[Triple-Slash Directives]でもWebから拾ってくるのはできない(たぶんセキュリティ面)",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749022261,
+      "updated": 1749023577
+    },
+    {
+      "id": "683ffd73000000000095897b",
+      "text": " \t \t\tオブジェクトは[@type]と[@ts-ignore]でいける気がする",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749024116,
+      "updated": 1749024248
+    },
+    {
+      "id": "683ffaa30000000000b04a7c",
+      "text": " \t \tしゃーないので[.d.ts]を書きました……",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023395,
+      "updated": 1749023408
+    },
+    {
+      "id": "683ffaaf0000000000b04a7d",
+      "text": " \t \t\tcode:typedefs/declare/OriginStorage.d.ts",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023408,
+      "updated": 1749023637
+    },
+    {
+      "id": "683ffac90000000000b04a7e",
+      "text": " \t \t\t declare module \"https://cdn.jsdelivr.net/gh/AXT-AyaKoto/OriginStorages.js@v2/module.mjs\" {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023434,
+      "updated": 1749023466
+    },
+    {
+      "id": "683ffae80000000000b04a82",
+      "text": "          export class OriginStorage {",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023464,
+      "updated": 1749023464
+    },
+    {
+      "id": "683ffae80000000000b04a83",
+      "text": "              constructor(storageName: string);",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023464,
+      "updated": 1749023464
+    },
+    {
+      "id": "683ffae80000000000b04a84",
+      "text": "              storageName: string;",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023464,
+      "updated": 1749023464
+    },
+    {
+      "id": "683ffae80000000000b04a85",
+      "text": "              // ︙(略)",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023464,
+      "updated": 1749023464
+    },
+    {
+      "id": "683ffae80000000000b04a86",
+      "text": "          }",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023464,
+      "updated": 1749023464
+    },
+    {
+      "id": "683ffae80000000000b04a87",
+      "text": "      }",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023464,
+      "updated": 1749023464
+    },
+    {
+      "id": "683ffafc0000000000b04a89",
+      "text": "     code:import/OriginStorage.mjs",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023484,
+      "updated": 1749023502
+    },
+    {
+      "id": "683ffb0e0000000000b04a8a",
+      "text": "      // @ts-check",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023502,
+      "updated": 1749023508
+    },
+    {
+      "id": "683ffb140000000000b04a8b",
+      "text": "      /// <reference types=\"./../typedefs/declare/OriginStorage.d.ts\" />",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023508,
+      "updated": 1749023508
+    },
+    {
+      "id": "683ffb180000000000b04a8c",
+      "text": "      import { OriginStorage } from \"https://cdn.jsdelivr.net/gh/AXT-AyaKoto/OriginStorages.js@v2/module.mjs\";",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023513,
+      "updated": 1749023513
+    },
+    {
+      "id": "683ffb1c0000000000b04a8d",
+      "text": "      export { OriginStorage };",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023517,
+      "updated": 1749023517
+    },
+    {
+      "id": "683ffb1e0000000000b04a8e",
+      "text": "     code:test.js",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023519,
+      "updated": 1749023523
+    },
+    {
+      "id": "683ffb230000000000b04a8f",
+      "text": "      //@ts-check",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023524,
+      "updated": 1749023545
+    },
+    {
+      "id": "683ffb390000000000b04a96",
+      "text": "      import { OriginStorage } from \"./import/OriginStorage.mjs\";",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023545,
+      "updated": 1749023545
+    },
+    {
+      "id": "683ffb390000000000b04a98",
+      "text": "      const testStorage = new OriginStorage(\"testStorage\"); // ←これは補完が効く",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749023545,
+      "updated": 1749023555
+    },
+    {
+      "id": "683ff66f0000000000b04a7b",
+      "text": " \t \tJSDocでもできてほしいなぁ",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749022319,
+      "updated": 1749023335
+    },
+    {
+      "id": "683ff5240000000000b04a78",
+      "text": " \tSymbol …… `/** @type {symbol} */`はできるけどできないのは何だ……？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1749021989,
+      "updated": 1749021989
     },
     {
       "id": "66eb89451280f000007f73a3",
