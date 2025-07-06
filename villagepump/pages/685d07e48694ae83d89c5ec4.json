@@ -1,0 +1,918 @@
+{
+  "id": "685d07e48694ae83d89c5ec4",
+  "title": "複数のLLMモデルを同時に走らせてテキストファイルに吐くコマンドをつくった",
+  "created": 1750927334,
+  "updated": 1751527804,
+  "lines": [
+    {
+      "id": "685d07e48694ae83d89c5ec4",
+      "text": "複数のLLMモデルを同時に走らせてテキストファイルに吐くコマンドをつくった",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1750927334,
+      "updated": 1750927391
+    },
+    {
+      "id": "68663176000000000058329a",
+      "text": "pgpt = Parallel GPT",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1751527799,
+      "updated": 1751527804
+    },
+    {
+      "id": "68663176000000000058329b",
+      "text": "",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1751527799,
+      "updated": 1751527799
+    },
+    {
+      "id": "685d07e800000000007f3323",
+      "text": "[2025/06/26]、[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1750927336,
+      "updated": 1750927342
+    },
+    {
+      "id": "685d07e500000000007f331e",
+      "text": "\t\tgithub copilot: [share https://github.com/copilot/share/ca5f41be-40e4-80a3-8851-0a4a84d00097]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1750927334,
+      "updated": 1750927344
+    },
+    {
+      "id": "685d07e700000000007f331f",
+      "text": "\t[https://gyazo.com/51eb18349f425c3982cb93fda6a3bd9b]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1750927335,
+      "updated": 1750927344
+    },
+    {
+      "id": "685d07e700000000007f3320",
+      "text": "\t知的生産に便利そう、6人同時に尋ねる感じの体験になった",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1750927335,
+      "updated": 1750927344
+    },
+    {
+      "id": "685d07e700000000007f3321",
+      "text": "\t`python pgpt.py -i prompt.md` みたいなコマンドで実装して、これを愛用の[秀丸エディタ]からシームレスに組み込む",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1750927335,
+      "updated": 1750927353
+    },
+    {
+      "id": "685d11620000000000e28bea",
+      "text": "\tOpenAI以外は予定してる?[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929762,
+      "updated": 1750929770
+    },
+    {
+      "id": "685da925000000000088d091",
+      "text": "\t\tしてない[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1750968615,
+      "updated": 1750968746
+    },
+    {
+      "id": "685da9aa000000000088d092",
+      "text": "\t\tそうか、API違うからラップしないといけないのか[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1750968747,
+      "updated": 1750968761
+    },
+    {
+      "id": "685d07e700000000007f3322",
+      "text": "",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1750927335,
+      "updated": 1750927335
+    },
+    {
+      "id": "685d11790000000000e28c27",
+      "text": "コードをGithub Copilotシェアリンクから抽出(問題あったら消して)[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929786,
+      "updated": 1750929812
+    },
+    {
+      "id": "685da91d000000000088d090",
+      "text": "問題なし[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1750968606,
+      "updated": 1750968609
+    },
+    {
+      "id": "685d11730000000000e28beb",
+      "text": "code:pgpt.py",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929780,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bed",
+      "text": " import argparse",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bee",
+      "text": " import openai",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bef",
+      "text": " import os",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bf0",
+      "text": " import concurrent.futures",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bf1",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bf2",
+      "text": " # 事前定義するモデル一覧",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bf3",
+      "text": " MODELS = [",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bf4",
+      "text": "     \"gpt-4o\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bf5",
+      "text": "     \"gpt-4.1\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bf6",
+      "text": "     \"o3-mini\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bf7",
+      "text": "     \"o1\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bf8",
+      "text": " ]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bf9",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bfa",
+      "text": " def read_prompt(filename):",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bfb",
+      "text": "     with open(filename, \"r\", encoding=\"utf-8\") as f:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bfc",
+      "text": "         return f.read()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bfd",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bfe",
+      "text": " def request_to_model(model_name, prompt, timeout=130):",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28bff",
+      "text": "     try:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c00",
+      "text": "         response = openai.ChatCompletion.create(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c01",
+      "text": "             model=model_name,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c02",
+      "text": "             messages=[",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c03",
+      "text": "                 {'role': 'user', 'content': prompt},",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c04",
+      "text": "             ],",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c05",
+      "text": "             request_timeout=timeout",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c06",
+      "text": "         )",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c07",
+      "text": "         return response['choices'][0]['message']['content']",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c08",
+      "text": "     except Exception as e:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c09",
+      "text": "         return f\"[ERROR in {model_name}]: {str(e)}\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c0a",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c0b",
+      "text": " def save_response(base_filename, model_name, content):",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c0c",
+      "text": "     name, ext = os.path.splitext(base_filename)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c0d",
+      "text": "     out_filename = f\"{name}-{model_name}.md\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c0e",
+      "text": "     with open(out_filename, \"w\", encoding=\"utf-8\") as f:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c0f",
+      "text": "         f.write(content)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c10",
+      "text": "         f.write('\\n')  # ファイル末尾に空行を追加",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c11",
+      "text": "     print(f\"Saved: {out_filename}\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c12",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c13",
+      "text": " def main():",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c14",
+      "text": "     parser = argparse.ArgumentParser(description=\"Prompt multi LLMs and save responses.\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c15",
+      "text": "     parser.add_argument(\"-i\", \"--input\", required=True, help=\"Input markdown file as prompt.\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c16",
+      "text": "     args = parser.parse_args()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c17",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c18",
+      "text": "     prompt = read_prompt(args.input)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c19",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c1a",
+      "text": "     # 並列で各モデルにリクエスト",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c1b",
+      "text": "     with concurrent.futures.ThreadPoolExecutor() as executor:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c1c",
+      "text": "         future_to_model = {",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c1d",
+      "text": "             executor.submit(request_to_model, model, prompt): model",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c1e",
+      "text": "             for model in MODELS",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c1f",
+      "text": "         }",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c20",
+      "text": "         for future in concurrent.futures.as_completed(future_to_model):",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c21",
+      "text": "             model = future_to_model[future]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c22",
+      "text": "             content = future.result()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c23",
+      "text": "             save_response(args.input, model, content)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c24",
+      "text": " ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c25",
+      "text": " if __name__ == \"__main__\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11760000000000e28c26",
+      "text": "     main()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929783,
+      "updated": 1750929783
+    },
+    {
+      "id": "685d11730000000000e28bec",
+      "text": "こういう用途ならthreadよりasyncioのほうが良い気がする[bsahd.icon]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929780,
+      "updated": 1750929854
+    },
+    {
+      "id": "685daa47000000000088d093",
+      "text": "\t\tなるほど、ノンブロッキングできるのか、こっちがいいかも[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1750968905,
+      "updated": 1750968917
+    },
+    {
+      "id": "685d11b50000000000e28c28",
+      "text": "\tcode:asyncpgpt.py",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929845,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c5f",
+      "text": "\t import argparse",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c60",
+      "text": "  from openai import AsyncOpenAI",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750930036
+    },
+    {
+      "id": "685d11f40000000000e28c61",
+      "text": "  import os",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750930525
+    },
+    {
+      "id": "685d11fa0000000000e28c99",
+      "text": "  import asyncio",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929915,
+      "updated": 1750929917
+    },
+    {
+      "id": "685d11f40000000000e28c63",
+      "text": "  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c64",
+      "text": "  # 事前定義するモデル一覧",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c65",
+      "text": "  MODELS = [",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c66",
+      "text": "      \"gpt-4o\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c67",
+      "text": "      \"gpt-4.1\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c68",
+      "text": "      \"o3-mini\",",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c69",
+      "text": "      \"o1\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c6a",
+      "text": "  ]  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750930501
+    },
+    {
+      "id": "685d12660000000000e28c9d",
+      "text": "  client = AsyncOpenAI()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750930022,
+      "updated": 1750930039
+    },
+    {
+      "id": "685d11f40000000000e28c6b",
+      "text": "  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c6c",
+      "text": "  def read_prompt(filename):",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c6d",
+      "text": "      with open(filename, \"r\", encoding=\"utf-8\") as f:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c6e",
+      "text": "          return f.read()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c6f",
+      "text": "  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c70",
+      "text": "  async def request_to_model(model_name, prompt, filename):",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750930518
+    },
+    {
+      "id": "685d11f40000000000e28c71",
+      "text": "      try:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c72",
+      "text": "          response = await client.chat.completions.create(",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750930493
+    },
+    {
+      "id": "685d11f40000000000e28c73",
+      "text": "              model=model_name,",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c74",
+      "text": "              messages=[",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c75",
+      "text": "                  {'role': 'user', 'content': prompt},",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c76",
+      "text": "              ]",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750930463
+    },
+    {
+      "id": "685d11f40000000000e28c78",
+      "text": "          )",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d133f0000000000e28caf",
+      "text": "          save_response(filename, model_name, response.choices[0].message.content)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750930239,
+      "updated": 1750930475
+    },
+    {
+      "id": "685d11f40000000000e28c79",
+      "text": "          return response.choices[0].message.content",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750930476
+    },
+    {
+      "id": "685d11f40000000000e28c7a",
+      "text": "      except Exception as e:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c7b",
+      "text": "          return f\"[ERROR in {model_name}]: {str(e)}\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c7c",
+      "text": "  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c7d",
+      "text": "  def save_response(base_filename, model_name, content):",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c7e",
+      "text": "      name, ext = os.path.splitext(base_filename)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c7f",
+      "text": "      out_filename = f\"{name}-{model_name}.md\"",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c80",
+      "text": "      with open(out_filename, \"w\", encoding=\"utf-8\") as f:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c81",
+      "text": "          f.write(content)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c82",
+      "text": "          f.write('\\n')  # ファイル末尾に空行を追加",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c83",
+      "text": "      print(f\"Saved: {out_filename}\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c84",
+      "text": "  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c85",
+      "text": "  async def main():",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750930079
+    },
+    {
+      "id": "685d11f40000000000e28c86",
+      "text": "      parser = argparse.ArgumentParser(description=\"Prompt multi LLMs and save responses.\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c87",
+      "text": "      parser.add_argument(\"-i\", \"--input\", required=True, help=\"Input markdown file as prompt.\")",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c88",
+      "text": "      args = parser.parse_args()",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c89",
+      "text": "  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c8a",
+      "text": "      prompt = read_prompt(args.input)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750930182
+    },
+    {
+      "id": "685d12bf0000000000e28c9f",
+      "text": "      tasks = []",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750930112,
+      "updated": 1750930179
+    },
+    {
+      "id": "685d12bf0000000000e28ca2",
+      "text": "      for name in MODELS:",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750930112,
+      "updated": 1750930195
+    },
+    {
+      "id": "685d12bf0000000000e28ca3",
+      "text": "          task = asyncio.create_task(request_to_model(name,prompt,args.input))",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750930112,
+      "updated": 1750930315
+    },
+    {
+      "id": "685d12bf0000000000e28ca4",
+      "text": "          tasks.append(task)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750930112,
+      "updated": 1750930179
+    },
+    {
+      "id": "685d12bf0000000000e28ca6",
+      "text": "      await asyncio.gather(*tasks)",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750930112,
+      "updated": 1750930179
+    },
+    {
+      "id": "685d11f40000000000e28c96",
+      "text": "  ",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c97",
+      "text": "  if __name__ == \"__main__\":",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750929909
+    },
+    {
+      "id": "685d11f40000000000e28c98",
+      "text": "      asyncio.run(main())",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929909,
+      "updated": 1750930267
+    },
+    {
+      "id": "685d11ef0000000000e28c5e",
+      "text": "",
+      "userId": "661b6e882a96e9002371b3c2",
+      "created": 1750929904,
+      "updated": 1750929904
+    }
+  ]
+}
