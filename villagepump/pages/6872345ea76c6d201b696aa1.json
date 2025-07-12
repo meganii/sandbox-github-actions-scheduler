@@ -1,0 +1,148 @@
+{
+  "id": "6872345ea76c6d201b696aa1",
+  "title": "Dockerの中でClaudeCodeを使う方法のメモ書き",
+  "created": 1752314975,
+  "updated": 1752317390,
+  "lines": [
+    {
+      "id": "6872345ea76c6d201b696aa1",
+      "text": "Dockerの中でClaudeCodeを使う方法のメモ書き",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752314975,
+      "updated": 1752314975
+    },
+    {
+      "id": "6872345f00000000007976a6",
+      "text": "from [2025/07/12]",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752314975,
+      "updated": 1752314975
+    },
+    {
+      "id": "68723a4500000000007cd649",
+      "text": "",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752316485,
+      "updated": 1752316485
+    },
+    {
+      "id": "6872345f00000000007976a7",
+      "text": "[Docker]の中で[Claude Code]を使う方法のメモ書き[taktamur.icon]",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752314975,
+      "updated": 1752315011
+    },
+    {
+      "id": "6872345f00000000007976a8",
+      "text": " ClaudeCodeをフリーダムに使うため(--dangerously-skip-permissions)のDocker環境構築",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752314975,
+      "updated": 1752314994
+    },
+    {
+      "id": "6872345f00000000007976a9",
+      "text": " →Anthropic公式のリポジトリがいい感じに設定されてる",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752314975,
+      "updated": 1752314997
+    },
+    {
+      "id": "6872345f00000000007976aa",
+      "text": " \thttps://github.com/anthropics/claude-code/",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752314975,
+      "updated": 1752314997
+    },
+    {
+      "id": "6872345f00000000007976ab",
+      "text": " \t.devcontainer/の設定で、いい感じに蓋されたDocker環境が用意できる",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752314975,
+      "updated": 1752317346
+    },
+    {
+      "id": "68723a7f00000000007cd64c",
+      "text": " \t\tこぴって自分用のミニマム環境を作った https://github.com/taktamur/copy-claude-code",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752316543,
+      "updated": 1752316595
+    },
+    {
+      "id": "68723d790000000000ffc87e",
+      "text": " \t\t.devcontainer/は、[Development Containers]の設定置き場らしい？",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752317306,
+      "updated": 1752317354
+    },
+    {
+      "id": "6872345f00000000007976ac",
+      "text": " \t[VSCode]の拡張機能のdevContainerを使うと、VSCodeで開いた時に、Dockerで起動するのをお勧めされる",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752314975,
+      "updated": 1752317364
+    },
+    {
+      "id": "6872345f00000000007976ad",
+      "text": " \tVSCodeの中のターミナルで`claude --dangerously-skip-permissions`",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752314975,
+      "updated": 1752314997
+    },
+    {
+      "id": "6872345f00000000007976ae",
+      "text": " \t\t→ ClaudeCodeが反乱を起こしてrm ~/ しても、Dockerだから被害が出なくなる。",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752314975,
+      "updated": 1752314997
+    },
+    {
+      "id": "6872345f00000000007976af",
+      "text": " ホスト側とコンテナ側で、ClaudeCodeの認証を共通化しようとすると多分ダメっぽい",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752314975,
+      "updated": 1752314997
+    },
+    {
+      "id": "6872345f00000000007976b0",
+      "text": " \tホストがMac、コンテナがLinuxと違ってて、認証情報の保存方法が違うらしい。",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752314975,
+      "updated": 1752314997
+    },
+    {
+      "id": "687239420000000000c08393",
+      "text": " githubの認証情報も、当然ながら共有されてない",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752316227,
+      "updated": 1752316237
+    },
+    {
+      "id": "6872394d0000000000c08394",
+      "text": " \tgitのコミットはできる。",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752316237,
+      "updated": 1752317390
+    },
+    {
+      "id": "68723dc90000000000ffc87f",
+      "text": " \tコンテナ側でいちいち認証するのも面倒だから、githubへのpushはホスト側でやった方が良さそう",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752317385,
+      "updated": 1752317385
+    },
+    {
+      "id": "6872345f00000000007976b1",
+      "text": "",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752314975,
+      "updated": 1752316491
+    },
+    {
+      "id": "6872345f00000000007976b3",
+      "text": "",
+      "userId": "58a90dd3ee5de7001150db17",
+      "created": 1752314975,
+      "updated": 1752314975
+    }
+  ]
+}
