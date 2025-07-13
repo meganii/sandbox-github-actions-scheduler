@@ -2,7 +2,7 @@
   "id": "6871a43bde5c8fd87862ec42",
   "title": "PostPixel",
   "created": 1752278078,
-  "updated": 1752310963,
+  "updated": 1752396876,
   "lines": [
     {
       "id": "6871a43bde5c8fd87862ec42",
@@ -159,6 +159,13 @@
       "updated": 1752285118
     },
     {
+      "id": "68730600000000000089fedc",
+      "text": "    その旨書いた",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752368640,
+      "updated": 1752368643
+    },
+    {
       "id": "6871bf5b0000000000b5fbf1",
       "text": "",
       "userId": "58442db3ee4a2400116eb406",
@@ -174,10 +181,17 @@
     },
     {
       "id": "687224880000000000b4e674",
-      "text": " やりましょう[inajob.icon]",
+      "text": " やりましょう[inajob.icon]reverted[inajob.icon]再度この対応をしてデプロイした[inajob.icon]",
       "userId": "58442db3ee4a2400116eb406",
       "created": 1752310920,
-      "updated": 1752310924
+      "updated": 1752367893
+    },
+    {
+      "id": "6872ec170000000000f93db7",
+      "text": "  デプロイ済み",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752362007,
+      "updated": 1752362013
     },
     {
       "id": "687224a80000000000b4e675",
@@ -192,6 +206,370 @@
       "userId": "686b72ebdffe36b729b4453d",
       "created": 1752308229,
       "updated": 1752308229
+    },
+    {
+      "id": "6872f50600000000002dbf58",
+      "text": "2025/7/13 08:51　描画色が切り替えられない(おま環かも)[bsahd.icon]",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752364294,
+      "updated": 1752364325
+    },
+    {
+      "id": "6872f50900000000002dbf59",
+      "text": "\tとりあえずFireFox NightlyとChromium(どちらもArch Linux)で再現した",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752364298,
+      "updated": 1752372673
+    },
+    {
+      "id": "6872f5c2000000000026ccdd",
+      "text": "\t手元でも再現しました。テストは必要・・[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752364482,
+      "updated": 1752364491
+    },
+    {
+      "id": "6872f729000000000026ccde",
+      "text": "\t\tソースコードが大きくなってきてコンテキストからあふれてるのかな？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752364841,
+      "updated": 1752364851
+    },
+    {
+      "id": "6872f735000000000026ccdf",
+      "text": "\t\t\t何を修正してもバグが生まれる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752364853,
+      "updated": 1752364911
+    },
+    {
+      "id": "687316a800000000006b83ca",
+      "text": "\t\t\t\t特に変数の多重宣言とか、scriptタグを早々に閉じたりとか、全体を見てない感あるバグが多い",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752372905,
+      "updated": 1752372924
+    },
+    {
+      "id": "6873161700000000008fe3d7",
+      "text": "\t\t\tHTMLソースは21750バイトなので、Geminiのコンテキストからあふれるわけがない...はず[bsahd.icon]",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752372760,
+      "updated": 1752372778
+    },
+    {
+      "id": "6873167e00000000006b83c8",
+      "text": "\t\t\t\tGemini CLIは何か内部でプロンプトを作ってると思うので、そのアルゴリズムによってソースコードが削られて渡されているのかとエスパーしている[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752372863,
+      "updated": 1752372889
+    },
+    {
+      "id": "6873169b00000000006b83c9",
+      "text": "\t\t\t\t\tちゃんと読めという話・・",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752372892,
+      "updated": 1752372899
+    },
+    {
+      "id": "687319d500000000008fe3e0",
+      "text": "\t\t\t\t\tモジュール化するといい気がする[bsahd.icon]",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752373717,
+      "updated": 1752373731
+    },
+    {
+      "id": "6872f743000000000026cce0",
+      "text": "\t\tリファクタリングしてからさらにおかしい",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752364868,
+      "updated": 1752364875
+    },
+    {
+      "id": "6872f74b000000000026cce1",
+      "text": "\t\t\t変数宣言は各ロジックの近くにあったほうが良いのかも（処理をエスパーするに全部のソースを読まずに周辺のソースを読んでいる？）",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752364875,
+      "updated": 1752364899
+    },
+    {
+      "id": "6873009a000000000026cce2",
+      "text": "\t\tとりあえずrevertした",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752367259,
+      "updated": 1752367264
+    },
+    {
+      "id": "687316ff00000000008fe3d8",
+      "text": "\t描画プレビューは別canvasにするか、DOMかのどちらかが良いと思う[bsahd.icon]",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752372991,
+      "updated": 1752373011
+    },
+    {
+      "id": "6873176500000000008fe3d9",
+      "text": "\t\tとりあえずHTMLの1ファイルで完結してることを確認後、OGPを削除した静的版をローカルに保存",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752373093,
+      "updated": 1752373119
+    },
+    {
+      "id": "6872f53700000000002dbf5a",
+      "text": "",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752372988,
+      "updated": 1752372988
+    },
+    {
+      "id": "6873180500000000008fe3da",
+      "text": "[http://post-pixel.inajob.freeddns.org/img/?data=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAaQAAAGkCAIAAADxLsZiAAAFu0lEQVR4nOzWQZUiARAE0WUfGpCHFA5IQV6fSsKYgKlm4n8FeYqX15n5B%2FDX%2Fd8eAPAbxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDki4bg%2F4YsfruT2Botv9sT3hK3l2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCZeZ2d7AWRyv5%2FaE97vdH9sTOAXPDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSLjMzPYGgI%2Fz7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IOG6PYATOV7P7Qnvd7s%2FtidwCp4dkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAwmVmtjcAfJxnBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAwk8AAAD%2F%2F5S9F4yzwZrSAAAAAElFTkSuQmCC 適当なData URIをいれるテスト]",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752373253,
+      "updated": 1752373279
+    },
+    {
+      "id": "6873180500000000008fe3db",
+      "text": "\tbodyのCSSに`justify-content: center;`が入ってるからバグるっぽい[bsahd.icon]",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752373253,
+      "updated": 1752373343
+    },
+    {
+      "id": "6873194d0000000000877fbc",
+      "text": "\tサイズで規制したい[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752373581,
+      "updated": 1752373587
+    },
+    {
+      "id": "687324ae000000000016ff03",
+      "text": "\t 任意のpng画像のDataURLを受け入れて困ることあるかな？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752376495,
+      "updated": 1752376512
+    },
+    {
+      "id": "687324bf000000000016ff04",
+      "text": "\t  何か脆弱性に繋がりそうな予感",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752376512,
+      "updated": 1752376520
+    },
+    {
+      "id": "687324cc00000000008fe3e5",
+      "text": "\t  ただ、URL内なのでサイズは明らかに制限あるし、ブラウザは基本あらゆるサイトから任意のpng読み込めるし...[bsahd.icon]",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752376524,
+      "updated": 1752376572
+    },
+    {
+      "id": "68731fb900000000008fe3e3",
+      "text": "\tいや、画面狭いと普通の64x64とかでも画面からはみ出す[bsahd.icon]",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752375225,
+      "updated": 1752375235
+    },
+    {
+      "id": "6873206e000000000080f73f",
+      "text": "\t 確かに[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752375407,
+      "updated": 1752375413
+    },
+    {
+      "id": "6873185600000000008fe3dc",
+      "text": "",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752373334,
+      "updated": 1752373334
+    },
+    {
+      "id": "6873187c00000000008fe3dd",
+      "text": "「描画されたドット絵はだれでも自由に編集できるよう公開されます」という表記は微妙...[bsahd.icon]",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752373373,
+      "updated": 1752373377
+    },
+    {
+      "id": "6873187d00000000008fe3de",
+      "text": "\tURLを共有しない限り公開されないので",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752373373,
+      "updated": 1752373394
+    },
+    {
+      "id": "687322c4000000000080f740",
+      "text": "\t この辺の仕様どうしようか悩み中[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752376005,
+      "updated": 1752376014
+    },
+    {
+      "id": "687322ce000000000080f741",
+      "text": "\t  共有するみたいなボタンがあると自然に使えるかな？",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752376015,
+      "updated": 1752376044
+    },
+    {
+      "id": "6873230b000000000080f743",
+      "text": "\t   単に現ページのURLを返すだけだが。",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752376076,
+      "updated": 1752376091
+    },
+    {
+      "id": "68737448000000000009ce51",
+      "text": "\t   \t実装した",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752396873,
+      "updated": 1752396876
+    },
+    {
+      "id": "6873251c00000000008fe3e6",
+      "text": "\t   URLを`&share=true&shareLicence=licence&shareTitle=title&shareAuthor=author`みたいにすると共有画面になるとか?[bsahd.icon]",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752376605,
+      "updated": 1752376650
+    },
+    {
+      "id": "68732671000000000016ff05",
+      "text": "\t    これならCC0以外も対応できそう[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752376945,
+      "updated": 1752376984
+    },
+    {
+      "id": "6873269a000000000016ff06",
+      "text": "\t     URLいじればライセンス詐称できるけども、、",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752376987,
+      "updated": 1752376999
+    },
+    {
+      "id": "687326b8000000000016ff07",
+      "text": "\t      この辺がややこしそうなのでまずはCC0のみにしてみた",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752377017,
+      "updated": 1752377035
+    },
+    {
+      "id": "68732729000000000016ff08",
+      "text": "\t      ややこしいと言っても提供側としてできることは無い",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752377130,
+      "updated": 1752377152
+    },
+    {
+      "id": "687327d000000000008fe3e7",
+      "text": "\t    そもそもURLに画像データ全体をいれるという考え方が...って考えてしまった(本末転倒)[bsahd.icon]",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752377296,
+      "updated": 1752377329
+    },
+    {
+      "id": "687327e2000000000016ff09",
+      "text": "\t     そこはこのサービスの個性かなと思ってる[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752377315,
+      "updated": 1752377330
+    },
+    {
+      "id": "687322ee000000000080f742",
+      "text": "\t  裏で勝手に書きかけでもデータを収集する事もできる",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752376047,
+      "updated": 1752376060
+    },
+    {
+      "id": "68731b7600000000008fe3e1",
+      "text": "\tあと、パレット選択はバグの温床なので一旦消してみた",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752374134,
+      "updated": 1752374143
+    },
+    {
+      "id": "68731c5000000000008fe3e2",
+      "text": "\tドラッグで描画する場合に途中が抜ける",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752374353,
+      "updated": 1752374359
+    },
+    {
+      "id": "6873217a00000000008fe3e4",
+      "text": "\tmouseとtouchを別にするより、まとめてpointerEventsにしたら",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752375675,
+      "updated": 1752375685
+    },
+    {
+      "id": "68732ae600000000008fe3e8",
+      "text": "\tApacheだとすぐSubmitted URI too large!になるな〜",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752378086,
+      "updated": 1752378092
+    },
+    {
+      "id": "6873188700000000008fe3df",
+      "text": "",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752373384,
+      "updated": 1752373384
+    },
+    {
+      "id": "68732977000000000016ff0b",
+      "text": " URLに画像データを含める",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752377720,
+      "updated": 1752377736
+    },
+    {
+      "id": "68732989000000000016ff0d",
+      "text": "  このジャストアイデアから作り始めた[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752377738,
+      "updated": 1752377754
+    },
+    {
+      "id": "687329c5000000000016ff0e",
+      "text": "   しかし、結局人気画像とか出そうとするとサーバー側に保存せざるを得ない",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752377797,
+      "updated": 1752377836
+    },
+    {
+      "id": "68732978000000000016ff0c",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752377721,
+      "updated": 1752377721
+    },
+    {
+      "id": "6873350300000000008fe3e9",
+      "text": "OGPなし版(=静的HTML版)を試作してる[bsahd.icon]",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752380676,
+      "updated": 1752380695
+    },
+    {
+      "id": "6873350900000000008fe3eb",
+      "text": "\t[https://gyazo.com/18a04d8d5005e024acd97ddab6a8186f]",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1752380682,
+      "updated": 1752380684
+    },
+    {
+      "id": "6873350400000000008fe3ea",
+      "text": "\tどうぞどうぞ！[inajob.icon]",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752380676,
+      "updated": 1752380784
+    },
+    {
+      "id": "6873356f00000000006b83cb",
+      "text": "",
+      "userId": "58442db3ee4a2400116eb406",
+      "created": 1752380783,
+      "updated": 1752380783
     }
   ]
 }
