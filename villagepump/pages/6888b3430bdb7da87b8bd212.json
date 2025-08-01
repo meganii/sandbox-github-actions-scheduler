@@ -2,7 +2,7 @@
   "id": "6888b3430bdb7da87b8bd212",
   "title": "gtk",
   "created": 1753789253,
-  "updated": 1753793265,
+  "updated": 1754056292,
   "lines": [
     {
       "id": "6888b3430bdb7da87b8bd212",
@@ -13,38 +13,619 @@
     },
     {
       "id": "6888b3460000000000a7ad05",
-      "text": "[赤リンク]だったのか[bsahd.icon]",
-      "userId": "686b72ebdffe36b729b4453d",
+      "text": "正式名称: [GIMP] Toolkit",
+      "userId": "5c30ba88e98efe0017e5172d",
       "created": 1753789255,
-      "updated": 1753789269
+      "updated": 1754056292
     },
     {
-      "id": "6888b3730000000000a7ad09",
+      "id": "688c9ec70000000000ca0821",
       "text": "",
       "userId": "686b72ebdffe36b729b4453d",
-      "created": 1753789299,
-      "updated": 1753789299
+      "created": 1754046151,
+      "updated": 1754046151
     },
     {
-      "id": "6888b3730000000000a7ad0a",
-      "text": "GIMP Tool Kit",
+      "id": "688c9c910000000000ca07ca",
+      "text": "C言語で書かれてる",
       "userId": "686b72ebdffe36b729b4453d",
-      "created": 1753789299,
-      "updated": 1753789305
+      "created": 1754045585,
+      "updated": 1754045589
     },
     {
-      "id": "6888b35f0000000000a7ad07",
-      "text": "もともと[GIMP]のために作られたツールキット",
+      "id": "688c9c9b0000000000ca07cc",
+      "text": " (全GTKアプリケーションがCで書かれているわけではなく、もちろんバインディング経由のものもある)",
       "userId": "686b72ebdffe36b729b4453d",
-      "created": 1753789279,
-      "updated": 1753793265
+      "created": 1754045595,
+      "updated": 1754045621
     },
     {
-      "id": "6888b3630000000000a7ad08",
+      "id": "688c9ee80000000000ca0822",
+      "text": " ただ、C言語とは言ってもWin32とかとは次元が違う",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754046184,
+      "updated": 1754046194
+    },
+    {
+      "id": "688c9c910000000000ca07cb",
       "text": "",
       "userId": "686b72ebdffe36b729b4453d",
-      "created": 1753789284,
-      "updated": 1753789284
+      "created": 1754045585,
+      "updated": 1754045585
+    },
+    {
+      "id": "688c9d5f0000000000ca07cd",
+      "text": "サンプルコード",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045791,
+      "updated": 1754045794
+    },
+    {
+      "id": "688c9d620000000000ca07cf",
+      "text": "code:gtk_example.c",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045794,
+      "updated": 1754045815
+    },
+    {
+      "id": "688c9d6d0000000000ca07d0",
+      "text": " #include <gtk/gtk.h>",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07d1",
+      "text": " ",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07d2",
+      "text": " int label_count = 0;",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754046289
+    },
+    {
+      "id": "688c9d6d0000000000ca07d4",
+      "text": " static void print_hello(GtkWidget *widget, gpointer label1) {",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754046288
+    },
+    {
+      "id": "688c9d6d0000000000ca07d5",
+      "text": "   label_count++;",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07d6",
+      "text": "   char ltext[64];",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07d7",
+      "text": "   snprintf(ltext, 63, \"ボタン1は%d回クリックされました\", label_count);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07d8",
+      "text": "   printf(\"[info] ボタン1は%d回クリックされました\\n\", label_count);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07d9",
+      "text": "   gtk_label_set_text(GTK_LABEL(label1), ltext);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07da",
+      "text": " }",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07db",
+      "text": " ",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07dc",
+      "text": " static void dialog_on_choose(GObject *source_object, GAsyncResult *res,",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07dd",
+      "text": "                              gpointer user_data) {",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07de",
+      "text": "   printf(\"[debug] Dialog Closing\\n\");",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07df",
+      "text": "   GtkAlertDialog *dialog = GTK_ALERT_DIALOG(user_data);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07e0",
+      "text": "   GError *err = NULL;",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07e1",
+      "text": "   gtk_alert_dialog_choose_finish(dialog, res, &err);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07e2",
+      "text": "   if (err) {",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07e3",
+      "text": "     g_printerr(\"Error choosing dialog: %s\\n\", err->message);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07e4",
+      "text": "     g_error_free(err);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07e5",
+      "text": "   }",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07e6",
+      "text": "   g_object_unref(dialog);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07e7",
+      "text": "   printf(\"[debug] Dialog Closed\\n\");",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07e8",
+      "text": " }",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07e9",
+      "text": " static void show_dialog(GtkWidget *widget, gpointer data) {",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07ea",
+      "text": "   printf(\"[debug] Creating Dialog...\\n\");",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07eb",
+      "text": "   GtkWindow *win = GTK_WINDOW(gtk_widget_get_root(widget));",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07ec",
+      "text": "   GtkEntryBuffer *name_buf = gtk_entry_get_buffer(GTK_ENTRY(data));",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07ed",
+      "text": "   const char *name = gtk_entry_buffer_get_text(name_buf);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07ee",
+      "text": "   char ltext[64];",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07ef",
+      "text": "   snprintf(ltext, 63, \"%sさん、ようこそ\", name);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07f0",
+      "text": "   printf(\"[info] %sさん、ようこそ\\n\", name);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07f1",
+      "text": "   GtkAlertDialog *dialog = gtk_alert_dialog_new(\"ようこそ\");",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07f2",
+      "text": "   const char *buttons[] = {\"了解\", NULL};",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07f3",
+      "text": "   gtk_alert_dialog_set_detail(dialog, ltext);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07f4",
+      "text": "   gtk_alert_dialog_set_buttons(dialog, buttons);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07f5",
+      "text": "   gtk_alert_dialog_set_default_button(dialog, 0);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07f6",
+      "text": "   gtk_alert_dialog_choose(dialog, GTK_WINDOW(win), NULL, dialog_on_choose,",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07f7",
+      "text": "                           dialog);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07f8",
+      "text": "   printf(\"[debug] Dialog Created\\n\");",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07f9",
+      "text": " }",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07fa",
+      "text": " static void activate(GtkApplication *app, gpointer user_data) {",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07fb",
+      "text": "   printf(\"[debug] GTK Application Activating...\\n\");",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07fc",
+      "text": "   GtkWidget *win, *box, *btn1, *btn2, *name_entry, *label1;",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754046362
+    },
+    {
+      "id": "688c9d6d0000000000ca07fd",
+      "text": "   win = gtk_application_window_new(app);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07fe",
+      "text": "   box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca07ff",
+      "text": "   btn1 = gtk_button_new_with_label(\"ボタン1\");",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9f9c0000000000ca082e",
+      "text": "   label1 = gtk_label_new(\"ボタン1は0回クリックされました\");",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754046364,
+      "updated": 1754046364
+    },
+    {
+      "id": "688c9d6d0000000000ca0800",
+      "text": "   g_signal_connect(btn1, \"clicked\", G_CALLBACK(print_hello), label1);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754046300
+    },
+    {
+      "id": "688c9d6d0000000000ca0801",
+      "text": "   name_entry = gtk_entry_new();",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0802",
+      "text": "   btn2 = gtk_button_new_with_label(\"ボタン2\");",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0803",
+      "text": "   g_signal_connect(btn2, \"clicked\", G_CALLBACK(show_dialog), name_entry);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0805",
+      "text": " ",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0806",
+      "text": "   gtk_window_set_title(GTK_WINDOW(win), \"GTK4 縦レイアウト\");",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0807",
+      "text": "   gtk_window_set_default_size(GTK_WINDOW(win), 200, 100);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0808",
+      "text": " ",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0809",
+      "text": "   gtk_window_set_child(GTK_WINDOW(win), box);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca080a",
+      "text": "   gtk_box_append(GTK_BOX(box), btn1);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca080b",
+      "text": "   gtk_box_append(GTK_BOX(box), label1);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca080c",
+      "text": "   gtk_box_append(GTK_BOX(box), name_entry);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca080d",
+      "text": "   gtk_box_append(GTK_BOX(box), btn2);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca080e",
+      "text": " ",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca080f",
+      "text": "   gtk_widget_set_visible(win, TRUE);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0810",
+      "text": "   printf(\"[debug] GTK Application Activated\\n\");",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0811",
+      "text": " }",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0812",
+      "text": " ",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0813",
+      "text": " int main(int argc, char **argv) {",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0814",
+      "text": "   printf(\"[debug] Execution Started\\n\");",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0815",
+      "text": "   GtkApplication *app;",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0816",
+      "text": "   int status;",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0817",
+      "text": " ",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0818",
+      "text": "   app = gtk_application_new(\"com.example.GtkApp\", G_APPLICATION_DEFAULT_FLAGS);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca0819",
+      "text": "   g_signal_connect(app, \"activate\", G_CALLBACK(activate), NULL);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca081a",
+      "text": "   status = g_application_run(G_APPLICATION(app), argc, argv);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca081b",
+      "text": "   g_object_unref(app);",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca081c",
+      "text": " ",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca081d",
+      "text": "   return status;",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9d6d0000000000ca081e",
+      "text": " }",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045806,
+      "updated": 1754045806
+    },
+    {
+      "id": "688c9df10000000000ca0820",
+      "text": "$ gcc $(pkg-config --cflags gtk4) $(pkg-config --libs gtk4) gtk_example.c",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045937,
+      "updated": 1754046562
+    },
+    {
+      "id": "688c9d5f0000000000ca07ce",
+      "text": "",
+      "userId": "686b72ebdffe36b729b4453d",
+      "created": 1754045792,
+      "updated": 1754045792
     }
   ]
 }
