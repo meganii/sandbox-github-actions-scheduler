@@ -1,0 +1,295 @@
+{
+  "id": "6890d382b916d6adc23238bd",
+  "title": "console.log起因でClaude Desktopにエラーメッセージが出る",
+  "created": 1754321795,
+  "updated": 1754321806,
+  "lines": [
+    {
+      "id": "6890d382b916d6adc23238bd",
+      "text": "console.log起因でClaude Desktopにエラーメッセージが出る",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f9279a",
+      "text": "[cosense-mcp-server]を入れたら、console.log起因でClaude Desktopにエラーメッセージが出た",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321806
+    },
+    {
+      "id": "6890d3830000000000f9279c",
+      "text": "挙動としては正常に動いていそうなんだけど、リクエストするたびにsyntax errorが出ている。なんだろう？[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f9279d",
+      "text": "[https://gyazo.com/c70f92a9d8469a7a389af9c9c2b560ae]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f9279e",
+      "text": " code:zsh",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f9279f",
+      "text": "  2025-08-04T11:39:54.679Z [cosense-mcp-server] [error] Unexpected token 'l', \"  links1hop: [\" is not valid JSON {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927a0",
+      "text": "    metadata: {",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927a1",
+      "text": "      context: 'connection',",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927a2",
+      "text": "      stack: `SyntaxError: Unexpected token 'l', \"  links1hop: [\" is not valid JSON\\n` +",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927a3",
+      "text": "        '    at JSON.parse (<anonymous>)\\n' +",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927a4",
+      "text": " 正しいJSON形式:` {\"links1hop\": [...]}`",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927a5",
+      "text": " 実際の出力: `{  links1hop: [...]}`（クォートなし）",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927a6",
+      "text": "まず、claudeのデスクトップアプリが古いので更新してみよう",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927a7",
+      "text": "　ちな、これは関係なかった[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927a8",
+      "text": "github copilotで使っている時も同じエラーが出てくる[takker.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927a9",
+      "text": " 動いてはいるので無視してる",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927aa",
+      "text": "18:35:41 原因がわかりました。[console.log https://github.com/yosider/cosense-mcp-server/blob/v0.2.2/src/cosense.ts#L10]です",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927ab",
+      "text": " どうやらコンソール出力がそのままMCP clientにわたってしまうみたい",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927ac",
+      "text": " [GithubCopilot]の場合、`\"dev\": {}`を指定しなければ出てこない",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927ad",
+      "text": " ありがとうございます[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927ae",
+      "text": " 　環境変数を作ってdevelopの時だけ出るようにするのがいいかな",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927af",
+      "text": "  よさそう。もしくは--devみたいなコマンドライン引数を渡したときだけconsoleを有効にするよう書き換えるのもあり[takker.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927b0",
+      "text": "  PRを作る[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927b1",
+      "text": "  コードを変えて試してみたけど同じ気がする。別の原因？",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927b2",
+      "text": "   https://github.com/yosider/cosense-mcp-server/pull/11/",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927b3",
+      "text": "  ふーむ？[takker.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927b4",
+      "text": " logger消したら治ったのでloggerの問題だ（[takker.icon]さんが正しい）。PRの実装がどこかおかしい[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927b5",
+      "text": " 環境変数がなかなか反映されない。dotenvが環境変数を読み出すタイミングでハマってる[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927b6",
+      "text": " 　Many modern JavaScript/TypeScript bundlers and build tools (like Webpack, Rollup, esbuild, etc.) perform a process called \"environment variable substitution\" during the build process:",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927b7",
+      "text": "  When they encounter process.env.NODE_ENV, they replace it with the actual string value of that environment variable at build time",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927b8",
+      "text": "  This replacement happens before the code is minified or optimized",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927b9",
+      "text": "  After substitution, the expression becomes something like const isDevelopment = 'production' === 'development';, which evaluates to a fixed boolean value",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927ba",
+      "text": "  なるほど",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927bb",
+      "text": " 結局MCPクライアント側でenvを指定するリポジトリのやり方に倣って修正した[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927bc",
+      "text": " 調査感謝[yosider.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927bd",
+      "text": " console.errorにしたら問題なかった気がしたけど、違ったっけ…",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927be",
+      "text": "  そーなのか[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927bf",
+      "text": " 諦めたような気もしなくもない…",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927c0",
+      "text": " PRをOpenにしました🙏🏻[基素.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927c1",
+      "text": "  ありがとうございます！[yosider.icon]",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    },
+    {
+      "id": "6890d3830000000000f927c2",
+      "text": "",
+      "userId": "59fb21121207900012774b17",
+      "created": 1754321795,
+      "updated": 1754321795
+    }
+  ]
+}
