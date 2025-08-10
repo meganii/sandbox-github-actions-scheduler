@@ -1,0 +1,533 @@
+{
+  "id": "6898c683b8839b00b198a610",
+  "title": "@yosider/cosense-mcp-serverと@takker/cosense-mcp-serverを統合",
+  "created": 1754842756,
+  "updated": 1754843677,
+  "lines": [
+    {
+      "id": "6898c683b8839b00b198a610",
+      "text": "@yosider/cosense-mcp-serverと@takker/cosense-mcp-serverを統合",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842756
+    },
+    {
+      "id": "6898c68400000000003fddaf",
+      "text": "from [@yosider]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842756
+    },
+    {
+      "id": "6898c68400000000003fddb0",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842836
+    },
+    {
+      "id": "6898c68400000000003fddb1",
+      "text": "[cosense-mcp-server]にhttps://jsr.io/@takker/cosense-mcp-server を統合できないかご提案させていただきます[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842756
+    },
+    {
+      "id": "6898c68400000000003fddb2",
+      "text": " 理由",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842756
+    },
+    {
+      "id": "6898c68400000000003fddb3",
+      "text": "  https://github.com/yosider/cosense-mcp-server のほうが使われているので、[takker.icon]が独自にいろいろ機能追加したりrefactoringしたりするより、そちらのほうにPRしたほうが利用者にとって有益だと考えました",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842756
+    },
+    {
+      "id": "6898c68400000000003fddb4",
+      "text": " 　あと似たようなものが複数あると、どっちを使えばいいのかユーザーが混乱してしまうかも",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842756
+    },
+    {
+      "id": "6898c68400000000003fddb5",
+      "text": " 使っているランタイム環境は異なりますが、ランタイム依存のコードは僅かなので、統合 (https://jsr.io/@takker/cosense-mcp-server の変更の一部をhttps://github.com/yosider/cosense-mcp-server に取り込むこと)は容易だと思います",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842756
+    },
+    {
+      "id": "6898c68400000000003fddb6",
+      "text": " もちろん、[yosider.icon]さんのご判断を尊重いたします",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842756
+    },
+    {
+      "id": "6898c6eb00000000007d91ad",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842859,
+      "updated": 1754842860
+    },
+    {
+      "id": "6898c68400000000003fddb7",
+      "text": "https://jsr.io/@takker/cosense-mcp-server 側の大雑把な変更点",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddb8",
+      "text": " 機能面",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddb9",
+      "text": "  任意のprojectの情報を読み書きできるようにした[. https://github.com/takker99/cosense-mcp-server/pull/12 ]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddba",
+      "text": "   ので、`COSENSE_PROJECT_NAME`はいらないかもしれない (default project指定用として残すのはあり)",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddbb",
+      "text": "   あと、操作できるprojectsを限定する`COSENSE_PROJECT_ALLOW_LIST`を新設したほうがいいかも",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddbc",
+      "text": "   　`insert_lines`で予期せぬprojectに勝手に書き込まれるのを防ぐとか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898ca130000000000c9f48c",
+      "text": "   [すばら.icon][yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754843667,
+      "updated": 1754843677
+    },
+    {
+      "id": "6898c68400000000003fddbd",
+      "text": "  `list_pages`のresponseを[MCP structured output]にした[. https://github.com/takker99/cosense-mcp-server/pull/14 ]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddbe",
+      "text": "  　現時点で効果あるか不明",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddbf",
+      "text": "  　list_pagesで、最新100件以外を取得できるようにしてみたら[bsahd.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddc0",
+      "text": "  　　(ちなみにskipを大きくする方式だとskipが大きいほどだいぶ遅くなるので、[/scrapboxlab/api/pages/:projectname/search/titles]を使用して全件リストを事前に取得しておいたあと、適切にページングしてAIに渡すといいかも)",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddc1",
+      "text": "  　　skip大きいと遅くなるの知りませんでした[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddc2",
+      "text": "  　　　タイトルさえわかればいいので、それもありですね",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddc3",
+      "text": "  　　　`descriptions`を重視するなら[api/pages/:projectname]を使い続けるのがいいかも",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddc4",
+      "text": "  　　　全ページのタイトルを取得する用途でskipをだいぶ上げながら使ってたんだけど、後半だいぶ遅くなってた[bsahd.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddc5",
+      "text": "  `list_projects`を追加[. https://github.com/takker99/cosense-mcp-server/pull/12 ]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddc6",
+      "text": "  (予定)`get_page`を[Smart Context]に置き換える",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddc7",
+      "text": "   現状`get_page`のresponseは[Smart Context]と似たようなものなので、[Smart Context]に置き換えても、致命的な変更にはならないと思う",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c8dc00000000009f6fc5",
+      "text": "    たしかに[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754843356,
+      "updated": 1754843361
+    },
+    {
+      "id": "6898c68400000000003fddc8",
+      "text": "   これに合わせて、生のページデータを返す`get_raw_page`か行IDなどを返す`get_page_metadata`を追加する",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddc9",
+      "text": "   smart contextだと1hopも入るのでその分入力コストが高くなったりしませんか？[bsahd.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddca",
+      "text": "    現行の`get_page`も1hop入るので特に変わらないと思います[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddcb",
+      "text": "    うん？入力コスト？すみませんちゃんと理解してないかも",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddcc",
+      "text": "    1hop先を全て入力させるとコストが高くなる？[bsahd.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddcd",
+      "text": "    token数が増えるということですね[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddce",
+      "text": "     確かにそうかも",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddcf",
+      "text": "     まあとりあえずやってみて、だめなら軽量化optionを用意すればいいと思います",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddd0",
+      "text": "  　[/motoso/LLMによるタスク管理]とかがもう少しやりやすくなるんじゃないかと予想[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddd1",
+      "text": "  　　個人的にも、ブラウザ操作なしにLLMに[Smart Context]渡せると楽",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddd2",
+      "text": "  (検討)`write_page`の追加",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddd3",
+      "text": "   [Sampling LLM]を使って、[patch()]の`update` callbackを再現する",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddd4",
+      "text": "    tool呼び出し時に、LLMに現在の`lines`を渡し、書き換え後のテキストを要求する",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddd5",
+      "text": "   　帰ってきたテキストでページ全体を更新する",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddd6",
+      "text": "   　特定のブロックのみを書き換えるツールにしてもいいかも",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddd7",
+      "text": "  (検討)[project横断検索]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddd8",
+      "text": "  　これAPI叩くコストが高いからなあ……いるかなあ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddd9",
+      "text": "  　`search_pages`をproject数分叩くほうがずっと早そう",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddda",
+      "text": " 内部実装面",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fdddb",
+      "text": "  Denoで動かしている",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fdddc",
+      "text": "  [modelcontextprotocol/typescript-sdk]のhigh-level APIによる実装に書き換えている",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fdddd",
+      "text": "  ファイル数の削減",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fddde",
+      "text": "  　ツールの定義を[index.ts https://jsr.io/@takker/cosense-mcp-server/0.1.5/index.ts]に全部移した",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fdddf",
+      "text": "  　　これは雑に書き換えてたらなんとなくそうなってしまっただけ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fdde0",
+      "text": "  　　ツールごとにファイルを分けるほうが妥当だと思う",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c75400000000007d91af",
+      "text": "  　　ここ気になっている[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842964,
+      "updated": 1754842969
+    },
+    {
+      "id": "6898c78300000000009f6fc2",
+      "text": "  　　 自分も分けたい派",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754843011,
+      "updated": 1754843020
+    },
+    {
+      "id": "6898c68400000000003fdde1",
+      "text": "  　`PageResource`の削除",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c68400000000003fdde2",
+      "text": "  　　これは復活したほうがいい。ただclassは不要かも",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842862
+    },
+    {
+      "id": "6898c75e00000000007d91b0",
+      "text": "  　　個人的にはあまり使わないのでなくても良い気もする…が機能としてあるので対応しないのもどうなのかと思う[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842974,
+      "updated": 1754843081
+    },
+    {
+      "id": "6898c7cd00000000009f6fc3",
+      "text": "  自分の実装ではclassを所々使っているけどTSでは使わないほうが良しとされがちな印象があるので、使わない方向にしたい[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754843085,
+      "updated": 1754843211
+    },
+    {
+      "id": "6898c6f200000000007d91ae",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842866,
+      "updated": 1754842866
+    },
+    {
+      "id": "6898c68400000000003fdde3",
+      "text": "ぱっと見の段階ですが、もちろん歓迎です！[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842866
+    },
+    {
+      "id": "6898c68400000000003fdde4",
+      "text": " 後で詳しく見ます",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842865
+    },
+    {
+      "id": "6898c68400000000003fdde5",
+      "text": " [scrapbox-fans]とかに移せばいいのかも？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842865
+    },
+    {
+      "id": "6898c68400000000003fdde6",
+      "text": "  `@yosider/cosense-mcp-server`で使っている方がいらっしゃるので、https://github.com/yosider/cosense-mcp-server のままにするのが移行コスト低いかなと思っています[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842865
+    },
+    {
+      "id": "6898c68400000000003fdde7",
+      "text": "  もちろん移行のハードルが低そうであればそれでも大丈夫です",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842865
+    },
+    {
+      "id": "6898c68400000000003fdde8",
+      "text": "  あ、そうか[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842865
+    },
+    {
+      "id": "6898c68400000000003fdde9",
+      "text": "  自分の観測範囲だと井戸端の人くらいしか使ってないが…",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842865
+    },
+    {
+      "id": "6898c68400000000003fddea",
+      "text": "   PRやissueに海外の人も書いてた覚えあった[takker.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754842865
+    },
+    {
+      "id": "6898c85300000000009f6fc4",
+      "text": "    あれは[MCPサーバーまとめサイト]みたいなものを作っている人たちが半自動でやっていることだと思っている[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754843219,
+      "updated": 1754843285
+    },
+    {
+      "id": "6898c68400000000003fddeb",
+      "text": "  [https://gyazo.com/f34af02364a420b609b2e2a0948649e6]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754842756,
+      "updated": 1754843426
+    },
+    {
+      "id": "6898c92f00000000009f6fc8",
+      "text": "   [@yosider/cosense-mcp-server - npm https://www.npmjs.com/package/@yosider/cosense-mcp-server]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754843440,
+      "updated": 1754843443
+    },
+    {
+      "id": "6898c92100000000009f6fc7",
+      "text": "   うーん、多少は使われているのか？",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754843426,
+      "updated": 1754843518
+    },
+    {
+      "id": "6898c91e00000000009f6fc6",
+      "text": "  まーでもREADMEに「移行しました」と書いておけばいいのではないか",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754843422,
+      "updated": 1754843496
+    },
+    {
+      "id": "6898c94800000000009f6fc9",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754843464,
+      "updated": 1754843464
+    }
+  ]
+}
