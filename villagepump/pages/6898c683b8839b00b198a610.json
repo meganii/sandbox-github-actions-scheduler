@@ -2,7 +2,7 @@
   "id": "6898c683b8839b00b198a610",
   "title": "@yosider/cosense-mcp-serverと@takker/cosense-mcp-serverを統合",
   "created": 1754842756,
-  "updated": 1754843677,
+  "updated": 1754915890,
   "lines": [
     {
       "id": "6898c683b8839b00b198a610",
@@ -314,10 +314,10 @@
     },
     {
       "id": "6898c68400000000003fddd7",
-      "text": "  (検討)[project横断検索]",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "  (not implemented)[project横断検索]",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1754842756,
-      "updated": 1754842862
+      "updated": 1754888940
     },
     {
       "id": "6898c68400000000003fddd8",
@@ -418,6 +418,62 @@
       "updated": 1754843081
     },
     {
+      "id": "689978aa0000000000625ec2",
+      "text": "  　　じつは一旦resource機能をomitしたほうがいいと思っています[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888360,
+      "updated": 1754888392
+    },
+    {
+      "id": "689978ca0000000000625ec3",
+      "text": "  　　 `@takker/cosense-mcp-server`では特定のprojectのページを全てresource listに追加する設計にした",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888392,
+      "updated": 1754888429
+    },
+    {
+      "id": "689978f00000000000625ec4",
+      "text": "  　　  しかし、vscodeだとresource選択画面に大量のページが列挙されてしまい、他のmcp serverのresourceを見つけづらくなる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888429,
+      "updated": 1754888542
+    },
+    {
+      "id": "689979600000000000625ec6",
+      "text": "  　　   例えば[/takker]を指定すると、10000件以上のresourcesが登録されてしまい、候補がcosenseで埋め尽くされる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888542,
+      "updated": 1754888588
+    },
+    {
+      "id": "6899798a0000000000625ec7",
+      "text": "  　　 `@yosider/cosense-mcp-server`のresourceはうまく動いてなかった覚えがある(うろ覚え)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888583,
+      "updated": 1754888714
+    },
+    {
+      "id": "68997a0d0000000000625ec8",
+      "text": "  　　 [https://github.com/modelcontextprotocol/typescript-sdk/tree/1.17.2?tab=readme-ov-file#resources 検索でresourceを絞り込む]ようにするのがbestなのだが、vscodeで試したときうまくいかなかった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888714,
+      "updated": 1754888820
+    },
+    {
+      "id": "68997a4b0000000000625ec9",
+      "text": "  　　  検索はされるのだが、なぜかmcp serverに帰ってくるページタイトルが文字化けしてしまう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888776,
+      "updated": 1754888794
+    },
+    {
+      "id": "68997a5c0000000000625eca",
+      "text": "  　　  　復元を試みたが、文字化けの仕組みを特定できず断念した",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888794,
+      "updated": 1754888815
+    },
+    {
       "id": "6898c7cd00000000009f6fc3",
       "text": "  自分の実装ではclassを所々使っているけどTSでは使わないほうが良しとされがちな印象があるので、使わない方向にしたい[yosider.icon]",
       "userId": "5c30ba88e98efe0017e5172d",
@@ -495,6 +551,13 @@
       "updated": 1754843285
     },
     {
+      "id": "689978740000000000625ebf",
+      "text": "    ほへ～[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888306,
+      "updated": 1754888309
+    },
+    {
       "id": "6898c68400000000003fddeb",
       "text": "  [https://gyazo.com/f34af02364a420b609b2e2a0948649e6]",
       "userId": "5c30ba88e98efe0017e5172d",
@@ -523,11 +586,158 @@
       "updated": 1754843496
     },
     {
-      "id": "6898c94800000000009f6fc9",
+      "id": "6899787a0000000000625ec0",
+      "text": "ありがとうございます！[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888311,
+      "updated": 1754888329
+    },
+    {
+      "id": "689979350000000000625ec5",
       "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888499,
+      "updated": 1754888499
+    },
+    {
+      "id": "68997a870000000000625ecb",
+      "text": "大まかにこんな手順でPRしようと思っています[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888836,
+      "updated": 1754888886
+    },
+    {
+      "id": "68997ab90000000000dcb2d3",
+      "text": " 1. [modelcontextprotocol/typescript-sdk]のhigh-level APIによる実装に書き換える",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888887,
+      "updated": 1754888893
+    },
+    {
+      "id": "68997ac00000000000dcb2d4",
+      "text": " 　いったん整理",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888893,
+      "updated": 1754888895
+    },
+    {
+      "id": "68997ac10000000000dcb2d5",
+      "text": " 　これと同時に、toolごとにファイルを分ける",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888895,
+      "updated": 1754888903
+    },
+    {
+      "id": "68997aca0000000000dcb2d6",
+      "text": " 2. 複数のproject対応",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888903,
+      "updated": 1754888924
+    },
+    {
+      "id": "68997adf0000000000dcb2d7",
+      "text": " 3. toolの追加",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888924,
+      "updated": 1754888928
+    },
+    {
+      "id": "68997aac0000000000dcb2d2",
+      "text": " (どこか) `pnpm`か`yarn`にpackage managerを置き換える？",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888874,
+      "updated": 1754889007
+    },
+    {
+      "id": "68997b320000000000dcb2d9",
+      "text": "  設定なしに`jsr`を扱えるため[. https://deno.com/blog/add-jsr-with-pnpm-yarn ]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754889007,
+      "updated": 1754889072
+    },
+    {
+      "id": "6899a7af0000000000410e65",
+      "text": "   良い[yosider.icon]",
       "userId": "5c30ba88e98efe0017e5172d",
-      "created": 1754843464,
-      "updated": 1754843464
+      "created": 1754900398,
+      "updated": 1754900400
+    },
+    {
+      "id": "68997b3e0000000000dcb2da",
+      "text": "  user側で`.npmrc`を用意する必要がなくなる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754889019,
+      "updated": 1754889034
+    },
+    {
+      "id": "68997b4e0000000000dcb2db",
+      "text": "  もしくは[@cosense/stdのnpm対応]を待つのもあり",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754889035,
+      "updated": 1754889055
+    },
+    {
+      "id": "6899a6b90000000000410e64",
+      "text": "  denoはうまく行かなかったんだっけ[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754900152,
+      "updated": 1754900169
+    },
+    {
+      "id": "68997b110000000000dcb2d8",
+      "text": "   serverの更新がうまくいかなかった覚え[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754888975,
+      "updated": 1754907501
+    },
+    {
+      "id": "6899c3710000000000a446fa",
+      "text": "    もしかしたらちゃんと設定すれば更新できるかも",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754907502,
+      "updated": 1754907514
+    },
+    {
+      "id": "6899c37d0000000000a446fb",
+      "text": "   あとnode使っているユーザーがほとんどだろうから、denoに統合するのはなんだかなあという気持ちがあった",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754907514,
+      "updated": 1754907594
+    },
+    {
+      "id": "6899c3ce0000000000a446fc",
+      "text": "   Denoでもいいかなあ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754907594,
+      "updated": 1754907599
+    },
+    {
+      "id": "6899c3630000000000a446f9",
+      "text": "  まあnode/deno固有のコードは少ないので、取り急ぎnodeのままにします[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754907487,
+      "updated": 1754915738
+    },
+    {
+      "id": "6899e3990000000000bfdeb2",
+      "text": "   codingは変えようと思えばすぐ変えられる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754915739,
+      "updated": 1754915758
+    },
+    {
+      "id": "6899e41c00000000007c001a",
+      "text": "   おkです[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1754915868,
+      "updated": 1754915890
+    },
+    {
+      "id": "6899e3680000000000bfdeb1",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1754915689,
+      "updated": 1754915689
     }
   ]
 }
