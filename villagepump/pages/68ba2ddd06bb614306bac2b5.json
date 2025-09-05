@@ -1,0 +1,1268 @@
+{
+  "id": "68ba2ddd06bb614306bac2b5",
+  "title": "超函数",
+  "created": 1757031903,
+  "updated": 1757071116,
+  "lines": [
+    {
+      "id": "68ba2ddd06bb614306bac2b5",
+      "text": "超函数",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757031903,
+      "updated": 1757031903
+    },
+    {
+      "id": "68ba2ddf00000000006e8540",
+      "text": "[不連続]関数の[フーリエ変換]を考える際に必ずこの概念が登場するのでまとめておく。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757031903,
+      "updated": 1757037657
+    },
+    {
+      "id": "68ba403200000000006e859f",
+      "text": "準備のための概念定義が長いので、結論だけ知りたい場合は最後の方まで一気にスクロールすると良い",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036594,
+      "updated": 1757036626
+    },
+    {
+      "id": "68ba4439000000000069f576",
+      "text": "ちょうど切らしてた。助かる[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757037631,
+      "updated": 1757037643
+    },
+    {
+      "id": "68ba2e1a00000000006e8544",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757031962,
+      "updated": 1757031962
+    },
+    {
+      "id": "68ba369f00000000006e856a",
+      "text": "[** [ベクトル空間]]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757034144,
+      "updated": 1757037667
+    },
+    {
+      "id": "68ba36a500000000006e856c",
+      "text": "\t集合[$ V]を台とする可換群[$ (V,+)]が体[$ K]をスカラーとするスカラー積[$ \\cdot:K\\times V\\to V]を持つ時、体[$ K]上の[$ (V,+,\\cdot)]をベクトル空間と呼ぶ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034149,
+      "updated": 1757034478
+    },
+    {
+      "id": "68ba375600000000006e856d",
+      "text": " \t1. 加算(可換群)",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034326,
+      "updated": 1757034361
+    },
+    {
+      "id": "68ba377200000000006e856e",
+      "text": " \t\t(対称性)[$ \\bm x+\\bm y=\\bm y+\\bm x]、(単位元)[$ \\bm x+\\bm 0=\\bm x]、(逆元)[$ \\bm x+(-\\bm x)=\\bm 0]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034354,
+      "updated": 1757034794
+    },
+    {
+      "id": "68ba37bf00000000006e856f",
+      "text": " \t2. スカラー積",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034431,
+      "updated": 1757034493
+    },
+    {
+      "id": "68ba37f600000000006e8571",
+      "text": "\t\t\t[$ a(\\bm x+\\bm y)=a\\bm x+a\\bm y] 　　（[$ V]の加法に対するスカラー乗法の分配律）",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034486,
+      "updated": 1757034974
+    },
+    {
+      "id": "68ba38cc00000000006e8573",
+      "text": "\t\t\t[$ (a+b)\\bm x=a\\bm x+b\\bm x]　　（[$ K]の加法に対するスカラー乗法の分配律）",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034700,
+      "updated": 1757034972
+    },
+    {
+      "id": "68ba38e100000000006e8574",
+      "text": "\t\t\t[$ a(b\\bm x)=(ab)\\bm x]　　（体の乗法とスカラー乗法の擬似的な結合律）",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034721,
+      "updated": 1757034970
+    },
+    {
+      "id": "68ba390500000000006e8575",
+      "text": "\t\t\t[$ 1\\bm x=\\bm x]　　（スカラー乗法の単位元）",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034757,
+      "updated": 1757034997
+    },
+    {
+      "id": "68ba39fe00000000006e8576",
+      "text": "\t\t\t\t[$ 1]は体[$ K]の乗法単位元",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757035006,
+      "updated": 1757035022
+    },
+    {
+      "id": "68ba369f00000000006e856b",
+      "text": "\tこれらを単に線形性としてまとめる事が多い",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034144,
+      "updated": 1757035272
+    },
+    {
+      "id": "68ba3a3600000000006e8577",
+      "text": "\t\t(線形性): [$ a\\in K,\\bm x,\\bm y\\in V\\Rightarrow a\\bm x+\\bm y\\in V]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757035062,
+      "updated": 1757035177
+    },
+    {
+      "id": "68ba37f500000000006e8570",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034485,
+      "updated": 1757034485
+    },
+    {
+      "id": "68ba3b2600000000006e8578",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757035302,
+      "updated": 1757035302
+    },
+    {
+      "id": "68ba2e1a00000000006e8545",
+      "text": "[** 内積(実数)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757031962,
+      "updated": 1757033211
+    },
+    {
+      "id": "68ba2df100000000006e8541",
+      "text": " 実数体[$ \\R]上のベクトル空間[$ V]上で定義される二変数の写像[$ \\lang\\bull,\\bull\\rang:V\\times V\\to\\R]が非退化半正定値の対称双線型形式である時に、内積と呼ぶ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757031921,
+      "updated": 1757033281
+    },
+    {
+      "id": "68ba30d000000000006e854a",
+      "text": " [双線型性]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757032656,
+      "updated": 1757037689
+    },
+    {
+      "id": "68ba30ee00000000006e854b",
+      "text": " \t[$ \\lang\\lambda x+y,a\\rang=\\lambda\\lang x,z\\rang+\\lang y,a\\rang]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757032686,
+      "updated": 1757032804
+    },
+    {
+      "id": "68ba2e2d00000000006e8548",
+      "text": " \t[$ \\lang a,\\lambda x+y\\rang =\\lambda\\lang a,x\\rang+\\lang a,y\\rang]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757031982,
+      "updated": 1757032849
+    },
+    {
+      "id": "68ba319200000000006e854c",
+      "text": " [対称性]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757032851,
+      "updated": 1757037689
+    },
+    {
+      "id": "68ba319a00000000006e854d",
+      "text": " \t[$ \\lang x,y\\rang=\\lang y,x\\rang]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757032859,
+      "updated": 1757032879
+    },
+    {
+      "id": "68ba31b000000000006e854e",
+      "text": " [非退化性]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757032880,
+      "updated": 1757037690
+    },
+    {
+      "id": "68ba31c400000000006e854f",
+      "text": " \t[$ \\lang x,x\\rang=0\\in\\R\\Leftrightarrow x=0\\in V]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757032900,
+      "updated": 1757033191
+    },
+    {
+      "id": "68ba326f00000000006e8554",
+      "text": "  \t[$ \\Leftarrow]は双線型性から示せるので要請しなくても良い",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033071,
+      "updated": 1757033094
+    },
+    {
+      "id": "68ba328800000000006e8555",
+      "text": "  \t\t[$ \\lang0,0\\rang=\\lang a-a,0\\rang=\\lang a,0\\rang-\\lang a,0\\rang=0]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033096,
+      "updated": 1757033153
+    },
+    {
+      "id": "68ba320c00000000006e8550",
+      "text": " [半正定値性]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757032972,
+      "updated": 1757037696
+    },
+    {
+      "id": "68ba321f00000000006e8551",
+      "text": " \t[$ \\lang x,x\\rang \\ge0]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757032991,
+      "updated": 1757033014
+    },
+    {
+      "id": "68ba2e2e00000000006e8549",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757031982,
+      "updated": 1757031982
+    },
+    {
+      "id": "68ba33c200000000006e8556",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033411,
+      "updated": 1757033411
+    },
+    {
+      "id": "68ba323f00000000006e8552",
+      "text": "[** 数ベクトルの内積]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033023,
+      "updated": 1757033413
+    },
+    {
+      "id": "68ba33c600000000006e8557",
+      "text": "\tよくある内積の定義は、ベクトル空間を[$ \\R^n]として以下の関数で与えられる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033414,
+      "updated": 1757033455
+    },
+    {
+      "id": "68ba33ef00000000006e8558",
+      "text": "\t[$ \\lang x,y\\rang=\\sum_{k=1}^nx_ky_k]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033455,
+      "updated": 1757033504
+    },
+    {
+      "id": "68ba343300000000006e8559",
+      "text": "\t本当に内積の性質を満たすのか確認してみよう",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033523,
+      "updated": 1757033536
+    },
+    {
+      "id": "68ba344000000000006e855a",
+      "text": "\t\t対称性",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033536,
+      "updated": 1757033543
+    },
+    {
+      "id": "68ba344500000000006e855b",
+      "text": " \t\t[$ \\lang y,x\\rang=\\sum_{k=1}^ny_kx_k=\\sum_{k=1}^nx_ky_k=\\lang x,y\\rang]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033541,
+      "updated": 1757033666
+    },
+    {
+      "id": "68ba34a900000000006e855e",
+      "text": " \t双線型性",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033641,
+      "updated": 1757033644
+    },
+    {
+      "id": "68ba34b000000000006e855f",
+      "text": " \t\t[$ \\lang\\lambda x+y,a\\rang=\\sum_{k=1}^n(\\lambda x_k+y_k)a_k=\\lambda\\sum_{k=1}^nx_ka_k+\\sum_{k=1}^ny_ka_k=\\lambda\\lang x,a\\rang+\\lang y,a\\rang]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033648,
+      "updated": 1757033767
+    },
+    {
+      "id": "68ba352800000000006e8560",
+      "text": " \t\t対称性により第二引数についての証明は省略しても良い。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033769,
+      "updated": 1757033792
+    },
+    {
+      "id": "68ba354000000000006e8562",
+      "text": " \t非退化性と半正定値性",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033792,
+      "updated": 1757033929
+    },
+    {
+      "id": "68ba354b00000000006e8563",
+      "text": " \t\t[$ \\lang x,x\\rang=\\sum_{k=1}^nx_k^2\\ge0]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033803,
+      "updated": 1757034023
+    },
+    {
+      "id": "68ba362800000000006e8564",
+      "text": " \t\t\t[$ x_k^2\\ge0]より半正定値性が示される",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034024,
+      "updated": 1757034044
+    },
+    {
+      "id": "68ba363c00000000006e8565",
+      "text": " \t\t\t[$ x_k\\ne0\\Leftrightarrow x_k^2>0]より非退化性が示される。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034044,
+      "updated": 1757034085
+    },
+    {
+      "id": "68ba323f00000000006e8553",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757033023,
+      "updated": 1757033023
+    },
+    {
+      "id": "68ba366500000000006e8566",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034085,
+      "updated": 1757034085
+    },
+    {
+      "id": "68ba367500000000006e8567",
+      "text": "[** 関数はベクトル空間を成す]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034101,
+      "updated": 1757034116
+    },
+    {
+      "id": "68ba367c00000000006e8569",
+      "text": "\t実関数全体[$ \\R\\to\\R]がベクトル空間を成すことを示そう。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034108,
+      "updated": 1757035542
+    },
+    {
+      "id": "68ba3b7700000000006e8579",
+      "text": " \t加算（可換群）",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757035383,
+      "updated": 1757035509
+    },
+    {
+      "id": "68ba3be300000000006e857a",
+      "text": "  \t[$ f(x)+g(x)=g(x)+f(x)\\quad\\text{.for }\\forall x\\in\\R]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757035491,
+      "updated": 1757038568
+    },
+    {
+      "id": "68ba3c4500000000006e857d",
+      "text": "  \t[$ f(x)+0(x)=f(x)\\quad\\text{.for }\\forall x\\in\\R]　　（[$ 0(x)]は[$ 0]を返す定数関数）",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757035589,
+      "updated": 1757038578
+    },
+    {
+      "id": "68ba3c4200000000006e857c",
+      "text": "  \t[$ f(x)+(-f(x))=0(x)\\quad\\text{.for }\\forall x\\in\\R]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757035586,
+      "updated": 1757038588
+    },
+    {
+      "id": "68ba3c3800000000006e857b",
+      "text": " \tスカラー積",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757035577,
+      "updated": 1757035632
+    },
+    {
+      "id": "68ba3c7200000000006e857e",
+      "text": " \t\t[$ a(f(x)+g(x))=af(x)+g(x)\\quad\\text{.for }\\forall x\\in\\R]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757035634,
+      "updated": 1757038588
+    },
+    {
+      "id": "68ba3ca900000000006e857f",
+      "text": " \t\t[$ (a+b)f(x)=~af(x)+bf(x)\\quad\\text{.for }\\forall x\\in\\R]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757035689,
+      "updated": 1757038588
+    },
+    {
+      "id": "68ba3cbd00000000006e8580",
+      "text": " \t\t[$ a(bf(x))=(ab)f(x)\\quad\\text{.for }\\forall x\\in\\R]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757035709,
+      "updated": 1757038591
+    },
+    {
+      "id": "68ba3ccf00000000006e8581",
+      "text": " \t\t[$ 1f(x)=f(x)\\quad\\text{.for }\\forall x\\in\\R]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757035727,
+      "updated": 1757038592
+    },
+    {
+      "id": "68ba367800000000006e8568",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757034105,
+      "updated": 1757034105
+    },
+    {
+      "id": "68ba405e00000000006e85a0",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036638,
+      "updated": 1757036638
+    },
+    {
+      "id": "68ba3da200000000006e8583",
+      "text": "[** 関数の内積]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757035938,
+      "updated": 1757035959
+    },
+    {
+      "id": "68ba3db900000000006e8584",
+      "text": "\t実関数はベクトル空間を成すので、内積を考えることができる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757035961,
+      "updated": 1757035981
+    },
+    {
+      "id": "68ba3dcd00000000006e8585",
+      "text": "\t取り敢えず、数ベクトルの内積のアナロジーとして、以下のものを考えてみよう",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757035981,
+      "updated": 1757036003
+    },
+    {
+      "id": "68ba3de300000000006e8586",
+      "text": " \t[$ \\lang f,g\\rang=\\int_\\R f(x)g(x){\\rm d}x]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036003,
+      "updated": 1757036260
+    },
+    {
+      "id": "68ba3e1100000000006e8587",
+      "text": "\tこれが内積の性質を満たす条件を確認しよう",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036049,
+      "updated": 1757036120
+    },
+    {
+      "id": "68ba3e7900000000006e8599",
+      "text": " \t収束性",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036153,
+      "updated": 1757036170
+    },
+    {
+      "id": "68ba3e8900000000006e859a",
+      "text": " \t\tそもそも[$ \\int_\\R f(x)g(x){\\rm d}x<\\infty]となるべき",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036170,
+      "updated": 1757036295
+    },
+    {
+      "id": "68ba3e7300000000006e8597",
+      "text": "  対称性",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036147,
+      "updated": 1757036342
+    },
+    {
+      "id": "68ba3e7300000000006e8598",
+      "text": "  \t[$ \\lang g,f\\rang=\\int_\\R g(x)f(x){\\rm d}x=\\int_\\R f(x)g(x){\\rm d}x=\\lang f,g\\rang]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036147,
+      "updated": 1757036352
+    },
+    {
+      "id": "68ba3f4400000000006e859b",
+      "text": "  \tこれはいつでも満たす。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036356,
+      "updated": 1757036521
+    },
+    {
+      "id": "68ba3e4500000000006e8588",
+      "text": "  双線型性",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036101,
+      "updated": 1757036143
+    },
+    {
+      "id": "68ba3e6b00000000006e8589",
+      "text": "  \t[$ \\lang\\lambda f+g,\\phi\\rang=\\int_\\R (\\lambda f(x)+g(x))\\phi(x){\\rm d}x]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036139,
+      "updated": 1757036449
+    },
+    {
+      "id": "68ba3fa200000000006e859c",
+      "text": "  \t\t[$ =\\lambda\\int_\\R f(x)\\phi(x){\\rm d}x+\\int_\\R g(x)\\phi(x){\\rm d}x]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036450,
+      "updated": 1757036490
+    },
+    {
+      "id": "68ba3fcb00000000006e859d",
+      "text": "  \t\t[$ =\\lambda\\lang f,\\phi\\rang+\\lang g,\\phi\\rang]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036493,
+      "updated": 1757036508
+    },
+    {
+      "id": "68ba3fde00000000006e859e",
+      "text": "  \t\tこれもいつでも満たす。また、対称性により第二引数についても満たす。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036512,
+      "updated": 1757036550
+    },
+    {
+      "id": "68ba3e6b00000000006e858d",
+      "text": "  非退化性と半正定値性",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036139,
+      "updated": 1757036685
+    },
+    {
+      "id": "68ba3e6b00000000006e858e",
+      "text": "  \t[$ \\lang f,f\\rang=\\int_\\R f(x)^2{\\rm d}x]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036139,
+      "updated": 1757036887
+    },
+    {
+      "id": "68ba40b300000000006e85a1",
+      "text": "  \t\t[$ ^{\\forall x}\\lbrack f(x)^2\\ge0\\rbrack]より、[$ \\lang f,f\\rang\\ge0]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036724,
+      "updated": 1757036822
+    },
+    {
+      "id": "68ba411700000000006e85a2",
+      "text": "  \t\t[$ ^{\\forall x}\\lbrack f(x)\\ne0\\Rightarrow f(x)^2>0\\rbrack]より、[$ \\lang f,f\\rang=0\\Rightarrow f=0]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036823,
+      "updated": 1757036922
+    },
+    {
+      "id": "68ba418800000000006e85a3",
+      "text": "  \t\tこれもいつでも満たす。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036936,
+      "updated": 1757036941
+    },
+    {
+      "id": "68ba418d00000000006e85a4",
+      "text": " したがって、積分[$ \\int_\\R f(x)g(x){\\rm d}x]の収束のみが要請される。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036943,
+      "updated": 1757036998
+    },
+    {
+      "id": "68ba41c600000000006e85a5",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757036998,
+      "updated": 1757037266
+    },
+    {
+      "id": "68ba42db00000000006e85a7",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757037276,
+      "updated": 1757037276
+    },
+    {
+      "id": "68ba42d300000000006e85a6",
+      "text": "[** Lp空間]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757037267,
+      "updated": 1757037931
+    },
+    {
+      "id": "68ba42dd00000000006e85a8",
+      "text": "\t線形代数の勉強をする際に以下のような話を聞いたことがあるだろう。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757037277,
+      "updated": 1757037450
+    },
+    {
+      "id": "68ba437b00000000006e85aa",
+      "text": " \t(数)ベクトルの大きさを表す際に[$ \\|\\bm x\\|]をノルムと呼ぶ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757037435,
+      "updated": 1757037451
+    },
+    {
+      "id": "68ba437200000000006e85a9",
+      "text": " \t[$ \\|\\bm x\\|_p=\\,^p\\sqrt{\\sum_{k=1}^n\\left|x_k\\right|^p}]をLpノルムと呼び、特にユークリッド距離を表す[$ \\|\\bm x\\|_2]をL2ノルムと呼ぶ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757037426,
+      "updated": 1757037497
+    },
+    {
+      "id": "68ba43b900000000006e85ab",
+      "text": " 関数の Lp ノルムを定義可能な空間を [Lp空間]と呼ぶ",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757037497,
+      "updated": 1757037734
+    },
+    {
+      "id": "68ba440600000000006e85ac",
+      "text": " 準備",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757037574,
+      "updated": 1757037609
+    },
+    {
+      "id": "68ba442700000000006e85ad",
+      "text": "  [$ 1\\le p<\\infty]とする",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757037608,
+      "updated": 1757037610
+    },
+    {
+      "id": "68ba442b00000000006e85ae",
+      "text": "  [$ (S,\\Sigma,\\mu)]を測度空間とする。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757037611,
+      "updated": 1757037627
+    },
+    {
+      "id": "68ba446600000000006e85af",
+      "text": " Lp空間",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757037670,
+      "updated": 1757037685
+    },
+    {
+      "id": "68ba447500000000006e85b0",
+      "text": " \t以下の積分が有界であるような可測関数[$ f:S\\to\\R]全体の集合をLp空間と呼ぶ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757037685,
+      "updated": 1757037795
+    },
+    {
+      "id": "68ba44e300000000006e85b1",
+      "text": " \t[$ \\|f\\|_p=\\,^p\\sqrt{\\int_{S}|f|^p{\\rm d}\\mu}<\\infty]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757037795,
+      "updated": 1757037861
+    },
+    {
+      "id": "68ba457000000000006e85b4",
+      "text": "\t特に、先程定義した[* 関数の内積はL2空間で収束する]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757037936,
+      "updated": 1757037970
+    },
+    {
+      "id": "68ba454100000000006e85b2",
+      "text": "\tTODO: もうちょっと丁寧に加筆する[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757037890,
+      "updated": 1757038137
+    },
+    {
+      "id": "68ba553900000000006e85f8",
+      "text": "\t\t特に、本当に収束するのか",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757041978,
+      "updated": 1757041985
+    },
+    {
+      "id": "68ba463a00000000006e85b6",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038138,
+      "updated": 1757038139
+    },
+    {
+      "id": "68ba463a00000000006e85b7",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038139,
+      "updated": 1757038139
+    },
+    {
+      "id": "68ba463c00000000006e85b8",
+      "text": "[** シュワルツ超函数]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038140,
+      "updated": 1757038145
+    },
+    {
+      "id": "68ba464200000000006e85b9",
+      "text": "\t[$ f:\\R\\to\\R]を局所可積分関数として、テスト関数[$ \\phi:\\R\\to\\R]をコンパクトな台を持つ[$ C^\\infty]級関数とする。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038146,
+      "updated": 1757041815
+    },
+    {
+      "id": "68ba549800000000006e85f7",
+      "text": "\t\tコンパクト: 実数に対しては「有界」と同じ意味",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757041816,
+      "updated": 1757041842
+    },
+    {
+      "id": "68ba5af900000000006e8605",
+      "text": "\t\t[$ \\phi]は任意に選べるようにする。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757043449,
+      "updated": 1757043489
+    },
+    {
+      "id": "68ba5c8200000000006e8608",
+      "text": "\t\t[$ \\phi]の条件を満たす関数の存在も示す。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757043842,
+      "updated": 1757043863
+    },
+    {
+      "id": "68ba631600000000006e8623",
+      "text": " \t\t→[コンパクトな台を持つ滑らかな関数の存在証明]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757045526,
+      "updated": 1757045537
+    },
+    {
+      "id": "68ba549600000000006e85f6",
+      "text": "\tこのとき、",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757041815,
+      "updated": 1757041815
+    },
+    {
+      "id": "68ba46ac00000000006e85ba",
+      "text": "\t\t内積[$ \\lang f,\\phi\\rang=\\int_{\\R} f\\phi{\\rm d}x\\in \\R]は収束する。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038252,
+      "updated": 1757038511
+    },
+    {
+      "id": "68ba470900000000006e85bb",
+      "text": "\t内積[$ \\lang f,\\phi\\rang]は[$ \\phi]に関して線形かつ連続に変化する実数である。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038345,
+      "updated": 1757038541
+    },
+    {
+      "id": "68ba47cd00000000006e85c0",
+      "text": "\t\t(線形性) [$ \\lang f,\\lambda \\phi+\\psi\\rang=\\lambda\\lang f,\\phi\\rang+\\lang f,\\psi\\rang]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038541,
+      "updated": 1757038623
+    },
+    {
+      "id": "68ba482000000000006e85c1",
+      "text": "\t\t(連続性)",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038624,
+      "updated": 1757038843
+    },
+    {
+      "id": "68ba492000000000006e85c3",
+      "text": "\t\t\tL2 ノルム空間で",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038881,
+      "updated": 1757038887
+    },
+    {
+      "id": "68ba490100000000006e85c2",
+      "text": "\t\t\t[$ f_n\\to f,\\phi_n\\to \\phi][$ \\Rightarrow][$ \\lang f_n,\\phi_n\\rang\\to\\lang f,\\phi\\rang]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038849,
+      "updated": 1757038943
+    },
+    {
+      "id": "68ba494c00000000006e85c4",
+      "text": " \tTODO: もっと丁寧に加筆する[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038924,
+      "updated": 1757038968
+    },
+    {
+      "id": "68ba497900000000006e85c5",
+      "text": " よって、関数[$ f]を「テスト関数全体の成すベクトル空間上の連続線形汎関数」と見なせる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038969,
+      "updated": 1757039241
+    },
+    {
+      "id": "68ba4a0600000000006e85c6",
+      "text": " ここで、[$ f]の条件を緩和して関数ではなくても良い物とする。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039110,
+      "updated": 1757039190
+    },
+    {
+      "id": "68ba4a5600000000006e85c7",
+      "text": " すなわち[$ f]に要請する条件を「テスト関数全体の成すベクトル空間上の連続線形汎関数」のみにする。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039190,
+      "updated": 1757039251
+    },
+    {
+      "id": "68ba4a9300000000006e85c8",
+      "text": " そうすると、今まで関数として扱えなかったものをあたかも関数であるかのように扱えるようになる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039251,
+      "updated": 1757039286
+    },
+    {
+      "id": "68ba557200000000006e85f9",
+      "text": " \tTODO: もっと丁寧に加筆する[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757042034,
+      "updated": 1757042040
+    },
+    {
+      "id": "68ba557800000000006e85fa",
+      "text": " \t\t特に一意性",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757042040,
+      "updated": 1757042044
+    },
+    {
+      "id": "68ba4ab700000000006e85c9",
+      "text": " 例: ディラックの[デルタ関数]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1757039287,
+      "updated": 1757071014
+    },
+    {
+      "id": "68ba4ac200000000006e85ca",
+      "text": " \t[$ \\lang\\delta,\\phi\\rang=\\int_\\R\\delta\\phi{\\rm d}x=\\phi(0)]とする。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039298,
+      "updated": 1757039346
+    },
+    {
+      "id": "68ba4af600000000006e85cb",
+      "text": " \tこれを満たす関数（？）[$ \\delta]を考えると、",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039350,
+      "updated": 1757039375
+    },
+    {
+      "id": "68ba4b1400000000006e85cc",
+      "text": " \t\t[$ x\\ne0\\Rightarrow\\delta(x)=0]　←この部分は関数と見なせる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039380,
+      "updated": 1757039436
+    },
+    {
+      "id": "68ba4b3a00000000006e85cd",
+      "text": " \t\t[$ x=0\\Rightarrow\\delta(x)=c]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039418,
+      "updated": 1757039453
+    },
+    {
+      "id": "68ba4b6200000000006e85ce",
+      "text": " \t\t[$ c]の値をどのように設定すると先の内積を満たすのだろうか？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039459,
+      "updated": 1757039482
+    },
+    {
+      "id": "68ba4b7b00000000006e85cf",
+      "text": " \t\t[$ \\lang \\delta,\\phi\\rang=\\int_{\\R}\\delta\\phi{\\rm d}x=\\int_{\\{0\\}}c\\phi(0){\\rm d}x=0?]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039483,
+      "updated": 1757039622
+    },
+    {
+      "id": "68ba4bdf00000000006e85d0",
+      "text": " \t\t\t[$ c]を如何なる実数に設定しても[$ {\\rm d}x]のせいで消える。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039583,
+      "updated": 1757039615
+    },
+    {
+      "id": "68ba4c0c00000000006e85d1",
+      "text": " \t\tしたがって、[$ \\delta]は関数にはならない",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039628,
+      "updated": 1757039704
+    },
+    {
+      "id": "68ba4c6300000000006e85d3",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039715,
+      "updated": 1757039715
+    },
+    {
+      "id": "68ba4c6d00000000006e85d5",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039725,
+      "updated": 1757039725
+    },
+    {
+      "id": "68ba4e1d00000000006e85df",
+      "text": "[** 超関数の微分と内積]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757040157,
+      "updated": 1757040940
+    },
+    {
+      "id": "68ba4e2600000000006e85e0",
+      "text": "\t(普通の)関数の微分と内積の関係を見てみよう",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757040166,
+      "updated": 1757040945
+    },
+    {
+      "id": "68ba4e3000000000006e85e1",
+      "text": " 部分積分の公式により",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757040177,
+      "updated": 1757040424
+    },
+    {
+      "id": "68ba4f2800000000006e85e2",
+      "text": " \t[$ \\int_{\\R} f'\\phi{\\rm d}x=\\lbrack f\\phi\\rbrack_{x\\to-\\infty}^{x\\to\\infty}-\\int_{\\R}f\\phi'{\\rm d}x]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757040424,
+      "updated": 1757040744
+    },
+    {
+      "id": "68ba507300000000006e85e3",
+      "text": " \tここで、[$ \\phi]に有界性を要求していたため、境界値による定数項が[$ 0]になる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757040755,
+      "updated": 1757040791
+    },
+    {
+      "id": "68ba508200000000006e85e4",
+      "text": " \t[$ \\therefore\\lang f',\\phi\\rang=\\int_{\\R}f'\\phi{\\rm d}x=-\\int_{\\R}f\\phi'{\\rm d}x=\\lang f,\\phi'\\rang]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757040770,
+      "updated": 1757040859
+    },
+    {
+      "id": "68ba4e1b00000000006e85dd",
+      "text": "\tしたがって、超関数[$ f]の微分[$ f']を",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757040155,
+      "updated": 1757041007
+    },
+    {
+      "id": "68ba514100000000006e85ea",
+      "text": "\t\t[$ \\lang f',\\phi\\rang=\\lang f,\\phi'\\rang]のように定義する。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757040961,
+      "updated": 1757040996
+    },
+    {
+      "id": "68ba4e1b00000000006e85de",
+      "text": "\t\t\t超関数が一位に定まれば、超関数の微分も一位に定まる[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757040155,
+      "updated": 1757042780
+    },
+    {
+      "id": "68ba511d00000000006e85e8",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757040925,
+      "updated": 1757040934
+    },
+    {
+      "id": "68ba511600000000006e85e7",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757040918,
+      "updated": 1757040918
+    },
+    {
+      "id": "68ba4c6800000000006e85d4",
+      "text": "[** 可積分だが不連続な関数の微分]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039720,
+      "updated": 1757039750
+    },
+    {
+      "id": "68ba55b500000000006e85fb",
+      "text": " 不連続な関数は少なくとも不連続点において微分不可能である。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757042101,
+      "updated": 1757042628
+    },
+    {
+      "id": "68ba55c600000000006e85fc",
+      "text": " \t不連続な関数は不連続点において左極限と右極限が一致しない。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757042118,
+      "updated": 1757042208
+    },
+    {
+      "id": "68ba561f00000000006e85fe",
+      "text": " \t\t[$ \\exist c\\in\\R\\ s.t.\\lim_{\\Delta\\to -0}f(c+\\Delta)\\ne\\lim_{c\\to +0}f(c+\\Delta)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757042208,
+      "updated": 1757042663
+    },
+    {
+      "id": "68ba55f400000000006e85fd",
+      "text": " \t微分可能な関数は、各点において微分の定義式の左右極限が一致する。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757042164,
+      "updated": 1757042206
+    },
+    {
+      "id": "68ba564a00000000006e85ff",
+      "text": " \t\t[$ \\forall x\\in\\R\\ \\lim_{\\Delta\\to -0}\\frac{\\phi(x+\\Delta)-\\phi(x)}{\\Delta}=\\lim_{\\Delta\\to +0}\\frac{\\phi(x+\\Delta)-\\phi(x)}{\\Delta}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757042250,
+      "updated": 1757042514
+    },
+    {
+      "id": "68ba571900000000006e8601",
+      "text": " \t不連続な関数は不連続点において微分の定義式の左右極限が一致しないので微分できない。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757042457,
+      "updated": 1757042486
+    },
+    {
+      "id": "68ba56aa00000000006e8600",
+      "text": " \t\t[$ \\exist c\\in\\R\\ \\lim_{\\Delta\\to-0}\\frac{\\phi(c+\\Delta)-\\phi(x)}{\\Delta}\\ne\\lim_{\\Delta\\to0}\\frac{\\phi(c+\\Delta)-\\phi(x)}{\\Delta}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757042346,
+      "updated": 1757042590
+    },
+    {
+      "id": "68ba510900000000006e85e6",
+      "text": "\t以下のヘヴィサイトの階段関数を考えてみよう",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757040906,
+      "updated": 1757040916
+    },
+    {
+      "id": "68ba4c9200000000006e85d7",
+      "text": "\t\t[$ H_c(x)=\\left\\{\\begin{matrix}0\\quad(x<0)\\\\1\\quad(x>0)\\\\c\\quad(x=0)\\end{matrix}\\right.\\qquad c\\in\\lbrack0,1\\rbrack]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039762,
+      "updated": 1757040106
+    },
+    {
+      "id": "68ba4d6700000000006e85d8",
+      "text": "\t\t[$ c=0]のとき、ステップ関数と呼ばれる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039975,
+      "updated": 1757039987
+    },
+    {
+      "id": "68ba4d7300000000006e85d9",
+      "text": "\tこれは[$ x=0]で明らかに不連続である。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757039987,
+      "updated": 1757040047
+    },
+    {
+      "id": "68ba4dfd00000000006e85db",
+      "text": "\t\t[$ c]をいかなる値に設定しても連続にならない。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757040125,
+      "updated": 1757040138
+    },
+    {
+      "id": "68ba4e0a00000000006e85dc",
+      "text": "\tしかし、この関数は有界なので可積分である。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757040138,
+      "updated": 1757041097
+    },
+    {
+      "id": "68ba51b500000000006e85eb",
+      "text": "\tしたがって、内積を考えることができる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757041077,
+      "updated": 1757041119
+    },
+    {
+      "id": "68ba51df00000000006e85ec",
+      "text": "\t\t[$ \\lang H_c,\\phi\\rang=\\int_{\\R}H_c\\phi(x){\\rm d}x=\\int_{x\\ge0}H_c\\phi(x){\\rm d}x]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757041119,
+      "updated": 1757041198
+    },
+    {
+      "id": "68ba4db400000000006e85da",
+      "text": " 先程の超関数に関する微分の議論から、本来微分不可能なヘヴィサイトの[階段関数]に関する微分を考えてみよう。",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1757040052,
+      "updated": 1757071116
+    },
+    {
+      "id": "68ba528b00000000006e85ed",
+      "text": "  [$ \\lang H_c',\\phi\\rang=\\lang H_c,\\phi'\\rang=-\\int_{-\\infty}^\\infty H(x)\\phi'(x){\\rm d}x]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757041291,
+      "updated": 1757041394
+    },
+    {
+      "id": "68ba52cf00000000006e85ee",
+      "text": "   [$ =-\\int_0^{\\infty}\\phi'(x){\\rm d}x][$ \\qquad\\because][$ H_c(x)]の定義から",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757041362,
+      "updated": 1757041463
+    },
+    {
+      "id": "68ba533a00000000006e85ef",
+      "text": "   [$ =-\\lbrack\\phi(x)\\rbrack_{x=0}^{x\\to\\infty}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757041466,
+      "updated": 1757041520
+    },
+    {
+      "id": "68ba537700000000006e85f0",
+      "text": "   [$ =-(-\\phi(0))=\\phi(0)][$ \\qquad\\because][$ \\phi]は有界なので[$ x\\to\\infty\\Rightarrow\\phi(x)\\to0]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757041528,
+      "updated": 1757041599
+    },
+    {
+      "id": "68ba463000000000006e85b5",
+      "text": "\t\tここで、ディラックのデルタ関数の定義は[$ \\lang\\delta,\\phi\\rang=\\phi(0)]であった。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038128,
+      "updated": 1757041668
+    },
+    {
+      "id": "68ba540400000000006e85f2",
+      "text": "\t\tしたがって、",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757041669,
+      "updated": 1757041672
+    },
+    {
+      "id": "68ba540800000000006e85f3",
+      "text": "\t\t[$ \\lang H_c',\\phi\\rang=\\lang H_c,\\phi'\\rang=\\phi(0)=\\lang\\delta,\\phi\\rang]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757041672,
+      "updated": 1757041717
+    },
+    {
+      "id": "68ba543600000000006e85f4",
+      "text": "\t\t[$ \\therefore H'_c=\\delta]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757041718,
+      "updated": 1757041733
+    },
+    {
+      "id": "68ba47050000000000728b2e",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757038343,
+      "updated": 1757038343
+    },
+    {
+      "id": "68ba546800000000006e85f5",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757041768,
+      "updated": 1757041768
+    },
+    {
+      "id": "68ba589100000000006e8602",
+      "text": "TODO: 内積を複素数で定義する",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757042833,
+      "updated": 1757042846
+    },
+    {
+      "id": "68ba58a500000000006e8604",
+      "text": "\t積分を複素数上で定義しなくちゃいけなくなってダルい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757042854,
+      "updated": 1757042872
+    },
+    {
+      "id": "68ba589100000000006e8603",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757042833,
+      "updated": 1757042833
+    },
+    {
+      "id": "68ba47050000000000728b2f",
+      "text": "[** [佐藤超函数]]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757038343,
+      "updated": 1757038375
+    },
+    {
+      "id": "68ba470a0000000000728b30",
+      "text": "\tまかせた[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038349,
+      "updated": 1757038369
+    },
+    {
+      "id": "68ba474900000000006e85be",
+      "text": "\t\t[takker.icon]の課題とする[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038409,
+      "updated": 1757038409
+    },
+    {
+      "id": "68ba47280000000000728b31",
+      "text": "\t[井戸端民の課題とする][takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757038379,
+      "updated": 1757038401
+    },
+    {
+      "id": "68ba474000000000006e85bd",
+      "text": "\t↑繰り広げられるn次受け[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1757038404,
+      "updated": 1757038435
+    },
+    {
+      "id": "68ba475700000000006e85bf",
+      "text": " これが社会問題となっている[多重下請け構造]である[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757038423,
+      "updated": 1757038494
+    },
+    {
+      "id": "68ba47820000000000299769",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1757038469,
+      "updated": 1757038469
+    }
+  ]
+}
