@@ -2,7 +2,7 @@
   "id": "68a12f1e54c3c535396c410b",
   "title": "shibainurou",
   "created": 1755394024,
-  "updated": 1756981862,
+  "updated": 1758201583,
   "lines": [
     {
       "id": "68a12f1e54c3c535396c410b",
@@ -122,6 +122,2547 @@
       "userId": "5b5e7121417cf700145b98c2",
       "created": 1755396394,
       "updated": 1755396394
+    },
+    {
+      "id": "68cc06cc000000000033f71c",
+      "text": "code:script.js",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201548,
+      "updated": 1758201558
+    },
+    {
+      "id": "68cc06d6000000000033f71e",
+      "text": " // Cosense Link Preview UserScript",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201559,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f71f",
+      "text": " // マウスホバーでリンク先ページをプレビュー表示",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f720",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f721",
+      "text": " (function() {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f722",
+      "text": "     'use strict';",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f723",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f724",
+      "text": "     let previewContainer = null;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f725",
+      "text": "     let currentHoveredLink = null;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f726",
+      "text": "     let hoverTimer = null;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f727",
+      "text": "     let isDebugMode = false; // デバッグモード（コンソールでcosenseLinkPreview.debug = trueで有効化）",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f728",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f729",
+      "text": "     // プレビューコンテナの作成",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f72a",
+      "text": "     function createPreviewContainer() {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f72b",
+      "text": "         if (previewContainer) return previewContainer;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f72c",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f72d",
+      "text": "         previewContainer = document.createElement('div');",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f72e",
+      "text": "         previewContainer.id = 'cosense-link-preview';",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f72f",
+      "text": "         previewContainer.className = 'link-preview-container';",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f730",
+      "text": "         previewContainer.style.cssText = `",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f731",
+      "text": "             position: fixed;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f732",
+      "text": "             background: white;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f733",
+      "text": "             border: 1px solid #ccc;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f734",
+      "text": "             border-radius: 8px;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f735",
+      "text": "             box-shadow: 0 4px 12px rgba(0,0,0,0.15);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f736",
+      "text": "             padding: 12px;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f737",
+      "text": "             width: 600px;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f738",
+      "text": "             height: 70vh;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f739",
+      "text": "             overflow: hidden;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f73a",
+      "text": "             z-index: 10000;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f73b",
+      "text": "             display: none;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f73c",
+      "text": "             font-size: 14px;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f73d",
+      "text": "             line-height: 1.4;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f73e",
+      "text": "         `;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f73f",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f740",
+      "text": "         // Webkitブラウザ用のスクロールバースタイル",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f741",
+      "text": "         const style = document.createElement('style');",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f742",
+      "text": "         style.textContent = `",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f743",
+      "text": "             #cosense-link-preview::-webkit-scrollbar {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f744",
+      "text": "                 width: 6px;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f745",
+      "text": "             }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f746",
+      "text": "             #cosense-link-preview::-webkit-scrollbar-track {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f747",
+      "text": "                 background: #f1f1f1;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f748",
+      "text": "                 border-radius: 3px;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f749",
+      "text": "             }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f74a",
+      "text": "             #cosense-link-preview::-webkit-scrollbar-thumb {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f74b",
+      "text": "                 background: #c1c1c1;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f74c",
+      "text": "                 border-radius: 3px;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f74d",
+      "text": "             }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f74e",
+      "text": "             #cosense-link-preview::-webkit-scrollbar-thumb:hover {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f74f",
+      "text": "                 background: #a1a1a1;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f750",
+      "text": "             }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f751",
+      "text": "         `;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f752",
+      "text": "         if (!document.getElementById('cosense-preview-scrollbar-style')) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f753",
+      "text": "             style.id = 'cosense-preview-scrollbar-style';",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f754",
+      "text": "             document.head.appendChild(style);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f755",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f756",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f757",
+      "text": "         document.body.appendChild(previewContainer);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f758",
+      "text": "         return previewContainer;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f759",
+      "text": "     }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f75a",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f75b",
+      "text": "     // ページ内容を取得する関数",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f75c",
+      "text": "     async function fetchPageContent(pageName) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f75d",
+      "text": "         try {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f75e",
+      "text": "             // CosenseのAPIを使用してページ内容を取得",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f75f",
+      "text": "             const projectName = location.pathname.split('/')[1];",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f760",
+      "text": "             const response = await fetch(`/api/pages/${projectName}/${encodeURIComponent(pageName)}`);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f761",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f762",
+      "text": "             if (!response.ok) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f763",
+      "text": "                 throw new Error('Page not found');",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f764",
+      "text": "             }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f765",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f766",
+      "text": "             const data = await response.json();",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f767",
+      "text": "             return data;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f768",
+      "text": "         } catch (error) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f769",
+      "text": "             console.error('Failed to fetch page content:', error);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f76a",
+      "text": "             return null;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f76b",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f76c",
+      "text": "     }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f76d",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f76e",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f76f",
+      "text": "     // プレビュー内容を生成（iframe版）",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f770",
+      "text": "     function generatePreviewContent(pageData, pageName) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f771",
+      "text": "         if (!pageData) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f772",
+      "text": "             return '<div style=\"color: #999;\">ページが見つかりません</div>';",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f773",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f774",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f775",
+      "text": "         const projectName = location.pathname.split('/')[1];",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f776",
+      "text": "         const pageUrl = `/${projectName}/${encodeURIComponent(pageName)}`;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f777",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f778",
+      "text": "         // iframeでページを表示",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f779",
+      "text": "         const iframeContent = `",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f77a",
+      "text": "             <div style=\"margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #666; border-bottom: 1px solid #eee; padding-bottom: 6px;\">",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f77b",
+      "text": "                 <span>${escapeHtml(pageData.title)}</span>",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f77c",
+      "text": "                 <a href=\"${pageUrl}\" target=\"_blank\" style=\"color: #0066cc; text-decoration: none;\">新しいタブで開く ↗</a>",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f77d",
+      "text": "             </div>",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f77e",
+      "text": "             <iframe",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f77f",
+      "text": "                 src=\"${pageUrl}\"",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f780",
+      "text": "                 style=\"",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f781",
+      "text": "                     width: 100%;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f782",
+      "text": "                     height: calc(70vh - 40px);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f783",
+      "text": "                     border: none;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f784",
+      "text": "                     border-radius: 4px;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f785",
+      "text": "                     background: white;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f786",
+      "text": "                 \"",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f787",
+      "text": "                 sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-top-navigation\"",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f788",
+      "text": "                 loading=\"lazy\">",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f789",
+      "text": "             </iframe>",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f78a",
+      "text": "         `;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f78b",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f78c",
+      "text": "         return iframeContent;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f78d",
+      "text": "     }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f78e",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f78f",
+      "text": "     // HTMLエスケープ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f790",
+      "text": "     function escapeHtml(text) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f791",
+      "text": "         const div = document.createElement('div');",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f792",
+      "text": "         div.textContent = text;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f793",
+      "text": "         return div.innerHTML;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f794",
+      "text": "     }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f795",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f796",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f797",
+      "text": "     // プレビューを表示",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f798",
+      "text": "     function showPreview(link, pageData, pageName) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f799",
+      "text": "         const container = createPreviewContainer();",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f79a",
+      "text": "         container.innerHTML = generatePreviewContent(pageData, pageName);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f79b",
+      "text": "         container.style.display = 'block';",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f79c",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f79d",
+      "text": "         // リンクの位置を基準にプレビューを配置",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f79e",
+      "text": "         const linkRect = link.getBoundingClientRect();",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f79f",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7a0",
+      "text": "         let left = linkRect.left;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7a1",
+      "text": "         let top = linkRect.bottom + 5;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7a2",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7a3",
+      "text": "         // 画面からはみ出る場合の調整",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7a4",
+      "text": "         const previewWidth = 600;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7a5",
+      "text": "         const previewHeight = window.innerHeight * 0.7;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7a6",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7a7",
+      "text": "         if (left + previewWidth > window.innerWidth) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7a8",
+      "text": "             left = window.innerWidth - previewWidth - 20;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7a9",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7aa",
+      "text": "         if (top + previewHeight > window.innerHeight) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7ab",
+      "text": "             top = linkRect.top - previewHeight - 5;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7ac",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7ad",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7ae",
+      "text": "         container.style.left = `${Math.max(10, left)}px`;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7af",
+      "text": "         container.style.top = `${Math.max(10, top)}px`;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7b0",
+      "text": "     }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7b1",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7b2",
+      "text": "     // プレビューを隠す",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7b3",
+      "text": "     function hidePreview() {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7b4",
+      "text": "         if (previewContainer) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7b5",
+      "text": "             previewContainer.style.display = 'none';",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7b6",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7b7",
+      "text": "         currentHoveredLink = null;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7b8",
+      "text": "         if (hoverTimer) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7b9",
+      "text": "             clearTimeout(hoverTimer);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7ba",
+      "text": "             hoverTimer = null;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7bb",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7bc",
+      "text": "     }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7bd",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7be",
+      "text": "     // デバッグログ関数",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7bf",
+      "text": "     function debugLog(message, data = null) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7c0",
+      "text": "         if (isDebugMode) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7c1",
+      "text": "             console.log(`[Cosense Link Preview] ${message}`, data || '');",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7c2",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7c3",
+      "text": "     }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7c4",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7c5",
+      "text": "     // リンクのマウスイベントハンドラー",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7c6",
+      "text": "     function handleLinkHover(event) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7c7",
+      "text": "         // プレビューコンテナ内のリンクは無視",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7c8",
+      "text": "         if (event.target.closest('#cosense-link-preview')) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7c9",
+      "text": "             debugLog('Link inside preview container, skipping');",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7ca",
+      "text": "             return;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7cb",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7cc",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7cd",
+      "text": "         // より確実にリンクを検出",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7ce",
+      "text": "         const link = event.target.closest('a') ||",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7cf",
+      "text": "                     (event.target.tagName === 'A' ? event.target : null);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7d0",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7d1",
+      "text": "         if (!link) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7d2",
+      "text": "             debugLog('No link found');",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7d3",
+      "text": "             return;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7d4",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7d5",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7d6",
+      "text": "         // page-linkクラスを持つリンクのみ対象",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7d7",
+      "text": "         if (!link.classList.contains('page-link')) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7d8",
+      "text": "             debugLog('Link does not have page-link class, skipping', link.className);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7d9",
+      "text": "             return;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7da",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7db",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7dc",
+      "text": "         const href = link.getAttribute('href');",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7dd",
+      "text": "         if (!href) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7de",
+      "text": "             debugLog('Link has no href attribute');",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7df",
+      "text": "             return;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7e0",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7e1",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7e2",
+      "text": "         // 内部リンクのみ対象（相対パスまたは同ドメイン）",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7e3",
+      "text": "         const isInternalLink = href.startsWith('/') ||",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7e4",
+      "text": "                               (href.startsWith('http') && href.includes(location.host));",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7e5",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7e6",
+      "text": "         if (!isInternalLink) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7e7",
+      "text": "             debugLog('External link, skipping', href);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7e8",
+      "text": "             return;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7e9",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7ea",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7eb",
+      "text": "         // フラグメント（#）のみのリンクは除外",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7ec",
+      "text": "         if (href.startsWith('#')) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7ed",
+      "text": "             debugLog('Fragment link, skipping', href);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7ee",
+      "text": "             return;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7ef",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7f0",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7f1",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7f2",
+      "text": "         debugLog('Link hover detected', { href, text: link.textContent });",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7f3",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7f4",
+      "text": "         // 既存のタイマーをクリア",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7f5",
+      "text": "         if (hoverTimer) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7f6",
+      "text": "             clearTimeout(hoverTimer);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7f7",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7f8",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7f9",
+      "text": "         currentHoveredLink = link;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7fa",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7fb",
+      "text": "         // ページ名を抽出",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7fc",
+      "text": "         let pageName;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7fd",
+      "text": "         try {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7fe",
+      "text": "             if (href.startsWith('/')) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f7ff",
+      "text": "                 // 相対パスの場合",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f800",
+      "text": "                 const pathParts = href.split('/').filter(part => part);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f801",
+      "text": "                 pageName = pathParts[pathParts.length - 1];",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f802",
+      "text": "             } else {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f803",
+      "text": "                 // 絶対URLの場合",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f804",
+      "text": "                 const url = new URL(href);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f805",
+      "text": "                 const pathParts = url.pathname.split('/').filter(part => part);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f806",
+      "text": "                 pageName = pathParts[pathParts.length - 1];",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f807",
+      "text": "             }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f808",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f809",
+      "text": "             if (!pageName) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f80a",
+      "text": "                 debugLog('Could not extract page name from href', href);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f80b",
+      "text": "                 return;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f80c",
+      "text": "             }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f80d",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f80e",
+      "text": "             pageName = decodeURIComponent(pageName);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f80f",
+      "text": "             debugLog('Page name extracted', pageName);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f810",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f811",
+      "text": "             // バックグラウンドでコンテンツの読み込みを開始",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f812",
+      "text": "             let pageDataPromise = fetchPageContent(pageName);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f813",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f814",
+      "text": "             // 0.5秒後にプレビューウィンドウを表示",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f815",
+      "text": "             hoverTimer = setTimeout(async () => {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f816",
+      "text": "                 if (currentHoveredLink !== link) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f817",
+      "text": "                     debugLog('Link changed during display timeout, aborting');",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f818",
+      "text": "                     return;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f819",
+      "text": "                 }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f81a",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f81b",
+      "text": "                 try {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f81c",
+      "text": "                     // 読み込み完了を待つ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f81d",
+      "text": "                     const pageData = await pageDataPromise;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f81e",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f81f",
+      "text": "                     if (currentHoveredLink === link) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f820",
+      "text": "                         debugLog('Showing preview', pageData ? 'with data' : 'without data');",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f821",
+      "text": "                         showPreview(link, pageData, pageName);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f822",
+      "text": "                     } else {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f823",
+      "text": "                         debugLog('Link changed during fetch, not showing preview');",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f824",
+      "text": "                     }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f825",
+      "text": "                 } catch (error) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f826",
+      "text": "                     debugLog('Error displaying preview', error);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f827",
+      "text": "                 }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f828",
+      "text": "             }, 500); // 500ms後にプレビューを表示",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f829",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f82a",
+      "text": "         } catch (error) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f82b",
+      "text": "             debugLog('Error in hover handler', error);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f82c",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f82d",
+      "text": "     }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f82e",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f82f",
+      "text": "     function handleLinkLeave(event) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f830",
+      "text": "         // プレビューコンテナ内のリンクは無視",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f831",
+      "text": "         if (event.target.closest('#cosense-link-preview')) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f832",
+      "text": "             return;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f833",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f834",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f835",
+      "text": "         const link = event.target.closest('a') ||",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f836",
+      "text": "                     (event.target.tagName === 'A' ? event.target : null);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f837",
+      "text": "         if (!link) return;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f838",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f839",
+      "text": "         // page-linkクラスを持つリンクのみ対象",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f83a",
+      "text": "         if (!link.classList.contains('page-link')) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f83b",
+      "text": "             return;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f83c",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f83d",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f83e",
+      "text": "         debugLog('Link leave detected', link.textContent);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f83f",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f840",
+      "text": "         // プレビューエリアに移動していない場合のみ隠す",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f841",
+      "text": "         setTimeout(() => {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f842",
+      "text": "             if (!previewContainer || !previewContainer.matches(':hover')) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f843",
+      "text": "                 debugLog('Hiding preview on link leave');",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f844",
+      "text": "                 hidePreview();",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f845",
+      "text": "             } else {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f846",
+      "text": "                 debugLog('Not hiding preview - mouse over preview container');",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f847",
+      "text": "             }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f848",
+      "text": "         }, 100);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f849",
+      "text": "     }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f84a",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f84b",
+      "text": "     // イベントリスナーを設定",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f84c",
+      "text": "     function setupEventListeners() {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f84d",
+      "text": "         document.addEventListener('mouseover', handleLinkHover);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f84e",
+      "text": "         document.addEventListener('mouseout', handleLinkLeave);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f84f",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f850",
+      "text": "         // プレビューコンテナ自体のマウスイベント",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f851",
+      "text": "         document.addEventListener('mouseover', (event) => {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f852",
+      "text": "             if (event.target.closest('#cosense-link-preview')) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f853",
+      "text": "                 // プレビュー上にマウスがある場合は隠さない",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f854",
+      "text": "                 if (hoverTimer) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f855",
+      "text": "                     clearTimeout(hoverTimer);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f856",
+      "text": "                     hoverTimer = null;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f857",
+      "text": "                 }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f858",
+      "text": "             }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f859",
+      "text": "         });",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f85a",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f85b",
+      "text": "         document.addEventListener('mouseout', (event) => {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f85c",
+      "text": "             if (event.target.closest('#cosense-link-preview') &&",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f85d",
+      "text": "                 !event.relatedTarget?.closest('#cosense-link-preview')) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f85e",
+      "text": "                 hidePreview();",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f85f",
+      "text": "             }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f860",
+      "text": "         });",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f861",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f862",
+      "text": "         // ESCキーでプレビューを隠す",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f863",
+      "text": "         document.addEventListener('keydown', (event) => {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f864",
+      "text": "             if (event.key === 'Escape') {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f865",
+      "text": "                 hidePreview();",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f866",
+      "text": "             }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f867",
+      "text": "         });",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f868",
+      "text": "     }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f869",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f86a",
+      "text": "     // 初期化",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f86b",
+      "text": "     function init() {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f86c",
+      "text": "         if (document.readyState === 'loading') {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f86d",
+      "text": "             document.addEventListener('DOMContentLoaded', setupEventListeners);",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f86e",
+      "text": "         } else {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f86f",
+      "text": "             setupEventListeners();",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f870",
+      "text": "         }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f871",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f872",
+      "text": "         // デバッグ機能をグローバルに公開",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f873",
+      "text": "         window.cosenseLinkPreview = {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f874",
+      "text": "             debug: false,",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f875",
+      "text": "             setDebug: function(enabled) {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f876",
+      "text": "                 isDebugMode = enabled;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f877",
+      "text": "                 this.debug = enabled;",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f878",
+      "text": "                 debugLog('Debug mode ' + (enabled ? 'enabled' : 'disabled'));",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f879",
+      "text": "             },",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f87a",
+      "text": "             hidePreview: hidePreview,",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f87b",
+      "text": "             showStats: function() {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f87c",
+      "text": "                 console.log('Current state:', {",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f87d",
+      "text": "                     previewContainer: !!previewContainer,",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f87e",
+      "text": "                     currentHoveredLink: !!currentHoveredLink,",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f87f",
+      "text": "                     hoverTimer: !!hoverTimer",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f880",
+      "text": "                 });",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f881",
+      "text": "             }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f882",
+      "text": "         };",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f883",
+      "text": "     }",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f884",
+      "text": " ",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f885",
+      "text": "     init();",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06ee000000000033f886",
+      "text": " })();",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201583,
+      "updated": 1758201583
+    },
+    {
+      "id": "68cc06cd000000000033f71d",
+      "text": "",
+      "userId": "5eb96339d130f2001ec4947a",
+      "created": 1758201550,
+      "updated": 1758201550
     }
   ]
 }
