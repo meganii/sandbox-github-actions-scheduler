@@ -1,0 +1,176 @@
+{
+  "id": "68d7cdc29866af20ca21d806",
+  "title": "k-ベクトルの内積の成分表示",
+  "created": 1758973389,
+  "updated": 1758980051,
+  "lines": [
+    {
+      "id": "68d7cdc29866af20ca21d806",
+      "text": "k-ベクトルの内積の成分表示",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758973389,
+      "updated": 1758973389
+    },
+    {
+      "id": "68d7cdcc000000000097d7f8",
+      "text": "from [多様体まで丁寧に歩く解析学問題集]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758973389,
+      "updated": 1758973398
+    },
+    {
+      "id": "68d7cdce000000000097d7f9",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758973391,
+      "updated": 1758973391
+    },
+    {
+      "id": "68d7cdd7000000000097d7fa",
+      "text": "[[問題]]: (k-ベクトルの内積): エルミート行列[$ M=M^\\dag\\in K^n]を用いて内積を[$ \\lang\\bm x,\\bm y\\rang=\\bm x^\\dag M\\bm y]で定めるとき、k-ベクトル[$ \\bm a,\\bm b\\in\\wedge^k(K^n)]の内積を成分[$ a_{i,j},b_{i,j,},m_{i,j}]を用いて表せ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758973400,
+      "updated": 1758973403
+    },
+    {
+      "id": "68d7cdd8000000000097d7fb",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758973400,
+      "updated": 1758973400
+    },
+    {
+      "id": "68d7de93000000000097d80c",
+      "text": "行列[$ A]の行列式の成分表示は",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758977683,
+      "updated": 1758977696
+    },
+    {
+      "id": "68d7dea1000000000097d80d",
+      "text": "\t[$ \\det(A)=\\sum_{\\sigma\\in\\Lambda((1,\\cdots,n))}{\\rm sgn}(\\sigma)\\prod_{i=1}^na_{i,\\sigma(i)}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758977697,
+      "updated": 1758978418
+    },
+    {
+      "id": "68d7cddc000000000097d7fc",
+      "text": "行列[$ A]の行列式を余因子(cofactor)[$ c_{i,j}(A)]で表すと",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758973405,
+      "updated": 1758976126
+    },
+    {
+      "id": "68d7cfb6000000000097d801",
+      "text": "\t[$ \\det(A)=\\sum_{j=1}^n a_{i,j}c_{i,j}(A)=\\bm a_i^\\top\\bm c_i(A)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758973879,
+      "updated": 1758977370
+    },
+    {
+      "id": "68d7e1d0000000000097d810",
+      "text": "ズレた余因子の積和は、[$ a_{i,j}:=a_{k,j}]となっている行列の行列式[$ \\det(A_{i:=k})]を求めれば良い。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758978513,
+      "updated": 1758979337
+    },
+    {
+      "id": "68d7e431000000000097d813",
+      "text": "\t[$ a_{i,j}=a_{k,j}]なので[$ A_k]を構成するベクトルは一次従属",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758979122,
+      "updated": 1758979162
+    },
+    {
+      "id": "68d7e373000000000097d812",
+      "text": " [$ \\therefore\\sum_{j=1}^na_{i,j}c_{k,j}(A)=\\det(A_{i:=k})=0]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758978932,
+      "updated": 1758979385
+    },
+    {
+      "id": "68d7d1c7000000000097d803",
+      "text": "余因子行列は、",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758974408,
+      "updated": 1758974419
+    },
+    {
+      "id": "68d7d1d4000000000097d804",
+      "text": "\t[$ C=\\left\\lbrack c_{i,j}(A)\\right\\rbrack_{i,j}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758974420,
+      "updated": 1758974492
+    },
+    {
+      "id": "68d7cea0000000000097d7ff",
+      "text": "古典随伴行列(adjungate matrix)と行列の積は",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758973601,
+      "updated": 1758974014
+    },
+    {
+      "id": "68d7d03d000000000097d802",
+      "text": "\t[$ \\tilde AA=C(A)^\\top A=\\left\\lbrack \\sum_{j=1}^na_{i,j}c_{k,j}(A)\\right\\rbrack_{i,k}=\\det(A)I]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758974014,
+      "updated": 1758976789
+    },
+    {
+      "id": "68d7daf3000000000097d809",
+      "text": " [$ \\therefore A^{-1}=\\frac{\\tilde A}{\\det(A)}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758976755,
+      "updated": 1758977655
+    },
+    {
+      "id": "68d7cddc000000000097d7fd",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758973405,
+      "updated": 1758973405
+    },
+    {
+      "id": "68d7e568000000000097d815",
+      "text": "k-ベクトルの内積は",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758979433,
+      "updated": 1758979449
+    },
+    {
+      "id": "68d7e579000000000097d816",
+      "text": "\t[$ \\lang\\bm a,\\bm b\\rang=\\det(\\lbrack\\lang\\bm a_i,\\bm b_j\\rang\\rbrack_{i,j})]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758979451,
+      "updated": 1758979507
+    },
+    {
+      "id": "68d7e5bf000000000097d817",
+      "text": "\t[$ =\\det(\\lbrack\\bm a_i^\\dag M\\bm b_j\\rbrack_{i,j})]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758979519,
+      "updated": 1758979567
+    },
+    {
+      "id": "68d7e546000000000097d814",
+      "text": "\t[$ =\\det\\left(\\left\\lbrack\\sum_{(\\kappa,\\lambda)=(1,1)}^{(n,n)}\\overline{a_{i,\\kappa}} m_{\\kappa,\\lambda}b_{\\lambda,j}\\right\\rbrack_{i,j}\\right)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758979398,
+      "updated": 1758979861
+    },
+    {
+      "id": "68d7e738000000000097d819",
+      "text": "\t[$ =\\sum_{\\sigma\\in\\Lambda((1,\\cdots,n))}{\\rm sgn}(\\sigma)\\prod_{i=1}^n\\left(\\sum_{(\\kappa,\\lambda)=(1,1)}^{(n,n)}\\overline{a_{i,\\kappa}} m_{\\kappa,\\lambda}b_{\\lambda,\\sigma(i)}\\right)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758979897,
+      "updated": 1758980051
+    },
+    {
+      "id": "68d7e5f5000000000097d818",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1758979574,
+      "updated": 1758979574
+    }
+  ]
+}
