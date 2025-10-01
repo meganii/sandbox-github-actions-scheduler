@@ -2,7 +2,7 @@
   "id": "68c74c39a8bd4117ca126cba",
   "title": "多様体まで丁寧に歩く解析学問題集",
   "created": 1757891648,
-  "updated": 1759232341,
+  "updated": 1759298595,
   "lines": [
     {
       "id": "68c74c39a8bd4117ca126cba",
@@ -2701,10 +2701,10 @@
     },
     {
       "id": "68d5b9860000000000c2f9dc",
-      "text": "\t(エルミート共役): 転置して各成分の複素共役をとった行列[$ A^*=\\lbrack \\overline{a_{j,i}}\\rbrack_{i,j}]をエルミート共役や随伴という。",
+      "text": "\t(エルミート共役): 転置して各成分の複素共役をとった行列[$ A^\\dag=\\lbrack \\overline{a_{j,i}}\\rbrack_{i,j}]をエルミート共役や随伴という。",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1758837126,
-      "updated": 1759149423
+      "updated": 1759290784
     },
     {
       "id": "68d5bb460000000000c2f9ed",
@@ -2987,6 +2987,363 @@
       "updated": 1758960868
     },
     {
+      "id": "68dcc3f700000000000c6da5",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298552,
+      "updated": 1759298552
+    },
+    {
+      "id": "68dcc3f800000000000c6da6",
+      "text": "[** 行列式]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298552,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6da8",
+      "text": "\t(行列式): 連立方程式が一意解を持つ条件を調べるために正方行列からスカラーへの写像[$ \\det:K^{n\\times n}\\to K]を考える。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6da9",
+      "text": "\t\tこのとき、引数を[$ n]本のベクトルと考えると、多変数関数[$ \\det:\\underbrace{K^n\\times\\cdots\\times K^n}_{n\\ \\rm times}\\to K]と見なせる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6daa",
+      "text": "\t\t[$ \\rm det]には以下の性質を要請する。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dab",
+      "text": "\t\t(多重線型性): [$ \\det(\\bm x_1,\\cdots,{\\color{red}k\\bm x_i+\\bm y},\\cdots,\\bm x_n)={\\color{red}k}\\det(\\bm x_1,\\cdots,{\\color{red}\\bm x_i},\\cdots,\\bm x_n)+\\det(\\bm x_1,\\cdots,{\\color{red}\\bm y},\\cdots,\\bm x_n)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dac",
+      "text": "\t\t(交代性): [$ \\det(\\bm x_1,\\cdots,{\\color{red}\\bm a},\\cdots,{\\color{red}\\bm a},\\cdots,\\bm x_n)=0]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dad",
+      "text": "\t\t(単位行列): [$ \\det(\\bm e_1,\\cdots,\\bm e_n)=1]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dae",
+      "text": "\t(解の判別): 行列式に一次独立なベクトルからなる行列を代入したときと、一次従属なベクトルを含むベクトルからなる行列を代入したときで値を比較せよ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6daf",
+      "text": "\t(引数の置換): [$ \\det(\\bm x_1,\\cdots,{\\color{red}\\bm x_j},\\cdots,{\\color{red}\\bm x_i},\\cdots,\\bm x_n)]を[$ \\det(\\bm x_1,\\cdots,{\\color{red}\\bm x_i},\\cdots,{\\color{red}\\bm x_j},\\cdots,\\bm x_n)]を用いて表せ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6db0",
+      "text": "\t(置換): 順序付き集合の要素を入れ替える操作を(n次の)置換と呼ぶ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6db1",
+      "text": "\t\t[$ \\Sigma(x_1,\\cdots,x_i,\\cdots,x_j,\\cdots,x_n)=(x_{\\sigma(1)},\\cdots,x_{\\sigma(i)},\\cdots,x_{\\sigma(j)},\\cdots,x_{\\sigma(n)})]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6db2",
+      "text": "\t\t[$ \\sigma:\\Lambda\\to\\Lambda]は添字集合を始域と終域に取る全単射",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6db3",
+      "text": "\t\t[$ \\sigma=(\\sigma(1),\\cdots,\\sigma(i),\\cdots,\\sigma(j),\\cdots,\\sigma(n))]のように置換後の添字を並べることで置換を明示的に表す。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6db4",
+      "text": "\t(互換): 順序のある集合の2つの要素を入れ替える操作を互換と呼ぶ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6db5",
+      "text": "\t\t[$ (x_{\\sigma(1)},\\cdots,{\\color{red}x_{\\sigma(i)}},\\cdots,{\\color{red}x_{\\sigma(j)}},\\cdots,x_{\\sigma(n)})=(x_1,\\cdots,{\\color{red}x_j},\\cdots,{\\color{red}x_i},\\cdots,x_n)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6db6",
+      "text": "\t\t[$ \\sigma=\\begin{pmatrix}i\\ j\\end{pmatrix}]と書く。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6db7",
+      "text": "\t\t(余談): この書き方は要素数が 2 の置換と紛らわしいため、置換か互換か明示する方が良い。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6db8",
+      "text": "\t(置換の積): 置換した順序集合に再び置換を施す操作を置換の積と呼ぶ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6db9",
+      "text": "\t[[問題]]: (置換群): 置換は群を成すか？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dba",
+      "text": "\t[[問題]]: (互換の積): 有限順序集合における任意の置換は有限個の互換の積で表せるか？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dbb",
+      "text": "\t[[問題]]: (置換の偶奇): 奇数回の互換の積で表される置換の集合と偶数回の互換の積で表される置換の集合の交わりを求めよ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dbc",
+      "text": "\t(置換の符号): 置換を互換の積で表した際の偶奇によって符号[$ {\\rm sgn}(\\sigma)]を割り当てる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dbd",
+      "text": "\t\t[$ |\\sigma|]を置換を構成する互換の個数とすると、",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dbe",
+      "text": "\t\t[$ {\\rm sgn}(\\sigma)=(-1)^{|\\sigma|}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dbf",
+      "text": "\t[[問題]]: (添字の置換の総和): [$ \\left(\\sum_{\\sigma\\in{\\rm Alt}(4)}{\\rm sgn}(\\sigma)\\prod_{i=1}^4a_{i,\\sigma(i)}\\right)\\left(\\sum_{\\sigma\\in{\\rm Alt}(4)}{\\rm sgn}(\\sigma)\\prod_{i=1}^4b_{i,\\sigma(i)}\\right)]を展開せよ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dc0",
+      "text": "\t\t項数が非常に多くなるので事前に見積もってから始めると良い。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dc1",
+      "text": "\t\tなお[$ {\\rm Alt}(n)]は[$ n]次の置換全体を表す。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dc2",
+      "text": "\t[[問題]]: (添字の置換の総和): [$ \\left(\\sum_{\\sigma\\in{\\rm Alt}(4)}{\\rm sgn}(\\sigma)\\prod_{i=1}^4\\left(\\sum_{j=1}^na_{i,j}b_{j,\\sigma(i)}\\right)\\right)]を展開せよ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dc3",
+      "text": "\t\t項数が非常に多くなるので事前に見積もってから始めると良い。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dc4",
+      "text": "\t[[問題]]: (ライプニッツの公式): 行列を構成するベクトルを基底の線形和とすることで n 次正方行列の行列式の値を計算せよ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dc5",
+      "text": "\t[[問題]]: (行列式の性質): [$ \\det(AB)]と[$ \\det(A^{-1})]と[$ \\det(A^\\top)]を[$ \\det(A)]と[$ \\det(B)]を用いて表せ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dc6",
+      "text": " (小行列): 行列[$ A]の[$ i]行目と[$ j]列目を取り除いた行列[$ M_{i,j}(A)]を[$ (i,j)\\text-]小行列(submatrix)と呼ぶ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dc7",
+      "text": " (小行列式): 行列[$ A]の[$ (i,j)\\text-]小行列の行列式[$ m_{i,j}(A)=\\det(M_{i,j}(A))]を小行列式(minor)と呼ぶ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dc8",
+      "text": "\t[[問題]]: (行列式): 行列[$ A]の行列式[$ \\det(A)]を、小行列式で表せ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dc9",
+      "text": "\t\t(行): 第[$ \\color{red}i][* 行]目のベクトルの成分[$ a_{{\\color{red}i},j}]と小行列[$ m_{i,j}(A)]を用いて表せ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dca",
+      "text": "\t\t(列): 第[$ \\color{red}j][* 列]目のベクトルの成分[$ a_{i,{\\color{red}j}}]と小行列[$ m_{i,j}(A)]を用いて表せ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dcb",
+      "text": " (余因子): [$ (i,j)\\text-]小行列式[$ m_{i,j}(A)]に対して、[$ c_{i,j}=(-1)^{i+j}m_{i.j}]を[$ (i,j)\\text-]余因子(cofactor)と呼ぶ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dcc",
+      "text": " [[問題]]: (ラプラス展開): 行列[$ A]の行列式[$ \\det(A)]を余因子を用いて表せ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dcd",
+      "text": "\t\t(行): 第[$ \\color{red}i][* 行]目のベクトルの成分[$ a_{{\\color{red}i},j}]と余因子[$ c_{i,j}(A)]を用いて表せ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dce",
+      "text": "\t\t(列): 第[$ \\color{red}j][* 列]目のベクトルの成分[$ a_{i,{\\color{red}j}}]と余因子[$ c_{i,j}(A)]を用いて表せ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dcf",
+      "text": "\t(余因子行列): 第[$ (i,j)]成分に[$ (i,j)\\text-]余因子[$ c_{i,j}(A)]を並べた行列[$ C(A)=\\lbrack c_{i,j}(A)\\rbrack_{i,j}]を余因子行列(co-factor matrix)と呼ぶ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dd0",
+      "text": "\t(古典随伴行列): 余因子行列の転置[$ \\tilde A=C(A)^\\top]を古典随伴行列(classical adjoint matrix / adjugate matrix)と呼ぶ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dd1",
+      "text": "\t(余談: 訳語問題): どういうわけか大抵の書籍では adjungate matrix のことを余因子行列と記している。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dd2",
+      "text": "\t\tこの事にはいくつかの理由が考えうる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dd3",
+      "text": " \t\t余因子行列を使用する場面よりも古典随伴行列を使用する場面が多い",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dd4",
+      "text": " \t\t古典随伴行列は随伴行列(adjoint matrix)(エルミート行列)と紛らわしい",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dd5",
+      "text": " \tしかし、訳語との整合性と「余因子」と言う用語との整合性を鑑みると、co-factor matrix を余因子行列と呼ぶほうが相応しい。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dd6",
+      "text": "\t[[問題]]: (古典随伴行列): 古典随伴行列と行列の積[$ \\tilde A A]と[$ A\\tilde A]を求めよ。なお、[$ \\det(A)]は計算せずにそのまま用いて良い。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dd7",
+      "text": " [[問題]]: (クラメルの公式): 逆行列[$ A^{-1}]を古典随伴行列[$ \\tilde A]を用いて表せ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
+      "id": "68dcc41f00000000000c6dd8",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759298591,
+      "updated": 1759298591
+    },
+    {
       "id": "68d5ca0a0000000000c2fa04",
       "text": "",
       "userId": "6436266c7ac3c0001bed60e6",
@@ -3093,17 +3450,17 @@
     },
     {
       "id": "68d5cedb0000000000c2fa15",
-      "text": " (エルミート行列): [$ H^*=H]を満たす行列エルミート行列 (Hermitian matrix) と言う。",
+      "text": " (エルミート行列): [$ H^\\dag=H]を満たす行列エルミート行列 (Hermitian matrix) と言う。",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1758842588,
-      "updated": 1759149375
+      "updated": 1759290829
     },
     {
       "id": "68d5cef50000000000c2fa16",
-      "text": "\t[[問題]]: (エルミート対称性): [$ A]をエルミート行列とするとき、2変数関数[$ f(\\bm x,\\bm y)=\\bm x^* H\\bm y]がエルミート対称性を持つことを示せ。",
+      "text": "\t[[問題]]: (エルミート対称性): [$ A]をエルミート行列とするとき、2変数関数[$ f(\\bm x,\\bm y)=\\bm x^\\dag H\\bm y]がエルミート対称性を持つことを示せ。",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1758842615,
-      "updated": 1759149367
+      "updated": 1759290849
     },
     {
       "id": "68d5cf000000000000c2fa17",
@@ -3184,10 +3541,10 @@
     },
     {
       "id": "68da744f00000000001e74c1",
-      "text": "\t[[問題]]: (グラム＝シュミットの直交化): 任意の正則行列[$ P]を[$ \\lbrack\\bm p_1\\cdots\\bm p_n\\rbrack]で表す時、[$ \\bm a_1=\\bm p_1]、[$ \\bm a_k=\\bm p_k-\\sum_{i=1}^{k-1}\\frac{\\bm p_{i}^*\\bm a_{k}}{\\bm p_i^*\\bm p_i}\\bm p_i]のように設定したベクトル[$ \\bm a_1\\cdots\\bm a_n]は[$ \\bm a_i^*\\bm a_j=0\\quad(i\\ne j)]を満たすか？",
+      "text": "\t[[問題]]: (グラム＝シュミットの直交化): 任意の正則行列[$ P]を[$ \\lbrack\\bm p_1\\cdots\\bm p_n\\rbrack]で表す時、[$ \\bm a_1=\\bm p_1]、[$ \\bm a_k=\\bm p_k-\\sum_{i=1}^{k-1}\\frac{\\bm p_{i}^\\dag\\bm a_{k}}{\\bm p_i^\\dag\\bm p_i}\\bm p_i]のように設定したベクトル[$ \\bm a_1\\cdots\\bm a_n]は[$ \\bm a_i^\\dag\\bm a_j=0\\quad(i\\ne j)]を満たすか？",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1759147087,
-      "updated": 1759149332
+      "updated": 1759290911
     },
     {
       "id": "68da7a7400000000001e74c5",
@@ -3569,10 +3926,10 @@
     },
     {
       "id": "68d5d79b0000000000c2fa32",
-      "text": "\t[[問題]]: (内積行列): 双線形写像[$ f(\\bm x,\\bm y)=\\bm x^\\top A\\bm y]が内積の条件を満たすための正方行列[$ A]はどのような行列か？",
+      "text": "\t[[問題]]: (内積行列): 実ベクトルの双線形写像[$ f(\\bm x,\\bm y)=\\bm x^\\top G\\bm y]が内積の条件を満たすための正方行列[$ G]はどのような行列か？",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1758844828,
-      "updated": 1758844938
+      "updated": 1759292392
     },
     {
       "id": "68d3935f0000000000f49b57",
@@ -3639,10 +3996,31 @@
     },
     {
       "id": "68d5d8160000000000c2fa33",
-      "text": "\t[[問題]]: (複素内積行列): 半双線形写像[$ f(\\bm x,\\bm y)=\\bm x^* A\\bm y]が複素内積の条件を満たすための正方行列[$ A]はどのような行列か？",
+      "text": "\t[[問題]]: (複素内積行列): 半双線形写像[$ f(\\bm x,\\bm y)=\\bm x^\\dag G\\bm y]が複素内積の条件を満たすための正方行列[$ G]はどのような行列か？",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1758844951,
-      "updated": 1759149247
+      "updated": 1759292340
+    },
+    {
+      "id": "68dcac150000000000727684",
+      "text": "\t(計量): 内積[$ \\lang\\bm x,\\bm y\\rang=\\bm x^\\dag G\\bm y]を定める行列[$ G]を計量と呼ぶ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759292437,
+      "updated": 1759292437
+    },
+    {
+      "id": "68dcb053000000000072768c",
+      "text": "\t[[問題]]: (ブラケット): ブラベクトル[$ \\lang\\bm x|=\\bm x^\\dag]とケットベクトル[$ |\\bm y\\rang=\\bm y]を定義するとき、内積[$ \\lang\\bm x,\\bm y\\rang]をブラケットで表せ。ただし、計量は[$ G]とする。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759293523,
+      "updated": 1759293528
+    },
+    {
+      "id": "68dcb072000000000072768d",
+      "text": "\t(豆知識): ブラケットは量子力学でよく使われる。ユークリッド空間では計量が単位行列[$ E]になり、ブラとケットがくっついて内積のように見える。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759293555,
+      "updated": 1759293615
     },
     {
       "id": "68d393cc0000000000f49b58",
@@ -3680,11 +4058,46 @@
       "updated": 1758698313
     },
     {
+      "id": "68dca702000000000072767d",
+      "text": "\t[[問題]]: (ミンコフスキー空間は内積空間か): 以下の計量(?)[$ M]により定められる半双線形写像[$ m(\\bm x,\\bm y)=\\bm x^\\dag M\\bm y]を内積(?)として導入した空間をミンコフスキー空間という。[$ m]は内積か？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759291138,
+      "updated": 1759292497
+    },
+    {
+      "id": "68dca8c00000000000727681",
+      "text": "\t\t[$ M=\\begin{bmatrix}-1&0&0&0\\\\0&1&0&0\\\\0&0&1&0\\\\0&0&0&1\\\\\\end{bmatrix}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759291584,
+      "updated": 1759291659
+    },
+    {
+      "id": "68dca7a1000000000072767f",
+      "text": "\t[[問題]]: (ミンコフスキー空間はノルム空間か): ミンコフスキー空間の双線形写像[$ m]から求められる関数[$ n_M(\\bm x)=\\bm x^\\dag M\\bm x]はノルムか？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759291297,
+      "updated": 1759291519
+    },
+    {
+      "id": "68dca7f00000000000727680",
+      "text": "\t[[問題]]: (ミンコフスキー空間は距離空間か): ミンコフスキー空間の双線形写像[$ m]から求められる関数[$ d_M(\\bm x,\\bm y)=(\\bm x-\\bm y)^\\dag M(\\bm x-\\bm y)]は距離か？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759291376,
+      "updated": 1759291532
+    },
+    {
+      "id": "68dcad370000000000727685",
+      "text": "\t(雑談・時間は複素数？): ベクトル[$ \\bm x=\\lbrack t\\ x\\ y\\ z\\rbrack]と[$ M]を用いたミンコフスキー空間は、ベクトル[$ \\hat{\\bm x}=\\lbrack it\\ x\\ y\\ z\\rbrack]と単位行列[$ E]を用いたユークリッド空間に移せば内積空間として議論できる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1759292727,
+      "updated": 1759293004
+    },
+    {
       "id": "68d51e1b0000000000aa8fa8",
       "text": "\t[[問題]]: (内積0): 2つのベクトル[$ \\bm a,\\bm b]の内積が0になる図形的条件を求めよ。",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1758797340,
-      "updated": 1758797972
+      "updated": 1759291138
     },
     {
       "id": "68d390950000000000f49b50",

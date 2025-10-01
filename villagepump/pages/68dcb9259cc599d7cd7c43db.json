@@ -1,0 +1,225 @@
+{
+  "id": "68dcb9259cc599d7cd7c43db",
+  "title": "JSDoc + .d.tsでよくね？",
+  "created": 1759295783,
+  "updated": 1759297506,
+  "lines": [
+    {
+      "id": "68dcb9259cc599d7cd7c43db",
+      "text": "JSDoc + .d.tsでよくね？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759295783,
+      "updated": 1759296154
+    },
+    {
+      "id": "68dcb92f0000000000b6a188",
+      "text": "前編: [JSDocでよくね？]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759295792,
+      "updated": 1759295846
+    },
+    {
+      "id": "68dcb9510000000000b6a18b",
+      "text": "from: [2025/10/01]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759295825,
+      "updated": 1759295835
+    },
+    {
+      "id": "68dcb95b0000000000b6a18d",
+      "text": "",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759295836,
+      "updated": 1759295836
+    },
+    {
+      "id": "68dcb9bd0000000000b6a192",
+      "text": "[綾坂こと.icon]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759295933,
+      "updated": 1759295934
+    },
+    {
+      "id": "68dcb9670000000000b6a18f",
+      "text": "最近[JSR]に自分が作ったものを登録しはじめた",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759295848,
+      "updated": 1759295932
+    },
+    {
+      "id": "68dcb9830000000000b6a190",
+      "text": "そこで自動生成ドキュメントに型を認識させるために[.d.ts]が必要だったので書いたらこれが思ったより良かった",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759295875,
+      "updated": 1759296022
+    },
+    {
+      "id": "68dcb9a60000000000b6a191",
+      "text": "ので、JSDoc + d.tsがいいのではという気持ちになってきている",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759295910,
+      "updated": 1759295968
+    },
+    {
+      "id": "68dcb9e30000000000b6a195",
+      "text": "　昔は別ファイルに情報が書かれているのを嫌っていた([JSDocでよくね？#66ebbfa073e522000010bcb6])が、別にこれでもいいか……となりはじめた",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759295972,
+      "updated": 1759296194
+    },
+    {
+      "id": "68dcbde30000000000b6a1b0",
+      "text": "　やっぱりコード中に型を書く理由はわからない",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296997,
+      "updated": 1759296997
+    },
+    {
+      "id": "68dcbde40000000000b6a1b1",
+      "text": "　\tcode:script.ts",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296997,
+      "updated": 1759296997
+    },
+    {
+      "id": "68dcbde40000000000b6a1b2",
+      "text": "　\t const add = (a: number, b: number): number => a + b;",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296997,
+      "updated": 1759296997
+    },
+    {
+      "id": "68dcbde40000000000b6a1b3",
+      "text": "　\t↑なんでこんなところにnumberを書いちゃうんですか",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296997,
+      "updated": 1759296997
+    },
+    {
+      "id": "68dcbde40000000000b6a1b4",
+      "text": "　\tcode:ts",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296997,
+      "updated": 1759296997
+    },
+    {
+      "id": "68dcbde40000000000b6a1b5",
+      "text": "　\t // script.js",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296997,
+      "updated": 1759296997
+    },
+    {
+      "id": "68dcbde40000000000b6a1b6",
+      "text": "　\t const add = (a, b) => a + b;",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296997,
+      "updated": 1759296997
+    },
+    {
+      "id": "68dcbde40000000000b6a1b7",
+      "text": "　\t // declare.d.ts",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296997,
+      "updated": 1759296997
+    },
+    {
+      "id": "68dcbde40000000000b6a1b8",
+      "text": "　\t declare const add: (a: number, b: number) => number;",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296997,
+      "updated": 1759296997
+    },
+    {
+      "id": "68dcbde60000000000b6a1b9",
+      "text": "　\t↑ロジックと型が分離されている方が見やすい……と私は思っている",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296999,
+      "updated": 1759297015
+    },
+    {
+      "id": "68dcbfda000000000003dc29",
+      "text": "　\t\t[関心の分離]……？(ちょっと違うきがする)",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759297499,
+      "updated": 1759297506
+    },
+    {
+      "id": "68dcbb700000000000b6a199",
+      "text": "　なんとかなってほしいところはまだある",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296369,
+      "updated": 1759296670
+    },
+    {
+      "id": "68dcbac10000000000b6a198",
+      "text": "　　.(m)jsから.d.tsを読む設定の方法が統一されていない",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296194,
+      "updated": 1759296374
+    },
+    {
+      "id": "68dcbb760000000000b6a19a",
+      "text": "　　 [Triple-slash directives]`/// <reference path=\"path/to/declare.d.ts\" />`は[JSR]が対応してない",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296374,
+      "updated": 1759296438
+    },
+    {
+      "id": "68dcbb8e0000000000b6a19c",
+      "text": "　　 [@ts-self-types]`/* @ts-self-types=\"path/to/declare.d.ts\" */`は非[Deno]環境が対応してない",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296399,
+      "updated": 1759296455
+    },
+    {
+      "id": "68dcbbc70000000000b6a19d",
+      "text": "　　 \t[Node.js]を捨てればいい話ではあるかも",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296455,
+      "updated": 1759296557
+    },
+    {
+      "id": "68dcbc2d0000000000b6a1a2",
+      "text": "　　 \t\tもしかして：[Node.jsから逃げる遊び]",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296558,
+      "updated": 1759296563
+    },
+    {
+      "id": "68dcbbe20000000000b6a19e",
+      "text": "　　逆にd.tsに型以外の情報を書きたくない",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296483,
+      "updated": 1759296497
+    },
+    {
+      "id": "68dcbbf00000000000b6a19f",
+      "text": "　　\t[JSR]、JSDocとd.tsの両方がある場合はd.tsしか見ないっぽくてd.tsにJSDocを書く羽目になっている",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296497,
+      "updated": 1759296537
+    },
+    {
+      "id": "68dcbc190000000000b6a1a0",
+      "text": "　　\td.tsには型だけ書かせてくれよ",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296537,
+      "updated": 1759296546
+    },
+    {
+      "id": "68dcbc220000000000b6a1a1",
+      "text": "　　\tいっそロジック・型・説明をそれぞれ分離するのがいいのでは？",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759296547,
+      "updated": 1759296655
+    },
+    {
+      "id": "68dcbe270000000000b6a1c1",
+      "text": "",
+      "userId": "62919f6444e78d001d73e522",
+      "created": 1759297064,
+      "updated": 1759297064
+    }
+  ]
+}
