@@ -1,0 +1,49 @@
+name: Embed clines
+
+on:
+  workflow_run:
+    workflows: ["Scheduled build"]
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    permissions:
+      contents: 'write'
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: ".python-version"
+
+      - name: Install the project
+        run: uv sync --locked --all-extras --dev
+
+      - name: Prepare database
+        run: uv run src/embed_prepare.py
+
+      - name: Run the script
+        run: uv run src/embed_clines.py
+
+      - name: Set Date
+        env:
+          TZ: "Asia/Tokyo"
+        run: echo "CURRENT_DATETIME=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "data/clines.parquet"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ env.CURRENT_DATETIME }}
