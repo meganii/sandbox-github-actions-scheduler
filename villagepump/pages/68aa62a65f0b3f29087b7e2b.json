@@ -2,7 +2,7 @@
   "id": "68aa62a65f0b3f29087b7e2b",
   "title": "微分方程式",
   "created": 1755996846,
-  "updated": 1760263276,
+  "updated": 1760372894,
   "lines": [
     {
       "id": "68aa62a65f0b3f29087b7e2b",
@@ -68,11 +68,32 @@
       "updated": 1756005918
     },
     {
+      "id": "68ed0cc50000000000e263b4",
+      "text": "そもそも積分できる？",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760365765,
+      "updated": 1760365772
+    },
+    {
+      "id": "68ed0ccd0000000000e263b5",
+      "text": "\t→[リッシュのアルゴリズム]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760365773,
+      "updated": 1760365781
+    },
+    {
       "id": "68aa8a3d00000000005c8a7a",
       "text": "",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756006973,
       "updated": 1756006973
+    },
+    {
+      "id": "68ed11b90000000000e263b8",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760367033,
+      "updated": 1760367033
     },
     {
       "id": "68aa872200000000005c8a70",
@@ -153,10 +174,10 @@
     },
     {
       "id": "68aa86c800000000005c8a6e",
-      "text": "  \t[$ x=g(f(t))]",
+      "text": "  \t[$ x=f(g(t))]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756006088,
-      "updated": 1756006154
+      "updated": 1760366468
     },
     {
       "id": "68aa864200000000005c8a6c",
@@ -181,10 +202,10 @@
     },
     {
       "id": "68aa638200000000005c8a22",
-      "text": "\t[$ \\frac{{\\rm d}x}{{\\rm d}t}=f(t)g(x)]",
+      "text": "\t[$ \\frac{{\\rm d}x}{{\\rm d}t}=\\frac{g(t)}{f(x)}]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1755997058,
-      "updated": 1755997120
+      "updated": 1760366447
     },
     {
       "id": "68aa63b400000000005c8a23",
@@ -202,10 +223,10 @@
     },
     {
       "id": "68aa63dd00000000005c8a24",
-      "text": "  \t[$ \\frac1{g(x)}{\\rm d}x=f(t){\\rm d}t]",
+      "text": "  \t[$ f(x){\\rm d}x=g(t){\\rm d}t]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1755997148,
-      "updated": 1755997198
+      "updated": 1760366520
     },
     {
       "id": "68aa63e500000000005c8a25",
@@ -216,31 +237,24 @@
     },
     {
       "id": "68aa641000000000005c8a27",
-      "text": "  \t[$ \\int\\frac1{g(x)}{\\rm d}x=\\int f(t){\\rm d}t]",
+      "text": "  \t[$ \\int f(x){\\rm d}x=\\int g(t){\\rm d}t]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1755997200,
-      "updated": 1755997214
+      "updated": 1760366549
     },
     {
       "id": "68aa663300000000005c8a2b",
-      "text": "  微分する",
+      "text": "  [$ f]の形によってはこの積分が解ける。",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1755997747,
-      "updated": 1755997754
+      "updated": 1760366561
     },
     {
-      "id": "68aa661e00000000005c8a2a",
-      "text": "  \t[$ f(t)=\\frac{\\rm d}{{\\rm d}t}\\int\\frac1{g(x)}{\\rm d}x]",
+      "id": "68ed0fe50000000000e263b6",
+      "text": "  [$ \\therefore x=F^{-1}(G(t)+C)]",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1755997726,
-      "updated": 1756005787
-    },
-    {
-      "id": "68aa66b700000000005c8a2c",
-      "text": "",
-      "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1755997879,
-      "updated": 1756005794
+      "created": 1760366566,
+      "updated": 1760366631
     },
     {
       "id": "68aa642700000000005c8a28",
@@ -248,6 +262,13 @@
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1755997222,
       "updated": 1755997462
+    },
+    {
+      "id": "68ed11a00000000000e263b7",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760367008,
+      "updated": 1760367008
     },
     {
       "id": "68aa67a100000000005c8a2e",
@@ -279,10 +300,10 @@
     },
     {
       "id": "68aa681800000000005c8a32",
-      "text": " \t\t1. 微分要素を求める",
+      "text": " \t\t1. [$ x]を消すために、微分要素を求める",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1755998231,
-      "updated": 1755999040
+      "updated": 1760349135
     },
     {
       "id": "68aa6ae000000000005c8a34",
@@ -314,24 +335,17 @@
     },
     {
       "id": "68aa6b3100000000005c8a37",
-      "text": "  \t\tこれは変数分離形の方程式であるから解ける",
+      "text": "  \t\tこれは変数分離形の方程式であるから解ける。",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1755999025,
-      "updated": 1755999172
+      "updated": 1760349060
     },
     {
       "id": "68aa6bc600000000005c8a39",
       "text": "",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1755999173,
-      "updated": 1755999212
-    },
-    {
-      "id": "68aa8a3300000000005c8a77",
-      "text": "",
-      "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1756006963,
-      "updated": 1756006963
+      "updated": 1760367581
     },
     {
       "id": "68aa6c0900000000005c8a3b",
@@ -342,10 +356,10 @@
     },
     {
       "id": "68aa6c1300000000005c8a3d",
-      "text": "\t[$ \\frac{{\\rm d}x}{{\\rm d}t}+f(t)x=g(t)]",
+      "text": "\t[$ \\frac{{\\rm d}x}{{\\rm d}t}+xf(t)=g(t)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1755999251,
-      "updated": 1755999310
+      "updated": 1760371006
     },
     {
       "id": "68eb7c6700000000001b86fe",
@@ -355,53 +369,32 @@
       "updated": 1760263274
     },
     {
-      "id": "68eb7c6700000000001b86ff",
-      "text": " \t関数の終域が実数であるため、関数に線形性がある。",
-      "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1760263272,
-      "updated": 1760263272
-    },
-    {
-      "id": "68eb7c6700000000001b8700",
-      "text": " \t[$ kx_1+x_2\\in X]ただし、[$ X]は [$ x]としてありうる関数全体の集合",
-      "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1760263272,
-      "updated": 1760263272
-    },
-    {
       "id": "68eb7c6700000000001b8701",
-      "text": " \t[$ \\frac{{\\rm d}x_1}{{\\rm d}t}+f(t)x_1=g(t)\\quad\\cdots(1)]",
+      "text": " \t[$ \\frac{{\\rm d}x_1}{{\\rm d}t}+x_1f(t)=g(t)\\quad\\cdots(1)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1760263272,
-      "updated": 1760263272
+      "updated": 1760371024
     },
     {
       "id": "68eb7c6700000000001b8702",
-      "text": " \t[$ \\frac{{\\rm d}x_2}{{\\rm d}t}+f(t)x_2=g(t)\\quad\\cdots(2)]",
+      "text": " \t[$ \\frac{{\\rm d}x_2}{{\\rm d}t}+x_2f(t)=g(t)\\quad\\cdots(2)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1760263272,
-      "updated": 1760263272
+      "updated": 1760371028
     },
     {
       "id": "68eb7c6700000000001b8703",
-      "text": " \t[$ \\frac{{\\rm d}(x_1-x_2)}{{\\rm d}t}+f(t)(x_1-x_2)=0\\quad\\cdots(1)-(2)]",
+      "text": " \t[$ \\frac{{\\rm d}(x_1-x_2)}{{\\rm d}t}+(x_1-x_2)f(t)=0\\quad\\cdots(1)-(2)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1760263272,
-      "updated": 1760263272
-    },
-    {
-      "id": "68eb7c6700000000001b8704",
-      "text": " \t[$ x_0=x_1-x_2\\in X]なので、",
-      "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1760263272,
-      "updated": 1760263272
+      "updated": 1760371036
     },
     {
       "id": "68eb7c6700000000001b8705",
-      "text": " \t[$ \\frac{{\\rm d}x_0}{{\\rm d}t}+f(t)x_0=0]を解くと、1つの解が見つかる。",
+      "text": " \t[$ \\frac{{\\rm d}x_0}{{\\rm d}t}+x_0f(t)=0]を解くと、特殊解から一般解を生成する式を得る。",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1760263272,
-      "updated": 1760263272
+      "updated": 1760371045
     },
     {
       "id": "68eb7c6700000000001b8706",
@@ -409,6 +402,76 @@
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1760263272,
       "updated": 1760263272
+    },
+    {
+      "id": "68ed21ac0000000000e263c8",
+      "text": "  [$ {\\rm d}x_0=-x_0f(t){\\rm d}t]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760371116,
+      "updated": 1760371132
+    },
+    {
+      "id": "68eccb4a0000000000c1f606",
+      "text": "  [$ \\int\\frac1{x_0}{\\rm d}x_0=-\\int f(t){\\rm d}t]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760349003,
+      "updated": 1760367754
+    },
+    {
+      "id": "68ed14980000000000e263bb",
+      "text": "  [$ x_0=\\frac{C}{\\exp F(t)}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760367768,
+      "updated": 1760368517
+    },
+    {
+      "id": "68ed16150000000000e263bd",
+      "text": "  [$ x=\\frac{C(t)}{\\exp F(t)}]として、[$ C]について整理すると",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760368517,
+      "updated": 1760370003
+    },
+    {
+      "id": "68ed182c0000000000e263c0",
+      "text": "  [$ C(t)=x\\exp F(t)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760368684,
+      "updated": 1760368954
+    },
+    {
+      "id": "68ed18380000000000e263c1",
+      "text": "  [$ C'(t)=\\frac{{\\rm d}x}{{\\rm d}t}\\exp F(t)+x\\{\\exp F(t)\\}f(t)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760368696,
+      "updated": 1760368962
+    },
+    {
+      "id": "68ed18790000000000e263c2",
+      "text": "  [$ \\frac{C'(t)}{\\exp F(t)}=\\frac{{\\rm d}x}{{\\rm d}t}+f(t)x=g(t)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760368761,
+      "updated": 1760368938
+    },
+    {
+      "id": "68ed19690000000000e263c3",
+      "text": "  [$ C(t)=\\int\\{g(t)\\exp F(t)\\}{\\rm d}t]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760369001,
+      "updated": 1760369026
+    },
+    {
+      "id": "68ed19b80000000000e263c4",
+      "text": "  [$ \\therefore x=\\frac{C(t)}{\\exp F(t)}=\\frac{\\int g(t)\\exp F(t){\\rm d}t}{\\exp F(t)}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760369080,
+      "updated": 1760371518
+    },
+    {
+      "id": "68ed16a20000000000e263be",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760368517,
+      "updated": 1760368662
     },
     {
       "id": "68aa6d1700000000005c8a3f",
@@ -419,73 +482,73 @@
     },
     {
       "id": "68aa734400000000005c8a52",
-      "text": "\t\t合成関数と積の微分法を利用する",
+      "text": "\t\t合成関数と積の微分法を利用する。",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756001091,
-      "updated": 1756001105
+      "updated": 1760370113
+    },
+    {
+      "id": "68ed1dc10000000000e263c5",
+      "text": "\t\t左辺がでてきそうな関数を用意して微分する。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760370113,
+      "updated": 1760370129
     },
     {
       "id": "68aa709c00000000005c8a4c",
-      "text": " \t\t[$ \\frac{\\rm d}{{\\rm d}t}\\exp\\left\\{F(t)\\right\\}x=\\exp\\left\\{F(t)\\right\\}\\frac{{\\rm d}x}{{\\rm d}t}+f(t)\\exp\\left\\{F(t)\\right\\}x]",
+      "text": "\t\t[$ \\frac{\\rm d}{{\\rm d}t}x\\exp F(t)=\\frac{{\\rm d}x}{{\\rm d}t}\\cdot\\exp F(t)+xf(t)\\exp F(t)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756000412,
-      "updated": 1756001236
+      "updated": 1760370099
     },
     {
       "id": "68aa73b300000000005c8a53",
-      "text": " \t\t[$ =\\exp\\left\\{F(t)\\right\\}\\left(\\frac{{\\rm d}x}{{\\rm d}t}+f(t)x\\right)]",
+      "text": "\t\t[$ =\\left(\\frac{{\\rm d}x}{{\\rm d}t}+xf(t)\\right)\\exp F(t)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756001203,
-      "updated": 1756001294
+      "updated": 1760371236
     },
     {
       "id": "68aa74bb00000000005c8a54",
-      "text": "  \t\t左辺だ！",
+      "text": " \t[$ =g(t)\\exp F(t)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756001466,
-      "updated": 1756001511
-    },
-    {
-      "id": "68aa74e800000000005c8a56",
-      "text": "  \t[$ =\\exp\\left\\{F(t)\\right\\}g(t)]",
-      "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1756001512,
-      "updated": 1756001534
+      "updated": 1760370108
     },
     {
       "id": "68aa9675000000000050888a",
-      "text": "  \t[$ \\mathrm dx+F'(t)x\\mathrm dt]の[積分因子]が[$ e^{F(t)}]であることを使っている[takker.icon]",
-      "userId": "5ef2bdebb60650001e1280f0",
+      "text": " \t[$ \\mathrm dx+F'(t)x\\mathrm dt]の[積分因子]が[$ e^{F(t)}]であることを使っている[takker.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756010097,
-      "updated": 1756010138
+      "updated": 1760370099
     },
     {
       "id": "68aaa03b00000000005c8aba",
-      "text": "  \tこの例が積分因子の簡単な説明になっている。[Summer498.icon]",
+      "text": " \tこの例が積分因子の簡単な説明になっている。[Summer498.icon]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756012604,
-      "updated": 1756012618
+      "updated": 1760370099
     },
     {
       "id": "68aa74c400000000005c8a55",
-      "text": " \t[$ \\therefore \\frac{\\rm d}{{\\rm d}t}\\exp\\left\\{F(t)\\right\\}x=\\exp\\left\\{F(t)\\right\\}g(t)]",
+      "text": "\t[$ \\therefore \\frac{\\rm d}{{\\rm d}t}x\\exp F(t)=g(t)\\exp F(t)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756001476,
-      "updated": 1756001581
+      "updated": 1760370099
     },
     {
       "id": "68aa753400000000005c8a57",
-      "text": " \t\t[$ \\exp\\left\\{F(t)\\right\\}x=\\int\\exp\\left\\{F(t)\\right\\}g(t){\\rm d}t]",
+      "text": "\t\t[$ x\\exp F(t)=\\int g(t)\\exp F(t){\\rm d}t]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756001588,
-      "updated": 1756001628
+      "updated": 1760370099
     },
     {
       "id": "68aa6d1200000000005c8a3e",
-      "text": " \t\t[$ x=\\exp\\left\\{-F(t)\\right\\}\\left(\\int\\exp\\left\\{F(t)\\right\\}g(t){\\rm d}t\\right)]",
+      "text": "\t\t[$ x=\\frac{\\int g(t)\\exp F(t){\\rm d}t}{\\exp F(t)}]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1755999505,
-      "updated": 1756001689
+      "updated": 1760371536
     },
     {
       "id": "68aa709800000000005c8a4a",
@@ -493,6 +556,13 @@
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756000408,
       "updated": 1756000408
+    },
+    {
+      "id": "68ed28610000000000e263cf",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760372833,
+      "updated": 1760372833
     },
     {
       "id": "68aa75e200000000005c8a58",
@@ -503,10 +573,10 @@
     },
     {
       "id": "68aa75ec00000000005c8a59",
-      "text": "\t[$ \\frac{{\\rm d}x}{{\\rm d}t}+f(t)x=g(t)x^k]",
+      "text": "\t[$ \\frac{{\\rm d}x}{{\\rm d}t}+xf(t)=x^kg(t)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756001771,
-      "updated": 1756001824
+      "updated": 1760370907
     },
     {
       "id": "68aa763100000000005c8a5a",
@@ -530,46 +600,39 @@
       "updated": 1756004860
     },
     {
-      "id": "68aa76a600000000005c8a5c",
-      "text": " \t\t微分してみよう",
-      "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1756001958,
-      "updated": 1756004953
-    },
-    {
       "id": "68aa825500000000005c8a5e",
-      "text": " \t\t[$ \\frac{{\\rm d}z}{{\\rm d}t}=\\frac{\\rm d}{{\\rm d}t}x^{1-k}=(1-k)x^{-k}\\frac{{\\rm d}x}{{\\rm d}t}]",
+      "text": " \t\t[$ \\frac{{\\rm d}z}{{\\rm d}t}=\\frac{{\\rm d}z}{{\\rm d}x}\\frac{{\\rm d}x}{{\\rm d}t}=\\left(\\frac{\\rm d}{{\\rm d}x}x^{1-k}\\right)\\frac{{\\rm d}x}{{\\rm d}t}=(1-k)x^{-k}\\frac{{\\rm d}x}{{\\rm d}t}]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756004949,
-      "updated": 1756004949
+      "updated": 1760370655
     },
     {
       "id": "68aa823f00000000005c8a5d",
-      "text": "\t\t両辺に[$ (1-k)x^{-k}]をかけると",
+      "text": "\t\t方程式の両辺に[$ (1-k)x^{-k}]をかけると",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756004927,
-      "updated": 1756004971
+      "updated": 1760370708
     },
     {
       "id": "68aa826b00000000005c8a5f",
-      "text": "  \t[$ (1-k)x^{-k}\\frac{{\\rm d}x}{{\\rm d}t}+f(t)x(1-k)x^{-k}=g(t)x^k(1-k)x^{-k}]",
+      "text": "  \t[$ (1-k)x^{-k}\\frac{{\\rm d}x}{{\\rm d}t}+(1-k)x^{-k}xf(t)=(1-k)x^{-k}x^kg(t)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756004971,
-      "updated": 1756005012
+      "updated": 1760370932
     },
     {
       "id": "68aa82e300000000005c8a61",
-      "text": "  \t[$ \\frac{{\\rm d}z}{{\\rm d}t}+(1-k)f(t)x^{1-k}=g(t)]",
+      "text": "  \t[$ \\frac{{\\rm d}z}{{\\rm d}t}+(1-k)x^{1-k}f(t)=(1-k)g(t)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756005091,
-      "updated": 1756005132
+      "updated": 1760370856
     },
     {
       "id": "68aa831300000000005c8a62",
-      "text": "  \t[$ \\frac{{\\rm d}z}{{\\rm d}t}+(1-k)f(t)z=g(t)]",
+      "text": "  \t[$ \\frac{{\\rm d}z}{{\\rm d}t}+(1-k)zf(t)=(1-k)g(t)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756005139,
-      "updated": 1756005146
+      "updated": 1760370952
     },
     {
       "id": "68aa832800000000005c8a63",
@@ -587,17 +650,38 @@
     },
     {
       "id": "68aa833d00000000005c8a65",
-      "text": "",
+      "text": "\t\t[$ \\therefore z=\\frac{\\int (1-k)g(t)\\exp\\{(1-k)F(t)\\}{\\rm d}t}{\\exp\\{(1-k)F(t)\\}}]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756005181,
-      "updated": 1756005182
+      "updated": 1760371949
     },
     {
-      "id": "68aa833e00000000005c8a66",
+      "id": "68ed237f0000000000e263c9",
+      "text": "\t\t[$ z=x^{1-k}]なので",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760371583,
+      "updated": 1760371597
+    },
+    {
+      "id": "68ed238d0000000000e263ca",
+      "text": "\t\t[$ x=z^{k-1}=\\left(\\frac{\\int (1-k)g(t)\\exp\\{(1-k)F(t)\\}{\\rm d}t}{\\exp\\{(1-k)F(t)\\}}\\right)^{k-1}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760371597,
+      "updated": 1760371958
+    },
+    {
+      "id": "68ed24870000000000e263cb",
       "text": "",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1756005182,
-      "updated": 1756005182
+      "created": 1760371848,
+      "updated": 1760371941
+    },
+    {
+      "id": "68ed25010000000000e263cc",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760371969,
+      "updated": 1760371969
     },
     {
       "id": "68aa8a4600000000005c8a7b",
@@ -608,10 +692,10 @@
     },
     {
       "id": "68aa8a6000000000005c8a7e",
-      "text": "\t[$ \\frac{{\\rm d}^2}{{\\rm d}t^2}x+a\\frac{{\\rm d}}{{\\rm d}t}x+bx=0]",
+      "text": "\t[$ \\frac{{\\rm d}^2x}{{\\rm d}t^2}+a\\frac{{\\rm d}x}{{\\rm d}t}+bx=0]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756007009,
-      "updated": 1756007084
+      "updated": 1760372104
     },
     {
       "id": "68aa8ab000000000005c8a7f",
@@ -761,11 +845,25 @@
       "updated": 1756013398
     },
     {
+      "id": "68ed27860000000000e263cd",
+      "text": "\tこの考え方を高階に一般化すると、定数係数同次線形[[4階]]微分方程式までは解ける（4次方程式までは解けるため）",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760372614,
+      "updated": 1760372703
+    },
+    {
       "id": "68aaa0c300000000005c8abb",
-      "text": "",
+      "text": " \t[$ \\frac{{\\rm d}^4x}{{\\rm d}t^4}+a\\frac{{\\rm d}^3x}{{\\rm d}t^3}+b\\frac{{\\rm d}^2x}{{\\rm d}t^2}+c\\frac{{\\rm d}x}{{\\rm d}t}+dx=0]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756012739,
-      "updated": 1756012739
+      "updated": 1760372747
+    },
+    {
+      "id": "68ed28220000000000e263ce",
+      "text": " \t現実的にはそんなに複雑な式は出てこない。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760372771,
+      "updated": 1760372793
     },
     {
       "id": "68aaa35700000000005c8abc",
@@ -773,6 +871,13 @@
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756013399,
       "updated": 1756013399
+    },
+    {
+      "id": "68ed287f0000000000e263d0",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760372863,
+      "updated": 1760372863
     },
     {
       "id": "68aa8ec300000000005c8a8a",
@@ -783,10 +888,10 @@
     },
     {
       "id": "68aa8eea00000000005c8a8b",
-      "text": "\t[$ \\frac{{\\rm d}^2}{{\\rm d}t^2}x+a\\frac{{\\rm d}}{{\\rm d}t}x+bx=g(x)]",
+      "text": "\t[$ \\frac{{\\rm d}^2x}{{\\rm d}t^2}+a\\frac{{\\rm d}x}{{\\rm d}t}+bx=g(x)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756008171,
-      "updated": 1756008202
+      "updated": 1760372567
     },
     {
       "id": "68aa8f3c00000000005c8a8c",
@@ -1027,6 +1132,13 @@
       "updated": 1756009766
     },
     {
+      "id": "68ed289e0000000000e263d1",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760372894,
+      "updated": 1760372894
+    },
+    {
       "id": "68aa952700000000005c8aa3",
       "text": "オイラー型",
       "userId": "6436266c7ac3c0001bed60e6",
@@ -1182,10 +1294,10 @@
     },
     {
       "id": "68aaaab500000000005c8acc",
-      "text": " \t指数関数を定義することで上記微分方程式が解けるようになっている。",
+      "text": " \t実際、殆ど全ての微分方程式は指数関数が定義されていないと解けない。",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1756015286,
-      "updated": 1756015339
+      "updated": 1760372443
     },
     {
       "id": "68aaa3c800000000005c8abe",
