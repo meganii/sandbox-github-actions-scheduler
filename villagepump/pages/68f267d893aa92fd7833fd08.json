@@ -2,7 +2,7 @@
   "id": "68f267d893aa92fd7833fd08",
   "title": "ニュートンの恒等式",
   "created": 1760716762,
-  "updated": 1760723357,
+  "updated": 1760783410,
   "lines": [
     {
       "id": "68f267d893aa92fd7833fd08",
@@ -34,10 +34,10 @@
     },
     {
       "id": "68f269b50000000000543b34",
-      "text": " [$ \\bm x:=(x_1,x_2,\\cdots,x_D)]",
+      "text": " [$ \\bm x:=\\{x_1,x_2,\\cdots,x_D\\}]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1760717238,
-      "updated": 1760719171
+      "updated": 1760780484
     },
     {
       "id": "68f26ac30000000000543b38",
@@ -55,38 +55,31 @@
     },
     {
       "id": "68f267da0000000000543b30",
-      "text": " [$ \\pi _{\\bm x}(n):=\\sum_{i=1}^Dx_i^n\\quad(n\\ge1)]",
+      "text": " [$ p_{\\bm x}(n):=\\sum_{x_i\\in\\bm x}x_i^n\\quad(n\\ge1)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1760716762,
-      "updated": 1760722379
+      "updated": 1760780514
     },
     {
-      "id": "68f26e4f0000000000543b40",
-      "text": " [$ p_{\\bm x}(n):=(-1)^n\\pi_{\\bm x}(n)\\quad(n\\ge1)]",
+      "id": "68f36aef000000000072c0a9",
+      "text": " [$ p_{\\bm x}(n):=0\\quad(n\\le0)]",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1760718416,
-      "updated": 1760722382
+      "created": 1760783088,
+      "updated": 1760783117
     },
     {
-      "id": "68f27d4a0000000000543b53",
-      "text": " [$ p_{\\bm x}(n):=0\\quad(n\\le 0)]",
+      "id": "68f36b0e000000000072c0aa",
+      "text": " \tゼロパディング",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1760722250,
-      "updated": 1760723054
+      "created": 1760783119,
+      "updated": 1760783124
     },
     {
       "id": "68f280730000000000543b54",
-      "text": " \tゼロパディング",
-      "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1760723060,
-      "updated": 1760723063
-    },
-    {
-      "id": "68f26ac40000000000543b39",
       "text": "",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1760717509,
-      "updated": 1760717509
+      "created": 1760723060,
+      "updated": 1760779566
     },
     {
       "id": "68f268070000000000543b31",
@@ -97,17 +90,17 @@
     },
     {
       "id": "68f2683b0000000000543b33",
-      "text": " [$ e_{\\bm x}(n):=\\sum_{r=1}^n\\prod_{e_i\\in\\,_{\\bm x}C_r}\\!\\!x_i\\quad(n\\ge1)]",
+      "text": " [$ e_{\\bm x}(n):=\\sum_{\\mathcal X\\in\\,_{\\bm x}C_n}\\prod_{x_i\\in\\mathcal X}x_i\\quad(n\\ge1)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1760716860,
-      "updated": 1760722492
+      "updated": 1760779629
     },
     {
       "id": "68f269ef0000000000543b36",
-      "text": "\t[$ _{\\bm x}C_r]は[$ \\bm x]の要素を[$ r]個、順不同に選択する",
+      "text": "\t[$ _{\\bm x}C_r]は[$ \\bm x]の要素を[$ r]個、順不同に選択したもの全体の集合",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1760717296,
-      "updated": 1760718179
+      "updated": 1760774637
     },
     {
       "id": "68f26a130000000000543b37",
@@ -121,7 +114,7 @@
       "text": "\t[$ e_{\\bm x}(n):=0\\quad (n>D)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1760717547,
-      "updated": 1760722724
+      "updated": 1760779558
     },
     {
       "id": "68f27c850000000000543b51",
@@ -139,66 +132,269 @@
     },
     {
       "id": "68f26b450000000000543b3d",
-      "text": "ニュートン恒等式",
+      "text": "[[ニュートン恒等式]]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1760717637,
-      "updated": 1760717640
+      "updated": 1760782833
     },
     {
-      "id": "68f26b4d0000000000543b3e",
-      "text": " [$ ne_{\\bm x}(n)=-\\sum_{k=1}^n(-1)^ke_{\\bm x}(n-k)\\pi_{\\bm x}(k)\\quad(n\\le D)]",
+      "id": "68f33e4a000000000072c086",
+      "text": " [$ n e_{\\bm x}(n)=-\\sum_{\\kappa=0}^{n-1}(-1)^{n-\\kappa}p_{\\bm x}(n-\\kappa)e_{\\bm x}(\\kappa)\\quad(\\forall n\\in\\N)]",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1760717645,
-      "updated": 1760721843
-    },
-    {
-      "id": "68f271c20000000000543b42",
-      "text": " \t[$ =-\\sum_{k=1}^ne_{\\bm x}(n-k)p_{\\bm x}(k)]",
-      "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1760721841,
-      "updated": 1760721841
-    },
-    {
-      "id": "68f280940000000000543b55",
-      "text": " \t[$ =-\\sum_{k=n-D}^ne_{\\bm x}(n-k)p_{\\bm x}(k)\\quad(\\because k\\le0\\Rightarrow p_{\\bm x}(k)=0)]",
-      "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1760723093,
-      "updated": 1760723169
-    },
-    {
-      "id": "68f267d90000000000543b2e",
-      "text": " [$ 0=ne_{\\bm x}(n)=-\\sum_{k=n-D}^n(-1)^ke_{\\bm x}(n-k)\\pi_{\\bm x}(k)\\quad(n>D)]",
-      "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1760716762,
-      "updated": 1760721915
-    },
-    {
-      "id": "68f27bcc0000000000543b50",
-      "text": " \t[$ =-\\sum_{k=n-D}^ne_{\\bm x}(n-k)p_{\\bm x}(k)]",
-      "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1760721868,
-      "updated": 1760722675
+      "created": 1760771659,
+      "updated": 1760776309
     },
     {
       "id": "68f280fb0000000000543b56",
-      "text": " [$ \\therefore n e_{\\bm x}(n)=-\\sum_{k=n-D}^ne_{\\bm x}(n-k)p_{\\bm x}(k)\\quad(\\forall n)]",
+      "text": "  [$ =-\\sum_{k=1}^n(-1)^kp_{\\bm x}(k)e_{\\bm x}(n-k)\\quad(\\forall n\\in\\N)]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1760723196,
-      "updated": 1760723230
+      "updated": 1760776284
     },
     {
-      "id": "68f2814e0000000000543b57",
-      "text": "",
+      "id": "68f2d4d4000000000048b6c5",
+      "text": "  [$ =-\\sum_{\\kappa=n-D}^{n-1}(-1)^{n-\\kappa}p_{\\bm x}(n-\\kappa)e_{\\bm x}(\\kappa)\\quad(\\forall n\\in\\N)]",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1760723279,
-      "updated": 1760723357
+      "created": 1760744661,
+      "updated": 1760783170
     },
     {
-      "id": "68f279010000000000543b4d",
+      "id": "68f36b35000000000072c0ab",
+      "text": "  [$ =-\\sum_{k=1}^{D}(-1)^kp_{\\bm x}(k)e_{\\bm x}(n-k)\\quad(\\forall n\\in\\N)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760783158,
+      "updated": 1760783278
+    },
+    {
+      "id": "68f36b81000000000072c0ad",
+      "text": "  ゼロパディング非巡回畳み込み",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760783234,
+      "updated": 1760783247
+    },
+    {
+      "id": "68f36b8e000000000072c0ae",
+      "text": " \t注意点として、畳み込みの範囲内に[$ e_{\\bm x}(D)]を入れないようにすること。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760783247,
+      "updated": 1760783345
+    },
+    {
+      "id": "68f36b35000000000072c0ac",
       "text": "",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1760721153,
-      "updated": 1760721153
+      "created": 1760783158,
+      "updated": 1760783158
+    },
+    {
+      "id": "68f2d899000000000048b6c8",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760745626,
+      "updated": 1760747017
+    },
+    {
+      "id": "68f2de09000000000048b6d6",
+      "text": "証明",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760747018,
+      "updated": 1760783410
+    },
+    {
+      "id": "68f33985000000000072c07e",
+      "text": " see: [https://manabitimes.jp/math/1304 ニュートンの恒等式とその証明 | 高校数学の美しい物語]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760770438,
+      "updated": 1760770452
+    },
+    {
+      "id": "68f33a80000000000072c084",
+      "text": " まず、[$ x_i]の値が[$ 1\\le i\\le D]の範囲でしか設定されていないので、",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760770689,
+      "updated": 1760770697
+    },
+    {
+      "id": "68f33a7c000000000072c083",
+      "text": " \t[$ ^{\\forall i\\in\\{i\\in\\N|i\\le 0,D\\le i\\}}\\lbrack x_i=0\\rbrack]とする。（ゼロパディング）",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760770685,
+      "updated": 1760770705
+    },
+    {
+      "id": "68f35dd9000000000072c09a",
+      "text": " すると、[$ n>D]の場合に必ず[$ x_i=0]になる[$ i]が選ばれる。（鳩の巣原理）",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760779738,
+      "updated": 1760779797
+    },
+    {
+      "id": "68f35e1b000000000072c09b",
+      "text": "  よって、[$ \\sum_{\\mathcal X\\in\\,_{\\bm x}C_n}\\prod_{x_i\\in\\mathcal X}x_i=0=e_{\\bm x}(n)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760779804,
+      "updated": 1760779928
+    },
+    {
+      "id": "68f2d8aa000000000048b6ca",
+      "text": "\t[$ \\prod_{i=1}^n(x_i-t)=(-1)^nt^n+\\sum_{\\kappa =1}^{n}(-1)^{n-\\kappa}t^{n-\\kappa}\\sum_{\\mathcal X\\in\\,_{\\bm x}C_\\kappa}\\prod_{x_i\\in\\mathcal X}x_i\\quad(n\\ge D)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760745643,
+      "updated": 1760781339
+    },
+    {
+      "id": "68f2d97b000000000048b6cb",
+      "text": " \t[$ =(-1)^nt^n+\\sum_{\\kappa=1}^n(-1)^{n-\\kappa}t^{n-\\kappa}e_{\\bm x}(\\kappa)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760745851,
+      "updated": 1760780019
+    },
+    {
+      "id": "68f2d8a6000000000048b6c9",
+      "text": " \t[$ =(-1)^nt^ne_{\\bm x}(0)+\\sum_{\\kappa=1}^n(-1)^{n-\\kappa}t^{n-\\kappa}e_{\\bm x}(\\kappa)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760745639,
+      "updated": 1760780049
+    },
+    {
+      "id": "68f350c5000000000072c08f",
+      "text": " \t[$ =\\sum_{\\kappa=0}^{n}(-1)^{n-\\kappa}t^{n-\\kappa}e_{\\bm x}(\\kappa)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760776390,
+      "updated": 1760780164
+    },
+    {
+      "id": "68f31ca5000000000072c06f",
+      "text": " [$ ^{\\forall x_j\\in\\bm x}\\left\\lbrack0=\\prod_{i=1}^n(x_i-x_j)=\\left.\\prod_{i=1}^n(x_i-t)\\right|_{t=x_j}\\right\\rbrack\\quad\\cdots(1)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760763046,
+      "updated": 1760780719
+    },
+    {
+      "id": "68f31cf0000000000072c070",
+      "text": "  [$ \\because j=i\\quad\\Rightarrow\\quad0=(x_i-x_j)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760763121,
+      "updated": 1760763167
+    },
+    {
+      "id": "68f31d20000000000072c071",
+      "text": " [$ \\therefore\\,^{\\forall x_j\\in\\bm x}\\left\\lbrack0=\\sum_{\\kappa=0}^n(-1)^{n-\\kappa}x_j^{n-\\kappa}e_{\\bm x}(\\kappa)=\\left.\\sum_{\\kappa=0}^n(-1)^{n-\\kappa}t^{n-\\kappa}e_{\\bm x}(\\kappa)\\right|_{t=x_j}\\right\\rbrack]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760763169,
+      "updated": 1760780739
+    },
+    {
+      "id": "68f31d69000000000072c072",
+      "text": " [$ 0=\\sum_{x_j\\in\\bm x}\\sum_{\\kappa=0}^{n}(-1)^{n-\\kappa}x_j^{n-\\kappa}e_{\\bm x}(\\kappa)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760771044,
+      "updated": 1760780856
+    },
+    {
+      "id": "68f2d9f3000000000048b6cf",
+      "text": "  [$ =\\sum_{\\kappa=0}^n(-1)^{n-\\kappa}\\left(\\sum_{x_j\\in\\bm x}x_j^{n-\\kappa}\\right)e_{\\bm x}(\\kappa)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760745971,
+      "updated": 1760780831
+    },
+    {
+      "id": "68f31f0f000000000072c074",
+      "text": "  [$ =ne_{\\bm x}(n)+\\sum_{\\kappa=0}^{n-1}(-1)^{n-\\kappa}\\left(\\sum_{x_j\\in\\bm x}x_j^{n-\\kappa}\\right)e_{\\bm x}(\\kappa)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760763664,
+      "updated": 1760780821
+    },
+    {
+      "id": "68f31f16000000000072c075",
+      "text": "  [$ =ne_{\\bm x}(n)+\\sum_{\\kappa=0}^{n-1}(-1)^{n-\\kappa}p_{\\bm x}(n-\\kappa)e_{\\bm x}(\\kappa)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760763671,
+      "updated": 1760780206
+    },
+    {
+      "id": "68f31f8b000000000072c077",
+      "text": " [$ \\therefore ne_{\\bm x}(n)=-\\sum_{\\kappa=0}^{n-1}(-1)^{n-\\kappa}p_{\\bm x}(n-\\kappa)e_{\\bm x}(\\kappa)\\quad\\quad\\cdots(1)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760763788,
+      "updated": 1760780220
+    },
+    {
+      "id": "68f36446000000000072c09e",
+      "text": " [$ n=D]のとき、[$ e_{\\bm x}(n)]はただ一つの項からなる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760781383,
+      "updated": 1760781535
+    },
+    {
+      "id": "68f364e2000000000072c0a1",
+      "text": "  [$ e_{\\bm x}(n)=e_{\\bm x}(D)=\\sum_{\\mathcal X\\in\\,_{\\bm x}C_D}\\prod_{x_i\\in\\mathcal X}x_i=\\prod_{x_i\\in\\bm x}x_i]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760781539,
+      "updated": 1760781632
+    },
+    {
+      "id": "68f364b9000000000072c0a0",
+      "text": " [$ n<D]のとき、[$ e_{\\bm x}(n)]はいくつかの項からなる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760781498,
+      "updated": 1760781539
+    },
+    {
+      "id": "68f31f61000000000072c076",
+      "text": "  [$ e_{\\bm x}(n)=\\sum_{\\mathcal X\\in\\,_{\\bm x}C_n}\\prod_{x_i\\in\\mathcal X}x_i]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760763746,
+      "updated": 1760781661
+    },
+    {
+      "id": "68f3663d000000000072c0a4",
+      "text": "\tそれぞれの項は[$ n=D']の新たな集合[$ \\mathcal X]の積とみなせる",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760781887,
+      "updated": 1760781903
+    },
+    {
+      "id": "68f36479000000000072c09f",
+      "text": "\t\t[$ e_{\\bm x}(n)=\\sum_{\\mathcal X\\in\\,_{\\bm x}C_n}e_{\\mathcal X}(n)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760781434,
+      "updated": 1760781905
+    },
+    {
+      "id": "68f366bb000000000072c0a5",
+      "text": "\t\t\t[$ =\\sum_{\\mathcal X\\in\\,_{\\bm x}C_n}-\\frac1n\\sum_{\\kappa=0}^{n-1}(-1)^{n-\\kappa}p_{\\mathcal X}(n-\\kappa)e_{\\mathcal X}(\\kappa)\\qquad(\\because 1)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760782013,
+      "updated": 1760782526
+    },
+    {
+      "id": "68f36571000000000072c0a2",
+      "text": " \t\t[$ =-\\frac1n\\sum_{\\mathcal X\\in\\,_{\\bm x}C_n}\\sum_{\\kappa=0}^{n-1}(-1)^{n-\\kappa}p_{\\mathcal X}(n-\\kappa)e_{\\mathcal X}(\\kappa)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760781682,
+      "updated": 1760782418
+    },
+    {
+      "id": "68f367f7000000000072c0a7",
+      "text": "\t\t[$ ne_{\\bm x}(x)=-\\sum_{\\mathcal X\\in\\,_{\\bm x}C_n}\\sum_{\\kappa=0}^{n-1}(-1)^{n-\\kappa}p_{\\mathcal X}(n-\\kappa)e_{\\mathcal X}(\\kappa)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760782329,
+      "updated": 1760782503
+    },
+    {
+      "id": "68f3670a000000000072c0a6",
+      "text": " \t\t[$ =-\\sum_{\\kappa=0}^{n-1}(-1)^{n-\\kappa}p_{\\bm x}(n-\\kappa)e_{\\bm x}(\\kappa)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760782092,
+      "updated": 1760782563
+    },
+    {
+      "id": "68f36888000000000072c0a8",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1760782473,
+      "updated": 1760782473
     }
   ]
 }
