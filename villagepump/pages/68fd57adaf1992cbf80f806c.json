@@ -1,0 +1,897 @@
+{
+  "id": "68fd57adaf1992cbf80f806c",
+  "title": "三角行列",
+  "created": 1761433519,
+  "updated": 1761475681,
+  "lines": [
+    {
+      "id": "68fd57adaf1992cbf80f806c",
+      "text": "三角行列",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761433519,
+      "updated": 1761433519
+    },
+    {
+      "id": "68fd57af0000000000199f39",
+      "text": "計算が楽、対称行列の無駄な情報を削れる等の利点がある。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761433519,
+      "updated": 1761433562
+    },
+    {
+      "id": "68fd57da0000000000199f3b",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761433563,
+      "updated": 1761433563
+    },
+    {
+      "id": "68fd57db0000000000199f3c",
+      "text": "対角成分[$ a_{i,i}]を堺にして、",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761433563,
+      "updated": 1761433668
+    },
+    {
+      "id": "68fd58440000000000199f3d",
+      "text": "\t右上半分[$ a_{i,j}\\quad(i\\le j)]にのみ非零成分がある行列を上三角行列や右三角行列と呼び[$ U]や[$ R]で表す。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761433668,
+      "updated": 1761433731
+    },
+    {
+      "id": "68fd59540000000000199f44",
+      "text": "\t\tLU分解のUであり、QR分解のRである。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761433940,
+      "updated": 1761433954
+    },
+    {
+      "id": "68fd58480000000000199f3e",
+      "text": "\t左下半分[$ a_{i,j}\\quad(i\\ge j)]にのみ非零成分がある行列を下三角行列や左三角行列と呼び[$ L]で表す。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761433672,
+      "updated": 1761433741
+    },
+    {
+      "id": "68fd5ffa0000000000199f62",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435643,
+      "updated": 1761435643
+    },
+    {
+      "id": "68fd58900000000000199f3f",
+      "text": "長方形行列に対しても三角行列を考えられるが、正方行列について考えると良い性質が多く見えてくる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761433744,
+      "updated": 1761435680
+    },
+    {
+      "id": "68fd59640000000000199f45",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761433956,
+      "updated": 1761433956
+    },
+    {
+      "id": "68fd59170000000000199f42",
+      "text": "このページの便宜的に下三角行列全体の集合を[$ \\mathcal L]とし、上三角行列全体の集合を[$ \\mathcal U]としよう。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761433879,
+      "updated": 1761433933
+    },
+    {
+      "id": "68fd5fa40000000000199f61",
+      "text": "\t大きさを指定したい時は[$ \\mathcal L(n)]や[$ \\mathcal U(n)]としよう。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435557,
+      "updated": 1761435581
+    },
+    {
+      "id": "68fd59670000000000199f46",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761433959,
+      "updated": 1761433959
+    },
+    {
+      "id": "68fd6c170000000000199f96",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438743,
+      "updated": 1761438743
+    },
+    {
+      "id": "68fd58900000000000199f40",
+      "text": "上三角行列を転置すると下三角行列になる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761433744,
+      "updated": 1761433850
+    },
+    {
+      "id": "68fd59b90000000000199f47",
+      "text": " [$ U\\in\\mathcal U\\quad\\Rightarrow\\quad U^\\top\\in\\mathcal L]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761434041,
+      "updated": 1761434089
+    },
+    {
+      "id": "68fd58fa0000000000199f41",
+      "text": "下三角行列を転置すると上三角行列になる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761433850,
+      "updated": 1761433860
+    },
+    {
+      "id": "68fd57bb0000000000199f3a",
+      "text": " [$ L\\in\\mathcal L\\quad\\Rightarrow\\quad L^\\top\\in\\mathcal U]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761433532,
+      "updated": 1761434118
+    },
+    {
+      "id": "68fd5a350000000000199f4a",
+      "text": "転置は集合[$ \\mathcal L]と集合[$ \\mathcal U]の間の同型写像(isomorphism)となる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761434165,
+      "updated": 1761434424
+    },
+    {
+      "id": "68fd5b380000000000199f4b",
+      "text": "\t従って、[$ \\mathcal L]に付いて考察すれば[$ \\mathcal U]についてはその結果を転用できる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761434424,
+      "updated": 1761434462
+    },
+    {
+      "id": "68fd59f70000000000199f48",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761434103,
+      "updated": 1761434103
+    },
+    {
+      "id": "68fd6c0c0000000000199f94",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438732,
+      "updated": 1761438732
+    },
+    {
+      "id": "68fd60270000000000199f63",
+      "text": "下三角行列全体はベクトル空間を成す。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435688,
+      "updated": 1761435706
+    },
+    {
+      "id": "68fd603b0000000000199f64",
+      "text": "\t[$ A,B\\in\\mathcal L\\quad\\Rightarrow\\quad kA+B\\in\\mathcal L]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435707,
+      "updated": 1761435732
+    },
+    {
+      "id": "68fd60590000000000199f65",
+      "text": "\t零成分をスカラー倍しても0であり、零成分同士を足しても0なので。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435738,
+      "updated": 1761435767
+    },
+    {
+      "id": "68fd607d0000000000199f66",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435773,
+      "updated": 1761435773
+    },
+    {
+      "id": "68fd6c0b0000000000199f93",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438731,
+      "updated": 1761438731
+    },
+    {
+      "id": "68fd5b5f0000000000199f4c",
+      "text": "下三角行列同士の積は下三角行列であり、特に対角成分はそれぞれの対角成分の積になる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761434463,
+      "updated": 1761436329
+    },
+    {
+      "id": "68fd5b760000000000199f4e",
+      "text": "\t[$ A,B\\in\\mathcal L\\quad\\Rightarrow\\quad AB\\in\\mathcal L]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761434486,
+      "updated": 1761434528
+    },
+    {
+      "id": "68fd5c640000000000199f50",
+      "text": "\t[[証明]]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761434724,
+      "updated": 1761434728
+    },
+    {
+      "id": "68fd5c090000000000199f4f",
+      "text": " \t行列積の各成分は、[$ AB=\\lbrack a_{i,j}\\rbrack_{i,j}\\lbrack b_{j,k}\\rbrack_{j,k}=\\left\\lbrack\\sum_j a_{i,j} b_{j,k}\\right\\rbrack_{i,k}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761434633,
+      "updated": 1761434855
+    },
+    {
+      "id": "68fd5c710000000000199f51",
+      "text": " \t[$ i<j]において、[$ a_{i,j}=0]であり、[$ j<k]において[$ b_{j,k}=0]なので、",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761434738,
+      "updated": 1761434811
+    },
+    {
+      "id": "68fd5cbb0000000000199f52",
+      "text": "  \t[$ i<k]においては[$ a_{i,j}b_{j,k}=0]となる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761434811,
+      "updated": 1761436626
+    },
+    {
+      "id": "68fd636a0000000000199f74",
+      "text": "  \t[$ i=k]に置いては[$ \\sum_j a_{i,j} b_{j,k}=a_{i,i}b_{i,i}]となる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761436523,
+      "updated": 1761436626
+    },
+    {
+      "id": "68fd64040000000000199f78",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761436677,
+      "updated": 1761436677
+    },
+    {
+      "id": "68fd6c080000000000199f92",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438728,
+      "updated": 1761438728
+    },
+    {
+      "id": "68fd5f2a0000000000199f5d",
+      "text": "下三角行列の行列式は対角成分の積である。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435434,
+      "updated": 1761435790
+    },
+    {
+      "id": "68fd5f3f0000000000199f5f",
+      "text": "\t[[証明]]:",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435456,
+      "updated": 1761435475
+    },
+    {
+      "id": "68fd60a60000000000199f67",
+      "text": "\t\t[$ A\\in\\mathcal L(n)]とする。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435815,
+      "updated": 1761435823
+    },
+    {
+      "id": "68fd5f520000000000199f60",
+      "text": "\t\t[$ \\det(A)=\\sum_{\\sigma\\in{\\rm Aut}(n)}{\\rm sgn}(\\sigma)\\prod_{i=1}^n a_{i,\\sigma(i)}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435475,
+      "updated": 1761435549
+    },
+    {
+      "id": "68fd60ec0000000000199f68",
+      "text": " \t\t[$ =\\prod_{i=1}^na_{i,i}+\\sum_{\\sigma\\in{\\rm Aut}(n)\\setminus e}{\\rm sgn}(\\sigma)\\prod_{i=1}^n a_{i,\\sigma(i)}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435884,
+      "updated": 1761435943
+    },
+    {
+      "id": "68fd61310000000000199f69",
+      "text": " \t\t\t[$ e]は恒等置換を表す。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435953,
+      "updated": 1761435963
+    },
+    {
+      "id": "68fd5f350000000000199f5e",
+      "text": " \t\t[$ =\\prod_{i=1}^na_{i,i}+0]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435445,
+      "updated": 1761435972
+    },
+    {
+      "id": "68fd614c0000000000199f6b",
+      "text": " \t\t\t積の中に必ず零成分が混入するため。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435980,
+      "updated": 1761436001
+    },
+    {
+      "id": "68fd613e0000000000199f6a",
+      "text": "\t\t[$ \\therefore\\det(A)=\\prod_{i=1}^na_{i,i}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435967,
+      "updated": 1761436032
+    },
+    {
+      "id": "68fd62330000000000199f70",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761436211,
+      "updated": 1761436211
+    },
+    {
+      "id": "68fdfc410000000000eb254f",
+      "text": "上記部分の書き換え、以下はどうです？[ik.icon]",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475650,
+      "updated": 1761475674
+    },
+    {
+      "id": "68fdfc5a0000000000eb2550",
+      "text": "\tcode:tex",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475675,
+      "updated": 1761475680
+    },
+    {
+      "id": "68fdfc610000000000eb2551",
+      "text": "\t \\begin{align*}",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc610000000000eb2552",
+      "text": "    & A\\in\\mathcal L(n)とする。 \\\\",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc610000000000eb2553",
+      "text": "    ",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc610000000000eb2554",
+      "text": "    \\det(A) ",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc610000000000eb2555",
+      "text": "    ",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc610000000000eb2556",
+      "text": "    &= \\sum_{\\sigma\\in{\\rm Aut}(n)}{\\rm sgn}(\\sigma)\\prod_{i=1}^n a_{i,\\sigma(i)} \\\\",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc610000000000eb2557",
+      "text": "    ",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc610000000000eb2558",
+      "text": "    &= \\prod_{i=1}^na_{i,i}+\\sum_{\\sigma\\in{\\rm Aut}(n)\\setminus e}{\\rm sgn}(\\sigma)\\prod_{i=1}^n a_{i,\\sigma(i)} ",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc610000000000eb2559",
+      "text": "    \\text{ }( e は恒等置換を表す。) \\\\",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc610000000000eb255a",
+      "text": "    ",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc610000000000eb255b",
+      "text": "    &= \\prod_{i=1}^na_{i,i}+0 \\text{ } (\\because 積の中に必ず零成分が混入するため。) \\\\",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc610000000000eb255c",
+      "text": "    ",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc610000000000eb255d",
+      "text": "    & \\text{ } \\therefore\\det(A)=\\prod_{i=1}^na_{i,i}",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc610000000000eb255e",
+      "text": "    ",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc610000000000eb255f",
+      "text": "  \\end{align*} \\\\",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475681,
+      "updated": 1761475681
+    },
+    {
+      "id": "68fdfc410000000000eb254e",
+      "text": "",
+      "userId": "65fef0edd171010025a85984",
+      "created": 1761475649,
+      "updated": 1761475649
+    },
+    {
+      "id": "68fd6c040000000000199f91",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438724,
+      "updated": 1761438724
+    },
+    {
+      "id": "68fd66960000000000199f7b",
+      "text": "正則な下三角行列の逆行列は下三角行列であり、対角成分が逆数になる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761437335,
+      "updated": 1761437335
+    },
+    {
+      "id": "68fd6bb30000000000199f90",
+      "text": "\t[[証明]]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438643,
+      "updated": 1761438646
+    },
+    {
+      "id": "68fd67700000000000199f80",
+      "text": "\t下三角行列[$ A]は[$ i<j]において成分[$ a_{i,j}]が[$ 0]である。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761437552,
+      "updated": 1761438545
+    },
+    {
+      "id": "68fd6ac80000000000199f8e",
+      "text": "\t下三角行列の小行列[$ {\\rm minor}_{i,j}(A)]は",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438409,
+      "updated": 1761438409
+    },
+    {
+      "id": "68fd67fd0000000000199f81",
+      "text": "\t\t[$ i>j]において、対角成分が全て0の下三角行列になる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761437693,
+      "updated": 1761438554
+    },
+    {
+      "id": "68fd67fe0000000000199f82",
+      "text": "\t\tまた、[$ i=j]において、下三角行列になり、対角成分は[$ a_{i,i}]を除いたものになる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761437694,
+      "updated": 1761437808
+    },
+    {
+      "id": "68fd68710000000000199f84",
+      "text": "\tこのため、小行列式[$ \\det({\\rm minor}_{i,j}(A))]は",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761437810,
+      "updated": 1761437844
+    },
+    {
+      "id": "68fd689b0000000000199f85",
+      "text": "\t\t[$ i>j]において、[$ \\det({\\rm minor}_{i,j}(A))=0]となる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761437852,
+      "updated": 1761438558
+    },
+    {
+      "id": "68fd689c0000000000199f86",
+      "text": "\t\tまた、[$ i=j]において、[$ \\det({\\rm minor}_{i,j}(A))=\\prod_{k\\ne i}a_{k,k}]となる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761437852,
+      "updated": 1761437918
+    },
+    {
+      "id": "68fd68e10000000000199f88",
+      "text": "\tまた、余因子[$ \\tilde A_{i,j}]は[$ (-1)^{i+j}\\det({\\rm minor}_{i,j}(A))]であるため、特筆すべき値については小行列式と等しい。すなわち、",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761437921,
+      "updated": 1761438078
+    },
+    {
+      "id": "68fd69820000000000199f89",
+      "text": "\t\t[$ i>j]において、[$ \\tilde A_{i,j}=0]となる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438082,
+      "updated": 1761438568
+    },
+    {
+      "id": "68fd69830000000000199f8a",
+      "text": "\t\tまた、[$ i=j]において、[$ \\tilde A_{i,j}=\\prod_{k\\ne i}a_{k,k}]となる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438083,
+      "updated": 1761438217
+    },
+    {
+      "id": "68fd66970000000000199f7c",
+      "text": "\tクラメルの公式より、逆行列は古典随伴行列 (adjugate matrix) を行列式で割ったものになる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761437335,
+      "updated": 1761437460
+    },
+    {
+      "id": "68fd66970000000000199f7d",
+      "text": " \t[$ A^{-1}=\\frac1{\\det(A)}\\left\\lbrack\\tilde A_{y,x}\\right\\rbrack_{x,y}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761437335,
+      "updated": 1761438689
+    },
+    {
+      "id": "68fd69b30000000000199f8c",
+      "text": " \tこのため、逆行列の成分は[$ x<y]のとき[$ 0]になり、[$ x=y]のとき[$ \\frac1{a_{x,x}}]になる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438131,
+      "updated": 1761438701
+    },
+    {
+      "id": "68fd6b8d0000000000199f8f",
+      "text": " これはすなわち対角成分が逆数の下三角行列である。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438605,
+      "updated": 1761438634
+    },
+    {
+      "id": "68fd66a50000000000199f7f",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761437350,
+      "updated": 1761437589
+    },
+    {
+      "id": "68fd66990000000000199f7e",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761437338,
+      "updated": 1761437338
+    },
+    {
+      "id": "68fd5eab0000000000199f58",
+      "text": "下三角行列の固有値は対角成分に並ぶ。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435308,
+      "updated": 1761437338
+    },
+    {
+      "id": "68fd5ec60000000000199f5a",
+      "text": "\t[[説明]]:",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435335,
+      "updated": 1761436255
+    },
+    {
+      "id": "68fd5efa0000000000199f5b",
+      "text": "\t\t[$ L\\in\\mathcal L]とする。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435386,
+      "updated": 1761435396
+    },
+    {
+      "id": "68fd5efb0000000000199f5c",
+      "text": "\t\t固有値[$ \\lambda]は[$ \\det(L-\\lambda I)=0]を満たす。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435387,
+      "updated": 1761436141
+    },
+    {
+      "id": "68fd618a0000000000199f6c",
+      "text": "\t\t[$ \\lambda I]は対角行列であり、下三角行列とも見なせるため、[$ L-\\lambda I]は下三角行列である。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761436042,
+      "updated": 1761436079
+    },
+    {
+      "id": "68fd61ae0000000000199f6d",
+      "text": "\t\t下三角行列の行列式は対角成分の積なので、[$ \\lambda]を対角成分のそれぞれと等しくすると、先の行列式を[$ 0]にする。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761436079,
+      "updated": 1761436161
+    },
+    {
+      "id": "68fd62040000000000199f6e",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761436165,
+      "updated": 1761436664
+    },
+    {
+      "id": "68fd6c280000000000199f97",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438760,
+      "updated": 1761438760
+    },
+    {
+      "id": "68fd5d740000000000199f53",
+      "text": "このため正則な下三角行列とその積は群を成す。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761434996,
+      "updated": 1761435308
+    },
+    {
+      "id": "68fd5d950000000000199f54",
+      "text": "\t(結合律): 行列積の計算は結合律を満たす。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435029,
+      "updated": 1761435060
+    },
+    {
+      "id": "68fd5db40000000000199f55",
+      "text": "\t(単位元): 単位行列も下三角行列に含まれる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435060,
+      "updated": 1761435075
+    },
+    {
+      "id": "68fd5dc30000000000199f56",
+      "text": "\t(逆元): 正則な行列なので逆元を持ち、逆元も下三角行列である。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761435075,
+      "updated": 1761438790
+    },
+    {
+      "id": "68fd5b6a0000000000199f4d",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761434475,
+      "updated": 1761434475
+    },
+    {
+      "id": "68fd6c580000000000199f98",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438808,
+      "updated": 1761438810
+    },
+    {
+      "id": "68fd6c5a0000000000199f9a",
+      "text": "正方行列を下三角行列と上三角行列の積に分解できる。（[LU分解]）",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438810,
+      "updated": 1761445819
+    },
+    {
+      "id": "68fd6c780000000000199f9b",
+      "text": "\t下三角行列と上三角行列の片側の対角成分を[$ 1]に固定することで成分ごとの方程式が解けるようになる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438840,
+      "updated": 1761439125
+    },
+    {
+      "id": "68fd6d960000000000199f9d",
+      "text": " \t[$ A=LU]と分解する時、成分ごとの方程式は以下のようになる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439126,
+      "updated": 1761439308
+    },
+    {
+      "id": "68fd6da00000000000199f9e",
+      "text": " \t[$ a_{i,k}=\\sum_jl_{i,j}u_{j,k}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439137,
+      "updated": 1761439295
+    },
+    {
+      "id": "68fd6e540000000000199f9f",
+      "text": " (ドゥーリトル法): [$ L]の対角成分を1とするとき、行方向に走査していくと式が簡単に解ける。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439316,
+      "updated": 1761439424
+    },
+    {
+      "id": "68fd6e9d0000000000199fa0",
+      "text": " (クラウト法): [$ U]の対角成分を1とするとき、列方向に走査していくと式が簡単に解ける。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439389,
+      "updated": 1761439434
+    },
+    {
+      "id": "68fd712d0000000000199fb1",
+      "text": " 対角成分が[$ 1]でない方の行列の対角成分を対角行列に抽出することで、[$ A=LDU]と分解することもできる。(LDU分解)",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761440046,
+      "updated": 1761440103
+    },
+    {
+      "id": "68fd6ef80000000000199fa3",
+      "text": "\tLU分解自体の計算量は[$ O(n^3)]になる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439480,
+      "updated": 1761440169
+    },
+    {
+      "id": "68fd71a90000000000199fb4",
+      "text": "\t\t各成分毎に[$ O(n)]回の乗算が発生し、[$ n^2]個の成分に関して計算を行うため。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761440169,
+      "updated": 1761440212
+    },
+    {
+      "id": "68fd71940000000000199fb3",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761440148,
+      "updated": 1761440148
+    },
+    {
+      "id": "68fd701f0000000000199fad",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439776,
+      "updated": 1761439776
+    },
+    {
+      "id": "68fd6ee70000000000199fa2",
+      "text": "LU分解を用いると逆行列を計算せずに連立方程式を解けるようになる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439463,
+      "updated": 1761439517
+    },
+    {
+      "id": "68fd6efe0000000000199fa4",
+      "text": "\t[$ A\\bm x=\\bm b]をLU分解すると",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439486,
+      "updated": 1761439513
+    },
+    {
+      "id": "68fd6f1e0000000000199fa5",
+      "text": "\t[$ LU\\bm x=\\bm b]となる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439519,
+      "updated": 1761439527
+    },
+    {
+      "id": "68fd6f2e0000000000199fa6",
+      "text": "\t[$ U\\bm x=\\bm\\chi]とまとめると、",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439534,
+      "updated": 1761439553
+    },
+    {
+      "id": "68fd6f410000000000199fa7",
+      "text": "\t[$ L\\bm\\chi=\\bm b]となる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439553,
+      "updated": 1761439568
+    },
+    {
+      "id": "68fd6f6f0000000000199fa8",
+      "text": " この式を解くことで[$ \\bm\\chi=L^{-1}\\bm b]を求める。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439600,
+      "updated": 1761439640
+    },
+    {
+      "id": "68fd6f980000000000199fa9",
+      "text": " \t計算自体は逆行列を用いずに、[$ L\\bm\\chi]を[$ \\bm b]と比較することで行える。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439640,
+      "updated": 1761439674
+    },
+    {
+      "id": "68fd6fba0000000000199faa",
+      "text": " [$ \\bm\\chi]を[$ U\\bm x=\\bm\\chi]に代入することで、同様に逆行列を用いずに[$ \\bm x=U^{-1}\\bm\\chi]を求められる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439675,
+      "updated": 1761439735
+    },
+    {
+      "id": "68fd6ff80000000000199fac",
+      "text": " この操作はガウスの消去法の操作に対応する。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439736,
+      "updated": 1761439760
+    },
+    {
+      "id": "68fd6c590000000000199f99",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761438809,
+      "updated": 1761438809
+    },
+    {
+      "id": "68fd72ca0000000000199fb5",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761440458,
+      "updated": 1761440458
+    },
+    {
+      "id": "68fd70220000000000199fae",
+      "text": "LU分解を用いると簡単に行列式を求められる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439779,
+      "updated": 1761439808
+    },
+    {
+      "id": "68fd70400000000000199fb0",
+      "text": "\t[$ \\det(LU)=\\det(L)\\det(U)]であり、対角成分が[$ 1]でない方の対角成分の積を調べればよくなる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439808,
+      "updated": 1761439871
+    },
+    {
+      "id": "68fd70240000000000199faf",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761439781,
+      "updated": 1761439781
+    },
+    {
+      "id": "68fd87a00000000000199fb6",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761445793,
+      "updated": 1761445793
+    },
+    {
+      "id": "68fd87a10000000000199fb7",
+      "text": "正定値エルミート行列[$ H=H^\\dag]を下三角行列とそのエルミート共役の積[$ H=LL^\\dag]に分解できる。([コレスキー分解])",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761445793,
+      "updated": 1761446002
+    },
+    {
+      "id": "68fd883e0000000000199fb9",
+      "text": "\t[$ L^\\dag\\in\\mathcal U]なのでLU分解の一種ではある。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761445951,
+      "updated": 1761445971
+    },
+    {
+      "id": "68fd885c0000000000199fba",
+      "text": "\t",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761445981,
+      "updated": 1761445981
+    },
+    {
+      "id": "68fd87b10000000000199fb8",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1761445809,
+      "updated": 1761445809
+    }
+  ]
+}
