@@ -1,0 +1,190 @@
+{
+  "id": "6953912400b00aa67a83e4a7",
+  "title": "Cosenseの一部ページ群をNotebookLMに食わせたい",
+  "created": 1767084325,
+  "updated": 1767114784,
+  "lines": [
+    {
+      "id": "6953912400b00aa67a83e4a7",
+      "text": "Cosenseの一部ページ群をNotebookLMに食わせたい",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084325
+    },
+    {
+      "id": "69539124000000000015a68e",
+      "text": "from [2025/12/30]",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084325
+    },
+    {
+      "id": "69539124000000000015a690",
+      "text": "自分個人の[Cosense.icon][private project]の膨大なページを分野やテーマごとに[NotebookLM.icon]に食わせたいのだけどどういう方法がいいだろう？[terang.icon]",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084333
+    },
+    {
+      "id": "69539124000000000015a691",
+      "text": "\t全部JSONでexportすると1つのファイルになり参照先が1つだけになって見づらい",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a692",
+      "text": "\t\tそもそもさすがに[NotebookLM.icon]さんが読むにはテキスト量が多すぎになりそう",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a693",
+      "text": "\t[Export for AI]だと、現状複雑にリンクが絡み合っているので、複数を[NotebookLM.icon]に放り込むと重複が増える。",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a694",
+      "text": "\t読んでいるがどれも自分のやりたいことのドンピシャではない",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a695",
+      "text": "\t\t[/arpla/「NotebookLM」を使ってCosenseプロジェクトのページデータをソースにしたQ&Aをやる]",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a696",
+      "text": "\t\t[/rashitamemo/一週間分の作業記録をNotebookLMに読ませて振り返ってもらう]",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a697",
+      "text": "\t\t[/shokai/NotebookLMはブラケティングを理解し、Cosense project内の複数ページにまたがって書かれた情報を読んでくれる]",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a698",
+      "text": "\tアーカイブ化するCosenseプロジェクトを[NotebookLM]化しようとして似たような？問題にぶち当たった[mtane0412.icon]",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084347
+    },
+    {
+      "id": "69539124000000000015a699",
+      "text": "\t ページをシンプルにmarkdown化するとソース数上限でそのままだと入れられない",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a69a",
+      "text": "\t jsonを処理して近距離のページをmarkdownファイルにまとめて無理やり突っ込んだ",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a69b",
+      "text": "\t ふーんくらいのやつになった",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a69c",
+      "text": "\t  そもそもこれやるならもっと良い方法がありそうだなと思った",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a69d",
+      "text": "\t 近距離かどのように判定させたのかお聞きできたりします？[terang.icon]",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "695407fa0000000000a437e5",
+      "text": "\t  embeddingするんだったらそのままRAGだよなぁということでページリストアップしてまとめられそうなやつを順にClaude Codeに泥臭くmergeさせていきました[mtane0412.icon]",
+      "userId": "5ae7fecf7766b7001455cbd3",
+      "created": 1767114746,
+      "updated": 1767114784
+    },
+    {
+      "id": "69539124000000000015a69e",
+      "text": "\t[NotebookLM.icon]食わせ用のページを作って、特定ページだけexportという手がありそう[terang.icon]",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a69f",
+      "text": "\t\t[/customize/特定のページのみを含んだexport用dataを生成するbookmarklet]",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a6a0",
+      "text": "\t\t[/shokai/Cosense exported JSON processor]",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a6a1",
+      "text": "\t\t[- あとでやってみよっと。]",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a6a2",
+      "text": "\t\tあーだめだ。ソースを分割できても、そのソース同士の繋がりまでは[NotebookLM.icon]に渡せないので、[Export for AI]の方がいいまでありそうだった。",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a6a3",
+      "text": "\tけっきょく今回[NotebookLM.icon]に渡したいテーマの関連ページを自分の目と手で30ほど抽出して、各ページに[Export for AI]かけたその30ファイルを[NotebookLM.icon]に放り込んだ",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a6a4",
+      "text": "\t\tファイル同士に重複箇所はあるだろうがしょうがない。",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a6a5",
+      "text": "\t\t多少使えそうな[NotebookLM.icon]基地が1つできたけど、手間暇かかけたわりには（気軽に似たことできないわりには）あんまり有用ではない。",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084330
+    },
+    {
+      "id": "69539124000000000015a6a6",
+      "text": "",
+      "userId": "5d69dde930e3c500170f1ffd",
+      "created": 1767084325,
+      "updated": 1767084325
+    }
+  ]
+}
