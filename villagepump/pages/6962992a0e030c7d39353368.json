@@ -1,0 +1,351 @@
+{
+  "id": "6962992a0e030c7d39353368",
+  "title": "日記ボタンを追加するUserScript",
+  "created": 1768069485,
+  "updated": 1768069531,
+  "lines": [
+    {
+      "id": "6962992a0e030c7d39353368",
+      "text": "日記ボタンを追加するUserScript",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069485,
+      "updated": 1768069485
+    },
+    {
+      "id": "6962996d0000000000024358",
+      "text": "[/customize/週記のページを開く／なければ作成するボタン]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069485,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024359",
+      "text": "より改変",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069498
+    },
+    {
+      "id": "696299710000000000024385",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069490,
+      "updated": 1768069490
+    },
+    {
+      "id": "6962996d000000000002435a",
+      "text": "code:script.js",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002435b",
+      "text": " (function() {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002435c",
+      "text": "    // ボタンのスタイル",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002435d",
+      "text": "    const buttonStyle = {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002435e",
+      "text": "      position: 'fixed',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002435f",
+      "text": "      bottom: '20px',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024360",
+      "text": "      right: '10px',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024361",
+      "text": "      width: '80px',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024362",
+      "text": "      height: '80px',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024363",
+      "text": "      backgroundColor: '#000000',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024364",
+      "text": "      'border-radius': '50%',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024365",
+      "text": "      color: 'black',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024366",
+      "text": "      fontSize: '16px',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024367",
+      "text": "      cursor: 'pointer',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024368",
+      "text": "      'z-index': '2',",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024369",
+      "text": "    };",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002436a",
+      "text": "  ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002436b",
+      "text": "    // ボタン要素を作成",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002436c",
+      "text": "    const button = document.createElement('button');",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002436d",
+      "text": "    button.textContent = '日記';",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002436e",
+      "text": "    button.style.cssText = Object.keys(buttonStyle).map(key => `${key}: ${buttonStyle[key]}`).join(';');",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002436f",
+      "text": "    ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024370",
+      "text": "    // ボタンクリック時の処理",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024371",
+      "text": "    button.addEventListener('click', () => {",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024372",
+      "text": "      //console.log(\"hogehoge\");",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024373",
+      "text": "      /* 今日の日付 */",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024374",
+      "text": "      const now = new Date()",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024375",
+      "text": "      const year  = now.getFullYear()",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024376",
+      "text": "      const month = ('0' + (now.getMonth()+1)).slice(-2)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024377",
+      "text": "      const day   = ('0' + now.getDate()).slice(-2)",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024378",
+      "text": "      const ymd = `${year}/${month}/${day}`",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024379",
+      "text": "      ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002437a",
+      "text": "      const a = document.createElement('a');",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002437b",
+      "text": "      a.href = `https://scrapbox.io/${cosense.Project.name}/${ymd}`;",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002437c",
+      "text": "      document.body.appendChild(a);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002437d",
+      "text": "      a.click();",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002437e",
+      "text": "      a.remove();      ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d000000000002437f",
+      "text": "    });",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024380",
+      "text": "  ",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024381",
+      "text": "    // ボタンをbody要素に追加",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024382",
+      "text": "    document.body.appendChild(button);",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024383",
+      "text": "  })();",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962996d0000000000024384",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069486,
+      "updated": 1768069486
+    },
+    {
+      "id": "6962998d0000000000024386",
+      "text": "[UserScript.icon]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069518,
+      "updated": 1768069531
+    },
+    {
+      "id": "6962998e0000000000024387",
+      "text": "",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1768069519,
+      "updated": 1768069519
+    }
+  ]
+}
