@@ -2,7 +2,7 @@
   "id": "65b65e4fd239ce0025eb45b5",
   "title": "様相論理",
   "created": 1706450520,
-  "updated": 1706453546,
+  "updated": 1770529236,
   "lines": [
     {
       "id": "65b65e4fd239ce0025eb45b5",
@@ -55,24 +55,38 @@
     },
     {
       "id": "65b667e6ed60e60000c904e4",
-      "text": "  関連: [クリプキ意味論]",
+      "text": " 関連: [クリプキ意味論]（[https://en.wikipedia.org/wiki/Kripke_semantics Kripke semantics - Wikipedia]）",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706452966,
-      "updated": 1706452986
+      "updated": 1770524528
     },
     {
-      "id": "65b66a24ed60e60000c904ff",
-      "text": "   [https://en.wikipedia.org/wiki/Kripke_semantics Kripke semantics - Wikipedia]",
+      "id": "69881025000000000081c647",
+      "text": " 様相論理の標準的な意味論は関係意味論と呼ばれる。",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1706453540,
-      "updated": 1706453544
+      "created": 1770524709,
+      "updated": 1770524724
+    },
+    {
+      "id": "69881033000000000081c649",
+      "text": " このアプローチでは、式の真偽は、しばしば可能世界と呼ばれる点を基準として決定される。様相演算子を含む式の場合、その真理値は他の到達可能な世界で何が真であるかに依存する可能性がある。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770524724,
+      "updated": 1770524738
+    },
+    {
+      "id": "69881042000000000081c64a",
+      "text": " 関係意味論は、以下のように定義されるモデルを用いて様相論理の式を解釈する。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770524738,
+      "updated": 1770524757
     },
     {
       "id": "65b665d8ed60e60000c904dc",
-      "text": " 関係モデルはタプル[$ \\mathfrak{M}=(W,R,V)]として定められる。ここで、",
+      "text": " 関係モデルは組[$ \\mathfrak{M}=(W,R,V)]として定められる。ここで、",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706452441,
-      "updated": 1706452945
+      "updated": 1770524545
     },
     {
       "id": "65b66605ed60e60000c904de",
@@ -83,10 +97,10 @@
     },
     {
       "id": "65b66618ed60e60000c904df",
-      "text": "  [$ R]は[$ W]上の二項関係とする",
+      "text": "  [$ R]は[$ W]上の二項関係とする (到達可能性関係と呼ばれる)",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706452504,
-      "updated": 1706452945
+      "updated": 1770524662
     },
     {
       "id": "65b66634ed60e60000c904e0",
@@ -111,10 +125,115 @@
     },
     {
       "id": "65b665d9ed60e60000c904dd",
-      "text": "",
+      "text": " 評価関数",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706452441,
-      "updated": 1706452441
+      "updated": 1770525458
+    },
+    {
+      "id": "69881312000000000081c64b",
+      "text": "  モデル[$ {\\displaystyle {\\mathfrak {M}}}]の世界[$ {\\displaystyle {\\color{red}w}}]における式の真偽を以下のように再帰的に定義する。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770525458,
+      "updated": 1770528284
+    },
+    {
+      "id": "69881313000000000081c64c",
+      "text": "  [$ {\\displaystyle {\\mathfrak {M}},{\\color{red}w}\\models P}] [$ \\iff] [$ {\\displaystyle V({\\color{red}w},P)=1}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770525459,
+      "updated": 1770526850
+    },
+    {
+      "id": "698814b5000000000081c65f",
+      "text": "  [$ {\\displaystyle {\\mathfrak {M}},{\\color{red}w}\\models \\neg P}] [$ \\iff] [$ {\\displaystyle {\\color{red}w}\\not \\models P}]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770525878,
+      "updated": 1770526856
+    },
+    {
+      "id": "698814b5000000000081c66a",
+      "text": "  [$ {\\displaystyle {\\mathfrak {M}},{\\color{red}w}\\models (P\\wedge Q)}] [$ \\iff] [$ ({\\displaystyle {\\color{red}w}\\models P}) \\land ({\\displaystyle {\\color{red}w}\\models Q})]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770525878,
+      "updated": 1770526870
+    },
+    {
+      "id": "698814b5000000000081c67c",
+      "text": "  [$ {\\displaystyle {\\mathfrak {M}},{\\color{red}w}\\models \\Box P}] [$ \\iff] [$ ^{\\forall {\\color{#0d0}u} \\in {W}}\\lbrack{(\\displaystyle {\\color{red}w}R{\\color{#0d0}u}})\\Rightarrow({\\displaystyle {\\color{red}w}\\models P}\\rbrack)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770525878,
+      "updated": 1770527338
+    },
+    {
+      "id": "698814b5000000000081c68f",
+      "text": "  [$ {\\displaystyle {\\mathfrak {M}},{\\color{red}w}\\models \\Diamond P}] [$ \\iff] [$ ^{\\exist{{\\color{#0d0}u}}\\in\\{{{\\color{#0d0}u}}\\in{W}|{{\\color{red}w}R{\\color{#0d0}u}}\\}}\\lbrack{\\displaystyle {\\color{#0d0}u}\\models P}\\rbrack]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770525878,
+      "updated": 1770528109
+    },
+    {
+      "id": "69881984000000000081c6a2",
+      "text": " 到達可能性",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770527108,
+      "updated": 1770527254
+    },
+    {
+      "id": "69880fe1000000000081c646",
+      "text": "  [https://en.wikipedia.org/wiki/Accessibility_relation Accessibility relation - Wikipedia]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770524642,
+      "updated": 1770524642
+    },
+    {
+      "id": "6987fc0f000000000081c631",
+      "text": "  到達可能性関係は、様相論理の関係意味論において、文に真理値を割り当てる際に重要な役割を果たす関係である。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770519568,
+      "updated": 1770519663
+    },
+    {
+      "id": "6987fc1c000000000081c632",
+      "text": "  到達可能性関係[$ {\\displaystyle R}]が[$ {\\displaystyle w}]を[$ {\\displaystyle v}]に関連付けている場合のみ、可能世界[$ {\\displaystyle w}]における様相論理式の真理値が、別の可能世界[$ {\\displaystyle v}]における真値に依存する。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770519581,
+      "updated": 1770520650
+    },
+    {
+      "id": "6988032b000000000081c641",
+      "text": "  例えば、",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770521388,
+      "updated": 1770521577
+    },
+    {
+      "id": "6987fc2e000000000081c633",
+      "text": "   [$ {\\displaystyle P}]が[$ {\\displaystyle wRv}]となるような世界[$ {\\displaystyle v}]において成立する場合、論理式[$ {\\displaystyle \\Diamond P}]は[$ {\\displaystyle w}]において真となる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770520407,
+      "updated": 1770521791
+    },
+    {
+      "id": "6987fc3e000000000081c635",
+      "text": "   [$ {\\displaystyle R}]が[$ {\\displaystyle w}]を[$ {\\displaystyle v}]に関連付けないのであれば、[$ {\\displaystyle \\Diamond P}]は[$ {\\displaystyle w}]において偽となる。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770519615,
+      "updated": 1770521791
+    },
+    {
+      "id": "6987fc49000000000081c636",
+      "text": "   ただし、[$ {\\displaystyle P}]が他の世界[$ {\\displaystyle u}]でも成立し、[$ {\\displaystyle wRu}]となる場合はこの限りではない。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770519626,
+      "updated": 1770521791
+    },
+    {
+      "id": "6987f912000000000081c62f",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770518803,
+      "updated": 1770518803
     },
     {
       "id": "65b65e99ed60e60000c904c1",
@@ -125,24 +244,24 @@
     },
     {
       "id": "65b65f05ed60e60000c904c5",
-      "text": " アクセシビリティ関係[$ \\color{#36c} ^{[とは？]} ][$ R]の選択だけで、式の真偽を保証するのに十分なことがある",
+      "text": " 到達可能性関係[$ R]の選択だけで、式の真偽を保証するのに十分なことがある。",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706450694,
-      "updated": 1706450791
+      "updated": 1770521874
     },
     {
       "id": "65b66518ed60e60000c904da",
-      "text": "  [$ G]を可能世界集合とし、[$ R]を[$ G]上の二項関係とする",
+      "text": "  [$ G]を可能世界集合とし、[$ R]を[$ G]上の二項関係とする。",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706452249,
-      "updated": 1706452666
+      "updated": 1770521875
     },
     {
       "id": "65b6657fed60e60000c904db",
-      "text": "  関係フレームは対[$ \\mathfrak{M}=(G,R)]として定められる",
+      "text": "  関係フレームは対[$ \\mathfrak{M}=(G,R)]として定められる。",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706452352,
-      "updated": 1706452401
+      "updated": 1770521881
     },
     {
       "id": "65b65f3aed60e60000c904c6",
@@ -153,108 +272,206 @@
     },
     {
       "id": "65b65f83ed60e60000c904c7",
-      "text": "  反射的: [$ ^{\\forall w \\in G}[wRw] ]",
+      "text": "  反射性: [$ ^{\\forall {\\color{red}w} \\in G}[{\\color{red}w}R{\\color{red}w}] ]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706450819,
-      "updated": 1706451546
+      "updated": 1770523200
     },
     {
       "id": "65b65f88ed60e60000c904c8",
-      "text": "  対称的: [$ ^{\\forall w,u\\in G}[wRu\\Rightarrow uRw] ]",
+      "text": "  対称性: [$ ^{\\forall {\\color{red}w},{\\color{#0c0}u}\\in G}[{\\color{red}w}R{\\color{#0c0}u}\\Rightarrow {\\color{#0c0}u}R{\\color{red}w}] ]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706450825,
-      "updated": 1706451898
+      "updated": 1770523205
     },
     {
       "id": "65b65fa2ed60e60000c904cb",
-      "text": "  推移的: [$ ^{\\forall w,u,q}[wRu\\land uRq\\Rightarrow wRq] ]",
+      "text": "  推移性: [$ ^{\\forall {\\color{red}w},{\\color{#0c0}u},{\\color{#00f}q}}[{\\color{red}w}R{\\color{#0c0}u}\\land {\\color{#0c0}u}R{\\color{#00f}q}\\Rightarrow {\\color{red}w}R{\\color{#00f}q}] ]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706450850,
-      "updated": 1706451553
+      "updated": 1770523208
     },
     {
       "id": "65b65f8ced60e60000c904c9",
-      "text": "  連続的: [$ ^{\\forall w,\\exist u\\in G}[wRu] ]",
+      "text": "  連続性: [$ ^{\\forall {\\color{red}w},\\exist {\\color{#0c0}u}\\in G}[{\\color{red}w}R{\\color{#0c0}u}] ]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706450828,
-      "updated": 1706451519
+      "updated": 1770523211
     },
     {
       "id": "65b65f98ed60e60000c904ca",
-      "text": "  ユークリッド的: [$ ^{\\forall u,t,w}[wRu\\land wRt\\Rightarrow uRt] ]",
+      "text": "  ユークリッド性: [$ ^{\\forall {\\color{red}w},{\\color{#0c0}u},{\\color{#00f}t}}[{\\color{red}w}R{\\color{#0c0}u}\\land {\\color{red}w}R{\\color{#00f}t}\\Rightarrow {\\color{#0c0}u}R{\\color{#00f}t}] ]",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706450840,
-      "updated": 1706451654
+      "updated": 1770523556
     },
     {
       "id": "65b662daed60e60000c904d6",
-      "text": "   連続性から[$ tRt\\land uRu]と同様に[$ tRu]を含意する",
+      "text": "   ユークリッド性と対称性から、[$ {\\color{#00f}t}R{\\color{#00f}t}\\land {\\color{#0c0}u}R{\\color{#0c0}u}]と同様に[$ {\\color{#00f}t}R{\\color{#0c0}u}]を含意する。",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706451674,
-      "updated": 1706451741
+      "updated": 1770523575
+    },
+    {
+      "id": "69880f21000000000081c644",
+      "text": " 様相論理の体系",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770524449,
+      "updated": 1770524472
+    },
+    {
+      "id": "69880f33000000000081c645",
+      "text": " 様相論理の様々な体系は、フレーム条件を用いて定義される。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770524468,
+      "updated": 1770524468
     },
     {
       "id": "65b66376ed60e60000c904d7",
-      "text": "    どゆこと？[Summer498.icon]",
+      "text": " これらのフレーム条件から体系を構成する論理は次のとおりである。",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706451831,
-      "updated": 1706451836
+      "updated": 1770524483
     },
     {
-      "id": "65b65fb0ed60e60000c904cc",
+      "id": "69880ec4000000000081c643",
       "text": " 各種公理とフレームの関係",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1706450864,
-      "updated": 1706450906
+      "created": 1770524356,
+      "updated": 1770524356
     },
     {
       "id": "65b65fc6ed60e60000c904cd",
-      "text": "  [公理K]: 無条件",
+      "text": "  [体系K]: 無条件",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706450886,
-      "updated": 1706453383
+      "updated": 1770528603
+    },
+    {
+      "id": "698795b5000000000087711e",
+      "text": "   可能性演算子の定義: [$ \\Diamond p:=\\neg \\Box \\neg p]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770493366,
+      "updated": 1770524067
+    },
+    {
+      "id": "698798d80000000000877127",
+      "text": "   公理[* N]: 必然化規則 : [$ A]が無仮定で証明可能ならば、[$ \\Box A]もまた無仮定で成立する。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770494168,
+      "updated": 1770494168
+    },
+    {
+      "id": "698793060000000000877112",
+      "text": "   公理[* K] (分配律) : [$ \\Box (A\\rightarrow B)\\rightarrow (\\Box A\\rightarrow \\Box B)]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770492678,
+      "updated": 1770494121
     },
     {
       "id": "65b65fdced60e60000c904ce",
-      "text": "  [公理D]: 連続的",
+      "text": "  [体系D]: 連続的",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706450908,
-      "updated": 1706453385
+      "updated": 1770528608
+    },
+    {
+      "id": "69879a280000000000877129",
+      "text": "  \t公理[* D]: [$ \\Box p\\to \\Diamond p]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770494505,
+      "updated": 1770494527
+    },
+    {
+      "id": "69879ac6000000000087712b",
+      "text": "  \t公理D := 公理K + 公理[* D]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770494663,
+      "updated": 1770494688
     },
     {
       "id": "65b65fe0ed60e60000c904cf",
-      "text": "  [公理T]: 反射的",
+      "text": "  [体系T]: 反射的",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706450913,
-      "updated": 1706453387
+      "updated": 1770528612
     },
     {
-      "id": "65b65fe5ed60e60000c904d0",
-      "text": "  [公理B]: 反射的かつ対称的",
+      "id": "698793650000000000877113",
+      "text": "   公理[* T] (反射律) : [$ \\Box A\\rightarrow A]",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1706450918,
-      "updated": 1706453389
+      "created": 1770492773,
+      "updated": 1770494574
+    },
+    {
+      "id": "69879b01000000000087712c",
+      "text": "  \t公理T := 公理K + 公理[* T]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770494722,
+      "updated": 1770494727
+    },
+    {
+      "id": "69879a6f000000000087712a",
+      "text": "  [体系B]: 反射的かつ対称的",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770494575,
+      "updated": 1770528615
+    },
+    {
+      "id": "698799ff0000000000877128",
+      "text": "   公理[* B]: [$ p\\to \\Box \\Diamond p]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770494463,
+      "updated": 1770494486
     },
     {
       "id": "65b65fe5ed60e60000c904d1",
-      "text": "  [公理S4]: 反射的かつ推移的",
+      "text": "  [体系S4]: 反射的かつ推移的",
       "userId": "6436266c7ac3c0001bed60e6",
       "created": 1706450918,
-      "updated": 1706453391
+      "updated": 1770528617
     },
     {
-      "id": "65b65fe6ed60e60000c904d2",
-      "text": "  [公理S5]: 反射的かつユークリッド的",
+      "id": "698793fc0000000000877115",
+      "text": "   公理[* 4]: [$ \\Box A\\rightarrow \\Box \\Box A]",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1706450918,
-      "updated": 1706453393
+      "created": 1770492925,
+      "updated": 1770493124
     },
     {
-      "id": "65b6600eed60e60000c904d4",
+      "id": "69879b1e000000000087712d",
+      "text": "  \t公理S4 := 公理T + 公理[* 4]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770494750,
+      "updated": 1770494780
+    },
+    {
+      "id": "69879b1e000000000087712e",
+      "text": "  [体系S5]: 反射的かつユークリッド的",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770494751,
+      "updated": 1770528622
+    },
+    {
+      "id": "6987940d0000000000877116",
+      "text": "   公理[* 5]: [$ \\Diamond A\\rightarrow \\Box \\Diamond A]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770492942,
+      "updated": 1770493128
+    },
+    {
+      "id": "69879b42000000000087712f",
+      "text": "  \t公理S5 := 公理T + 公理[* 4]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770494787,
+      "updated": 1770494795
+    },
+    {
+      "id": "69879b430000000000877130",
       "text": "   ユークリッド性と反射性から対称性と推移性を導ける",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1706450958,
-      "updated": 1706452065
+      "created": 1770494787,
+      "updated": 1770494789
     },
     {
       "id": "65b66421ed60e60000c904d8",
@@ -306,11 +523,130 @@
       "updated": 1706453229
     },
     {
-      "id": "65b668e7ed60e60000c904fc",
+      "id": "69882095000000000081c6aa",
       "text": "",
       "userId": "6436266c7ac3c0001bed60e6",
-      "created": 1706453224,
-      "updated": 1706453224
+      "created": 1770528917,
+      "updated": 1770528917
+    },
+    {
+      "id": "69882151000000000081c6b8",
+      "text": "真理論的様相論理（必然性に関する様相論理）",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770529105,
+      "updated": 1770529236
+    },
+    {
+      "id": "6988202f000000000081c6a3",
+      "text": " https://en.wikipedia.org/wiki/Modal_logic#Alethic_logic",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770528816,
+      "updated": 1770529105
+    },
+    {
+      "id": "69882096000000000081c6ab",
+      "text": " https://en.wikipedia.org/wiki/Subjunctive_possibility",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770528919,
+      "updated": 1770528923
+    },
+    {
+      "id": "69882145000000000081c6b7",
+      "text": "認識",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770529094,
+      "updated": 1770529103
+    },
+    {
+      "id": "6988204d000000000081c6a5",
+      "text": " https://en.wikipedia.org/wiki/Modal_logic#Epistemic_logic",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770528846,
+      "updated": 1770529095
+    },
+    {
+      "id": "698820a0000000000081c6ad",
+      "text": " https://en.wikipedia.org/wiki/Epistemic_logic",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770528929,
+      "updated": 1770528945
+    },
+    {
+      "id": "6988212f000000000081c6b6",
+      "text": "時相",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770529071,
+      "updated": 1770529091
+    },
+    {
+      "id": "69882050000000000081c6a6",
+      "text": " https://en.wikipedia.org/wiki/Modal_logic#Temporal_logic",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770528848,
+      "updated": 1770529072
+    },
+    {
+      "id": "698820b4000000000081c6af",
+      "text": " https://en.wikipedia.org/wiki/Temporal_logic",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770528948,
+      "updated": 1770528955
+    },
+    {
+      "id": "69882125000000000081c6b5",
+      "text": "義務",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770529062,
+      "updated": 1770529068
+    },
+    {
+      "id": "69882057000000000081c6a7",
+      "text": " https://en.wikipedia.org/wiki/Modal_logic#Deontic_logic",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770528856,
+      "updated": 1770529069
+    },
+    {
+      "id": "698820c1000000000081c6b1",
+      "text": " https://en.wikipedia.org/wiki/Deontic_logic",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770528962,
+      "updated": 1770528966
+    },
+    {
+      "id": "6988211d000000000081c6b4",
+      "text": "信念",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770529054,
+      "updated": 1770529058
+    },
+    {
+      "id": "6988205a000000000081c6a8",
+      "text": " https://en.wikipedia.org/wiki/Modal_logic#Doxastic_logic",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770528858,
+      "updated": 1770529059
+    },
+    {
+      "id": "69882062000000000081c6a9",
+      "text": " https://en.wikipedia.org/wiki/Doxastic_logic",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770528866,
+      "updated": 1770528981
+    },
+    {
+      "id": "698820d3000000000081c6b3",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770528980,
+      "updated": 1770528980
+    },
+    {
+      "id": "6988204d000000000081c6a4",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1770528846,
+      "updated": 1770528846
     }
   ]
 }
