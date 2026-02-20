@@ -2,7 +2,7 @@
   "id": "6923e3e3633dea1a7e006676",
   "title": "caki",
   "created": 1763959780,
-  "updated": 1771331505,
+  "updated": 1771592285,
   "lines": [
     {
       "id": "6923e3e3633dea1a7e006676",
@@ -110,18 +110,137 @@
       "updated": 1771328936
     },
     {
+      "id": "699859b30000000000daa2c1",
+      "text": "  ダークテーマを無効化",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771592115,
+      "updated": 1771592122
+    },
+    {
       "id": "6994575d000000000064e97a",
-      "text": "  code:script.js!",
+      "text": "  code:script.js",
       "userId": "6923e3b6e09f0be0924872ef",
       "created": 1771329374,
-      "updated": 1771331503
+      "updated": 1771592004
     },
     {
       "id": "6994585d0000000000bf9213",
-      "text": "   import ('../カーソルが行頭になくてもTabでインデントするUserScript/script.js').then(({ setup })=>setup())",
+      "text": "   // prefers-color-scheme: dark を常に false に見せかける",
       "userId": "6923e3b6e09f0be0924872ef",
       "created": 1771329629,
-      "updated": 1771329659
+      "updated": 1771591996
+    },
+    {
+      "id": "699859e30000000000daa2c2",
+      "text": "   (function() {",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771592164,
+      "updated": 1771592164
+    },
+    {
+      "id": "6998593c000000000063e35c",
+      "text": "    const originalMatchMedia = window.matchMedia;",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771591996,
+      "updated": 1771592285
+    },
+    {
+      "id": "6998593c000000000063e35d",
+      "text": "    window.matchMedia = function(query) {",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771591996,
+      "updated": 1771592285
+    },
+    {
+      "id": "6998593c000000000063e35e",
+      "text": "      if (query === '(prefers-color-scheme: dark)') {",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771591996,
+      "updated": 1771592285
+    },
+    {
+      "id": "6998593c000000000063e35f",
+      "text": "        return {",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771591996,
+      "updated": 1771592285
+    },
+    {
+      "id": "6998593c000000000063e360",
+      "text": "          matches: false,",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771591996,
+      "updated": 1771592285
+    },
+    {
+      "id": "6998593c000000000063e361",
+      "text": "          media: query,",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771591996,
+      "updated": 1771592285
+    },
+    {
+      "id": "6998593c000000000063e362",
+      "text": "          addEventListener: function() {},",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771591996,
+      "updated": 1771592285
+    },
+    {
+      "id": "6998593c000000000063e363",
+      "text": "          removeEventListener: function() {},",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771591996,
+      "updated": 1771592285
+    },
+    {
+      "id": "6998593c000000000063e364",
+      "text": "          addListener: function() {},",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771591996,
+      "updated": 1771592285
+    },
+    {
+      "id": "6998593c000000000063e365",
+      "text": "          removeListener: function() {},",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771591996,
+      "updated": 1771592285
+    },
+    {
+      "id": "6998593c000000000063e366",
+      "text": "        };",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771591996,
+      "updated": 1771592285
+    },
+    {
+      "id": "6998593c000000000063e367",
+      "text": "      }",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771591996,
+      "updated": 1771592285
+    },
+    {
+      "id": "6998593c000000000063e368",
+      "text": "      return originalMatchMedia.call(window, query);",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771591996,
+      "updated": 1771592285
+    },
+    {
+      "id": "6998593c000000000063e369",
+      "text": "   };",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771591996,
+      "updated": 1771592001
+    },
+    {
+      "id": "699859e90000000000daa2c3",
+      "text": "   })();",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1771592169,
+      "updated": 1771592170
     },
     {
       "id": "6923e3e40000000000bbd2a1",
