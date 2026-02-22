@@ -1,0 +1,869 @@
+{
+  "id": "699a747d7eb9479b38d0875c",
+  "title": "tagがついたページをfetchしたい",
+  "created": 1771730046,
+  "updated": 1771764001,
+  "lines": [
+    {
+      "id": "699a747d7eb9479b38d0875c",
+      "text": "tagがついたページをfetchしたい",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730046,
+      "updated": 1771730046
+    },
+    {
+      "id": "699a747e000000000022143e",
+      "text": "　ページ内に #tag というページを全て取得したい",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730046,
+      "updated": 1771730046
+    },
+    {
+      "id": "699a747e000000000022143f",
+      "text": "　\tAPI経由で可能？",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730046,
+      "updated": 1771730046
+    },
+    {
+      "id": "699a748c00000000005a271d",
+      "text": " リンク記法と見分けて、`#`のtagで書かれたページ名だけを取得したいとき",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a271e",
+      "text": "",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a271f",
+      "text": "[ページ内にあるtagを取得する]",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2720",
+      "text": " ページ内のリンクとタグを見分けて取得したい",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2721",
+      "text": " APIでページのリンクを取得する",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2722",
+      "text": "  [/scrapboxlab/Scrapbox REST APIの一覧]の[api/pages/:projectname/:pagetitle]を使う",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2723",
+      "text": "  そのページ内でリンクされているページが、linksの配列?にある",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2724",
+      "text": " ページのテキストをリンク名で検索して、リンク名の直前に`#`があるリンクだけを取り出す",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771732556
+    },
+    {
+      "id": "699a7e4d0000000000221446",
+      "text": "",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771732558,
+      "updated": 1771732558
+    },
+    {
+      "id": "699a748c00000000005a2727",
+      "text": "tagがついたページをfetchする",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2728",
+      "text": " あるタグがついているページをすべて取得したい",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2729",
+      "text": " リンクとタグを見分けて取得したい",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a272a",
+      "text": " tag(リンク)のページにリンクしてきているページリストを取得し、それぞれのページの情報を取得し、リンク形式で記述されているページは捨ててタグ形式でついているページだけを集める",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a272b",
+      "text": "  tagのページにリンクしているページを取得する",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a272c",
+      "text": "   [/scrapboxlab/Scrapbox REST APIの一覧]の[api/pages/:projectname/:pagetitle]を使ってJSONを取得する",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a272d",
+      "text": "   links1hopには直リンクの関係になるページが入ってる",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a272e",
+      "text": "    tagのページ内でリンクしているページと、tagのページにリンクしてきているページ([backlink])が入ってる",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a272f",
+      "text": "   linksのページにはtagのページ内でリンクしているページが入ってる",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2730",
+      "text": "   links1hopからlinksのページを取り除くと、tagのページにリンクしてきているページだけを取り出せる",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2731",
+      "text": "  tagのページにリンクしているページのそれぞれについて、情報を取る",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2732",
+      "text": "   [/scrapboxlab/Scrapbox REST APIの一覧]の[api/pages/:projectname/:pagetitle]を使ってそれぞれのページのJSONを取得する",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2733",
+      "text": "   それぞれのページ内でリンクがtagになっているかリンクになっているかを判別して、tag担っているページだけを取得する",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2734",
+      "text": "    →[tagがついたページをfetchしたい#699a571c0000000000955c07]",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2735",
+      "text": "",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771732524
+    },
+    {
+      "id": "699a748c00000000005a2736",
+      "text": "堂々と書いたが実際に機能するかわからない [vlzs.icon]",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771732586
+    },
+    {
+      "id": "699a7e64000000000022144f",
+      "text": " まだ試したことがない",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771732581,
+      "updated": 1771732584
+    },
+    {
+      "id": "699a7e6f0000000000221450",
+      "text": " 確かめる機会がない",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771732592,
+      "updated": 1771732596
+    },
+    {
+      "id": "699a7e62000000000022144a",
+      "text": "  tagとリンクを使い分けていないので試す機会がない",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771732579,
+      "updated": 1771732604
+    },
+    {
+      "id": "699a7e62000000000022144c",
+      "text": "  ドッグフーディングをしてない",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771732579,
+      "updated": 1771732608
+    },
+    {
+      "id": "699a7e980000000000221451",
+      "text": " 手順を思いついたのでとにかく書き出しておくことにした",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771732633,
+      "updated": 1771732645
+    },
+    {
+      "id": "699a7ea50000000000221453",
+      "text": "  あとで自分が利用するかもしれないので",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771732645,
+      "updated": 1771732648
+    },
+    {
+      "id": "699a7e62000000000022144e",
+      "text": "",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771732579,
+      "updated": 1771732579
+    },
+    {
+      "id": "699a748c00000000005a2737",
+      "text": "ページを消されてた",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2738",
+      "text": " 自己解決されて消したか、諦めたときだと思った[vlzs.icon]",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a748c00000000005a2739",
+      "text": " どゆことや[はるひ.icon]",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699a749f00000000005a2741",
+      "text": " 今朝井戸端を開いたら、[katayama8000.icon]さんがこういうページを書かれてた [vlzs.icon]",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730079,
+      "updated": 1771730391
+    },
+    {
+      "id": "699a749d00000000005a273f",
+      "text": "  > [https://gyazo.com/099cc10b21531b65fcda7b74dffae61f][https://gyazo.com/099cc10b21531b65fcda7b74dffae61f]",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730078,
+      "updated": 1771732498
+    },
+    {
+      "id": "699a74d700000000005a2744",
+      "text": "  これができそうな方法が思いついたので、30分後ぐらいに書き込もうとした",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730135,
+      "updated": 1771730366
+    },
+    {
+      "id": "699a75be00000000005a274b",
+      "text": "  そのときページがなくなっていた",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730366,
+      "updated": 1771730370
+    },
+    {
+      "id": "699a756500000000005a2746",
+      "text": "  ページが削除されたみたいだった",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730277,
+      "updated": 1771732661
+    },
+    {
+      "id": "699a74a200000000005a2742",
+      "text": " ページを削除したのはどうしてだろうと思い、",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730082,
+      "updated": 1771730791
+    },
+    {
+      "id": "699a758a00000000005a2748",
+      "text": "  自分で解決したときとか",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730315,
+      "updated": 1771730830
+    },
+    {
+      "id": "699a759600000000005a2749",
+      "text": "  諦めたときとか",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730327,
+      "updated": 1771730832
+    },
+    {
+      "id": "699a77580000000000221443",
+      "text": "  Cosenseの運用方法を変えて迂回できたときに",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730776,
+      "updated": 1771730837
+    },
+    {
+      "id": "699a75fa00000000005a274d",
+      "text": "  自分はページを消すなあと思った",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730427,
+      "updated": 1771732659
+    },
+    {
+      "id": "699a748c00000000005a273e",
+      "text": "",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1771730060,
+      "updated": 1771730060
+    },
+    {
+      "id": "699af7080000000000a5b22e",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763465,
+      "updated": 1771763465
+    },
+    {
+      "id": "699af79d0000000000a5b274",
+      "text": "タグとリンクを使い分けていなければ、[api/pages/:projectname/search/titles]でもよさそう[meganii.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763614,
+      "updated": 1771763954
+    },
+    {
+      "id": "699af87d0000000000a5b275",
+      "text": "\ttitleだけでなく、linkが含まれている",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763837,
+      "updated": 1771763954
+    },
+    {
+      "id": "699af8910000000000a5b276",
+      "text": "\t[2026/02/15#6990e2550000000000b17213]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763857,
+      "updated": 1771763997
+    },
+    {
+      "id": "699af91d0000000000e84452",
+      "text": "\t\tたしかに、10000件返ってくることを確認",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763997,
+      "updated": 1771764001
+    },
+    {
+      "id": "699af9210000000000e84453",
+      "text": "\t\tskipでoffsetを制御するのかと思ったら、Response HeaderのfollowingIdをセットするの知らなかった。",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771764001,
+      "updated": 1771764001
+    },
+    {
+      "id": "699af8db0000000000a5b27b",
+      "text": "[@cosense/std]を使う練習[meganii.icon]",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763932,
+      "updated": 1771763932
+    },
+    {
+      "id": "699af7550000000000a5b273",
+      "text": "\t正規表現とジェネレーターは自信なし...",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763542,
+      "updated": 1771763556
+    },
+    {
+      "id": "699af7080000000000a5b230",
+      "text": "code:main.ts",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763465,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af70e0000000000a5b232",
+      "text": " import { pooledMap } from \"@std/async/pool\";",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763470,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b233",
+      "text": " import { escape } from \"@std/regexp/escape\";",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b234",
+      "text": " import { getLinksStream } from \"@cosense/std/unstable-api/pages/project/search/titles\";",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b235",
+      "text": " import { getText } from \"@cosense/std/unstable-api/pages/project/title/text\";",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b236",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b237",
+      "text": " const project = \"villagepump\";",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b238",
+      "text": " const keywordLink = \"書いてけ\";",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b239",
+      "text": " const re = new RegExp(`#${escape(keywordLink)}(?=\\\\s|$|[。、,.!?)\\\\]】）』」])`, \"u\");",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b23a",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b23b",
+      "text": " const CONCURRENCY = 5;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b23c",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b23d",
+      "text": " let scanned = 0;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b23e",
+      "text": " let failed = 0;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b23f",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b240",
+      "text": " async function* getFilteredLinks(project: string, keyword: string) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b241",
+      "text": "   for await (const t of getLinksStream(project)) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b242",
+      "text": "     if (t.links.includes(keyword)) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b243",
+      "text": "       yield t;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b244",
+      "text": "     }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b245",
+      "text": "   }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b246",
+      "text": " }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b247",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b248",
+      "text": " const results = [];",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b249",
+      "text": " for await (const hit of pooledMap(",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b24a",
+      "text": "   CONCURRENCY,",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b24b",
+      "text": "   getFilteredLinks(project, keywordLink),",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b24c",
+      "text": "   async (item) => {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b24d",
+      "text": "     scanned++;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b24e",
+      "text": "     try {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b24f",
+      "text": "       const res = await getText(project, item.title);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b250",
+      "text": "       if (!res.ok) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b251",
+      "text": "         failed++;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b252",
+      "text": "         return null;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b253",
+      "text": "       }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b254",
+      "text": "       const text = await res.text();",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b255",
+      "text": "       return re.test(text) ? { title: item.title } : null;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b256",
+      "text": "     } catch {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b257",
+      "text": "       failed++;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b258",
+      "text": "       return null;",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b259",
+      "text": "     }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b25a",
+      "text": "   }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b25b",
+      "text": " )) {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b25c",
+      "text": "   if (hit) results.push(hit);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b25d",
+      "text": " }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b25e",
+      "text": " ",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b25f",
+      "text": " console.log({",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b260",
+      "text": "   project,",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b261",
+      "text": "   keywordLink,",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b262",
+      "text": "   scanned,",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b263",
+      "text": "   matched: results.length,",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b264",
+      "text": "   failed,",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b265",
+      "text": " });",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7110000000000a5b266",
+      "text": " console.log(results);",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763473,
+      "updated": 1771763473
+    },
+    {
+      "id": "699af7090000000000a5b231",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763465,
+      "updated": 1771763465
+    },
+    {
+      "id": "699af71f0000000000a5b267",
+      "text": "code:deno.json",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763487,
+      "updated": 1771763491
+    },
+    {
+      "id": "699af7230000000000a5b269",
+      "text": " {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763492,
+      "updated": 1771763492
+    },
+    {
+      "id": "699af7240000000000a5b26a",
+      "text": "   \"imports\": {",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763492,
+      "updated": 1771763492
+    },
+    {
+      "id": "699af7240000000000a5b26b",
+      "text": "     \"@cosense/std\": \"jsr:@cosense/std@^0.31.0\",",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763492,
+      "updated": 1771763492
+    },
+    {
+      "id": "699af7240000000000a5b26c",
+      "text": "     \"@cosense/types\": \"jsr:@cosense/types@^0.11.7\",",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763492,
+      "updated": 1771763492
+    },
+    {
+      "id": "699af7240000000000a5b26d",
+      "text": "     \"@std/assert\": \"jsr:@std/assert@1\",",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763492,
+      "updated": 1771763492
+    },
+    {
+      "id": "699af7240000000000a5b26e",
+      "text": "     \"@std/async\": \"jsr:@std/async@^1.2.0\",",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763492,
+      "updated": 1771763492
+    },
+    {
+      "id": "699af7240000000000a5b26f",
+      "text": "     \"@std/regexp\": \"jsr:@std/regexp@^1.0.1\"",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763492,
+      "updated": 1771763492
+    },
+    {
+      "id": "699af7240000000000a5b270",
+      "text": "   }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763492,
+      "updated": 1771763492
+    },
+    {
+      "id": "699af7240000000000a5b271",
+      "text": " }",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763492,
+      "updated": 1771763492
+    },
+    {
+      "id": "699af71f0000000000a5b268",
+      "text": "",
+      "userId": "649a24da357c4d001c518c25",
+      "created": 1771763488,
+      "updated": 1771763488
+    }
+  ]
+}
