@@ -2,7 +2,7 @@
   "id": "699a747d7eb9479b38d0875c",
   "title": "tagがついたページをfetchしたい",
   "created": 1771730046,
-  "updated": 1771764001,
+  "updated": 1771822348,
   "lines": [
     {
       "id": "699a747d7eb9479b38d0875c",
@@ -80,6 +80,27 @@
       "userId": "63042e42f2ab90001d68385a",
       "created": 1771730060,
       "updated": 1771732556
+    },
+    {
+      "id": "699bdbf1000000000055fde2",
+      "text": " これだと`#tag`のようにインラインコード内に含まれた`#`つきの文字や、コードブロック中の文字なども拾ってしまいます[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771822064,
+      "updated": 1771822113
+    },
+    {
+      "id": "699bdc08000000000055fde3",
+      "text": "  `[https://example.com#tag]`みたいなURLにも引っ掛かる",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771822088,
+      "updated": 1771822112
+    },
+    {
+      "id": "699bdc23000000000055fde4",
+      "text": " エッジケース全てに対応するなら、[scrapbox-parser]でhashtagを取り出すのが確実です",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771822114,
+      "updated": 1771822141
     },
     {
       "id": "699a7e4d0000000000221446",
@@ -174,10 +195,10 @@
     },
     {
       "id": "699a748c00000000005a2733",
-      "text": "   それぞれのページ内でリンクがtagになっているかリンクになっているかを判別して、tag担っているページだけを取得する",
-      "userId": "63042e42f2ab90001d68385a",
+      "text": "   それぞれのページ内でリンクがtagになっているかリンクになっているかを判別して、tagになっているページだけを取得する",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1771730060,
-      "updated": 1771730060
+      "updated": 1771822052
     },
     {
       "id": "699a748c00000000005a2734",
@@ -279,10 +300,10 @@
     },
     {
       "id": "699a749d00000000005a273f",
-      "text": "  > [https://gyazo.com/099cc10b21531b65fcda7b74dffae61f][https://gyazo.com/099cc10b21531b65fcda7b74dffae61f]",
+      "text": "  > [https://gyazo.com/099cc10b21531b65fcda7b74dffae61f]",
       "userId": "63042e42f2ab90001d68385a",
       "created": 1771730078,
-      "updated": 1771732498
+      "updated": 1771820840
     },
     {
       "id": "699a74d700000000005a2744",
@@ -320,6 +341,125 @@
       "updated": 1771730830
     },
     {
+      "id": "699bc184000000000009dcb0",
+      "text": "  \t自己解決しました[katayama8000.icon]",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1771815301,
+      "updated": 1771815317
+    },
+    {
+      "id": "699bc296000000000009dcb3",
+      "text": "  \t\tkeywardでページを取得",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1771815575,
+      "updated": 1771815590
+    },
+    {
+      "id": "699bc28b000000000009dcb1",
+      "text": "  \t\t\t`https://scrapbox.io/api/pages/${projectName}/search/query?q=${keyword}`",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1771815563,
+      "updated": 1771815592
+    },
+    {
+      "id": "699bc51c000000000009dcc9",
+      "text": "  \t\t\t\t↑を知らなかった",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1771816220,
+      "updated": 1771816225
+    },
+    {
+      "id": "699bc2a8000000000009dcb4",
+      "text": "  \t\tページの中身を見て、欲しいtagでgrep",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1771815593,
+      "updated": 1771815631
+    },
+    {
+      "id": "699bc8d800000000001b3b6f",
+      "text": "  \t\t\t`const filterdPages = pages.includes(\"#tag\")`",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1771817177,
+      "updated": 1771817251
+    },
+    {
+      "id": "699bc2e5000000000009dcb6",
+      "text": "  \t\t最後にフィルターされたタイトルで再度fetch",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1771815654,
+      "updated": 1771815681
+    },
+    {
+      "id": "699bc4d2000000000009dcc7",
+      "text": "  \t\t\t`https://scrapbox.io/api/pages/api/pages/:projectname/search/${title}`",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1771816147,
+      "updated": 1771816204
+    },
+    {
+      "id": "699bc301000000000009dcb7",
+      "text": "  \t\t参考PR",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1771815681,
+      "updated": 1771815792
+    },
+    {
+      "id": "699bc370000000000009dcba",
+      "text": "\t\t\t\t\thttps://github.com/katayama8000/scrapbox-manager/pull/63",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1771815792,
+      "updated": 1771815796
+    },
+    {
+      "id": "699bda20000000000055fddb",
+      "text": "\t\t\tその方法はmax100 pagesまでなら有効ですが、それ以上だと限界があります[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771821600,
+      "updated": 1771821622
+    },
+    {
+      "id": "699bda36000000000055fddc",
+      "text": "\t\t\t [Cosenseの全文検索]は上限100件までなんですよね……",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771821622,
+      "updated": 1771821638
+    },
+    {
+      "id": "699bdaa5000000000055fddd",
+      "text": "\t\t\tなので[tagがついたページをfetchしたい#699af79d0000000000a5b274]が一番確実だと思……っていたんですが、[2 hop search]を使えることに今気づきました",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771821733,
+      "updated": 1771821787
+    },
+    {
+      "id": "699bdadb000000000055fdde",
+      "text": "\t\t\t $ await (await fetch(https://scrapbox.io/api/pages/${projectName}/${tag}?search=%23${tag})).json()",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771821787,
+      "updated": 1771821905
+    },
+    {
+      "id": "699bdb52000000000055fddf",
+      "text": "\t\t\t これで、`#tag`の形で`tag`にリンクしているページを関連ページリストから得られるはずです",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771821906,
+      "updated": 1771821930
+    },
+    {
+      "id": "699bdb6a000000000055fde0",
+      "text": " \t\t\tただ、[2 hop search]に検索上限がないかどうかは未検証です",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771821930,
+      "updated": 1771821952
+    },
+    {
+      "id": "699bdb80000000000055fde1",
+      "text": " \t\t\t　もしこちらも検索上限があるなら、やはり[api/pages/:projectname/search/titles]で`tag`にリンクしているページを洗い出して、そこから[scrapbox-parser]にかけて`#tag`が含まれているページのみ抽出するのが無難ということになりますね。",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771821952,
+      "updated": 1771822031
+    },
+    {
       "id": "699a759600000000005a2749",
       "text": "  諦めたときとか",
       "userId": "63042e42f2ab90001d68385a",
@@ -329,16 +469,23 @@
     {
       "id": "699a77580000000000221443",
       "text": "  Cosenseの運用方法を変えて迂回できたときに",
-      "userId": "63042e42f2ab90001d68385a",
+      "userId": "64574844983f38be90afb67e",
       "created": 1771730776,
-      "updated": 1771730837
+      "updated": 1771817438
     },
     {
       "id": "699a75fa00000000005a274d",
       "text": "  自分はページを消すなあと思った",
-      "userId": "63042e42f2ab90001d68385a",
-      "created": 1771730427,
-      "updated": 1771732659
+      "userId": "64574844983f38be90afb67e",
+      "created": 1771817438,
+      "updated": 1771817439
+    },
+    {
+      "id": "699bc17d000000000009dcaf",
+      "text": "  ",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1771817440,
+      "updated": 1771817441
     },
     {
       "id": "699a748c00000000005a273e",
@@ -402,6 +549,13 @@
       "userId": "649a24da357c4d001c518c25",
       "created": 1771763542,
       "updated": 1771763556
+    },
+    {
+      "id": "699bdcaa000000000055fde5",
+      "text": "\t今なら[Iterator helpers]があるので、`for await`使わずにmethod chainだけで書けるかも？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771822250,
+      "updated": 1771822275
     },
     {
       "id": "699af7080000000000a5b230",
@@ -864,6 +1018,20 @@
       "userId": "649a24da357c4d001c518c25",
       "created": 1771763488,
       "updated": 1771763488
+    },
+    {
+      "id": "699bdcf4000000000055fde6",
+      "text": "うまく解決しそうだったので静観していたが、つい口出ししてしまった[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771822324,
+      "updated": 1771822348
+    },
+    {
+      "id": "699bdcfc000000000055fde7",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771822332,
+      "updated": 1771822332
     }
   ]
 }
