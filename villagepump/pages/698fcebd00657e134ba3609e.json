@@ -2,7 +2,7 @@
   "id": "698fcebd00657e134ba3609e",
   "title": "井戸端にダークテーマを導入したい",
   "created": 1771032254,
-  "updated": 1771904127,
+  "updated": 1771987605,
   "lines": [
     {
       "id": "698fcebd00657e134ba3609e",
@@ -122,6 +122,27 @@
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1771049385,
       "updated": 1771054702
+    },
+    {
+      "id": "699e613e0000000000ea7a2a",
+      "text": "\t\t\t\t通常時と`:hover`したときとで色を別々に設定しなければならないのがめんどくさいですよね[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771987265,
+      "updated": 1771987303
+    },
+    {
+      "id": "699e61630000000000ea7a2c",
+      "text": "\t\t\t\t　ただ、最近追加された[color-mix()]を使えばだいぶ手間が省けるかもと思っています(まだ試していない)",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771987303,
+      "updated": 1771987402
+    },
+    {
+      "id": "699e617f0000000000ea7a2d",
+      "text": "\t\t\t\t　`:hover`した時の色を、通常時よりやや彩度を落とした色として計算式で表せば、通常時のリンクの色指定だけで済ませられそう",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771987330,
+      "updated": 1771987438
     },
     {
       "id": "69904d4c0000000000a68e83",
@@ -958,10 +979,10 @@
     },
     {
       "id": "699770110000000000e67f90",
-      "text": "\t\t[Font Awesomeを常時使えるようにするUserCSS]と競合してしまっており、適用されていなかったため",
+      "text": "\t\t[Font Awesomeを常時使えるようにするUserCSS]と競合してしまっており、適用されていなかった",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1771532307,
-      "updated": 1771532563
+      "updated": 1771969899
     },
     {
       "id": "69914a580000000000e6ae1e",
@@ -972,10 +993,10 @@
     },
     {
       "id": "69914a580000000000e6ae1f",
-      "text": " \t:where(main) .editor#editor, .grid li, .stream {",
+      "text": " \t:where(main) .editor#editor, .grid li.page-list-item, .app .stream {",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1771129434,
-      "updated": 1771588090
+      "updated": 1771969969
     },
     {
       "id": "69914a580000000000e6ae20",
@@ -1279,11 +1300,18 @@
       "updated": 1771134146
     },
     {
-      "id": "69915cc100000000001dd5bc",
-      "text": "\t a {",
+      "id": "699e1eb20000000000f22782",
+      "text": "\t a,",
       "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1771134146,
-      "updated": 1771134150
+      "created": 1771970227,
+      "updated": 1771970228
+    },
+    {
+      "id": "699e1eb00000000000f2277f",
+      "text": "\t .stream .page a:is(.link, .page-link) {",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771970225,
+      "updated": 1771987550
     },
     {
       "id": "69915cc500000000001dd5bd",
@@ -1304,49 +1332,28 @@
       "text": "\t }",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1771134150,
-      "updated": 1771134150
-    },
-    {
-      "id": "69915e9000000000007f226f",
-      "text": "\t .stream .page .link,",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1771134610,
-      "updated": 1771134611
-    },
-    {
-      "id": "69915d1100000000001dd5bf",
-      "text": "\t .stream .page .page-link {",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1771134227,
-      "updated": 1771134229
-    },
-    {
-      "id": "69915d1300000000001dd5c0",
-      "text": "\t \tcolor: var(--page-link-color);",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1771134229,
-      "updated": 1771134232
-    },
-    {
-      "id": "69915df300000000001dd5c6",
-      "text": "\t \t&:hover {\tcolor: var(--page-link-hover-color);\t}",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1771134453,
-      "updated": 1771134453
-    },
-    {
-      "id": "69915d1300000000001dd5c1",
-      "text": "\t }",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1771134229,
-      "updated": 1771134613
+      "updated": 1771970232
     },
     {
       "id": "69915e6a00000000007f226b",
-      "text": "",
-      "userId": "6780c5dd585ee07f1dc50b2b",
+      "text": " `.stream .page a:is(.link, .page-link) {`じゃなくて`.stream .page :is(a.link, a.page-link) {`じゃないとだめかな？[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
       "created": 1771134572,
-      "updated": 1771134572
+      "updated": 1771987595
+    },
+    {
+      "id": "699e62890000000000ea7a31",
+      "text": " 　CSSなにもわからない",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771987596,
+      "updated": 1771987605
+    },
+    {
+      "id": "699e62760000000000ea7a30",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1771987577,
+      "updated": 1771987577
     },
     {
       "id": "69905864000000000078eaba",
@@ -1420,10 +1427,10 @@
     },
     {
       "id": "69905864000000000078eac4",
-      "text": "  \t--li-color-1: hsl(43, 91%, 65%);",
+      "text": "  \t--li-color-1: hsl(43, 90%, 70%);",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1771067493,
-      "updated": 1771630642
+      "updated": 1771969929
     },
     {
       "id": "69905864000000000078eac5",
@@ -1714,10 +1721,10 @@
     },
     {
       "id": "69905d0500000000003ac742",
-      "text": " \t\t--icon-bg: hsl(from var(--page-bg) h s 100% / 80%);",
+      "text": " \t\t--icon-bg: hsl(from var(--page-bg) h s 100% / 75%);",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1771068677,
-      "updated": 1771068713
+      "updated": 1771970180
     },
     {
       "id": "69905864000000000078eadf",
@@ -1812,10 +1819,10 @@
     },
     {
       "id": "69905864000000000078eae9",
-      "text": "\t\t.grid li.page-list-item a .icon {",
+      "text": "\t\t.grid li.page-list-item.image > a > .content > .icon {",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1771067493,
-      "updated": 1771067493
+      "updated": 1771970141
     },
     {
       "id": "69905864000000000078eaea",
@@ -3135,10 +3142,10 @@
     },
     {
       "id": "6997730e0000000000e67fc7",
-      "text": "\t ) :is(img.icon, img.inline-icon) {",
+      "text": "\t ) > :is(img.icon, img.inline-icon) {",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1771533072,
-      "updated": 1771533114
+      "updated": 1771970002
     },
     {
       "id": "6997730e0000000000e67fc8",
