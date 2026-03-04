@@ -1,0 +1,316 @@
+{
+  "id": "69a6e74a388b5993cb08c6f5",
+  "title": "UserScript AI Proxyってなんだろと思ってassets/index.js読んだらscrapbox.aiを発見した",
+  "created": 1772545866,
+  "updated": 1772546876,
+  "lines": [
+    {
+      "id": "69a6e74a388b5993cb08c6f5",
+      "text": "UserScript AI Proxyってなんだろと思ってassets/index.js読んだらscrapbox.aiを発見した",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772545888
+    },
+    {
+      "id": "69a6e74a00000000006d740a",
+      "text": "from [2026/03/02]",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772545866
+    },
+    {
+      "id": "69a6e74a00000000006d740b",
+      "text": " [UserScript AI Proxy]ってなんだろと思って[assets/index.js]読んだら[scrapbox.ai]を発見したなんだこれ！？[takker.icon]",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d740c",
+      "text": " 　これは事あるごとに`for (let atr in scrapbox) console.log(atr)`する[takker.icon]氏[Mijikko.icon]",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d740d",
+      "text": " 　と思ったらリバースエンジニアリングだった",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d740e",
+      "text": " 　　どないなっとんねん〜",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d740f",
+      "text": " code:js",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7410",
+      "text": "  window.scrapbox.ai || (window.scrapbox.ai = {",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7411",
+      "text": "                      async prompt(i) {",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7412",
+      "text": "                          let {system: v, user: _} = i;",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7413",
+      "text": "                          const j = Gh.CurrentProject.get()?.name;",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7414",
+      "text": "                          if (!j)",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7415",
+      "text": "                              throw new Error(\"projectName is empty.\");",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7416",
+      "text": "                          return (await ao.post(`/api/projects/${j}/ai/prompt`, {",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7417",
+      "text": "                              system: v,",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7418",
+      "text": "                              user: _",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7419",
+      "text": "                          })).data",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d741a",
+      "text": "                      }",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d741b",
+      "text": "                  }),",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d741c",
+      "text": " 知らないAPI path出てきたんだが",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d741d",
+      "text": " これって名前的にそういうことでいいんですかね？",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d741e",
+      "text": " code:js",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d741f",
+      "text": "  > await scrapbox.ai.prompt({",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7420",
+      "text": "      system: \"あなたは猫である。名前はまだない。\",",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7421",
+      "text": "      user: \"shokaiさんについて知っていることを教えて。\"",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7422",
+      "text": "  })",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7423",
+      "text": "  index.js:2   POST https://scrapbox.io/api/projects/villagepump/ai/prompt 402 (Payment Required)",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7424",
+      "text": " あーだめかあ",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7425",
+      "text": " code:json",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7426",
+      "text": "  {",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7427",
+      "text": "      \"name\": \"PaymentRequiredError\",",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7428",
+      "text": "      \"message\": \"This feature is not available in the current pricing plan.\"",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d7429",
+      "text": "  }",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d742a",
+      "text": " そうですか",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d742b",
+      "text": " ビジネスプランの試用で検証いけないかな[mtane0412.icon][sta.icon]",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d742c",
+      "text": " \t「402 (Payment Required)」なので払えばいける？かもと読める[sta.icon]",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d742d",
+      "text": " \t月額1100円の[井戸端Pro]はじまる[mtane0412.icon]",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546831
+    },
+    {
+      "id": "69a6e74a00000000006d742e",
+      "text": "[mtane0412.icon]",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772545866,
+      "updated": 1772546875
+    },
+    {
+      "id": "69a6eb3600000000004c623a",
+      "text": " ビジネスプラン、そもそも公開プロジェクトなら無料だからビジネスプラン限定機能検証はそれでよいのか",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772546871,
+      "updated": 1772546876
+    },
+    {
+      "id": "69a6eb3700000000004c623b",
+      "text": "   と思ったらビジネスプランは非公開じゃないと選択できないのだった",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772546871,
+      "updated": 1772546876
+    },
+    {
+      "id": "69a6eb3700000000004c623c",
+      "text": "   Public Project",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772546871,
+      "updated": 1772546876
+    },
+    {
+      "id": "69a6eb3700000000004c623d",
+      "text": "   Private Project",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772546871,
+      "updated": 1772546876
+    },
+    {
+      "id": "69a6eb3700000000004c623e",
+      "text": "    Business",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772546871,
+      "updated": 1772546876
+    },
+    {
+      "id": "69a6eb3700000000004c623f",
+      "text": "    Personal",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1772546871,
+      "updated": 1772546876
+    }
+  ]
+}

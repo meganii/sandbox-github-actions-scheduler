@@ -1,0 +1,155 @@
+{
+  "id": "69a849982aa78253f4843af1",
+  "title": "WSL2 Ubuntuにkeyringを入れる",
+  "created": 1772636570,
+  "updated": 1772639172,
+  "lines": [
+    {
+      "id": "69a849982aa78253f4843af1",
+      "text": "WSL2 Ubuntuにkeyringを入れる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772636570,
+      "updated": 1772636570
+    },
+    {
+      "id": "69a853bf0000000000f05e99",
+      "text": "[keyring]の入れ方",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772639167,
+      "updated": 1772639172
+    },
+    {
+      "id": "69a853bf0000000000f05e9a",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772639167,
+      "updated": 1772639167
+    },
+    {
+      "id": "69a849990000000000f05e60",
+      "text": " 1. インストールコマンドを入力",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772636570,
+      "updated": 1772636581
+    },
+    {
+      "id": "69a849a40000000000f05e62",
+      "text": "  $ sudo apt-get install gnome-keyring seahorse",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772636581,
+      "updated": 1772636618
+    },
+    {
+      "id": "69a8499d0000000000f05e61",
+      "text": "\t\tGUI管理ツールとして[seahorse]も入れる",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772636573,
+      "updated": 1772636651
+    },
+    {
+      "id": "69a849eb0000000000f05e64",
+      "text": "\t\t\t[GitHub Copilot CLI]はこれ必須らしい",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772636652,
+      "updated": 1772638030
+    },
+    {
+      "id": "69a849ff0000000000f05e65",
+      "text": "\t\t\t\thttps://github.com/github/copilot-cli/issues/49",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772636672,
+      "updated": 1772636672
+    },
+    {
+      "id": "69a84a660000000000f05e6a",
+      "text": "\t2. 下のコマンドを打っておく",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772636776,
+      "updated": 1772636785
+    },
+    {
+      "id": "69a84a700000000000f05e6b",
+      "text": "\t\t$ echo \"aaaaa\" | gnome-keyring-daemon --replace --unlock",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772636785,
+      "updated": 1772638120
+    },
+    {
+      "id": "69a84a750000000000f05e6c",
+      "text": "\t\t`echo \"aaaaa\"`は適当なダブらない文字列に変えてOK",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772636789,
+      "updated": 1772637095
+    },
+    {
+      "id": "69a84fbd0000000000f05e73",
+      "text": "\t\t\tてかこれ自体がパスワードの役割な気が…[Mijikko.icon]",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772638142,
+      "updated": 1772638150
+    },
+    {
+      "id": "69a84a910000000000f05e6d",
+      "text": "\t\t参考：https://tech.buty4649.net/entry/2023/01/31/182908",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772636818,
+      "updated": 1772636819
+    },
+    {
+      "id": "69a849e20000000000f05e63",
+      "text": "\t3. 自動的に起動するようにするのであれば、以下のコマンドをshellの起動スクリプトに放り込んでおく",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772636642,
+      "updated": 1772638229
+    },
+    {
+      "id": "69a850140000000000f05e74",
+      "text": "\t\tcode:bash",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772638229,
+      "updated": 1772638430
+    },
+    {
+      "id": "69a8501e0000000000f05e75",
+      "text": "\t\t echo \"aaaaa\" | gnome-keyring-daemon --unlock",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772638239,
+      "updated": 1772638247
+    },
+    {
+      "id": "69a850c30000000000f05e77",
+      "text": "\t\tログがうるさいので下のようにしてもいいかも",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772638404,
+      "updated": 1772638416
+    },
+    {
+      "id": "69a850d20000000000f05e78",
+      "text": "\t\tcode:bash",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772638418,
+      "updated": 1772638432
+    },
+    {
+      "id": "69a850d20000000000f05e79",
+      "text": "\t\t echo \"aaaaa\" | gnome-keyring-daemon --unlock 2> /dev/null",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772638418,
+      "updated": 1772638424
+    },
+    {
+      "id": "69a84a410000000000f05e69",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772636737,
+      "updated": 1772636737
+    },
+    {
+      "id": "69a84a030000000000f05e66",
+      "text": "",
+      "userId": "60fb0a79f3364000237838e3",
+      "created": 1772636676,
+      "updated": 1772636676
+    }
+  ]
+}
