@@ -1,0 +1,533 @@
+{
+  "id": "69aac8ea296f01d364a19485",
+  "title": "scrapbox-bundlerのバグ (2026-02)",
+  "created": 1772800235,
+  "updated": 1772803245,
+  "lines": [
+    {
+      "id": "69aac8ea296f01d364a19485",
+      "text": "scrapbox-bundlerのバグ (2026-02)",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772803245
+    },
+    {
+      "id": "69aac936000000000024a87e",
+      "text": "cf. [井戸端にダークテーマを導入したい]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800311,
+      "updated": 1772800321
+    },
+    {
+      "id": "69aac8ea000000000024a85a",
+      "text": "from [2026/02/14]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac92c000000000024a87d",
+      "text": "[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800301,
+      "updated": 1772800302
+    },
+    {
+      "id": "69aac8ea000000000024a85b",
+      "text": " [| [https://gyazo.com/2c941b98136966d46a957eed67fa1159][https://gyazo.com/bb8963c3effae2ec2f03426b0627f4f3][https://gyazo.com/2a5132b70222d34be01b76405058ce35][https://gyazo.com/5b9b562feda61a34bf74ec049917468c]]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800303
+    },
+    {
+      "id": "69aac8ea000000000024a85c",
+      "text": "\tメニューがまだだけど、他の誰かが対応してくれるかもしれないからとりあえずSettingsいっとくか",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a85d",
+      "text": "\t[scrapbox-bundler]の出力結果がなんだかおかしい…途中からabse64が混ざっている",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a85e",
+      "text": "\t\t[https://gyazo.com/92af155ffd1304eb3ff4c3593d64b7d8]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a85f",
+      "text": "\t\tGoogle Fontsの[BIZ UDゴシック]のCSSが物凄い文字数なのが原因らしい",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a860",
+      "text": "\t\t\t日本語フォントの分割woff2の`@font-face {}`をCosenseのページ内に収めるのは無理だから、井戸端側にフォントファイルを直に置いておくことにする",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a861",
+      "text": "\t\t\tこのフォント、TTFしかないな‥まあいいか",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a862",
+      "text": "\t\t\t\ttakkerさんが助けてくれたので不要に。ファイルとCSSを削除しました",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a863",
+      "text": "\tうん？\t[scrapbox-bundler] が`@font-face`内の`src: url()`で指定されているバイナリファイルにアクセスしようとして404を返されている？",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a864",
+      "text": "\tしかし、こちらではInPrivateモードの未ログイン状態でもファイルにアクセスできる",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a865",
+      "text": "\t\tPluginとやらがファイルへのアクセスを弾かれている？",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a866",
+      "text": "\tそもそもなぜCSSを結合するツールがバイナリファイルにアクセスする必要があるのでしょう",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a867",
+      "text": "\t\tどこにバグ報告をすればよいのだ",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a868",
+      "text": "\t\t[takker.icon]でOKです[takker.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a869",
+      "text": "\t\t\t大変助かりました！ありがとうございます！！！[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a86a",
+      "text": "\tとりあえずbundleの対象から外してSettingsから直に`@import`することにする",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a86b",
+      "text": "\t[https://gyazo.com/3a9fdc4b62fb53c2ecf2ecf13d567fa0]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a86c",
+      "text": "\tcode:error.log",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a86d",
+      "text": "\t\t  Failed to build.",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a86e",
+      "text": "   ",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a86f",
+      "text": "   2 Errors:",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a870",
+      "text": "   ✘ [ERROR] [404 ] Failed to fetch https://scrapbox.io/files/69903a203583dfb074cef64f.ttf [plugin remote-loader]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a871",
+      "text": "   ",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a872",
+      "text": "       https://scrapbox.io/api/code/villagepump/BIZ%20UD%E3%82%B4%E3%82%B7%E3%83%83%E3%82%AF/style.css:6:10:",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a873",
+      "text": "         6 │   src: url(\"https://scrapbox.io/files/69903a203583dfb074cef64f.ttf\");",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a874",
+      "text": "           ╵            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a875",
+      "text": "   ",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a876",
+      "text": "   ✘ [ERROR] [404 ] Failed to fetch https://scrapbox.io/files/69903a273583dfb074cef65b.ttf [plugin remote-loader]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a877",
+      "text": "   ",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a878",
+      "text": "       https://scrapbox.io/api/code/villagepump/BIZ%20UD%E3%82%B4%E3%82%B7%E3%83%83%E3%82%AF/style.css:20:10:",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a879",
+      "text": "         20 │   src: url(\"https://scrapbox.io/files/69903a273583dfb074cef65b.ttf\");",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a87a",
+      "text": "            ╵            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aac8ea000000000024a87b",
+      "text": "   ",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aacb5d0000000000a9d4b0",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb830000000000a9d4c7",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800901,
+      "updated": 1772800901
+    },
+    {
+      "id": "69aacb5d0000000000a9d4b1",
+      "text": "from [Settings]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4b2",
+      "text": "Webフォント用CSS",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4b3",
+      "text": " [- bundleする時は、一旦これを一旦除外状態にしないとbundleに失敗します][Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4b4",
+      "text": " Google Fontsの日本語フォントのCSSは凄まじい文字数なのでbundleするのは無理なんだ。すまない…[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4b5",
+      "text": " あとscrapbox-bundler自体のバグなのか、`@font-face { src: url();}`内のバイナリファイルのURLにアクセスしようとしてbundleに失敗するんだ。変なバグを踏んでしまい本当にすまない[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4b6",
+      "text": "  あーそれはパーセントエンコーディングかexternalの問題かも[takker.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4b7",
+      "text": "  明日調べてみます",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4b8",
+      "text": "  お手数おかけします…[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4b9",
+      "text": "  一旦上のbundleのリンクのURL parametersのexternalにGoogle fontのドメインを足してみてください[takker.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4ba",
+      "text": "   それで解決するかも",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4bb",
+      "text": "   書き方はすでに設定してあるexternalの記法を参照",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4bc",
+      "text": "   こちらでも試したいですが今スマホしかないのですまない",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4bd",
+      "text": "   ありがとうございます。externalにGoogle Fontsと`https://scrapbox.io/files/`を追加したところ、bundleが通りました[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4be",
+      "text": "   やはりそういうことか。解決してよかったです[takker.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4bf",
+      "text": "   やったー！ダークになった！[takker.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4c0",
+      "text": "   [https://gyazo.com/c726260726d79af801b62e001bd4f01a]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4c1",
+      "text": "   [Nrem.icon][***** 🎉]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aacb5d0000000000a9d4c2",
+      "text": "【問題が解決したため、ここにあった.cssは元のUserCSSに移しました】",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800862,
+      "updated": 1772800862
+    },
+    {
+      "id": "69aac8ea000000000024a87c",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800235,
+      "updated": 1772800235
+    },
+    {
+      "id": "69aacb7c0000000000a9d4c6",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800893,
+      "updated": 1772800893
+    },
+    {
+      "id": "69aacb790000000000a9d4c5",
+      "text": "from [2026/02/14]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800890,
+      "updated": 1772800890
+    },
+    {
+      "id": "69aac97100000000007ee6b5",
+      "text": "[takker.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800370,
+      "updated": 1772800373
+    },
+    {
+      "id": "69aac97500000000007ee6b7",
+      "text": "\t[scrapbox-bundler]直したいところがありまくりなのだが、だいぶコードがややこしくなっていて着手できていない",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800374,
+      "updated": 1772800375
+    },
+    {
+      "id": "69aac97600000000007ee6b8",
+      "text": "  今ならcoding agentがあるから、開発再開できるかも",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800375,
+      "updated": 1772800377
+    },
+    {
+      "id": "69aac97200000000007ee6b6",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800371,
+      "updated": 1772800371
+    },
+    {
+      "id": "69aac99b00000000007ee6c2",
+      "text": "[Mijikko.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800413,
+      "updated": 1772800416
+    },
+    {
+      "id": "69aac99600000000007ee6b9",
+      "text": " 井戸端を始動します",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800408,
+      "updated": 1772800410
+    },
+    {
+      "id": "69aac99600000000007ee6ba",
+      "text": "　　第3、第4、第7井戸にいる従業員は、直ちに避難してください",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800408,
+      "updated": 1772800408
+    },
+    {
+      "id": "69aac99600000000007ee6bb",
+      "text": "　[詰め込まれたUserCSSの山により崩壊の危機に瀕した井戸端]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800408,
+      "updated": 1772800424
+    },
+    {
+      "id": "69aac99600000000007ee6bc",
+      "text": "　　みんなの為、知的生産の為、全ての人の希望を背負った[イドバタニシ]が自らの命を燃やして立ち向かう",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800408,
+      "updated": 1772800408
+    },
+    {
+      "id": "69aac99600000000007ee6bd",
+      "text": "　 　[!**** [イドバタニシのシェイク.icon]]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800408,
+      "updated": 1772800408
+    },
+    {
+      "id": "69aac99600000000007ee6be",
+      "text": "　　盛大に何かが始まりそうな予感[takker.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800408,
+      "updated": 1772800408
+    },
+    {
+      "id": "69aac99600000000007ee6bf",
+      "text": "　　ドラマ化が待たれる[caki.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800408,
+      "updated": 1772800408
+    },
+    {
+      "id": "69aac99600000000007ee6c0",
+      "text": "　　第3井戸にいくためには謎解きをしなければならない[nishio.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800408,
+      "updated": 1772800408
+    },
+    {
+      "id": "69aac99600000000007ee6c1",
+      "text": "　　 高級イドバタリアンは謎解きで認証されるのか…[yosider.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800408,
+      "updated": 1772800408
+    },
+    {
+      "id": "69aacb650000000000a9d4c4",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772800870,
+      "updated": 1772800870
+    }
+  ]
+}
