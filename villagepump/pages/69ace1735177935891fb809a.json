@@ -1,0 +1,267 @@
+{
+  "id": "69ace1735177935891fb809a",
+  "title": "井戸端のダークテーマを無効化する方法",
+  "created": 1772937589,
+  "updated": 1772938243,
+  "lines": [
+    {
+      "id": "69ace1735177935891fb809a",
+      "text": "井戸端のダークテーマを無効化する方法",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772938243
+    },
+    {
+      "id": "69ace40100000000005bf454",
+      "text": "を検討する",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772938243,
+      "updated": 1772938243
+    },
+    {
+      "id": "69ace17200000000009d5385",
+      "text": "from [井戸端にダークテーマを導入したい]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d5386",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d5387",
+      "text": "井戸端をダークテーマで閲覧しない人はどうすべきか",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d5388",
+      "text": " 端末の[ダークモード]がオンの時、[箇条書きのバレットをFontAwesomeにするUserCSS]の配色などの変数がダークテーマ仕様になってしまう",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937705
+    },
+    {
+      "id": "69ace17200000000009d5389",
+      "text": "\t案1. 端末のダークモードをオフにする",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d538a",
+      "text": "\t\t他のアプリの配色も明るくなる",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d538b",
+      "text": "\t案2. CSS変数を参照するコンテナクエリーを使ってそれ用のUserCSSを生やす",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d538c",
+      "text": "\t\t欠点はパフォーマンス面の問題があること",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d538d",
+      "text": "\t\t同じ変数を二箇所に設置するのは避けたい",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d538e",
+      "text": "\t\t\tまあ標準テーマの値は滅多に変わるものではないが‥",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d538f",
+      "text": "\t\tcode:example.css",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d5390",
+      "text": "\t\t\t:root {",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d5391",
+      "text": "\t\t\t\t--is-dark: false;",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d5392",
+      "text": "\t\t\t}",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d5393",
+      "text": "\t\t\t@media screen and (prefers-color-scheme: dark) {",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d5394",
+      "text": "\t\t\t\t:root {\t--is-dark: true;\t}",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d5395",
+      "text": "\t\t\t}",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d5396",
+      "text": "\t\t\t@container (--is-dark: false) {",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d5397",
+      "text": "\t\t\t\thtml {",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d5398",
+      "text": "\t\t\t\t\t/* ライトテーマの変数の値を複製する (--page-bg 等) */",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d5399",
+      "text": "\t\t\t\t}",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d539a",
+      "text": "\t\t\t}",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d539b",
+      "text": "\t\tcode:turn-off-dark-theme.css",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d539c",
+      "text": "\t\t html {",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d539d",
+      "text": "\t\t \t--is-dark: false;",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d539e",
+      "text": "\t\t }",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d539f",
+      "text": "\t副作用少なく解除できる方法があればすばらしいが…[yosider.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d53a0",
+      "text": "\t でも元々[ScrapboxのTheme]はメンバー全員強制だから、それと比べれば各々が変えられる方法があるだけ良しか",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d53a1",
+      "text": "\t [/customize/Auto Dark Themes] の逆のUserCSSを作成するのが最も良い方法かもしれない[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d53a2",
+      "text": "\t案3. `(prefers-color-scheme: dark)`時にライトテーマの変数で上書きするUserCSSを作成する",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d53a3",
+      "text": " \t\t[Auto Dark Themes] の逆パターン",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d53a4",
+      "text": "\t\t各自でUserCSSに`@import url('') (prefers-color-scheme: dark);`を書けばよくなる",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d53a5",
+      "text": "\t\t同じ変数を2箇所に設置しなければならないのは案2.と同じ",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772938175
+    },
+    {
+      "id": "69ace17200000000009d53a7",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    },
+    {
+      "id": "69ace17200000000009d53a8",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1772937589,
+      "updated": 1772937589
+    }
+  ]
+}
