@@ -1,22 +1,22 @@
 {
   "id": "69c7ef7c1bacbb82cb0fd5c6",
-  "title": "Cosense のリンクを結びつけるテーブル設計",
+  "title": "Cosense みたいなアプリが作りたい",
   "created": 1774710657,
-  "updated": 1774711038,
+  "updated": 1775143942,
   "lines": [
     {
       "id": "69c7ef7c1bacbb82cb0fd5c6",
-      "text": "Cosense のリンクを結びつけるテーブル設計",
+      "text": "Cosense みたいなアプリが作りたい",
       "userId": "64574844983f38be90afb67e",
       "created": 1774710657,
-      "updated": 1774710673
+      "updated": 1775143143
     },
     {
       "id": "69c7ef910000000000ae1593",
-      "text": "　Page table",
+      "text": " ページを結びつけるテーブル設計",
       "userId": "64574844983f38be90afb67e",
       "created": 1774710673,
-      "updated": 1774710689
+      "updated": 1775143166
     },
     {
       "id": "69c7efa20000000000ae1595",
@@ -27,59 +27,262 @@
     },
     {
       "id": "69c7efa70000000000ae1596",
-      "text": "　\t CREATE TABLE IF NOT EXISTS pages (",
+      "text": "　\t CREATE TABLE pages (",
       "userId": "64574844983f38be90afb67e",
       "created": 1774710695,
-      "updated": 1774710696
+      "updated": 1775143180
     },
     {
-      "id": "69c7efa80000000000ae1597",
-      "text": "       id TEXT PRIMARY KEY,",
+      "id": "69ce890c000000000016dcd3",
+      "text": "     id INTEGER PRIMARY KEY AUTOINCREMENT,",
       "userId": "64574844983f38be90afb67e",
-      "created": 1774710696,
-      "updated": 1774710696
+      "created": 1775143180,
+      "updated": 1775143180
     },
     {
-      "id": "69c7efa80000000000ae1598",
-      "text": "       title TEXT NOT NULL,",
+      "id": "69ce890c000000000016dcd4",
+      "text": "     title TEXT NOT NULL,",
       "userId": "64574844983f38be90afb67e",
-      "created": 1774710696,
-      "updated": 1774710696
+      "created": 1775143180,
+      "updated": 1775143180
     },
     {
-      "id": "69c7efa80000000000ae1599",
-      "text": "       description TEXT NOT NULL,",
+      "id": "69ce890c000000000016dcd5",
+      "text": "     description TEXT NOT NULL,",
       "userId": "64574844983f38be90afb67e",
-      "created": 1774710696,
-      "updated": 1774710696
+      "created": 1775143180,
+      "updated": 1775143180
     },
     {
-      "id": "69c7efa80000000000ae159a",
-      "text": "       created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,",
+      "id": "69ce890c000000000016dcd6",
+      "text": "     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,",
       "userId": "64574844983f38be90afb67e",
-      "created": 1774710696,
-      "updated": 1774710696
+      "created": 1775143180,
+      "updated": 1775143180
     },
     {
-      "id": "69c7efa80000000000ae159b",
-      "text": "       updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP",
+      "id": "69ce890c000000000016dcd7",
+      "text": "     updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP",
       "userId": "64574844983f38be90afb67e",
-      "created": 1774710696,
-      "updated": 1774710696
+      "created": 1775143180,
+      "updated": 1775143180
     },
     {
-      "id": "69c7efa80000000000ae159c",
+      "id": "69ce890c000000000016dcd8",
       "text": "   );",
       "userId": "64574844983f38be90afb67e",
-      "created": 1774710696,
-      "updated": 1774710696
+      "created": 1775143180,
+      "updated": 1775143180
     },
     {
-      "id": "69c7ef910000000000ae1594",
+      "id": "69ce890c000000000016dcd9",
+      "text": "   ",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890c000000000016dcda",
+      "text": "   CREATE TABLE tokens (",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890c000000000016dcdb",
+      "text": "     id INTEGER PRIMARY KEY AUTOINCREMENT,",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890c000000000016dcdc",
+      "text": "     name TEXT UNIQUE NOT NULL,",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890c000000000016dcdd",
+      "text": "     last_used_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890c000000000016dcde",
+      "text": "   );",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890c000000000016dcdf",
+      "text": "   ",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890c000000000016dce0",
+      "text": "   CREATE TABLE page_tokens (",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890c000000000016dce1",
+      "text": "     page_id INTEGER NOT NULL,",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890c000000000016dce2",
+      "text": "     token_id INTEGER NOT NULL,",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890c000000000016dce3",
+      "text": "     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890c000000000016dce4",
+      "text": "     PRIMARY KEY (page_id, token_id),",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890c000000000016dce5",
+      "text": "     FOREIGN KEY (page_id) REFERENCES pages(id) ON DELETE CASCADE,",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890c000000000016dce6",
+      "text": "     FOREIGN KEY (token_id) REFERENCES tokens(id) ON DELETE CASCADE",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890c000000000016dce7",
+      "text": "   );",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143180,
+      "updated": 1775143180
+    },
+    {
+      "id": "69ce890e000000000016dce8",
+      "text": " 困ったことが、入力が終わって、1秒経ったら保存というロジックにすると、死にtokenがたくさんできてしまう",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143182,
+      "updated": 1775143438
+    },
+    {
+      "id": "69ce8a0e000000000016dce9",
+      "text": " 解決策",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143438,
+      "updated": 1775143452
+    },
+    {
+      "id": "69ce8a1c000000000016dcea",
+      "text": " \t参照カウント方式",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143452,
+      "updated": 1775143634
+    },
+    {
+      "id": "69ce8ad3000000000016dceb",
+      "text": " \t\tどのくらい参照されているのかカウントする",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143636,
+      "updated": 1775143647
+    },
+    {
+      "id": "69ce8adf000000000016dcec",
+      "text": " \t\t定期実行で参照が0のものは削除する",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143647,
+      "updated": 1775143658
+    },
+    {
+      "id": "69ce8bd8000000000016dcf7",
+      "text": " \t\tカウントがどのくらい正確になるのか",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143896,
+      "updated": 1775143919
+    },
+    {
+      "id": "69ce8bee000000000016dcf8",
+      "text": " \t\t\tトランザクション貼ればほぼ大丈夫？",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143919,
+      "updated": 1775143942
+    },
+    {
+      "id": "69ce8aea000000000016dced",
+      "text": " \t最終使用日ベースの削除",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143659,
+      "updated": 1775143678
+    },
+    {
+      "id": "69ce8aff000000000016dcee",
+      "text": " \t\ttokenにlast_used_atを持って、一定期間使われていないものは削除する",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143679,
+      "updated": 1775143705
+    },
+    {
+      "id": "69ce8b19000000000016dcef",
+      "text": " \t\tだいぶ乱暴",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143705,
+      "updated": 1775143708
+    },
+    {
+      "id": "69ce8b1d000000000016dcf0",
+      "text": " \ttokenの保存の方法を変える",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143709,
+      "updated": 1775143736
+    },
+    {
+      "id": "69ce8b31000000000016dcf1",
+      "text": " \t\ttokenだけ、自動保存にしない",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143730,
+      "updated": 1775143747
+    },
+    {
+      "id": "69ce8b42000000000016dcf2",
+      "text": " \t\t#token の記法をサポートしない",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143747,
+      "updated": 1775143798
+    },
+    {
+      "id": "69ce8b76000000000016dcf5",
+      "text": " \t\t記事を結びつける方法を別途考える",
+      "userId": "64574844983f38be90afb67e",
+      "created": 1775143798,
+      "updated": 1775143814
+    },
+    {
+      "id": "69ce8b5f000000000016dcf4",
       "text": "",
       "userId": "64574844983f38be90afb67e",
-      "created": 1774710674,
-      "updated": 1774710674
+      "created": 1775143775,
+      "updated": 1775143775
     }
   ]
 }
