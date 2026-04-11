@@ -1,0 +1,1625 @@
+{
+  "id": "69da0bf1686f448faa2a99c0",
+  "title": "Cosenseでホバーカードを実装する",
+  "created": 1775897587,
+  "updated": 1775903032,
+  "lines": [
+    {
+      "id": "69da0bf1686f448faa2a99c0",
+      "text": "Cosenseでホバーカードを実装する",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775897587,
+      "updated": 1775897662
+    },
+    {
+      "id": "69da0c3e000000000030c4dc",
+      "text": "[https://gyazo.com/ed95c0378d313a0c36397e2ed1528241]",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775897662,
+      "updated": 1775897754
+    },
+    {
+      "id": "69da0c9a000000000030c4dd",
+      "text": "",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775897754,
+      "updated": 1775897754
+    },
+    {
+      "id": "69da0c37000000000030c4db",
+      "text": "　自分のCosenseには動画のようにリンクをホバーすると概要が見れるといった機能を実装しています。",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775897655,
+      "updated": 1775897781
+    },
+    {
+      "id": "69da0cae000000000030c4df",
+      "text": "　ただ、これメンバーごとにJSを埋め込んでるので、他の人には反映されないのが難点…。",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775897775,
+      "updated": 1775897800
+    },
+    {
+      "id": "69da0cc8000000000030c4e0",
+      "text": "　\tもし他の人にもデフォルトで実装する方法ご存じの方いらっしゃいましたら教えてください[HelloPeople.icon]",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775897800,
+      "updated": 1775897816
+    },
+    {
+      "id": "69da0dbe00000000001ccd14",
+      "text": "　\t [ProjectScript]という有料版の機能（たぶん、ソレジャナイと言われそうですが…）[suto3.icon]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1775898047,
+      "updated": 1775898138
+    },
+    {
+      "id": "69da0c9e000000000030c4de",
+      "text": "　　　　なんと…課金しないと実装できないんですね…。[HelloPeople.icon]",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775897758,
+      "updated": 1775898240
+    },
+    {
+      "id": "69da100e0000000000928448",
+      "text": "　　　　任意のJSを他者のブラウザで実行可能になってしまうので、ビジネス版以外で使えるようになることはまずないと思います[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1775898628,
+      "updated": 1775898725
+    },
+    {
+      "id": "69da10700000000000928449",
+      "text": "　　　　 cf. [ProjectCSS]は見た目を無茶苦茶にできるけど任意コード実行まではできないので許容されている",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1775898726,
+      "updated": 1775898765
+    },
+    {
+      "id": "69da0fda0000000000928445",
+      "text": "",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1775898576,
+      "updated": 1775898579
+    },
+    {
+      "id": "69da0fde0000000000928446",
+      "text": "デザインがかっこいい[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1775898580,
+      "updated": 1775898587
+    },
+    {
+      "id": "69da0fe50000000000928447",
+      "text": " パクっ……参考にして[takker99/ScrapBubble]にも取り入れたい",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1775898587,
+      "updated": 1775898622
+    },
+    {
+      "id": "69da0e7500000000002b495f",
+      "text": "　　ありがとうございます！どんどん使ってください！[HelloPeople.icon]",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775898230,
+      "updated": 1775901594
+    },
+    {
+      "id": "69da1b2f0000000000111f0d",
+      "text": "　　よかったらぜひ[/TECHSTOCK]覗きに来てください",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901486,
+      "updated": 1775901639
+    },
+    {
+      "id": "69da210a0000000000ece16e",
+      "text": "　　　[UserCSSがすごいプロジェクト]だ…[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1775902986,
+      "updated": 1775903032
+    },
+    {
+      "id": "69da1ba90000000000111f0e",
+      "text": "",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901609,
+      "updated": 1775901609
+    },
+    {
+      "id": "69da1c810000000000b4567c",
+      "text": "ソースコード",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901825,
+      "updated": 1775901828
+    },
+    {
+      "id": "69da1c6b0000000000b454d4",
+      "text": "code:script.js",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901804,
+      "updated": 1775901815
+    },
+    {
+      "id": "69da1c790000000000b455a9",
+      "text": " // Cosense Hover Card Preview",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455aa",
+      "text": "  (() => {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455ab",
+      "text": "    const PROJECT = location.pathname.split('/')[1];",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455ac",
+      "text": "    const CACHE = new Map();",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455ad",
+      "text": "    let card = null;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455ae",
+      "text": "    let hideTimer = null;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455af",
+      "text": "    let showTimer = null;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455b0",
+      "text": "    let currentLink = null;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455b1",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455b2",
+      "text": "    function createCard() {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455b3",
+      "text": "      const el = document.createElement('div');",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455b4",
+      "text": "      el.id = 'hover-card';",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455b5",
+      "text": "      el.innerHTML = `",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455b6",
+      "text": "        <div class=\"hc-image\"></div>",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455b7",
+      "text": "        <div class=\"hc-body\">",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455b8",
+      "text": "          <div class=\"hc-title\"></div>",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455b9",
+      "text": "          <div class=\"hc-desc\"></div>",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455ba",
+      "text": "        </div>",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455bb",
+      "text": "      `;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455bc",
+      "text": "      document.body.appendChild(el);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455bd",
+      "text": "      el.addEventListener('mouseenter', () => {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455be",
+      "text": "        clearTimeout(hideTimer);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455bf",
+      "text": "      });",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455c0",
+      "text": "      el.addEventListener('mouseleave', () => {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455c1",
+      "text": "        scheduleHide();",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455c2",
+      "text": "      });",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455c3",
+      "text": "      return el;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455c4",
+      "text": "    }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455c5",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455c6",
+      "text": "    const style = document.createElement('style');",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455c7",
+      "text": "    style.textContent = `",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455c8",
+      "text": "      #hover-card {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455c9",
+      "text": "        position: fixed;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455ca",
+      "text": "        z-index: 100000;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455cb",
+      "text": "        width: 260px;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455cc",
+      "text": "        background: #fff;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455cd",
+      "text": "        border-radius: 20px;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455ce",
+      "text": "        box-shadow: 0 8px 30px rgba(0,0,0,.12), 0 0 0 1px rgba(0,0,0,.04);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455cf",
+      "text": "        overflow: hidden;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455d0",
+      "text": "        opacity: 0;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455d1",
+      "text": "        pointer-events: none;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455d2",
+      "text": "        transform: translateY(6px);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455d3",
+      "text": "        transition: opacity .18s ease, transform .18s ease;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455d4",
+      "text": "        font-family: 'Inter', 'Zen Kaku Gothic New', sans-serif;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455d5",
+      "text": "      }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455d6",
+      "text": "      #hover-card.visible {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455d7",
+      "text": "        opacity: 1;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455d8",
+      "text": "        pointer-events: auto;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455d9",
+      "text": "        transform: translateY(0);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455da",
+      "text": "      }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455db",
+      "text": "      #hover-card .hc-image {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455dc",
+      "text": "        width: 100%;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455dd",
+      "text": "        height: 140px;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455de",
+      "text": "        background: linear-gradient(135deg, #c8d6e5 0%, #dfe6ed 40%, #f8d8c4 70%, #eab8d1 100%);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455df",
+      "text": "        background-size: cover;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455e0",
+      "text": "        background-position: center;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455e1",
+      "text": "      }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455e2",
+      "text": "      #hover-card .hc-image.has-img {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455e3",
+      "text": "        background: none;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455e4",
+      "text": "      }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455e5",
+      "text": "      #hover-card .hc-image.has-img img {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455e6",
+      "text": "        width: 100%;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455e7",
+      "text": "        height: 100%;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455e8",
+      "text": "        object-fit: cover;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455e9",
+      "text": "        display: block;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455ea",
+      "text": "      }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455eb",
+      "text": "      #hover-card .hc-body {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455ec",
+      "text": "        padding: 14px 16px 16px;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455ed",
+      "text": "      }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455ee",
+      "text": "      #hover-card .hc-title {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455ef",
+      "text": "        font-weight: 700;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455f0",
+      "text": "        font-size: 15px;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455f1",
+      "text": "        line-height: 1.3;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455f2",
+      "text": "        color: #111;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455f3",
+      "text": "        margin-bottom: 6px;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455f4",
+      "text": "        display: -webkit-box;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455f5",
+      "text": "        -webkit-line-clamp: 2;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455f6",
+      "text": "        -webkit-box-orient: vertical;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455f7",
+      "text": "        overflow: hidden;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455f8",
+      "text": "      }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455f9",
+      "text": "      #hover-card .hc-desc {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455fa",
+      "text": "        font-size: 12px;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455fb",
+      "text": "        line-height: 1.5;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455fc",
+      "text": "        color: #666;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455fd",
+      "text": "        display: -webkit-box;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455fe",
+      "text": "        -webkit-line-clamp: 3;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b455ff",
+      "text": "        -webkit-box-orient: vertical;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45600",
+      "text": "        overflow: hidden;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45601",
+      "text": "      }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45602",
+      "text": "    `;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45603",
+      "text": "    document.head.appendChild(style);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45604",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45605",
+      "text": "    async function fetchPage(title) {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45606",
+      "text": "      if (CACHE.has(title)) return CACHE.get(title);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45607",
+      "text": "      try {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45608",
+      "text": "        const res = await fetch(`/api/pages/${PROJECT}/${encodeURIComponent(title)}`);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45609",
+      "text": "        if (!res.ok) return null;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4560a",
+      "text": "        const data = await res.json();",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4560b",
+      "text": "        CACHE.set(title, data);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4560c",
+      "text": "        return data;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4560d",
+      "text": "      } catch {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4560e",
+      "text": "        return null;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4560f",
+      "text": "      }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45610",
+      "text": "    }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45611",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45612",
+      "text": "    function extractImage(page) {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45613",
+      "text": "      if (page.image) return page.image;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45614",
+      "text": "      for (const line of (page.descriptions || [])) {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45615",
+      "text": "        const m = line.match(/https?:\\/\\/[^\\s\\]]+\\.(?:png|jpe?g|gif|webp|svg)/i);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45616",
+      "text": "        if (m) return m[0];",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45617",
+      "text": "      }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45618",
+      "text": "      for (const l of (page.lines || []).slice(0, 10)) {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45619",
+      "text": "        const m = l.text?.match(/https?:\\/\\/[^\\s\\]]+\\.(?:png|jpe?g|gif|webp|svg)/i);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4561a",
+      "text": "        if (m) return m[0];",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4561b",
+      "text": "      }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4561c",
+      "text": "      return null;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4561d",
+      "text": "    }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4561e",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4561f",
+      "text": "    function show(link, data) {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45620",
+      "text": "      if (!card) card = createCard();",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45621",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45622",
+      "text": "      const imgEl = card.querySelector('.hc-image');",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45623",
+      "text": "      const titleEl = card.querySelector('.hc-title');",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45624",
+      "text": "      const descEl = card.querySelector('.hc-desc');",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45625",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45626",
+      "text": "      titleEl.textContent = data.title || '';",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45627",
+      "text": "      descEl.textContent = (data.descriptions || []).join(' ').slice(0, 200);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45628",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45629",
+      "text": "      const imgUrl = extractImage(data);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4562a",
+      "text": "      imgEl.innerHTML = '';",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4562b",
+      "text": "      if (imgUrl) {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4562c",
+      "text": "        imgEl.classList.add('has-img');",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4562d",
+      "text": "        const img = document.createElement('img');",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4562e",
+      "text": "        img.src = imgUrl;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4562f",
+      "text": "        img.loading = 'lazy';",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45630",
+      "text": "        imgEl.appendChild(img);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45631",
+      "text": "      } else {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45632",
+      "text": "        imgEl.classList.remove('has-img');",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45633",
+      "text": "      }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45634",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45635",
+      "text": "      const rect = link.getBoundingClientRect();",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45636",
+      "text": "      let top = rect.bottom + 8;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45637",
+      "text": "      let left = rect.left;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45638",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45639",
+      "text": "      if (left + 270 > window.innerWidth) left = window.innerWidth - 275;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4563a",
+      "text": "      if (left < 5) left = 5;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4563b",
+      "text": "      if (top + 280 > window.innerHeight) top = rect.top - 280;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4563c",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4563d",
+      "text": "      card.style.top = top + 'px';",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4563e",
+      "text": "      card.style.left = left + 'px';",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4563f",
+      "text": "      card.classList.add('visible');",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45640",
+      "text": "    }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45641",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45642",
+      "text": "    function hide() {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45643",
+      "text": "      if (card) card.classList.remove('visible');",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45644",
+      "text": "      currentLink = null;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45645",
+      "text": "    }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45646",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45647",
+      "text": "    function scheduleHide() {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45648",
+      "text": "      clearTimeout(hideTimer);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45649",
+      "text": "      hideTimer = setTimeout(hide, 250);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4564a",
+      "text": "    }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4564b",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4564c",
+      "text": "    // リンクに直接 mouseenter/mouseleave を付与",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4564d",
+      "text": "    const attachedLinks = new WeakSet();",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4564e",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4564f",
+      "text": "    function attachLink(link) {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45650",
+      "text": "      if (attachedLinks.has(link)) return;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45651",
+      "text": "      attachedLinks.add(link);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45652",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45653",
+      "text": "      link.addEventListener('mouseenter', () => {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45654",
+      "text": "        clearTimeout(hideTimer);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45655",
+      "text": "        clearTimeout(showTimer);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45656",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45657",
+      "text": "        if (link === currentLink && card && card.classList.contains('visible')) return;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45658",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45659",
+      "text": "        currentLink = link;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4565a",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4565b",
+      "text": "        showTimer = setTimeout(async () => {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4565c",
+      "text": "          const title = link.getAttribute('data-page-title');",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4565d",
+      "text": "          if (!title) return;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4565e",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4565f",
+      "text": "          const data = await fetchPage(title);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45660",
+      "text": "          if (!data || currentLink !== link) return;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45661",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45662",
+      "text": "          show(link, data);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45663",
+      "text": "        }, 300);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45664",
+      "text": "      });",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45665",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45666",
+      "text": "      link.addEventListener('mouseleave', (e) => {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45667",
+      "text": "        clearTimeout(showTimer);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45668",
+      "text": "        const related = e.relatedTarget;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45669",
+      "text": "        if (card && (card === related || card.contains(related))) return;",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4566a",
+      "text": "        scheduleHide();",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4566b",
+      "text": "      });",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4566c",
+      "text": "    }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4566d",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4566e",
+      "text": "    function scanLinks() {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4566f",
+      "text": "      document.querySelectorAll('a.page-link').forEach(attachLink);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45670",
+      "text": "    }",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45671",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45672",
+      "text": "    scanLinks();",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45673",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45674",
+      "text": "    const observer = new MutationObserver(() => scanLinks());",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45675",
+      "text": "    observer.observe(document.body, { childList: true, subtree: true });",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45676",
+      "text": "  ",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45677",
+      "text": "    document.addEventListener('scroll', () => {",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45678",
+      "text": "      clearTimeout(showTimer);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b45679",
+      "text": "      hide();",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4567a",
+      "text": "    }, true);",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c7a0000000000b4567b",
+      "text": "  })();",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901818,
+      "updated": 1775901818
+    },
+    {
+      "id": "69da1c6c0000000000b454d5",
+      "text": "",
+      "userId": "5f938a902ea5180024085116",
+      "created": 1775901804,
+      "updated": 1775901804
+    }
+  ]
+}
