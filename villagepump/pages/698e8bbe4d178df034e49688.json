@@ -2,7 +2,7 @@
   "id": "698e8bbe4d178df034e49688",
   "title": "vlzs",
   "created": 1770949566,
-  "updated": 1776123834,
+  "updated": 1776586695,
   "lines": [
     {
       "id": "698e8bbe4d178df034e49688",
@@ -895,38 +895,10 @@
     },
     {
       "id": "698fdc3c0000000000f5dfac",
-      "text": "code:style.cssa",
+      "text": "",
       "userId": "63042e42f2ab90001d68385a",
       "created": 1771035708,
-      "updated": 1776088815
-    },
-    {
-      "id": "698fdc410000000000f5dfae",
-      "text": " @import \"../../customize/Auto_Dark_Themes/style.css\";",
-      "userId": "63042e42f2ab90001d68385a",
-      "created": 1771035714,
-      "updated": 1771036230
-    },
-    {
-      "id": "698ff718000000000051d17a",
-      "text": " .content .icon img {",
-      "userId": "63042e42f2ab90001d68385a",
-      "created": 1771042584,
-      "updated": 1771042584
-    },
-    {
-      "id": "698ff718000000000051d17b",
-      "text": "     filter: brightness(0.9);",
-      "userId": "63042e42f2ab90001d68385a",
-      "created": 1771042584,
-      "updated": 1771042584
-    },
-    {
-      "id": "698ff718000000000051d17c",
-      "text": " }",
-      "userId": "63042e42f2ab90001d68385a",
-      "created": 1771042584,
-      "updated": 1771042584
+      "updated": 1776585756
     },
     {
       "id": "69dcf6e70000000000c8ca36",
@@ -1017,28 +989,378 @@
       "text": " code:script.js",
       "userId": "63042e42f2ab90001d68385a",
       "created": 1776123803,
-      "updated": 1776123834
+      "updated": 1776586278
     },
     {
       "id": "69dd7f9a000000000025a074",
-      "text": "  import '/api/code/kalaclista/UserScripts/lockdown-time.js';",
+      "text": "  (()=> {",
       "userId": "63042e42f2ab90001d68385a",
       "created": 1776123803,
-      "updated": 1776123834
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e867",
+      "text": " \tconst isLockdownTime = (hour) => {",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e868",
+      "text": " \t\t// 06:00 から 10:00 までは ok",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e869",
+      "text": " \t\tif (6 <= hour && hour <= 9) {",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e86a",
+      "text": " \t\t\treturn false;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e86b",
+      "text": " \t\t}",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e86c",
+      "text": " \t\t",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e86d",
+      "text": " \t\t// 12:00 から 13:00 までは ok",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e86e",
+      "text": " \t\tif (12 == hour) {",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e86f",
+      "text": " \t\t\treturn false",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e870",
+      "text": " \t\t}",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e871",
+      "text": " \t\t",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e872",
+      "text": " \t\t// 17:00 から 22:00 までは ok",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e873",
+      "text": " \t\tif (18 <= hour && hour <= 21) {",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585827
+    },
+    {
+      "id": "69e48c540000000000c5e874",
+      "text": " \t\t\treturn false;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e875",
+      "text": " \t\t}",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e876",
+      "text": " \t\t",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e877",
+      "text": " \t\t// それ以外の時間帯はダメ",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e878",
+      "text": " \t\treturn true;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e879",
+      "text": " \t};",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e87a",
+      "text": " \t",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e87b",
+      "text": " \tif (isLockdownTime(new Date().getHours())) {",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e87c",
+      "text": " \t\tdocument.documentElement.setAttribute('data-cosense-lockdown', 'true');",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48fc6000000000042feaf",
+      "text": " \t\twindow.location.href = 'https://scrapbox.io/ork'",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586695,
+      "updated": 1776586695
+    },
+    {
+      "id": "69e48c540000000000c5e87d",
+      "text": " \t}",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776585813
+    },
+    {
+      "id": "69e48c540000000000c5e87e",
+      "text": " \t})();",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776585813,
+      "updated": 1776586133
     },
     {
       "id": "69dd7f9a000000000025a075",
       "text": " code:style.css",
       "userId": "63042e42f2ab90001d68385a",
       "created": 1776123803,
-      "updated": 1776123834
+      "updated": 1776586281
     },
     {
       "id": "69dd7f9a000000000025a076",
-      "text": "  @import \"/api/code/kalaclista/UserScripts/lockdown.css\";",
+      "text": "  html[data-cosense-lockdown=\"true\"] .navbar {",
       "userId": "63042e42f2ab90001d68385a",
       "created": 1776123803,
-      "updated": 1776123834
+      "updated": 1776586280
+    },
+    {
+      "id": "69e48e280000000000f77c7f",
+      "text": "  \tborder-bottom: 0.5rem solid var(--color-red50);",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586280,
+      "updated": 1776586280
+    },
+    {
+      "id": "69e48e280000000000f77c80",
+      "text": "  }",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586280,
+      "updated": 1776586280
+    },
+    {
+      "id": "69e48e930000000000a1823c",
+      "text": "  html[data-cosense-lockdown=\"true\"]::before {",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a1823d",
+      "text": "       z-index: 99999;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a1823e",
+      "text": "   ",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a1823f",
+      "text": "       display: block;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a18240",
+      "text": "       position: absolute;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a18241",
+      "text": "       top: 0;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a18242",
+      "text": "       left: 0;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a18243",
+      "text": "       right: 0;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a18244",
+      "text": "       bottom: 0;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a18245",
+      "text": "   ",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a18246",
+      "text": "       content: '他にやること、あるんじゃない？';",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a18247",
+      "text": "       font-size: 24px;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a18248",
+      "text": "       text-align: center;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a18249",
+      "text": "       padding: calc(50vh - 24px) 0;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a1824a",
+      "text": "   ",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a1824b",
+      "text": "       background-color: #F0F0F0 !important;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a1824c",
+      "text": "       color: #333333 !important;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a1824d",
+      "text": "   }",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a1824e",
+      "text": "   ",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a1824f",
+      "text": "   html[data-cosense-lockdown=\"true\"] {",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a18250",
+      "text": "       overflow: hidden !important;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a18251",
+      "text": "       pointer-events: none !important;",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
+    },
+    {
+      "id": "69e48e930000000000a18252",
+      "text": "   }",
+      "userId": "63042e42f2ab90001d68385a",
+      "created": 1776586387,
+      "updated": 1776586387
     }
   ]
 }
