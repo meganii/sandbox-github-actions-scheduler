@@ -1,0 +1,337 @@
+{
+  "id": "69e965909b11941b6c51c25f",
+  "title": "goto fail",
+  "created": 1776903683,
+  "updated": 1776904186,
+  "lines": [
+    {
+      "id": "69e965909b11941b6c51c25f",
+      "text": "goto fail",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903683,
+      "updated": 1776903683
+    },
+    {
+      "id": "69e9660200000000008d8c44",
+      "text": "code:c",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903683,
+      "updated": 1776903695
+    },
+    {
+      "id": "69e9660700000000008d8c46",
+      "text": " static OSStatus SSLVerifySignedServerKeyExchange(SSLContext* ctx, bool isRsa, SSLBuffer signedParams, uint8_t* signature, uint16_t signatureLen) {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c47",
+      "text": "     OSStatus err;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c48",
+      "text": "     // ...",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c49",
+      "text": "  ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c4a",
+      "text": "     if ((err = SSLHashSHA1.update(&hashCtx, &serverRandom)) != 0)",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c4b",
+      "text": "         goto fail;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c4c",
+      "text": "     if ((err = SSLHashSHA1.update(&hashCtx, &signedParams)) != 0)",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c4d",
+      "text": "         goto fail;  // conditonary goto fail",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903725
+    },
+    {
+      "id": "69e9660800000000008d8c4e",
+      "text": "         goto fail;  // always goto fail",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903715
+    },
+    {
+      "id": "69e9660800000000008d8c4f",
+      "text": "     if ((err = SSLHashSHA1.final(&hashCtx, &hashOut)) != 0)  // unreachable",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903763
+    },
+    {
+      "id": "69e9660800000000008d8c50",
+      "text": "         goto fail;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c51",
+      "text": " ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c52",
+      "text": "     // ...",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c53",
+      "text": "  ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c54",
+      "text": " fail:",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c55",
+      "text": "     SSLFreeBuffer(&signedHashes);",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c56",
+      "text": "     SSLFreeBuffer(&hashCtx);",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c57",
+      "text": "     return err;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660800000000008d8c58",
+      "text": " }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903688,
+      "updated": 1776903688
+    },
+    {
+      "id": "69e9660300000000008d8c45",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903684,
+      "updated": 1776903684
+    },
+    {
+      "id": "69e966c200000000008d8c59",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903874,
+      "updated": 1776903874
+    },
+    {
+      "id": "69e966c200000000008d8c5a",
+      "text": "名前の割に原因は `goto` よりも `if` 文の仕様の方が比重が大きい。[Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776903875,
+      "updated": 1776904011
+    },
+    {
+      "id": "69e9676600000000008d8c61",
+      "text": "\tこんな ↓ 書き方をしたら",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904039,
+      "updated": 1776904048
+    },
+    {
+      "id": "69e9674d00000000008d8c5c",
+      "text": "\tcode:c",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904013,
+      "updated": 1776904039
+    },
+    {
+      "id": "69e9675d00000000008d8c5d",
+      "text": "  if ((err = SSLHashSHA1.update(&hashCtx, &signedParams)) != 0)",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904030,
+      "updated": 1776904035
+    },
+    {
+      "id": "69e9675e00000000008d8c5e",
+      "text": "      goto fail;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904030,
+      "updated": 1776904100
+    },
+    {
+      "id": "69e967a400000000008d8c74",
+      "text": "      goto fail;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904100,
+      "updated": 1776904104
+    },
+    {
+      "id": "69e967a800000000008d8c75",
+      "text": "\tこう ↓ 見えてしまう。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904104,
+      "updated": 1776904106
+    },
+    {
+      "id": "69e9675e00000000008d8c60",
+      "text": "\tcode:c",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904030,
+      "updated": 1776904054
+    },
+    {
+      "id": "69e9677300000000008d8c62",
+      "text": "  if ((err = SSLHashSHA1.update(&hashCtx, &signedParams)) != 0)",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904052,
+      "updated": 1776904074
+    },
+    {
+      "id": "69e9678a00000000008d8c69",
+      "text": "  {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904074,
+      "updated": 1776904074
+    },
+    {
+      "id": "69e9677300000000008d8c63",
+      "text": "      goto fail;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904052,
+      "updated": 1776904110
+    },
+    {
+      "id": "69e967ae00000000008d8c76",
+      "text": "      goto fail;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904110,
+      "updated": 1776904116
+    },
+    {
+      "id": "69e967b100000000008d8c77",
+      "text": "  }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904113,
+      "updated": 1776904117
+    },
+    {
+      "id": "69e9677300000000008d8c65",
+      "text": "\tしかし、実際はこう ↓ である。",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904052,
+      "updated": 1776904085
+    },
+    {
+      "id": "69e9678b00000000008d8c6a",
+      "text": "\tcode:c",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904076,
+      "updated": 1776904089
+    },
+    {
+      "id": "69e9679800000000008d8c6b",
+      "text": "  if ((err = SSLHashSHA1.update(&hashCtx, &signedParams)) != 0)",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904089,
+      "updated": 1776904089
+    },
+    {
+      "id": "69e9679800000000008d8c6c",
+      "text": "  {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904089,
+      "updated": 1776904089
+    },
+    {
+      "id": "69e9679800000000008d8c6d",
+      "text": "      goto fail;  // conditonary goto fail",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904089,
+      "updated": 1776904089
+    },
+    {
+      "id": "69e9679b00000000008d8c73",
+      "text": "  }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904091,
+      "updated": 1776904091
+    },
+    {
+      "id": "69e9679800000000008d8c6e",
+      "text": "  goto fail;  // always goto fail",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904089,
+      "updated": 1776904129
+    },
+    {
+      "id": "69e9679800000000008d8c70",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904089,
+      "updated": 1776904089
+    },
+    {
+      "id": "69e967dd00000000008d8c7a",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904158,
+      "updated": 1776904158
+    },
+    {
+      "id": "69e967d800000000008d8c78",
+      "text": "もしかしない： [Go to Jail]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904153,
+      "updated": 1776904186
+    },
+    {
+      "id": "69e967dd00000000008d8c79",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1776904158,
+      "updated": 1776904158
+    }
+  ]
+}
