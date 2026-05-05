@@ -1,0 +1,323 @@
+{
+  "id": "69f985b883aa22f4b0234fb5",
+  "title": "雑に学ぶMCP",
+  "created": 1777960377,
+  "updated": 1777970085,
+  "lines": [
+    {
+      "id": "69f985b883aa22f4b0234fb5",
+      "text": "雑に学ぶMCP",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777960377,
+      "updated": 1777960412
+    },
+    {
+      "id": "69f985bc00000000006ffd06",
+      "text": "いまさらですが[caki.icon]",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777960381,
+      "updated": 1777960385
+    },
+    {
+      "id": "69f985c100000000006ffd08",
+      "text": "Host、Client、Serverで構成される",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777960385,
+      "updated": 1777961324
+    },
+    {
+      "id": "69f985c000000000006ffd07",
+      "text": " 自分の理解でclientとserverがやることがごちゃついてる",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777960384,
+      "updated": 1777961031
+    },
+    {
+      "id": "69f98d50000000000024babf",
+      "text": " \t[クライアントとサーバの役割分担]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1777962321,
+      "updated": 1777962337
+    },
+    {
+      "id": "69f9897800000000006ffd0c",
+      "text": "",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777961337,
+      "updated": 1777961337
+    },
+    {
+      "id": "69f9897900000000006ffd0d",
+      "text": "すべてのメッセージは JSON-RPC 2.0 形式でやりとりされる",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777961338,
+      "updated": 1777961349
+    },
+    {
+      "id": "69f98b9c00000000006ffd12",
+      "text": "",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777961884,
+      "updated": 1777961884
+    },
+    {
+      "id": "69f98a7900000000006ffd0e",
+      "text": " llmさんがこのアプリの機能使いたいなーと思う",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777961594,
+      "updated": 1777961883
+    },
+    {
+      "id": "69f98a7900000000006ffd0f",
+      "text": " initialize",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777961594,
+      "updated": 1777961888
+    },
+    {
+      "id": "69f98a7e00000000006ffd10",
+      "text": "  request: clientがserverにinitializeリクエストを送る",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777961598,
+      "updated": 1777961967
+    },
+    {
+      "id": "69f98bab00000000006ffd13",
+      "text": "   「[MCP]のこのバージョンで話したい、OK？」",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777961899,
+      "updated": 1777970085
+    },
+    {
+      "id": "69f98c2900000000006ffd15",
+      "text": "   clientのcapabilitiesが宣言される",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777962025,
+      "updated": 1777962043
+    },
+    {
+      "id": "69f98ce400000000006ffd16",
+      "text": "    roots: どのファイルシステムのルートにアクセスできるか",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777962212,
+      "updated": 1777962250
+    },
+    {
+      "id": "69f98d0a00000000006ffd18",
+      "text": "    sampling: サーバからクライアント経由でLMの推論を依頼できる？その内容がどう定義されているか？",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777962250,
+      "updated": 1777962431
+    },
+    {
+      "id": "69f98ee300000000006ffd1a",
+      "text": "     sampling/createMessageで定義されてるっぽい",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777962723,
+      "updated": 1777969002
+    },
+    {
+      "id": "69f98fe800000000006ffd1b",
+      "text": "     serverがなんらかの理由でLLMの推論がさらに必要だ、となったときがどう定義されてるんだ？というのがよくわからない",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777962984,
+      "updated": 1777964143
+    },
+    {
+      "id": "69f9947700000000006ffd22",
+      "text": "      こういうことか？",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777964152,
+      "updated": 1777964152
+    },
+    {
+      "id": "69f9947800000000006ffd23",
+      "text": "       LLMが「水をバケツにためよう」と思って、clientに「蛇口をひねりなさい」と指示",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777964152,
+      "updated": 1777964152
+    },
+    {
+      "id": "69f9947800000000006ffd24",
+      "text": "       clientは蛇口をひねる機能がserverからもらったリストにあるか確認する、ある場合はserverに「蛇口をひねる」と指示する",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777964152,
+      "updated": 1777964152
+    },
+    {
+      "id": "69f9947800000000006ffd25",
+      "text": "       server側でsampling/createMessageを見ると「蛇口をひねって水がちゃんと出たとき、どのくらいで止めるかを聞く」とかいてある。serverは「水をどれくらいで止めるか？」とclientに聞く",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777964152,
+      "updated": 1777964205
+    },
+    {
+      "id": "69f9947800000000006ffd26",
+      "text": "       そして、clientはllmに「どれくらいたまったら蛇口をしめる？」と聞く",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777964152,
+      "updated": 1777964218
+    },
+    {
+      "id": "69f9a79a00000000006ffd39",
+      "text": "     MCP clientとMCP serverが別々で用意されるのか[caki.icon*2]",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777969050,
+      "updated": 1777969423
+    },
+    {
+      "id": "69f98bc300000000006ffd14",
+      "text": "  result: serverが返答を返す",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777961923,
+      "updated": 1777962512
+    },
+    {
+      "id": "69f98dfe00000000006ffd19",
+      "text": "   「ええよ〜、こんなん使えるよ」",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777962495,
+      "updated": 1777962502
+    },
+    {
+      "id": "69f9a3dd00000000006ffd2b",
+      "text": "   toolsのリストを返す",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968094,
+      "updated": 1777970069
+    },
+    {
+      "id": "69f9ab4b00000000006ffd3a",
+      "text": "  返答を受け取ったclientがnotifications/initializedを返す",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777969995,
+      "updated": 1777970031
+    },
+    {
+      "id": "69f9ab7000000000006ffd3c",
+      "text": "   「り、使いはじめますー」",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777970033,
+      "updated": 1777970051
+    },
+    {
+      "id": "69f9883600000000006ffd0b",
+      "text": "",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777961014,
+      "updated": 1777961014
+    },
+    {
+      "id": "69f9944600000000006ffd21",
+      "text": "",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777964102,
+      "updated": 1777964151
+    },
+    {
+      "id": "69f9a38500000000006ffd2a",
+      "text": "つまりMCPサーバにはアプリをつかうためのロジック（たぶんAPI経由でアプリが使える？）とMCPで決められた挙動を定義する部分がふくまれてる[…ってコト！？]",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968006,
+      "updated": 1777968083
+    },
+    {
+      "id": "69f9a66400000000006ffd2c",
+      "text": " そうっぽい",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968740,
+      "updated": 1777968744
+    },
+    {
+      "id": "69f9a66c00000000006ffd2d",
+      "text": " code:蛇口アプリを扱うMCPサーバの構成例",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968749,
+      "updated": 1777968824
+    },
+    {
+      "id": "69f9a68400000000006ffd2e",
+      "text": "  my-mcp-server/",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968772,
+      "updated": 1777968784
+    },
+    {
+      "id": "69f9a68c00000000006ffd2f",
+      "text": "  ├── package.json",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968780,
+      "updated": 1777968784
+    },
+    {
+      "id": "69f9a68c00000000006ffd30",
+      "text": "  ├── tsconfig.json",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968780,
+      "updated": 1777968784
+    },
+    {
+      "id": "69f9a68c00000000006ffd31",
+      "text": "  └── src/",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968780,
+      "updated": 1777968784
+    },
+    {
+      "id": "69f9a68c00000000006ffd32",
+      "text": "      ├── index.ts          # エントリーポイント・サーバー起動",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968780,
+      "updated": 1777968784
+    },
+    {
+      "id": "69f9a68c00000000006ffd33",
+      "text": "      ├── tools/            # 「手」の定義",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968780,
+      "updated": 1777968784
+    },
+    {
+      "id": "69f9a68c00000000006ffd34",
+      "text": "      │   ├── index.ts      # ツール一覧をまとめてexport",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968780,
+      "updated": 1777968784
+    },
+    {
+      "id": "69f9a68c00000000006ffd35",
+      "text": "      │   ├── faucet.ts     # 蛇口をひねる関数",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968780,
+      "updated": 1777968784
+    },
+    {
+      "id": "69f9a68c00000000006ffd36",
+      "text": "      │   └── bucket.ts     # バケツを置く関数",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968780,
+      "updated": 1777968784
+    },
+    {
+      "id": "69f9a68c00000000006ffd37",
+      "text": "      └── clients/          # 外部APIとの通信",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968780,
+      "updated": 1777968784
+    },
+    {
+      "id": "69f9a68c00000000006ffd38",
+      "text": "          └── faucetApi.ts  # 蛇口のAPIクライアント",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777968780,
+      "updated": 1777968784
+    },
+    {
+      "id": "69f993d100000000006ffd1d",
+      "text": "",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1777963985,
+      "updated": 1777963985
+    }
+  ]
+}
