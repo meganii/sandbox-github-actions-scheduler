@@ -1,0 +1,190 @@
+{
+  "id": "69fd6f41a12d55a8185d6798",
+  "title": "rm -rfが怖いのでClaudeにautoで任せられない",
+  "created": 1778216771,
+  "updated": 1778221932,
+  "lines": [
+    {
+      "id": "69fd6f41a12d55a8185d6798",
+      "text": "rm -rfが怖いのでClaudeにautoで任せられない",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778216771,
+      "updated": 1778216799
+    },
+    {
+      "id": "69fd6f46000000000012e689",
+      "text": "[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778216776,
+      "updated": 1778216778
+    },
+    {
+      "id": "69fd6f48000000000012e68b",
+      "text": "\t`rm -rf *`を提案されたこともあって、ちょっと怖い",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778216778,
+      "updated": 1778216790
+    },
+    {
+      "id": "69fd6f54000000000012e68c",
+      "text": "\t\tまあカレントディレクトリ以下が消えるだけではあるのだが",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778216790,
+      "updated": 1778216796
+    },
+    {
+      "id": "69fd6f6b000000000012e68d",
+      "text": " \tなのでautoせずに全部承認するマンになってる",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778216814,
+      "updated": 1778216845
+    },
+    {
+      "id": "69fd6f74000000000012e68e",
+      "text": " \t\tもっといいやり方はないか？",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778216822,
+      "updated": 1778216845
+    },
+    {
+      "id": "69fd6f78000000000012e68f",
+      "text": " \t\tsettings.local.json に書いておけばいいのかな？",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778216827,
+      "updated": 1778216845
+    },
+    {
+      "id": "69fd6f46000000000012e68a",
+      "text": "\t\tつくるだけのシチュならautoで問題ない",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778216776,
+      "updated": 1778216856
+    },
+    {
+      "id": "69fd6f98000000000012e691",
+      "text": "\t\t\tが、特に仕事だとフォルダ消してリトライみたいな結構込み入ったこともやるので怖い",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778216858,
+      "updated": 1778216924
+    },
+    {
+      "id": "69fd6f8c000000000012e690",
+      "text": " denyに入れるのではダメ？[mtane0412.icon]",
+      "userId": "5ae7fecf7766b7001455cbd3",
+      "created": 1778216846,
+      "updated": 1778217104
+    },
+    {
+      "id": "69fd70b3000000000012e692",
+      "text": " \tあり[sta.icon]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778217141,
+      "updated": 1778217142
+    },
+    {
+      "id": "69fd70c6000000000012e693",
+      "text": " \t\tそうか、globalの方に入れておけばいいのか",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778217160,
+      "updated": 1778217171
+    },
+    {
+      "id": "69fd726f000000000012e695",
+      "text": " \t\t\tcode:%userprofile%/.claude/settings.json",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778217585,
+      "updated": 1778217602
+    },
+    {
+      "id": "69fd7273000000000012e696",
+      "text": " \t\t\t {",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778217589,
+      "updated": 1778217589
+    },
+    {
+      "id": "69fd7273000000000012e697",
+      "text": "       \"permissions\": {",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778217589,
+      "updated": 1778217589
+    },
+    {
+      "id": "69fd7273000000000012e698",
+      "text": "         \"deny\": [",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778217589,
+      "updated": 1778217589
+    },
+    {
+      "id": "69fd7273000000000012e699",
+      "text": "           \"Bash(rm -rf *)\",",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778217589,
+      "updated": 1778217589
+    },
+    {
+      "id": "69fd7273000000000012e69a",
+      "text": "           \"Bash(git push --force*)\"",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778217589,
+      "updated": 1778217589
+    },
+    {
+      "id": "69fd7273000000000012e69b",
+      "text": "         ]",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778217589,
+      "updated": 1778217589
+    },
+    {
+      "id": "69fd7273000000000012e69c",
+      "text": "       },",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778217589,
+      "updated": 1778217589
+    },
+    {
+      "id": "69fd7273000000000012e69d",
+      "text": "       \"autoUpdatesChannel\": \"latest\"",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778217589,
+      "updated": 1778217589
+    },
+    {
+      "id": "69fd7273000000000012e69e",
+      "text": "     }",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778217589,
+      "updated": 1778217589
+    },
+    {
+      "id": "69fd7273000000000012e69f",
+      "text": " \t\tいや思い出した。「rm -rf」と「bashとしてrmを実行」とで分かれてて、後者の方が防げないみたいなややこしい状況があって挫折した気がする",
+      "userId": "5a4873ab2e26fb001479d3a9",
+      "created": 1778217589,
+      "updated": 1778217604
+    },
+    {
+      "id": "69fd70890000000000a6e132",
+      "text": "",
+      "userId": "5ae7fecf7766b7001455cbd3",
+      "created": 1778217098,
+      "updated": 1778217098
+    },
+    {
+      "id": "69fd83570000000000a8e66c",
+      "text": "[AI に滅ぼされる][Summer498.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778221912,
+      "updated": 1778221932
+    },
+    {
+      "id": "69fd83580000000000a8e66d",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778221913,
+      "updated": 1778221913
+    }
+  ]
+}
