@@ -1,0 +1,211 @@
+{
+  "id": "6a0194ca5b7a410ffade59c9",
+  "title": "生成AI（？）",
+  "created": 1778488523,
+  "updated": 1778488527,
+  "lines": [
+    {
+      "id": "6a0194ca5b7a410ffade59c9",
+      "text": "生成AI（？）",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f6988",
+      "text": "from [2025/03/08]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f6989",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488527
+    },
+    {
+      "id": "6a0194ca00000000002f698a",
+      "text": "[bsahd.icon]",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f698b",
+      "text": " 生成AI",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f698c",
+      "text": "\tcode:php",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f698d",
+      "text": "\t <?php",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f698e",
+      "text": "  header(\"Content-Type: text/plain\");",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f698f",
+      "text": "  $corpus = file_get_contents(\"villagepump-corpus.txt\");",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f6990",
+      "text": "  function generate($prompt)",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f6991",
+      "text": "  {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f6992",
+      "text": "      if($prompt==\"\"){",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f6993",
+      "text": "          return generate(\"\\n\");",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f6994",
+      "text": "      }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f6995",
+      "text": "      global $corpus;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f6996",
+      "text": "      preg_match_all(\"/\" . preg_quote($prompt, \"/\") . \"(.)/umsi\", $corpus, $matchs, PREG_PATTERN_ORDER);",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f6997",
+      "text": "      if (count($matchs[1]) == 0) {",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f6998",
+      "text": "          return generate(mb_substr($prompt,1));",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f6999",
+      "text": "      }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f699a",
+      "text": "      $nextchar = $matchs[1][array_rand($matchs[1], 1)];",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f699b",
+      "text": "      echo ($nextchar);",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f699c",
+      "text": "      return $prompt . $nextchar;",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f699d",
+      "text": "  }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f699e",
+      "text": "  ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f699f",
+      "text": "  $prompt = $_GET[\"q\"];",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f69a0",
+      "text": "  for ($i=0; $i < $_GET[\"gen\"]; $i++) { ",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f69a1",
+      "text": "      $prompt = generate($prompt);",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f69a2",
+      "text": "  }",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    },
+    {
+      "id": "6a0194ca00000000002f69a3",
+      "text": "",
+      "userId": "6436266c7ac3c0001bed60e6",
+      "created": 1778488523,
+      "updated": 1778488523
+    }
+  ]
+}
