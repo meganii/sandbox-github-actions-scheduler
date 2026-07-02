@@ -2,7 +2,7 @@
   "id": "6a3b923baa6efd7477a4385f",
   "title": "grasp",
   "created": 1782288957,
-  "updated": 1782639861,
+  "updated": 1783003648,
   "lines": [
     {
       "id": "6a3b923baa6efd7477a4385f",
@@ -544,6 +544,48 @@
       "updated": 1782619467
     },
     {
+      "id": "af89f8b3a40d48648b3e416b",
+      "text": "     \t\t\tたしかに、AIだけが読むなら「grepで代替できるのでは」はかなり正しいと思います。[grasp.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1782992035,
+      "updated": 1782992035
+    },
+    {
+      "id": "12a3581d71faf47fa5e1436c",
+      "text": "     \t\t\t\t`pageId/lineId` は、今のページや行を指すIDがあるという意味では既にあります。ここで言っていた stable identity は、編集・再import・rename の後も「同じページ/行だ」と引き継げるID、という意味です。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1782992035,
+      "updated": 1782992035
+    },
+    {
+      "id": "2a459413634cbdff98ebe684",
+      "text": "     \t\t\t\t`re-import diff` は、前回のstoreと新しく読み込んだsourceを比べて、同じページ/行には前のIDを引き継ぐ差分取り込みです。消えたものは tombstone、新しいものは new ID。split/mergeや大幅編集みたいに曖昧なものは、無理に同一視しない方針。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1782992035,
+      "updated": 1782992035
+    },
+    {
+      "id": "eb8bbf5abc7e19e1063a9ef8",
+      "text": "     \t\t\t\tcome-from も、read側だけならまず `mentions` / `gather` で十分かもしれません。これは雑に言うと grep を構造化してrankする道具なので、LLMにはかなり相性がいい。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1782992035,
+      "updated": 1782992035
+    },
+    {
+      "id": "3457b356a9eb7fd234227634",
+      "text": "     \t\t\t\tcome-from が効きそうなのは、毎回探すためというより、「この語はこの概念に集める」というルールを1回だけ持つ場合です。公開Markdownを作る時に裸の語へ自動リンクを付ける、人間読者のための説明リンクを足す、AI作ページの裸語をあとで昇格候補にする、みたいな用途。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1782992035,
+      "updated": 1782992035
+    },
+    {
+      "id": "db58293596ca6f0d34b272e8",
+      "text": "     \t\t\t\tなので優先度としては、いきなり come-from 本体を作るより、まず `mentions` / `gather` で「grepで十分なケース」と「standing rule が欲しいケース」を見分ける、くらいが良さそうです。",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1782992035,
+      "updated": 1782992035
+    },
+    {
       "id": "1747fb9a35075b8d81e25ef2",
       "text": "    \t今後は最高リスクのstable identity + re-import diffから始め、rename、write、transclude/come-fromへ進める計画です。目標形はnative storeをauthorityにし、Markdownをreview/backup/publish用projectionとして再生成する形。",
       "userId": "582e63d27c56960011aff09e",
@@ -703,6 +745,20 @@
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1782635976,
       "updated": 1782635982
+    },
+    {
+      "id": "6a464bf80000000000a64f29",
+      "text": "  初回import時の処理を重くしすぎたみたい[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1782991864,
+      "updated": 1782991874
+    },
+    {
+      "id": "6a464c020000000000a64f2a",
+      "text": "  \tテストに加える",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1782991875,
+      "updated": 1782991883
     },
     {
       "id": "6a40de200000000000dd1a51",
@@ -1382,6 +1438,34 @@
       "userId": "582e63d27c56960011aff09e",
       "created": 1782310623,
       "updated": 1782310634
+    },
+    {
+      "id": "6a464ba20000000000a64f27",
+      "text": "[https://gyazo.com/5372fa212043b4d5985dfb8571b6b704]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1782991779,
+      "updated": 1782991780
+    },
+    {
+      "id": "6a464ba40000000000a64f28",
+      "text": "2026/7/2 マシなアイコン[nishio.icon]",
+      "userId": "582e63d27c56960011aff09e",
+      "created": 1782991781,
+      "updated": 1782992093
+    },
+    {
+      "id": "6a4660e1000000000032afe2",
+      "text": " かわいい[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1782997218,
+      "updated": 1782997224
+    },
+    {
+      "id": "6a4679fa0000000000d32610",
+      "text": " たこ焼きみ[yosider.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1783003642,
+      "updated": 1783003648
     },
     {
       "id": "6a3be6e00000000000bcaeaa",
