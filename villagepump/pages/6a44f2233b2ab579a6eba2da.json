@@ -2,7 +2,7 @@
   "id": "6a44f2233b2ab579a6eba2da",
   "title": "アイコン記法の最小幅をインデント幅と同値にする",
   "created": 1782903335,
-  "updated": 1783016814,
+  "updated": 1783107095,
   "lines": [
     {
       "id": "6a44f2233b2ab579a6eba2da",
@@ -173,11 +173,11 @@
       "updated": 1782903335
     },
     {
-      "id": "6a44f226000000000006028f",
-      "text": "  \theight: calc(0.85em * var(--page-line-height, calc(24 / 15)) );",
+      "id": "6a46ec2100000000000170a3",
+      "text": "  \theight: var(--indent-width, 1.5em);",
       "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1782903335,
-      "updated": 1782903335
+      "created": 1783032866,
+      "updated": 1783032872
     },
     {
       "id": "6a44f2260000000000060290",
@@ -208,6 +208,20 @@
       "updated": 1782903335
     },
     {
+      "id": "6a46ee0700000000004da592",
+      "text": "2026-07-03 正方形にならない不具合の修正",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783033351,
+      "updated": 1783074372
+    },
+    {
+      "id": "6a478e4000000000000b9c2d",
+      "text": "　`height: var(--indent-width, 1.5em);`",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783074369,
+      "updated": 1783074369
+    },
+    {
       "id": "6a45484d00000000000e27af",
       "text": "[2026-07-01] 井戸端のProjectCSSに導入[Nrem.icon]",
       "userId": "6780c5dd585ee07f1dc50b2b",
@@ -229,6 +243,118 @@
       "updated": 1782925390
     },
     {
+      "id": "6a478e5100000000000b9c2f",
+      "text": "根本的に説明不足であることに気がつきました（）[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783074386,
+      "updated": 1783075483
+    },
+    {
+      "id": "6a47909800000000000b9c35",
+      "text": "このUserCSSは、",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783074969,
+      "updated": 1783074976
+    },
+    {
+      "id": "6a478e7900000000000b9c30",
+      "text": "　1. アイコン記法の最小幅`min-width`をインデントの幅`--indent-width`に合わせます",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783074426,
+      "updated": 1783076745
+    },
+    {
+      "id": "6a480c4a00000000002a768b",
+      "text": "　　アイコンの最小幅がインデントの幅に合わせられるということは、インデントの幅より横に長いアイコンがインデントの幅より横に長く表示されるということです（[小泉進次郎構文]）",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783106636,
+      "updated": 1783107020
+    },
+    {
+      "id": "6a478ea700000000000b9c32",
+      "text": "　2. アイコン記法の縦幅`height`を 1. の最小幅と同じ幅にします",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783074471,
+      "updated": 1783075171
+    },
+    {
+      "id": "6a478f5700000000000b9c33",
+      "text": "　3. アイコン記法の元の画像のアスペクト比が",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783074647,
+      "updated": 1783074671
+    },
+    {
+      "id": "6a478f6f00000000000b9c34",
+      "text": "　　`height > width`（縦長）の場合、画像の上端を起点にトリミングされたアスペクト比 1:1 の正方形のアイコンとして表示します",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783074671,
+      "updated": 1783078852
+    },
+    {
+      "id": "6a478e8200000000000b9c31",
+      "text": "　　`width ≧ height`（正方形または横長）の場合、元の画像のアスペクト比が保たれた正方形または横長のアイコンとして画像全体を表示します",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783074435,
+      "updated": 1783078525
+    },
+    {
+      "id": "6a4792340000000000ed4b57",
+      "text": "　要約：",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783075381,
+      "updated": 1783075506
+    },
+    {
+      "id": "6a4792b40000000000ed4b5a",
+      "text": "　　アイコンをCosense標準のサイズより一回り大きく表示する",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783075510,
+      "updated": 1783076037
+    },
+    {
+      "id": "6a4792b10000000000ed4b59",
+      "text": "　　Cosenseの仕様により縦長のページアイコン画像が極小かつ細長の画像として埋め込まれる現象を、アイコン画像の上側が正方形にトリミングされた表示に変更することで回避する",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783075506,
+      "updated": 1783079579
+    },
+    {
+      "id": "6a47a01800000000001a4ad6",
+      "text": " 　https://developer.mozilla.org/ja/docs/Web/CSS/Reference/Properties/object-fit",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783078938,
+      "updated": 1783079164
+    },
+    {
+      "id": "6a47a01800000000001a4ad7",
+      "text": " 　> object-fit は CSS のプロパティで、置換要素、例えば <img> や <video> などのコンテンツを、コンテナーにどのようにはめ込むかを設定します。",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783078938,
+      "updated": 1783079164
+    },
+    {
+      "id": "6a47a01800000000001a4ad8",
+      "text": " 　 [object-fit: contain https://developer.mozilla.org/ja/docs/Web/CSS/Reference/Properties/object-fit#contain]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783078938,
+      "updated": 1783079134
+    },
+    {
+      "id": "6a47a01800000000001a4ad9",
+      "text": " 　 > 置換コンテンツはアスペクト比を維持したまま、要素のコンテンツボックスに収まるように拡大縮小されます。オブジェクト全体がボックス内に表示され、アスペクト比が維持されるので、オブジェクトのアスペクト比とボックスのアスペクト比が合わない場合は、レターボックスまたはピラーボックス表示になります。",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783078938,
+      "updated": 1783079090
+    },
+    {
+      "id": "6a4796640000000000433452",
+      "text": "　　井戸端のページリストの[サムネの画像を最大サイズ左寄せで表示するUserCSS]とおおまかには一緒（説明ぶん投げ）",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783076453,
+      "updated": 1783078446
+    },
+    {
       "id": "6a4683880000000000b98332",
       "text": "",
       "userId": "5c30ba88e98efe0017e5172d",
@@ -236,11 +362,25 @@
       "updated": 1783006088
     },
     {
+      "id": "6a47963e0000000000ed4b5c",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783076415,
+      "updated": 1783076415
+    },
+    {
       "id": "6a46838a0000000000b98334",
       "text": "[はるひ.icon]さんが影響を受けている[yosider.icon]",
       "userId": "5c30ba88e98efe0017e5172d",
       "created": 1783006090,
       "updated": 1783006106
+    },
+    {
+      "id": "6a46feb20000000000c72ff3",
+      "text": " >[https://gyazo.com/7d9b09a632deede8dddd20440c8bba1f]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1783037619,
+      "updated": 1783038198
     },
     {
       "id": "6a4687fd00000000002dbd2a",
@@ -299,6 +439,20 @@
       "updated": 1783008116
     },
     {
+      "id": "6a46fe6f0000000000c72ff2",
+      "text": "　　[おは.icon]系は影響されないのか[はるひ.icon]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1783037554,
+      "updated": 1783037567
+    },
+    {
+      "id": "6a4798350000000000433455",
+      "text": " 　　縦長のアイコン画像を上からトリミングされた表示にしますが、正方形や横長のアイコン画像に関しては単に一回り大きく表示するだけなんで…[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783076919,
+      "updated": 1783077043
+    },
+    {
       "id": "6a4690bc0000000000f8510c",
       "text": "　言われてみるといろんなアイコンの下が切れている[caki.icon]",
       "userId": "6923e3b6e09f0be0924872ef",
@@ -341,32 +495,130 @@
       "updated": 1783016814
     },
     {
-      "id": "6a4691bb0000000000fdfd48",
-      "text": "",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1783009724,
-      "updated": 1783009724
-    },
-    {
-      "id": "6a4683890000000000b98333",
-      "text": "",
-      "userId": "5c30ba88e98efe0017e5172d",
-      "created": 1783006088,
-      "updated": 1783006088
-    },
-    {
       "id": "6a44f2260000000000060294",
-      "text": "#UserCSS",
+      "text": "",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1782903335,
-      "updated": 1782903335
+      "updated": 1783032998
     },
     {
-      "id": "6a46839d0000000000b98335",
+      "id": "6a480dda0000000000e64e74",
+      "text": " [飲み物のアイコン]が影響を受けていますね [suto3.icon]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1783107035,
+      "updated": 1783107072
+    },
+    {
+      "id": "6a480dda0000000000e64e75",
+      "text": "  [レッドブル.icon]",
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1783107035,
+      "updated": 1783107095
+    },
+    {
+      "id": "6a480e080000000000e64e76",
       "text": "",
-      "userId": "5c30ba88e98efe0017e5172d",
-      "created": 1783006108,
-      "updated": 1783006108
+      "userId": "5b5e7121417cf700145b98c2",
+      "created": 1783107081,
+      "updated": 1783107081
+    },
+    {
+      "id": "6a46ec6e00000000007c17cb",
+      "text": "from [2026/07/03]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783032943,
+      "updated": 1783032943
+    },
+    {
+      "id": "6a46ec6e00000000007c17cc",
+      "text": "[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783032943,
+      "updated": 1783032943
+    },
+    {
+      "id": "6a46ec6e00000000007c17cd",
+      "text": "このUserCSSを無効化すると、ページ画像を埋め込みアイコンとして再利用するうえで個々の画像を別途トリミング加工する工程が増えます",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783032943,
+      "updated": 1783032954
+    },
+    {
+      "id": "6a46ec6e00000000007c17ce",
+      "text": "　[times-suto3-2026-06-30.icon]──ちょうどこのページアイコンのような立ち絵や、その他の縦長ポートレート画像をアイコン記法で埋め込むと、画像全体が一文字分以下の面積に縮小されて何の画像なのかがほとんど分からなくなります",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783032943,
+      "updated": 1783032943
+    },
+    {
+      "id": "6a46ec6e00000000007c17cf",
+      "text": "　　……ん？　いやこの画像、なんだか裸体に見えるような",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783032943,
+      "updated": 1783032943
+    },
+    {
+      "id": "6a46ec6e00000000007c17d0",
+      "text": "　　　[********** [times-suto3-2026-06-30.icon]]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783032943,
+      "updated": 1783032943
+    },
+    {
+      "id": "6a46ec6e00000000007c17d1",
+      "text": "　　　目の錯覚らしい",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783032943,
+      "updated": 1783032943
+    },
+    {
+      "id": "6a46ec6e00000000007c17d2",
+      "text": "　　　　ChatGPTくんがいい仕事をしてくれました[suto3.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783032943,
+      "updated": 1783032943
+    },
+    {
+      "id": "6a46ec7f00000000007c17d7",
+      "text": "　　　　🙏[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783032959,
+      "updated": 1783033921
+    },
+    {
+      "id": "6a46ec6e00000000007c17d3",
+      "text": "　ページの一番上にある画像をアイコン記法に合わせるためだけに正方形トリミング版を用意する必要性を減らしている",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783032943,
+      "updated": 1783032943
+    },
+    {
+      "id": "6a46ec6e00000000007c17d4",
+      "text": "　基本的な枠組みは、ページリストのカード表示における[サムネの画像を最大サイズ左寄せで表示するUserCSS]と同じものです",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783032943,
+      "updated": 1783032943
+    },
+    {
+      "id": "6a46ec6e00000000007c17d5",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783032943,
+      "updated": 1783032943
+    },
+    {
+      "id": "6a46ecad00000000007c17d9",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783033005,
+      "updated": 1783033005
+    },
+    {
+      "id": "6a46ec6e00000000007c17d6",
+      "text": "#UserCSS",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1783032943,
+      "updated": 1783033003
     }
   ]
 }
