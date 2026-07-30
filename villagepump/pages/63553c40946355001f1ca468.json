@@ -2,7 +2,7 @@
   "id": "63553c40946355001f1ca468",
   "title": "はるひ",
   "created": 1666530368,
-  "updated": 1784994789,
+  "updated": 1785419688,
   "lines": [
     {
       "id": "63553c40946355001f1ca468",
@@ -31,6 +31,13 @@
       "userId": "60c9f2f6c225a50020b8bbfc",
       "created": 1784994522,
       "updated": 1784994786
+    },
+    {
+      "id": "6a6b57a40000000000ff70d5",
+      "text": "  かわいい[zatsma.icon]",
+      "userId": "58d101391094b20011d8c2f4",
+      "created": 1785419685,
+      "updated": 1785419688
     },
     {
       "id": "6a64dad20000000000d4de5a",
@@ -250,46 +257,2461 @@
       "updated": 1666530442
     },
     {
-      "id": "63553c89b8bbfc00009318fa",
-      "text": "",
-      "userId": "60c9f2f6c225a50020b8bbfc",
-      "created": 1666530442,
-      "updated": 1666530442
-    },
-    {
-      "id": "63553c89b8bbfc00009318fb",
-      "text": "code:style.css",
-      "userId": "60c9f2f6c225a50020b8bbfc",
-      "created": 1666530442,
-      "updated": 1666530442
-    },
-    {
-      "id": "63553c89b8bbfc00009318fc",
-      "text": " @import \"../../ohayougozaimasyone/出張用Settings/style.css\";",
-      "userId": "60c9f2f6c225a50020b8bbfc",
-      "created": 1666530442,
-      "updated": 1675570872
-    },
-    {
-      "id": "63553c89b8bbfc00009318fe",
-      "text": "",
-      "userId": "60c9f2f6c225a50020b8bbfc",
-      "created": 1666530442,
-      "updated": 1666530877
-    },
-    {
-      "id": "63553c89b8bbfc00009318ff",
+      "id": "6a6b4f61000000000008db9c",
       "text": "code: script.js",
       "userId": "60c9f2f6c225a50020b8bbfc",
-      "created": 1675570623,
-      "updated": 1675570623
+      "created": 1785417570,
+      "updated": 1785417747
     },
     {
-      "id": "63553c89b8bbfc0000931900",
-      "text": " import '../../ohayougozaimasyone/出張用Settings/script.js';",
+      "id": "6a6b501200000000007fec5b",
+      "text": " (() => {",
       "userId": "60c9f2f6c225a50020b8bbfc",
-      "created": 1675570623,
-      "updated": 1675570866
+      "created": 1785417747,
+      "updated": 1785417832
+    },
+    {
+      "id": "6a6b504d00000000007fec69",
+      "text": "   \"use strict\";",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec6a",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec6b",
+      "text": "   // ===== 設定（好みで調整してOK） =====",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec6c",
+      "text": "   const CONTEXT = 2;        // リンクを含む行の前後に表示する行数",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec6d",
+      "text": "   const MAX_PAGES = 80;     // 一度に調べる1-hopページ数の上限",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec6e",
+      "text": "   const CONCURRENCY = 4;    // 同時リクエスト数（増やしすぎ注意）",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec6f",
+      "text": "   const DEFAULT_SORT = \"updated\"; // \"updated\" | \"mentions\" | \"title\"",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec70",
+      "text": "   const THEME = \"light\"; // \"dark\"(黒背景・白文字) | \"light\"(ライトテーマ・黒文字・透過なし)",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417822
+    },
+    {
+      "id": "6a6b504d00000000007fec71",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec72",
+      "text": "   const PANEL_ID = \"lsb-panel\";",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec73",
+      "text": "   const cache = new Map(); // \"title@updated\" -> lines[]",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec74",
+      "text": "   let lastResults = null;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec75",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec76",
+      "text": "   // ===== ユーティリティ =====",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec77",
+      "text": "   const norm = (s) =>",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec78",
+      "text": "     s.toLowerCase().replace(/[_\\u00a0]/g, \" \").trim();",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec79",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec7a",
+      "text": "   const esc = (s) =>",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec7b",
+      "text": "     s.replace(/[&<>\"']/g, (c) => ({",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec7c",
+      "text": "       \"&\": \"&amp;\", \"<\": \"&lt;\", \">\": \"&gt;\",",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec7d",
+      "text": "       '\"': \"&quot;\", \"'\": \"&#39;\",",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec7e",
+      "text": "     }[c]));",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec7f",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec80",
+      "text": "   const waitFor = (fn, timeout = 8000) =>",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec81",
+      "text": "     new Promise((resolve, reject) => {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec82",
+      "text": "       const t0 = Date.now();",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec83",
+      "text": "       const timer = setInterval(() => {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec84",
+      "text": "         const v = fn();",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec85",
+      "text": "         if (v) { clearInterval(timer); resolve(v); }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec86",
+      "text": "         else if (Date.now() - t0 > timeout) {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec87",
+      "text": "           clearInterval(timer); reject(new Error(\"timeout\"));",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec88",
+      "text": "         }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec89",
+      "text": "       }, 100);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec8a",
+      "text": "     });",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec8b",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec8c",
+      "text": "   // 1行からリンクとハッシュタグを抽出して正規化する",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec8d",
+      "text": "   const extractLinks = (line) => {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec8e",
+      "text": "     const found = [];",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec8f",
+      "text": "     let m;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec90",
+      "text": "     const bracket = /\\[([^\\[\\]]+)\\]/g;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec91",
+      "text": "     while ((m = bracket.exec(line))) {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec92",
+      "text": "       let inner = m[1];",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec93",
+      "text": "       // [* テキスト] などの装飾記法は記号部分を落として中身を見る",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec94",
+      "text": "       const deco = inner.match(/^[-*\\/_!\"#%&'()~|+<>{},.]+\\s(.+)$/);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec95",
+      "text": "       if (deco) inner = deco[1];",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec96",
+      "text": "       if (/^https?:\\/\\//.test(inner)) continue; // 外部URLは除外",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec97",
+      "text": "       found.push(norm(inner));",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec98",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec99",
+      "text": "     const tag = /(^|[\\s\\u3000])#(\\S+)/g;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec9a",
+      "text": "     while ((m = tag.exec(line))) found.push(norm(m[2]));",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec9b",
+      "text": "     return found;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec9c",
+      "text": "   };",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec9d",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec9e",
+      "text": "   // ヒット行の前後CONTEXT行をまとめ、重なる範囲は結合する",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fec9f",
+      "text": "   const buildRanges = (hits, total) => {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feca0",
+      "text": "     const ranges = [];",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feca1",
+      "text": "     for (const h of hits) {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feca2",
+      "text": "       const s = Math.max(0, h - CONTEXT);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feca3",
+      "text": "       const e = Math.min(total - 1, h + CONTEXT);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feca4",
+      "text": "       const last = ranges[ranges.length - 1];",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feca5",
+      "text": "       if (last && s <= last.e + 1) {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feca6",
+      "text": "         last.e = Math.max(last.e, e);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feca7",
+      "text": "         last.hits.push(h);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feca8",
+      "text": "       } else {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feca9",
+      "text": "         ranges.push({ s, e, hits: [h] });",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecaa",
+      "text": "       }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecab",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecac",
+      "text": "     return ranges;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecad",
+      "text": "   };",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecae",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecaf",
+      "text": "   // ===== データ収集 =====",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecb0",
+      "text": "   const fetchText = async (project, title, updated) => {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecb1",
+      "text": "     const key = `${title}@${updated}`;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecb2",
+      "text": "     if (cache.has(key)) return cache.get(key);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecb3",
+      "text": "     const res = await fetch(",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecb4",
+      "text": "       `/api/pages/${project}/${encodeURIComponent(title)}/text`",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecb5",
+      "text": "     );",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecb6",
+      "text": "     if (!res.ok) return null;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecb7",
+      "text": "     const lines = (await res.text()).split(\"\\n\");",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecb8",
+      "text": "     cache.set(key, lines);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecb9",
+      "text": "     return lines;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecba",
+      "text": "   };",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecbb",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecbc",
+      "text": "   const collect = async (project, title) => {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecbd",
+      "text": "     const res = await fetch(",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecbe",
+      "text": "       `/api/pages/${project}/${encodeURIComponent(title)}`",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecbf",
+      "text": "     );",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecc0",
+      "text": "     if (!res.ok) return [];",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecc1",
+      "text": "     const page = await res.json();",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecc2",
+      "text": "     const target = norm(title);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecc3",
+      "text": "     const candidates = (page.relatedPages?.links1hop ?? [])",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecc4",
+      "text": "       .filter((p) => norm(p.title) !== target)",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecc5",
+      "text": "       .slice(0, MAX_PAGES);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecc6",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecc7",
+      "text": "     const results = [];",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecc8",
+      "text": "     let idx = 0;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecc9",
+      "text": "     const worker = async () => {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecca",
+      "text": "       while (idx < candidates.length) {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feccb",
+      "text": "         const cand = candidates[idx++];",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feccc",
+      "text": "         try {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feccd",
+      "text": "           const lines = await fetchText(project, cand.title, cand.updated);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecce",
+      "text": "           if (!lines) continue;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feccf",
+      "text": "           const hits = [];",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecd0",
+      "text": "           lines.forEach((line, i) => {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecd1",
+      "text": "             if (extractLinks(line).includes(target)) hits.push(i);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecd2",
+      "text": "           });",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecd3",
+      "text": "           if (hits.length) {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecd4",
+      "text": "             results.push({",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecd5",
+      "text": "               title: cand.title,",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecd6",
+      "text": "               updated: cand.updated ?? 0,",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecd7",
+      "text": "               lines,",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecd8",
+      "text": "               hits,",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecd9",
+      "text": "             });",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecda",
+      "text": "           }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecdb",
+      "text": "         } catch (e) { /* 個別ページの失敗はスキップ */ }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecdc",
+      "text": "       }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecdd",
+      "text": "     };",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecde",
+      "text": "     await Promise.all(Array.from({ length: CONCURRENCY }, worker));",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecdf",
+      "text": "     return results;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fece0",
+      "text": "   };",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fece1",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fece2",
+      "text": "   // ===== 描画 =====",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fece3",
+      "text": "   const sorters = {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fece4",
+      "text": "     updated: (a, b) => b.updated - a.updated,",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fece5",
+      "text": "     mentions: (a, b) => b.hits.length - a.hits.length,",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fece6",
+      "text": "     title: (a, b) => a.title.localeCompare(b.title, \"ja\"),",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fece7",
+      "text": "   };",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fece8",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fece9",
+      "text": "   const renderBody = (panel, project, results, sortKey) => {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecea",
+      "text": "     const body = panel.querySelector(\".lsb-body\");",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feceb",
+      "text": "     const sorted = [...results].sort(sorters[sortKey]);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecec",
+      "text": "     body.innerHTML = sorted.map((r) => {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feced",
+      "text": "       const date = r.updated",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecee",
+      "text": "         ? new Date(r.updated * 1000).toLocaleDateString(\"ja-JP\")",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecef",
+      "text": "         : \"\";",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecf0",
+      "text": "       const ranges = buildRanges(r.hits, r.lines.length);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecf1",
+      "text": "       const blocks = ranges.map((rg) => {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecf2",
+      "text": "         const rows = [];",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecf3",
+      "text": "         for (let i = rg.s; i <= rg.e; i++) {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecf4",
+      "text": "           const hit = rg.hits.includes(i);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecf5",
+      "text": "           rows.push(",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecf6",
+      "text": "             `<div class=\"lsb-line${hit ? \" lsb-hit\" : \"\"}\">${esc(r.lines[i]) || \"&nbsp;\"}</div>`",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecf7",
+      "text": "           );",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecf8",
+      "text": "         }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecf9",
+      "text": "         return `<div class=\"lsb-block\">${rows.join(\"\")}</div>`;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecfa",
+      "text": "       }).join(\"\");",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecfb",
+      "text": "       return `<div class=\"lsb-page\">",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecfc",
+      "text": "         <a class=\"lsb-title\" href=\"/${project}/${encodeURIComponent(r.title)}\">${esc(r.title)}</a>",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecfd",
+      "text": "         <span class=\"lsb-meta\">${r.hits.length}箇所${date ? \" · \" + date : \"\"}</span>",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecfe",
+      "text": "         ${blocks}",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fecff",
+      "text": "       </div>`;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed00",
+      "text": "     }).join(\"\");",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed01",
+      "text": "   };",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed02",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed03",
+      "text": "   const render = (panel, project, title, results) => {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed04",
+      "text": "     lastResults = results;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed05",
+      "text": "     panel.innerHTML = `",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed06",
+      "text": "       <div class=\"lsb-head\">",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed07",
+      "text": "         <span class=\"lsb-count\">被リンク文脈 ${results.length}ページ</span>",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed08",
+      "text": "         <select class=\"lsb-sort\">",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed09",
+      "text": "           <option value=\"updated\">更新が新しい順</option>",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed0a",
+      "text": "           <option value=\"mentions\">言及数順</option>",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed0b",
+      "text": "           <option value=\"title\">タイトル順</option>",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed0c",
+      "text": "         </select>",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed0d",
+      "text": "       </div>",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed0e",
+      "text": "       <div class=\"lsb-body\"></div>`;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed0f",
+      "text": "     const select = panel.querySelector(\".lsb-sort\");",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed10",
+      "text": "     select.value = DEFAULT_SORT;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed11",
+      "text": "     select.addEventListener(\"change\", () =>",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed12",
+      "text": "       renderBody(panel, project, lastResults, select.value)",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed13",
+      "text": "     );",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed14",
+      "text": "     if (results.length === 0) {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed15",
+      "text": "       panel.querySelector(\".lsb-body\").innerHTML =",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed16",
+      "text": "         `<div class=\"lsb-empty\">文脈つきの被リンクは見つかりませんでした</div>`;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed17",
+      "text": "     } else {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed18",
+      "text": "       renderBody(panel, project, results, DEFAULT_SORT);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed19",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed1a",
+      "text": "   };",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed1b",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed1c",
+      "text": "   // ===== スタイル =====",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed1d",
+      "text": "   const DARK_CSS = `",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed1e",
+      "text": "     #${PANEL_ID} {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed1f",
+      "text": "       margin: 1.4em 0; padding: 1em 1.2em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed20",
+      "text": "       background: rgba(255,255,255,.05);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed21",
+      "text": "       border: 1px solid rgba(255,255,255,.10);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed22",
+      "text": "       border-radius: 14px;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed23",
+      "text": "       font-family: -apple-system, BlinkMacSystemFont, \"SF Pro Text\",",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed24",
+      "text": "         \"Hiragino Sans\", \"Helvetica Neue\", sans-serif;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed25",
+      "text": "       color: rgba(255,255,255,.92);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed26",
+      "text": "       font-size: .92em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed27",
+      "text": "       -webkit-font-smoothing: antialiased;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed28",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed29",
+      "text": "     #${PANEL_ID} .lsb-head {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed2a",
+      "text": "       display: flex; align-items: center; gap: .8em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed2b",
+      "text": "       margin-bottom: .7em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed2c",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed2d",
+      "text": "     #${PANEL_ID} .lsb-count {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed2e",
+      "text": "       font-weight: 600; font-size: 1.02em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed2f",
+      "text": "       letter-spacing: .01em; color: #fff;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed30",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed31",
+      "text": "     #${PANEL_ID} .lsb-sort {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed32",
+      "text": "       margin-left: auto;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed33",
+      "text": "       appearance: none; -webkit-appearance: none;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed34",
+      "text": "       background: rgba(255,255,255,.08); color: #fff;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed35",
+      "text": "       border: 1px solid rgba(255,255,255,.12);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed36",
+      "text": "       border-radius: 999px;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed37",
+      "text": "       padding: .32em 2em .32em .95em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed38",
+      "text": "       font-size: .9em; cursor: pointer;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed39",
+      "text": "       background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"10\" height=\"6\" viewBox=\"0 0 10 6\"><path d=\"M1 1l4 4 4-4\" stroke=\"white\" stroke-opacity=\".7\" stroke-width=\"1.5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>');",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed3a",
+      "text": "       background-repeat: no-repeat;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed3b",
+      "text": "       background-position: right .8em center;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed3c",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed3d",
+      "text": "     #${PANEL_ID} .lsb-sort option { color: #000; background: #fff; }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed3e",
+      "text": "     #${PANEL_ID} .lsb-page {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed3f",
+      "text": "       padding: .7em 0;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed40",
+      "text": "       border-top: 1px solid rgba(255,255,255,.08);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed41",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed42",
+      "text": "     #${PANEL_ID} .lsb-page:first-child { border-top: none; }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed43",
+      "text": "     #${PANEL_ID} .lsb-title {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed44",
+      "text": "       font-weight: 600; color: #409CFF; text-decoration: none;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed45",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed46",
+      "text": "     #${PANEL_ID} .lsb-title:hover { text-decoration: underline; }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed47",
+      "text": "     #${PANEL_ID} .lsb-meta {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed48",
+      "text": "       margin-left: .6em; color: rgba(255,255,255,.45);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed49",
+      "text": "       font-size: .82em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed4a",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed4b",
+      "text": "     #${PANEL_ID} .lsb-block {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed4c",
+      "text": "       margin: .5em 0 .5em .1em; padding: .55em .8em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed4d",
+      "text": "       background: rgba(255,255,255,.045);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed4e",
+      "text": "       border-radius: 10px;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed4f",
+      "text": "       white-space: pre-wrap; word-break: break-word;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed50",
+      "text": "       line-height: 1.6;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed51",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed52",
+      "text": "     #${PANEL_ID} .lsb-line { color: rgba(255,255,255,.62); }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed53",
+      "text": "     #${PANEL_ID} .lsb-hit {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed54",
+      "text": "       color: #fff;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed55",
+      "text": "       background: rgba(10,132,255,.24);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed56",
+      "text": "       border-radius: 6px;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed57",
+      "text": "       margin: 2px -.35em; padding: 2px .35em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed58",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed59",
+      "text": "     #${PANEL_ID} .lsb-empty { color: rgba(255,255,255,.5); }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed5a",
+      "text": "   `;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed5b",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed5c",
+      "text": "   // ライトテーマ用: 黒系文字・不透明背景（透過なし）",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed5d",
+      "text": "   const LIGHT_CSS = `",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed5e",
+      "text": "     #${PANEL_ID} {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed5f",
+      "text": "       margin: 1.4em 0; padding: 1em 1.2em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed60",
+      "text": "       background: #f5f5f7;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed61",
+      "text": "       border: 1px solid #e3e3e8;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed62",
+      "text": "       border-radius: 14px;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed63",
+      "text": "       font-family: -apple-system, BlinkMacSystemFont, \"SF Pro Text\",",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed64",
+      "text": "         \"Hiragino Sans\", \"Helvetica Neue\", sans-serif;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed65",
+      "text": "       color: #1d1d1f;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed66",
+      "text": "       font-size: .92em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed67",
+      "text": "       -webkit-font-smoothing: antialiased;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed68",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed69",
+      "text": "     #${PANEL_ID} .lsb-head {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed6a",
+      "text": "       display: flex; align-items: center; gap: .8em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed6b",
+      "text": "       margin-bottom: .7em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed6c",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed6d",
+      "text": "     #${PANEL_ID} .lsb-count {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed6e",
+      "text": "       font-weight: 600; font-size: 1.02em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed6f",
+      "text": "       letter-spacing: .01em; color: #1d1d1f;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed70",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed71",
+      "text": "     #${PANEL_ID} .lsb-sort {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed72",
+      "text": "       margin-left: auto;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed73",
+      "text": "       appearance: none; -webkit-appearance: none;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed74",
+      "text": "       background: #ffffff; color: #1d1d1f;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed75",
+      "text": "       border: 1px solid #d9d9de;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed76",
+      "text": "       border-radius: 999px;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed77",
+      "text": "       padding: .32em 2em .32em .95em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed78",
+      "text": "       font-size: .9em; cursor: pointer;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed79",
+      "text": "       background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"10\" height=\"6\" viewBox=\"0 0 10 6\"><path d=\"M1 1l4 4 4-4\" stroke=\"black\" stroke-opacity=\".55\" stroke-width=\"1.5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>');",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed7a",
+      "text": "       background-repeat: no-repeat;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed7b",
+      "text": "       background-position: right .8em center;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed7c",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed7d",
+      "text": "     #${PANEL_ID} .lsb-sort option { color: #000; background: #fff; }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed7e",
+      "text": "     #${PANEL_ID} .lsb-page {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed7f",
+      "text": "       padding: .7em 0;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed80",
+      "text": "       border-top: 1px solid #e6e6ea;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed81",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed82",
+      "text": "     #${PANEL_ID} .lsb-page:first-child { border-top: none; }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed83",
+      "text": "     #${PANEL_ID} .lsb-title {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed84",
+      "text": "       font-weight: 600; color: #0066cc; text-decoration: none;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed85",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed86",
+      "text": "     #${PANEL_ID} .lsb-title:hover { text-decoration: underline; }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed87",
+      "text": "     #${PANEL_ID} .lsb-meta {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed88",
+      "text": "       margin-left: .6em; color: #86868b;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed89",
+      "text": "       font-size: .82em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed8a",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed8b",
+      "text": "     #${PANEL_ID} .lsb-block {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed8c",
+      "text": "       margin: .5em 0 .5em .1em; padding: .55em .8em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed8d",
+      "text": "       background: #ffffff;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed8e",
+      "text": "       border: 1px solid #ececf0;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed8f",
+      "text": "       border-radius: 10px;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed90",
+      "text": "       white-space: pre-wrap; word-break: break-word;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed91",
+      "text": "       line-height: 1.6;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed92",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed93",
+      "text": "     #${PANEL_ID} .lsb-line { color: #6e6e73; }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed94",
+      "text": "     #${PANEL_ID} .lsb-hit {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed95",
+      "text": "       color: #000;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed96",
+      "text": "       background: #d8e8ff;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed97",
+      "text": "       border-radius: 6px;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed98",
+      "text": "       margin: 2px -.35em; padding: 2px .35em;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed99",
+      "text": "     }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed9a",
+      "text": "     #${PANEL_ID} .lsb-empty { color: #86868b; }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed9b",
+      "text": "   `;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed9c",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed9d",
+      "text": "   const style = document.createElement(\"style\");",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed9e",
+      "text": "   style.textContent = THEME === \"light\" ? LIGHT_CSS : DARK_CSS;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fed9f",
+      "text": "   document.head.appendChild(style);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feda0",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feda1",
+      "text": "   // ===== 実行制御 =====",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feda2",
+      "text": "   const run = async () => {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feda3",
+      "text": "     if (scrapbox.Layout !== \"page\") return;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feda4",
+      "text": "     const project = scrapbox.Project.name;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feda5",
+      "text": "     const title = scrapbox.Page.title;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feda6",
+      "text": "     if (!title) return;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feda7",
+      "text": "     let host;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feda8",
+      "text": "     try {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007feda9",
+      "text": "       host = await waitFor(() =>",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedaa",
+      "text": "         document.querySelector(\".related-page-list\")",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedab",
+      "text": "       );",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedac",
+      "text": "     } catch (e) { return; }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedad",
+      "text": "     document.getElementById(PANEL_ID)?.remove();",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedae",
+      "text": "     const panel = document.createElement(\"div\");",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedaf",
+      "text": "     panel.id = PANEL_ID;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedb0",
+      "text": "     panel.innerHTML = `<div class=\"lsb-empty\">被リンク文脈を読み込み中…</div>`;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedb1",
+      "text": "     host.parentNode.insertBefore(panel, host);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedb2",
+      "text": "     const results = await collect(project, title);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedb3",
+      "text": "     if (scrapbox.Page.title !== title) return; // 途中でページ移動した場合は破棄",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedb4",
+      "text": "     render(panel, project, title, results);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedb5",
+      "text": "   };",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedb6",
+      "text": " ",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedb7",
+      "text": "   if (typeof scrapbox.on === \"function\") {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedb8",
+      "text": "     scrapbox.on(\"page:changed\", () => setTimeout(run, 300));",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedb9",
+      "text": "   } else {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedba",
+      "text": "     // フォールバック: URL変化を監視",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedbb",
+      "text": "     let last = location.href;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedbc",
+      "text": "     setInterval(() => {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedbd",
+      "text": "       if (location.href !== last) {",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedbe",
+      "text": "         last = location.href;",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedbf",
+      "text": "         setTimeout(run, 300);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedc0",
+      "text": "       }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedc1",
+      "text": "     }, 500);",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedc2",
+      "text": "   }",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedc3",
+      "text": "   run();",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b504d00000000007fedc4",
+      "text": " })();",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417806,
+      "updated": 1785417806
+    },
+    {
+      "id": "6a6b4f61000000000008dcbb",
+      "text": "",
+      "userId": "60c9f2f6c225a50020b8bbfc",
+      "created": 1785417570,
+      "updated": 1785417571
     },
     {
       "id": "637c38f9b8bbfc0000da6693",
