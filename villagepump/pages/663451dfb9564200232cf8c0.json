@@ -2,7 +2,7 @@
   "id": "663451dfb9564200232cf8c0",
   "title": "リンクを出典アイコンにするUserCSS：実装ページ",
   "created": 1714704868,
-  "updated": 1785513873,
+  "updated": 1785549185,
   "lines": [
     {
       "id": "663451dfb9564200232cf8c0",
@@ -594,52 +594,31 @@
     },
     {
       "id": "6a6c651d00000000005cc834",
-      "text": "  \tdisplay: inline-block;",
+      "text": "  \tdisplay: inline-block;\tposition: relative; z-index: 0;",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785488672,
-      "updated": 1785488672
+      "updated": 1785547906
     },
     {
-      "id": "6a6c651d00000000005cc835",
-      "text": "  \tposition: relative; z-index: 0;",
+      "id": "6a6d4c6a0000000000890cb9",
+      "text": "  \ttop: -0.5em;\tmargin-left: 1px;",
       "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1785488672,
-      "updated": 1785488672
+      "created": 1785547884,
+      "updated": 1785547884
     },
     {
-      "id": "6a6c651d00000000005cc836",
-      "text": "  \ttop: -0.5em;",
+      "id": "6a6d4c5f0000000000890cb8",
+      "text": "  \tfont-size: .8em;\tline-height: 1.0;",
       "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1785488672,
-      "updated": 1785488672
+      "created": 1785547873,
+      "updated": 1785547876
     },
     {
-      "id": "6a6c651d00000000005cc837",
-      "text": "  \tmargin-left: 1px;",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1785488672,
-      "updated": 1785488672
-    },
-    {
-      "id": "6a6c651d00000000005cc838",
+      "id": "6a6d4c710000000000890cbb",
       "text": "  \tmin-width: 1.15em;",
       "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1785488672,
-      "updated": 1785488672
-    },
-    {
-      "id": "6a6c651d00000000005cc839",
-      "text": "  \tline-height: 1.0;",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1785488672,
-      "updated": 1785488672
-    },
-    {
-      "id": "6a6c651d00000000005cc83a",
-      "text": "  \tfont-size: .8em;",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1785488672,
-      "updated": 1785488672
+      "created": 1785547892,
+      "updated": 1785547892
     },
     {
       "id": "6a6c651d00000000005cc847",
@@ -647,6 +626,13 @@
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785488672,
       "updated": 1785488672
+    },
+    {
+      "id": "6a6d4f770000000000890cbc",
+      "text": "  \t/* [. ...] */",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785548665,
+      "updated": 1785548691
     },
     {
       "id": "6a6c651d00000000005cc848",
@@ -657,45 +643,31 @@
     },
     {
       "id": "6a6cb369000000000018e58f",
-      "text": "  \t& > a:where(.page-link:not(.icon))::before,",
+      "text": "  \t& > a:where(.page-link:not(.icon))::before, /* 内部リンク */",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785508715,
-      "updated": 1785508715
+      "updated": 1785546873
     },
     {
       "id": "6a6cb369000000000018e590",
-      "text": "  \t& > :where(",
+      "text": "  \t& > :where(a, span:not(.char-index):nth-of-type(1) > a).link::before, /* 外部リンク */",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785508715,
-      "updated": 1785508715
-    },
-    {
-      "id": "6a6cb369000000000018e591",
-      "text": "  \t  a,",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1785508715,
-      "updated": 1785508715
-    },
-    {
-      "id": "6a6cb369000000000018e592",
-      "text": "  \t  span:not(.char-index):nth-of-type(1) > a",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1785508715,
-      "updated": 1785508715
-    },
-    {
-      "id": "6a6cb369000000000018e593",
-      "text": "  \t).link::before,",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1785508715,
-      "updated": 1785508715
+      "updated": 1785546883
     },
     {
       "id": "6a6c651d00000000005cc84a",
-      "text": "  \t&:has(> span:not(.char-index):nth-of-type(1) > a:not(.icon))::before {",
+      "text": "  \t&:has(> span:not(.char-index):nth-of-type(1) > a.page-link:not(.icon))::before /* 内部リンク用のリンクテキスト指定がある場合 */",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785488672,
-      "updated": 1785488672
+      "updated": 1785548294
+    },
+    {
+      "id": "6a6d48110000000000890cb3",
+      "text": "  \t{",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785546771,
+      "updated": 1785546771
     },
     {
       "id": "6a6c651d00000000005cc84b",
@@ -726,6 +698,13 @@
       "updated": 1785488672
     },
     {
+      "id": "6a6d4c090000000000890cb7",
+      "text": "  \t/* [./ ...] または [/. ...]  */",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785547787,
+      "updated": 1785548648
+    },
+    {
       "id": "6a6c651d00000000005cc84f",
       "text": "    &.deco-\\/ {",
       "userId": "6780c5dd585ee07f1dc50b2b",
@@ -733,18 +712,11 @@
       "updated": 1785488672
     },
     {
-      "id": "6a6c651d00000000005cc850",
-      "text": "      /* 斜体を取り消す */",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1785488672,
-      "updated": 1785488672
-    },
-    {
       "id": "6a6c651d00000000005cc851",
-      "text": "      font-style: normal;",
+      "text": "      font-style: normal; /* 斜体を取り消す */",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785488672,
-      "updated": 1785488672
+      "updated": 1785546654
     },
     {
       "id": "6a6c651d00000000005cc852",
@@ -755,10 +727,17 @@
     },
     {
       "id": "6a6c651d00000000005cc853",
-      "text": "      & > :is(.page-link:not(.icon), .link)::before {",
+      "text": "      & > :is(.page-link:not(.icon), .link)::before,",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785488672,
-      "updated": 1785488672
+      "updated": 1785546726
+    },
+    {
+      "id": "6a6d47da0000000000890cb2",
+      "text": "    \t&:has(> span:not(.char-index):nth-of-type(1) > a.page-link:not(.icon))::before {",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785546716,
+      "updated": 1785547257
     },
     {
       "id": "6a6c651d00000000005cc854",
@@ -790,52 +769,31 @@
     },
     {
       "id": "6a6c651d00000000005cc858",
-      "text": "    /* リンクの最大幅を指定 */",
+      "text": "    /* リンク記法の最大幅を指定 */",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785488672,
-      "updated": 1785508519
+      "updated": 1785547425
     },
     {
       "id": "6a6cb2a5000000000018e588",
-      "text": "  \t& > a:where(.page-link:not(.icon)),",
+      "text": "  \t& > a:is(.page-link:not(.icon)),",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785508519,
-      "updated": 1785508519
+      "updated": 1785546632
     },
     {
       "id": "6a6cb2a5000000000018e589",
-      "text": "  \t& > :where(",
+      "text": "  \t& > :is(a, span:not(.char-index):nth-of-type(1) > a).link {",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785508519,
-      "updated": 1785508519
-    },
-    {
-      "id": "6a6cb2a5000000000018e58a",
-      "text": "  \t  a,",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1785508519,
-      "updated": 1785508519
-    },
-    {
-      "id": "6a6cb2a5000000000018e58b",
-      "text": "  \t  span:not(.char-index):nth-of-type(1) > a",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1785508519,
-      "updated": 1785508686
-    },
-    {
-      "id": "6a6cb2a5000000000018e58c",
-      "text": "  \t).link {",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1785508519,
-      "updated": 1785508519
+      "updated": 1785546616
     },
     {
       "id": "6a6cb2a5000000000018e58d",
-      "text": "  \t\tmax-width: 4em;",
+      "text": "  \t\tmax-width: 4em; /* アイコンの幅 + 全角3文字分 */",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785508519,
-      "updated": 1785508519
+      "updated": 1785548606
     },
     {
       "id": "6a6cb2a5000000000018e58e",
@@ -860,10 +818,10 @@
     },
     {
       "id": "6a6cb273000000000018e57c",
-      "text": "    /* 内部リンクかつ行参照の場合 */",
+      "text": "    /* 内部リンクが行パーマリンクであり、かつリンクテキスト指定なしの場合 */",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785508469,
-      "updated": 1785508496
+      "updated": 1785548040
     },
     {
       "id": "6a6cb273000000000018e57d",
@@ -873,11 +831,11 @@
       "updated": 1785508469
     },
     {
-      "id": "6a6cb273000000000018e57e",
-      "text": "\t\t    max-width: 8.5em;",
+      "id": "6a6d4ab20000000000890cb4",
+      "text": "\t\t    max-width: 8.5em; /* 次の ::after の content 文字列の長さを足す */",
       "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1785508469,
-      "updated": 1785508469
+      "created": 1785547444,
+      "updated": 1785548360
     },
     {
       "id": "6a6cb273000000000018e57f",
@@ -944,10 +902,10 @@
     },
     {
       "id": "6a6c651d00000000005cc866",
-      "text": "    /* 内部リンクにリンクテキストの指定がある場合、リンクを透明化してオフセット化する */",
+      "text": "    /* 内部リンク用のリンクテキスト指定がある場合、内部リンク記法を透明なクリック判定領域にする */",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785488672,
-      "updated": 1785494544
+      "updated": 1785548791
     },
     {
       "id": "6a6c651d00000000005cc867",
@@ -1004,6 +962,20 @@
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785488672,
       "updated": 1785488672
+    },
+    {
+      "id": "6a6d4b8c0000000000890cb5",
+      "text": "  \t",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785547663,
+      "updated": 1785547663
+    },
+    {
+      "id": "6a6d4b8d0000000000890cb6",
+      "text": "  \t/* 内部リンク用のリンクテキスト表示 */",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785547663,
+      "updated": 1785548069
     },
     {
       "id": "6a6c660600000000007890b7",
