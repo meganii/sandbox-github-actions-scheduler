@@ -2,7 +2,7 @@
   "id": "663451dfb9564200232cf8c0",
   "title": "リンクを出典アイコンにするUserCSS：実装ページ",
   "created": 1714704868,
-  "updated": 1785549185,
+  "updated": 1785673807,
   "lines": [
     {
       "id": "663451dfb9564200232cf8c0",
@@ -153,10 +153,10 @@
     },
     {
       "id": "663452521280f000009d656c",
-      "text": "     :is(.page-link:not(.icon), .link)::before {",
-      "userId": "5ef2bdebb60650001e1280f0",
+      "text": "     :where(& > a, & > span > a):is(.page-link:not(.icon), .link)::before {",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1714704978,
-      "updated": 1714704979
+      "updated": 1785653723
     },
     {
       "id": "663452521280f000009d656d",
@@ -251,10 +251,10 @@
     },
     {
       "id": "663452751280f000009d6671",
-      "text": "       :is(.page-link:not(.icon), .link)::before {",
-      "userId": "5ef2bdebb60650001e1280f0",
+      "text": "       :where(& > a, & > span > a):is(.page-link:not(.icon), .link)::before {",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1714705012,
-      "updated": 1714705012
+      "updated": 1785653736
     },
     {
       "id": "663452751280f000009d6672",
@@ -307,10 +307,17 @@
     },
     {
       "id": "6634522a1280f000009d6491",
-      "text": "     a:is(.page-link:not(.icon), .link) span:not(.empty-char-index) + span + span ~ span {",
-      "userId": "5ef2bdebb60650001e1280f0",
+      "text": "     :where(& > a, & > span > a):is(.page-link:not(.icon), .link) > span.char-index:not(.empty-char-index)",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1714704937,
-      "updated": 1714704938
+      "updated": 1785653747
+    },
+    {
+      "id": "6a6ed527000000000082c658",
+      "text": "     + span.char-index + span.char-index ~ span.char-index {",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785648423,
+      "updated": 1785653436
     },
     {
       "id": "663452211280f000009d648d",
@@ -342,10 +349,10 @@
     },
     {
       "id": "663452331280f000009d6498",
-      "text": "     .page-link:not(.icon) span.empty-char-index {",
-      "userId": "5ef2bdebb60650001e1280f0",
+      "text": "     :where(& > a, & > span > a).page-link:not(.icon) > span.empty-char-index {",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1714704947,
-      "updated": 1714705050
+      "updated": 1785653757
     },
     {
       "id": "6634529a1280f000009d6676",
@@ -481,6 +488,13 @@
       "updated": 1784970184
     },
     {
+      "id": "6a6ed439000000000082c656",
+      "text": "　　特に無名のspanへのスタイル指定は禁じ手に近い",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785648185,
+      "updated": 1785648249
+    },
+    {
       "id": "6a647aec0000000000d4199f",
       "text": "　無名のspan",
       "userId": "6780c5dd585ee07f1dc50b2b",
@@ -493,6 +507,20 @@
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1784969965,
       "updated": 1784970062
+    },
+    {
+      "id": "6a6ed48c000000000082c657",
+      "text": "　　この部分は実際には.char-indexを指定している",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785648268,
+      "updated": 1785653359
+    },
+    {
+      "id": "6a6eea65000000000028d666",
+      "text": "　　　.char-index に直しておいたが、それでもパフォーマンスへの影響が大きいことは変わらない",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785653862,
+      "updated": 1785653928
     },
     {
       "id": "6a647b260000000000d419a4",
@@ -565,11 +593,46 @@
       "updated": 1785490596
     },
     {
+      "id": "6a6e97380000000000d6aac0",
+      "text": "2026-08-02",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785632569,
+      "updated": 1785633463
+    },
+    {
+      "id": "6a6e9ab60000000000eccd4a",
+      "text": " `--page-bg`未定義時の代替値の指定漏れ（[Default Light Theme] 対応）",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785633463,
+      "updated": 1785633463
+    },
+    {
+      "id": "6a6e9b260000000000eccd4b",
+      "text": "  [\" [terang.icon]おや？重なって見える。][. [2026/08/01#6a6e1ee40000000000449b56]]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785633574,
+      "updated": 1785633624
+    },
+    {
+      "id": "6a6e9a6d0000000000eccd48",
+      "text": "   > [https://gyazo.com/bef1ed5667f241d76c87e952ed5f400e]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785633390,
+      "updated": 1785633633
+    },
+    {
+      "id": "6a6eead7000000000028d667",
+      "text": " セレクター指定の誤りを修正",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785653975,
+      "updated": 1785653988
+    },
+    {
       "id": "6a6c69e30000000000ea3af7",
-      "text": "[2026-07-31] [Nrem.icon]",
+      "text": "[2026-07-31] 作成＆Settingsに適用[Nrem.icon]",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785489891,
-      "updated": 1785491396
+      "updated": 1785633705
     },
     {
       "id": "6a6c69f20000000000ea3af8",
@@ -650,10 +713,10 @@
     },
     {
       "id": "6a6cb369000000000018e590",
-      "text": "  \t& > :where(a, span:not(.char-index):nth-of-type(1) > a).link::before, /* 外部リンク */",
+      "text": "  \t:where(& > a, & > span:not(.char-index):nth-of-type(1) > a).link::before, /* 外部リンク */",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785508715,
-      "updated": 1785546883
+      "updated": 1785653775
     },
     {
       "id": "6a6c651d00000000005cc84a",
@@ -727,10 +790,10 @@
     },
     {
       "id": "6a6c651d00000000005cc853",
-      "text": "      & > :is(.page-link:not(.icon), .link)::before,",
+      "text": "      & > a:is(.page-link:not(.icon), .link)::before,",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785488672,
-      "updated": 1785546726
+      "updated": 1785642286
     },
     {
       "id": "6a6d47da0000000000890cb2",
@@ -783,10 +846,10 @@
     },
     {
       "id": "6a6cb2a5000000000018e589",
-      "text": "  \t& > :is(a, span:not(.char-index):nth-of-type(1) > a).link {",
+      "text": "  \t:is(& > a, & > span:not(.char-index):nth-of-type(1) > a).link {",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785508519,
-      "updated": 1785546616
+      "updated": 1785653792
     },
     {
       "id": "6a6cb2a5000000000018e58d",
@@ -853,10 +916,10 @@
     },
     {
       "id": "6a6cb273000000000018e581",
-      "text": "      & > span.char-index:nth-last-of-type(1)::after {",
+      "text": "      &::after {",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785508469,
-      "updated": 1785508469
+      "updated": 1785642174
     },
     {
       "id": "6a6cb273000000000018e582",
@@ -867,10 +930,10 @@
     },
     {
       "id": "6a6cb273000000000018e583",
-      "text": "        background-color: var(--page-bg);",
+      "text": "        background-color: var(--page-bg, #fefefe);",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785508469,
-      "updated": 1785508469
+      "updated": 1785632537
     },
     {
       "id": "6a6cb273000000000018e584",
@@ -1104,11 +1167,18 @@
       "updated": 1785509949
     },
     {
+      "id": "6a6eb64e000000000041a65a",
+      "text": "　【個別スレッドに分岐済み】[文字の途中で切れているのはかなりイヤかも]",
+      "userId": "6923e3b6e09f0be0924872ef",
+      "created": 1785640527,
+      "updated": 1785649199
+    },
+    {
       "id": "6a6c93db00000000008ae5c7",
       "text": "末尾にスペースがあると幅が制限されない？",
-      "userId": "5c30ba88e98efe0017e5172d",
-      "created": 1785500635,
-      "updated": 1785500650
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1785643375,
+      "updated": 1785643375
     },
     {
       "id": "6a6c93ea00000000008ae5c8",
@@ -1228,6 +1298,34 @@
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1785512999,
       "updated": 1785513587
+    },
+    {
+      "id": "6a6f37a40000000000a164b6",
+      "text": "  　page historyをたどったところ、text-indent: -9999pxのことみたいです[takker.icon]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1785673637,
+      "updated": 1785673707
+    },
+    {
+      "id": "6a6f37ea0000000000a164b7",
+      "text": "  　 [リンクを出典アイコンにするUserCSS#61580c4c1280f0000097e630]",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1785673708,
+      "updated": 1785673712
+    },
+    {
+      "id": "6a6f38010000000000a164b8",
+      "text": "  　 DOMを事実上の非表示状態にしているということですね",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1785673730,
+      "updated": 1785673748
+    },
+    {
+      "id": "6a6f38120000000000a164b9",
+      "text": "  　 こういう手法を当時は思いつかなかったので驚いた覚えがある",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1785673748,
+      "updated": 1785673807
     },
     {
       "id": "6a6cc1200000000000640919",
