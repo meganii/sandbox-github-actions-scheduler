@@ -2,7 +2,7 @@
   "id": "6a736b2c58978178de26a31a",
   "title": "2026/08/06",
   "created": 1785948974,
-  "updated": 1786065372,
+  "updated": 1786295452,
   "lines": [
     {
       "id": "6a736b2c58978178de26a31a",
@@ -712,165 +712,11 @@
       "updated": 1785980354
     },
     {
-      "id": "6a744e8400000000007f8293",
-      "text": "　ウェブブラウザの実装ミスで :has() 内の子結合子入りの :is() が息をしていないバグそろそろ直してほしい",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786007173,
-      "updated": 1786012838
-    },
-    {
-      "id": "6a7465d700000000000ceef1",
-      "text": "　　:has() ってブラウザに実装されてからもう何年目でしたっけね",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786013144,
-      "updated": 1786013144
-    },
-    {
-      "id": "6a744ee600000000007f8294",
-      "text": "　　なお、同様の [:has()] 内の :is() 内の子孫結合子はCSSの仕様通りに機能します。死んでしまっているのは[子結合子]です",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786007271,
-      "updated": 1786012938
-    },
-    {
-      "id": "6a74646a00000000000ceeed",
-      "text": "　　　[&- MDNにある次兄弟結合子のデモも正常に息をしていることを確認した]違うデモでした",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786012779,
-      "updated": 1786020424
-    },
-    {
-      "id": "6a74518100000000007f8295",
-      "text": "　　ちなみに、CSS Nestingの&と組み合わせることでこのバグを回避できるものの（後述する無意味なネスト構文）、ブラウザ固有のバグのためだけに特殊なセレクター構造にしたくない気持ちがある",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786007940,
-      "updated": 1786013056
-    },
-    {
-      "id": "6a7455a100000000007f82a7",
-      "text": "　　例えば、以下はCSSの仕様上有効なスタイル指定だが、Chromiumでは息をしていない",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008994,
-      "updated": 1786013070
-    },
-    {
-      "id": "6a74637600000000000ceeec",
-      "text": "　　　どうやらFirefoxでも死んでしまっているらしい",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786012535,
-      "updated": 1786025201
-    },
-    {
-      "id": "6a74555800000000007f829f",
-      "text": " 　　code:exclusive-chromium.css",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008922,
-      "updated": 1786008976
-    },
-    {
-      "id": "6a74555800000000007f82a0",
-      "text": "    .text:not(.cursor-line > *):has(> :is(",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008922,
-      "updated": 1786008943
-    },
-    {
-      "id": "6a74555800000000007f82a1",
-      "text": "    \tspan > span,",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008922,
-      "updated": 1786008931
-    },
-    {
-      "id": "6a74555800000000007f82a2",
-      "text": "    \tspan > span > span",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008922,
-      "updated": 1786008929
-    },
-    {
-      "id": "6a74555800000000007f82a3",
-      "text": "    ) > a:not(.page-link) > :is(img.image, img.strong-image)) {",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008922,
-      "updated": 1786008922
-    },
-    {
-      "id": "6a74555800000000007f82a4",
-      "text": "    \ttext-align: center;",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008922,
-      "updated": 1786009297
-    },
-    {
-      "id": "6a74555800000000007f82a6",
-      "text": "    }",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008922,
-      "updated": 1786008925
-    },
-    {
-      "id": "6a7455f600000000007f82a8",
-      "text": "  Chromium/Firefox では次のように指定する必要がある",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786009079,
-      "updated": 1786012626
-    },
-    {
-      "id": "6a7454f600000000007f8296",
-      "text": " 　　code:style.css",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008824,
-      "updated": 1786008914
-    },
-    {
-      "id": "6a74552200000000007f8297",
-      "text": "    .text:not(.cursor-line > *) { &:has(:is(",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008867,
-      "updated": 1786008914
-    },
-    {
-      "id": "6a74552200000000007f8298",
-      "text": "    \t& > span > span,",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008867,
-      "updated": 1786008914
-    },
-    {
-      "id": "6a74552200000000007f8299",
-      "text": "    \t& > span > span > span",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008867,
-      "updated": 1786008914
-    },
-    {
-      "id": "6a74552200000000007f829b",
-      "text": "    ) > a:not(.page-link) > :is(img.image, img.strong-image)) {",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008867,
-      "updated": 1786008914
-    },
-    {
-      "id": "6a74552200000000007f829c",
-      "text": "    \ttext-align: center;",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008867,
-      "updated": 1786009304
-    },
-    {
-      "id": "6a74552200000000007f829e",
-      "text": "    } }",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786008867,
-      "updated": 1786008914
-    },
-    {
-      "id": "6a74561600000000007f82a9",
-      "text": " 　　一見して無意味なネストにしか見えない",
-      "userId": "6780c5dd585ee07f1dc50b2b",
-      "created": 1786009111,
-      "updated": 1786009441
+      "id": "6a78b3ee0000000000c78554",
+      "text": "　[ウェブブラウザの実装ミスで :has() 内の子結合子入りの :is() が息をしていないバグ]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295279,
+      "updated": 1786295287
     },
     {
       "id": "6a74679b000000000049e945",
@@ -1902,18 +1748,11 @@
       "updated": 1786025536
     },
     {
-      "id": "6a74968f00000000008b3f93",
-      "text": " いわゆる赤リンクって、私にとって新規ページ作成の免罪符的な感覚があるので、気分が乗る時は埋めていきたいと思っている",
-      "userId": "69f7d5a45e1280cdfc8a5809",
-      "created": 1786025616,
-      "updated": 1786025830
-    },
-    {
-      "id": "6a7496c800000000008b3f94",
-      "text": "  タイトルはすでに用意してもらっているので、せっかくだから本文埋めてっちゃえ～！って。",
-      "userId": "69f7d5a45e1280cdfc8a5809",
-      "created": 1786025672,
-      "updated": 1786025853
+      "id": "6a78b4820000000000c78555",
+      "text": " [赤リンクは新規ページ作成の免罪符的な感覚がある]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295426,
+      "updated": 1786295452
     },
     {
       "id": "6a74941b00000000006edd0f",

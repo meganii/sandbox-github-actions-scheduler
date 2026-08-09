@@ -1,0 +1,190 @@
+{
+  "id": "6a78b3f729c4ec3791a74707",
+  "title": "ウェブブラウザの実装ミスで :has() 内の子結合子入りの :is() が息をしていないバグ",
+  "created": 1786295288,
+  "updated": 1786295368,
+  "lines": [
+    {
+      "id": "6a78b3f729c4ec3791a74707",
+      "text": "ウェブブラウザの実装ミスで :has() 内の子結合子入りの :is() が息をしていないバグ",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c8b",
+      "text": "from [2026/08/06]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c8d",
+      "text": "ウェブブラウザの実装ミスで :has() 内の子結合子入りの :is() が息をしていないバグそろそろ直してほしい[Nrem.icon]",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295294
+    },
+    {
+      "id": "6a78b3f70000000000528c8e",
+      "text": "　:has() ってブラウザに実装されてからもう何年目でしたっけね",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c8f",
+      "text": "　なお、同様の [:has()] 内の [:is()] 内の子孫結合子はCSSの仕様通りに機能します。死んでしまっているのは[子結合子]です",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295305
+    },
+    {
+      "id": "6a78b3f70000000000528c90",
+      "text": "　　[&- MDNにある次兄弟結合子のデモも正常に息をしていることを確認した]違うデモでした",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c91",
+      "text": "　ちなみに、CSS Nestingの&と組み合わせることでこのバグを回避できるものの（後述する無意味なネスト構文）、[ブラウザ固有のバグ]のためだけに特殊なセレクター構造にしたくない気持ちがある",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295368
+    },
+    {
+      "id": "6a78b3f70000000000528c92",
+      "text": "　例えば、以下はCSSの仕様上有効なスタイル指定だが、Chromiumでは息をしていない",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c93",
+      "text": "　　どうやらFirefoxでも死んでしまっているらしい",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c94",
+      "text": "　　code:exclusive-chromium.css",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c95",
+      "text": "   .text:not(.cursor-line > *):has(> :is(",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c96",
+      "text": "   \tspan > span,",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c97",
+      "text": "   \tspan > span > span",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c98",
+      "text": "   ) > a:not(.page-link) > :is(img.image, img.strong-image)) {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c99",
+      "text": "   \ttext-align: center;",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c9a",
+      "text": "   }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c9b",
+      "text": " Chromium/Firefox では次のように指定する必要がある",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c9c",
+      "text": "　　code:style.css",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c9d",
+      "text": "   .text:not(.cursor-line > *) { &:has(:is(",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c9e",
+      "text": "   \t& > span > span,",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528c9f",
+      "text": "   \t& > span > span > span",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528ca0",
+      "text": "   ) > a:not(.page-link) > :is(img.image, img.strong-image)) {",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528ca1",
+      "text": "   \ttext-align: center;",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528ca2",
+      "text": "   } }",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528ca3",
+      "text": "　　一見して無意味なネストにしか見えない",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    },
+    {
+      "id": "6a78b3f70000000000528ca4",
+      "text": "",
+      "userId": "5c30ba88e98efe0017e5172d",
+      "created": 1786295288,
+      "updated": 1786295288
+    }
+  ]
+}
