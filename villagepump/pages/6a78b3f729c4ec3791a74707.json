@@ -2,7 +2,7 @@
   "id": "6a78b3f729c4ec3791a74707",
   "title": "ウェブブラウザの実装ミス：:is() に子結合子を指定することができないバグ、CSS Nesting に関する :is() と :has() のバグ",
   "created": 1786295288,
-  "updated": 1787978649,
+  "updated": 1788328557,
   "lines": [
     {
       "id": "6a78b3f729c4ec3791a74707",
@@ -17,6 +17,27 @@
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1787978624,
       "updated": 1787978634
+    },
+    {
+      "id": "6a97b99f0000000000eb733b",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788328366,
+      "updated": 1788328366
+    },
+    {
+      "id": "6a97b99f0000000000eb733c",
+      "text": "あとでよむ",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788328366,
+      "updated": 1788328459
+    },
+    {
+      "id": "6a97b9b60000000000eb733d",
+      "text": "　[https://www.w3.org/TR/selectors-4/ Selectors Level 4 W3C Working Draft, 22 January 2026 (w3.org)]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788328374,
+      "updated": 1788328427
     },
     {
       "id": "6a92637f00000000003223b1",
@@ -34,10 +55,10 @@
     },
     {
       "id": "6a78b3f70000000000528c8d",
-      "text": "[Nrem.icon]ウェブブラウザの実装ミスで :has() 内に子結合子入りの :is() を指定不能なバグそろそろ直してほしい",
+      "text": "[Nrem.icon]ウェブブラウザの実装ミスで :has() 内に子結合子入りの :is() を指定不能なバグを直してほしい",
       "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1786295288,
-      "updated": 1787978649
+      "updated": 1788328480
     },
     {
       "id": "6a78b3f70000000000528c8e",
@@ -48,45 +69,24 @@
     },
     {
       "id": "6a78b3f70000000000528c8f",
-      "text": "　なお、同様の [:has()] 内の [:is()] 内の子孫結合子はCSSの仕様通りに機能します。死んでしまっているのは[子結合子]です",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "　ちなみに、[:has()] 内の [:is()] 内の子孫結合子は機能します。死んでしまっているのは[子結合子]です",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1786295288,
-      "updated": 1786295305
-    },
-    {
-      "id": "6a78b3f70000000000528c90",
-      "text": "　　[&- MDNにある次兄弟結合子のデモも正常に息をしていることを確認した]違うデモでした",
-      "userId": "5c30ba88e98efe0017e5172d",
-      "created": 1786295288,
-      "updated": 1786295288
-    },
-    {
-      "id": "6a78b3f70000000000528c91",
-      "text": "　ちなみに、CSS Nestingの&と組み合わせることでこのバグを回避できるものの（後述する無意味なネスト構文）、[ブラウザ固有のバグ]のためだけに特殊なセレクター構造にしたくない気持ちがある",
-      "userId": "5c30ba88e98efe0017e5172d",
-      "created": 1786295288,
-      "updated": 1786295368
+      "updated": 1788327364
     },
     {
       "id": "6a78b3f70000000000528c92",
-      "text": "　例えば、以下はCSSの仕様上有効なスタイル指定だが、Chromiumでは息をしていない",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "　以下はCSSの仕様上有効なスタイル指定のはずだが、ChromiumやFirefoxではなぜか無効になります",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1786295288,
-      "updated": 1786295288
-    },
-    {
-      "id": "6a78b3f70000000000528c93",
-      "text": "　　どうやらFirefoxでも死んでしまっているらしい",
-      "userId": "5c30ba88e98efe0017e5172d",
-      "created": 1786295288,
-      "updated": 1786295288
+      "updated": 1788326670
     },
     {
       "id": "6a78b3f70000000000528c94",
-      "text": "　　code:exclusive-chromium.css",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "　　code:css",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1786295288,
-      "updated": 1786295288
+      "updated": 1788327389
     },
     {
       "id": "6a78b3f70000000000528c95",
@@ -131,67 +131,221 @@
       "updated": 1786295288
     },
     {
+      "id": "6a97b8e10000000000d63e29",
+      "text": "　`:has(* :is(*) > *)` は動く",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788328162,
+      "updated": 1788328168
+    },
+    {
+      "id": "6a97b8e10000000000d63e2a",
+      "text": "　`:has(> :is(*) *)` や `:has(:is(> *) *)` は動かない",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788328162,
+      "updated": 1788328168
+    },
+    {
+      "id": "6a97b4ea0000000000d63e0b",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788327147,
+      "updated": 1788327167
+    },
+    {
       "id": "6a78b3f70000000000528c9b",
-      "text": " Chromium/Firefox では次のように指定する必要がある",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": " Chromium/Firefox で次のように指定すると（なぜか）動く",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1786295288,
-      "updated": 1786295288
+      "updated": 1788327396
+    },
+    {
+      "id": "6a97b64b0000000000d63e14",
+      "text": "　　これは動いちゃだめなやつ。CSSの仕様の有効な解釈ではないと思う",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788327499,
+      "updated": 1788327499
     },
     {
       "id": "6a78b3f70000000000528c9c",
-      "text": "　　code:style.css",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": " 　　code:A.css",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1786295288,
-      "updated": 1786295288
+      "updated": 1788327634
     },
     {
       "id": "6a78b3f70000000000528c9d",
-      "text": "   .text:not(.cursor-line > *) { &:has(:is(",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "    .text:not(.cursor-line > *) { &:has(:is(",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1786295288,
-      "updated": 1786295288
+      "updated": 1788327634
     },
     {
       "id": "6a78b3f70000000000528c9e",
-      "text": "   \t& > span > span,",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "    \t& > span > span,",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1786295288,
-      "updated": 1786295288
+      "updated": 1788327634
     },
     {
       "id": "6a78b3f70000000000528c9f",
-      "text": "   \t& > span > span > span",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "    \t& > span > span > span",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1786295288,
-      "updated": 1786295288
+      "updated": 1788327634
     },
     {
       "id": "6a78b3f70000000000528ca0",
-      "text": "   ) > a:not(.page-link) > :is(img.image, img.strong-image)) {",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "    ) > a:not(.page-link) > :is(img.image, img.strong-image)) {",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1786295288,
-      "updated": 1786295288
+      "updated": 1788327634
     },
     {
       "id": "6a78b3f70000000000528ca1",
-      "text": "   \ttext-align: center;",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "    \ttext-align: center;",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1786295288,
-      "updated": 1786295288
+      "updated": 1788327634
     },
     {
       "id": "6a78b3f70000000000528ca2",
-      "text": "   } }",
-      "userId": "5c30ba88e98efe0017e5172d",
+      "text": "    } }",
+      "userId": "6780c5dd585ee07f1dc50b2b",
       "created": 1786295288,
-      "updated": 1786295288
+      "updated": 1788327634
     },
     {
-      "id": "6a78b3f70000000000528ca3",
-      "text": "　　一見して無意味なネストにしか見えない",
-      "userId": "5c30ba88e98efe0017e5172d",
-      "created": 1786295288,
-      "updated": 1786295288
+      "id": "6a97b21f0000000000d63e02",
+      "text": "　　:is() 内の & の展開に関してバグを疑う。上記（A.css）の次の箇所は本来、",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788326432,
+      "updated": 1788327671
+    },
+    {
+      "id": "6a97b17b0000000000d63df5",
+      "text": " 　　code:B.css",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788326268,
+      "updated": 1788327619
+    },
+    {
+      "id": "6a97b1840000000000d63df6",
+      "text": " 　　 .text:not(.cursor-line > *) { &:has(:is(",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788326276,
+      "updated": 1788327326
+    },
+    {
+      "id": "6a97b1850000000000d63df7",
+      "text": "       \t& > span > span,",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788326277,
+      "updated": 1788327326
+    },
+    {
+      "id": "6a97b1850000000000d63df8",
+      "text": "       \t& > span > span > span",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788326277,
+      "updated": 1788327326
+    },
+    {
+      "id": "6a97b1850000000000d63df9",
+      "text": "      )",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788326277,
+      "updated": 1788327326
+    },
+    {
+      "id": "6a97b1f70000000000d63e01",
+      "text": "  次のように指定した場合（C.css）と全く同じ結果が得られることが期待されるはずだが、そうはなっていない",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788326392,
+      "updated": 1788327690
+    },
+    {
+      "id": "6a97b1a80000000000d63dfc",
+      "text": "   code:C.css",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788326313,
+      "updated": 1788327613
+    },
+    {
+      "id": "6a97b1b30000000000d63dfd",
+      "text": "    .text:not(.cursor-line > *):has(",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788326323,
+      "updated": 1788327315
+    },
+    {
+      "id": "6a97b2610000000000d63e03",
+      "text": "     \t.text:not(.cursor-line > *) > span > span,",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788326498,
+      "updated": 1788327315
+    },
+    {
+      "id": "6a97b1b50000000000d63dff",
+      "text": "     \t.text:not(.cursor-line > *) > span > span > span",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788326326,
+      "updated": 1788327315
+    },
+    {
+      "id": "6a97b1b50000000000d63e00",
+      "text": "     )",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788326326,
+      "updated": 1788327315
+    },
+    {
+      "id": "6a97b70b0000000000d63e15",
+      "text": "  その代わりに次の D.css と等価のように扱われてしまう",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788327692,
+      "updated": 1788328522
+    },
+    {
+      "id": "6a97b7570000000000d63e16",
+      "text": " 　　code:D.css",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788327768,
+      "updated": 1788327922
+    },
+    {
+      "id": "6a97b7570000000000d63e17",
+      "text": "    .text:not(.cursor-line > *):is(",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788327768,
+      "updated": 1788327949
+    },
+    {
+      "id": "6a97b80c0000000000d63e21",
+      "text": "      :has(> span > span),",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788327949,
+      "updated": 1788327962
+    },
+    {
+      "id": "6a97b7570000000000d63e19",
+      "text": "    \t:has(> span > span > span)",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788327768,
+      "updated": 1788327966
+    },
+    {
+      "id": "6a97b7570000000000d63e1a",
+      "text": "    )",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788327768,
+      "updated": 1788328557
+    },
+    {
+      "id": "6a97b77a0000000000d63e1d",
+      "text": "  　ちなみに :has() 内に子結合子と組み合わせた :is() を含めることはできないが、:is() 内に :has() を含めることはできるらしい",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1788327803,
+      "updated": 1788328536
     },
     {
       "id": "6a78b3f70000000000528ca4",
