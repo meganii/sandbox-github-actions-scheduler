@@ -1,0 +1,134 @@
+{
+  "id": "6acf442fb3dd2bdb9e10d341",
+  "title": "セクション単位の字下げ記法のUserCSSについて",
+  "created": 1791968304,
+  "updated": 1791986706,
+  "lines": [
+    {
+      "id": "6acf442fb3dd2bdb9e10d341",
+      "text": "セクション単位の字下げ記法のUserCSSについて",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968304,
+      "updated": 1791968674
+    },
+    {
+      "id": "6acf442e0000000000d7f51b",
+      "text": "from [2026/09/15]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968304,
+      "updated": 1791968304
+    },
+    {
+      "id": "6acf447f0000000000a1e90b",
+      "text": "> [HelloPeople.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968385,
+      "updated": 1791968390
+    },
+    {
+      "id": "6acf44850000000000a1e910",
+      "text": "> 　新しいPJ立ち上げた",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968390,
+      "updated": 1791968390
+    },
+    {
+      "id": "6acf44850000000000a1e911",
+      "text": "> 　　[/thescene]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968390,
+      "updated": 1791968390
+    },
+    {
+      "id": "6acf44850000000000a1e912",
+      "text": "> 　　　主に[TECHSTOCK]とは別の日記用",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968390,
+      "updated": 1791968390
+    },
+    {
+      "id": "6acf442e0000000000d7f51c",
+      "text": "　[セクション]単位の字下げ記法は初めて見ました。どういう仕組みなのかが気になったので [/thescene/settings-main] を見てます[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968304,
+      "updated": 1791968811
+    },
+    {
+      "id": "6acf442e0000000000d7f51d",
+      "text": " 　Cosenseはリッチテキストなので、その行が見出しなのか本文なのか、箇条書きだと何階層目なのかとかで別々でデザインできるんですよね[HelloPeople.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968304,
+      "updated": 1791968433
+    },
+    {
+      "id": "6acf442e0000000000d7f51e",
+      "text": " 　なので[見出し]は左にパディングをつけず本文にパディングをつけることで実現しています",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968304,
+      "updated": 1791968835
+    },
+    {
+      "id": "6acf442e0000000000d7f51f",
+      "text": " 　なるほど[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968304,
+      "updated": 1791968433
+    },
+    {
+      "id": "6acf442e0000000000d7f520",
+      "text": " 　　複雑なProjectCSSです",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968304,
+      "updated": 1791968433
+    },
+    {
+      "id": "6acf442e0000000000d7f521",
+      "text": " 　　これを参考にして自分のprojectでも真似しようと思ったのですが、節外のテキストや箇条書きのテキスト開始位置に違いが出ることを避けて、単に見出し記法の表示位置を .page の padding-left 上にずらす手法で実装しました",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968304,
+      "updated": 1791986677
+    },
+    {
+      "id": "6acf442e0000000000d7f522",
+      "text": " 　　　節未使用のページが多いんですよね",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968304,
+      "updated": 1791986706
+    },
+    {
+      "id": "6acf442e0000000000d7f523",
+      "text": " 　　　あと記法とProjectテーマ部分のスタイル指定が分離されていなければ、それぞれを単独で使い回すのが難しくなりますので",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968304,
+      "updated": 1791986244
+    },
+    {
+      "id": "6acf442e0000000000d7f524",
+      "text": " 　.page 側に padding を指定しないことには副産物があります。横に長い表 [table] を画面内に収めるにあたって padding つきの .page を横スクロール可能にすると、余白に何かを表示する記法や[テロメア]が見切れて使えなくなるんですよね。padding の指定位置を .line 直下のDOMに変更するとこれを回避できます[Nrem.icon]",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968304,
+      "updated": 1791986343
+    },
+    {
+      "id": "6acf45150000000000a1e914",
+      "text": " 　　ちなみにページ外に表示される記法についてはこの手法でも見切れます",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968535,
+      "updated": 1791986365
+    },
+    {
+      "id": "6acf442e0000000000d7f525",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968304,
+      "updated": 1791968304
+    },
+    {
+      "id": "6acf444d0000000000d7f526",
+      "text": "",
+      "userId": "6780c5dd585ee07f1dc50b2b",
+      "created": 1791968335,
+      "updated": 1791968335
+    }
+  ]
+}
