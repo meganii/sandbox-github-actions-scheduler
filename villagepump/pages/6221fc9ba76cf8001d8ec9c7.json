@@ -2,7 +2,7 @@
   "id": "6221fc9ba76cf8001d8ec9c7",
   "title": "pin-diary-6",
   "created": 1646394528,
-  "updated": 1788183917,
+  "updated": 1793512082,
   "lines": [
     {
       "id": "6221fc9ba76cf8001d8ec9c7",
@@ -241,6 +241,27 @@
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1664359670,
       "updated": 1664359670
+    },
+    {
+      "id": "6ae6d212000000000000a40c",
+      "text": "2026-11-01",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1793511952,
+      "updated": 1793512013
+    },
+    {
+      "id": "6ae6d24f000000000000a40d",
+      "text": " 14:46:54 2026-11-01からcosenseのコード変更によりwebsocketが正常に動かなくなったため、[scrapbox-userscript-std]を修正版のv0.32.1以上に引き上げた",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1793512013,
+      "updated": 1793512055
+    },
+    {
+      "id": "6ae6d279000000000000a40e",
+      "text": "  ついでに、dependenciesを新しいのにし、breaking changesに対応した",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1793512055,
+      "updated": 1793512082
     },
     {
       "id": "6656eadc1280f000005c4507",
@@ -656,6 +677,13 @@
       "updated": 1646395393
     },
     {
+      "id": "6ae6ce42000000000000a405",
+      "text": " /// <reference lib=\"node\"/>",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1793510976,
+      "updated": 1793510979
+    },
+    {
       "id": "622200001280f00000147794",
       "text": " import {",
       "userId": "5ef2bdebb60650001e1280f0",
@@ -692,17 +720,17 @@
     },
     {
       "id": "622200001280f00000147799",
-      "text": "   sleep,",
+      "text": "   delay,",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646395393,
-      "updated": 1646395393
+      "updated": 1793510924
     },
     {
       "id": "6222004a1280f000001477fa",
-      "text": "   makeSocket,",
+      "text": "   connect,",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646395466,
-      "updated": 1646395471
+      "updated": 1793511092
     },
     {
       "id": "622200501280f000001477fb",
@@ -719,6 +747,27 @@
       "updated": 1646397677
     },
     {
+      "id": "6ae6cf29000000000000a407",
+      "text": "   type ScrapboxSocket,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1793511207,
+      "updated": 1793511214
+    },
+    {
+      "id": "6ae6cf2b000000000000a408",
+      "text": "   type Scrapbox,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1793511214,
+      "updated": 1793511316
+    },
+    {
+      "id": "6ae6cf97000000000000a40a",
+      "text": "   unwrapOk,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1793511316,
+      "updated": 1793511324
+    },
+    {
       "id": "622200001280f0000014779b",
       "text": " } from \"./deps.ts\";",
       "userId": "5ef2bdebb60650001e1280f0",
@@ -730,14 +779,7 @@
       "text": " import { listPinnedPages } from \"./list.ts\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646395393,
-      "updated": 1646395903
-    },
-    {
-      "id": "622200001280f0000014779d",
-      "text": " import type { Scrapbox, Socket } from \"./deps.ts\";",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1646395393,
-      "updated": 1646790739
+      "updated": 1793511217
     },
     {
       "id": "622200001280f0000014779e",
@@ -993,10 +1035,10 @@
     },
     {
       "id": "622200001280f000001477a9",
-      "text": " let updateTimer: number | undefined;",
+      "text": " let updateTimer: ReturnType<typeof setInterval> | undefined;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646395393,
-      "updated": 1646395393
+      "updated": 1793511725
     },
     {
       "id": "622200001280f000001477aa",
@@ -1154,10 +1196,10 @@
     },
     {
       "id": "622200001280f000001477b8",
-      "text": "   let socket: Socket | undefined;",
+      "text": "   let socket: ScrapboxSocket | undefined;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646395393,
-      "updated": 1646790890
+      "updated": 1793511201
     },
     {
       "id": "622202471280f0000014781c",
@@ -1203,10 +1245,17 @@
     },
     {
       "id": "622202341280f0000014781a",
-      "text": "     socket = await makeSocket();",
+      "text": "     const socketRes = await connect();",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646395956,
-      "updated": 1646396015
+      "updated": 1793511153
+    },
+    {
+      "id": "6ae6cef4000000000000a406",
+      "text": "     socket = unwrapOk(socketRes);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1793511154,
+      "updated": 1793511168
     },
     {
       "id": "622200001280f000001477be",
@@ -1504,10 +1553,10 @@
     },
     {
       "id": "622200001280f000001477e9",
-      "text": "     await sleep(1000);",
+      "text": "     await delay(1000);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646395393,
-      "updated": 1646395393
+      "updated": 1793510934
     },
     {
       "id": "622200001280f000001477ea",
@@ -1553,10 +1602,10 @@
     },
     {
       "id": "622208141280f00000d3ea91",
-      "text": " import { listPages, BasePage } from \"./deps.ts\";",
+      "text": " import { listPages, type PageSummary, unwrapOk, unwrapErr, isErr } from \"./deps.ts\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646397461,
-      "updated": 1658791304
+      "updated": 1793511636
     },
     {
       "id": "622208151280f00000d3ea92",
@@ -1574,10 +1623,10 @@
     },
     {
       "id": "622208151280f00000d3ea9b",
-      "text": " export async function* listPinnedPages(project: string, skip = 0): AsyncGenerator<BasePage> {",
+      "text": " export async function* listPinnedPages(project: string, skip = 0): AsyncGenerator<PageSummary> {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646397461,
-      "updated": 1658791306
+      "updated": 1793511600
     },
     {
       "id": "622208151280f00000d3ea9c",
@@ -1654,7 +1703,7 @@
       "text": " const ensureList = async (project: string, skip: number) => {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646397461,
-      "updated": 1694642781
+      "updated": 1793511656
     },
     {
       "id": "622208151280f00000d3eaa6",
@@ -1693,10 +1742,10 @@
     },
     {
       "id": "622208151280f00000d3eaa8",
-      "text": "   if (!result.ok) {",
+      "text": "   if (isErr(result)) {",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646397461,
-      "updated": 1646397461
+      "updated": 1793511467
     },
     {
       "id": "622208151280f00000d3eaa9",
@@ -1706,18 +1755,25 @@
       "updated": 1646397461
     },
     {
+      "id": "6ae6d016000000000000a40b",
+      "text": "     const { name, message } = unwrapErr(result);",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1793511443,
+      "updated": 1793511471
+    },
+    {
       "id": "622208151280f00000d3eaaa",
-      "text": "     error.name = result.value.name;",
+      "text": "     error.name = name;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646397461,
-      "updated": 1646397461
+      "updated": 1793511476
     },
     {
       "id": "622208151280f00000d3eaab",
-      "text": "     error.message = result.value.message;",
+      "text": "     error.message = message;",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646397461,
-      "updated": 1646397461
+      "updated": 1793511479
     },
     {
       "id": "622208151280f00000d3eaac",
@@ -1742,10 +1798,10 @@
     },
     {
       "id": "622208151280f00000d3eaaf",
-      "text": "   return result.value;",
+      "text": "   return unwrapOk(result);",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1646397461,
-      "updated": 1646397461
+      "updated": 1793511489
     },
     {
       "id": "622208151280f00000d3eab0",
@@ -1819,10 +1875,10 @@
     },
     {
       "id": "64dd9c491280f00000e0c339",
-      "text": "   makeSocket,",
+      "text": "   connect,",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1692245066,
-      "updated": 1692245066
+      "updated": 1793511130
     },
     {
       "id": "64dd9c491280f00000e0c33a",
@@ -1839,53 +1895,32 @@
       "updated": 1692245066
     },
     {
+      "id": "6ae6cdce000000000000a402",
+      "text": "   type ScrapboxSocket,",
+      "userId": "5ef2bdebb60650001e1280f0",
+      "created": 1793510861,
+      "updated": 1793511194
+    },
+    {
       "id": "64dd9c491280f00000e0c33c",
-      "text": " } from \"https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.26.1/mod.ts\";",
+      "text": " } from \"jsr:@cosense/std@^0.32.1\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1692245066,
-      "updated": 1716972266
+      "updated": 1793510868
     },
     {
-      "id": "64dd9c491280f00000e0c33d",
-      "text": " export type {",
+      "id": "6ae6cdde000000000000a404",
+      "text": " export { delay } from \"jsr:@std/async@1/delay\";",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1692245066,
-      "updated": 1692245066
+      "created": 1793510876,
+      "updated": 1793510911
     },
     {
-      "id": "64dd9c491280f00000e0c33e",
-      "text": "   Socket,",
+      "id": "6ae6cf88000000000000a409",
+      "text": " export { unwrapOk, unwrapErr, isErr } from \"npm:option-t@53/plain_result\";",
       "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1694642947,
-      "updated": 1694642947
-    },
-    {
-      "id": "64dd9c491280f00000e0c33f",
-      "text": " } from \"https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.26.1/mod.ts\";",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1692245066,
-      "updated": 1716972268
-    },
-    {
-      "id": "64dd9c491280f00000e0c340",
-      "text": " export {",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1692245066,
-      "updated": 1692245066
-    },
-    {
-      "id": "64dd9c491280f00000e0c341",
-      "text": "   sleep,",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1692245066,
-      "updated": 1692245066
-    },
-    {
-      "id": "64dd9c491280f00000e0c342",
-      "text": " } from \"https://raw.githubusercontent.com/takker99/scrapbox-userscript-std/0.26.1/sleep.ts\";",
-      "userId": "5ef2bdebb60650001e1280f0",
-      "created": 1692245066,
-      "updated": 1716972270
+      "created": 1793511301,
+      "updated": 1793511507
     },
     {
       "id": "64dd9c491280f00000e0c343",
@@ -1903,10 +1938,10 @@
     },
     {
       "id": "64dd9c491280f00000e0c345",
-      "text": " } from \"https://raw.githubusercontent.com/scrapbox-jp/types/0.7.0/userscript.ts\";",
+      "text": " } from \"jsr:@cosense/types@0.11/userscript\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1692245066,
-      "updated": 1714624630
+      "updated": 1793510793
     },
     {
       "id": "64dd9c491280f00000e0c346",
@@ -1917,17 +1952,17 @@
     },
     {
       "id": "64dd9c491280f00000e0c347",
-      "text": "   BasePage,",
+      "text": "   PageSummary,",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1692245066,
-      "updated": 1692245066
+      "updated": 1793511641
     },
     {
       "id": "64dd9c491280f00000e0c348",
-      "text": " } from \"https://raw.githubusercontent.com/scrapbox-jp/types/0.7.0/rest.ts\";",
+      "text": " } from \"jsr:@cosense/types@0.11/rest\";",
       "userId": "5ef2bdebb60650001e1280f0",
       "created": 1692245066,
-      "updated": 1714624635
+      "updated": 1793510805
     },
     {
       "id": "6222000f1280f000001477f7",
